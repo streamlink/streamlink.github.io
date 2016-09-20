@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; Streamlink 1.14.0-rc1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+    <link rel="top" title="Streamlink 1.14.0-rc1 documentation" href="index.html"/>
+        <link rel="next" title="Command-Line Interface" href="cli.html"/>
+        <link rel="prev" title="Overview" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document" data-spy="scroll" data-target=".wy-menu-vertical > ul > li.current > ul">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Streamlink</a>
+        
+        <div class="tablet-hide">
+          <small>Command-line utility that extracts streams from various services and pipes them into a video player of choice.</small>
+          <hr />
+        </div>
+        
+
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linux-and-bsd-packages">Linux and BSD packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-platforms">Other platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows-binaries">Windows binaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-usage">Plugin specific usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#sideloading-plugins">Sideloading plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#command-line-usage">Command-line usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="players.html#transport-modes">Transport modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#player-compatibility">Player compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#inspecting-streams">Inspecting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#session-object">Session object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streamlink">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-streamlink.plugin">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streams">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+
+
+      
+      <div class="tablet-hide">
+        <hr />
+		<p class="wy-text-center">
+	        <a href="https://github.com/streamlink/streamlink"
+			   class="github-button" data-icon="octicon-mark-github"
+		       data-count-href="/streamlink/streamlink/stargazers"
+			   data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+	        <a href="https://github.com/streamlink/streamlink/issues"
+			   class="github-button" data-icon="octicon-issue-opened">Issues</a>
+
+        </p>
+      </div>
+      
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Streamlink</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="admonition warning" id="install">
+<p class="first admonition-title">Warning</p>
+<p class="last">The information contained in this page is misleading. Streamlink has not yet
+been packaged and distributed. This page was simply converted from the
+previous documentation.</p>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="linux-and-bsd-packages">
+<h2>Linux and BSD packages<a class="headerlink" href="#linux-and-bsd-packages" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Distribution</th>
+<th class="head">Installing</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="https://archlinux.org/packages/?q=streamlink">Arch Linux (package)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pacman -S streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (aur, git)</a></td>
+<td><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">Installing AUR packages</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://crux.nu/portdb/?a=search&amp;q=streamlink">CRUX</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /usr/ports/contrib/streamlink
+<span class="gp">#</span> pkgmk -d -i
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://packages.debian.org/search?keywords=streamlink&amp;searchon=names&amp;exact=1&amp;suite=all&amp;section=all">Debian</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://git.exherbo.org/summer/packages/media/streamlink/index.html">Exherbo Linux</a></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://admin.fedoraproject.org/pkgdb/package/streamlink/">Fedora</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> dnf install streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://www.freshports.org/multimedia/streamlink">FreeBSD (package)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg install multimedia/streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://www.freshports.org/multimedia/streamlink">FreeBSD (ports)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /usr/ports/multimedia/streamlink
+<span class="gp">#</span> make install clean
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://packages.gentoo.org/package/net-misc/streamlink">Gentoo Linux</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> emerge net-misc/streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://pkgsrc.se/multimedia/streamlink">NetBSD (pkgsrc)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /usr/pkgsrc/multimedia/streamlink
+<span class="gp">#</span> make install clean
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://openports.se/multimedia/streamlink">OpenBSD (package)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg_add streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://openports.se/multimedia/streamlink">OpenBSD (ports)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /usr/ports/multimedia/streamlink
+<span class="gp">#</span> make install clean
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://slackbuilds.org/result/?search=streamlink">Slackware Linux</a></td>
+<td><a class="reference external" href="http://slackbuilds.org/howto/">Installing Slackbuilds</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://packages.ubuntu.com/search?keywords=streamlink&amp;searchon=names&amp;exact=1&amp;suite=all&amp;section=all">Ubuntu</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="other-platforms">
+<h2>Other platforms<a class="headerlink" href="#other-platforms" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Platform</th>
+<th class="head">Installing</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Mac OS X</td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> easy_install -U streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Microsoft Windows</td>
+<td>See <a class="reference internal" href="#windows-binaries">Windows binaries</a>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>If a package is not available for your platform (or it&#8217;s out of date) you
+can install Streamlink via source.</p>
+<p>There are a few different methods to do this,
+<a class="reference external" href="http://pip.readthedocs.org/en/latest/installing.html">pip</a> the Python package
+manager, <strong class="command">easy_install</strong> the older package manager included with
+<a class="reference external" href="http://pypi.python.org/pypi/setuptools">python-setuptools</a> or by checking out the latest code with
+<a class="reference external" href="http://git-scm.com/downloads">Git</a>.</p>
+<p>The commands listed here will also upgrade any existing version of Streamlink.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Version</th>
+<th class="head">Installing</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="https://pypi.python.org/pypi/streamlink">Latest release (pip)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pip install -U streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://pypi.python.org/pypi/streamlink">Latest release (easy_install)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> easy_install -U streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/chrippa/streamlink">Development version (pip)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pip install -U git+https://github.com/chrippa/streamlink.git
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/chrippa/streamlink">Development version (git)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone git://github.com/chrippa/streamlink.git
+<span class="gp">$</span> <span class="nb">cd</span> streamlink
+<span class="gp">#</span> python setup.py install
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<p>To install Streamlink from source you will need these dependencies.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://python.org/">Python</a></td>
+<td>At least version <strong>2.6</strong> or <strong>3.3</strong>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://pypi.python.org/pypi/setuptools">python-setuptools</a></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td colspan="2"><strong>Automatically installed by the setup script</strong></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://pypi.python.org/pypi/argparse">python-argparse</a></td>
+<td>Only needed on Python <strong>2.6</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://pypi.python.org/pypi/futures">python-futures</a></td>
+<td>Only needed on Python <strong>2.x</strong>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://python-requests.org/">python-requests</a></td>
+<td>At least version <strong>1.0</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://pypi.python.org/pypi/singledispatch">python-singledispatch</a></td>
+<td>Only needed on Python versions older than <strong>3.4</strong>.</td>
+</tr>
+<tr class="row-odd"><td colspan="2"><strong>Optional</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://rtmpdump.mplayerhq.hu/">RTMPDump</a></td>
+<td>Required to play RTMP streams.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.dlitz.net/software/pycrypto/">PyCrypto</a></td>
+<td>Required to play some encrypted streams.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/chrippa/python-librtmp">python-librtmp</a></td>
+<td>Required by the <em>ustreamtv</em> plugin to be
+able to use non-mobile streams.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="installing-without-root-permissions">
+<h3>Installing without root permissions<a class="headerlink" href="#installing-without-root-permissions" title="Permalink to this headline">¶</a></h3>
+<p>If you do not wish to install Streamlink globally on your system it&#8217;s
+recommended to use <a class="reference external" href="http://virtualenv.readthedocs.org/en/latest/">virtualenv</a> to create a user owned Python environment
+instead.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Creating an environment</span>
+<span class="gp">$</span> virtualenv ~/myenv
+
+<span class="go">Activating the environment</span>
+<span class="gp">$</span> <span class="nb">source</span> ~/myenv/bin/activate
+
+<span class="go">Installing streamlink into the environment</span>
+<span class="gp">(myenv)$</span> pip install streamlink
+
+<span class="go">Using streamlink in the enviroment</span>
+<span class="gp">(myenv)$</span> streamlink ...
+
+<span class="go">Deactivating the enviroment</span>
+<span class="gp">(myenv)$</span> deactivate
+
+<span class="go">Using streamlink without activating the environment</span>
+<span class="gp">$</span> ~/myenv/bin/streamlink ...
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This may also be required on some OS X versions that seems to have weird
+permission issues (see issue <a class="reference external" href="https://github.com/streamlink/streamlink/issues/401">#401</a>).</p>
+</div>
+</div>
+</div>
+<div class="section" id="windows-binaries">
+<h2>Windows binaries<a class="headerlink" href="#windows-binaries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installer">
+<h3><a class="reference external" href="https://github.com/chrippa/streamlink/releases/download/v1.14.0-rc1/streamlink-v1.14.0-rc1-win32-setup.exe">Installer</a><a class="headerlink" href="#installer" title="Permalink to this headline">¶</a></h3>
+<p>This is a installer which contains:</p>
+<ul class="simple">
+<li>A compiled version of Streamlink that does not require an existing Python
+installation</li>
+<li><a class="reference external" href="http://rtmpdump.mplayerhq.hu/">RTMPDump</a> for viewing RTMP streams</li>
+</ul>
+<p>and performs the following tasks:</p>
+<ul class="simple">
+<li>Generates a default <a class="reference internal" href="cli.html#cli-streamlinkrc"><span class="std std-ref">configuration file</span></a></li>
+<li>Adds Streamlink to your <code class="docutils literal"><span class="pre">$PATH</span></code> (making it possible to use
+<strong class="command">streamlink</strong> directly from the command prompt without specifying
+its directory)</li>
+</ul>
+</div>
+<div class="section" id="zip-archive">
+<h3><a class="reference external" href="https://github.com/chrippa/streamlink/releases/download/v1.14.0-rc1/streamlink-v1.14.0-rc1-win32.zip">Zip archive</a><a class="headerlink" href="#zip-archive" title="Permalink to this headline">¶</a></h3>
+<p>This is minimal zip archive containing a compiled version of Streamlink that
+does not require an existing Python installation.</p>
+</div>
+<div class="section" id="nightly-build">
+<h3><a class="reference external" href="http://streamlink-builds.s3.amazonaws.com/streamlink-latest-win32.zip">Nightly build</a><a class="headerlink" href="#nightly-build" title="Permalink to this headline">¶</a></h3>
+<p>This is an automatically generated build of the latest development code
+from the git repo.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The binaries requires <a class="reference external" href="http://www.microsoft.com/en-us/download/details.aspx?id=29">Microsoft Visual C++ 2008 Redistributable
+Package</a> to
+be installed.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cli.html" class="btn btn-neutral float-right" title="Command-Line Interface">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Overview"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2011-2015, Christopher Rosell.
+    </p>
+  </div>
+
+  <a href="https://github.com/chrippa/sphinx_rtd_theme_violet">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.14.0-rc1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+  <script type="text/javascript" src="_static/js/scrollspy.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+
+
+  
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+   
+
+</body>
+</html>

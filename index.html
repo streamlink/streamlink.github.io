@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; Streamlink 1.14.0-rc1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+    <link rel="top" title="Streamlink 1.14.0-rc1 documentation" href="#"/>
+        <link rel="next" title="Installation" href="install.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document" data-spy="scroll" data-target=".wy-menu-vertical > ul > li.current > ul">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="#" class="fa fa-home"> Streamlink</a>
+        
+        <div class="tablet-hide">
+          <small>Command-line utility that extracts streams from various services and pipes them into a video player of choice.</small>
+          <hr />
+        </div>
+        
+
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd-packages">Linux and BSD packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#other-platforms">Other platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-usage">Plugin specific usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#sideloading-plugins">Sideloading plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#command-line-usage">Command-line usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="players.html#transport-modes">Transport modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#player-compatibility">Player compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#inspecting-streams">Inspecting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#session-object">Session object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streamlink">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-streamlink.plugin">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streams">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+
+
+      
+      <div class="tablet-hide">
+        <hr />
+		<p class="wy-text-center">
+	        <a href="https://github.com/streamlink/streamlink"
+			   class="github-button" data-icon="octicon-mark-github"
+		       data-count-href="/streamlink/streamlink/stargazers"
+			   data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+	        <a href="https://github.com/streamlink/streamlink/issues"
+			   class="github-button" data-icon="octicon-issue-opened">Issues</a>
+
+        </p>
+      </div>
+      
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Streamlink</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Overview</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>Streamlink is a <a class="reference internal" href="cli.html#cli"><span class="std std-ref">command-line utility</span></a> that pipes video streams
+from various services into a video player, such as <a class="reference external" href="http://videolan.org/">VLC</a>.
+The main purpose of Streamlink is to allow the user to avoid buggy and CPU
+heavy flash plugins but still be able to enjoy various streamed content.
+There is also an <a class="reference internal" href="api_guide.html#api-guide"><span class="std std-ref">API</span></a> available for developers who want access
+to the video stream data. This project was forked from Livestreamer, which is
+no longer maintained.</p>
+<ul class="simple">
+<li>Latest release: 1.14.0-rc1 (<a class="reference internal" href="changelog.html#changelog"><span class="std std-ref">Changelog</span></a>)</li>
+<li>GitHub: <a class="reference external" href="https://github.com/streamlink/streamlink">https://github.com/streamlink/streamlink</a></li>
+<li>Issue tracker: <a class="reference external" href="https://github.com/streamlink/streamlink/issues">https://github.com/streamlink/streamlink/issues</a></li>
+<li>PyPI: <a class="reference external" href="https://pypi.python.org/pypi/streamlink">https://pypi.python.org/pypi/streamlink</a></li>
+<li>Free software: Simplified BSD license</li>
+</ul>
+</div>
+<div class="section" id="features">
+<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<p>Streamlink is built upon a plugin system which allows support for new services
+to be easily added. Currently most of the big streaming services are supported,
+such as:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://dailymotion.com/live">Dailymotion</a></li>
+<li><a class="reference external" href="http://livestream.com">Livestream</a></li>
+<li><a class="reference external" href="http://twitch.tv">Twitch</a></li>
+<li><a class="reference external" href="http://ustream.tv">UStream</a></li>
+<li><a class="reference external" href="http://youtube.com">YouTube Live</a></li>
+</ul>
+<p>... and many more. A full list of plugins currently included can be found
+on the <a class="reference internal" href="plugin_matrix.html#plugin-matrix"><span class="std std-ref">Plugins</span></a> page.</p>
+</div>
+<div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<p>The default behaviour of Streamlink is to playback a stream in the default
+player (<a class="reference external" href="http://videolan.org/">VLC</a>).</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pip install streamlink
+<span class="gp">$</span> streamlink twitch.tv/day9tv best
+<span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
+<span class="go">[cli][info] Opening stream: source (hls)</span>
+<span class="go">[cli][info] Starting player: vlc</span>
+</pre></div>
+</div>
+<p>For more in-depth usage and install instructions see the <a class="reference internal" href="#user-guide">User guide</a>.</p>
+</div>
+<div class="section" id="user-guide">
+<h1>User guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<p>Streamlink is made up of two parts, a <a class="reference internal" href="cli.html#cli"><span class="std std-ref">Command-Line Interface</span></a> and a library <a class="reference internal" href="api.html#api"><span class="std std-ref">API</span></a>.
+See their respective sections for more information on how to use them.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd-packages">Linux and BSD packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#other-platforms">Other platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-usage">Plugin specific usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#sideloading-plugins">Sideloading plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#command-line-usage">Command-line usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="players.html#transport-modes">Transport modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#player-compatibility">Player compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#inspecting-streams">Inspecting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#session-object">Session object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streamlink">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-streamlink.plugin">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streams">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install.html" class="btn btn-neutral float-right" title="Installation">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2011-2015, Christopher Rosell.
+    </p>
+  </div>
+
+  <a href="https://github.com/chrippa/sphinx_rtd_theme_violet">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.14.0-rc1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+  <script type="text/javascript" src="_static/js/scrollspy.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+
+
+  
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+   
+
+</body>
+</html>
