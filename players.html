@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Players &mdash; Streamlink 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Streamlink 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Common issues" href="issues.html"/>
+        <link rel="prev" title="Plugins" href="plugin_matrix.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document" data-spy="scroll" data-target=".wy-menu-vertical > ul > li.current > ul">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Streamlink</a>
+        
+        <div class="tablet-hide">
+          <small>Command-line utility that extracts streams from various services and pipes them into a video player of choice.</small>
+          <hr />
+        </div>
+        
+
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd-packages">Linux and BSD packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#other-platforms">Other platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-usage">Plugin specific usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#sideloading-plugins">Sideloading plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#command-line-usage">Command-line usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#transport-modes">Transport modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#player-compatibility">Player compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#known-issues-and-workarounds">Known issues and workarounds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#inspecting-streams">Inspecting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#session-object">Session object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streamlink">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-streamlink.plugin">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streams">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+
+
+      
+      <div class="tablet-hide">
+        <hr />
+		<p class="wy-text-center">
+	        <a href="https://github.com/streamlink/streamlink"
+			   class="github-button" data-icon="octicon-mark-github"
+		       data-count-href="/streamlink/streamlink/stargazers"
+			   data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+	        <a href="https://github.com/streamlink/streamlink/issues"
+			   class="github-button" data-icon="octicon-issue-opened">Issues</a>
+
+        </p>
+      </div>
+      
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Streamlink</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Players</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="players">
+<span id="id1"></span><h1>Players<a class="headerlink" href="#players" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="transport-modes">
+<h2>Transport modes<a class="headerlink" href="#transport-modes" title="Permalink to this headline">¶</a></h2>
+<p>There are three different modes of transporting the stream to the player.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Standard input pipe</td>
+<td>This is the default behaviour when there are no other
+options specified.</td>
+</tr>
+<tr class="row-odd"><td>Named pipe (FIFO)</td>
+<td>Use the <a class="reference internal" href="cli.html#cmdoption--player-fifo"><code class="xref std std-option docutils literal"><span class="pre">--player-fifo</span></code></a> option to enable.</td>
+</tr>
+<tr class="row-even"><td>HTTP</td>
+<td>Use the <a class="reference internal" href="cli.html#cmdoption--player-http"><code class="xref std std-option docutils literal"><span class="pre">--player-http</span></code></a> or
+<a class="reference internal" href="cli.html#cmdoption--player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> options to enable.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="player-compatibility">
+<h2>Player compatibility<a class="headerlink" href="#player-compatibility" title="Permalink to this headline">¶</a></h2>
+<p>This is a list of video players and their compatibility with the transport
+modes.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="65%" />
+<col width="12%" />
+<col width="12%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Stdin Pipe</th>
+<th class="head">Named Pipe</th>
+<th class="head">HTTP</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://potplayer.daum.net">Daum Pot Player</a></td>
+<td>No</td>
+<td>No</td>
+<td>Yes <a class="footnote-reference" href="#id6" id="id2">[1]</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://mpc-hc.org/">MPC-HC</a></td>
+<td>Yes <a class="footnote-reference" href="#id7" id="id3">[2]</a></td>
+<td>No</td>
+<td>Yes <a class="footnote-reference" href="#id6" id="id4">[1]</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://mplayerhq.hu">MPlayer</a></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://mplayer2.org">MPlayer2</a></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://mpv.io">mpv</a></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://apple.com/quicktime">QuickTime</a></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://videolan.org">VLC media player</a></td>
+<td>Yes <a class="footnote-reference" href="#id8" id="id5">[3]</a></td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference internal" href="cli.html#cmdoption--player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> must be used.
+Using HTTP with players that rely on Windows&#8217; codecs to access HTTP
+streams may have a long startup time since Windows tend to do multiple
+HTTP requests and Streamlink will attempt to open the stream for each
+request.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Stdin requires MPC-HC 1.7 or newer.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td><p class="first">Some versions of VLC might be unable to use the stdin pipe and
+prints the error message:</p>
+<p>VLC is unable to open the MRL &#8216;fd://0&#8217;</p>
+<p class="last">Use one of the other transport methods instead to work around this.</p>
+</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="known-issues-and-workarounds">
+<h2>Known issues and workarounds<a class="headerlink" href="#known-issues-and-workarounds" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mpc-hc-reports-file-not-found">
+<h3>MPC-HC reports &#8220;File not found&#8221;<a class="headerlink" href="#mpc-hc-reports-file-not-found" title="Permalink to this headline">¶</a></h3>
+<p>Upgrading to version 1.7 or newer will solve this issue since reading data
+from standard input is not supported in version 1.6.x of MPC-HC.</p>
+</div>
+<div class="section" id="mpc-hc-only-plays-sound-on-twitch-streams">
+<h3>MPC-HC only plays sound on Twitch streams<a class="headerlink" href="#mpc-hc-only-plays-sound-on-twitch-streams" title="Permalink to this headline">¶</a></h3>
+<p>Twitch sometimes returns badly muxed streams which may confuse players. The
+following workaround was contributed by MPC-HC developer <a class="reference external" href="https://github.com/kasper93">&#64;kasper93</a>:</p>
+<blockquote>
+<div><em>To fix this problem go to options -&gt; internal filters -&gt; open splitter
+settings and increase &#8220;Stream Analysis Duration&#8221; this will let ffmpeg to
+properly detect all streams.</em></div></blockquote>
+<p>Using <a class="reference internal" href="cli.html#cmdoption--player-passthrough"><code class="xref std std-option docutils literal"><span class="pre">--player-passthrough</span> <span class="pre">hls</span></code></a> has also been
+reported to work.</p>
+</div>
+<div class="section" id="mplayer-tries-to-play-twitch-streams-at-the-wrong-fps">
+<h3>MPlayer tries to play Twitch streams at the wrong FPS<a class="headerlink" href="#mplayer-tries-to-play-twitch-streams-at-the-wrong-fps" title="Permalink to this headline">¶</a></h3>
+<p>This is a bug in MPlayer, using the MPlayer fork <a class="reference external" href="http://mpv.io">mpv</a> instead
+is recommended.</p>
+</div>
+<div class="section" id="vlc-hangs-when-buffering-and-no-playback-starts">
+<h3>VLC hangs when buffering and no playback starts<a class="headerlink" href="#vlc-hangs-when-buffering-and-no-playback-starts" title="Permalink to this headline">¶</a></h3>
+<p>Some versions of 64-bit VLC seem to be unable to read the stream created by
+rtmpdump. Using the 32-bit version of VLC might help.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="issues.html" class="btn btn-neutral float-right" title="Common issues">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="plugin_matrix.html" class="btn btn-neutral" title="Plugins"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Streamlink.
+    </p>
+  </div>
+
+  <a href="https://github.com/chrippa/sphinx_rtd_theme_violet">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+  <script type="text/javascript" src="_static/js/scrollspy.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+
+
+  
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+   
+
+</body>
+</html>
