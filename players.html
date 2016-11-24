@@ -209,12 +209,12 @@ modes.</p>
 <tr class="row-even"><td><a class="reference external" href="http://potplayer.daum.net">Daum Pot Player</a></td>
 <td>No</td>
 <td>No</td>
-<td>Yes <a class="footnote-reference" href="#id6" id="id2">[1]</a></td>
+<td>Yes <a class="footnote-reference" href="#id7" id="id2">[1]</a></td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="http://mpc-hc.org/">MPC-HC</a></td>
-<td>Yes <a class="footnote-reference" href="#id7" id="id3">[2]</a></td>
+<td>Yes <a class="footnote-reference" href="#id8" id="id3">[2]</a></td>
 <td>No</td>
-<td>Yes <a class="footnote-reference" href="#id6" id="id4">[1]</a></td>
+<td>Yes <a class="footnote-reference" href="#id7" id="id4">[1]</a></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="http://mplayerhq.hu">MPlayer</a></td>
 <td>Yes</td>
@@ -237,13 +237,18 @@ modes.</p>
 <td>No</td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="http://videolan.org">VLC media player</a></td>
-<td>Yes <a class="footnote-reference" href="#id8" id="id5">[3]</a></td>
+<td>Yes <a class="footnote-reference" href="#id9" id="id5">[3]</a></td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
+<tr class="row-odd"><td>OMXPlayer</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes <a class="footnote-reference" href="#id10" id="id6">[4]</a></td>
+</tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
+<table class="docutils footnote" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference internal" href="cli.html#cmdoption--player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> must be used.
@@ -253,13 +258,13 @@ HTTP requests and Streamlink will attempt to open the stream for each
 request.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
+<table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Stdin requires MPC-HC 1.7 or newer.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td><p class="first">Some versions of VLC might be unable to use the stdin pipe and
@@ -267,6 +272,14 @@ prints the error message:</p>
 <p>VLC is unable to open the MRL &#8216;fd://0&#8217;</p>
 <p class="last">Use one of the other transport methods instead to work around this.</p>
 </td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td><a class="reference internal" href="cli.html#cmdoption--player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> has been reported to work when also
+using the timeout option for omxplayer (see <a class="reference internal" href="#when-using-omxplayer-the-stream-stops-unexpectedly">When using OMXPlayer the
+stream stops unexpectedly</a>.)</td></tr>
 </tbody>
 </table>
 </div>
@@ -297,6 +310,11 @@ is recommended.</p>
 <h3>VLC hangs when buffering and no playback starts<a class="headerlink" href="#vlc-hangs-when-buffering-and-no-playback-starts" title="Permalink to this headline">¶</a></h3>
 <p>Some versions of 64-bit VLC seem to be unable to read the stream created by
 rtmpdump. Using the 32-bit version of VLC might help.</p>
+</div>
+<div class="section" id="when-using-omxplayer-the-stream-stops-unexpectedly">
+<h3>When using OMXPlayer the stream stops unexpectedly<a class="headerlink" href="#when-using-omxplayer-the-stream-stops-unexpectedly" title="Permalink to this headline">¶</a></h3>
+<p>When reading from a fifo pipe OMXPlayer will quit when there is no data, to fix
+this you can supply the timeout option to OMXPlayer using <a class="reference internal" href="cli.html#cmdoption--player"><code class="xref std std-option docutils literal"><span class="pre">--player</span> <span class="pre">&quot;omxplayer</span> <span class="pre">--timeout</span> <span class="pre">20&quot;</span></code></a>.</p>
 </div>
 </div>
 </div>
