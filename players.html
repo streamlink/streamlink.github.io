@@ -178,11 +178,11 @@
 options specified.</td>
 </tr>
 <tr class="row-odd"><td>Named pipe (FIFO)</td>
-<td>Use the <a class="reference internal" href="cli.html#cmdoption--player-fifo"><code class="xref std std-option docutils literal"><span class="pre">--player-fifo</span></code></a> option to enable.</td>
+<td>Use the <a class="reference internal" href="cli.html#cmdoption-n"><code class="xref std std-option docutils literal"><span class="pre">--player-fifo</span></code></a> option to enable.</td>
 </tr>
 <tr class="row-even"><td>HTTP</td>
-<td>Use the <a class="reference internal" href="cli.html#cmdoption--player-http"><code class="xref std std-option docutils literal"><span class="pre">--player-http</span></code></a> or
-<a class="reference internal" href="cli.html#cmdoption--player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> options to enable.</td>
+<td>Use the <a class="reference internal" href="cli.html#cmdoption-player-http"><code class="xref std std-option docutils literal"><span class="pre">--player-http</span></code></a> or
+<a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> options to enable.</td>
 </tr>
 </tbody>
 </table>
@@ -251,7 +251,7 @@ modes.</p>
 <table class="docutils footnote" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference internal" href="cli.html#cmdoption--player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> must be used.
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> must be used.
 Using HTTP with players that rely on Windows&#8217; codecs to access HTTP
 streams may have a long startup time since Windows tend to do multiple
 HTTP requests and Streamlink will attempt to open the stream for each
@@ -277,10 +277,10 @@ prints the error message:</p>
 <table class="docutils footnote" frame="void" id="id10" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td><a class="reference internal" href="cli.html#cmdoption--player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> has been reported to work for HLS
+<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td><a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> has been reported to work for HLS
 streams when also using the timeout option for omxplayer (see <a class="reference internal" href="#when-using-omxplayer-the-stream-stops-unexpectedly">When
 using OMXPlayer the stream stops unexpectedly</a>.) Other stream types
-may not work as expected, it is recommended that <a class="reference internal" href="cli.html#cmdoption--player-fifo"><code class="xref std std-option docutils literal"><span class="pre">--player-fifo</span></code></a> be
+may not work as expected, it is recommended that <a class="reference internal" href="cli.html#cmdoption-n"><code class="xref std std-option docutils literal"><span class="pre">--player-fifo</span></code></a> be
 used.</td></tr>
 </tbody>
 </table>
@@ -300,7 +300,7 @@ following workaround was contributed by MPC-HC developer <a class="reference ext
 <div><em>To fix this problem go to options -&gt; internal filters -&gt; open splitter
 settings and increase &#8220;Stream Analysis Duration&#8221; this will let ffmpeg to
 properly detect all streams.</em></div></blockquote>
-<p>Using <a class="reference internal" href="cli.html#cmdoption--player-passthrough"><code class="xref std std-option docutils literal"><span class="pre">--player-passthrough</span> <span class="pre">hls</span></code></a> has also been
+<p>Using <a class="reference internal" href="cli.html#cmdoption-player-passthrough"><code class="xref std std-option docutils literal"><span class="pre">--player-passthrough</span> <span class="pre">hls</span></code></a> has also been
 reported to work.</p>
 </div>
 <div class="section" id="mplayer-tries-to-play-twitch-streams-at-the-wrong-fps">
@@ -322,7 +322,7 @@ using a different player.</p>
 <div class="section" id="when-using-omxplayer-the-stream-stops-unexpectedly">
 <h3>When using OMXPlayer the stream stops unexpectedly<a class="headerlink" href="#when-using-omxplayer-the-stream-stops-unexpectedly" title="Permalink to this headline">¶</a></h3>
 <p>When reading from a fifo pipe OMXPlayer will quit when there is no data, to fix
-this you can supply the timeout option to OMXPlayer using <a class="reference internal" href="cli.html#cmdoption--player"><code class="xref std std-option docutils literal"><span class="pre">--player</span> <span class="pre">&quot;omxplayer</span> <span class="pre">--timeout</span> <span class="pre">20&quot;</span></code></a>.</p>
+this you can supply the timeout option to OMXPlayer using <a class="reference internal" href="cli.html#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span> <span class="pre">&quot;omxplayer</span> <span class="pre">--timeout</span> <span class="pre">20&quot;</span></code></a>.</p>
 </div>
 </div>
 </div>
