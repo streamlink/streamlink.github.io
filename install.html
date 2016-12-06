@@ -157,20 +157,14 @@
 </div>
           <div role="main">
             
-  <div class="admonition warning" id="install">
-<p class="first admonition-title">Warning</p>
-<p class="last">The information contained in this page is misleading. Streamlink has not yet
-been packaged and distributed. This page was simply converted from the
-previous documentation.</p>
-</div>
-<div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="installation">
+<span id="install"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="linux-and-bsd-packages">
 <h2>Linux and BSD packages<a class="headerlink" href="#linux-and-bsd-packages" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="46%" />
-<col width="54%" />
+<col width="43%" />
+<col width="57%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Distribution</th>
@@ -178,48 +172,17 @@ previous documentation.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><a class="reference external" href="https://archlinux.org/packages/?q=streamlink">Arch Linux (package)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pacman -S streamlink
+<tr class="row-even"><td><a class="reference external" href="https://aur.archlinux.org/packages/streamlink/">Arch Linux (aur)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pacaur -S streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (aur, git)</a></td>
-<td><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">Installing AUR packages</a></td>
-</tr>
-<tr class="row-even"><td><a class="reference external" href="http://crux.nu/portdb/?a=search&amp;q=streamlink">CRUX</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /usr/ports/contrib/streamlink
-<span class="gp">#</span> pkgmk -d -i
+<td><div class="first highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pacaur -S streamlink-git
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="https://packages.debian.org/search?keywords=streamlink&amp;searchon=names&amp;exact=1&amp;suite=all&amp;section=all">Debian</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install streamlink
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><a class="reference external" href="http://git.exherbo.org/summer/packages/media/streamlink/index.html">Exherbo Linux</a></td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="https://admin.fedoraproject.org/pkgdb/package/streamlink/">Fedora</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> dnf install streamlink
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><a class="reference external" href="http://www.freshports.org/multimedia/streamlink">FreeBSD (package)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg install multimedia/streamlink
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="http://www.freshports.org/multimedia/streamlink">FreeBSD (ports)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /usr/ports/multimedia/streamlink
-<span class="gp">#</span> make install clean
-</pre></div>
-</div>
+<p class="last"><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">Installing AUR packages</a></p>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://packages.gentoo.org/package/net-misc/streamlink">Gentoo Linux</a></td>
@@ -235,24 +198,22 @@ previous documentation.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="http://openports.se/multimedia/streamlink">OpenBSD (package)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg_add streamlink
+<tr class="row-even"><td><a class="reference external" href="https://git.solus-project.com/packages/streamlink/">Solus</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> eopkg install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://openports.se/multimedia/streamlink">OpenBSD (ports)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /usr/ports/multimedia/streamlink
-<span class="gp">#</span> make install clean
+<tr class="row-odd"><td><a class="reference external" href="http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu/pool/main/s/streamlink/">Ubuntu</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> add-apt-repository ppa:nilarimogard/webupd8
+<span class="gp">#</span> apt update
+<span class="gp">#</span> apt install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="http://slackbuilds.org/result/?search=streamlink">Slackware Linux</a></td>
-<td><a class="reference external" href="http://slackbuilds.org/howto/">Installing Slackbuilds</a></td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="http://packages.ubuntu.com/search?keywords=streamlink&amp;searchon=names&amp;exact=1&amp;suite=all&amp;section=all">Ubuntu</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install streamlink
+<tr class="row-even"><td><a class="reference external" href="https://github.com/voidlinux/void-packages/tree/master/srcpkgs/streamlink">Void</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> xbps-install streamlink
 </pre></div>
 </div>
 </td>
