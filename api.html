@@ -297,12 +297,12 @@ from this session object.</p>
 <p><strong>Available options</strong>:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="34%" />
-<col width="66%" />
+<col width="35%" />
+<col width="65%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>hds-live-edge</td>
-<td>(float) Specify the time live HDS
+<td>( float) Specify the time live HDS
 streams will start from the edge of
 stream, default: <code class="docutils literal"><span class="pre">10.0</span></code></td>
 </tr>
@@ -394,43 +394,47 @@ HTTP streams, default: <code class="docutils literal"><span class="pre">60.0</sp
 <td>(bool) Log errors from subprocesses to
 a file located in the temp directory</td>
 </tr>
-<tr class="row-even"><td>ringbuffer-size</td>
+<tr class="row-even"><td>subprocess-errorlog-path</td>
+<td>(str) Log errors from subprocesses to
+a specific file</td>
+</tr>
+<tr class="row-odd"><td>ringbuffer-size</td>
 <td>(int) The size of the internal ring
 buffer used by most stream types,
 default: <code class="docutils literal"><span class="pre">16777216</span></code> (16MB)</td>
 </tr>
-<tr class="row-odd"><td>rtmp-proxy</td>
+<tr class="row-even"><td>rtmp-proxy</td>
 <td>(str) Specify a proxy (SOCKS) that RTMP
 streams will use</td>
 </tr>
-<tr class="row-even"><td>rtmp-rtmpdump</td>
+<tr class="row-odd"><td>rtmp-rtmpdump</td>
 <td>(str) Specify the location of the
 rtmpdump executable used by RTMP streams,
 e.g. <code class="docutils literal"><span class="pre">/usr/local/bin/rtmpdump</span></code></td>
 </tr>
-<tr class="row-odd"><td>rtmp-timeout</td>
+<tr class="row-even"><td>rtmp-timeout</td>
 <td>(float) Timeout for reading data from
 RTMP streams, default: <code class="docutils literal"><span class="pre">60.0</span></code></td>
 </tr>
-<tr class="row-even"><td>stream-segment-attempts</td>
+<tr class="row-odd"><td>stream-segment-attempts</td>
 <td>(int) How many attempts should be done
 to download each segment, default: <code class="docutils literal"><span class="pre">3</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-odd"><td>stream-segment-threads</td>
+<tr class="row-even"><td>stream-segment-threads</td>
 <td>(int) The size of the thread pool used
 to download segments, default: <code class="docutils literal"><span class="pre">1</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-even"><td>stream-segment-timeout</td>
+<tr class="row-odd"><td>stream-segment-timeout</td>
 <td>(float) Segment connect and read
 timeout, default: <code class="docutils literal"><span class="pre">10.0</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-odd"><td>stream-timeout</td>
+<tr class="row-even"><td>stream-timeout</td>
 <td>(float) Timeout for reading data from
 stream, default: <code class="docutils literal"><span class="pre">60.0</span></code>.
 General option used by streams not
