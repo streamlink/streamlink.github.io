@@ -966,6 +966,41 @@ Takes precedence over subprocess-errorlog.</p>
 <p>Useful when debugging rtmpdump related issues.</p>
 </dd></dl>
 
+<dl class="option">
+<dt id="cmdoption-ffmpeg-ffmpeg">
+<code class="descname">--ffmpeg-ffmpeg</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-ffmpeg-ffmpeg" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFMPEG is used to access mux separate video and audio streams.
+You can specify the location of the ffmpeg executable if it is
+not in your PATH.</p>
+<p>Example: &#8220;/usr/local/bin/ffmpeg&#8221;</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ffmpeg-verbose">
+<code class="descname">--ffmpeg-verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ffmpeg-verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the console output from ffmpeg to the console</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ffmpeg-verbose-path">
+<code class="descname">--ffmpeg-verbose-path</code><code class="descclassname"> PATH</code><a class="headerlink" href="#cmdoption-ffmpeg-verbose-path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to write the output from the ffmpeg console</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ffmpeg-video-transcode">
+<code class="descname">--ffmpeg-video-transcode</code><code class="descclassname"> CODEC</code><a class="headerlink" href="#cmdoption-ffmpeg-video-transcode" title="Permalink to this definition">¶</a></dt>
+<dd><p>When muxing streams transcode the video to this CODEC, defaults to copy (no transcode)</p>
+<p>Example: &#8220;h264&#8221;</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ffmpeg-audio-transcode">
+<code class="descname">--ffmpeg-audio-transcode</code><code class="descclassname"> CODEC</code><a class="headerlink" href="#cmdoption-ffmpeg-audio-transcode" title="Permalink to this definition">¶</a></dt>
+<dd><p>When muxing streams transcode the audio to this CODEC, defaults to copy (no transcode)</p>
+<p>Example: &#8220;aac&#8221;</p>
+</dd></dl>
+
 </div>
 <div class="section" id="http-options">
 <h3>HTTP options<a class="headerlink" href="#http-options" title="Permalink to this headline">¶</a></h3>

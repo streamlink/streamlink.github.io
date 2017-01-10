@@ -361,8 +361,8 @@ manager, <strong class="command">easy_install</strong> the older package manager
 <p>To install Streamlink from source you will need these dependencies.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="42%" />
-<col width="58%" />
+<col width="40%" />
+<col width="60%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Name</th>
@@ -401,6 +401,10 @@ manager, <strong class="command">easy_install</strong> the older package manager
 <tr class="row-even"><td><a class="reference external" href="https://github.com/chrippa/python-librtmp">python-librtmp</a></td>
 <td>Required by the <em>ustreamtv</em> plugin to be
 able to use non-mobile streams.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a></td>
+<td>Required to play streams that are made up of separate
+audio and video streams, eg. YouTube 1080p+</td>
 </tr>
 </tbody>
 </table>
@@ -450,6 +454,7 @@ Windows Vista requires at least SP2 to be installed.</p>
 <li>A compiled version of Streamlink that does not require an existing Python
 installation</li>
 <li><a class="reference external" href="http://rtmpdump.mplayerhq.hu/">RTMPDump</a> for viewing RTMP streams</li>
+<li><a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a> for muxing streams</li>
 </ul>
 <p>and performs the following tasks:</p>
 <ul class="simple">
