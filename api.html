@@ -248,6 +248,23 @@ not specified.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="streamlink.Streamlink.resolve_url_no_redirect">
+<code class="descname">resolve_url_no_redirect</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url_no_redirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempts to find a plugin that can use this URL.</p>
+<p>The default protocol (http) will be prefixed to the URL if
+not specified.</p>
+<p>Raises <a class="reference internal" href="#streamlink.NoPluginError" title="streamlink.NoPluginError"><code class="xref py py-exc docutils literal"><span class="pre">NoPluginError</span></code></a> on failure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> &#8211; a URL to match against loaded plugins</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="streamlink.Streamlink.set_loglevel">
 <code class="descname">set_loglevel</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.set_loglevel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the log level used by this session.</p>
