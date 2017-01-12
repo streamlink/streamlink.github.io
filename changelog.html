@@ -158,6 +158,562 @@
             
   <div class="section" id="changelog">
 <span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-0-2-0-2016-12-16">
+<h2>streamlink 0.2.0 (2016-12-16)<a class="headerlink" href="#streamlink-0-2-0-2016-12-16" title="Permalink to this headline">¶</a></h2>
+<p>Release 0.2.0 of Streamlink!</p>
+<p>We&#8217;ve done numerous changes to plugins as well as fixed quite a few
+which were originally failing. Among these changes are updated docs as
+well as general UI/UX cleaning with console output.</p>
+<p>The main features are: - Additional plugins added - Plugin fixes -
+Cleaned up console output - Additional documentation (contribution,
+installation instructions)</p>
+<p>Again, thank you everyone whom contributed to this release! :D</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Beardypig</span> <span class="o">&lt;</span><span class="n">beardypig</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+      <span class="n">Turkish</span> <span class="n">Streams</span> <span class="n">Part</span> <span class="n">III</span> <span class="p">(</span><span class="c1">#292)</span>
+      <span class="n">coverage</span><span class="p">:</span> <span class="n">include</span> <span class="n">streamlink_cli</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">coverage</span><span class="p">,</span> <span class="n">but</span> <span class="n">exclude</span> <span class="n">the</span> <span class="n">vendored</span> <span class="n">packages</span> <span class="p">(</span><span class="c1">#302)</span>
+      <span class="n">Windows</span> <span class="n">command</span> <span class="n">line</span> <span class="n">parsing</span> <span class="n">fix</span> <span class="p">(</span><span class="c1">#300)</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">atresplayer</span><span class="p">:</span> <span class="n">add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">live</span> <span class="n">streams</span> <span class="n">on</span> <span class="n">atresplayer</span><span class="o">.</span><span class="n">com</span> <span class="p">(</span><span class="c1">#303)</span>
+      <span class="n">Turkish</span> <span class="n">Streams</span> <span class="n">IV</span> <span class="p">(</span><span class="c1">#305)</span>
+      <span class="n">Support</span> <span class="k">for</span> <span class="n">local</span> <span class="n">files</span> <span class="p">(</span><span class="c1">#304)</span>
+
+<span class="n">Charlie</span> <span class="n">Drage</span> <span class="o">&lt;</span><span class="n">charlie</span><span class="nd">@charliedrage</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Spelling</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">release</span> <span class="n">script</span>
+      <span class="n">Fix</span> <span class="n">issue</span> <span class="k">with</span> <span class="n">building</span> <span class="n">installer</span>
+
+<span class="n">Fishscene</span> <span class="o">&lt;</span><span class="n">fishscene</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">Updated</span> <span class="n">homepage</span>
+      <span class="n">Updated</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+      <span class="n">Fixed</span> <span class="nb">type</span> <span class="ow">in</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span><span class="o">.</span>
+
+<span class="n">Forrest</span> <span class="o">&lt;</span><span class="n">gravyboat</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">Modify</span> <span class="n">the</span> <span class="n">browser</span> <span class="n">redirect</span> <span class="p">(</span><span class="c1">#191)</span>
+      <span class="n">Update</span> <span class="n">client</span> <span class="n">ID</span> <span class="p">(</span><span class="c1">#241)</span>
+      <span class="n">Update</span> <span class="n">requests</span> <span class="n">version</span> <span class="n">after</span> <span class="n">bug</span> <span class="n">fix</span> <span class="p">(</span><span class="c1">#239)</span>
+
+<span class="n">Josip</span> <span class="n">Ponjavic</span> <span class="o">&lt;</span><span class="n">josipponjavic</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">NixOS</span> <span class="n">install</span> <span class="n">instructions</span>
+
+<span class="n">Simon</span> <span class="n">Bernier</span> <span class="n">St</span><span class="o">-</span><span class="n">Pierre</span> <span class="o">&lt;</span><span class="n">sbernierstpierre</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">add</span> <span class="n">contributing</span> <span class="n">guidelines</span>
+
+<span class="n">bastimeyer</span> <span class="o">&lt;</span><span class="n">mail</span><span class="nd">@bastimeyer</span><span class="o">.</span><span class="n">de</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">metadata</span> <span class="n">to</span> <span class="n">Windows</span> <span class="n">installer</span>
+
+<span class="n">beardypig</span> <span class="o">&lt;</span><span class="n">beardypig</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">25</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">nhkworld</span><span class="p">:</span> <span class="n">update</span> <span class="n">the</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">use</span> <span class="n">the</span> <span class="n">new</span> <span class="n">HLS</span> <span class="n">streams</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">picarto</span><span class="p">:</span> <span class="n">updated</span> <span class="n">the</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">use</span> <span class="n">the</span> <span class="n">new</span> <span class="n">javascript</span> <span class="ow">and</span> <span class="n">support</span> <span class="n">HLS</span> <span class="n">streams</span>
+      <span class="n">add</span> <span class="n">pycryptodome</span><span class="o">==</span><span class="mf">3.4</span><span class="o">.</span><span class="mi">3</span> <span class="n">to</span> <span class="n">the</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">dependencies</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">nineanime</span><span class="p">:</span> <span class="n">added</span> <span class="n">a</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">support</span> <span class="mi">9</span><span class="n">anime</span><span class="o">.</span><span class="n">to</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">nineanime</span><span class="p">:</span> <span class="n">update</span> <span class="n">the</span> <span class="n">plugin</span> <span class="n">matrix</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">docs</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">atv</span><span class="p">:</span> <span class="n">add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">the</span> <span class="n">live</span> <span class="n">stream</span> <span class="n">on</span> <span class="n">atv</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">tr</span>
+      <span class="n">include</span> <span class="n">omxplayer</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">players</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">documentation</span>
+      <span class="n">update</span> <span class="n">the</span> <span class="n">player</span> <span class="n">docs</span> <span class="k">with</span> <span class="n">findings</span> <span class="kn">from</span> <span class="nd">@Junior1544</span> <span class="ow">and</span> <span class="nd">@stevekmcc</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">bigo</span><span class="p">:</span> <span class="n">support</span> <span class="k">for</span> <span class="n">bigo</span><span class="o">.</span><span class="n">tv</span>
+      <span class="n">docs</span><span class="p">:</span> <span class="n">move</span> <span class="n">pycryptodome</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">automatically</span> <span class="n">installed</span> <span class="n">libraries</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">docs</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">dingittv</span><span class="p">:</span> <span class="n">add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">dingit</span><span class="o">.</span><span class="n">tv</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">crunchyroll</span><span class="p">:</span> <span class="n">support</span> <span class="n">ultra</span> <span class="n">quality</span> <span class="k">for</span> <span class="n">subscribers</span>
+      <span class="n">update</span> <span class="n">URL</span> <span class="k">for</span> <span class="n">docs</span> <span class="n">to</span> <span class="n">point</span> <span class="n">to</span> <span class="n">the</span> <span class="n">github</span><span class="o">.</span><span class="n">io</span> <span class="n">page</span>
+      <span class="n">stream</span><span class="o">.</span><span class="n">hls</span><span class="p">:</span> <span class="n">stream</span> <span class="n">the</span> <span class="n">HLS</span> <span class="n">segments</span> <span class="n">out</span> <span class="n">to</span> <span class="n">the</span> <span class="n">player</span> <span class="k">as</span> <span class="n">they</span> <span class="n">are</span> <span class="n">downloaded</span><span class="p">,</span> <span class="n">decrypting</span> <span class="n">on</span> <span class="n">the</span> <span class="n">fly</span>
+      <span class="n">installer</span><span class="p">:</span> <span class="n">install</span> <span class="n">the</span> <span class="n">required</span> <span class="n">MS</span> <span class="n">VC</span><span class="o">++</span> <span class="n">runtime</span> <span class="n">files</span> <span class="n">beside</span> <span class="n">the</span> <span class="n">python</span> <span class="n">installation</span> <span class="p">(</span><span class="n">see</span> <span class="n">takluyver</span><span class="o">/</span><span class="n">pynsist</span><span class="o">/</span><span class="n">pull</span><span class="o">/</span><span class="mi">87</span><span class="p">)</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">bigo</span><span class="p">:</span> <span class="n">FlashVars</span> <span class="n">regex</span> <span class="n">updated</span> <span class="n">due</span> <span class="n">to</span> <span class="n">site</span> <span class="n">change</span>
+      <span class="n">add</span> <span class="n">some</span> <span class="n">license</span> <span class="n">notices</span> <span class="k">for</span> <span class="n">the</span> <span class="n">bundled</span> <span class="n">libraries</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">youtube</span><span class="p">:</span> <span class="n">support</span> <span class="n">additional</span> <span class="n">live</span> <span class="n">urls</span>
+      <span class="n">add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">a</span> <span class="n">few</span> <span class="n">Turkish</span> <span class="n">live</span> <span class="n">streams</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">foxtr</span><span class="p">:</span> <span class="n">add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">turkish</span> <span class="n">fox</span> <span class="n">live</span> <span class="n">streams</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">kralmuzik</span><span class="p">:</span> <span class="n">basic</span> <span class="n">support</span> <span class="k">for</span> <span class="n">the</span> <span class="n">HLS</span> <span class="n">stream</span> <span class="n">only</span>
+      <span class="n">stream</span><span class="o">.</span><span class="n">hds</span><span class="p">:</span> <span class="n">added</span> <span class="n">option</span> <span class="n">to</span> <span class="n">force</span> <span class="n">akamai</span> <span class="n">authentication</span> <span class="n">plugins</span><span class="o">.</span><span class="n">startv</span><span class="p">:</span> <span class="n">refactored</span> <span class="ow">in</span> <span class="n">to</span> <span class="n">a</span> <span class="n">base</span> <span class="n">class</span><span class="p">,</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">other</span> <span class="n">plugins</span> <span class="n">that</span> <span class="n">use</span> <span class="n">the</span> <span class="n">same</span> <span class="n">hosting</span> <span class="k">as</span> <span class="n">StarTV</span> <span class="n">plugins</span><span class="o">.</span><span class="n">kralmuzik</span><span class="p">:</span> <span class="n">refactored</span> <span class="n">to</span> <span class="n">use</span> <span class="n">StarTVBase</span> <span class="n">plugins</span><span class="o">.</span><span class="n">ntv</span><span class="p">:</span> <span class="n">added</span> <span class="n">NTV</span> <span class="n">support</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">atv</span><span class="p">:</span> <span class="n">add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">a2tv</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">very</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">atv</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">dogan</span><span class="p">:</span> <span class="n">support</span> <span class="k">for</span> <span class="n">teve2</span><span class="p">,</span> <span class="n">kanald</span><span class="p">,</span> <span class="n">dreamtv</span><span class="p">,</span> <span class="ow">and</span> <span class="n">ccnturk</span> <span class="n">via</span> <span class="n">the</span> <span class="n">same</span> <span class="n">plugin</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">trt</span><span class="p">:</span> <span class="n">added</span> <span class="n">support</span> <span class="k">for</span> <span class="n">the</span> <span class="n">live</span> <span class="n">channels</span> <span class="n">on</span> <span class="n">trt</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">tr</span>
+
+<span class="n">che</span> <span class="o">&lt;</span><span class="n">che27012011</span><span class="nd">@googlemail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">twitch</span><span class="p">:</span> <span class="n">support</span> <span class="k">for</span> <span class="n">clips</span> <span class="n">added</span>
+
+<span class="n">ioblank</span> <span class="o">&lt;</span><span class="n">iosonoblank</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Use</span> <span class="n">ConsoleOutput</span> <span class="k">for</span> <span class="n">run</span><span class="o">-</span><span class="k">as</span><span class="o">-</span><span class="n">root</span> <span class="n">warning</span>
+
+<span class="n">mmetak</span> <span class="o">&lt;</span><span class="n">mmetak</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">install</span> <span class="n">instruction</span> <span class="p">(</span><span class="c1">#257)</span>
+      <span class="n">Add</span> <span class="n">links</span> <span class="k">for</span> <span class="n">windows</span> <span class="n">portable</span> <span class="n">version</span><span class="o">.</span> <span class="p">(</span><span class="c1">#299)</span>
+      <span class="n">Add</span> <span class="n">package</span> <span class="n">maintainers</span> <span class="n">to</span> <span class="n">docs</span><span class="o">.</span> <span class="p">(</span><span class="c1">#301)</span>
+
+<span class="n">thatlinuxfur</span> <span class="o">&lt;</span><span class="n">toss1</span><span class="nd">@zootboy</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Added</span> <span class="n">tigerdile</span><span class="o">.</span><span class="n">com</span> <span class="n">support</span><span class="o">.</span> <span class="p">(</span><span class="c1">#221)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="streamlink-0-1-0-2016-11-21">
+<h2>streamlink 0.1.0 (2016-11-21)<a class="headerlink" href="#streamlink-0-1-0-2016-11-21" title="Permalink to this headline">¶</a></h2>
+<p>A major update to Streamlink.</p>
+<p>With this release, we include a Windows binary as well as numerous
+plugin changes and fixes.</p>
+<p>The main features are:</p>
+<ul class="simple">
+<li>Windows binary (and generation!) thanks to the fabulous work by
+<a class="reference external" href="https://github.com/beardypig">&#64;beardypig</a></li>
+<li>Multiple plugin fixes</li>
+<li>Remove unneeded run-as-root (no more warning you when you run as
+root, we trust that you know what you&#8217;re doing)</li>
+<li>Fix stream quality naming issue</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Beardypig</span> <span class="o">&lt;</span><span class="n">beardypig</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">13</span><span class="p">):</span>
+      <span class="n">fix</span> <span class="n">stream</span> <span class="n">quality</span> <span class="n">naming</span> <span class="n">issue</span> <span class="k">with</span> <span class="n">py2</span> <span class="n">vs</span><span class="o">.</span> <span class="n">py3</span><span class="p">,</span> <span class="n">fixing</span> <span class="c1">#89 (#96)</span>
+      <span class="n">updated</span> <span class="n">connectcast</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">support</span> <span class="n">the</span> <span class="n">new</span> <span class="n">rtmp</span> <span class="n">streams</span><span class="p">;</span> <span class="n">fixes</span> <span class="c1">#93 (#95)</span>
+      <span class="n">Fix</span> <span class="k">for</span> <span class="n">erroneous</span> <span class="n">escape</span> <span class="n">coding</span> <span class="n">the</span> <span class="n">livecoding</span> <span class="n">plugin</span><span class="o">.</span> <span class="n">Fixes</span> <span class="c1">#106 (#121)</span>
+      <span class="n">TVPlayer</span><span class="o">.</span><span class="n">com</span><span class="p">:</span> <span class="n">fix</span> <span class="k">for</span> <span class="mi">400</span> <span class="n">error</span><span class="p">,</span> <span class="n">correctly</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">platform</span> <span class="n">parameter</span> <span class="p">(</span><span class="c1">#123)</span>
+      <span class="n">Added</span> <span class="n">a</span> <span class="n">method</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">determine</span> <span class="n">the</span> <span class="n">encoding</span> <span class="n">when</span> <span class="n">parsing</span> <span class="n">JSON</span><span class="p">,</span> <span class="k">if</span> <span class="n">no</span> <span class="n">encoding</span> <span class="ow">is</span> <span class="n">provided</span><span class="o">.</span> <span class="p">(</span><span class="c1">#122)</span>
+      <span class="n">when</span> <span class="n">retry</span><span class="o">-</span><span class="n">streams</span> <span class="ow">and</span> <span class="n">twitch</span><span class="o">-</span><span class="n">disable</span><span class="o">-</span><span class="n">hosting</span> <span class="n">arguments</span> <span class="n">are</span> <span class="n">used</span> <span class="n">the</span> <span class="n">stream</span> <span class="ow">is</span> <span class="n">retried</span> <span class="n">until</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">hosted</span> <span class="n">stream</span> <span class="ow">is</span> <span class="n">found</span> <span class="p">(</span><span class="c1">#125)</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">goodgame</span><span class="p">:</span> <span class="n">Update</span> <span class="k">for</span> <span class="n">API</span> <span class="n">change</span> <span class="p">(</span><span class="c1">#130)</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">adultswim</span><span class="p">:</span> <span class="n">added</span> <span class="n">a</span> <span class="n">new</span> <span class="n">adultswim</span><span class="o">.</span><span class="n">com</span> <span class="n">plugin</span> <span class="p">(</span><span class="c1">#139)</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">goodgame</span><span class="p">:</span> <span class="n">restored</span> <span class="n">DDOS</span> <span class="n">protection</span> <span class="n">cookie</span> <span class="n">support</span> <span class="p">(</span><span class="c1">#136)</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">younow</span><span class="p">:</span> <span class="n">update</span> <span class="n">API</span> <span class="n">url</span> <span class="p">(</span><span class="c1">#135)</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">euronew</span><span class="p">:</span> <span class="n">update</span> <span class="n">to</span> <span class="n">support</span> <span class="n">the</span> <span class="n">new</span> <span class="n">site</span> <span class="p">(</span><span class="c1">#141)</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">webtv</span><span class="p">:</span> <span class="n">added</span> <span class="n">a</span> <span class="n">new</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">support</span> <span class="n">web</span><span class="o">.</span><span class="n">tv</span> <span class="p">(</span><span class="c1">#144)</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">connectcast</span><span class="p">:</span> <span class="n">fix</span> <span class="n">regex</span> <span class="n">issue</span> <span class="k">with</span> <span class="n">python</span> <span class="mi">3</span> <span class="p">(</span><span class="c1">#152)</span>
+
+<span class="n">Brainzyy</span> <span class="o">&lt;</span><span class="n">Brainzyy</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">piczel</span><span class="o">.</span><span class="n">tv</span> <span class="n">plugin</span> <span class="p">(</span><span class="n">courtesy</span> <span class="n">of</span> <span class="nd">@intact</span><span class="p">)</span> <span class="p">(</span><span class="c1">#114)</span>
+
+<span class="n">Charlie</span> <span class="n">Drage</span> <span class="o">&lt;</span><span class="n">charlie</span><span class="nd">@charliedrage</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">release</span> <span class="n">scripts</span>
+
+<span class="n">Erk</span><span class="o">-</span> <span class="o">&lt;</span><span class="n">Erk</span><span class="o">-</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Changed</span> <span class="n">the</span> <span class="n">twitch</span> <span class="n">plugin</span> <span class="n">to</span> <span class="n">use</span> <span class="n">https</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">http</span> <span class="k">as</span> <span class="n">discussed</span> <span class="ow">in</span> <span class="c1">#103 (#104)</span>
+
+<span class="n">Forrest</span> <span class="o">&lt;</span><span class="n">gravyboat</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Modify</span> <span class="n">the</span> <span class="n">changelog</span> <span class="n">link</span> <span class="p">(</span><span class="c1">#107)</span>
+      <span class="n">Update</span> <span class="n">cli</span> <span class="n">to</span> <span class="n">note</span> <span class="n">a</span> <span class="n">few</span> <span class="n">windows</span> <span class="n">issues</span> <span class="p">(</span><span class="c1">#108)</span>
+
+<span class="n">Simon</span> <span class="n">Bernier</span> <span class="n">St</span><span class="o">-</span><span class="n">Pierre</span> <span class="o">&lt;</span><span class="n">sbernierstpierre</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">change</span> <span class="n">icon</span>
+
+<span class="n">Simon</span> <span class="n">Bernier</span> <span class="n">St</span><span class="o">-</span><span class="n">Pierre</span> <span class="o">&lt;</span><span class="n">sbstp</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">finish</span> <span class="n">the</span> <span class="n">installer</span> <span class="p">(</span><span class="c1">#98)</span>
+
+<span class="n">Stefan</span> <span class="o">&lt;</span><span class="n">stefan</span><span class="o">-</span><span class="n">github</span><span class="nd">@yrden</span><span class="o">.</span><span class="n">de</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Debian</span> <span class="n">packaging</span> <span class="n">base</span> <span class="p">(</span><span class="c1">#80)</span>
+
+<span class="n">Stefan</span> <span class="o">&lt;</span><span class="n">stefanhani</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">remove</span> <span class="n">run</span><span class="o">-</span><span class="k">as</span><span class="o">-</span><span class="n">root</span> <span class="n">option</span><span class="p">,</span> <span class="n">reworded</span> <span class="n">warning</span> <span class="c1">#85 (#109)</span>
+
+<span class="n">Weslly</span> <span class="o">&lt;</span><span class="n">weslly</span><span class="o">.</span><span class="n">honorato</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Fixed</span> <span class="n">afreecatv</span><span class="o">.</span><span class="n">com</span> <span class="n">url</span> <span class="n">matching</span> <span class="p">(</span><span class="c1">#90)</span>
+
+<span class="n">bastimeyer</span> <span class="o">&lt;</span><span class="n">mail</span><span class="nd">@bastimeyer</span><span class="o">.</span><span class="n">de</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Improve</span> <span class="n">NSIS</span> <span class="n">installer</span> <span class="n">script</span>
+      <span class="n">Remove</span> <span class="n">shortcut</span> <span class="kn">from</span> <span class="nn">previous</span> <span class="n">releases</span> <span class="n">on</span> <span class="n">Windows</span>
+
+<span class="n">beardypig</span> <span class="o">&lt;</span><span class="n">beardypig</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">cybergame</span><span class="p">:</span> <span class="n">update</span> <span class="n">to</span> <span class="n">support</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">the</span> <span class="n">live</span> <span class="n">streams</span> <span class="n">on</span> <span class="n">the</span> <span class="n">cybergame</span><span class="o">.</span><span class="n">tv</span> <span class="n">website</span>
+      <span class="n">Use</span> <span class="n">pycryptodome</span> <span class="n">inplace</span> <span class="n">of</span> <span class="n">pyCrypto</span>
+      <span class="n">Automated</span> <span class="n">build</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Windows</span> <span class="n">NSIS</span> <span class="n">installer</span>
+      <span class="n">support</span> <span class="k">for</span> <span class="n">relative</span> <span class="n">paths</span> <span class="k">for</span> <span class="n">rtmpdump</span>
+      <span class="n">makeinstaller</span><span class="p">:</span> <span class="n">install</span> <span class="n">the</span> <span class="n">streamlinkrc</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">to</span> <span class="n">the</span> <span class="n">users</span> <span class="o">%</span><span class="n">APPDATA</span><span class="o">%</span> <span class="n">directory</span>
+      <span class="n">remove</span> <span class="n">references</span> <span class="n">to</span> <span class="n">livestreamer</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">win32</span> <span class="n">config</span> <span class="n">template</span>
+      <span class="n">stream</span><span class="o">.</span><span class="n">rtmpdump</span><span class="p">:</span> <span class="n">fixed</span> <span class="n">the</span> <span class="n">rtmpdump</span> <span class="n">path</span> <span class="n">issue</span><span class="p">,</span> <span class="n">introduced</span> <span class="ow">in</span> <span class="mi">6</span><span class="n">bf7fd7</span>
+      <span class="n">pin</span> <span class="n">requests</span> <span class="n">to</span> <span class="o">&lt;</span><span class="mf">2.12</span><span class="o">.</span><span class="mi">0</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">the</span> <span class="n">strict</span> <span class="n">IDNA2008</span> <span class="n">validation</span>
+
+<span class="n">ethanhlc</span> <span class="o">&lt;</span><span class="n">ethanhlc</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">fixed</span> <span class="n">instance</span> <span class="n">of</span> <span class="n">livestreamer</span> <span class="p">(</span><span class="c1">#99)</span>
+
+<span class="n">intact</span> <span class="o">&lt;</span><span class="n">intact</span><span class="o">.</span><span class="n">devel</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">livestream</span><span class="p">:</span> <span class="n">Support</span> <span class="n">old</span> <span class="n">player</span> <span class="n">urls</span>
+
+<span class="n">mmetak</span> <span class="o">&lt;</span><span class="n">mmetak</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">fix</span> <span class="n">vaughnlive</span><span class="o">.</span><span class="n">tv</span> <span class="n">info_url</span> <span class="p">(</span><span class="c1">#88)</span>
+      <span class="n">fix</span> <span class="n">vaughnlive</span><span class="o">.</span><span class="n">tv</span> <span class="n">info_url</span> <span class="p">(</span><span class="n">yet</span> <span class="n">again</span><span class="o">...</span><span class="p">)</span> <span class="p">(</span><span class="c1">#143)</span>
+
+<span class="n">skulblakka</span> <span class="o">&lt;</span><span class="n">pascal</span><span class="o">.</span><span class="n">romahn</span><span class="nd">@mailbox</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Overworked</span> <span class="n">Plugin</span> <span class="k">for</span> <span class="n">ZDF</span> <span class="n">Mediathek</span> <span class="p">(</span><span class="c1">#154)</span>
+
+<span class="n">sqrt2</span> <span class="o">&lt;</span><span class="n">sqrt2</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Fix</span> <span class="n">ORF</span> <span class="n">TVthek</span> <span class="n">plugin</span> <span class="p">(</span><span class="c1">#113)</span>
+
+<span class="n">tam1m</span> <span class="o">&lt;</span><span class="n">tam1m</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Fix</span> <span class="n">zdf_mediathek</span> <span class="ne">TypeError</span> <span class="p">(</span><span class="c1">#156)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="streamlink-0-0-2-2016-10-12">
+<h2>streamlink 0.0.2 (2016-10-12)<a class="headerlink" href="#streamlink-0-0-2-2016-10-12" title="Permalink to this headline">¶</a></h2>
+<p>The second ever release of Streamlink!</p>
+<p>In this release we&#8217;ve not only set the stepping stone for the further
+development of Streamlink (documentation site updated, CI builds
+working) but we&#8217;re already fixing bugs and implementing features past
+the initial fork of livestreamer.</p>
+<p>The main features of this release are: - New windows build available and
+generated via pyinstaller - Multiple provider bug fixes (twitch,
+picarto, itvplayer, crunchyroll, periscope, douyutv) - Updated and
+reformed documentation which also includes our site
+<a class="reference external" href="https://streamlink.github.io">https://streamlink.github.io</a></p>
+<p>As always, below is a <code class="docutils literal"><span class="pre">git</span> <span class="pre">shortlog</span></code> of all changes from the previous
+release of Streamlink (0.0.1) to now (0.0.2).</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Brainzyy</span> <span class="o">&lt;</span><span class="n">Brainzyy</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">add</span> <span class="n">stream</span><span class="o">.</span><span class="n">me</span> <span class="n">to</span> <span class="n">the</span> <span class="n">docs</span>
+
+<span class="n">Charlie</span> <span class="n">Drage</span> <span class="o">&lt;</span><span class="n">charlie</span><span class="nd">@charliedrage</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">script</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">authors</span> <span class="nb">list</span> <span class="o">/</span> <span class="n">update</span> <span class="n">authors</span>
+      <span class="n">Add</span> <span class="n">release</span> <span class="n">script</span>
+      <span class="n">Get</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">ready</span> <span class="k">for</span> <span class="n">a</span> <span class="n">release</span><span class="o">.</span>
+      <span class="n">Revert</span> <span class="s2">&quot;Latest fix to plugin from livestreamer&quot;</span>
+      <span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span> <span class="n">Release</span>
+      <span class="n">Update</span> <span class="n">the</span> <span class="n">README</span> <span class="k">with</span> <span class="n">installation</span> <span class="n">notes</span>
+      <span class="n">Update</span> <span class="n">copyright</span> <span class="n">author</span>
+      <span class="n">Update</span> <span class="n">plugin</span> <span class="n">description</span> <span class="n">on</span> <span class="n">README</span>
+      <span class="n">It</span><span class="s1">&#39;s now 2016</span>
+
+<span class="n">Forrest</span> <span class="o">&lt;</span><span class="n">gravyboat</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">a</span> <span class="n">coverage</span> <span class="n">file</span> <span class="p">(</span><span class="c1">#54)</span>
+
+<span class="n">Forrest</span> <span class="n">Alvarez</span> <span class="o">&lt;</span><span class="n">forrest</span><span class="o">.</span><span class="n">alvarez</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+      <span class="n">Modify</span> <span class="n">release</span> <span class="k">for</span> <span class="n">streamlink</span>
+      <span class="n">Remove</span> <span class="n">faraday</span> <span class="kn">from</span> <span class="nn">travis</span> <span class="n">run</span>
+      <span class="n">Remove</span> <span class="n">tox</span>
+      <span class="n">Add</span> <span class="n">the</span> <span class="n">code</span> <span class="n">coverage</span> <span class="n">badge</span>
+
+<span class="n">Latent</span> <span class="n">Logic</span> <span class="o">&lt;</span><span class="n">lat</span><span class="o">.</span><span class="n">logic</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Picarto</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">multistream</span> <span class="n">workaround</span> <span class="p">(</span><span class="n">fixes</span> <span class="c1">#50)</span>
+
+<span class="n">Maschmi</span> <span class="o">&lt;</span><span class="n">Maschmi</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">added</span> <span class="n">travis</span> <span class="n">build</span> <span class="n">status</span> <span class="n">badge</span> <span class="n">fixes</span> <span class="c1">#74 (#76)</span>
+
+<span class="n">Randy</span> <span class="n">Taylor</span> <span class="o">&lt;</span><span class="n">tehgecKozzz</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Fix</span> <span class="n">typo</span> <span class="ow">in</span> <span class="n">issues</span> <span class="n">docs</span> <span class="ow">and</span> <span class="n">improve</span> <span class="n">wording</span> <span class="p">(</span><span class="c1">#61)</span>
+
+<span class="n">Simon</span> <span class="n">Bernier</span> <span class="n">St</span><span class="o">-</span><span class="n">Pierre</span> <span class="o">&lt;</span><span class="n">sbernierstpierre</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+      <span class="n">add</span> <span class="n">script</span> <span class="n">to</span> <span class="n">build</span> <span class="o">&amp;</span> <span class="n">copy</span> <span class="n">the</span> <span class="n">docs</span>
+      <span class="n">move</span> <span class="n">makedocs</span><span class="o">.</span><span class="n">sh</span> <span class="n">to</span> <span class="n">script</span><span class="o">/</span>
+      <span class="n">Automated</span> <span class="n">docs</span> <span class="n">updates</span> <span class="n">via</span> <span class="n">travis</span><span class="o">-</span><span class="n">ci</span>
+      <span class="n">prevent</span> <span class="n">the</span> <span class="n">build</span> <span class="kn">from</span> <span class="nn">hanging</span>
+      <span class="n">fix</span> <span class="n">automated</span> <span class="n">commit</span> <span class="n">message</span>
+      <span class="n">add</span> <span class="n">streamboat</span> <span class="n">to</span> <span class="n">the</span> <span class="n">docs</span>
+      <span class="n">disable</span> <span class="n">docs</span> <span class="n">on</span> <span class="n">pull</span> <span class="n">requests</span>
+      <span class="n">twitch</span><span class="o">.</span><span class="n">tv</span><span class="p">:</span> <span class="n">add</span> <span class="n">option</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">hosting</span>
+
+<span class="n">Simon</span> <span class="n">Bernier</span> <span class="n">St</span><span class="o">-</span><span class="n">Pierre</span> <span class="o">&lt;</span><span class="n">sbstp</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Don</span><span class="s1">&#39;t delete everything if docs build fail (#62)</span>
+      <span class="n">Create</span> <span class="n">install</span> <span class="n">script</span> <span class="k">for</span> <span class="n">pynsist</span> <span class="p">(</span><span class="c1">#27)</span>
+
+<span class="n">beardypig</span> <span class="o">&lt;</span><span class="n">beardypig</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">TVPlayer</span> <span class="n">plugin</span> <span class="n">supports</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">version</span> <span class="n">of</span> <span class="n">the</span> <span class="n">website</span>
+      <span class="n">crunchyroll</span><span class="p">:</span> <span class="n">decide</span> <span class="k">if</span> <span class="n">to</span> <span class="n">parse</span> <span class="n">the</span> <span class="n">stream</span> <span class="n">links</span> <span class="k">as</span> <span class="n">HLS</span> <span class="n">variant</span> <span class="n">playlist</span> <span class="ow">or</span> <span class="n">plain</span> <span class="n">old</span> <span class="n">HLS</span> <span class="n">stream</span> <span class="p">(</span><span class="n">fixes</span> <span class="c1">#70)</span>
+      <span class="n">itvplayer</span><span class="p">:</span> <span class="n">updated</span> <span class="n">the</span> <span class="n">productionId</span> <span class="n">extraction</span> <span class="n">method</span>
+
+<span class="n">boda2004</span> <span class="o">&lt;</span><span class="n">boda2004</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">fixed</span> <span class="n">periscope</span> <span class="n">live</span> <span class="n">streaming</span> <span class="ow">and</span> <span class="n">allowed</span> <span class="n">url</span> <span class="n">re</span> <span class="p">(</span><span class="c1">#79)</span>
+
+<span class="n">ethanhlc</span> <span class="o">&lt;</span><span class="n">sakithree</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">fixed</span> <span class="n">instances</span> <span class="n">of</span> <span class="n">chrippa</span><span class="o">/</span><span class="n">streamlink</span> <span class="n">to</span> <span class="n">streamlink</span><span class="o">/</span><span class="n">streamlink</span>
+
+<span class="n">scottbernstein</span> <span class="o">&lt;</span><span class="n">scott_bernstein</span><span class="nd">@hotmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Latest</span> <span class="n">fix</span> <span class="n">to</span> <span class="n">plugin</span> <span class="kn">from</span> <span class="nn">livestreamer</span>
+
+<span class="n">steven7851</span> <span class="o">&lt;</span><span class="n">steven7851</span><span class="nd">@msn</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">plugin</span><span class="o">.</span><span class="n">douyutv</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="streamlink-0-0-1-2016-09-23">
+<h2>streamlink 0.0.1 (2016-09-23)<a class="headerlink" href="#streamlink-0-0-1-2016-09-23" title="Permalink to this headline">¶</a></h2>
+<p>The first release of Streamlink!</p>
+<p>This is the first release from the initial fork of Livestreamer. We aim
+to have a concise, fast review process and progress in terms of
+development and future releases.</p>
+<p>Below is a <code class="docutils literal"><span class="pre">git</span> <span class="pre">shortlog</span></code> of all commits since the last change within
+Livestream (hash ab80dbd6560f6f9835865b2fc9f9c6015aee5658). This will
+serve as a base-point as we continue development of &#8220;Streamlink&#8221;.</p>
+<p>New releases will include a list of changes as we add new features /
+code refactors to the existing code-base.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Agustin</span> <span class="n">Carrasco</span> <span class="o">&lt;</span><span class="n">asermax</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">crunchyroll</span><span class="p">:</span> <span class="n">added</span> <span class="n">support</span> <span class="k">for</span> <span class="n">locale</span> <span class="n">selection</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">crunchyroll</span><span class="p">:</span> <span class="n">use</span> <span class="n">locale</span> <span class="n">parameter</span> <span class="n">on</span> <span class="n">the</span> <span class="n">header</span><span class="s1">&#39;s user-agent as well</span>
+
+<span class="n">Alan</span> <span class="n">Love</span> <span class="o">&lt;</span><span class="n">alan</span><span class="nd">@cattes</span><span class="o">.</span><span class="n">us</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">added</span> <span class="n">support</span> <span class="k">for</span> <span class="n">livecoding</span><span class="o">.</span><span class="n">tv</span>
+      <span class="n">removed</span> <span class="n">printing</span>
+      <span class="n">updated</span> <span class="n">plugin</span> <span class="n">matrix</span>
+
+<span class="n">Alexander</span> <span class="o">&lt;</span><span class="n">AleXoundOS</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">channel</span> <span class="n">info</span> <span class="n">url</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">afreeca</span> <span class="n">plugin</span>
+
+<span class="n">Andreas</span> <span class="n">Streichardt</span> <span class="o">&lt;</span><span class="n">andreas</span><span class="o">.</span><span class="n">streichardt</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">Sportschau</span>
+
+<span class="n">Anton</span> <span class="o">&lt;</span><span class="n">anton9121</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">goodgame</span> <span class="n">ddos</span> <span class="n">validation</span>
+      <span class="n">add</span> <span class="n">stream_id</span> <span class="k">with</span> <span class="n">words</span>
+
+<span class="n">Benedikt</span> <span class="n">Gollatz</span> <span class="o">&lt;</span><span class="n">ben</span><span class="nd">@differentialschokolade</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">ORF</span> <span class="n">TVthek</span> <span class="n">livestreams</span> <span class="ow">and</span> <span class="n">VOD</span> <span class="n">segments</span>
+
+<span class="n">Benoit</span> <span class="n">Dien</span> <span class="o">&lt;</span><span class="n">benoit</span><span class="o">.</span><span class="n">dien</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Meerkat</span> <span class="n">plugin</span>
+
+<span class="n">Brainzyy</span> <span class="o">&lt;</span><span class="n">Brainzyy</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">fix</span> <span class="n">azubu</span><span class="o">.</span><span class="n">tv</span> <span class="n">plugin</span>
+
+<span class="n">Charlie</span> <span class="n">Drage</span> <span class="o">&lt;</span><span class="n">charlie</span><span class="nd">@charliedrage</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">the</span> <span class="n">README</span>
+      <span class="n">Fix</span> <span class="n">travis</span>
+      <span class="n">Rename</span> <span class="n">instances</span> <span class="n">of</span> <span class="s2">&quot;livestreamer&quot;</span> <span class="n">to</span> <span class="s2">&quot;streamlink&quot;</span>
+      <span class="n">Fix</span> <span class="n">travis</span>
+      <span class="n">Add</span> <span class="n">script</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">authors</span> <span class="nb">list</span> <span class="o">/</span> <span class="n">update</span> <span class="n">authors</span>
+      <span class="n">Get</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">ready</span> <span class="k">for</span> <span class="n">a</span> <span class="n">release</span><span class="o">.</span>
+      <span class="n">Add</span> <span class="n">release</span> <span class="n">script</span>
+      <span class="n">Revert</span> <span class="s2">&quot;Latest fix to plugin from livestreamer&quot;</span>
+      <span class="mf">0.0</span><span class="o">.</span><span class="mi">0</span> <span class="n">Release</span>
+
+<span class="n">Charmander</span> <span class="o">&lt;~</span><span class="nd">@charmander</span><span class="o">.</span><span class="n">me</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">picarto</span><span class="p">:</span> <span class="n">Update</span> <span class="k">for</span> <span class="n">API</span> <span class="ow">and</span> <span class="n">URL</span> <span class="n">change</span>
+
+<span class="n">Chris</span><span class="o">-</span><span class="n">Werner</span> <span class="n">Reimer</span> <span class="o">&lt;</span><span class="n">creimer</span><span class="nd">@betaworx</span><span class="o">.</span><span class="n">eu</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">fix</span> <span class="n">vaughnlive</span> <span class="n">plugin</span> <span class="c1">#897</span>
+
+<span class="n">Christopher</span> <span class="n">Rosell</span> <span class="o">&lt;</span><span class="n">chrippa</span><span class="nd">@tanuki</span><span class="o">.</span><span class="n">se</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">twitch</span><span class="p">:</span> <span class="n">Handle</span> <span class="n">subdomains</span> <span class="k">with</span> <span class="n">dash</span> <span class="ow">in</span> <span class="n">them</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">en</span><span class="o">-</span><span class="n">gb</span><span class="o">.</span>
+      <span class="n">cli</span><span class="p">:</span> <span class="n">Close</span> <span class="n">output</span> <span class="n">on</span> <span class="n">exit</span><span class="o">.</span>
+      <span class="n">Show</span> <span class="n">a</span> <span class="n">brief</span> <span class="n">usage</span> <span class="n">when</span> <span class="n">no</span> <span class="n">option</span> <span class="ow">is</span> <span class="n">specified</span><span class="o">.</span>
+      <span class="n">cli</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">typo</span><span class="o">.</span>
+      <span class="n">travis</span><span class="p">:</span> <span class="n">Use</span> <span class="n">new</span> <span class="n">artifacts</span> <span class="n">tool</span><span class="o">.</span>
+      <span class="n">docs</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">readthedocs</span> <span class="n">build</span><span class="o">.</span>
+      <span class="n">travis</span><span class="p">:</span> <span class="n">Build</span> <span class="n">installer</span> <span class="n">exe</span> <span class="n">aswell</span><span class="o">.</span>
+
+<span class="n">Daniel</span> <span class="n">Meißner</span> <span class="o">&lt;</span><span class="n">daniel</span><span class="nd">@3st</span><span class="o">.</span><span class="n">be</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">plugin</span><span class="p">:</span> <span class="n">added</span> <span class="n">media_ccc_de</span> <span class="n">api</span> <span class="ow">and</span> <span class="n">protocol</span> <span class="n">changes</span>
+      <span class="n">docs</span><span class="o">/</span><span class="n">plugin_matrix</span><span class="p">:</span> <span class="n">removed</span> <span class="n">needless</span> <span class="n">characters</span>
+
+<span class="n">Dominik</span> <span class="n">Sokal</span> <span class="o">&lt;</span><span class="n">dominiksokal</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">afreeca</span><span class="p">:</span> <span class="n">fix</span> <span class="n">stream</span>
+
+<span class="n">Ed</span> <span class="n">Holohan</span> <span class="o">&lt;</span><span class="n">edmund</span><span class="nd">@holohan</span><span class="o">.</span><span class="n">us</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Quick</span> <span class="n">hack</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">Picarto</span> <span class="n">changes</span>
+
+<span class="n">Emil</span> <span class="n">Stahl</span> <span class="o">&lt;</span><span class="n">emil</span><span class="nd">@emilstahl</span><span class="o">.</span><span class="n">dk</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">viafree</span><span class="o">.</span><span class="n">dk</span>
+
+<span class="n">Erik</span> <span class="n">G</span> <span class="o">&lt;</span><span class="n">aposymbiosis</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+      <span class="n">Added</span> <span class="n">plugin</span> <span class="k">for</span> <span class="n">Dplay</span><span class="o">.</span>
+      <span class="n">Added</span> <span class="n">plugin</span> <span class="k">for</span> <span class="n">Dplay</span> <span class="ow">and</span> <span class="n">removed</span> <span class="n">sbsdiscovery</span> <span class="n">plugin</span><span class="o">.</span>
+      <span class="n">Add</span> <span class="n">HLS</span> <span class="n">support</span><span class="p">,</span> <span class="n">adjust</span> <span class="n">API</span> <span class="n">schema</span><span class="p">,</span> <span class="n">no</span> <span class="n">SSL</span> <span class="n">verify</span>
+      <span class="n">Add</span> <span class="n">pvswf</span> <span class="n">parameter</span> <span class="n">to</span> <span class="n">HDS</span> <span class="n">stream</span> <span class="n">parser</span>
+      <span class="n">Fix</span> <span class="n">Video</span> <span class="n">ID</span> <span class="n">matching</span><span class="p">,</span> <span class="n">add</span> <span class="o">.</span><span class="n">no</span> <span class="o">&amp;</span> <span class="o">.</span><span class="n">dk</span> <span class="n">support</span><span class="p">,</span> <span class="n">add</span> <span class="n">error</span> <span class="n">handling</span>
+      <span class="n">Match</span> <span class="n">new</span> <span class="n">URL</span><span class="p">,</span> <span class="n">add</span> <span class="n">HDS</span> <span class="n">support</span><span class="p">,</span> <span class="n">handle</span> <span class="n">incorrect</span> <span class="n">geolocation</span>
+      <span class="n">Add</span> <span class="n">API</span> <span class="n">support</span>
+
+<span class="n">Fat</span> <span class="n">Deer</span> <span class="o">&lt;</span><span class="n">fatdeer</span><span class="nd">@foxmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">pandatv</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">Forrest</span> <span class="n">Alvarez</span> <span class="o">&lt;</span><span class="n">forrest</span><span class="o">.</span><span class="n">alvarez</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">some</span> <span class="n">python</span> <span class="n">releases</span>
+      <span class="n">Add</span> <span class="n">coveralls</span> <span class="n">to</span> <span class="n">after_success</span>
+      <span class="n">Remove</span> <span class="n">artifacts</span>
+
+<span class="n">Guillaume</span> <span class="n">Depardon</span> <span class="o">&lt;</span><span class="n">guillaume</span><span class="o">.</span><span class="n">depardon</span><span class="nd">@outlook</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Now</span> <span class="n">catching</span> <span class="n">socket</span> <span class="n">errors</span> <span class="n">on</span> <span class="n">send</span>
+
+<span class="n">Javier</span> <span class="n">Cantero</span> <span class="o">&lt;</span><span class="n">jcantero</span><span class="nd">@escomposlinux</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">new</span> <span class="n">parameter</span> <span class="n">to</span> <span class="n">Twitch</span> <span class="n">usher</span> <span class="n">URL</span>
+
+<span class="n">Jeremy</span> <span class="n">Symon</span> <span class="o">&lt;</span><span class="n">jtsymon</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Sort</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">streams</span> <span class="n">by</span> <span class="n">quality</span>
+      <span class="n">Avoid</span> <span class="n">sorting</span> <span class="n">streams</span> <span class="n">twice</span>
+
+<span class="n">Jon</span> <span class="n">Bergli</span> <span class="n">Heier</span> <span class="o">&lt;</span><span class="n">snakebite</span><span class="nd">@jvnv</span><span class="o">.</span><span class="n">net</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">nrk</span><span class="p">:</span> <span class="n">Updated</span> <span class="k">for</span> <span class="n">webpage</span> <span class="n">changes</span><span class="o">.</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">nrk</span><span class="p">:</span> <span class="n">Fixed</span> <span class="n">_id_re</span> <span class="n">regex</span> <span class="ow">not</span> <span class="n">matching</span> <span class="n">series</span> <span class="n">URLs</span><span class="o">.</span>
+
+<span class="n">Kari</span> <span class="n">Hänninen</span> <span class="o">&lt;</span><span class="n">lonefox</span><span class="nd">@kapsi</span><span class="o">.</span><span class="n">fi</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+      <span class="n">Use</span> <span class="n">client</span> <span class="n">ID</span> <span class="k">for</span> <span class="n">twitch</span><span class="o">.</span><span class="n">tv</span> <span class="n">API</span> <span class="n">calls</span>
+      <span class="n">Revert</span> <span class="s2">&quot;update INFO_URL for VaughnLive&quot;</span>
+      <span class="n">Remove</span> <span class="n">spurious</span> <span class="nb">print</span> <span class="n">statement</span> <span class="n">that</span> <span class="n">made</span> <span class="n">the</span> <span class="n">plugin</span> <span class="n">incompatible</span> <span class="k">with</span> <span class="n">python</span> <span class="mf">3.</span>
+      <span class="n">livecoding</span><span class="o">.</span><span class="n">tv</span><span class="p">:</span> <span class="n">fix</span> <span class="n">breakage</span> <span class="p">(</span><span class="s2">&quot;TypeError: cannot use a string pattern on a bytes-like object&quot;</span><span class="p">)</span>
+      <span class="n">sportschau</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">breakage</span> <span class="p">(</span><span class="s2">&quot;TypeError: a bytes-like object is required, not &#39;str&#39;&quot;</span><span class="p">)</span><span class="o">.</span> <span class="n">Also</span> <span class="n">remove</span> <span class="n">debug</span> <span class="n">output</span><span class="o">.</span>
+      <span class="n">Update</span> <span class="n">the</span> <span class="n">plugin</span> <span class="n">matrix</span>
+      <span class="n">Bump</span> <span class="n">version</span> <span class="n">to</span> <span class="mf">1.14</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">rc1</span>
+
+<span class="n">Marcus</span> <span class="n">Soll</span> <span class="o">&lt;</span><span class="n">Superschlumpf</span><span class="nd">@web</span><span class="o">.</span><span class="n">de</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Added</span> <span class="n">plugin</span> <span class="k">for</span> <span class="n">blip</span><span class="o">.</span><span class="n">tv</span> <span class="n">VOD</span>
+      <span class="n">Updated</span> <span class="n">blip</span><span class="o">.</span><span class="n">tv</span> <span class="n">plugin</span>
+
+<span class="n">Mateusz</span> <span class="n">Starzak</span> <span class="o">&lt;</span><span class="n">mstarzak</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">periscope</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">Michael</span> <span class="n">Copland</span> <span class="o">&lt;</span><span class="n">mjbcopland</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Fixed</span> <span class="n">weighting</span> <span class="n">of</span> <span class="n">Twitch</span> <span class="n">stream</span> <span class="n">names</span>
+
+<span class="n">Michael</span> <span class="n">Hoang</span> <span class="o">&lt;</span><span class="n">enzime</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">OPENREC</span><span class="o">.</span><span class="n">tv</span> <span class="n">plugin</span> <span class="ow">and</span> <span class="n">chmod</span> <span class="mi">2</span> <span class="n">files</span>
+
+<span class="n">Michiel</span> <span class="o">&lt;</span><span class="n">msvos</span><span class="nd">@liacs</span><span class="o">.</span><span class="n">nl</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Support</span> <span class="k">for</span> <span class="n">Tour</span> <span class="n">de</span> <span class="n">France</span> <span class="n">stream</span>
+
+<span class="n">Paul</span> <span class="n">LaMendola</span> <span class="o">&lt;</span><span class="n">paulguy119</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Maybe</span> <span class="n">fixed</span> <span class="n">ustream</span> <span class="n">validation</span> <span class="n">failure</span><span class="o">.</span>
+      <span class="n">More</span> <span class="n">strict</span> <span class="n">test</span> <span class="k">for</span> <span class="n">weird</span> <span class="n">stream</span><span class="o">.</span>
+
+<span class="n">Pavlos</span> <span class="n">Touboulidis</span> <span class="o">&lt;</span><span class="n">pav</span><span class="nd">@pav</span><span class="o">.</span><span class="n">gr</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">antenna</span><span class="o">.</span><span class="n">gr</span> <span class="n">plugin</span>
+      <span class="n">Update</span> <span class="n">plugin</span> <span class="n">matrix</span> <span class="k">for</span> <span class="n">antenna</span>
+
+<span class="n">Robin</span> <span class="n">Schroer</span> <span class="o">&lt;</span><span class="n">sulami</span><span class="nd">@peerwire</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">azubutv</span><span class="p">:</span> <span class="nb">set</span> <span class="n">video_player</span> <span class="n">to</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">stream</span> <span class="ow">is</span> <span class="n">offline</span>
+
+<span class="n">Seth</span> <span class="n">Creech</span> <span class="o">&lt;</span><span class="n">sethaaroncreech</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Added</span> <span class="n">logic</span> <span class="n">to</span> <span class="n">support</span> <span class="n">host</span> <span class="n">mode</span>
+
+<span class="n">Simon</span> <span class="n">Bernier</span> <span class="n">St</span><span class="o">-</span><span class="n">Pierre</span> <span class="o">&lt;</span><span class="n">sbernierstpierre</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+      <span class="n">update</span> <span class="n">the</span> <span class="n">streamup</span><span class="o">.</span><span class="n">com</span> <span class="n">plugin</span>
+      <span class="n">support</span> <span class="n">virtualenv</span>
+      <span class="n">update</span> <span class="n">references</span> <span class="n">to</span> <span class="n">livestreamer</span>
+      <span class="n">add</span> <span class="n">stream</span><span class="o">.</span><span class="n">me</span> <span class="n">plugin</span>
+      <span class="n">add</span> <span class="n">streamboat</span> <span class="n">plugin</span>
+
+<span class="n">Summon528</span> <span class="o">&lt;</span><span class="n">cody880528</span><span class="nd">@hotmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">add</span> <span class="n">support</span> <span class="n">to</span> <span class="n">afreecatv</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">tw</span>
+
+<span class="n">Swirt</span> <span class="o">&lt;</span><span class="n">swirt</span><span class="o">.</span><span class="n">ac</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Picarto</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">update</span> <span class="n">RTMPStream</span><span class="o">-</span><span class="n">settings</span>
+      <span class="n">Picarto</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">update</span> <span class="n">RTMPStream</span><span class="o">-</span><span class="n">settings</span>
+
+<span class="n">Tang</span> <span class="o">&lt;</span><span class="n">sugar1987cn</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">New</span> <span class="n">provider</span><span class="p">:</span> <span class="n">live</span><span class="o">.</span><span class="n">bilibili</span><span class="o">.</span><span class="n">com</span>
+
+<span class="n">Warnar</span> <span class="n">Boekkooi</span> <span class="o">&lt;</span><span class="n">warnar</span><span class="nd">@boekkooi</span><span class="o">.</span><span class="n">net</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">NPO</span> <span class="n">token</span> <span class="n">fix</span>
+
+<span class="n">WeinerRinkler</span> <span class="o">&lt;</span><span class="n">drachenlord</span><span class="nd">@8chan</span><span class="o">.</span><span class="n">co</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">First</span> <span class="n">version</span>
+      <span class="n">Error</span> <span class="n">fixed</span> <span class="n">when</span> <span class="n">streamer</span> <span class="n">offline</span> <span class="ow">or</span> <span class="n">invalid</span>
+
+<span class="n">blxd</span> <span class="o">&lt;</span><span class="n">blxd</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+      <span class="n">fixed</span> <span class="n">tvcatchup</span><span class="o">.</span><span class="n">com</span> <span class="n">plugin</span><span class="p">,</span> <span class="n">the</span> <span class="n">website</span> <span class="n">layout</span> <span class="n">changed</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">method</span> <span class="n">to</span> <span class="n">find</span> <span class="n">the</span> <span class="n">stream</span> <span class="n">URLs</span> <span class="n">needed</span> <span class="n">to</span> <span class="n">be</span> <span class="n">updated</span><span class="o">.</span>
+      <span class="n">tvcatchup</span> <span class="n">now</span> <span class="n">returns</span> <span class="n">a</span> <span class="n">variant</span> <span class="n">playlist</span>
+      <span class="n">tvplayer</span><span class="o">.</span><span class="n">com</span> <span class="n">only</span> <span class="n">works</span> <span class="k">with</span> <span class="n">a</span> <span class="n">browser</span> <span class="n">user</span> <span class="n">agent</span>
+      <span class="ow">not</span> <span class="nb">all</span> <span class="n">channels</span> <span class="k">return</span> <span class="n">hlsvariant</span> <span class="n">playlists</span>
+      <span class="n">add</span> <span class="n">user</span> <span class="n">agent</span> <span class="n">header</span> <span class="n">to</span> <span class="n">the</span> <span class="n">tvcatchup</span> <span class="n">plugin</span>
+
+<span class="n">chvrn</span> <span class="o">&lt;</span><span class="n">chev</span><span class="nd">@protonmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+      <span class="n">added</span> <span class="n">expressen</span> <span class="n">plugin</span>
+      <span class="n">added</span> <span class="n">expressen</span> <span class="n">plugin</span>
+      <span class="n">update</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="n">assign</span> <span class="k">with</span> <span class="n">subscript</span>
+      <span class="n">added</span> <span class="n">entry</span> <span class="k">for</span> <span class="n">expressen</span>
+
+<span class="n">e00E</span> <span class="o">&lt;</span><span class="n">vakevk</span><span class="o">+</span><span class="n">git</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Fix</span> <span class="n">Twitch</span> <span class="n">plugin</span> <span class="ow">not</span> <span class="n">working</span> <span class="n">because</span> <span class="n">bandwith</span> <span class="n">was</span> <span class="n">parsed</span> <span class="k">as</span> <span class="n">an</span> <span class="nb">int</span> <span class="n">when</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">really</span> <span class="n">a</span> <span class="nb">float</span>
+
+<span class="n">fat</span> <span class="n">deer</span> <span class="o">&lt;</span><span class="n">fatdeer</span><span class="nd">@foxmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">Panda</span><span class="o">.</span><span class="n">tv</span> <span class="n">Plugin</span><span class="o">.</span>
+
+<span class="n">fcicq</span> <span class="o">&lt;</span><span class="n">fcicq</span><span class="nd">@fcicq</span><span class="o">.</span><span class="n">net</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">add</span> <span class="n">afreecatv</span><span class="o">.</span><span class="n">jp</span> <span class="n">support</span>
+
+<span class="n">hannespetur</span> <span class="o">&lt;</span><span class="n">hannespetur</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+      <span class="n">plugin</span> <span class="k">for</span> <span class="n">Ruv</span> <span class="o">-</span> <span class="n">the</span> <span class="n">Icelandic</span> <span class="n">national</span> <span class="n">television</span> <span class="o">-</span> <span class="n">was</span> <span class="n">added</span>
+      <span class="n">removed</span> <span class="nb">print</span> <span class="n">statements</span> <span class="ow">and</span> <span class="n">started</span> <span class="n">to</span> <span class="n">use</span> <span class="n">quality</span> <span class="n">key</span> <span class="k">as</span> <span class="n">audio</span> <span class="k">if</span> <span class="n">the</span> <span class="n">url</span> <span class="n">extensions</span> <span class="ow">is</span> <span class="n">mp3</span>
+      <span class="n">the</span> <span class="n">plugin</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">plugin</span> <span class="n">matrix</span>
+      <span class="n">removed</span> <span class="n">unused</span> <span class="kn">import</span>
+      <span class="nn">alphabetical</span> <span class="n">order</span> <span class="ow">is</span> <span class="n">hard</span>
+      <span class="n">removed</span> <span class="n">redundant</span> <span class="n">assignments</span> <span class="n">of</span> <span class="n">best</span><span class="o">/</span><span class="n">worst</span> <span class="n">quality</span>
+      <span class="n">HLS</span> <span class="n">support</span> <span class="n">added</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Ruv</span> <span class="n">plugin</span>
+      <span class="n">Ruv</span> <span class="n">plugin</span><span class="p">:</span> <span class="n">returning</span> <span class="n">generators</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">a</span> <span class="nb">dict</span>
+
+<span class="n">int3l</span> <span class="o">&lt;</span><span class="n">int3l</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Refactoring</span> <span class="ow">and</span> <span class="n">update</span> <span class="k">for</span> <span class="n">the</span> <span class="n">VOD</span> <span class="n">support</span>
+
+<span class="n">intact</span> <span class="o">&lt;</span><span class="n">intact</span><span class="o">.</span><span class="n">devel</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">21</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">artetv</span><span class="p">:</span> <span class="n">Update</span> <span class="n">json</span> <span class="n">regex</span>
+      <span class="n">Updated</span> <span class="n">douyutv</span><span class="o">.</span><span class="n">com</span> <span class="n">plugin</span>
+      <span class="n">Added</span> <span class="n">plugin</span> <span class="k">for</span> <span class="n">streamup</span><span class="o">.</span><span class="n">com</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">streamupcom</span><span class="p">:</span> <span class="n">Check</span> <span class="n">live</span> <span class="n">status</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">streamupcom</span><span class="p">:</span> <span class="n">Update</span> <span class="k">for</span> <span class="n">API</span> <span class="n">change</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">streamupcom</span><span class="p">:</span> <span class="n">Update</span> <span class="k">for</span> <span class="n">API</span> <span class="n">change</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">dailymotion</span><span class="p">:</span> <span class="n">Add</span> <span class="n">HLS</span> <span class="n">streams</span> <span class="n">support</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">npo</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">Python</span> <span class="mi">3</span> <span class="n">compatibility</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">livestream</span><span class="p">:</span> <span class="n">Prefer</span> <span class="n">standard</span> <span class="n">SWF</span> <span class="n">players</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">tga</span><span class="p">:</span> <span class="n">Support</span> <span class="n">more</span> <span class="n">streams</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">tga</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">offline</span> <span class="n">streams</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">vaughnlive</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">INFO_URL</span>
+      <span class="n">Added</span> <span class="n">plugin</span> <span class="k">for</span> <span class="n">vidio</span><span class="o">.</span><span class="n">com</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">vaughnlive</span><span class="p">:</span> <span class="n">Update</span> <span class="k">for</span> <span class="n">API</span> <span class="n">change</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">vaughnlive</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">app</span> <span class="k">for</span> <span class="n">some</span> <span class="n">ingest</span> <span class="n">servers</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">vaughnlive</span><span class="p">:</span> <span class="n">Remove</span> <span class="n">debug</span> <span class="nb">print</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">vaughnlive</span><span class="p">:</span> <span class="n">Lowercase</span> <span class="n">channel</span> <span class="n">name</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">vaughnlive</span><span class="p">:</span> <span class="n">Update</span> <span class="k">for</span> <span class="n">API</span> <span class="n">change</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">vaughnlive</span><span class="p">:</span> <span class="n">Update</span> <span class="k">for</span> <span class="n">API</span> <span class="n">change</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">livestream</span><span class="p">:</span> <span class="n">Tolerate</span> <span class="n">missing</span> <span class="n">swf</span> <span class="n">player</span> <span class="n">URL</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">livestream</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">player</span> <span class="n">URL</span>
+
+<span class="n">jkieberk</span> <span class="o">&lt;</span><span class="n">jkieberking</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Change</span> <span class="n">Fedora</span> <span class="n">Package</span> <span class="n">Manager</span> <span class="kn">from</span> <span class="nn">Yum</span>  <span class="n">to</span> <span class="n">Dnf</span>
+
+<span class="n">kviktor</span> <span class="o">&lt;</span><span class="n">kviktor</span><span class="nd">@cloud</span><span class="o">.</span><span class="n">bme</span><span class="o">.</span><span class="n">hu</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="p">:</span> <span class="n">mediaklikk</span><span class="o">.</span><span class="n">hu</span> <span class="n">stream</span> <span class="ow">and</span> <span class="n">video</span> <span class="n">support</span>
+      <span class="n">update</span> <span class="n">mediaklikk</span> <span class="n">plugin</span>
+
+<span class="n">livescope</span> <span class="o">&lt;</span><span class="n">livescope</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">VOD</span><span class="o">/</span><span class="n">replay</span> <span class="n">support</span> <span class="k">for</span> <span class="n">periscope</span><span class="o">.</span><span class="n">tv</span>
+
+<span class="n">liz1rgin</span> <span class="o">&lt;</span><span class="n">waiphereme</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Fix</span> <span class="n">goodgame</span> <span class="n">find</span> <span class="n">Streame</span>
+      <span class="n">Update</span> <span class="n">goodgame</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">maop</span> <span class="o">&lt;</span><span class="n">me</span><span class="nd">@marcoalfonso</span><span class="o">.</span><span class="n">net</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">Beam</span><span class="o">.</span><span class="n">pro</span> <span class="n">plugin</span><span class="o">.</span>
+
+<span class="n">mindhalt</span> <span class="o">&lt;</span><span class="n">mindhalt</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">redirect</span> <span class="n">URI</span> <span class="n">after</span> <span class="n">successful</span> <span class="n">twitch</span> <span class="n">auth</span>
+
+<span class="n">neutric</span> <span class="o">&lt;</span><span class="n">ah0703</span><span class="nd">@googlemail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">issues</span><span class="o">.</span><span class="n">rst</span>
+
+<span class="n">nitpicker</span> <span class="o">&lt;</span><span class="n">daniel</span><span class="nd">@localhost</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">I</span> <span class="n">doesn</span><span class="s1">&#39;t sign the term of services, so I doesnt violate!</span>
+      <span class="n">update</span> <span class="n">INFO_URL</span> <span class="k">for</span> <span class="n">VaughnLive</span>
+
+<span class="n">oyvindln</span> <span class="o">&lt;</span><span class="n">mail</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Allow</span> <span class="n">https</span> <span class="n">urls</span> <span class="k">for</span> <span class="n">nrk</span><span class="o">.</span><span class="n">no</span><span class="o">.</span>
+
+<span class="n">ph0o</span> <span class="o">&lt;</span><span class="n">ph0o</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Create</span> <span class="n">servustv</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">pulviscriptor</span> <span class="o">&lt;</span><span class="n">pulviscriptor</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">GoodGame</span> <span class="n">URL</span> <span class="n">parse</span> <span class="n">fix</span>
+
+<span class="n">scottbernstein</span> <span class="o">&lt;</span><span class="n">scott_bernstein</span><span class="nd">@hotmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Latest</span> <span class="n">fix</span> <span class="n">to</span> <span class="n">plugin</span> <span class="kn">from</span> <span class="nn">livestreamer</span>
+
+<span class="n">steven7851</span> <span class="o">&lt;</span><span class="n">steven7851</span><span class="nd">@msn</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">douyutv</span><span class="p">:</span> <span class="n">Use</span> <span class="n">new</span> <span class="n">api</span><span class="o">.</span>
+      <span class="n">update</span> <span class="n">douyu</span>
+      <span class="n">fix</span> <span class="n">cdn</span><span class="o">..</span>
+      <span class="n">fix</span> <span class="k">for</span> <span class="n">Python</span> <span class="mf">3.</span><span class="n">x</span><span class="o">..</span>
+      <span class="n">use</span> <span class="n">mobile</span> <span class="n">api</span> <span class="k">for</span> <span class="n">reducing</span> <span class="n">code</span>
+      <span class="n">fix</span> <span class="k">for</span> <span class="n">non</span> <span class="n">number</span> <span class="n">channel</span>
+      <span class="n">add</span> <span class="n">middle</span> <span class="ow">and</span> <span class="n">low</span> <span class="n">quality</span>
+      <span class="n">fix</span> <span class="n">quality</span>
+      <span class="n">fix</span> <span class="n">room</span> <span class="nb">id</span> <span class="n">regex</span>
+      <span class="n">make</span> <span class="n">did</span> <span class="n">by</span> <span class="n">UUID</span> <span class="n">module</span>
+      <span class="n">fix</span> <span class="n">channel</span> <span class="n">on</span> <span class="n">event</span>
+      <span class="n">more</span> <span class="n">retries</span> <span class="k">for</span> <span class="n">redirection</span>
+      <span class="n">remove</span> <span class="n">useless</span> <span class="n">lib</span>
+      <span class="k">try</span> <span class="n">to</span> <span class="n">support</span> <span class="n">event</span> <span class="n">page</span>
+      <span class="n">use</span> <span class="n">https</span> <span class="n">protocol</span>
+      <span class="n">Update</span> <span class="n">plugin</span><span class="o">.</span><span class="n">douyutv</span>
+
+<span class="n">trocknet</span> <span class="o">&lt;</span><span class="n">trocknet</span><span class="nd">@github</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">afreeca</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">HLS</span> <span class="n">stream</span><span class="o">.</span>
+
+<span class="n">whizzoo</span> <span class="o">&lt;</span><span class="n">grenardus</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">RTLXL</span> <span class="n">plugin</span>
+      <span class="n">Add</span> <span class="n">RTLXL</span> <span class="n">plugin</span>
+
+<span class="n">wolftankk</span> <span class="o">&lt;</span><span class="n">wolftankk</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">get</span> <span class="n">azubu</span> <span class="n">live</span> <span class="n">status</span> <span class="kn">from</span> <span class="nn">api</span>
+      <span class="n">use</span> <span class="n">new</span> <span class="n">api</span> <span class="n">get</span> <span class="n">stream</span> <span class="n">info</span>
+      <span class="n">fix</span> <span class="n">video_player</span> <span class="n">error</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
