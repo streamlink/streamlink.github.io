@@ -110,6 +110,13 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-2-0-2016-12-16">streamlink 0.2.0 (2016-12-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-1-0-2016-11-21">streamlink 0.1.0 (2016-11-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-2-2016-10-12">streamlink 0.0.2 (2016-10-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-1-2016-09-23">streamlink 0.0.1 (2016-09-23)</a></li>
+</ul>
+</li>
 </ul>
 
         
@@ -480,21 +487,21 @@ a Adobe HDS stream:</p>
 </div>
 <div class="section" id="command-line-usage">
 <span id="cli-options"></span><h2>Command-line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>URL<span class="o">]</span> <span class="o">[</span>STREAM<span class="o">]</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="o">[</span>OPTIONS<span class="o">]</span> &lt;URL&gt; <span class="o">[</span>STREAM<span class="o">]</span>
 </pre></div>
 </div>
 <div class="section" id="positional-arguments">
 <h3>Positional arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this headline">¶</a></h3>
 <dl class="option">
-<dt>
-<code class="descname">[URL]</code></dt>
+<dt id="cmdoption-arg-url">
+<code class="descname">URL</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-url" title="Permalink to this definition">¶</a></dt>
 <dd><p>A URL to attempt to extract streams from.</p>
 <p>If it&#8217;s a HTTP URL then &#8220;<a class="reference external" href="http://">http://</a>&#8221; can be omitted.</p>
 </dd></dl>
 
 <dl class="option">
-<dt>
-<code class="descname">[STREAM]</code></dt>
+<dt id="cmdoption-arg-stream">
+<code class="descname">STREAM</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-stream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stream to play.</p>
 <p>Use &#8220;best&#8221; or &#8220;worst&#8221; for highest or lowest quality available.</p>
 <p>Fallback streams can be specified by using a comma-separated list:</p>
@@ -939,8 +946,8 @@ such as stream protocols specific to plugins, e.g. UStream.</p>
 <code class="descname">--stream-timeout</code><code class="descclassname"> TIMEOUT</code><a class="headerlink" href="#cmdoption-stream-timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Timeout for reading data from streams.</p>
 <p>This is generic option used by streams not covered by other options,
-such as stream protocols specific to plugins, e.g. UStream.</p>
-<p>Default is: <strong>60.0</strong>.</p>
+such as stream protocols specific to plugins, e.g. UStream.
+Default is: <strong>60.0</strong>.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1159,8 +1166,8 @@ and reauthenticate.</p>
 <dt id="cmdoption-crunchyroll-locale">
 <code class="descname">--crunchyroll-locale</code><code class="descclassname"> LOCALE</code><a class="headerlink" href="#cmdoption-crunchyroll-locale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicate which locale to use for Crunchyroll subtitles.</p>
-<p>The locale is formatted as [language_code]_[country_code], by default
-en_US is used.</p>
+<p>The locale is formatted as [language_code]_[country_code].</p>
+<p>Default is: <strong>en_US</strong>.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1210,7 +1217,7 @@ quality streams.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Streamlink.
+        &copy; Copyright 2017, Streamlink.
     </p>
   </div>
 

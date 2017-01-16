@@ -110,6 +110,13 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-2-0-2016-12-16">streamlink 0.2.0 (2016-12-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-1-0-2016-11-21">streamlink 0.1.0 (2016-11-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-2-2016-10-12">streamlink 0.0.2 (2016-10-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-1-2016-09-23">streamlink 0.0.1 (2016-09-23)</a></li>
+</ul>
+</li>
 </ul>
 
         
@@ -248,7 +255,7 @@
 <td>See <a class="reference internal" href="#windows-binaries">Windows binaries</a> and <a class="reference internal" href="#windows-portable-version">Windows portable version</a>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://chocolatey.org/packages/streamlink">Chocolatey</a></td>
-<td><div class="first last highlight-powershell"><div class="highlight"><pre><span></span>C:\&gt; choco install streamlink
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="go">C:\&gt; choco install streamlink</span>
 </pre></div>
 </div>
 </td>
@@ -308,13 +315,13 @@
 can install Streamlink via source.</p>
 <p>There are a few different methods to do this,
 <a class="reference external" href="http://pip.readthedocs.org/en/latest/installing.html">pip</a> the Python package
-manager, <strong class="command">easy_install</strong> the older package manager included with
-<a class="reference external" href="http://pypi.python.org/pypi/setuptools">python-setuptools</a> or by checking out the latest code with
-<a class="reference external" href="http://git-scm.com/downloads">Git</a>.</p>
+manager, or by checking out the latest code with
+<a class="reference external" href="http://git-scm.com/downloads">Git</a>. Using <strong class="command">easy_install</strong> is no longer recommended.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">For some Linux distributions the Python headers package needs to be installed before installing streamlink
+<p>For some Linux distributions the Python headers package needs to be installed before installing streamlink
 (<code class="docutils literal"><span class="pre">python-devel</span></code> in RedHat, Fedora, etc.).</p>
+<p class="last">Ensure that you are using an up-to-date version of <strong class="command">pip</strong>, at least version <strong>6</strong> is recommended.</p>
 </div>
 <p>The commands listed here will also upgrade any existing version of Streamlink.</p>
 <table border="1" class="docutils">
@@ -447,7 +454,7 @@ permission issues (see issue <a class="reference external" href="https://github.
 <p class="last">Windows XP is not supported.
 Windows Vista requires at least SP2 to be installed.</p>
 </div>
-<p>You can download the latest stable Windows installer <a class="reference external" href="https://github.com/streamlink/streamlink/releases">here</a>.</p>
+<p>You can download the latest stable Windows installer from the <a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">GitHub Releases Page</a>.</p>
 <p>You can download the latest nightly Windows installer <a class="reference external" href="https://streamlink-builds.s3.amazonaws.com/nightly/windows/streamlink-latest.exe">here</a>.</p>
 <p>This is a installer which contains:</p>
 <ul class="simple">
@@ -494,7 +501,7 @@ system.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Streamlink.
+        &copy; Copyright 2017, Streamlink.
     </p>
   </div>
 
