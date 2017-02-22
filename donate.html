@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Common issues &mdash; Streamlink 0.3.2 documentation</title>
+  <title>Donating &mdash; Streamlink 0.3.2 documentation</title>
   
 
   
@@ -29,8 +29,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Streamlink 0.3.2 documentation" href="index.html"/>
-        <link rel="next" title="API Guide" href="api_guide.html"/>
-        <link rel="prev" title="Players" href="players.html"/> 
+        <link rel="prev" title="Changelog" href="changelog.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -90,8 +89,8 @@
 <li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Common issues</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
@@ -120,13 +119,13 @@
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-1-2016-09-23">streamlink 0.0.1 (2016-09-23)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#streamlink-team">Streamlink Team</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Donating</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-team">Streamlink Team</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html#id1">Bastimeyer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html#id2">Beardypig</a></li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html#id3">Gravyboat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id1">Bastimeyer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id2">Beardypig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id3">Gravyboat</a></li>
 </ul>
 
         
@@ -166,7 +165,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Common issues</li>
+    <li>Donating</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -175,89 +174,42 @@
 </div>
           <div role="main">
             
-  <div class="section" id="common-issues">
-<span id="issues"></span><h1>Common issues<a class="headerlink" href="#common-issues" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="streams-are-buffering-lagging">
-<span id="issues-player-caching"></span><h2>Streams are buffering/lagging<a class="headerlink" href="#streams-are-buffering-lagging" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="enable-caching-in-your-player">
-<h3>Enable caching in your player<a class="headerlink" href="#enable-caching-in-your-player" title="Permalink to this headline">¶</a></h3>
-<p>By default most players do not cache the data they receive from Streamlink.
-Caching can reduce the amount of buffering you run into because the player will
-have some breathing room between receiving the data and playing it.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="17%" />
-<col width="31%" />
-<col width="53%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Player</th>
-<th class="head">Parameter</th>
-<th class="head">Note</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>MPC-HC</td>
-<td>&#8211;</td>
-<td>Currently no way of configuring the cache</td>
-</tr>
-<tr class="row-odd"><td>MPlayer</td>
-<td><code class="docutils literal"><span class="pre">-cache</span> <span class="pre">&lt;kbytes&gt;</span></code></td>
-<td>Between 1024 and 8192 is recommended</td>
-</tr>
-<tr class="row-even"><td>MPlayer2</td>
-<td><code class="docutils literal"><span class="pre">-cache</span> <span class="pre">&lt;kbytes&gt;</span></code></td>
-<td>Between 1024 and 8192 is recommended</td>
-</tr>
-<tr class="row-odd"><td>mpv</td>
-<td><code class="docutils literal"><span class="pre">--cache</span> <span class="pre">&lt;kbytes&gt;</span></code></td>
-<td>Between 1024 and 8192 is recommended</td>
-</tr>
-<tr class="row-even"><td>VLC</td>
-<td><code class="docutils literal"><span class="pre">--file-caching</span> <span class="pre">&lt;ms&gt;</span>
-<span class="pre">--network-caching</span> <span class="pre">&lt;ms&gt;</span></code></td>
-<td>Between 1000 and 10000 is recommended</td>
-</tr>
-</tbody>
-</table>
-<p>Use the <a class="reference internal" href="cli.html#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> option to pass these options to your player.</p>
-</div>
-<div class="section" id="multi-threaded-streaming">
-<h3>Multi-threaded streaming<a class="headerlink" href="#multi-threaded-streaming" title="Permalink to this headline">¶</a></h3>
-<p>On segmented streaming protocols (such as HLS and HDS) it&#8217;s possible to use
-multiple threads to potentially increase the throughput.
-Each stream type has its own option, and these are the ones that are currently available:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="44%" />
-<col width="56%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Option</th>
-<th class="head">Used by these plugins</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><a class="reference internal" href="cli.html#cmdoption-hls-segment-threads"><code class="xref std std-option docutils literal"><span class="pre">--hls-segment-threads</span></code></a></td>
-<td><cite>twitch</cite>, <cite>youtube</cite> and many more.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="cli.html#cmdoption-hds-segment-threads"><code class="xref std std-option docutils literal"><span class="pre">--hds-segment-threads</span></code></a></td>
-<td><cite>dailymotion</cite>, <cite>mlgtv</cite> and many more.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="cli.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal"><span class="pre">--stream-segment-threads</span></code></a></td>
-<td><cite>ustreamtv</cite>, <cite>beattv</cite> and any other plugins
-implementing their own segmented streaming
-protocol.</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Using 2 or 3 threads should be enough to see an impact on live streams,
-any more will likely not show much effect.</p>
+  <div class="section" id="donating">
+<h1>Donating<a class="headerlink" href="#donating" title="Permalink to this headline">¶</a></h1>
+<p>Thank you for considering a donation to the Streamlink team! Streamlink is an
+organization composed of a geographically diverse group of individuals. As such
+please make your donation directly to the appropriate team member. Note that
+donations are not tax deductible as Streamlink does not operate as a charitable
+organization. Your donation to a team member may be used in any way and does
+not come with expectations of work to be provided or as payment for future
+work. If you would like a specific feature implemented considering creating a
+bounty on <a class="reference external" href="https://www.bountysource.com/teams/streamlink">Bountysource</a>.</p>
+<div class="section" id="streamlink-team">
+<h2>Streamlink Team<a class="headerlink" href="#streamlink-team" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
+<div class="section" id="id1">
+<h1><a class="reference external" href="https://github.com/bastimeyer">Bastimeyer</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="https://blockchain.info/qr?data=1EZg8eBz4RdPb8pEzYD9JEzr9Fyitzj8j8">Bitcoin</a> (<cite>1EZg8eBz4RdPb8pEzYD9JEzr9Fyitzj8j8</cite>)</li>
+<li><a class="reference external" href="https://blockchain.info/qr?data=DGkVP7AMUHr2TbVnWy6QyZqSMvCkeEo1ab">Dogecoin</a> (<cite>DGkVP7AMUHr2TbVnWy6QyZqSMvCkeEo1ab</cite>)</li>
+<li><a class="reference external" href="https://flattr.com/thing/3956088">Flattr</a></li>
+<li><a class="reference external" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YUCGRLVALHS8C&amp;item_name=Streamlink%20Twitch%20GUI">Paypal</a></li>
+</ul>
 </div>
+<div class="section" id="id2">
+<h1><a class="reference external" href="https://github.com/beardypig">Beardypig</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="https://blockchain.info/qr?data=1Ey3KZ9SwTj6QyASE6vgJVebUiJsW1HuRh">Bitcoin</a> (<cite>1Ey3KZ9SwTj6QyASE6vgJVebUiJsW1HuRh</cite>)</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h1><a class="reference external" href="https://github.com/gravyboat">Gravyboat</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="https://blockchain.info/qr?data=1PpdFh9LkTsjtG2AAcrWqk6RiFrC2iTCxj">Bitcoin</a> (<cite>1PpdFh9LkTsjtG2AAcrWqk6RiFrC2iTCxj</cite>)</li>
+<li><a class="reference external" href="https://flattr.com/profile/gravyboat">Flattr</a></li>
+<li><a class="reference external" href="https://gratipay.com/~gravyboat/">Gratipay</a></li>
+</ul>
 </div>
 
 
@@ -266,10 +218,8 @@ any more will likely not show much effect.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="api_guide.html" class="btn btn-neutral float-right" title="API Guide">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="players.html" class="btn btn-neutral" title="Players"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="changelog.html" class="btn btn-neutral" title="Changelog"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
