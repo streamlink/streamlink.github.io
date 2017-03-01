@@ -452,6 +452,21 @@ to extract the streams from a URL for you.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="s2">&quot;rtmp://streaming.server.net/playpath live=1 swfVfy=http://server.net/flashplayer.swf&quot;</span>
 </pre></div>
 </div>
+<p>When passing parameters to the built-in stream plugins the values will either be treated as plain
+strings, as is the case in the above example for <code class="docutils literal"><span class="pre">swfVry</span></code>, or they will be interpreted as Python literals. For
+example you can pass a Python dict or Python list as one of the parameters.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="s2">&quot;rtmp://streaming.server.net/playpath conn=[&#39;B:1&#39;, &#39;S:authMe&#39;, &#39;O:1&#39;, &#39;NN:code:1.23&#39;, &#39;NS:flag:ok&#39;, &#39;O:0&#39;]&quot;</span>
+<span class="gp">$</span> streamlink <span class="s2">&quot;hls://streaming.server.net/playpath params={&#39;token&#39;: &#39;magicToken&#39;}&quot;</span>
+</pre></div>
+</div>
+<p>In the above examples <code class="docutils literal"><span class="pre">conn</span></code> will be passed as the Python list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;B:1&#39;</span><span class="p">,</span> <span class="s1">&#39;S:authMe&#39;</span><span class="p">,</span> <span class="s1">&#39;O:1&#39;</span><span class="p">,</span> <span class="s1">&#39;NN:code:1.23&#39;</span><span class="p">,</span> <span class="s1">&#39;NS:flag:ok&#39;</span><span class="p">,</span> <span class="s1">&#39;O:0&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>and <code class="docutils literal"><span class="pre">params</span></code> will be passed as the Python dict:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;token&#39;</span><span class="p">:</span> <span class="s1">&#39;magicToken&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
 <p>Most streaming technologies simply requires you to pass a HTTP URL, this is
 a Adobe HDS stream:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink hds://streaming.server.net/playpath/manifest.f4m
