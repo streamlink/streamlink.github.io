@@ -703,7 +703,7 @@ to <code class="xref py py-meth docutils literal"><span class="pre">requests.req
 </div>
 <dl class="classmethod">
 <dt id="streamlink.stream.HLSStream.parse_variant_playlist">
-<em class="property">classmethod </em><code class="descname">parse_variant_playlist</code><span class="sig-paren">(</span><em>session_</em>, <em>url</em>, <em>name_key='name'</em>, <em>name_prefix=''</em>, <em>check_streams=False</em>, <em>force_restart=False</em>, <em>**request_params</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.parse_variant_playlist" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">parse_variant_playlist</code><span class="sig-paren">(</span><em>session_</em>, <em>url</em>, <em>name_key='name'</em>, <em>name_prefix=''</em>, <em>check_streams=False</em>, <em>force_restart=False</em>, <em>name_fmt=None</em>, <em>**request_params</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.parse_variant_playlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to parse a variant playlist and return its streams.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -714,8 +714,10 @@ to <code class="xref py py-meth docutils literal"><span class="pre">requests.req
 <li><strong>name_key</strong> &#8211; Prefer to use this key as stream name, valid keys are:
 name, pixels, bitrate.</li>
 <li><strong>name_prefix</strong> &#8211; Add this prefix to the stream names.</li>
+<li><strong>check_streams</strong> &#8211; Only allow streams that are accessible.</li>
 <li><strong>force_restart</strong> &#8211; Start at the first segment even for a live stream</li>
-<li><strong>check_streams</strong> &#8211; Only allow streams that are accesible.</li>
+<li><strong>name_fmt</strong> &#8211; A format string for the name, allowed format keys are
+name, pixels, bitrate.</li>
 </ul>
 </td>
 </tr>
