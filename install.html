@@ -442,6 +442,15 @@ audio and video streams, eg. YouTube 1080p+</td>
 </tbody>
 </table>
 </div>
+<div class="section" id="using-pycrypto-and-pycountry">
+<h3>Using pycrypto and pycountry<a class="headerlink" href="#using-pycrypto-and-pycountry" title="Permalink to this headline">¶</a></h3>
+<p>With these two environment variables it is possible to use <a class="reference external" href="https://www.dlitz.net/software/pycrypto/">pycrypto</a> instead of
+<a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a> and <a class="reference external" href="https://pypi.python.org/pypi/pycountry">pycountry</a> instead of <a class="reference external" href="https://pypi.python.org/pypi/iso-639">iso-639</a> and <a class="reference external" href="https://pypi.python.org/pypi/iso3166">iso3166</a>.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCRYPTO</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
+<span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCOUNTRY</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="installing-without-root-permissions">
 <h3>Installing without root permissions<a class="headerlink" href="#installing-without-root-permissions" title="Permalink to this headline">¶</a></h3>
 <p>If you do not wish to install Streamlink globally on your system it&#8217;s
