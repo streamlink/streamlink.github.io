@@ -792,8 +792,10 @@ waiting DELAY (seconds) between each attempt.</p>
 <code class="descname">--stream-types</code><code class="descclassname"> TYPES</code><code class="descclassname">, </code><code class="descname">--stream-priority</code><code class="descclassname"> TYPES</code><a class="headerlink" href="#cmdoption-stream-types" title="Permalink to this definition">¶</a></dt>
 <dd><p>A comma-delimited list of stream types to allow.</p>
 <p>The order will be used to separate streams when there are multiple
-streams with the same name but different stream types.</p>
-<p>Default is: <strong>&#8220;rtmp,hls,hds,http,akamaihd&#8221;</strong>.</p>
+streams with the same name but different stream types. Any stream type
+not listed will be omitted from the available streams list.  A <code class="docutils literal"><span class="pre">*</span></code>
+can be used as a wildcard to match any other type of stream, eg. muxed-stream.</p>
+<p>Default is: <strong>&#8220;rtmp,hls,hds,http,akamaihd,*&#8221;</strong>.</p>
 </dd></dl>
 
 <dl class="option">
