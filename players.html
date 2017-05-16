@@ -270,7 +270,7 @@ modes.</p>
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> must be used.
-Using HTTP with players that rely on Windows&#8217; codecs to access HTTP
+Using HTTP with players that rely on Windows’ codecs to access HTTP
 streams may have a long startup time since Windows tend to do multiple
 HTTP requests and Streamlink will attempt to open the stream for each
 request.</td></tr>
@@ -287,7 +287,7 @@ request.</td></tr>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td><p class="first">Some versions of VLC might be unable to use the stdin pipe and
 prints the error message</p>
-<p>VLC is unable to open the MRL &#8216;fd://0&#8217;</p>
+<p>VLC is unable to open the MRL ‘fd://0’</p>
 <p class="last">Use one of the other transport methods instead to work around this.</p>
 </td></tr>
 </tbody>
@@ -306,7 +306,7 @@ Other stream types may not work as expected, it is recommended that
 <div class="section" id="known-issues-and-workarounds">
 <h2>Known issues and workarounds<a class="headerlink" href="#known-issues-and-workarounds" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mpc-hc-reports-file-not-found">
-<h3>MPC-HC reports &#8220;File not found&#8221;<a class="headerlink" href="#mpc-hc-reports-file-not-found" title="Permalink to this headline">¶</a></h3>
+<h3>MPC-HC reports “File not found”<a class="headerlink" href="#mpc-hc-reports-file-not-found" title="Permalink to this headline">¶</a></h3>
 <p>Upgrading to version 1.7 or newer will solve this issue since reading data
 from standard input is not supported in version 1.6.x of MPC-HC.</p>
 </div>
@@ -316,7 +316,7 @@ from standard input is not supported in version 1.6.x of MPC-HC.</p>
 following workaround was contributed by MPC-HC developer <a class="reference external" href="https://github.com/kasper93">&#64;kasper93</a>:</p>
 <blockquote>
 <div><em>To fix this problem go to options -&gt; internal filters -&gt; open splitter
-settings and increase &#8220;Stream Analysis Duration&#8221; this will let ffmpeg to
+settings and increase “Stream Analysis Duration” this will let ffmpeg to
 properly detect all streams.</em></div></blockquote>
 <p>Using <a class="reference internal" href="cli.html#cmdoption-player-passthrough"><code class="xref std std-option docutils literal"><span class="pre">--player-passthrough</span> <span class="pre">hls</span></code></a> has also been
 reported to work.</p>
