@@ -204,7 +204,7 @@ options and log settings.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> – key of the option</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> -- key of the option</td>
 </tr>
 </tbody>
 </table>
@@ -219,8 +219,8 @@ options and log settings.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>plugin</strong> – name of the plugin</li>
-<li><strong>key</strong> – key of the option</li>
+<li><strong>plugin</strong> -- name of the plugin</li>
+<li><strong>key</strong> -- key of the option</li>
 </ul>
 </td>
 </tr>
@@ -242,7 +242,7 @@ options and log settings.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> – full path to a directory where to look for plugins</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> -- full path to a directory where to look for plugins</td>
 </tr>
 </tbody>
 </table>
@@ -259,7 +259,7 @@ not specified.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> – a URL to match against loaded plugins</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> -- a URL to match against loaded plugins</td>
 </tr>
 </tbody>
 </table>
@@ -276,7 +276,7 @@ not specified.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> – a URL to match against loaded plugins</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> -- a URL to match against loaded plugins</td>
 </tr>
 </tbody>
 </table>
@@ -286,13 +286,13 @@ not specified.</p>
 <dt id="streamlink.Streamlink.set_loglevel">
 <code class="descname">set_loglevel</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.set_loglevel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the log level used by this session.</p>
-<p>Valid levels are: “none”, “error”, “warning”, “info”
-and “debug”.</p>
+<p>Valid levels are: &quot;none&quot;, &quot;error&quot;, &quot;warning&quot;, &quot;info&quot;
+and &quot;debug&quot;.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>level</strong> – level of logging to output</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>level</strong> -- level of logging to output</td>
 </tr>
 </tbody>
 </table>
@@ -306,7 +306,7 @@ and “debug”.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>output</strong> – a file-like object with a write method</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>output</strong> -- a file-like object with a write method</td>
 </tr>
 </tbody>
 </table>
@@ -322,8 +322,8 @@ from this session object.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> – key of the option</li>
-<li><strong>value</strong> – value to set the option to</li>
+<li><strong>key</strong> -- key of the option</li>
+<li><strong>value</strong> -- value to set the option to</li>
 </ul>
 </td>
 </tr>
@@ -517,9 +517,9 @@ from this session object.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>plugin</strong> – name of the plugin</li>
-<li><strong>key</strong> – key of the option</li>
-<li><strong>value</strong> – value to set the option to</li>
+<li><strong>plugin</strong> -- name of the plugin</li>
+<li><strong>key</strong> -- key of the option</li>
+<li><strong>value</strong> -- value to set the option to</li>
 </ul>
 </td>
 </tr>
@@ -548,7 +548,7 @@ from this session object.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> – URL that the plugin will operate on</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> -- URL that the plugin will operate on</td>
 </tr>
 </tbody>
 </table>
@@ -573,14 +573,14 @@ lowest quality respectively.</p>
 <p>If multiple streams with the same name are found, the order of
 streams specified in <em>stream_types</em> will determine which stream
 gets to keep the name while the rest will be renamed to
-“&lt;name&gt;_&lt;stream type&gt;”.</p>
+&quot;&lt;name&gt;_&lt;stream type&gt;&quot;.</p>
 <p>The synonyms can be fine tuned with the <em>sorting_excludes</em>
 parameter. This can be either of these types:</p>
 <blockquote>
 <div><ul class="simple">
 <li>A list of filter expressions in the format
-<em>[operator]&lt;value&gt;</em>. For example the filter “&gt;480p” will
-exclude streams ranked higher than “480p” from the list
+<em>[operator]&lt;value&gt;</em>. For example the filter &quot;&gt;480p&quot; will
+exclude streams ranked higher than &quot;480p&quot; from the list
 used in the synonyms ranking. Valid operators are &gt;, &gt;=, &lt;
 and &lt;=. If no operator is specified then equality will be
 tested.</li>
@@ -593,8 +593,8 @@ stream names as input.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>stream_types</strong> – A list of stream types to return.</li>
-<li><strong>sorting_excludes</strong> – Specify which streams to exclude from
+<li><strong>stream_types</strong> -- A list of stream types to return.</li>
+<li><strong>sorting_excludes</strong> -- Specify which streams to exclude from
 the best/worst synonyms.</li>
 </ul>
 </td>
@@ -677,11 +677,11 @@ bitrate</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>url</strong> – The URL to the manifest.</li>
-<li><strong>timeout</strong> – How long to wait for data to be returned from
+<li><strong>url</strong> -- The URL to the manifest.</li>
+<li><strong>timeout</strong> -- How long to wait for data to be returned from
 from the stream before raising an error.</li>
-<li><strong>is_akamai</strong> – force adding of the akamai parameters</li>
-<li><strong>pvswf</strong> – URL of player SWF for Akamai HD player verification.</li>
+<li><strong>is_akamai</strong> -- force adding of the akamai parameters</li>
+<li><strong>pvswf</strong> -- URL of player SWF for Akamai HD player verification.</li>
 </ul>
 </td>
 </tr>
@@ -706,20 +706,20 @@ to <code class="xref py py-meth docutils literal"><span class="pre">requests.req
 </div>
 <dl class="classmethod">
 <dt id="streamlink.stream.HLSStream.parse_variant_playlist">
-<em class="property">classmethod </em><code class="descname">parse_variant_playlist</code><span class="sig-paren">(</span><em>session_</em>, <em>url</em>, <em>name_key=’name’</em>, <em>name_prefix=”</em>, <em>check_streams=False</em>, <em>force_restart=False</em>, <em>name_fmt=None</em>, <em>**request_params</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.parse_variant_playlist" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">parse_variant_playlist</code><span class="sig-paren">(</span><em>session_</em>, <em>url</em>, <em>name_key='name'</em>, <em>name_prefix=''</em>, <em>check_streams=False</em>, <em>force_restart=False</em>, <em>name_fmt=None</em>, <em>**request_params</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.parse_variant_playlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to parse a variant playlist and return its streams.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>url</strong> – The URL of the variant playlist.</li>
-<li><strong>name_key</strong> – Prefer to use this key as stream name, valid keys are:
+<li><strong>url</strong> -- The URL of the variant playlist.</li>
+<li><strong>name_key</strong> -- Prefer to use this key as stream name, valid keys are:
 name, pixels, bitrate.</li>
-<li><strong>name_prefix</strong> – Add this prefix to the stream names.</li>
-<li><strong>check_streams</strong> – Only allow streams that are accessible.</li>
-<li><strong>force_restart</strong> – Start at the first segment even for a live stream</li>
-<li><strong>name_fmt</strong> – A format string for the name, allowed format keys are
+<li><strong>name_prefix</strong> -- Add this prefix to the stream names.</li>
+<li><strong>check_streams</strong> -- Only allow streams that are accessible.</li>
+<li><strong>force_restart</strong> -- Start at the first segment even for a live stream</li>
+<li><strong>name_fmt</strong> -- A format string for the name, allowed format keys are
 name, pixels, bitrate.</li>
 </ul>
 </td>
