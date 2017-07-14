@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Twitch OAuth authentication &mdash; Streamlink 0.7.0 documentation</title>
+  <title>Streamlink Applications &mdash; Streamlink 0.7.0 documentation</title>
   
 
   
@@ -28,7 +28,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.7.0 documentation" href="index.html"/> 
+    <link rel="top" title="Streamlink 0.7.0 documentation" href="index.html"/>
+        <link rel="next" title="Third Party Applications" href="thirdparty.html"/>
+        <link rel="prev" title="Donating" href="donate.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -62,7 +64,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd-packages">Linux and BSD packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#other-platforms">Other platforms</a></li>
@@ -126,8 +128,8 @@
 <li class="toctree-l2"><a class="reference internal" href="donate.html#streamlink-team">Streamlink Team</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="applications.html#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Streamlink Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a></li>
@@ -170,7 +172,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Twitch OAuth authentication</li>
+    <li>Streamlink Applications</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -179,34 +181,52 @@
 </div>
           <div role="main">
             
-  <div class="section" id="twitch-oauth-authentication">
-<h1>Twitch OAuth authentication<a class="headerlink" href="#twitch-oauth-authentication" title="Permalink to this headline">¶</a></h1>
-<!-- Some themes include jquery after our code... -->
-<script type="text/javascript" src="_static/jquery.js"></script>
-<script type="text/javascript">
-    $(function() {
-        var el = $(".highlight");
-        var params = (window.location.hash.substr(1)).split("&");
-
-        for (i = 0; i < params.length; i++) {
-            var keyval = params[i].split("=");
-
-            if (keyval[0] == "access_token")
-            {
-                el.html('<pre>twitch-oauth-token<span class="o">=</span>' + keyval[1] + '</pre>');
-            }
-        }
-    });
-</script><p>You successfully authenticated Streamlink with Twitch.</p>
-<p>Paste this into your <a class="reference internal" href="cli.html#cli-streamlinkrc"><span class="std std-ref">configuration file</span></a>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>twitch-oauth-token<span class="o">=</span>
-</pre></div>
+  <style>
+    .rst-content table.field-list td {
+        padding-top: 8px;
+    }
+</style><div class="section" id="streamlink-applications">
+<h1>Streamlink Applications<a class="headerlink" href="#streamlink-applications" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-twitch-gui">
+<h2>Streamlink Twitch GUI<a class="headerlink" href="#streamlink-twitch-gui" title="Permalink to this headline">¶</a></h2>
+<img alt="Streamlink Twitch GUI" src="https://user-images.githubusercontent.com/467294/28097570-3415020e-66b1-11e7-928d-4b9da35daf13.jpg" />
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">A multi platform Twitch.tv browser for Streamlink</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">Graphical User Interface</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">OS:</th><td class="field-body"><i class="fa fa-fw fa-windows"></i> <i class="fa fa-fw fa-apple"></i> <i class="fa fa-fw fa-linux"></i></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Author:</th><td class="field-body"><a class="reference external" href="https://github.com/bastimeyer">Sebastian Meyer</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Website:</th><td class="field-body"><a class="reference external" href="https://streamlink.github.io/streamlink-twitch-gui">https://streamlink.github.io/streamlink-twitch-gui</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Source code:</th><td class="field-body"><a class="reference external" href="https://github.com/streamlink/streamlink-twitch-gui">https://github.com/streamlink/streamlink-twitch-gui</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Info:</th><td class="field-body">A NW.js based desktop web application, formerly known as <em>Livestreamer Twitch GUI</em>. Browse Twitch.tv and watch
+multiple streams at once. Filter streams by language, receive desktop notifications when followed channels start
+streaming and access the Twitch chat by using customizable chat applications.</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="thirdparty.html" class="btn btn-neutral float-right" title="Third Party Applications">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="donate.html" class="btn btn-neutral" title="Donating"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

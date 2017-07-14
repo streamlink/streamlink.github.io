@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Twitch OAuth authentication &mdash; Streamlink 0.7.0 documentation</title>
+  <title>Third Party Applications &mdash; Streamlink 0.7.0 documentation</title>
   
 
   
@@ -28,7 +28,8 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.7.0 documentation" href="index.html"/> 
+    <link rel="top" title="Streamlink 0.7.0 documentation" href="index.html"/>
+        <link rel="prev" title="Streamlink Applications" href="applications.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -62,7 +63,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd-packages">Linux and BSD packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#other-platforms">Other platforms</a></li>
@@ -130,7 +131,7 @@
 <li class="toctree-l2"><a class="reference internal" href="applications.html#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Third Party Applications</a></li>
 </ul>
 
         
@@ -170,7 +171,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Twitch OAuth authentication</li>
+    <li>Third Party Applications</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -179,34 +180,25 @@
 </div>
           <div role="main">
             
-  <div class="section" id="twitch-oauth-authentication">
-<h1>Twitch OAuth authentication<a class="headerlink" href="#twitch-oauth-authentication" title="Permalink to this headline">¶</a></h1>
-<!-- Some themes include jquery after our code... -->
-<script type="text/javascript" src="_static/jquery.js"></script>
-<script type="text/javascript">
-    $(function() {
-        var el = $(".highlight");
-        var params = (window.location.hash.substr(1)).split("&");
-
-        for (i = 0; i < params.length; i++) {
-            var keyval = params[i].split("=");
-
-            if (keyval[0] == "access_token")
-            {
-                el.html('<pre>twitch-oauth-token<span class="o">=</span>' + keyval[1] + '</pre>');
-            }
-        }
-    });
-</script><p>You successfully authenticated Streamlink with Twitch.</p>
-<p>Paste this into your <a class="reference internal" href="cli.html#cli-streamlinkrc"><span class="std std-ref">configuration file</span></a>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>twitch-oauth-token<span class="o">=</span>
-</pre></div>
-</div>
+  <style>
+    .rst-content table.field-list td {
+        padding-top: 8px;
+    }
+</style><div class="section" id="third-party-applications">
+<h1>Third Party Applications<a class="headerlink" href="#third-party-applications" title="Permalink to this headline">¶</a></h1>
+<p>Help us extend this list by sending us a pull request on Github. Thanks!</p>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="applications.html" class="btn btn-neutral" title="Streamlink Applications"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
