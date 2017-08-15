@@ -80,6 +80,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#plugin-specific-usage">Plugin specific usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sideloading-plugins">Sideloading plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#proxy-support">Proxy Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#command-line-usage">Command-line usage</a></li>
 </ul>
 </li>
@@ -516,8 +517,20 @@ a Adobe HDS stream:</p>
 </table>
 </div>
 </div>
+<div class="section" id="proxy-support">
+<span id="cli-options"></span><h2>Proxy Support<a class="headerlink" href="#proxy-support" title="Permalink to this headline">¶</a></h2>
+<p>You can use the <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal"><span class="pre">--http-proxy</span></code></a> and <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal"><span class="pre">--https-proxy</span></code></a> options to
+change the proxy server that Streamlink will use for HTTP and HTTPS requests respectively.
+As HTTP and HTTPS requests can be handled by separate proxies, you may need to specify both
+options if the plugin you use makes HTTP and HTTPS requests.</p>
+<p>Both HTTP and SOCKS5 proxies are supported, authentication is supported for both types.</p>
+<p>For example:
+.. code-block:: console</p>
+<blockquote>
+<div>$ streamlink --http-proxy &quot;<a class="reference external" href="http://user:pass&#64;10.10.1.10:3128/">http://user:pass<a class="reference external" href="https://github.com/10">&#64;10</a>.10.1.10:3128/</a>&quot; --https-proxy &quot;socks5://10.10.1.10:1242&quot;</div></blockquote>
+</div>
 <div class="section" id="command-line-usage">
-<span id="cli-options"></span><h2>Command-line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
+<h2>Command-line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="o">[</span>OPTIONS<span class="o">]</span> &lt;URL&gt; <span class="o">[</span>STREAM<span class="o">]</span>
 </pre></div>
 </div>
