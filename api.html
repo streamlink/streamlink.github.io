@@ -257,7 +257,7 @@ options and log settings.</p>
 
 <dl class="method">
 <dt id="streamlink.Streamlink.resolve_url">
-<code class="descname">resolve_url</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url" title="Permalink to this definition">¶</a></dt>
+<code class="descname">resolve_url</code><span class="sig-paren">(</span><em>url</em>, <em>follow_redirect=True</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to find a plugin that can use this URL.</p>
 <p>The default protocol (http) will be prefixed to the URL if
 not specified.</p>
@@ -266,7 +266,11 @@ not specified.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> -- a URL to match against loaded plugins</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> -- a URL to match against loaded plugins</li>
+<li><strong>follow_redirect</strong> -- follow redirects</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -565,6 +569,14 @@ from this session object.</p>
 <dd><p>Deprecated since version 1.9.0.</p>
 <p>Has been renamed to <a class="reference internal" href="#streamlink.plugin.Plugin.streams" title="streamlink.plugin.Plugin.streams"><code class="xref py py-func docutils literal"><span class="pre">Plugin.streams()</span></code></a>, this is an alias
 for backwards compatibility.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="streamlink.plugin.Plugin.priority">
+<em class="property">classmethod </em><code class="descname">priority</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the plugin priority for a given URL, by default it returns
+NORMAL priority.
+:return: priority level</p>
 </dd></dl>
 
 <dl class="method">
