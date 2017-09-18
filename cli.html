@@ -525,10 +525,10 @@ change the proxy server that Streamlink will use for HTTP and HTTPS requests res
 As HTTP and HTTPS requests can be handled by separate proxies, you may need to specify both
 options if the plugin you use makes HTTP and HTTPS requests.</p>
 <p>Both HTTP and SOCKS5 proxies are supported, authentication is supported for both types.</p>
-<p>For example:
-.. code-block:: console</p>
-<blockquote>
-<div>$ streamlink --http-proxy &quot;<a class="reference external" href="http://user:pass&#64;10.10.1.10:3128/">http://user:pass<a class="reference external" href="https://github.com/10">&#64;10</a>.10.1.10:3128/</a>&quot; --https-proxy &quot;socks5://10.10.1.10:1242&quot;</div></blockquote>
+<p>For example:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --http-proxy <span class="s2">&quot;http://user:pass@10.10.1.10:3128/&quot;</span> --https-proxy <span class="s2">&quot;socks5://10.10.1.10:1242&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="command-line-usage">
 <h2>Command-line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
