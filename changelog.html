@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Streamlink 0.8.1 documentation</title>
+  <title>Changelog &mdash; Streamlink 0.9.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.8.1 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.9.0 documentation" href="index.html"/>
         <link rel="next" title="Donating" href="donate.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
@@ -112,6 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-0-9-0-2017-11-14">streamlink 0.9.0 (2017-11-14)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-8-1-2017-09-12">Streamlink 0.8.1 (2017-09-12)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-7-0-2017-06-30">streamlink 0.7.0 (2017-06-30)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-6-0-2017-05-11">streamlink 0.6.0 (2017-05-11)</a></li>
@@ -185,6 +186,72 @@
             
   <div class="section" id="changelog">
 <span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-0-9-0-2017-11-14">
+<h2>streamlink 0.9.0 (2017-11-14)<a class="headerlink" href="#streamlink-0-9-0-2017-11-14" title="Permalink to this headline">¶</a></h2>
+<p>Streamlink 0.9.0 has been released!</p>
+<p>This release is mostly code refactoring as well as module inclusion.</p>
+<p>Features:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Updates to multiple plugins (electrecetv, tvplayer, Teve2, cnnturk, kanald)</li>
+<li>SOCKS module being included in the Streamlink installer (PySocks)</li>
+</ul>
+</div></blockquote>
+<p>Many thanks to those who've contributed in this release!</p>
+<p>If you think that this application is helpful, please consider supporting the maintainers by [donating via the Open collective](<a class="reference external" href="https://opencollective.com/streamlink">https://opencollective.com/streamlink</a>). Not only becoming a backer, but also a sponsor for the (open source) project.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Alexis</span> <span class="n">Murzeau</span> <span class="o">&lt;</span><span class="n">amubtdx</span><span class="nd">@outlook</span><span class="o">.</span><span class="n">fr</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">docs</span><span class="p">:</span> <span class="n">add</span> <span class="n">new</span> <span class="n">line</span> <span class="n">before</span> <span class="n">codeblock</span> <span class="n">to</span> <span class="n">fix</span> <span class="n">them</span>
+      <span class="n">Fix</span> <span class="n">sphinx</span> <span class="n">warning</span> <span class="n">on</span> <span class="n">Directive</span> <span class="k">class</span>
+
+<span class="nc">Charlie</span> <span class="n">Drage</span> <span class="o">&lt;</span><span class="n">charlie</span><span class="nd">@charliedrage</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">the</span> <span class="n">release</span> <span class="n">script</span>
+
+<span class="n">Emrah</span> <span class="n">Er</span> <span class="o">&lt;</span><span class="n">emraher</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">canlitv</span><span class="p">:</span> <span class="n">fix</span> <span class="n">URLs</span> <span class="p">(</span><span class="c1">#1281)</span>
+
+<span class="n">Jake</span> <span class="n">Robertson</span> <span class="o">&lt;</span><span class="n">jake</span><span class="nd">@faltro</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">exit</span> <span class="k">with</span> <span class="n">code</span> <span class="mi">130</span> <span class="n">after</span> <span class="n">a</span> <span class="ne">KeyboardInterrupt</span>
+      <span class="n">refactor</span> <span class="n">error</span> <span class="n">code</span> <span class="n">determination</span>
+      <span class="n">unify</span> <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span> <span class="n">calls</span>
+
+<span class="n">RosadinTV</span> <span class="o">&lt;</span><span class="n">rosadintv</span><span class="nd">@outlook</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+      <span class="n">Update</span> <span class="n">eltrecetv</span><span class="o">.</span><span class="n">py</span>
+      <span class="n">Update</span> <span class="n">eltrecetv</span><span class="o">.</span><span class="n">py</span>
+      <span class="n">Update</span> <span class="n">plugin_matrix</span><span class="o">.</span><span class="n">rst</span>
+      <span class="n">Add</span> <span class="n">webcast_india_gov</span><span class="o">.</span><span class="n">py</span>
+      <span class="n">Add</span> <span class="n">test_webcast_india_gov</span><span class="o">.</span><span class="n">py</span>
+
+<span class="n">back</span><span class="o">-</span><span class="n">to</span> <span class="o">&lt;</span><span class="n">back</span><span class="o">-</span><span class="n">to</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="p">[</span><span class="n">zattoo</span><span class="p">]</span> <span class="n">It</span> <span class="n">won</span><span class="s1">&#39;t work with None in Python 3.6, set always a default date instead of None.</span>
+      <span class="p">[</span><span class="n">liveme</span><span class="p">]</span> <span class="n">API</span> <span class="n">update</span> <span class="p">(</span><span class="c1">#1298)</span>
+      <span class="n">Ignore</span> <span class="n">WinError</span> <span class="mi">10053</span> <span class="o">/</span> <span class="n">WSAECONNABORTED</span>
+
+<span class="n">beardypig</span> <span class="o">&lt;</span><span class="n">beardypig</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">tvplayer</span><span class="p">:</span> <span class="n">extract</span> <span class="n">the</span> <span class="n">channel</span> <span class="nb">id</span> <span class="n">when</span> <span class="n">logged</span> <span class="ow">in</span> <span class="k">as</span> <span class="n">a</span> <span class="n">subscriber</span>
+      <span class="n">installer</span><span class="p">:</span> <span class="n">include</span> <span class="n">the</span> <span class="n">socks</span> <span class="n">proxy</span> <span class="n">modules</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">kanal7</span><span class="p">:</span> <span class="n">update</span> <span class="k">for</span> <span class="n">page</span> <span class="n">layout</span> <span class="n">change</span> <span class="ow">and</span> <span class="n">referrer</span> <span class="n">check</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">turkuvaz</span><span class="p">:</span> <span class="n">fix</span> <span class="n">some</span> <span class="n">turkuvaz</span> <span class="n">sites</span> <span class="ow">and</span> <span class="n">add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">anews</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">cinergroup</span><span class="p">:</span> <span class="n">support</span> <span class="k">for</span> <span class="n">different</span> <span class="n">showtv</span> <span class="n">url</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">dogus</span><span class="o">/</span><span class="n">startv</span><span class="p">:</span> <span class="n">fix</span> <span class="n">dogus</span> <span class="n">sites</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">dogan</span><span class="p">:</span> <span class="n">fix</span> <span class="k">for</span> <span class="n">teve2</span> <span class="ow">and</span> <span class="n">cnnturk</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">dogan</span><span class="p">:</span> <span class="n">fix</span> <span class="k">for</span> <span class="n">kanald</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">tvcatchup</span><span class="p">:</span> <span class="n">HLS</span> <span class="n">source</span> <span class="n">extraction</span> <span class="n">update</span>
+      <span class="n">setup</span><span class="p">:</span> <span class="n">fix</span> <span class="n">PySocks</span> <span class="n">module</span> <span class="n">dependency</span>
+
+<span class="n">ficofabrid</span> <span class="o">&lt;</span><span class="mi">31028711</span><span class="o">+</span><span class="n">ficofabrid</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">a</span> <span class="n">single</span> <span class="n">newline</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="o">.</span> <span class="p">(</span><span class="c1">#1235)</span>
+
+<span class="n">fozzy</span> <span class="o">&lt;</span><span class="n">fozzy</span><span class="nd">@fozzy</span><span class="o">.</span><span class="n">co</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">fix</span> <span class="n">huya</span><span class="o">.</span><span class="n">com</span> <span class="n">plugin</span>
+
+<span class="n">steven7851</span> <span class="o">&lt;</span><span class="n">steven7851</span><span class="nd">@msn</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">pandatv</span><span class="p">:</span> <span class="n">fix</span> <span class="n">APIv3</span> <span class="p">(</span><span class="c1">#1286)</span>
+
+<span class="n">wlerin</span> <span class="o">&lt;</span><span class="n">wlerin</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">plugin</span><span class="o">.</span><span class="n">showroom</span><span class="p">:</span> <span class="n">update</span> <span class="n">to</span> <span class="n">new</span> <span class="n">api</span> <span class="p">(</span><span class="c1">#1311)</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-0-8-1-2017-09-12">
 <h2>Streamlink 0.8.1 (2017-09-12)<a class="headerlink" href="#streamlink-0-8-1-2017-09-12" title="Permalink to this headline">¶</a></h2>
 <p>0.8.1 of Streamlink!</p>
@@ -1527,7 +1594,7 @@ code refactors to the existing code-base.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.8.1',
+            VERSION:'0.9.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
