@@ -959,6 +959,16 @@ Minimum value is 1 and maximum is 10.</p>
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption-hls-audio-select">
+<code class="descname">--hls-audio-select</code><code class="descclassname"> CODE</code><a class="headerlink" href="#cmdoption-hls-audio-select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects a specific audio source, by language code, when multiple audio sources are available.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is only useful in special circumstances where the regular locale option fails.</p>
+</div>
+</dd></dl>
+
+<dl class="option">
 <dt id="cmdoption-hls-timeout">
 <code class="descname">--hls-timeout</code><code class="descclassname"> TIMEOUT</code><a class="headerlink" href="#cmdoption-hls-timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Timeout for reading data from HLS streams.</p>
@@ -966,15 +976,26 @@ Minimum value is 1 and maximum is 10.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-hls-audio-select">
-<code class="descname">--hls-audio-select</code><code class="descclassname"> CODE</code><a class="headerlink" href="#cmdoption-hls-audio-select" title="Permalink to this definition">¶</a></dt>
-<dd><p>Selects a specific audio source by language code
-when multiple audio sources are available.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is only useful in special circumstances
-where the regular locale option fails.</p>
-</div>
+<dt id="cmdoption-hls-start-offset">
+<code class="descname">--hls-start-offset</code><code class="descclassname"> HH:MM:SS</code><a class="headerlink" href="#cmdoption-hls-start-offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Amount of time to skip from the beginning of the stream.
+For live streams, this is a negative offset from the end of the stream.</p>
+<p>Default is: <strong>00:00:00</strong>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hls-duration">
+<code class="descname">--hls-duration</code><code class="descclassname"> HH:MM:SS</code><a class="headerlink" href="#cmdoption-hls-duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit the playback duration, useful for watching segments of a stream. The actual duration may be slightly
+longer, as it is rounded to the nearest HLS segment.</p>
+<p>Has no effect on live streams.</p>
+<p>Default is: <strong>unlimited</strong>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-hls-live-restart">
+<code class="descname">--hls-live-restart</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-hls-live-restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skip to the beginning of a live stream, or as far back as possible.</p>
 </dd></dl>
 
 <dl class="option">
