@@ -184,8 +184,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="installation">
-<span id="install"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="install"></span><div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="linux-and-bsd-packages">
 <h2>Linux and BSD packages<a class="headerlink" href="#linux-and-bsd-packages" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -501,28 +501,46 @@ permission issues (see issue <a class="reference external" href="https://github.
 <h2>Windows binaries<a class="headerlink" href="#windows-binaries" title="Permalink to this headline">¶</a></h2>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">Windows XP is not supported.
+<p class="last">Windows XP is not supported. <br />
 Windows Vista requires at least SP2 to be installed.</p>
 </div>
-<p>A Windows installer of the latest <strong>stable release</strong> can be found on the <a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">GitHub releases page</a>.</p>
-<p>Alternatively, a Windows installer of the <a class="reference external" href="https://dl.bintray.com/streamlink/streamlink-nightly/streamlink-latest.exe">latest development build</a> for testing purposes is available,
-with a summary of the changes in the <a class="reference external" href="https://bintray.com/streamlink/streamlink-nightly/streamlink/latest#release">release notes</a>. This development build is updated once per day,
-and a list of <a class="reference external" href="https://dl.bintray.com/streamlink/streamlink-nightly/">previous builds</a> is provided.</p>
-<p>This is an installer which contains:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Release</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">Stable release</a></td>
+<td>Download the installer from the <a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">GitHub releases page</a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://bintray.com/streamlink/streamlink-nightly/streamlink/_latestVersion/#files">Development build</a></td>
+<td>For testing purposes only! Updated once per day. <br />
+Download the installer from <a class="reference external" href="https://bintray.com/streamlink/streamlink-nightly/streamlink/_latestVersion/#files">Bintray</a>. <br />
+See the <a class="reference external" href="https://bintray.com/streamlink/streamlink-nightly/streamlink/latest#release">list of recent changes</a> since the last stable release.</td>
+</tr>
+</tbody>
+</table>
+<p>These installers contain:</p>
 <ul class="simple">
-<li>A compiled version of Streamlink that does not require an existing Python
-installation</li>
+<li>A compiled version of Streamlink that <strong>does not require an existing Python
+installation</strong></li>
 <li><a class="reference external" href="http://rtmpdump.mplayerhq.hu/">RTMPDump</a> for viewing RTMP streams</li>
 <li><a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a> for muxing streams</li>
 </ul>
-<p>and performs the following tasks:</p>
+<p>and perform the following tasks:</p>
 <ul class="simple">
-<li>Adds Streamlink to your <code class="docutils literal"><span class="pre">$PATH</span></code> (making it possible to use
-<strong class="command">streamlink</strong> directly from the command prompt without specifying
-its directory)</li>
+<li>Add Streamlink to the system's list of installed applications. <br />
+An uninstaller will automatically be created during installation.</li>
+<li>Add Streamlink's installation directory to the system's <code class="docutils literal"><span class="pre">PATH</span></code> environment variable. <br />
+This allows the user to run the <code class="docutils literal"><span class="pre">streamlink</span></code> command globally
+from the command prompt or powershell without specifying its directory.</li>
 </ul>
-<p>To build the installer, you need to have <code class="docutils literal"><span class="pre">NSIS</span></code> and <code class="docutils literal"><span class="pre">pynsist</span></code> installed on your
-system.</p>
+<p>To build the installer on your own, <code class="docutils literal"><span class="pre">NSIS</span></code> and <code class="docutils literal"><span class="pre">pynsist</span></code> need to be installed.</p>
 <div class="section" id="windows-portable-version">
 <h3>Windows portable version<a class="headerlink" href="#windows-portable-version" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
