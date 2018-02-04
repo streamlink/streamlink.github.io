@@ -191,8 +191,8 @@
 <h2>Linux and BSD packages<a class="headerlink" href="#linux-and-bsd-packages" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="table-custom-layout docutils">
 <colgroup>
-<col width="43%" />
-<col width="57%" />
+<col width="21%" />
+<col width="79%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Distribution</th>
@@ -211,6 +211,22 @@
 </pre></div>
 </div>
 <p class="last"><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">Installing AUR packages</a></p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (sid, testing)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt update
+<span class="gp">#</span> apt install streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://bintray.com/amurzeau/streamlink-debian/streamlink">Debian (stable)</a></td>
+<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -qO- <span class="s2">&quot;https://bintray.com/user/downloadSubjectPublicKey?username=amurzeau&quot;</span> <span class="p">|</span> apt-key add -
+<span class="gp">#</span> <span class="nb">echo</span> <span class="s2">&quot;deb https://dl.bintray.com/amurzeau/streamlink-debian stretch-backports main&quot;</span> <span class="p">|</span> tee <span class="s2">&quot;/etc/apt/sources.list.d/streamlink.list&quot;</span>
+<span class="gp">#</span> apt update
+<span class="gp">#</span> apt install streamlink
+</pre></div>
+</div>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://apps.fedoraproject.org/packages/python-streamlink">Fedora</a></td>
@@ -319,31 +335,34 @@
 <tr class="row-even"><td>Chocolatey</td>
 <td>Scott Walters &lt;me at scowalt.com&gt;</td>
 </tr>
-<tr class="row-odd"><td>Fedora</td>
+<tr class="row-odd"><td>Debian</td>
+<td>Alexis Murzeau &lt;amubtdx at gmail.com&gt;</td>
+</tr>
+<tr class="row-even"><td>Fedora</td>
 <td>Mohamed El Morabity &lt;melmorabity at fedoraproject.org&gt;</td>
 </tr>
-<tr class="row-even"><td>Gentoo</td>
+<tr class="row-odd"><td>Gentoo</td>
 <td>soredake &lt;fdsfgs at krutt.org&gt;</td>
 </tr>
-<tr class="row-odd"><td>NetBSD</td>
+<tr class="row-even"><td>NetBSD</td>
 <td>Maya Rashish &lt;maya at netbsd.org&gt;</td>
 </tr>
-<tr class="row-even"><td>NixOS</td>
+<tr class="row-odd"><td>NixOS</td>
 <td>Tuomas Tynkkynen &lt;tuomas.tynkkynen at iki.fi&gt;</td>
 </tr>
-<tr class="row-odd"><td>Solus</td>
+<tr class="row-even"><td>Solus</td>
 <td>Bryan T. Meyers &lt;bmeyers at datadrake.com&gt;</td>
 </tr>
-<tr class="row-even"><td>Ubuntu</td>
+<tr class="row-odd"><td>Ubuntu</td>
 <td>Alin Andrei &lt;andrew at webupd8.org&gt;</td>
 </tr>
-<tr class="row-odd"><td>Void</td>
+<tr class="row-even"><td>Void</td>
 <td>wkuipers &lt;wietse at kuiprs.nl&gt;</td>
 </tr>
-<tr class="row-even"><td>Windows binaries</td>
+<tr class="row-odd"><td>Windows binaries</td>
 <td>beardypig &lt;beardypig at protonmail.com&gt;</td>
 </tr>
-<tr class="row-odd"><td>Windows port. version</td>
+<tr class="row-even"><td>Windows port. version</td>
 <td>RosadinTV &lt;RosadinTV at outlook.com&gt; <br />
 beardypig &lt;beardypig at protonmail.com&gt;</td>
 </tr>
