@@ -960,6 +960,19 @@ Minimum value is 1 and maximum is 10.</p>
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption-hls-segment-ignore-names">
+<code class="descname">--hls-segment-ignore-names</code><code class="descclassname"> NAMES</code><a class="headerlink" href="#cmdoption-hls-segment-ignore-names" title="Permalink to this definition">¶</a></dt>
+<dd><p>A comma-delimited list of segment names that will not be fetched.</p>
+<p>Example: <a class="reference internal" href="#cmdoption-hls-segment-ignore-names"><code class="xref std std-option docutils literal"><span class="pre">--hls-segment-ignore-names</span></code></a> 000,001,002</p>
+<p>This will ignore every segment that ends with 000.ts, 001.ts and 002.ts</p>
+<p>Default is: <strong>None</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <a class="reference internal" href="#cmdoption-hls-timeout"><code class="xref std std-option docutils literal"><span class="pre">--hls-timeout</span></code></a> must be increased, to a time that is longer than the ignored break.</p>
+</div>
+</dd></dl>
+
+<dl class="option">
 <dt id="cmdoption-hls-audio-select">
 <code class="descname">--hls-audio-select</code><code class="descclassname"> CODE</code><a class="headerlink" href="#cmdoption-hls-audio-select" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects a specific audio source, by language code, when multiple audio sources are available.</p>
