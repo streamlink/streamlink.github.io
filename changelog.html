@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Streamlink 0.10.0 documentation</title>
+  <title>Changelog &mdash; Streamlink 0.11.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.10.0 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.11.0 documentation" href="index.html"/>
         <link rel="next" title="Donating" href="donate.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
@@ -112,6 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-0-11-0-2018-03-08">streamlink 0.11.0 (2018-03-08)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-10-0-2018-01-23">streamlink 0.10.0 (2018-01-23)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-9-0-2017-11-14">streamlink 0.9.0 (2017-11-14)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-8-1-2017-09-12">Streamlink 0.8.1 (2017-09-12)</a></li>
@@ -187,6 +188,86 @@
             
   <div class="section" id="changelog">
 <span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-0-11-0-2018-03-08">
+<h2>streamlink 0.11.0 (2018-03-08)<a class="headerlink" href="#streamlink-0-11-0-2018-03-08" title="Permalink to this headline">¶</a></h2>
+<p>Streamlink 0.11.0!</p>
+<p>Here's what's new:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Fixed documentation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/1467">https://github.com/streamlink/streamlink/pull/1467</a> and <a class="reference external" href="https://github.com/streamlink/streamlink/pull/1468">https://github.com/streamlink/streamlink/pull/1468</a>)</dt>
+<dd><ul class="first last">
+<li>Current versions of the OS, Python, Streamlink and Requests are now shown with -l debug (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/1374">https://github.com/streamlink/streamlink/pull/1374</a>)</li>
+<li>ok.ru/live plugin added (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/1451">https://github.com/streamlink/streamlink/pull/1451</a>)</li>
+<li>New option --hls-segment-ignore-names (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/1432">https://github.com/streamlink/streamlink/pull/1432</a>)</li>
+<li>AfreecaTV plugin updates (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/1390">https://github.com/streamlink/streamlink/pull/1390</a>)</li>
+<li>Added support for zattoo recordings (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/1480">https://github.com/streamlink/streamlink/pull/1480</a>)</li>
+<li>Bigo plugin updates (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/1474">https://github.com/streamlink/streamlink/pull/1474</a>)</li>
+<li>Neulion plugin removed due to DMCA notice (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/1497">https://github.com/streamlink/streamlink/pull/1497</a>)</li>
+<li>And many more updates to numerous other plugins!</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Alexis</span> <span class="n">Murzeau</span> <span class="o">&lt;</span><span class="n">amubtdx</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="n">Remove</span> <span class="n">Debian</span> <span class="n">directory</span>
+      <span class="n">docs</span><span class="o">/</span><span class="n">install</span><span class="p">:</span> <span class="n">use</span> <span class="n">sudo</span> <span class="k">for</span> <span class="n">Ubuntu</span> <span class="ow">and</span> <span class="n">Solus</span>
+      <span class="n">docs</span><span class="o">/</span><span class="n">install</span><span class="p">:</span> <span class="n">add</span> <span class="n">Debian</span> <span class="n">instructions</span> <span class="p">(</span><span class="c1">#1455)</span>
+
+<span class="n">Anton</span> <span class="n">Tykhyy</span> <span class="o">&lt;</span><span class="n">atykhyy</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">ok</span><span class="o">.</span><span class="n">ru</span><span class="o">/</span><span class="n">live</span> <span class="n">plugin</span>
+
+<span class="n">BZHDeveloper</span> <span class="o">&lt;</span><span class="n">inizan</span><span class="o">.</span><span class="n">yannick</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="p">[</span><span class="n">TF1</span><span class="p">]</span> <span class="n">Fix</span> <span class="n">plugin</span> <span class="p">(</span><span class="c1">#1457)</span>
+
+<span class="n">Bruno</span> <span class="n">Ribeiro</span> <span class="o">&lt;</span><span class="n">offboard</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">added</span> <span class="n">cd</span> <span class="n">streamlink</span>
+
+<span class="n">Drew</span> <span class="n">J</span><span class="o">.</span> <span class="n">Sonne</span> <span class="o">&lt;</span><span class="n">drewsonne</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="p">[</span><span class="n">bbciplayer</span><span class="p">]</span> <span class="n">Fix</span> <span class="n">authentication</span> <span class="n">failures</span> <span class="p">(</span><span class="c1">#1411)</span>
+
+<span class="n">Hannes</span> <span class="n">Pétur</span> <span class="n">Eggertsson</span> <span class="o">&lt;</span><span class="n">hannespetur</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Ruv</span> <span class="n">plugin</span> <span class="n">updated</span><span class="o">.</span> <span class="n">Fixes</span> <span class="c1">#643. (#1486)</span>
+
+<span class="n">Mohamed</span> <span class="n">El</span> <span class="n">Morabity</span> <span class="o">&lt;</span><span class="n">melmorabity</span><span class="nd">@fedoraproject</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">Add</span> <span class="n">support</span> <span class="k">for</span> <span class="n">IDF1</span>
+
+<span class="n">back</span><span class="o">-</span><span class="n">to</span> <span class="o">&lt;</span><span class="n">backto</span><span class="nd">@protonmail</span><span class="o">.</span><span class="n">ch</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+      <span class="p">[</span><span class="n">cli</span><span class="o">-</span><span class="n">debug</span><span class="p">]</span> <span class="n">Show</span> <span class="n">current</span> <span class="n">installed</span> <span class="n">versions</span> <span class="k">with</span> <span class="o">-</span><span class="n">l</span> <span class="n">debug</span>
+      <span class="p">[</span><span class="n">hls</span><span class="p">]</span> <span class="n">New</span> <span class="n">option</span> <span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">segment</span><span class="o">-</span><span class="n">ignore</span><span class="o">-</span><span class="n">names</span>
+      <span class="p">[</span><span class="n">cli</span><span class="o">-</span><span class="n">debug</span><span class="p">]</span> <span class="n">Renamed</span> <span class="n">method</span> <span class="ow">and</span> <span class="n">small</span> <span class="n">template</span> <span class="n">update</span>
+      <span class="p">[</span><span class="n">afreeca</span><span class="p">]</span> <span class="n">Plugin</span> <span class="n">update</span><span class="o">.</span> <span class="o">-</span> <span class="n">Login</span> <span class="k">for</span> <span class="o">+</span><span class="mi">19</span> <span class="n">streams</span>   <span class="o">--</span><span class="n">afreeca</span><span class="o">-</span><span class="n">username</span>   <span class="o">--</span><span class="n">afreeca</span><span class="o">-</span><span class="n">password</span> <span class="o">-</span> <span class="n">Removed</span> <span class="mi">15</span> <span class="n">sec</span> <span class="n">countdown</span> <span class="o">-</span> <span class="n">Added</span> <span class="n">some</span> <span class="n">error</span> <span class="n">messages</span> <span class="o">-</span> <span class="n">Removed</span> <span class="n">old</span> <span class="n">Global</span> <span class="n">AfreecaTV</span> <span class="n">plugin</span> <span class="o">-</span> <span class="n">Added</span> <span class="n">url</span> <span class="n">tests</span>
+      <span class="p">[</span><span class="n">zattoo</span><span class="p">]</span> <span class="n">Added</span> <span class="n">support</span> <span class="k">for</span> <span class="n">zattoo</span> <span class="n">recordings</span>
+      <span class="p">[</span><span class="n">tests</span><span class="p">]</span> <span class="n">Fixed</span> <span class="n">metaclass</span> <span class="n">on</span> <span class="n">python</span> <span class="mi">3</span>
+      <span class="p">[</span><span class="n">periscope</span><span class="p">]</span> <span class="n">Fix</span> <span class="k">for</span> <span class="n">variant</span> <span class="n">HLS</span> <span class="n">streams</span>
+      <span class="p">[</span><span class="n">facebook</span><span class="p">]</span> <span class="n">mark</span> <span class="k">as</span> <span class="n">broken</span><span class="p">,</span> <span class="n">they</span> <span class="n">use</span> <span class="n">dash</span> <span class="n">now</span><span class="o">.</span>
+      <span class="n">Removed</span> <span class="n">furstream</span><span class="p">:</span> <span class="n">dead</span> <span class="n">website</span> <span class="ow">and</span> <span class="n">file</span> <span class="n">was</span> <span class="n">wrong</span> <span class="n">formated</span> <span class="n">UTF8</span><span class="o">-</span><span class="n">BOM</span>
+      <span class="p">[</span><span class="n">codecov</span><span class="p">]</span> <span class="n">use</span> <span class="n">pytest</span> <span class="ow">and</span> <span class="n">upload</span> <span class="nb">all</span> <span class="n">data</span>
+
+<span class="n">bastimeyer</span> <span class="o">&lt;</span><span class="n">mail</span><span class="nd">@bastimeyer</span><span class="o">.</span><span class="n">de</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">docs</span><span class="p">:</span> <span class="n">fix</span> <span class="n">table</span> <span class="n">layout</span> <span class="n">on</span> <span class="n">the</span> <span class="n">install</span> <span class="n">page</span>
+      <span class="p">[</span><span class="n">neulion</span><span class="p">]</span> <span class="n">Remove</span> <span class="n">plugin</span><span class="o">.</span> <span class="n">See</span> <span class="c1">#1493</span>
+
+<span class="n">beardypig</span> <span class="o">&lt;</span><span class="n">beardypig</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">kanal7</span><span class="p">:</span> <span class="n">fix</span> <span class="k">for</span> <span class="n">new</span> <span class="n">streaming</span> <span class="n">iframe</span>
+      <span class="n">plugins</span><span class="o">.</span><span class="n">foxtr</span><span class="p">:</span> <span class="n">update</span> <span class="n">regex</span> <span class="n">to</span> <span class="n">match</span> <span class="n">new</span> <span class="n">site</span> <span class="n">layout</span>
+
+<span class="n">leshka</span> <span class="o">&lt;</span><span class="n">leshkajm</span><span class="nd">@ya</span><span class="o">.</span><span class="n">ru</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="p">[</span><span class="n">goodgame</span><span class="p">]</span> <span class="n">Fixed</span> <span class="n">url</span> <span class="n">regexp</span> <span class="k">for</span> <span class="n">handling</span> <span class="n">miscellaneous</span> <span class="n">symbols</span> <span class="ow">in</span> <span class="n">username</span><span class="o">.</span>
+
+<span class="n">schrobby</span> <span class="o">&lt;</span><span class="n">schrawby</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">update</span> <span class="kn">from</span> <span class="nn">github</span> <span class="n">comments</span>
+
+<span class="n">sqrt2</span> <span class="o">&lt;</span><span class="n">sqrt2</span><span class="nd">@users</span><span class="o">.</span><span class="n">noreply</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="p">[</span><span class="n">orf_tvthek</span><span class="p">]</span> <span class="n">Work</span> <span class="n">around</span> <span class="n">broken</span> <span class="n">HTTP</span> <span class="n">connection</span> <span class="n">persistence</span> <span class="p">(</span><span class="c1">#1420)</span>
+
+<span class="n">unnutricious</span> <span class="o">&lt;</span><span class="n">unnutricious</span><span class="nd">@protonmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+      <span class="p">[</span><span class="n">bigo</span><span class="p">]</span> <span class="n">update</span> <span class="n">video</span> <span class="n">regex</span> <span class="n">to</span> <span class="n">match</span> <span class="n">current</span> <span class="n">website</span> <span class="p">(</span><span class="c1">#1412)</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-0-10-0-2018-01-23">
 <h2>streamlink 0.10.0 (2018-01-23)<a class="headerlink" href="#streamlink-0-10-0-2018-01-23" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink 0.10.0!</p>
@@ -1681,7 +1762,7 @@ code refactors to the existing code-base.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.10.0',
+            VERSION:'0.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
