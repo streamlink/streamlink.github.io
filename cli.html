@@ -835,14 +835,26 @@ and can be useful if set in a config file.</p>
 <dl class="option">
 <dt id="cmdoption-retry-streams">
 <code class="descname">--retry-streams</code><code class="descclassname"> DELAY</code><a class="headerlink" href="#cmdoption-retry-streams" title="Permalink to this definition">¶</a></dt>
-<dd><p>Will retry fetching streams until streams are found while
-waiting DELAY (seconds) between each attempt.</p>
+<dd><p>Retry fetching the list of available streams until streams are found
+while waiting DELAY second(s) between each attempt. If unset, only one
+attempt will be made to fetch the list of streams available.</p>
+<p>The number of fetch retry attempts can be capped with <a class="reference internal" href="#cmdoption-retry-max"><code class="xref std std-option docutils literal"><span class="pre">--retry-max</span></code></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-retry-max">
+<code class="descname">--retry-max</code><code class="descclassname"> COUNT</code><a class="headerlink" href="#cmdoption-retry-max" title="Permalink to this definition">¶</a></dt>
+<dd><p>When using <a class="reference internal" href="#cmdoption-retry-streams"><code class="xref std std-option docutils literal"><span class="pre">--retry-streams</span></code></a>, stop retrying the fetch after COUNT retry
+attempt(s). Fetch will retry infinitely if COUNT is zero or unset.</p>
+<p>If --retry-max is set without setting <a class="reference internal" href="#cmdoption-retry-streams"><code class="xref std std-option docutils literal"><span class="pre">--retry-streams</span></code></a>, the delay between
+retries will default to 1 second.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-retry-open">
 <code class="descname">--retry-open</code><code class="descclassname"> ATTEMPTS</code><a class="headerlink" href="#cmdoption-retry-open" title="Permalink to this definition">¶</a></dt>
-<dd><p>Will try ATTEMPTS times to open the stream until giving up.</p>
+<dd><p>After a successful fetch, try ATTEMPTS time(s)
+to open the stream until giving up.</p>
 <p>Default is: <strong>1</strong>.</p>
 </dd></dl>
 
