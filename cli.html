@@ -988,10 +988,20 @@ Minimum value is 1 and maximum is 10.</p>
 <dl class="option">
 <dt id="cmdoption-hls-audio-select">
 <code class="descname">--hls-audio-select</code><code class="descclassname"> CODE</code><a class="headerlink" href="#cmdoption-hls-audio-select" title="Permalink to this definition">¶</a></dt>
-<dd><p>Selects a specific audio source, by language code, when multiple audio sources are available.</p>
+<dd><p>Selects a specific audio source or sources, by language code or name,
+when multiple audio sources are available. Can be * to download all audio
+sources.</p>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">&quot;English,German&quot;</span>
+<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">&quot;en,de&quot;</span>
+<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">&quot;*&quot;</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This is only useful in special circumstances where the regular locale option fails.</p>
+<p class="last">This is only useful in special circumstances where the
+regular locale option fails, such as when multiple sources of the
+same language exists.</p>
 </div>
 </dd></dl>
 
