@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 0.12.1+9.g9e366c8 documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 0.12.1+10.g8d7ed04 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.12.1+9.g9e366c8 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.12.1+10.g8d7ed04 documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -529,9 +529,16 @@ a Adobe HDS stream:</p>
 change the proxy server that Streamlink will use for HTTP and HTTPS requests respectively.
 As HTTP and HTTPS requests can be handled by separate proxies, you may need to specify both
 options if the plugin you use makes HTTP and HTTPS requests.</p>
-<p>Both HTTP and SOCKS5 proxies are supported, authentication is supported for both types.</p>
+<p>Both HTTP and SOCKS proxies are supported, authentication is supported for both types.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When using a SOCKS proxy the <code class="docutils literal"><span class="pre">socks4</span></code> and <code class="docutils literal"><span class="pre">socks5</span></code> schemes mean that DNS lookups are done
+locally, rather than on the proxy server. To have the proxy server perform the DNS lookups, the
+<code class="docutils literal"><span class="pre">socks4a</span></code> and <code class="docutils literal"><span class="pre">socks5h</span></code> schemes should be used instead.</p>
+</div>
 <p>For example:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --http-proxy <span class="s2">&quot;http://user:pass@10.10.1.10:3128/&quot;</span> --https-proxy <span class="s2">&quot;socks5://10.10.1.10:1242&quot;</span>
+<span class="gp">$</span> streamlink --http-proxy <span class="s2">&quot;socks4a://10.10.1.10:1235&quot;</span> --https-proxy <span class="s2">&quot;socks5h://10.10.1.10:1234&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1594,7 +1601,7 @@ and reauthenticate.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.12.1+9.g9e366c8',
+            VERSION:'0.12.1+10.g8d7ed04',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
