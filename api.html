@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; Streamlink 0.12.1+64.g1e3469d documentation</title>
+  <title>API Reference &mdash; Streamlink 0.12.1+65.gc148978 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.12.1+64.g1e3469d documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.12.1+65.gc148978 documentation" href="index.html"/>
         <link rel="next" title="Changelog" href="changelog.html"/>
         <link rel="prev" title="API Guide" href="api_guide.html"/> 
 
@@ -853,6 +853,32 @@ to <code class="xref py py-meth docutils literal"><span class="pre">requests.req
 </ul>
 </dd></dl>
 
+<dl class="class">
+<dt id="streamlink.stream.DASHStream">
+<em class="property">class </em><code class="descclassname">streamlink.stream.</code><code class="descname">DASHStream</code><span class="sig-paren">(</span><em>session</em>, <em>mpd</em>, <em>video_representation=None</em>, <em>audio_representation=None</em>, <em>period=0</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="classmethod">
+<dt id="streamlink.stream.DASHStream.parse_manifest">
+<em class="property">classmethod </em><code class="descname">parse_manifest</code><span class="sig-paren">(</span><em>session</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream.parse_manifest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to parse a DASH manifest file and return its streams</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>session</strong> -- Streamlink session instance</li>
+<li><strong>url</strong> -- URL of the manifest file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a dict of name -&gt; DASHStream instances</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 <div class="section" id="exceptions">
@@ -924,7 +950,7 @@ with this exception.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.12.1+64.g1e3469d',
+            VERSION:'0.12.1+65.gc148978',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
