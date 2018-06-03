@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; Streamlink 0.12.1+97.g1e6af7d documentation</title>
+  <title>API Reference &mdash; Streamlink 0.12.1+98.g4924b8a documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.12.1+97.g1e6af7d documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.12.1+98.g4924b8a documentation" href="index.html"/>
         <link rel="next" title="Changelog" href="changelog.html"/>
         <link rel="prev" title="API Guide" href="api_guide.html"/> 
 
@@ -577,11 +577,42 @@ from this session object.</p>
 </tbody>
 </table>
 <dl class="method">
+<dt id="streamlink.plugin.Plugin.clear_cookies">
+<code class="descname">clear_cookies</code><span class="sig-paren">(</span><em>cookie_filter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.clear_cookies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all of the saved cookies for this Plugin. To filter the cookies that are deleted
+specify the <code class="docutils literal"><span class="pre">cookie_filter</span></code> argument (see <a class="reference internal" href="#streamlink.plugin.Plugin.save_cookies" title="streamlink.plugin.Plugin.save_cookies"><code class="xref py py-func docutils literal"><span class="pre">save_cookies()</span></code></a>).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cookie_filter</strong> (<em>function</em>) -- a function to filter the cookies</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of the removed cookie names</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="streamlink.plugin.Plugin.get_streams">
 <code class="descname">get_streams</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.get_streams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated since version 1.9.0.</p>
 <p>Has been renamed to <a class="reference internal" href="#streamlink.plugin.Plugin.streams" title="streamlink.plugin.Plugin.streams"><code class="xref py py-func docutils literal"><span class="pre">Plugin.streams()</span></code></a>, this is an alias
 for backwards compatibility.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="streamlink.plugin.Plugin.load_cookies">
+<code class="descname">load_cookies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.load_cookies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load any stored cookies for the plugin that have not expired.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of the restored cookie names</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="classmethod">
@@ -590,6 +621,29 @@ for backwards compatibility.</p>
 <dd><p>Return the plugin priority for a given URL, by default it returns
 NORMAL priority.
 :return: priority level</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="streamlink.plugin.Plugin.save_cookies">
+<code class="descname">save_cookies</code><span class="sig-paren">(</span><em>cookie_filter=None</em>, <em>default_expires=604800</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.save_cookies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the cookies from <code class="docutils literal"><span class="pre">http</span></code> in the plugin cache until they expire. The cookies can be filtered
+by supplying a filter method. eg. <code class="docutils literal"><span class="pre">lambda</span> <span class="pre">c:</span> <span class="pre">&quot;auth&quot;</span> <span class="pre">in</span> <span class="pre">c.name</span></code>. If no expiry date is given in the
+cookie then the <code class="docutils literal"><span class="pre">default_expires</span></code> value will be used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cookie_filter</strong> (<em>function</em>) -- a function to filter the cookies</li>
+<li><strong>default_expires</strong> (<em>int</em>) -- time (in seconds) until cookies with no expiry will expire</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of the saved cookie names</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -950,7 +1004,7 @@ with this exception.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.12.1+97.g1e6af7d',
+            VERSION:'0.12.1+98.g4924b8a',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
