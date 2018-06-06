@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Streamlink 0.12.1+106.g6268eb7 documentation</title>
+  <title>Changelog &mdash; Streamlink 0.12.1+108.g97b04b8 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.12.1+106.g6268eb7 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.12.1+108.g97b04b8 documentation" href="index.html"/>
         <link rel="next" title="Donating" href="donate.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
@@ -111,7 +111,8 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-12-1-2018-05-07">streamlink 0.12.1 (2018-05-07)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-12-0-2018-05-07">streamlink 0.12.0 (2018-05-07)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-11-0-2018-03-08">streamlink 0.11.0 (2018-03-08)</a></li>
@@ -190,6 +191,107 @@
             
   <div class="section" id="changelog">
 <span id="changelog"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="streamlink-0-13-0-2018-06-06">
+<span id="streamlink-0-13-0-2018-06-06"></span><h1>streamlink 0.13.0 (2018-06-06)<a class="headerlink" href="#streamlink-0-13-0-2018-06-06" title="Permalink to this headline">¶</a></h1>
+<p>Massive release this month!</p>
+<p>Here are the changes:</p>
+<ul class="simple">
+<li>Initial MPEG DASH support has been added! (https://github.com/streamlink/streamlink/pull/1637) Many thanks to <a class="reference external" href="https://github.com/beardypig">&#64;beardypig</a></li>
+<li>As always, a <em>ton</em> of plugin updates</li>
+<li>Updates to our documentation (https://github.com/streamlink/streamlink/pull/1673)</li>
+<li>Updates to our logging (https://github.com/streamlink/streamlink/pull/1752) as well as log --quiet options (https://github.com/streamlink/streamlink/pull/1744) (https://github.com/streamlink/streamlink/pull/1720)</li>
+<li>Our release script has been updated (https://github.com/streamlink/streamlink/pull/1711)</li>
+<li>Support for livestreams when using the <code class="docutils literal"><span class="pre">--hls-duration</span></code> option (https://github.com/streamlink/streamlink/pull/1710)</li>
+<li>Allow streamlink to exit faster when using Ctrl+C (https://github.com/streamlink/streamlink/pull/1658)</li>
+<li>Added an OpenCV Face Detection example (https://github.com/streamlink/streamlink/pull/1689)</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre><span></span>BZHDeveloper &lt;inizan.yannick@gmail.com&gt; (1):
+      plugins.bfmtv : Update regular expression (#1703)
+
+Billy &lt;kschmidt2007@googlemail.com&gt; (1):
+      plugins.ok_live: fix &lt;hlsurl&gt; extraction
+
+Billy2011 &lt;kschmidt2007@googlemail.com&gt; (2):
+      stream.dash: fix stuttering streams &amp; maybe high CPU load (#1718)
+      stream.akamaihd: fix some log.debug... issues (#1729)
+
+Hsiao-Ting Yu &lt;sst.dreams@gmail.com&gt; (1):
+      Add plugin for www.kingkong.com.tw (#1666)
+
+LoneFox78 &lt;lonefox@kapsi.fi&gt; (1):
+      plugins.tvcatchup: support for https URLs
+
+back-to &lt;backto@protonmail.ch&gt; (3):
+      plugins.chaturbate: only open a stream if the url is not empty
+      stream.hls_playlist: removed int check from PROGRAM-ID (#1707)
+      docs: PotPlayer Stdin Pipe
+
+beardypig &lt;beardypig@protonmail.com&gt; (30):
+      plugins.bbciplayer: enable HD for some channels and speed up start-up
+      plugins.goodgame: update for change in page layout
+      tests: test to ensure each plugin listed in the plugin matrix exists
+      plugins.goodgame: fix bug with streamkey extraction
+      plugins.onetv: add support for 1tv.ru and a few other related sites
+      plugins.rtve: fix for m3u8 stream url formatting
+      example: added an opencv face detection example
+      plugins.europaplus: support for the europaplustv stream
+      plugins.goltelevision: support for the live stream
+      plugins.tvcatchup: add URL tests
+      plugin.ustvnow: plugin to support ustvnow.com
+      hls: support for live streams when using --hls-duration
+      release: update to release script
+      win-installer: add missing isodate module
+      plugins.onetv: fix issues with ctc channels and add DASH support
+      plugins.dailymotion: fix error logging for stream errors
+      logging: set the log level once the plugin config files have been loaded
+      logging: fixed issue with logging from plugins using logging module
+      plugins.onetv: fixed tests
+      plugins.reshet: support for reshet.tv live and VOD streams
+      dash: fix for manifest reload - should be more reliable
+      tests: coverage on src instead of the modules
+      plugins.crunchyroll: switch method of obtaining session id
+      plugins.facebook: remove debugging code
+      plugins: store cookies between sessions (#1724)
+      plugins.facebook: sd_src|hd_src can contain non-dash streams
+      plugins.funimationnow: login support and bug fixes (#1721)
+      logging: do not log when using quiet options (--json, --quiet, etc)
+      dash: fix --json for dash streams and allow custom headers (#1748)
+      logging: when using the trace level, log the timestamp
+
+beardypig &lt;beardypig@users.noreply.github.com&gt; (21):
+      plugins.filmon: more robust channel_id extraction
+      build: use versioneer to set the build number (#1413)
+      plugins.btsports: add plugin bt sports
+      Allow streamlink to exit faster when using Ctrl-C
+      plugins.tf1: add lci url to the main tf1 domain (#1660)
+      plugins.ine: support for updated site layout
+      docs: add a note about socks4 and socks5 vs socks4a and socks5h (#1655)
+      plugins.gardenersworld: updated page layout
+      plugins.vidio: update to support new layout
+      plugins.btsports: add missing plugin matrix entry and tests
+      plugins.vidio: py2 vs. py3 unicode fix
+      tests: test to ensure that all plugins are listed in the plugin matrix
+      build: use _ instead of + in the Windows installer exe filename
+      Plugin Arguments API (#1638)
+      Change log as markdown refactor (#1667)
+      Add the README file to the Python package (#1665)
+      build: build and sign sdist in travis using an RSA sign-only key (#1701)
+      logging: refactor to use python logging module (#1690)
+      MPEG DASH Support (initial) (#1637)
+      plugins.bbciplayer: add dash support
+      plugins.facebook: support for DASH streams (#1727)
+
+hoilc &lt;hoilc@foxmail.com&gt; (1):
+      fix checking live status
+
+jshir &lt;github.caqomfw25@GadgetScope.com&gt; (1):
+      Fix bug 1730, vaughnlive port change
+
+yhel &lt;yhel@users.noreply.github.com&gt; (1):
+      Feature/france.tv sport (#1700)
+</pre></div>
+</div>
 <div class="section" id="streamlink-0-12-1-2018-05-07">
 <span id="streamlink-0-12-1-2018-05-07"></span><h2>streamlink 0.12.1 (2018-05-07)<a class="headerlink" href="#streamlink-0-12-1-2018-05-07" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink 0.12.1</p>
@@ -1832,7 +1934,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.12.1+106.g6268eb7',
+            VERSION:'0.12.1+108.g97b04b8',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
