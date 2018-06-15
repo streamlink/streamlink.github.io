@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 0.13.0+27.g2ff314c documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 0.13.0+29.g60ff843 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.13.0+27.g2ff314c documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.13.0+29.g60ff843 documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -566,13 +566,14 @@ depending on the implementation of the plugin being used.</p>
 <dt id="cmdoption-arg-stream">
 <code class="descname">STREAM</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-stream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stream to play.</p>
-<p>Use &quot;best&quot; or &quot;worst&quot; for selecting the highest or lowest available quality.</p>
+<p>Use &quot;best&quot; or &quot;worst&quot; for selecting the highest or lowest available
+quality.</p>
 <p>Fallback streams can be specified by using a comma-separated list:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;720p,480p,best&quot;</span>
 </pre></div>
 </div>
-<p>If no stream is specified and <a class="reference internal" href="#cmdoption-default-stream"><code class="xref std std-option docutils literal"><span class="pre">--default-stream</span></code></a> is not used, then a
-list of available streams will be printed.</p>
+<p>If no stream is specified and <a class="reference internal" href="#cmdoption-default-stream"><code class="xref std std-option docutils literal"><span class="pre">--default-stream</span></code></a> is not used, then a list
+of available streams will be printed.</p>
 </dd></dl>
 
 </div>
@@ -600,7 +601,7 @@ list of available streams will be printed.</p>
 <dt id="cmdoption-plugin-dirs">
 <code class="descname">--plugin-dirs</code><code class="descclassname"> DIRECTORY</code><a class="headerlink" href="#cmdoption-plugin-dirs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to load plugins from these directories.</p>
-<p>Multiple directories can be used by separating them with a semicolon.</p>
+<p>Multiple directories can be used by separating them with a comma.</p>
 </dd></dl>
 
 <dl class="option">
@@ -614,17 +615,16 @@ list of available streams will be printed.</p>
 <dl class="option">
 <dt id="cmdoption-can-handle-url-no-redirect">
 <code class="descname">--can-handle-url-no-redirect</code><code class="descclassname"> URL</code><a class="headerlink" href="#cmdoption-can-handle-url-no-redirect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as <a class="reference internal" href="#cmdoption-can-handle-url"><code class="xref std std-option docutils literal"><span class="pre">--can-handle-url</span></code></a> but without following redirects
-when looking up the URL.</p>
+<dd><p>Same as <a class="reference internal" href="#cmdoption-can-handle-url"><code class="xref std std-option docutils literal"><span class="pre">--can-handle-url</span></code></a> but without following redirects when looking up
+the URL.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-config">
 <code class="descname">--config</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load options from this config file.</p>
-<p>Can be repeated to load multiple files, in which case
-the options are merged on top of each other where the
-last config has highest priority.</p>
+<p>Can be repeated to load multiple files, in which case the options are
+merged on top of each other where the last config has highest priority.</p>
 </dd></dl>
 
 <dl class="option">
@@ -664,19 +664,18 @@ last config has highest priority.</p>
 <dl class="option">
 <dt id="cmdoption-locale">
 <code class="descname">--locale</code><code class="descclassname"> LOCALE</code><a class="headerlink" href="#cmdoption-locale" title="Permalink to this definition">¶</a></dt>
-<dd><p>The preferred locale setting, for selecting the preferred
-subtitle and audio language.</p>
-<p>The locale is formatted as [language_code]_[country_code],
-eg. en_US or es_ES.</p>
+<dd><p>The preferred locale setting, for selecting the preferred subtitle and
+audio language.</p>
+<p>The locale is formatted as [language_code]_[country_code], eg. en_US or
+es_ES.</p>
 <p>Default is: <strong>system locale</strong>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-twitch-oauth-authenticate">
 <code class="descname">--twitch-oauth-authenticate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-twitch-oauth-authenticate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Open a web browser where you can grant Streamlink access
-to your Twitch account which creates a token for use with
-<a class="reference internal" href="#cmdoption-twitch-oauth-token"><code class="xref std std-option docutils literal"><span class="pre">--twitch-oauth-token</span></code></a>.</p>
+<dd><p>Open a web browser where you can grant Streamlink access to your Twitch
+account which creates a token for use with <a class="reference internal" href="#cmdoption-twitch-oauth-token"><code class="xref std std-option docutils literal"><span class="pre">--twitch-oauth-token</span></code></a>.</p>
 </dd></dl>
 
 </div>
@@ -685,54 +684,53 @@ to your Twitch account which creates a token for use with
 <dl class="option">
 <dt id="cmdoption-p">
 <code class="descname">-p</code><code class="descclassname"> COMMAND</code><code class="descclassname">, </code><code class="descname">--player</code><code class="descclassname"> COMMAND</code><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">¶</a></dt>
-<dd><p>Player to feed stream data to. By default, VLC will be used
-if it can be found in its default location.</p>
+<dd><p>Player to feed stream data to. By default, VLC will be used if it can be
+found in its default location.</p>
 <p>This is a shell-like syntax to support using a specific player:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span><span class="o">=</span><span class="n">vlc</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">quality</span><span class="o">&gt;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span><span class="n">s</span> <span class="o">--</span><span class="n">player</span><span class="o">=</span><span class="n">vlc</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Absolute or relative paths can also be passed via this option
-in the event the player's executable can not be resolved:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">vlc</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">quality</span><span class="o">&gt;</span>
-<span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span><span class="o">=./</span><span class="n">vlc</span><span class="o">-</span><span class="n">player</span><span class="o">/</span><span class="n">vlc</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">quality</span><span class="o">&gt;</span>
+<p>Absolute or relative paths can also be passed via this option in the
+event the player's executable can not be resolved:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span><span class="n">s</span> <span class="o">--</span><span class="n">player</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">vlc</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
+<span class="o">%</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span><span class="n">s</span> <span class="o">--</span><span class="n">player</span><span class="o">=./</span><span class="n">vlc</span><span class="o">-</span><span class="n">player</span><span class="o">/</span><span class="n">vlc</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>To use a player that is located in a path with spaces you must
-quote the parameter or its value:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="s2">&quot;--player=/path/with spaces/vlc&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">quality</span><span class="o">&gt;</span>
-<span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span> <span class="s2">&quot;C:\path\with spaces\mpc-hc64.exe&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">quality</span><span class="o">&gt;</span>
+<p>To use a player that is located in a path with spaces you must quote the
+parameter or its value:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span><span class="n">s</span> <span class="s2">&quot;--player=/path/with spaces/vlc&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
+<span class="o">%</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span><span class="n">s</span> <span class="o">--</span><span class="n">player</span> <span class="s2">&quot;C:\path\with spaces\mpc-hc64.exe&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Options may also be passed to the player. For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span> <span class="s2">&quot;vlc --file-caching=5000&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">quality</span><span class="o">&gt;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span><span class="n">s</span> <span class="o">--</span><span class="n">player</span> <span class="s2">&quot;vlc --file-caching=5000&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>As an alternative to this, see the <a class="reference internal" href="#cmdoption-a"><code class="xref std std-option docutils literal"><span class="pre">--player-args</span></code></a> parameter,
-which does not log any custom player arguments.</p>
+<p>As an alternative to this, see the <a class="reference internal" href="#cmdoption-a"><code class="xref std std-option docutils literal"><span class="pre">--player-args</span></code></a> parameter, which does
+not log any custom player arguments.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-a">
 <code class="descname">-a</code><code class="descclassname"> ARGUMENTS</code><code class="descclassname">, </code><code class="descname">--player-args</code><code class="descclassname"> ARGUMENTS</code><a class="headerlink" href="#cmdoption-a" title="Permalink to this definition">¶</a></dt>
-<dd><p>This option allows you to customize the default arguments which
-are put together with the value of <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> to create a command
-to execute. Unlike the <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> parameter, custom player
-arguments will not be logged.</p>
-<p>This value can contain formatting variables surrounded by curly
-braces, { and }. If you need to include a brace character, it
-can be escaped by doubling, e.g. {{ and }}.</p>
+<dd><p>This option allows you to customize the default arguments which are put
+together with the value of <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> to create a command to execute.
+Unlike the <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> parameter, custom player arguments will not be logged.</p>
+<p>This value can contain formatting variables surrounded by curly braces,
+{ and }. If you need to include a brace character, it can be escaped
+by doubling, e.g. {{ and }}.</p>
 <p>Formatting variables available:</p>
 <dl class="docutils">
 <dt>filename</dt>
-<dd>This is the filename that the player will use.
-It's usually &quot;-&quot; (stdin), but can also be a URL or a file
-depending on the options used.</dd>
+<dd>This is the filename that the player will use. It's usually &quot;-&quot;
+(stdin), but can also be a URL or a file depending on the options
+used.</dd>
 </dl>
-<p>It's usually enough to use <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> instead of this unless you
-need to add arguments after the filename.</p>
+<p>It's usually enough to use <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> instead of this unless you need to
+add arguments after the filename.</p>
 <p>Default is: <strong>&quot;{filename}&quot;</strong>.</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">vlc</span> <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;--play-and-exit </span><span class="si">{filename}</span><span class="s2">&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">quality</span><span class="o">&gt;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span><span class="n">s</span> <span class="o">-</span><span class="n">p</span> <span class="n">vlc</span> <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;--play-and-exit </span><span class="si">{filename}</span><span class="s2">&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -746,34 +744,32 @@ need to add arguments after the filename.</p>
 <dl class="option">
 <dt id="cmdoption-n">
 <code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--player-fifo</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--fifo</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-n" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make the player read the stream through a named pipe instead of
-the stdin pipe.</p>
+<dd><p>Make the player read the stream through a named pipe instead of the
+stdin pipe.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-player-http">
 <code class="descname">--player-http</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-player-http" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make the player read the stream through HTTP instead of
-the stdin pipe.</p>
+<dd><p>Make the player read the stream through HTTP instead of the stdin pipe.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-player-continuous-http">
 <code class="descname">--player-continuous-http</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-player-continuous-http" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make the player read the stream through HTTP, but unlike
-<a class="reference internal" href="#cmdoption-player-http"><code class="xref std std-option docutils literal"><span class="pre">--player-http</span></code></a> it will continuously try to open the stream if the
-player requests it.</p>
-<p>This makes it possible to handle stream disconnects if your player
-is capable of reconnecting to a HTTP stream. This is usually
-done by setting your player to a &quot;repeat mode&quot;.</p>
+<dd><p>Make the player read the stream through HTTP, but unlike <a class="reference internal" href="#cmdoption-player-http"><code class="xref std std-option docutils literal"><span class="pre">--player-http</span></code></a>
+it will continuously try to open the stream if the player requests it.</p>
+<p>This makes it possible to handle stream disconnects if your player is
+capable of reconnecting to a HTTP stream. This is usually done by
+setting your player to a &quot;repeat mode&quot;.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-player-external-http">
 <code class="descname">--player-external-http</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-player-external-http" title="Permalink to this definition">¶</a></dt>
-<dd><p>Serve stream data through HTTP without running any player. This is useful
-to allow external devices like smartphones or streaming boxes to watch
-streams they wouldn't be able to otherwise.</p>
+<dd><p>Serve stream data through HTTP without running any player. This is
+useful to allow external devices like smartphones or streaming boxes to
+watch streams they wouldn't be able to otherwise.</p>
 <p>Behavior will be similar to the continuous HTTP option, but no player
 program will be started, and the server will listen on all available
 connections instead of just in the local (loopback) interface.</p>
@@ -784,15 +780,15 @@ console, and the server can be interrupted using CTRL-C.</p>
 <dl class="option">
 <dt id="cmdoption-player-external-http-port">
 <code class="descname">--player-external-http-port</code><code class="descclassname"> PORT</code><a class="headerlink" href="#cmdoption-player-external-http-port" title="Permalink to this definition">¶</a></dt>
-<dd><p>A fixed port to use for the external HTTP server if that mode is enabled.
-Omit or set to 0 to use a random high (&gt;1024) port.</p>
+<dd><p>A fixed port to use for the external HTTP server if that mode is
+enabled. Omit or set to 0 to use a random high ( &gt;1024) port.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-player-passthrough">
 <code class="descname">--player-passthrough</code><code class="descclassname"> TYPES</code><a class="headerlink" href="#cmdoption-player-passthrough" title="Permalink to this definition">¶</a></dt>
-<dd><p>A comma-delimited list of stream types to pass to the player as a
-URL to let it handle the transport of the stream instead.</p>
+<dd><p>A comma-delimited list of stream types to pass to the player as a URL to
+let it handle the transport of the stream instead.</p>
 <p>Stream types that can be converted into a playable URL are:</p>
 <ul class="simple">
 <li>hls</li>
@@ -805,10 +801,11 @@ URL to let it handle the transport of the stream instead.</p>
 <dl class="option">
 <dt id="cmdoption-player-no-close">
 <code class="descname">--player-no-close</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-player-no-close" title="Permalink to this definition">¶</a></dt>
-<dd><p>By default Streamlink will close the player when the stream ends.
-This is to avoid &quot;dead&quot; GUI players lingering after a stream ends.</p>
-<p>It does however have the side-effect of sometimes closing a player
-before it has played back all of its cached data.</p>
+<dd><p>By default Streamlink will close the player when the stream
+ends. This is to avoid &quot;dead&quot; GUI players lingering after a
+stream ends.</p>
+<p>It does however have the side-effect of sometimes closing a
+player before it has played back all of its cached data.</p>
 <p>This option will instead let the player decide when to exit.</p>
 </dd></dl>
 
@@ -851,7 +848,8 @@ and can be useful if set in a config file.</p>
 <dt id="cmdoption-default-stream">
 <code class="descname">--default-stream</code><code class="descclassname"> STREAM</code><a class="headerlink" href="#cmdoption-default-stream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stream to play.</p>
-<p>Use &quot;best&quot; or &quot;worst&quot; for selecting the highest or lowest available quality.</p>
+<p>Use &quot;best&quot; or &quot;worst&quot; for selecting the highest or lowest available
+quality.</p>
 <p>Fallback streams can be specified by using a comma-separated list:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;720p,480p,best&quot;</span>
 </pre></div>
@@ -881,8 +879,8 @@ retries will default to 1 second.</p>
 <dl class="option">
 <dt id="cmdoption-retry-open">
 <code class="descname">--retry-open</code><code class="descclassname"> ATTEMPTS</code><a class="headerlink" href="#cmdoption-retry-open" title="Permalink to this definition">¶</a></dt>
-<dd><p>After a successful fetch, try ATTEMPTS time(s)
-to open the stream until giving up.</p>
+<dd><p>After a successful fetch, try ATTEMPTS time(s) to open the stream until
+giving up.</p>
 <p>Default is: <strong>1</strong>.</p>
 </dd></dl>
 
@@ -892,9 +890,8 @@ to open the stream until giving up.</p>
 <dd><p>A comma-delimited list of stream types to allow.</p>
 <p>The order will be used to separate streams when there are multiple
 streams with the same name but different stream types. Any stream type
-not listed will be omitted from the available streams list.  A <code class="docutils literal"><span class="pre">*</span></code>
-can be used as a wildcard to match any other type of stream,
-eg. muxed-stream.</p>
+not listed will be omitted from the available streams list.  A <code class="docutils literal"><span class="pre">*</span></code> can
+be used as a wildcard to match any other type of stream, eg. muxed-stream.</p>
 <p>Default is: <strong>&quot;rtmp,hls,hds,http,akamaihd,*&quot;</strong>.</p>
 </dd></dl>
 
@@ -906,14 +903,13 @@ eg. muxed-stream.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">operator</span><span class="p">]</span><span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Valid operators are &gt;, &gt;=, &lt; and &lt;=. If no operator is specified
-then equality is tested.</p>
+<p>Valid operators are &gt;, &gt;=, &lt; and &lt;=. If no operator is specified then
+equality is tested.</p>
 <p>For example this will exclude streams ranked higher than &quot;480p&quot;:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;&gt;480p&quot;</span>
 </pre></div>
 </div>
-<p>Multiple filters can be used by separating each expression with
-a comma.</p>
+<p>Multiple filters can be used by separating each expression with a comma.</p>
 <p>For example this will exclude streams from two quality types:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;&gt;480p,&gt;medium&quot;</span>
 </pre></div>
@@ -933,16 +929,16 @@ a comma.</p>
 <dl class="option">
 <dt id="cmdoption-hds-segment-attempts">
 <code class="descname">--hds-segment-attempts</code><code class="descclassname"> ATTEMPTS</code><a class="headerlink" href="#cmdoption-hds-segment-attempts" title="Permalink to this definition">¶</a></dt>
-<dd><p>How many attempts should be done to download each HDS segment
-before giving up.</p>
+<dd><p>How many attempts should be done to download each HDS segment before
+giving up.</p>
 <p>Default is: <strong>3</strong>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-hds-segment-threads">
 <code class="descname">--hds-segment-threads</code><code class="descclassname"> THREADS</code><a class="headerlink" href="#cmdoption-hds-segment-threads" title="Permalink to this definition">¶</a></dt>
-<dd><p>The size of the thread pool used to download HDS segments.
-Minimum value is 1 and maximum is 10.</p>
+<dd><p>The size of the thread pool used to download HDS segments. Minimum value
+is 1 and maximum is 10.</p>
 <p>Default is: <strong>1</strong>.</p>
 </dd></dl>
 
@@ -972,24 +968,24 @@ but also increases the chance of buffering.</p>
 <dl class="option">
 <dt id="cmdoption-hls-segment-attempts">
 <code class="descname">--hls-segment-attempts</code><code class="descclassname"> ATTEMPTS</code><a class="headerlink" href="#cmdoption-hls-segment-attempts" title="Permalink to this definition">¶</a></dt>
-<dd><p>How many attempts should be done to download each HLS segment
-before giving up.</p>
+<dd><p>How many attempts should be done to download each HLS segment before
+giving up.</p>
 <p>Default is: <strong>3</strong>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-hls-playlist-reload-attempts">
 <code class="descname">--hls-playlist-reload-attempts</code><code class="descclassname"> ATTEMPTS</code><a class="headerlink" href="#cmdoption-hls-playlist-reload-attempts" title="Permalink to this definition">¶</a></dt>
-<dd><p>How many attempts should be done to reload the HLS playlist
-before giving up.</p>
+<dd><p>How many attempts should be done to reload the HLS playlist before
+giving up.</p>
 <p>Default is: <strong>3</strong>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-hls-segment-threads">
 <code class="descname">--hls-segment-threads</code><code class="descclassname"> THREADS</code><a class="headerlink" href="#cmdoption-hls-segment-threads" title="Permalink to this definition">¶</a></dt>
-<dd><p>The size of the thread pool used to download HLS segments.
-Minimum value is 1 and maximum is 10.</p>
+<dd><p>The size of the thread pool used to download HLS segments. Minimum value
+is 1 and maximum is 10.</p>
 <p>Default is: <strong>1</strong>.</p>
 </dd></dl>
 
@@ -1009,7 +1005,8 @@ Minimum value is 1 and maximum is 10.</p>
 <p>Default is: <strong>None</strong>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <a class="reference internal" href="#cmdoption-hls-timeout"><code class="xref std std-option docutils literal"><span class="pre">--hls-timeout</span></code></a> must be increased, to a time that is longer than the ignored break.</p>
+<p class="last">The <a class="reference internal" href="#cmdoption-hls-timeout"><code class="xref std std-option docutils literal"><span class="pre">--hls-timeout</span></code></a> must be increased, to a time that is longer than
+the ignored break.</p>
 </div>
 </dd></dl>
 
@@ -1017,8 +1014,8 @@ Minimum value is 1 and maximum is 10.</p>
 <dt id="cmdoption-hls-audio-select">
 <code class="descname">--hls-audio-select</code><code class="descclassname"> CODE</code><a class="headerlink" href="#cmdoption-hls-audio-select" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects a specific audio source or sources, by language code or name,
-when multiple audio sources are available. Can be * to download all audio
-sources.</p>
+when multiple audio sources are available. Can be * to download all
+audio sources.</p>
 <p>Examples:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">&quot;English,German&quot;</span>
 <span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">&quot;en,de&quot;</span>
@@ -1027,9 +1024,9 @@ sources.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This is only useful in special circumstances where the
-regular locale option fails, such as when multiple sources of the
-same language exists.</p>
+<p class="last">This is only useful in special circumstances where the regular
+locale option fails, such as when multiple sources of the same language
+exists.</p>
 </div>
 </dd></dl>
 
@@ -1043,16 +1040,17 @@ same language exists.</p>
 <dl class="option">
 <dt id="cmdoption-hls-start-offset">
 <code class="descname">--hls-start-offset</code><code class="descclassname"> HH:MM:SS</code><a class="headerlink" href="#cmdoption-hls-start-offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Amount of time to skip from the beginning of the stream.
-For live streams, this is a negative offset from the end of the stream (rewind).</p>
+<dd><p>Amount of time to skip from the beginning of the stream. For live
+streams, this is a negative offset from the end of the stream (rewind).</p>
 <p>Default is: <strong>00:00:00</strong>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-hls-duration">
 <code class="descname">--hls-duration</code><code class="descclassname"> HH:MM:SS</code><a class="headerlink" href="#cmdoption-hls-duration" title="Permalink to this definition">¶</a></dt>
-<dd><p>Limit the playback duration, useful for watching segments of a stream. The actual duration may be slightly
-longer, as it is rounded to the nearest HLS segment.</p>
+<dd><p>Limit the playback duration, useful for watching segments of a stream.
+The actual duration may be slightly longer, as it is rounded to the
+nearest HLS segment.</p>
 <p>Default is: <strong>unlimited</strong>.</p>
 </dd></dl>
 
@@ -1072,24 +1070,22 @@ longer, as it is rounded to the nearest HLS segment.</p>
 <dl class="option">
 <dt id="cmdoption-ringbuffer-size">
 <code class="descname">--ringbuffer-size</code><code class="descclassname"> SIZE</code><a class="headerlink" href="#cmdoption-ringbuffer-size" title="Permalink to this definition">¶</a></dt>
-<dd><p>The maximum size of ringbuffer. Add a M or K suffix to specify mega
-or kilo bytes instead of bytes.</p>
-<p>The ringbuffer is used as a temporary storage between the stream
-and the player. This is to allows us to download the stream faster
-than the player wants to read it.</p>
-<p>The smaller the size, the higher chance of the player buffering
-if there are download speed dips and the higher size the more data
-we can use as a storage to catch up from speed dips.</p>
-<p>It also allows you to temporary pause as long as the ringbuffer
-doesn't get full since we continue to download the stream in the
-background.</p>
+<dd><p>The maximum size of ringbuffer. Add a M or K suffix to specify mega or
+kilo bytes instead of bytes.</p>
+<p>The ringbuffer is used as a temporary storage between the stream and the
+player. This is to allows us to download the stream faster than the
+player wants to read it.</p>
+<p>The smaller the size, the higher chance of the player buffering if there
+are download speed dips and the higher size the more data we can use as
+a storage to catch up from speed dips.</p>
+<p>It also allows you to temporary pause as long as the ringbuffer doesn't
+get full since we continue to download the stream in the background.</p>
 <p>Default is: <strong>&quot;16M&quot;</strong>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">A smaller size is recommended on lower end systems (such as
 Raspberry Pi) when playing stream types that require some extra
-processing (such as HDS) to avoid unnecessary background
-processing.</p>
+processing (such as HDS) to avoid unnecessary background processing.</p>
 </div>
 </dd></dl>
 
@@ -1118,7 +1114,8 @@ location of the rtmpdump executable if it is not in your PATH.</p>
 <dl class="option">
 <dt id="cmdoption-stream-segment-attempts">
 <code class="descname">--stream-segment-attempts</code><code class="descclassname"> ATTEMPTS</code><a class="headerlink" href="#cmdoption-stream-segment-attempts" title="Permalink to this definition">¶</a></dt>
-<dd><p>How many attempts should be done to download each segment before giving up.</p>
+<dd><p>How many attempts should be done to download each segment before giving
+up.</p>
 <p>This is generic option used by streams not covered by other options,
 such as stream protocols specific to plugins, e.g. UStream.</p>
 <p>Default is: <strong>3</strong>.</p>
@@ -1127,8 +1124,8 @@ such as stream protocols specific to plugins, e.g. UStream.</p>
 <dl class="option">
 <dt id="cmdoption-stream-segment-threads">
 <code class="descname">--stream-segment-threads</code><code class="descclassname"> THREADS</code><a class="headerlink" href="#cmdoption-stream-segment-threads" title="Permalink to this definition">¶</a></dt>
-<dd><p>The size of the thread pool used to download segments.
-Minimum value is 1 and maximum is 10.</p>
+<dd><p>The size of the thread pool used to download segments. Minimum value is
+1 and maximum is 10.</p>
 <p>This is generic option used by streams not covered by other options,
 such as stream protocols specific to plugins, e.g. UStream.</p>
 <p>Default is: <strong>1</strong>.</p>
@@ -1168,25 +1165,25 @@ such as stream protocols specific to plugins, e.g. UStream.</p>
 <dl class="option">
 <dt id="cmdoption-subprocess-errorlog">
 <code class="descname">--subprocess-errorlog</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--errorlog</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">-e</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-subprocess-errorlog" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log possible errors from internal subprocesses to a temporary file.
-The file will be saved in your systems temporary directory.</p>
+<dd><p>Log possible errors from internal subprocesses to a temporary file. The
+file will be saved in your systems temporary directory.</p>
 <p>Useful when debugging rtmpdump related issues.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-subprocess-errorlog-path">
 <code class="descname">--subprocess-errorlog-path</code><code class="descclassname"> PATH</code><code class="descclassname">, </code><code class="descname">--errorlog-path</code><code class="descclassname"> PATH</code><a class="headerlink" href="#cmdoption-subprocess-errorlog-path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log the subprocess errorlog to a specific file rather than a temporary file.
-Takes precedence over subprocess-errorlog.</p>
+<dd><p>Log the subprocess errorlog to a specific file rather than a temporary
+file. Takes precedence over subprocess-errorlog.</p>
 <p>Useful when debugging rtmpdump related issues.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ffmpeg-ffmpeg">
 <code class="descname">--ffmpeg-ffmpeg</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-ffmpeg-ffmpeg" title="Permalink to this definition">¶</a></dt>
-<dd><p>FFMPEG is used to access or mux separate video and audio streams.
-You can specify the location of the ffmpeg executable if it is
-not in your PATH.</p>
+<dd><p>FFMPEG is used to access or mux separate video and audio streams. You
+can specify the location of the ffmpeg executable if it is not in your
+PATH.</p>
 <p>Example: &quot;/usr/local/bin/ffmpeg&quot;</p>
 </dd></dl>
 
@@ -1294,8 +1291,8 @@ variables (HTTP_PROXY, etc) or ~/.netrc authentication.</p>
 <dl class="option">
 <dt id="cmdoption-http-timeout">
 <code class="descname">--http-timeout</code><code class="descclassname"> TIMEOUT</code><a class="headerlink" href="#cmdoption-http-timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>General timeout used by all HTTP requests except the ones covered
-by other options.</p>
+<dd><p>General timeout used by all HTTP requests except the ones covered by
+other options.</p>
 <p>Default is: <strong>20.0</strong>.</p>
 </dd></dl>
 
@@ -1303,60 +1300,9 @@ by other options.</p>
 <div class="section" id="plugin-options">
 <h3>Plugin options<a class="headerlink" href="#plugin-options" title="Permalink to this headline">¶</a></h3>
 <dl class="option">
-<dt id="cmdoption-pixiv-username">
-<code class="descname">--pixiv-username</code><code class="descclassname"> USERNAME</code><a class="headerlink" href="#cmdoption-pixiv-username" title="Permalink to this definition">¶</a></dt>
-<dd><p>The email/username used to register with pixiv.net</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-pixiv-password">
-<code class="descname">--pixiv-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-pixiv-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A pixiv.net account password to use with <a class="reference internal" href="#cmdoption-pixiv-username"><code class="xref std std-option docutils literal"><span class="pre">--pixiv-username</span></code></a></p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-pluzz-mux-subtitles">
-<code class="descname">--pluzz-mux-subtitles</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-pluzz-mux-subtitles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Automatically mux available subtitles in to the output stream.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-zattoo-email">
-<code class="descname">--zattoo-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-zattoo-email" title="Permalink to this definition">¶</a></dt>
-<dd><p>The email associated with your zattoo account, required to access any zattoo stream.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-zattoo-password">
-<code class="descname">--zattoo-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-zattoo-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A zattoo account password to use with <a class="reference internal" href="#cmdoption-zattoo-email"><code class="xref std std-option docutils literal"><span class="pre">--zattoo-email</span></code></a>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-zattoo-purge-credentials">
-<code class="descname">--zattoo-purge-credentials</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-zattoo-purge-credentials" title="Permalink to this definition">¶</a></dt>
-<dd><p>Purge cached zattoo credentials to initiate a new session
-and reauthenticate.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-schoolism-email">
-<code class="descname">--schoolism-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-schoolism-email" title="Permalink to this definition">¶</a></dt>
-<dd><p>The email associated with your Schoolism account,
-required to access any Schoolism stream.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-schoolism-password">
-<code class="descname">--schoolism-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-schoolism-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A Schoolism account password to use with <a class="reference internal" href="#cmdoption-schoolism-email"><code class="xref std std-option docutils literal"><span class="pre">--schoolism-email</span></code></a>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-schoolism-part">
-<code class="descname">--schoolism-part</code><code class="descclassname"> PART</code><a class="headerlink" href="#cmdoption-schoolism-part" title="Permalink to this definition">¶</a></dt>
-<dd><p>Play part number PART of the lesson.</p>
-<p>Defaults is 1.</p>
+<dt id="cmdoption-youtube-api-key">
+<code class="descname">--youtube-api-key</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-youtube-api-key" title="Permalink to this definition">¶</a></dt>
+<dd><p>API key to use for YouTube API requests</p>
 </dd></dl>
 
 <dl class="option">
@@ -1394,9 +1340,158 @@ and the session ID does not match the account.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rtve-mux-subtitles">
-<code class="descname">--rtve-mux-subtitles</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rtve-mux-subtitles" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-pluzz-mux-subtitles">
+<code class="descname">--pluzz-mux-subtitles</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-pluzz-mux-subtitles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Automatically mux available subtitles in to the output stream.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-zattoo-email">
+<code class="descname">--zattoo-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-zattoo-email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The email associated with your zattoo account, required to access
+any zattoo stream.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-zattoo-password">
+<code class="descname">--zattoo-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-zattoo-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>A zattoo account password to use with <a class="reference internal" href="#cmdoption-zattoo-email"><code class="xref std std-option docutils literal"><span class="pre">--zattoo-email</span></code></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-zattoo-purge-credentials">
+<code class="descname">--zattoo-purge-credentials</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-zattoo-purge-credentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Purge cached zattoo credentials to initiate a new session
+and reauthenticate.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-tvplayer-email">
+<code class="descname">--tvplayer-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-tvplayer-email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The email address used to register with tvplayer.com.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-tvplayer-password">
+<code class="descname">--tvplayer-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-tvplayer-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>The password for your tvplayer.com account.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-npo-subtitles">
+<code class="descname">--npo-subtitles</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-npo-subtitles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Include subtitles for the deaf or hard of hearing, if available.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-twitch-oauth-token">
+<code class="descname">--twitch-oauth-token</code><code class="descclassname"> TOKEN</code><a class="headerlink" href="#cmdoption-twitch-oauth-token" title="Permalink to this definition">¶</a></dt>
+<dd><p>An OAuth token to use for Twitch authentication.
+Use <a class="reference internal" href="#cmdoption-twitch-oauth-authenticate"><code class="xref std std-option docutils literal"><span class="pre">--twitch-oauth-authenticate</span></code></a> to create a token.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-twitch-cookie">
+<code class="descname">--twitch-cookie</code><code class="descclassname"> COOKIES</code><a class="headerlink" href="#cmdoption-twitch-cookie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Twitch cookies to authenticate to allow access to subscription channels.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;_twitch_session_id=xxxxxx; persistent=xxxxx&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This method is the old and clunky way of authenticating with
+Twitch, using <a class="reference internal" href="#cmdoption-twitch-oauth-authenticate"><code class="xref std std-option docutils literal"><span class="pre">--twitch-oauth-authenticate</span></code></a> is the recommended and
+simpler way of doing it now.</p>
+</div>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-twitch-disable-hosting">
+<code class="descname">--twitch-disable-hosting</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-twitch-disable-hosting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not open the stream if the target channel is hosting another channel.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-funimation-email">
+<code class="descname">--funimation-email</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-funimation-email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Email address for your Funimation account.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-funimation-password">
+<code class="descname">--funimation-password</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-funimation-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Password for your Funimation account.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-funimation-language">
+<code class="descname">--funimation-language</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-funimation-language" title="Permalink to this definition">¶</a></dt>
+<dd><p>The audio language to use for the stream; japanese or english.</p>
+<p>Default is: <strong>&quot;english&quot;</strong>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-funimation-mux-subtitles">
+<code class="descname">--funimation-mux-subtitles</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-funimation-mux-subtitles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable automatically including available subtitles in to the output
+stream.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-btsports-email">
+<code class="descname">--btsports-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-btsports-email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The email associated with your BT Sport account, required to access any
+BT Sport stream.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-btsports-password">
+<code class="descname">--btsports-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-btsports-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Your BT Sport account password.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-liveedu-email">
+<code class="descname">--liveedu-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-liveedu-email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The email address used to register with liveedu.tv.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-liveedu-password">
+<code class="descname">--liveedu-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-liveedu-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>A LiveEdu account password to use with <a class="reference internal" href="#cmdoption-liveedu-email"><code class="xref std std-option docutils literal"><span class="pre">--liveedu-email</span></code></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-pixiv-username">
+<code class="descname">--pixiv-username</code><code class="descclassname"> USERNAME</code><a class="headerlink" href="#cmdoption-pixiv-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>The email/username used to register with pixiv.net</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-pixiv-password">
+<code class="descname">--pixiv-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-pixiv-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pixiv.net account password to use with <a class="reference internal" href="#cmdoption-pixiv-username"><code class="xref std std-option docutils literal"><span class="pre">--pixiv-username</span></code></a></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-bbciplayer-username">
+<code class="descname">--bbciplayer-username</code><code class="descclassname"> USERNAME</code><a class="headerlink" href="#cmdoption-bbciplayer-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>The username used to register with bbc.co.uk.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-bbciplayer-password">
+<code class="descname">--bbciplayer-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-bbciplayer-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>A bbc.co.uk account password to use with <a class="reference internal" href="#cmdoption-bbciplayer-username"><code class="xref std std-option docutils literal"><span class="pre">--bbciplayer-username</span></code></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-bbciplayer-hd">
+<code class="descname">--bbciplayer-hd</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-bbciplayer-hd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prefer HD streams over local SD streams, some live programmes may
+not be broadcast in HD.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1409,6 +1504,18 @@ and the session ID does not match the account.</p>
 <dt id="cmdoption-afreeca-password">
 <code class="descname">--afreeca-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-afreeca-password" title="Permalink to this definition">¶</a></dt>
 <dd><p>A afreecatv.com account password to use with <a class="reference internal" href="#cmdoption-afreeca-username"><code class="xref std std-option docutils literal"><span class="pre">--afreeca-username</span></code></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-animelab-email">
+<code class="descname">--animelab-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-animelab-email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The email address used to register with animelab.com.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-animelab-password">
+<code class="descname">--animelab-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-animelab-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>A animelab.com account password to use with <a class="reference internal" href="#cmdoption-animelab-email"><code class="xref std std-option docutils literal"><span class="pre">--animelab-email</span></code></a>.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1443,38 +1550,55 @@ required to access any WWE Network stream.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-twitch-oauth-token">
-<code class="descname">--twitch-oauth-token</code><code class="descclassname"> TOKEN</code><a class="headerlink" href="#cmdoption-twitch-oauth-token" title="Permalink to this definition">¶</a></dt>
-<dd><p>An OAuth token to use for Twitch authentication.
-Use <a class="reference internal" href="#cmdoption-twitch-oauth-authenticate"><code class="xref std std-option docutils literal"><span class="pre">--twitch-oauth-authenticate</span></code></a> to create a token.</p>
+<dt id="cmdoption-rtve-mux-subtitles">
+<code class="descname">--rtve-mux-subtitles</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rtve-mux-subtitles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically mux available subtitles in to the output stream.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-twitch-cookie">
-<code class="descname">--twitch-cookie</code><code class="descclassname"> COOKIES</code><a class="headerlink" href="#cmdoption-twitch-cookie" title="Permalink to this definition">¶</a></dt>
-<dd><p>Twitch cookies to authenticate to allow access to subscription channels.</p>
-<p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;_twitch_session_id=xxxxxx; persistent=xxxxx&quot;</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This method is the old and clunky way of authenticating with
-Twitch, using <a class="reference internal" href="#cmdoption-twitch-oauth-authenticate"><code class="xref std std-option docutils literal"><span class="pre">--twitch-oauth-authenticate</span></code></a> is the recommended and
-simpler way of doing it now.</p>
-</div>
+<dt id="cmdoption-ustream-password">
+<code class="descname">--ustream-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-ustream-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>A password to access password protected UStream.tv channels.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-twitch-disable-hosting">
-<code class="descname">--twitch-disable-hosting</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-twitch-disable-hosting" title="Permalink to this definition">¶</a></dt>
-<dd><p>Do not open the stream if the target channel is hosting another channel.</p>
+<dt id="cmdoption-abweb-username">
+<code class="descname">--abweb-username</code><code class="descclassname"> USERNAME</code><a class="headerlink" href="#cmdoption-abweb-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>The username associated with your ABweb account, required to access any
+ABweb stream.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-youtube-api-key">
-<code class="descname">--youtube-api-key</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-youtube-api-key" title="Permalink to this definition">¶</a></dt>
-<dd><p>API key to use for YouTube API requests</p>
+<dt id="cmdoption-abweb-password">
+<code class="descname">--abweb-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-abweb-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>A ABweb account password to use with <a class="reference internal" href="#cmdoption-abweb-username"><code class="xref std std-option docutils literal"><span class="pre">--abweb-username</span></code></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-abweb-purge-credentials">
+<code class="descname">--abweb-purge-credentials</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-abweb-purge-credentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Purge cached ABweb credentials to initiate a new session and
+reauthenticate.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-schoolism-email">
+<code class="descname">--schoolism-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-schoolism-email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The email associated with your Schoolism account,
+required to access any Schoolism stream.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-schoolism-password">
+<code class="descname">--schoolism-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-schoolism-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Schoolism account password to use with <a class="reference internal" href="#cmdoption-schoolism-email"><code class="xref std std-option docutils literal"><span class="pre">--schoolism-email</span></code></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-schoolism-part">
+<code class="descname">--schoolism-part</code><code class="descclassname"> PART</code><a class="headerlink" href="#cmdoption-schoolism-part" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play part number PART of the lesson.</p>
+<p>Defaults is 1.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1487,128 +1611,6 @@ simpler way of doing it now.</p>
 <dt id="cmdoption-btv-password">
 <code class="descname">--btv-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-btv-password" title="Permalink to this definition">¶</a></dt>
 <dd><p>A BTV account password to use with <a class="reference internal" href="#cmdoption-btv-username"><code class="xref std std-option docutils literal"><span class="pre">--btv-username</span></code></a>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-npo-subtitles">
-<code class="descname">--npo-subtitles</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-npo-subtitles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Include subtitles for the deaf or hard of hearing, if available.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-bbciplayer-username">
-<code class="descname">--bbciplayer-username</code><code class="descclassname"> USERNAME</code><a class="headerlink" href="#cmdoption-bbciplayer-username" title="Permalink to this definition">¶</a></dt>
-<dd><p>The username used to register with bbc.co.uk.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-bbciplayer-password">
-<code class="descname">--bbciplayer-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-bbciplayer-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A bbc.co.uk account password to use with <a class="reference internal" href="#cmdoption-bbciplayer-username"><code class="xref std std-option docutils literal"><span class="pre">--bbciplayer-username</span></code></a>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-bbciplayer-hd">
-<code class="descname">--bbciplayer-hd</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-bbciplayer-hd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prefer HD streams over local SD streams, some live programmes may not be broadcast in HD.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-liveedu-email">
-<code class="descname">--liveedu-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-liveedu-email" title="Permalink to this definition">¶</a></dt>
-<dd><p>The email address used to register with liveedu.tv.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-liveedu-password">
-<code class="descname">--liveedu-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-liveedu-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A LiveEdu account password to use with <a class="reference internal" href="#cmdoption-liveedu-email"><code class="xref std std-option docutils literal"><span class="pre">--liveedu-email</span></code></a>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-btsports-email">
-<code class="descname">--btsports-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-btsports-email" title="Permalink to this definition">¶</a></dt>
-<dd><p>The email associated with your BT Sport account, required to access any BT Sport stream.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-btsports-password">
-<code class="descname">--btsports-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-btsports-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>Your BT Sport account password.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-animelab-email">
-<code class="descname">--animelab-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-animelab-email" title="Permalink to this definition">¶</a></dt>
-<dd><p>The email address used to register with animelab.com.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-animelab-password">
-<code class="descname">--animelab-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-animelab-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A animelab.com account password to use with <a class="reference internal" href="#cmdoption-animelab-email"><code class="xref std std-option docutils literal"><span class="pre">--animelab-email</span></code></a>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-funimation-email">
-<code class="descname">--funimation-email</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-funimation-email" title="Permalink to this definition">¶</a></dt>
-<dd><p>Email address for your Funimation account.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-funimation-password">
-<code class="descname">--funimation-password</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-funimation-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>Password for your Funimation account.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-funimation-language">
-<code class="descname">--funimation-language</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-funimation-language" title="Permalink to this definition">¶</a></dt>
-<dd><p>The audio language to use for the stream; japanese or english.</p>
-<p>Default is: <strong>&quot;english&quot;</strong>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-funimation-mux-subtitles">
-<code class="descname">--funimation-mux-subtitles</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-funimation-mux-subtitles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable automatically including available subtitles in to the output stream.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-abweb-username">
-<code class="descname">--abweb-username</code><code class="descclassname"> USERNAME</code><a class="headerlink" href="#cmdoption-abweb-username" title="Permalink to this definition">¶</a></dt>
-<dd><p>The username associated with your ABweb account, required to access any ABweb stream.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-abweb-password">
-<code class="descname">--abweb-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-abweb-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A ABweb account password to use with <a class="reference internal" href="#cmdoption-abweb-username"><code class="xref std std-option docutils literal"><span class="pre">--abweb-username</span></code></a>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-abweb-purge-credentials">
-<code class="descname">--abweb-purge-credentials</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-abweb-purge-credentials" title="Permalink to this definition">¶</a></dt>
-<dd><p>Purge cached ABweb credentials to initiate a new session
-and reauthenticate.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-ustream-password">
-<code class="descname">--ustream-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-ustream-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A password to access password protected UStream.tv channels.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tvplayer-email">
-<code class="descname">--tvplayer-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-tvplayer-email" title="Permalink to this definition">¶</a></dt>
-<dd><p>The email address used to register with tvplayer.com.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-tvplayer-password">
-<code class="descname">--tvplayer-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-tvplayer-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>The password for your tvplayer.com account.</p>
 </dd></dl>
 
 </div>
@@ -1653,7 +1655,7 @@ and reauthenticate.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.13.0+27.g2ff314c',
+            VERSION:'0.13.0+29.g60ff843',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
