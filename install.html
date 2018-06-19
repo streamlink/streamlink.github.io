@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Streamlink 0.13.0+46.g4dd5605 documentation</title>
+  <title>Installation &mdash; Streamlink 0.13.0+48.g512b5f0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.13.0+46.g4dd5605 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.13.0+48.g512b5f0 documentation" href="index.html"/>
         <link rel="next" title="Command-Line Interface" href="cli.html"/>
         <link rel="prev" title="Overview" href="index.html"/> 
 
@@ -256,9 +256,13 @@
 </td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink">NixOS</a></td>
-<td><a class="reference external" href="https://nixos.org/wiki/Install/remove_software#How_to_install_software">Installing NixOS packages</a></td>
+<td><div class="first highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> nix-env -iA nixos.streamlink
+</pre></div>
+</div>
+<p class="last"><a class="reference external" href="https://nixos.org/nixos/packages.html#streamlink">NixOS channel</a></p>
+</td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://git.solus-project.com/packages/streamlink/">Solus</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://dev.solus-project.com/source/streamlink/">Solus</a></td>
 <td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo eopkg install streamlink
 </pre></div>
 </div>
@@ -272,7 +276,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://github.com/voidlinux/void-packages/tree/master/srcpkgs/streamlink">Void</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink">Void</a></td>
 <td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> xbps-install streamlink
 </pre></div>
 </div>
@@ -444,41 +448,56 @@ manager, or by checking out the latest code with
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><a class="reference external" href="http://python.org/">Python</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://www.python.org/">Python</a></td>
 <td>At least version <strong>2.7</strong> or <strong>3.4</strong>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://pypi.python.org/pypi/setuptools">python-setuptools</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://pypi.org/project/setuptools/">python-setuptools</a></td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td colspan="2"><strong>Automatically installed by the setup script</strong></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://pypi.python.org/pypi/argparse">python-argparse</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://pypi.org/project/argparse/">python-argparse</a></td>
 <td>Only needed on Python versions older than <strong>2.7</strong>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="http://pypi.python.org/pypi/futures">python-futures</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://pypi.org/project/futures/">python-futures</a></td>
 <td>Only needed on Python <strong>2.x</strong>.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="http://python-requests.org/">python-requests</a></td>
 <td>At least version <strong>1.0</strong>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="http://pypi.python.org/pypi/singledispatch">python-singledispatch</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://pypi.org/project/singledispatch/">python-singledispatch</a></td>
 <td>Only needed on Python versions older than <strong>3.4</strong>.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a></td>
 <td>Required to play some encrypted streams</td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://pypi.python.org/pypi/iso-639">iso-639</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://pypi.org/project/iso-639/">iso-639</a></td>
 <td>Used for localization settings, provides language information</td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://pypi.python.org/pypi/iso3166">iso3166</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://pypi.org/project/iso3166/">iso3166</a></td>
 <td>Used for localization settings, provides country information</td>
 </tr>
-<tr class="row-even"><td colspan="2"><strong>Optional</strong></td>
+<tr class="row-even"><td><a class="reference external" href="https://pypi.org/project/isodate/">isodate</a></td>
+<td>Used for MPEG-DASH streams</td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://rtmpdump.mplayerhq.hu/">RTMPDump</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/Anorov/PySocks">PySocks</a></td>
+<td>Used for SOCKS Proxies</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://pypi.org/project/websocket-client/">websocket-client</a></td>
+<td>Used for some plugins</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://pypi.org/project/backports.shutil_get_terminal_size/">shutil_get_terminal_size</a></td>
+<td>Only needed on Python versions older than <strong>3.3</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://pypi.org/project/backports.shutil_which/">shutil_which</a></td>
+<td>Only needed on Python versions older than <strong>3.3</strong></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><strong>Optional</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://rtmpdump.mplayerhq.hu/">RTMPDump</a></td>
 <td>Required to play RTMP streams.</td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a></td>
 <td>Required to play streams that are made up of separate
 audio and video streams, eg. YouTube 1080p+</td>
 </tr>
@@ -488,7 +507,7 @@ audio and video streams, eg. YouTube 1080p+</td>
 <div class="section" id="using-pycrypto-and-pycountry">
 <h3>Using pycrypto and pycountry<a class="headerlink" href="#using-pycrypto-and-pycountry" title="Permalink to this headline">¶</a></h3>
 <p>With these two environment variables it is possible to use <a class="reference external" href="https://www.dlitz.net/software/pycrypto/">pycrypto</a> instead of
-<a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a> and <a class="reference external" href="https://pypi.python.org/pypi/pycountry">pycountry</a> instead of <a class="reference external" href="https://pypi.python.org/pypi/iso-639">iso-639</a> and <a class="reference external" href="https://pypi.python.org/pypi/iso3166">iso3166</a>.</p>
+<a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a> and <a class="reference external" href="https://pypi.org/project/pycountry/">pycountry</a> instead of <a class="reference external" href="https://pypi.org/project/iso-639/">iso-639</a> and <a class="reference external" href="https://pypi.org/project/iso3166/">iso3166</a>.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCRYPTO</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
 <span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCOUNTRY</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
 </pre></div>
@@ -497,7 +516,7 @@ audio and video streams, eg. YouTube 1080p+</td>
 <div class="section" id="installing-without-root-permissions">
 <h3>Installing without root permissions<a class="headerlink" href="#installing-without-root-permissions" title="Permalink to this headline">¶</a></h3>
 <p>If you do not wish to install Streamlink globally on your system it's
-recommended to use <a class="reference external" href="http://virtualenv.readthedocs.org/en/latest/">virtualenv</a> to create a user owned Python environment
+recommended to use <a class="reference external" href="https://virtualenv.readthedocs.io/en/latest/">virtualenv</a> to create a user owned Python environment
 instead.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Creating an environment</span>
 <span class="gp">$</span> virtualenv ~/myenv
@@ -521,7 +540,7 @@ instead.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This may also be required on some OS X versions that seems to have weird
-permission issues (see issue <a class="reference external" href="https://github.com/streamlink/streamlink/issues/401">#401</a>).</p>
+permission issues.</p>
 </div>
 </div>
 </div>
@@ -549,7 +568,7 @@ Windows Vista requires at least SP2 to be installed.</p>
 <tr class="row-odd"><td><a class="reference external" href="https://bintray.com/streamlink/streamlink-nightly/streamlink/_latestVersion/#files">Development build</a></td>
 <td>For testing purposes only! Updated once per day. <br />
 Download the installer from <a class="reference external" href="https://bintray.com/streamlink/streamlink-nightly/streamlink/_latestVersion/#files">Bintray</a>. <br />
-See the <a class="reference external" href="https://bintray.com/streamlink/streamlink-nightly/streamlink/latest#release">list of recent changes</a> since the last stable release.</td>
+See the <a class="reference external" href="https://bintray.com/streamlink/streamlink-nightly/streamlink/_latestVersion/#release">list of recent changes</a> since the last stable release.</td>
 </tr>
 </tbody>
 </table>
@@ -636,7 +655,7 @@ from the command prompt or powershell without specifying its directory.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.13.0+46.g4dd5605',
+            VERSION:'0.13.0+48.g512b5f0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
