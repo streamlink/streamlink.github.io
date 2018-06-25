@@ -1,0 +1,1654 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Index &mdash; Streamlink 0.13.0+58.g87a55fe documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+        <link rel="index" title="Index"
+              href="#"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Streamlink 0.13.0+58.g87a55fe documentation" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document" data-spy="scroll" data-target=".wy-menu-vertical > ul > li.current > ul">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-header">
+        <a href="index.html"> Streamlink</a>
+        
+        <div class="tablet-hide">
+          <small>Command-line utility that extracts streams from various services and pipes them into a video player of choice.</small>
+          <hr />
+        </div>
+        
+
+        <div class="wy-side-nav-versions" role="note" aria-label="versions">
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.13.0+58.g87a55fe</span>
+  <dl class="wy-side-nav-versions-others">
+    <dd><a href="/" class="">Stable</a></dd>
+    <dd><a href="/latest/" class="version-current">Latest</a></dd>
+  </dl>
+</div>
+        <div class="wy-side-nav-search" role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd-packages">Linux and BSD packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#other-platforms">Other platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#package-maintainers">Package maintainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-usage">Plugin specific usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#sideloading-plugins">Sideloading plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#proxy-support">Proxy Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#command-line-usage">Command-line usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="players.html#transport-modes">Transport modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#player-compatibility">Player compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#inspecting-streams">Inspecting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#session-object">Session object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streamlink">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-streamlink.plugin">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streams">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-1-2018-05-07">streamlink 0.12.1 (2018-05-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-0-2018-05-07">streamlink 0.12.0 (2018-05-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-11-0-2018-03-08">streamlink 0.11.0 (2018-03-08)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-10-0-2018-01-23">streamlink 0.10.0 (2018-01-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-9-0-2017-11-14">streamlink 0.9.0 (2017-11-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-8-1-2017-09-12">Streamlink 0.8.1 (2017-09-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-7-0-2017-06-30">streamlink 0.7.0 (2017-06-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-6-0-2017-05-11">streamlink 0.6.0 (2017-05-11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-5-0-2017-04-04">streamlink 0.5.0 (2017-04-04)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-4-0-2017-03-09">streamlink 0.4.0 (2017-03-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-2-2017-02-10">streamlink 0.3.2 (2017-02-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-1-2017-02-03">streamlink 0.3.1 (2017-02-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-0-2017-01-24">streamlink 0.3.0 (2017-01-24)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-2-0-2016-12-16">streamlink 0.2.0 (2016-12-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-1-0-2016-11-21">streamlink 0.1.0 (2016-11-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-2-2016-10-12">streamlink 0.0.2 (2016-10-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-1-2016-09-23">streamlink 0.0.1 (2016-09-23)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#streamlink-team">Streamlink Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#liveproxy">LiveProxy</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+
+
+      
+      <div class="tablet-hide">
+        <hr />
+		<p class="wy-text-center">
+	        <a href="https://github.com/streamlink/streamlink"
+			   class="github-button" data-icon="octicon-mark-github"
+		       data-count-href="/streamlink/streamlink/stargazers"
+			   data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+	        <a href="https://github.com/streamlink/streamlink/issues"
+			   class="github-button" data-icon="octicon-issue-opened">Issues</a>
+
+        </p>
+      </div>
+      
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Streamlink</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Index</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+            <div class="admonition version-warning">
+              <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+            </div>
+            
+            
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#Symbols"><strong>Symbols</strong></a>
+ | <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ 
+</div>
+<h2 id="Symbols">Symbols</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    --abweb-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-abweb-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --abweb-purge-credentials
+
+      <ul>
+        <li><a href="cli.html#cmdoption-abweb-purge-credentials">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --abweb-username USERNAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-abweb-username">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --afreeca-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-afreeca-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --afreeca-username USERNAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-afreeca-username">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --animelab-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-animelab-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --animelab-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-animelab-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --auto-version-check {yes,true,1,on,no,false,0,off}
+
+      <ul>
+        <li><a href="cli.html#cmdoption-auto-version-check">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --bbciplayer-hd
+
+      <ul>
+        <li><a href="cli.html#cmdoption-bbciplayer-hd">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --bbciplayer-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-bbciplayer-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --bbciplayer-username USERNAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-bbciplayer-username">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --btsports-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-btsports-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --btsports-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-btsports-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --btv-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-btv-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --btv-username USERNAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-btv-username">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --can-handle-url URL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-can-handle-url">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --can-handle-url-no-redirect URL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-can-handle-url-no-redirect">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --config FILENAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-config">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --crunchyroll-password [PASSWORD]
+
+      <ul>
+        <li><a href="cli.html#cmdoption-crunchyroll-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --crunchyroll-purge-credentials
+
+      <ul>
+        <li><a href="cli.html#cmdoption-crunchyroll-purge-credentials">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --crunchyroll-session-id SESSION_ID
+
+      <ul>
+        <li><a href="cli.html#cmdoption-crunchyroll-session-id">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --crunchyroll-username USERNAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-crunchyroll-username">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --default-stream STREAM
+
+      <ul>
+        <li><a href="cli.html#cmdoption-default-stream">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ffmpeg-audio-transcode CODEC
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ffmpeg-audio-transcode">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ffmpeg-ffmpeg FILENAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ffmpeg-ffmpeg">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ffmpeg-verbose
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ffmpeg-verbose">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ffmpeg-verbose-path PATH
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ffmpeg-verbose-path">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ffmpeg-video-transcode CODEC
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ffmpeg-video-transcode">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --funimation-email
+
+      <ul>
+        <li><a href="cli.html#cmdoption-funimation-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --funimation-language
+
+      <ul>
+        <li><a href="cli.html#cmdoption-funimation-language">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --funimation-mux-subtitles
+
+      <ul>
+        <li><a href="cli.html#cmdoption-funimation-mux-subtitles">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --funimation-password
+
+      <ul>
+        <li><a href="cli.html#cmdoption-funimation-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hds-live-edge SECONDS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hds-live-edge">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hds-segment-attempts ATTEMPTS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hds-segment-attempts">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hds-segment-threads THREADS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hds-segment-threads">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hds-segment-timeout TIMEOUT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hds-segment-timeout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hds-timeout TIMEOUT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hds-timeout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-audio-select CODE
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-audio-select">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-duration HH:MM:SS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-duration">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-live-edge SEGMENTS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-live-edge">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-live-restart
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-live-restart">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-playlist-reload-attempts ATTEMPTS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-playlist-reload-attempts">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-segment-attempts ATTEMPTS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-segment-attempts">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-segment-ignore-names NAMES
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-segment-ignore-names">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-segment-threads THREADS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-segment-threads">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-segment-timeout TIMEOUT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-segment-timeout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-start-offset HH:MM:SS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-start-offset">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-timeout TIMEOUT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-timeout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-cookie KEY=VALUE
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-cookie">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-disable-dh
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-disable-dh">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-header KEY=VALUE
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-header">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-ignore-env
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-ignore-env">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-no-ssl-verify
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-no-ssl-verify">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-proxy HTTP_PROXY
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-proxy">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-query-param KEY=VALUE
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-query-param">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-ssl-cert FILENAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-ssl-cert">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-ssl-cert-crt-key CRT_FILENAME KEY_FILENAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-ssl-cert-crt-key">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-stream-timeout TIMEOUT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-stream-timeout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --http-timeout TIMEOUT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-http-timeout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --https-proxy HTTPS_PROXY
+
+      <ul>
+        <li><a href="cli.html#cmdoption-https-proxy">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --liveedu-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-liveedu-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --liveedu-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-liveedu-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --locale LOCALE
+
+      <ul>
+        <li><a href="cli.html#cmdoption-locale">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --npo-subtitles
+
+      <ul>
+        <li><a href="cli.html#cmdoption-npo-subtitles">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    --pixiv-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-pixiv-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --pixiv-username USERNAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-pixiv-username">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --player-continuous-http
+
+      <ul>
+        <li><a href="cli.html#cmdoption-player-continuous-http">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --player-external-http
+
+      <ul>
+        <li><a href="cli.html#cmdoption-player-external-http">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --player-external-http-port PORT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-player-external-http-port">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --player-http
+
+      <ul>
+        <li><a href="cli.html#cmdoption-player-http">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --player-no-close
+
+      <ul>
+        <li><a href="cli.html#cmdoption-player-no-close">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --player-passthrough TYPES
+
+      <ul>
+        <li><a href="cli.html#cmdoption-player-passthrough">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --plugin-dirs DIRECTORY
+
+      <ul>
+        <li><a href="cli.html#cmdoption-plugin-dirs">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --plugins
+
+      <ul>
+        <li><a href="cli.html#cmdoption-plugins">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --pluzz-mux-subtitles
+
+      <ul>
+        <li><a href="cli.html#cmdoption-pluzz-mux-subtitles">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --retry-max COUNT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-retry-max">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --retry-open ATTEMPTS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-retry-open">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --retry-streams DELAY
+
+      <ul>
+        <li><a href="cli.html#cmdoption-retry-streams">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ringbuffer-size SIZE
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ringbuffer-size">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --rtmp-proxy PROXY, --rtmpdump-proxy PROXY
+
+      <ul>
+        <li><a href="cli.html#cmdoption-rtmp-proxy">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --rtmp-rtmpdump FILENAME, --rtmpdump FILENAME, -r FILENAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-rtmp-rtmpdump">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --rtmp-timeout TIMEOUT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-rtmp-timeout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --rtve-mux-subtitles
+
+      <ul>
+        <li><a href="cli.html#cmdoption-rtve-mux-subtitles">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --schoolism-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-schoolism-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --schoolism-part PART
+
+      <ul>
+        <li><a href="cli.html#cmdoption-schoolism-part">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --schoolism-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-schoolism-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --steam-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-steam-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --steam-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-steam-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --stream-segment-attempts ATTEMPTS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-stream-segment-attempts">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --stream-segment-threads THREADS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-stream-segment-threads">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --stream-segment-timeout TIMEOUT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-stream-segment-timeout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --stream-sorting-excludes STREAMS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-stream-sorting-excludes">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --stream-timeout TIMEOUT
+
+      <ul>
+        <li><a href="cli.html#cmdoption-stream-timeout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --stream-types TYPES, --stream-priority TYPES
+
+      <ul>
+        <li><a href="cli.html#cmdoption-stream-types">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --stream-url
+
+      <ul>
+        <li><a href="cli.html#cmdoption-stream-url">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --subprocess-cmdline, --cmdline, -c
+
+      <ul>
+        <li><a href="cli.html#cmdoption-subprocess-cmdline">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --subprocess-errorlog, --errorlog, -e
+
+      <ul>
+        <li><a href="cli.html#cmdoption-subprocess-errorlog">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --subprocess-errorlog-path PATH, --errorlog-path PATH
+
+      <ul>
+        <li><a href="cli.html#cmdoption-subprocess-errorlog-path">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --tvplayer-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-tvplayer-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --tvplayer-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-tvplayer-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --twitch-cookie COOKIES
+
+      <ul>
+        <li><a href="cli.html#cmdoption-twitch-cookie">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --twitch-disable-hosting
+
+      <ul>
+        <li><a href="cli.html#cmdoption-twitch-disable-hosting">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --twitch-oauth-authenticate
+
+      <ul>
+        <li><a href="cli.html#cmdoption-twitch-oauth-authenticate">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --twitch-oauth-token TOKEN
+
+      <ul>
+        <li><a href="cli.html#cmdoption-twitch-oauth-token">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --url URL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-url">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ustream-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ustream-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ustvnow-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ustvnow-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ustvnow-station-code CODE
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ustvnow-station-code">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ustvnow-username USERNAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-ustvnow-username">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --version-check
+
+      <ul>
+        <li><a href="cli.html#cmdoption-version-check">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --wwenetwork-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-wwenetwork-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --wwenetwork-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-wwenetwork-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --youtube-api-key
+
+      <ul>
+        <li><a href="cli.html#cmdoption-youtube-api-key">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --zattoo-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-zattoo-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --zattoo-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-zattoo-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --zattoo-purge-credentials
+
+      <ul>
+        <li><a href="cli.html#cmdoption-zattoo-purge-credentials">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -a ARGUMENTS, --player-args ARGUMENTS
+
+      <ul>
+        <li><a href="cli.html#cmdoption-a">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -f, --force
+
+      <ul>
+        <li><a href="cli.html#cmdoption-f">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -h, --help
+
+      <ul>
+        <li><a href="cli.html#cmdoption-h">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -j, --json
+
+      <ul>
+        <li><a href="cli.html#cmdoption-j">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -l LEVEL, --loglevel LEVEL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-l">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -n, --player-fifo, --fifo
+
+      <ul>
+        <li><a href="cli.html#cmdoption-n">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -o FILENAME, --output FILENAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-o">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -O, --stdout
+
+      <ul>
+        <li><a href="cli.html#cmdoption-stdout">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -p COMMAND, --player COMMAND
+
+      <ul>
+        <li><a href="cli.html#cmdoption-p">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -Q, --quiet
+
+      <ul>
+        <li><a href="cli.html#cmdoption-q">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -v, --verbose-player
+
+      <ul>
+        <li><a href="cli.html#cmdoption-verbose-player">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -V, --version
+
+      <ul>
+        <li><a href="cli.html#cmdoption-v">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.options.Argument.__init__">__init__() (streamlink.options.Argument method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.stream.AkamaiHDStream">AkamaiHDStream (class in streamlink.stream)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.options.Argument">Argument (class in streamlink.options)</a>
+</li>
+      <li><a href="api.html#streamlink.options.Arguments">Arguments (class in streamlink.options)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.plugin.Plugin.clear_cookies">clear_cookies() (streamlink.plugin.Plugin method)</a>
+</li>
+      <li>
+    command line option
+
+      <ul>
+        <li><a href="cli.html#cmdoption-abweb-password">--abweb-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-abweb-purge-credentials">--abweb-purge-credentials</a>
+</li>
+        <li><a href="cli.html#cmdoption-abweb-username">--abweb-username USERNAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-afreeca-password">--afreeca-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-afreeca-username">--afreeca-username USERNAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-animelab-email">--animelab-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-animelab-password">--animelab-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-auto-version-check">--auto-version-check {yes,true,1,on,no,false,0,off}</a>
+</li>
+        <li><a href="cli.html#cmdoption-bbciplayer-hd">--bbciplayer-hd</a>
+</li>
+        <li><a href="cli.html#cmdoption-bbciplayer-password">--bbciplayer-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-bbciplayer-username">--bbciplayer-username USERNAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-btsports-email">--btsports-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-btsports-password">--btsports-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-btv-password">--btv-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-btv-username">--btv-username USERNAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-can-handle-url">--can-handle-url URL</a>
+</li>
+        <li><a href="cli.html#cmdoption-can-handle-url-no-redirect">--can-handle-url-no-redirect URL</a>
+</li>
+        <li><a href="cli.html#cmdoption-config">--config FILENAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-crunchyroll-password">--crunchyroll-password [PASSWORD]</a>
+</li>
+        <li><a href="cli.html#cmdoption-crunchyroll-purge-credentials">--crunchyroll-purge-credentials</a>
+</li>
+        <li><a href="cli.html#cmdoption-crunchyroll-session-id">--crunchyroll-session-id SESSION_ID</a>
+</li>
+        <li><a href="cli.html#cmdoption-crunchyroll-username">--crunchyroll-username USERNAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-default-stream">--default-stream STREAM</a>
+</li>
+        <li><a href="cli.html#cmdoption-ffmpeg-audio-transcode">--ffmpeg-audio-transcode CODEC</a>
+</li>
+        <li><a href="cli.html#cmdoption-ffmpeg-ffmpeg">--ffmpeg-ffmpeg FILENAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-ffmpeg-verbose">--ffmpeg-verbose</a>
+</li>
+        <li><a href="cli.html#cmdoption-ffmpeg-verbose-path">--ffmpeg-verbose-path PATH</a>
+</li>
+        <li><a href="cli.html#cmdoption-ffmpeg-video-transcode">--ffmpeg-video-transcode CODEC</a>
+</li>
+        <li><a href="cli.html#cmdoption-funimation-email">--funimation-email</a>
+</li>
+        <li><a href="cli.html#cmdoption-funimation-language">--funimation-language</a>
+</li>
+        <li><a href="cli.html#cmdoption-funimation-mux-subtitles">--funimation-mux-subtitles</a>
+</li>
+        <li><a href="cli.html#cmdoption-funimation-password">--funimation-password</a>
+</li>
+        <li><a href="cli.html#cmdoption-hds-live-edge">--hds-live-edge SECONDS</a>
+</li>
+        <li><a href="cli.html#cmdoption-hds-segment-attempts">--hds-segment-attempts ATTEMPTS</a>
+</li>
+        <li><a href="cli.html#cmdoption-hds-segment-threads">--hds-segment-threads THREADS</a>
+</li>
+        <li><a href="cli.html#cmdoption-hds-segment-timeout">--hds-segment-timeout TIMEOUT</a>
+</li>
+        <li><a href="cli.html#cmdoption-hds-timeout">--hds-timeout TIMEOUT</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-audio-select">--hls-audio-select CODE</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-duration">--hls-duration HH:MM:SS</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-live-edge">--hls-live-edge SEGMENTS</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-live-restart">--hls-live-restart</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-playlist-reload-attempts">--hls-playlist-reload-attempts ATTEMPTS</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-segment-attempts">--hls-segment-attempts ATTEMPTS</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-segment-ignore-names">--hls-segment-ignore-names NAMES</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-segment-threads">--hls-segment-threads THREADS</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-segment-timeout">--hls-segment-timeout TIMEOUT</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-start-offset">--hls-start-offset HH:MM:SS</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-timeout">--hls-timeout TIMEOUT</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-cookie">--http-cookie KEY=VALUE</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-disable-dh">--http-disable-dh</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-header">--http-header KEY=VALUE</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-ignore-env">--http-ignore-env</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-no-ssl-verify">--http-no-ssl-verify</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-proxy">--http-proxy HTTP_PROXY</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-query-param">--http-query-param KEY=VALUE</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-ssl-cert">--http-ssl-cert FILENAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-ssl-cert-crt-key">--http-ssl-cert-crt-key CRT_FILENAME KEY_FILENAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-stream-timeout">--http-stream-timeout TIMEOUT</a>
+</li>
+        <li><a href="cli.html#cmdoption-http-timeout">--http-timeout TIMEOUT</a>
+</li>
+        <li><a href="cli.html#cmdoption-https-proxy">--https-proxy HTTPS_PROXY</a>
+</li>
+        <li><a href="cli.html#cmdoption-liveedu-email">--liveedu-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-liveedu-password">--liveedu-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-locale">--locale LOCALE</a>
+</li>
+        <li><a href="cli.html#cmdoption-npo-subtitles">--npo-subtitles</a>
+</li>
+        <li><a href="cli.html#cmdoption-pixiv-password">--pixiv-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-pixiv-username">--pixiv-username USERNAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-player-continuous-http">--player-continuous-http</a>
+</li>
+        <li><a href="cli.html#cmdoption-player-external-http">--player-external-http</a>
+</li>
+        <li><a href="cli.html#cmdoption-player-external-http-port">--player-external-http-port PORT</a>
+</li>
+        <li><a href="cli.html#cmdoption-player-http">--player-http</a>
+</li>
+        <li><a href="cli.html#cmdoption-player-no-close">--player-no-close</a>
+</li>
+        <li><a href="cli.html#cmdoption-player-passthrough">--player-passthrough TYPES</a>
+</li>
+        <li><a href="cli.html#cmdoption-plugin-dirs">--plugin-dirs DIRECTORY</a>
+</li>
+        <li><a href="cli.html#cmdoption-plugins">--plugins</a>
+</li>
+        <li><a href="cli.html#cmdoption-pluzz-mux-subtitles">--pluzz-mux-subtitles</a>
+</li>
+        <li><a href="cli.html#cmdoption-retry-max">--retry-max COUNT</a>
+</li>
+        <li><a href="cli.html#cmdoption-retry-open">--retry-open ATTEMPTS</a>
+</li>
+        <li><a href="cli.html#cmdoption-retry-streams">--retry-streams DELAY</a>
+</li>
+        <li><a href="cli.html#cmdoption-ringbuffer-size">--ringbuffer-size SIZE</a>
+</li>
+        <li><a href="cli.html#cmdoption-rtmp-proxy">--rtmp-proxy PROXY, --rtmpdump-proxy PROXY</a>
+</li>
+        <li><a href="cli.html#cmdoption-rtmp-rtmpdump">--rtmp-rtmpdump FILENAME, --rtmpdump FILENAME, -r FILENAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-rtmp-timeout">--rtmp-timeout TIMEOUT</a>
+</li>
+        <li><a href="cli.html#cmdoption-rtve-mux-subtitles">--rtve-mux-subtitles</a>
+</li>
+        <li><a href="cli.html#cmdoption-schoolism-email">--schoolism-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-schoolism-part">--schoolism-part PART</a>
+</li>
+        <li><a href="cli.html#cmdoption-schoolism-password">--schoolism-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-steam-email">--steam-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-steam-password">--steam-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-stream-segment-attempts">--stream-segment-attempts ATTEMPTS</a>
+</li>
+        <li><a href="cli.html#cmdoption-stream-segment-threads">--stream-segment-threads THREADS</a>
+</li>
+        <li><a href="cli.html#cmdoption-stream-segment-timeout">--stream-segment-timeout TIMEOUT</a>
+</li>
+        <li><a href="cli.html#cmdoption-stream-sorting-excludes">--stream-sorting-excludes STREAMS</a>
+</li>
+        <li><a href="cli.html#cmdoption-stream-timeout">--stream-timeout TIMEOUT</a>
+</li>
+        <li><a href="cli.html#cmdoption-stream-types">--stream-types TYPES, --stream-priority TYPES</a>
+</li>
+        <li><a href="cli.html#cmdoption-stream-url">--stream-url</a>
+</li>
+        <li><a href="cli.html#cmdoption-subprocess-cmdline">--subprocess-cmdline, --cmdline, -c</a>
+</li>
+        <li><a href="cli.html#cmdoption-subprocess-errorlog">--subprocess-errorlog, --errorlog, -e</a>
+</li>
+        <li><a href="cli.html#cmdoption-subprocess-errorlog-path">--subprocess-errorlog-path PATH, --errorlog-path PATH</a>
+</li>
+        <li><a href="cli.html#cmdoption-tvplayer-email">--tvplayer-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-tvplayer-password">--tvplayer-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-twitch-cookie">--twitch-cookie COOKIES</a>
+</li>
+        <li><a href="cli.html#cmdoption-twitch-disable-hosting">--twitch-disable-hosting</a>
+</li>
+        <li><a href="cli.html#cmdoption-twitch-oauth-authenticate">--twitch-oauth-authenticate</a>
+</li>
+        <li><a href="cli.html#cmdoption-twitch-oauth-token">--twitch-oauth-token TOKEN</a>
+</li>
+        <li><a href="cli.html#cmdoption-url">--url URL</a>
+</li>
+        <li><a href="cli.html#cmdoption-ustream-password">--ustream-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-ustvnow-password">--ustvnow-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-ustvnow-station-code">--ustvnow-station-code CODE</a>
+</li>
+        <li><a href="cli.html#cmdoption-ustvnow-username">--ustvnow-username USERNAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-version-check">--version-check</a>
+</li>
+        <li><a href="cli.html#cmdoption-wwenetwork-email">--wwenetwork-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-wwenetwork-password">--wwenetwork-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-youtube-api-key">--youtube-api-key</a>
+</li>
+        <li><a href="cli.html#cmdoption-zattoo-email">--zattoo-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-zattoo-password">--zattoo-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-zattoo-purge-credentials">--zattoo-purge-credentials</a>
+</li>
+        <li><a href="cli.html#cmdoption-stdout">-O, --stdout</a>
+</li>
+        <li><a href="cli.html#cmdoption-q">-Q, --quiet</a>
+</li>
+        <li><a href="cli.html#cmdoption-v">-V, --version</a>
+</li>
+        <li><a href="cli.html#cmdoption-a">-a ARGUMENTS, --player-args ARGUMENTS</a>
+</li>
+        <li><a href="cli.html#cmdoption-f">-f, --force</a>
+</li>
+        <li><a href="cli.html#cmdoption-h">-h, --help</a>
+</li>
+        <li><a href="cli.html#cmdoption-j">-j, --json</a>
+</li>
+        <li><a href="cli.html#cmdoption-l">-l LEVEL, --loglevel LEVEL</a>
+</li>
+        <li><a href="cli.html#cmdoption-n">-n, --player-fifo, --fifo</a>
+</li>
+        <li><a href="cli.html#cmdoption-o">-o FILENAME, --output FILENAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-p">-p COMMAND, --player COMMAND</a>
+</li>
+        <li><a href="cli.html#cmdoption-verbose-player">-v, --verbose-player</a>
+</li>
+        <li><a href="cli.html#cmdoption-arg-stream">STREAM</a>
+</li>
+        <li><a href="cli.html#cmdoption-arg-url">URL</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.stream.DASHStream">DASHStream (class in streamlink.stream)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.Streamlink.get_option">get_option() (streamlink.Streamlink method)</a>
+</li>
+      <li><a href="api.html#streamlink.Streamlink.get_plugin_option">get_plugin_option() (streamlink.Streamlink method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.Streamlink.get_plugins">get_plugins() (streamlink.Streamlink method)</a>
+</li>
+      <li><a href="api.html#streamlink.plugin.Plugin.get_streams">get_streams() (streamlink.plugin.Plugin method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.stream.HDSStream">HDSStream (class in streamlink.stream)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.stream.HLSStream">HLSStream (class in streamlink.stream)</a>
+</li>
+      <li><a href="api.html#streamlink.stream.HTTPStream">HTTPStream (class in streamlink.stream)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.plugin.Plugin.load_cookies">load_cookies() (streamlink.plugin.Plugin method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.Streamlink.load_plugins">load_plugins() (streamlink.Streamlink method)</a>
+</li>
+      <li><a href="api.html#streamlink.Streamlink.logger">logger (streamlink.Streamlink attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.NoPluginError">NoPluginError</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.stream.Stream.open">open() (streamlink.stream.Stream method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.stream.DASHStream.parse_manifest">parse_manifest() (streamlink.stream.DASHStream class method)</a>
+
+      <ul>
+        <li><a href="api.html#streamlink.stream.HDSStream.parse_manifest">(streamlink.stream.HDSStream class method)</a>
+</li>
+      </ul></li>
+      <li><a href="api.html#streamlink.stream.HLSStream.parse_variant_playlist">parse_variant_playlist() (streamlink.stream.HLSStream class method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.plugin.Plugin">Plugin (class in streamlink.plugin)</a>
+</li>
+      <li><a href="api.html#streamlink.PluginError">PluginError</a>
+</li>
+      <li><a href="api.html#streamlink.plugin.Plugin.priority">priority() (streamlink.plugin.Plugin class method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.options.Arguments.requires">requires() (streamlink.options.Arguments method)</a>
+</li>
+      <li><a href="api.html#streamlink.Streamlink.resolve_url">resolve_url() (streamlink.Streamlink method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.Streamlink.resolve_url_no_redirect">resolve_url_no_redirect() (streamlink.Streamlink method)</a>
+</li>
+      <li><a href="api.html#streamlink.stream.RTMPStream">RTMPStream (class in streamlink.stream)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.plugin.Plugin.save_cookies">save_cookies() (streamlink.plugin.Plugin method)</a>
+</li>
+      <li><a href="api.html#streamlink.Streamlink.set_loglevel">set_loglevel() (streamlink.Streamlink method)</a>
+</li>
+      <li><a href="api.html#streamlink.Streamlink.set_logoutput">set_logoutput() (streamlink.Streamlink method)</a>
+</li>
+      <li><a href="api.html#streamlink.Streamlink.set_option">set_option() (streamlink.Streamlink method)</a>
+</li>
+      <li><a href="api.html#streamlink.Streamlink.set_plugin_option">set_plugin_option() (streamlink.Streamlink method)</a>
+</li>
+      <li>
+    STREAM
+
+      <ul>
+        <li><a href="cli.html#cmdoption-arg-stream">command line option</a>
+</li>
+      </ul></li>
+      <li><a href="api.html#streamlink.stream.Stream">Stream (class in streamlink.stream)</a>
+</li>
+      <li><a href="api.html#streamlink.StreamError">StreamError</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#streamlink.Streamlink">Streamlink (class in streamlink)</a>
+</li>
+      <li><a href="api.html#module-streamlink">streamlink (module)</a>, <a href="api_guide.html#module-streamlink">[1]</a>
+</li>
+      <li><a href="api.html#module-streamlink.options">streamlink.options (module)</a>
+</li>
+      <li><a href="api.html#module-streamlink.plugin">streamlink.plugin (module)</a>
+</li>
+      <li><a href="api.html#module-streamlink.stream">streamlink.stream (module)</a>
+</li>
+      <li><a href="api.html#streamlink.StreamlinkError">StreamlinkError</a>
+</li>
+      <li><a href="api.html#streamlink.streams">streams() (in module streamlink)</a>
+
+      <ul>
+        <li><a href="api.html#streamlink.Streamlink.streams">(streamlink.Streamlink method)</a>
+</li>
+        <li><a href="api.html#streamlink.plugin.Plugin.streams">(streamlink.plugin.Plugin method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    URL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-arg-url">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Streamlink.
+    </p>
+  </div>
+
+  <a href="https://github.com/chrippa/sphinx_rtd_theme_violet">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.13.0+58.g87a55fe',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+  <script type="text/javascript" src="_static/js/scrollspy.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+
+
+  
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+   
+
+</body>
+</html>

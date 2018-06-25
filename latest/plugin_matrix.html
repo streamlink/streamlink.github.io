@@ -1,0 +1,1623 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plugins &mdash; Streamlink 0.13.0+58.g87a55fe documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Streamlink 0.13.0+58.g87a55fe documentation" href="index.html"/>
+        <link rel="next" title="Players" href="players.html"/>
+        <link rel="prev" title="Command-Line Interface" href="cli.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document" data-spy="scroll" data-target=".wy-menu-vertical > ul > li.current > ul">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-header">
+        <a href="index.html"> Streamlink</a>
+        
+        <div class="tablet-hide">
+          <small>Command-line utility that extracts streams from various services and pipes them into a video player of choice.</small>
+          <hr />
+        </div>
+        
+
+        <div class="wy-side-nav-versions" role="note" aria-label="versions">
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.13.0+58.g87a55fe</span>
+  <dl class="wy-side-nav-versions-others">
+    <dd><a href="/" class="">Stable</a></dd>
+    <dd><a href="/latest/" class="version-current">Latest</a></dd>
+  </dl>
+</div>
+        <div class="wy-side-nav-search" role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd-packages">Linux and BSD packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#other-platforms">Other platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#package-maintainers">Package maintainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-usage">Plugin specific usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#sideloading-plugins">Sideloading plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#proxy-support">Proxy Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#command-line-usage">Command-line usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="players.html#transport-modes">Transport modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#player-compatibility">Player compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#inspecting-streams">Inspecting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#session-object">Session object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streamlink">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-streamlink.plugin">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streams">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-1-2018-05-07">streamlink 0.12.1 (2018-05-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-0-2018-05-07">streamlink 0.12.0 (2018-05-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-11-0-2018-03-08">streamlink 0.11.0 (2018-03-08)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-10-0-2018-01-23">streamlink 0.10.0 (2018-01-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-9-0-2017-11-14">streamlink 0.9.0 (2017-11-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-8-1-2017-09-12">Streamlink 0.8.1 (2017-09-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-7-0-2017-06-30">streamlink 0.7.0 (2017-06-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-6-0-2017-05-11">streamlink 0.6.0 (2017-05-11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-5-0-2017-04-04">streamlink 0.5.0 (2017-04-04)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-4-0-2017-03-09">streamlink 0.4.0 (2017-03-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-2-2017-02-10">streamlink 0.3.2 (2017-02-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-1-2017-02-03">streamlink 0.3.1 (2017-02-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-0-2017-01-24">streamlink 0.3.0 (2017-01-24)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-2-0-2016-12-16">streamlink 0.2.0 (2016-12-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-1-0-2016-11-21">streamlink 0.1.0 (2016-11-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-2-2016-10-12">streamlink 0.0.2 (2016-10-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-1-2016-09-23">streamlink 0.0.1 (2016-09-23)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#streamlink-team">Streamlink Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#liveproxy">LiveProxy</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+
+
+      
+      <div class="tablet-hide">
+        <hr />
+		<p class="wy-text-center">
+	        <a href="https://github.com/streamlink/streamlink"
+			   class="github-button" data-icon="octicon-mark-github"
+		       data-count-href="/streamlink/streamlink/stargazers"
+			   data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+	        <a href="https://github.com/streamlink/streamlink/issues"
+			   class="github-button" data-icon="octicon-issue-opened">Issues</a>
+
+        </p>
+      </div>
+      
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Streamlink</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Plugins</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+            <div class="admonition version-warning">
+              <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+            </div>
+            
+            
+  <div class="section" id="plugins">
+<span id="plugin-matrix"></span><h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+<p>This is a list of the currently built in plugins and what URLs and features
+they support. Streamlink's primary focus is live streams, so VOD support
+is limited.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="15%" />
+<col width="4%" />
+<col width="4%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">URL(s)</th>
+<th class="head">Live</th>
+<th class="head">VOD</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>abweb</td>
+<td>abweb.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Requires a login and a subscription.</td>
+</tr>
+<tr class="row-odd"><td>adultswim</td>
+<td>adultswim.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted, some VOD streams are protected by DRM.</td>
+</tr>
+<tr class="row-even"><td>afreeca</td>
+<td><ul class="first last simple">
+<li>afreecatv.com</li>
+<li>afreeca.tv</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>aftonbladet</td>
+<td>aftonbladet.se</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>aliez</td>
+<td>aliez.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>aljazeeraen</td>
+<td>aljazeera.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>English version of the site.</td>
+</tr>
+<tr class="row-even"><td>animelab</td>
+<td>animelab.com</td>
+<td>--</td>
+<td>Yes</td>
+<td>Requires a login. Streams may be geo-restricted to Australia and New Zealand.</td>
+</tr>
+<tr class="row-odd"><td>antenna</td>
+<td>antenna.gr</td>
+<td>--</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>app17</td>
+<td>17app.co</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>arconai</td>
+<td>arconai.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Only SD quality streams</td>
+</tr>
+<tr class="row-even"><td>ard_live</td>
+<td>daserste.de</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Germany.</td>
+</tr>
+<tr class="row-odd"><td>ard_mediathek</td>
+<td><ul class="first last simple">
+<li>ardmediathek.de</li>
+<li>mediathek... <a class="footnote-reference" href="#id13" id="id1">[5]</a></li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Germany.</td>
+</tr>
+<tr class="row-even"><td>artetv</td>
+<td>arte.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>atresplayer</td>
+<td>atresplayer.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams are geo-restricted to Spain.</td>
+</tr>
+<tr class="row-even"><td>bbciplayer</td>
+<td>bbc.co.uk/iplayer</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to the United Kingdom.</td>
+</tr>
+<tr class="row-odd"><td>beattv</td>
+<td>be-at.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Playlist not implemented yet.</td>
+</tr>
+<tr class="row-even"><td>bfmtv</td>
+<td>bfmtv.com
+01net.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>bigo</td>
+<td><ul class="first last simple">
+<li>live.bigo.tv</li>
+<li>bigoweb.co</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>bilibili</td>
+<td>live.bilibili.com</td>
+<td>Yes</td>
+<td>?</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>bloomberg</td>
+<td>bloomberg.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>bongacams</td>
+<td>bongacams.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>brightcove</td>
+<td>players.brig... <a class="footnote-reference" href="#id14" id="id2">[6]</a></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>brittv</td>
+<td>brittv.co.uk</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>btsports</td>
+<td>sport.bt.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Requires subscription account</td>
+</tr>
+<tr class="row-even"><td>btv</td>
+<td>btv.bg</td>
+<td>Yes</td>
+<td>No</td>
+<td>Requires login, and geo-restricted to Bulgaria.</td>
+</tr>
+<tr class="row-odd"><td>cam4</td>
+<td>cam4.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>camsoda</td>
+<td>camsoda.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>canalplus</td>
+<td>mycanal.fr</td>
+<td>No</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to France.</td>
+</tr>
+<tr class="row-even"><td>cdnbg</td>
+<td><ul class="first last simple">
+<li>tv.bnt.bg</li>
+<li>bgonair.bg</li>
+<li>kanal3.bg</li>
+<li>bitelevision.com</li>
+<li>nova.bg</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Bulgaria.</td>
+</tr>
+<tr class="row-odd"><td>ceskatelevize</td>
+<td>ceskatelevize.cz</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Czechia.</td>
+</tr>
+<tr class="row-even"><td>chaturbate</td>
+<td>chaturbate.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>cinergroup</td>
+<td><ul class="first last simple">
+<li>showtv.com.tr</li>
+<li>haberturk.com</li>
+<li>showmax.com.tr</li>
+<li>showturk.com.tr</li>
+<li>bloomberght.com</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>cnews</td>
+<td>cnews.fr</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>crunchyroll</td>
+<td>crunchyroll.com</td>
+<td>--</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>cybergame</td>
+<td>cybergame.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>dailymotion</td>
+<td>dailymotion.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>delfi</td>
+<td><ul class="first last simple">
+<li>delfi.lt</li>
+<li>delfi.ee</li>
+<li>delfi.lv</li>
+</ul>
+</td>
+<td>--</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>deutschewelle</td>
+<td>dw.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>dingittv</td>
+<td>dingit.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>dogan</td>
+<td><ul class="first last simple">
+<li>teve2.com.tr</li>
+<li>kanald.com.tr</li>
+<li>dreamtv.com.tr</li>
+<li>cnnturk.com</li>
+<li>dreamturk.com.tr</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>VOD is supported for teve2 and kanald</td>
+</tr>
+<tr class="row-even"><td>dogus</td>
+<td><ul class="first last simple">
+<li>ntvspor.net</li>
+<li>kralmuzik.com.tr</li>
+<li>ntv.com.tr</li>
+<li>eurostartv.com.tr</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>dommune</td>
+<td>dommune.com</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>douyutv</td>
+<td><ul class="first last simple">
+<li>douyu.com</li>
+<li>v.douyu.com</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>dplay</td>
+<td><ul class="first last simple">
+<li>dplay.se</li>
+<li>dplay.no</li>
+<li>dplay.dk</li>
+</ul>
+</td>
+<td>--</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted.
+Only non-premium streams currently supported.</td>
+</tr>
+<tr class="row-even"><td>drdk</td>
+<td>dr.dk</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Denmark.</td>
+</tr>
+<tr class="row-odd"><td>earthcam</td>
+<td>earthcam.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Only works for the cams hosted on EarthCam.</td>
+</tr>
+<tr class="row-even"><td>ellobo</td>
+<td>ellobo106.com</td>
+<td>Yes</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>eltrecetv</td>
+<td>eltrecetv.com.ar</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Argentina.</td>
+</tr>
+<tr class="row-even"><td>eurocom</td>
+<td>eurocom.bg</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>euronews</td>
+<td>euronews.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>europaplus</td>
+<td>europaplus.ru</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>expressen</td>
+<td>expressen.se</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>facebook</td>
+<td>facebook.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Only 360p HLS streams.</td>
+</tr>
+<tr class="row-odd"><td>filmon</td>
+<td>filmon.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Only SD quality streams.</td>
+</tr>
+<tr class="row-even"><td>foxtr</td>
+<td>fox.com.tr</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>funimationnow</td>
+<td><ul class="first last simple">
+<li>funimation.com</li>
+<li>funimationnow.uk</li>
+</ul>
+</td>
+<td>--</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>gardenersworld</td>
+<td>gardenersworld.com</td>
+<td>--</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>garena</td>
+<td>garena.live</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>goltelevision</td>
+<td>goltelevision.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Spain.</td>
+</tr>
+<tr class="row-odd"><td>goodgame</td>
+<td>goodgame.ru</td>
+<td>Yes</td>
+<td>No</td>
+<td>Only HLS streams are available.</td>
+</tr>
+<tr class="row-even"><td>googledrive</td>
+<td><ul class="first last simple">
+<li>docs.google.com</li>
+<li>drive.google.com</li>
+</ul>
+</td>
+<td>--</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>gulli</td>
+<td>replay.gulli.fr</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to France.</td>
+</tr>
+<tr class="row-even"><td>hitbox</td>
+<td><ul class="first last simple">
+<li>hitbox.tv</li>
+<li>smashcast.tv</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>huajiao</td>
+<td>huajiao.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>huomao</td>
+<td>huomao.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>huya</td>
+<td>huya.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Temporarily only HLS streams available.</td>
+</tr>
+<tr class="row-even"><td>idf1</td>
+<td>idf1.fr</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ine</td>
+<td>ine.com</td>
+<td>---</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>itvplayer</td>
+<td>itv.com/itvplayer</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Great Britain.</td>
+</tr>
+<tr class="row-odd"><td>kanal7</td>
+<td>kanal7.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>kingkong</td>
+<td>kingkong.com.tw</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>live_russia_tv</td>
+<td>live.russia.tv</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>liveedu</td>
+<td><ul class="first last simple">
+<li>liveedu.tv</li>
+<li>livecoding.tv</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>--</td>
+<td>Some streams require a login.</td>
+</tr>
+<tr class="row-odd"><td>liveme</td>
+<td>liveme.com</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>livestream</td>
+<td>new.livestream.com</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>lrt</td>
+<td>lrt.lt</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>media_ccc_de</td>
+<td><ul class="first last simple">
+<li>media.ccc.de</li>
+<li>streaming... <a class="footnote-reference" href="#id12" id="id3">[4]</a></li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Only mp4 and HLS are supported.</td>
+</tr>
+<tr class="row-odd"><td>mediaklikk</td>
+<td>mediaklikk.hu</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Hungary.</td>
+</tr>
+<tr class="row-even"><td>mips</td>
+<td>mips.tv</td>
+<td>Yes</td>
+<td>--</td>
+<td>Requires rtmpdump with K-S-V patches.</td>
+</tr>
+<tr class="row-odd"><td>mitele</td>
+<td>mitele.es</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Spain.</td>
+</tr>
+<tr class="row-even"><td>mixer</td>
+<td>mixer.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>mlgtv</td>
+<td>mlg.tv</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>nbc</td>
+<td>nbc.com</td>
+<td>No</td>
+<td>Yes</td>
+<td>Streams are geo-restricted to USA. Authentication is not supported.</td>
+</tr>
+<tr class="row-odd"><td>nbcsports</td>
+<td>nbcsports.com</td>
+<td>No</td>
+<td>Yes</td>
+<td>Streams maybe be geo-restricted to USA. Authentication is not supported.</td>
+</tr>
+<tr class="row-even"><td>nhkworld</td>
+<td>nhk.or.jp/nhkworld</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>nineanime</td>
+<td>9anime.to</td>
+<td>--</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>nos</td>
+<td>nos.nl</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Netherlands.</td>
+</tr>
+<tr class="row-odd"><td>npo</td>
+<td><ul class="first last simple">
+<li>npo.nl</li>
+<li>zapp.nl</li>
+<li>zappelin.nl</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Netherlands.</td>
+</tr>
+<tr class="row-even"><td>nrk</td>
+<td><ul class="first last simple">
+<li>tv.nrk.no</li>
+<li>radio.nrk.no</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Norway.</td>
+</tr>
+<tr class="row-odd"><td>ok_live</td>
+<td>ok.ru</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>oldlivestream</td>
+<td><ul class="first last simple">
+<li>original.li.. <a class="footnote-reference" href="#id11" id="id4">[3]</a></li>
+<li>cdn.livestream.com</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>Only mobile streams are supported.</td>
+</tr>
+<tr class="row-odd"><td>olympicchannel</td>
+<td>olympicchannel.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Only non-premium content is available.</td>
+</tr>
+<tr class="row-even"><td>onetv</td>
+<td><ul class="first last simple">
+<li>1tv.ru</li>
+<li>ctc.ru</li>
+<li>chetv.ru</li>
+<li>ctclove.ru</li>
+<li>domashny.ru</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Russia. VOD only for 1tv.ru</td>
+</tr>
+<tr class="row-odd"><td>openrectv</td>
+<td>openrec.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>orf_tvthek</td>
+<td>tvthek.orf.at</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ovvatv</td>
+<td>ovva.tv</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>pandatv</td>
+<td>panda.tv</td>
+<td>Yes</td>
+<td>?</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>periscope</td>
+<td>periscope.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Replay/VOD is supported.</td>
+</tr>
+<tr class="row-even"><td>picarto</td>
+<td>picarto.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>piczel</td>
+<td>piczel.tv</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>pixiv</td>
+<td>sketch.pixiv.net</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>playtv</td>
+<td><ul class="first last simple">
+<li>playtv.fr</li>
+<li>play.tv</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>--</td>
+<td>Streams may be geo-restricted to France.</td>
+</tr>
+<tr class="row-even"><td>pluzz</td>
+<td><ul class="first last simple">
+<li>france.tv</li>
+<li>ludo.fr</li>
+<li>zouzous.fr</li>
+<li>france3-reg.. <a class="footnote-reference" href="#id16" id="id5">[8]</a></li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to France, Andorra and Monaco.</td>
+</tr>
+<tr class="row-odd"><td>powerapp</td>
+<td>powerapp.com.tr</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>qq</td>
+<td>live.qq.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>radionet</td>
+<td><ul class="first last simple">
+<li>radio.net</li>
+<li>radio.at</li>
+<li>radio.de</li>
+<li>radio.dk</li>
+<li>radio.es</li>
+<li>radio.fr</li>
+<li>radio.it</li>
+<li>radio.pl</li>
+<li>radio.pt</li>
+<li>radio.se</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>raiplay</td>
+<td>raiplay.it</td>
+<td>Yes</td>
+<td>No</td>
+<td>Most streams are geo-restricted to Italy.</td>
+</tr>
+<tr class="row-odd"><td>reshet</td>
+<td>reshet.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Israel.</td>
+</tr>
+<tr class="row-even"><td>rtbf</td>
+<td><ul class="first last simple">
+<li>rtbf.be/auvio</li>
+<li>rtbfradioplayer.be</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Belgium or Europe.</td>
+</tr>
+<tr class="row-odd"><td>rtlxl</td>
+<td>rtlxl.nl</td>
+<td>No</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to The Netherlands. Livestreams not supported.</td>
+</tr>
+<tr class="row-even"><td>rte</td>
+<td>rte.ie/player</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>rtpplay</td>
+<td>rtp.pt/play</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Portugal.</td>
+</tr>
+<tr class="row-even"><td>rtve</td>
+<td>rtve.es</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>rtvs</td>
+<td>rtvs.sk</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Slovakia.</td>
+</tr>
+<tr class="row-even"><td>ruv</td>
+<td>ruv.is</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Iceland.</td>
+</tr>
+<tr class="row-odd"><td>schoolism</td>
+<td>schoolism.com</td>
+<td>--</td>
+<td>Yes</td>
+<td>Requires a login and a subscription.</td>
+</tr>
+<tr class="row-even"><td>seetv</td>
+<td>seetv.tv</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams that are embedded from other sites will not work.</td>
+</tr>
+<tr class="row-odd"><td>showroom</td>
+<td>showroom-live.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Only RTMP streams are available.</td>
+</tr>
+<tr class="row-even"><td>skai</td>
+<td>skai.gr</td>
+<td>Yes</td>
+<td>No</td>
+<td>Only embedded youtube live streams are supported</td>
+</tr>
+<tr class="row-odd"><td>speedrunslive</td>
+<td>speedrunslive.com</td>
+<td>Yes</td>
+<td>--</td>
+<td>URL forwarder to Twitch channels.</td>
+</tr>
+<tr class="row-even"><td>sportal</td>
+<td>sportal.bg</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>sportschau</td>
+<td>sportschau.de</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>srgssr</td>
+<td><ul class="first last simple">
+<li>srf.ch</li>
+<li>rts.ch</li>
+<li>rsi.ch</li>
+<li>rtr.ch</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams are geo-restricted to Switzerland.</td>
+</tr>
+<tr class="row-odd"><td>ssh101</td>
+<td>ssh101.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>startv</td>
+<td>startv.com.tr</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>steam</td>
+<td>steamcommunity.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Some streams will require a Steam account.</td>
+</tr>
+<tr class="row-even"><td>streamable</td>
+<td>streamable.com</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>streamboat</td>
+<td>streamboat.tv</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>streamingvideoprovider</td>
+<td>streamingvid... <a class="footnote-reference" href="#id10" id="id6">[2]</a></td>
+<td>Yes</td>
+<td>--</td>
+<td>RTMP streams requires rtmpdump with
+K-S-V patches.</td>
+</tr>
+<tr class="row-odd"><td>streamme</td>
+<td>stream.me</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>streann</td>
+<td>ott.streann.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>svtplay</td>
+<td><ul class="first last simple">
+<li>svtplay.se</li>
+<li>svtflow.se</li>
+<li>oppetarkiv.se</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Sweden.</td>
+</tr>
+<tr class="row-even"><td>swisstxt</td>
+<td><ul class="first last simple">
+<li>srf.ch</li>
+<li>rsi.ch</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams are geo-restricted to Switzerland.</td>
+</tr>
+<tr class="row-odd"><td>teamliquid</td>
+<td>teamliquid.net</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>telefe</td>
+<td>telefe.com</td>
+<td>No</td>
+<td>Yes</td>
+<td>Streams are geo-restricted to Argentina.</td>
+</tr>
+<tr class="row-odd"><td>tf1</td>
+<td><ul class="first last simple">
+<li>tf1.fr</li>
+<li>lci.fr</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to France.</td>
+</tr>
+<tr class="row-even"><td>tga</td>
+<td><ul class="first last simple">
+<li>star.plu.cn</li>
+<li>star.tga.plu.cn</li>
+<li>star.longzhu.com</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>theplatform</td>
+<td>player.thepl... <a class="footnote-reference" href="#id15" id="id7">[7]</a></td>
+<td>No</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>tigerdile</td>
+<td>tigerdile.com</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>tlctr</td>
+<td>tlctv.com.tr</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>trt</td>
+<td>trt.net.tr</td>
+<td>Yes</td>
+<td>No</td>
+<td>Some streams may be geo-restricted to Turkey.</td>
+</tr>
+<tr class="row-odd"><td>trtspor</td>
+<td>trtspor.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Some streams are geo-restricted to Turkey.</td>
+</tr>
+<tr class="row-even"><td>turkuvaz</td>
+<td><ul class="first last simple">
+<li>atv.com.tr</li>
+<li>a2tv.com.tr</li>
+<li>ahaber.com.tr</li>
+<li>aspor.com.tr</li>
+<li>minikago.com.tr</li>
+<li>minikacocuk.com.tr</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>tv1channel</td>
+<td>tv1channel.org</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>tv3cat</td>
+<td>tv3.cat</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Spain.</td>
+</tr>
+<tr class="row-odd"><td>tv4play</td>
+<td><ul class="first last simple">
+<li>tv4play.se</li>
+<li>fotbollskanalen.se</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Sweden.
+Only non-premium streams currently supported.</td>
+</tr>
+<tr class="row-even"><td>tv5monde</td>
+<td><ul class="first last simple">
+<li>tv5monde.com</li>
+<li>tv5mondeplus.com</li>
+<li>tv5mondepl... <a class="footnote-reference" href="#id17" id="id8">[9]</a></li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to France, Belgium and Switzerland.</td>
+</tr>
+<tr class="row-odd"><td>tv8</td>
+<td>tv8.com.tr</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>tv8cat</td>
+<td>tv8.cat</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Spain/Catalunya.</td>
+</tr>
+<tr class="row-odd"><td>tv360</td>
+<td>tv360.com.tr</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>tvcatchup</td>
+<td>tvcatchup.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Great Britain.</td>
+</tr>
+<tr class="row-odd"><td>tvnbg</td>
+<td><ul class="first last simple">
+<li>tvn.bg</li>
+<li>live.tvn.bg</li>
+</ul>
+</td>
+<td>Yes</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>tvp</td>
+<td>tvpstream.vod.tvp.pl</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Poland.</td>
+</tr>
+<tr class="row-odd"><td>tvplayer</td>
+<td>tvplayer.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Great Britain. Premium streams are not supported.</td>
+</tr>
+<tr class="row-even"><td>tvrby</td>
+<td>tvr.by</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Belarus.</td>
+</tr>
+<tr class="row-odd"><td>tvrplus</td>
+<td>tvrplus.ro</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams may be geo-restricted to Romania.</td>
+</tr>
+<tr class="row-even"><td>twitch</td>
+<td>twitch.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Possible to authenticate for access to
+subscription streams.</td>
+</tr>
+<tr class="row-odd"><td>ustreamtv</td>
+<td>ustream.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ustvnow</td>
+<td>ustvnow.com</td>
+<td>Yes</td>
+<td>--</td>
+<td>All streams require an account, some streams require a subscription.</td>
+</tr>
+<tr class="row-odd"><td>vaughnlive</td>
+<td><ul class="first last simple">
+<li>vaughnlive.tv</li>
+<li>breakers.tv</li>
+<li>instagib.tv</li>
+<li>vapers.tv</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>vgtv</td>
+<td>vgtv.no</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>viasat</td>
+<td><ul class="first last simple">
+<li>juicyplay.dk</li>
+<li>play.nova.bg</li>
+<li>skaties.lv</li>
+<li>tv3.dk</li>
+<li>tv3.ee</li>
+<li>tv3.lt</li>
+<li>tv6play.no</li>
+<li>viafree.dk</li>
+<li>viafree.no</li>
+<li>viafree.se</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted.</td>
+</tr>
+<tr class="row-even"><td>vidio</td>
+<td>vidio.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>vinhlongtv</td>
+<td>thvli.vn</td>
+<td>Yes</td>
+<td>No</td>
+<td>Streams are geo-restricted to Vietnam</td>
+</tr>
+<tr class="row-even"><td>vk</td>
+<td>vk.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>vrtbe</td>
+<td>vrt.be/vrtnu</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>webcast_india_gov</td>
+<td>webcast.gov.in</td>
+<td>Yes</td>
+<td>No</td>
+<td>You can use #Channel to indicate CH number.</td>
+</tr>
+<tr class="row-odd"><td>webtv</td>
+<td>web.tv</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>weeb</td>
+<td>weeb.tv</td>
+<td>Yes</td>
+<td>--</td>
+<td>Requires rtmpdump with K-S-V patches.</td>
+</tr>
+<tr class="row-odd"><td>welt</td>
+<td>welt.de</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Germany.</td>
+</tr>
+<tr class="row-even"><td>wwenetwork</td>
+<td>network.wwe.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Requires an account to access any content.</td>
+</tr>
+<tr class="row-odd"><td>younow</td>
+<td>younow.com</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>youtube</td>
+<td><ul class="first last simple">
+<li>youtube.com</li>
+<li>youtu.be</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Protected videos are not supported.</td>
+</tr>
+<tr class="row-odd"><td>zattoo</td>
+<td><ul class="first last simple">
+<li>zattoo.com</li>
+<li>nettv.net... <a class="footnote-reference" href="#id18" id="id9">[10]</a></li>
+<li>tvonline.ewe.de</li>
+</ul>
+</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>zdf_mediathek</td>
+<td>zdf.de</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Streams may be geo-restricted to Germany.</td>
+</tr>
+<tr class="row-odd"><td>zengatv</td>
+<td>zengatv.com</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>zhanqi</td>
+<td>zhanqi.tv</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[2]</a></td><td>streamingvideoprovider.co.uk</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td>original.livestream.com</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[4]</a></td><td>streaming.media.ccc.de</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[5]</a></td><td>mediathek.daserste.de</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[6]</a></td><td>players.brightcove.net</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id15" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td>player.theplatform.com</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[8]</a></td><td>france3-regions.francetvinfo.fr</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id17" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[9]</a></td><td>tv5mondeplusafrique.com</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id18" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[10]</a></td><td>nettv.netcologne.de</td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="players.html" class="btn btn-neutral float-right" title="Players">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cli.html" class="btn btn-neutral" title="Command-Line Interface"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Streamlink.
+    </p>
+  </div>
+
+  <a href="https://github.com/chrippa/sphinx_rtd_theme_violet">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.13.0+58.g87a55fe',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+  <script type="text/javascript" src="_static/js/scrollspy.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+
+
+  
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+   
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Donating &mdash; Streamlink 0.13.0+58.g87a55fe documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Streamlink 0.13.0+58.g87a55fe documentation" href="index.html"/>
+        <link rel="next" title="Streamlink Applications" href="applications.html"/>
+        <link rel="prev" title="Changelog" href="changelog.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document" data-spy="scroll" data-target=".wy-menu-vertical > ul > li.current > ul">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-header">
+        <a href="index.html"> Streamlink</a>
+        
+        <div class="tablet-hide">
+          <small>Command-line utility that extracts streams from various services and pipes them into a video player of choice.</small>
+          <hr />
+        </div>
+        
+
+        <div class="wy-side-nav-versions" role="note" aria-label="versions">
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.13.0+58.g87a55fe</span>
+  <dl class="wy-side-nav-versions-others">
+    <dd><a href="/" class="">Stable</a></dd>
+    <dd><a href="/latest/" class="version-current">Latest</a></dd>
+  </dl>
+</div>
+        <div class="wy-side-nav-search" role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd-packages">Linux and BSD packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#other-platforms">Other platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#package-maintainers">Package maintainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-usage">Plugin specific usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#sideloading-plugins">Sideloading plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#proxy-support">Proxy Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#command-line-usage">Command-line usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="players.html#transport-modes">Transport modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#player-compatibility">Player compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#inspecting-streams">Inspecting streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#session-object">Session object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_guide.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streamlink">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-streamlink.plugin">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#streams">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-1-2018-05-07">streamlink 0.12.1 (2018-05-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-0-2018-05-07">streamlink 0.12.0 (2018-05-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-11-0-2018-03-08">streamlink 0.11.0 (2018-03-08)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-10-0-2018-01-23">streamlink 0.10.0 (2018-01-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-9-0-2017-11-14">streamlink 0.9.0 (2017-11-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-8-1-2017-09-12">Streamlink 0.8.1 (2017-09-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-7-0-2017-06-30">streamlink 0.7.0 (2017-06-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-6-0-2017-05-11">streamlink 0.6.0 (2017-05-11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-5-0-2017-04-04">streamlink 0.5.0 (2017-04-04)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-4-0-2017-03-09">streamlink 0.4.0 (2017-03-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-2-2017-02-10">streamlink 0.3.2 (2017-02-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-1-2017-02-03">streamlink 0.3.1 (2017-02-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-0-2017-01-24">streamlink 0.3.0 (2017-01-24)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-2-0-2016-12-16">streamlink 0.2.0 (2016-12-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-1-0-2016-11-21">streamlink 0.1.0 (2016-11-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-2-2016-10-12">streamlink 0.0.2 (2016-10-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-1-2016-09-23">streamlink 0.0.1 (2016-09-23)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Donating</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-team">Streamlink Team</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#liveproxy">LiveProxy</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+
+
+      
+      <div class="tablet-hide">
+        <hr />
+		<p class="wy-text-center">
+	        <a href="https://github.com/streamlink/streamlink"
+			   class="github-button" data-icon="octicon-mark-github"
+		       data-count-href="/streamlink/streamlink/stargazers"
+			   data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+	        <a href="https://github.com/streamlink/streamlink/issues"
+			   class="github-button" data-icon="octicon-issue-opened">Issues</a>
+
+        </p>
+      </div>
+      
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Streamlink</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Donating</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+            <div class="admonition version-warning">
+              <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+            </div>
+            
+            
+  <div class="section" id="donating">
+<h1>Donating<a class="headerlink" href="#donating" title="Permalink to this headline">¶</a></h1>
+<p>Thank you for considering a donation to the Streamlink team! Streamlink is an
+organization composed of a geographically diverse group of individuals.
+We accept donations/tips in a variety of ways. If you would like to donate
+directly to a specific user, please review their details in the team section
+below. If you would prefer to donate to the team as a whole, please use our
+<a class="reference external" href="https://opencollective.com/streamlink">Open Collective</a>. Note that
+donations are not tax deductible as Streamlink does not operate as a charitable
+organization. Your donation to the team or a team member may be used in any
+way and does not come with expectations of work to be provided or as payment
+for future work. If you would like a specific feature implemented consider
+creating a bounty on
+<a class="reference external" href="https://www.bountysource.com/teams/streamlink">Bountysource</a>.</p>
+<div class="section" id="streamlink-team">
+<h2>Streamlink Team<a class="headerlink" href="#streamlink-team" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bastimeyer">
+<h3>Bastimeyer<a class="headerlink" href="#bastimeyer" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/bastimeyer">Github</a></li>
+<li><a class="reference external" href="https://blockchain.info/qr?data=1EZg8eBz4RdPb8pEzYD9JEzr9Fyitzj8j8">Bitcoin</a> (<cite>1EZg8eBz4RdPb8pEzYD9JEzr9Fyitzj8j8</cite>)</li>
+<li><a class="reference external" href="https://blockchain.info/qr?data=DGkVP7AMUHr2TbVnWy6QyZqSMvCkeEo1ab">Dogecoin</a> (<cite>DGkVP7AMUHr2TbVnWy6QyZqSMvCkeEo1ab</cite>)</li>
+<li><a class="reference external" href="https://flattr.com/thing/3956088">Flattr</a></li>
+<li><a class="reference external" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YUCGRLVALHS8C&amp;item_name=Streamlink%20Twitch%20GUI">Paypal</a></li>
+</ul>
+</div>
+<div class="section" id="beardypig">
+<h3>Beardypig<a class="headerlink" href="#beardypig" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/beardypig">Github</a></li>
+<li><a class="reference external" href="https://blockchain.info/qr?data=1Ey3KZ9SwTj6QyASE6vgJVebUiJsW1HuRh">Bitcoin</a> (<cite>1Ey3KZ9SwTj6QyASE6vgJVebUiJsW1HuRh</cite>)</li>
+</ul>
+</div>
+<div class="section" id="gravyboat">
+<h3>Gravyboat<a class="headerlink" href="#gravyboat" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/gravyboat">Github</a></li>
+<li><a class="reference external" href="https://blockchain.info/qr?data=1PpdFh9LkTsjtG2AAcrWqk6RiFrC2iTCxj">Bitcoin</a> (<cite>1PpdFh9LkTsjtG2AAcrWqk6RiFrC2iTCxj</cite>)</li>
+<li><a class="reference external" href="https://flattr.com/profile/gravyboat">Flattr</a></li>
+<li><a class="reference external" href="https://gratipay.com/~gravyboat/">Gratipay</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="applications.html" class="btn btn-neutral float-right" title="Streamlink Applications">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="changelog.html" class="btn btn-neutral" title="Changelog"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Streamlink.
+    </p>
+  </div>
+
+  <a href="https://github.com/chrippa/sphinx_rtd_theme_violet">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.13.0+58.g87a55fe',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+  <script type="text/javascript" src="_static/js/scrollspy.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+
+
+  
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+   
+
+</body>
+</html>
