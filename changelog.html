@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Streamlink 0.13.0+57.gaee0b9e documentation</title>
+  <title>Changelog &mdash; Streamlink 0.14.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.13.0+57.gaee0b9e documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.14.0 documentation" href="index.html"/>
         <link rel="next" title="Donating" href="donate.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
@@ -43,8 +43,8 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> Streamlink</a>
+      <div class="wy-side-nav-header">
+        <a href="index.html"> Streamlink</a>
         
         <div class="tablet-hide">
           <small>Command-line utility that extracts streams from various services and pipes them into a video player of choice.</small>
@@ -52,7 +52,14 @@
         </div>
         
 
-        <div role="search">
+        <div class="wy-side-nav-versions" role="note" aria-label="versions">
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.14.0</span>
+  <dl class="wy-side-nav-versions-others">
+    <dd><a href="/" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/" class="">Latest</a></dd>
+  </dl>
+</div>
+        <div class="wy-side-nav-search" role="search">
   <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
@@ -112,6 +119,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-0-14-0-2018-06-26">streamlink 0.14.0 (2018-06-26)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-12-1-2018-05-07">streamlink 0.12.1 (2018-05-07)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-12-0-2018-05-07">streamlink 0.12.0 (2018-05-07)</a></li>
@@ -192,8 +200,86 @@
 </div>
           <div role="main">
             
+            
   <div class="section" id="changelog">
 <span id="changelog"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-0-14-0-2018-06-26">
+<span id="streamlink-0-14-0-2018-06-26"></span><h2>streamlink 0.14.0 (2018-06-26)<a class="headerlink" href="#streamlink-0-14-0-2018-06-26" title="Permalink to this headline">¶</a></h2>
+<p>Here are the changes to this months release!</p>
+<ul class="simple">
+<li>Multiple plugin fixes</li>
+<li>Bug fixes for DASH streams (https://github.com/streamlink/streamlink/pull/1846)</li>
+<li>Updated API call for api.utils hours_minutes_seconds (https://github.com/streamlink/streamlink/pull/1804)</li>
+<li>Updated documentation (https://github.com/streamlink/streamlink/pull/1826)</li>
+<li>Dict structures fix (https://github.com/streamlink/streamlink/pull/1792)</li>
+<li>Reformated help menu (https://github.com/streamlink/streamlink/pull/1754)</li>
+<li>Logger fix (https://github.com/streamlink/streamlink/pull/1773)</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Alexis Murzeau &lt;amubtdx@gmail.com&gt; (3):
+      sdist: include tests resources (#1785)
+      tests: freezegun: use object instead of lambda (#1787)
+      rtlxl: use raw string to fix escape sequences (#1786)
+
+BZHDeveloper &lt;39899575+BZHDeveloper@users.noreply.github.com&gt; (1):
+      plugins.cnews : separate CNEWS data from CanalPlus plugin. (#1782)
+
+MasterofJOKers &lt;joker@someserver.de&gt; (1):
+      plugins.sportschau: Fix &quot;No schema supplied&quot; error
+
+Mohamed El Morabity &lt;melmorabity@fedoraproject.com&gt; (2):
+      plugins.pluzz: support for DASH streams
+      plugins.pluzz: fix HDS streams
+
+Mohamed El Morabity &lt;melmorabity@users.noreply.github.com&gt; (1):
+      [plugins.rtbf] Fix radio streams + DASH support (#1771)
+
+Sebastian Meyer &lt;mail@bastimeyer.de&gt; (1):
+      Move docs version selection to sidebar (#1802)
+
+Twilight0 &lt;twilight@freemail.gr&gt; (2):
+      Convert literal comprehensive dicts to dict contructs
+      Add arguments to __init__ - super to work on Python 2.7.X (#1796)
+
+back-to &lt;backto@protonmail.ch&gt; (9):
+      plugins: marked or removed broken plugins
+      plugins.earthcam: Fixed hls_url - No schema supplied.
+      plugins.rte: allow https
+      plugins.VinhLongTV: New plugin for livestreams of thvli.vn
+      docs.thirdparty: Added LiveProxy
+      plugins.tlctr: New Plugin for tlctv.com.tr/canli-izle
+      plugins.bigo: Fix for new channelnames and plugin cleanup (#1797)
+      docs: removed some notes, updated some urls
+      utils.times: hours_minutes_seconds update, twitch automate time offset
+
+beardypig &lt;beardypig@protonmail.com&gt; (15):
+      help: reformat all the help text so that it is &lt;80 chars
+      plugins.bbciplayer: fix bug is DASH for VOD
+      sdist and wheel release fixes (#1758)
+      plugin.youtube: find video id in page, fall back to API (#1746)
+      logging: rename logger for main back to &#39;cli&#39;
+      plugins.vaughnlive: support for the HTML flv player
+      plugins.yupptv: support for yupptv with login support
+      plugins.nos: update for new page layout for live and VOD
+      plugins.lrt: add support for Lithuanian National Television
+      plugins.delfi: support for delfi.lt web portal
+      plugins.vrtbe: update to new page layout/API
+      plugins.itvplayer: update to new HTML5 API
+      plugins.atresplayer: support new layout/API
+      stream.dash: use the ID and mime-type to identify a representation
+      plugins.mitele: sometimes ogn is null, html5 pdata endpoint works better
+
+beardypig &lt;git@beardypig.com&gt; (5):
+      plugins.crunchyroll: refactoring and updated API calls (#1820)
+      Suppress/fix deprecated warnings for Python 3 (#1833)
+      API for plugins to request input from the user (#1827)
+      Steam Broadcast Plugin (#1717)
+      USTV Now (#1840)
+
+fozzy &lt;fozzy@fozzy.co&gt; (1):
+      fix bug caused by indentation and add support for url pattern like &#39;xingxiu.panda.tv&#39;
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-0-13-0-2018-06-06">
 <span id="streamlink-0-13-0-2018-06-06"></span><h2>streamlink 0.13.0 (2018-06-06)<a class="headerlink" href="#streamlink-0-13-0-2018-06-06" title="Permalink to this headline">¶</a></h2>
 <p>Massive release this month!</p>
@@ -1929,15 +2015,13 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
     </section>
 
   </div>
-  
-
 
   
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.13.0+57.gaee0b9e',
+            VERSION:'0.14.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
