@@ -123,11 +123,11 @@ mediaklikk              mediaklikk.hu        Yes   No    Streams may be geo-rest
 mips                    mips.tv              Yes   --    Requires rtmpdump with K-S-V patches.
 mitele                  mitele.es            Yes   No    Streams may be geo-restricted to Spain.
 mixer                   mixer.com            Yes   Yes
+mjunoon                 mjunoon.tv           Yes   Yes
 mlgtv                   mlg.tv               Yes   --
 nbc                     nbc.com              No    Yes   Streams are geo-restricted to USA. Authentication is not supported.
 nbcsports               nbcsports.com        No    Yes   Streams maybe be geo-restricted to USA. Authentication is not supported.
 nhkworld                nhk.or.jp/nhkworld   Yes   No
-nineanime               9anime.to            --    Yes
 nos                     nos.nl               Yes   Yes   Streams may be geo-restricted to Netherlands.
 npo                     - npo.nl             Yes   Yes   Streams may be geo-restricted to Netherlands.
                         - zapp.nl
@@ -231,7 +231,6 @@ tv5monde                - tv5monde.com       Yes   Yes   Streams may be geo-rest
                         - tv5mondeplus.com
                         - tv5mondepl... [9]_
 tv8                     tv8.com.tr           Yes   No
-tv8cat                  tv8.cat              Yes   No    Streams may be geo-restricted to Spain/Catalunya.
 tv360                   tv360.com.tr         Yes   No
 tvcatchup               tvcatchup.com        Yes   No    Streams may be geo-restricted to Great Britain.
 tvnbg                   - tvn.bg             Yes   -

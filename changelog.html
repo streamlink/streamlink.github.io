@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Streamlink 0.14.0 documentation</title>
+  <title>Changelog &mdash; Streamlink 0.14.2 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.14.0 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.14.2 documentation" href="index.html"/>
         <link rel="next" title="Donating" href="donate.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.14.0</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.14.2</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -119,6 +119,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-0-14-2-2018-06-28">streamlink 0.14.2 (2018-06-28)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-14-0-2018-06-26">streamlink 0.14.0 (2018-06-26)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-0-12-1-2018-05-07">streamlink 0.12.1 (2018-05-07)</a></li>
@@ -203,6 +204,35 @@
             
   <div class="section" id="changelog">
 <span id="changelog"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-0-14-2-2018-06-28">
+<span id="streamlink-0-14-2-2018-06-28"></span><h2>streamlink 0.14.2 (2018-06-28)<a class="headerlink" href="#streamlink-0-14-2-2018-06-28" title="Permalink to this headline">¶</a></h2>
+<p>Just a few small fixes in this release.</p>
+<ul class="simple">
+<li>Fixed Twitch OAuth request flow (https://github.com/streamlink/streamlink/pull/1856)</li>
+<li>Fix the tv3cat and vk plugins (https://github.com/streamlink/streamlink/pull/1851, https://github.com/streamlink/streamlink/pull/1874)</li>
+<li>VOD supported added to atresplayer plugin (https://github.com/streamlink/streamlink/pull/1852, https://github.com/streamlink/streamlink/pull/1853)</li>
+<li>Removed tv8cati and nineanime plugins (https://github.com/streamlink/streamlink/pull/1860, https://github.com/streamlink/streamlink/pull/1863)</li>
+<li>Added mjunoon.tv plugin (https://github.com/streamlink/streamlink/pull/1857)</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre><span></span>NyanKiyoshi &lt;NyanKiyoshi@users.noreply.github.com&gt; (1):
+      Fix 404 error on oauth authorize url
+
+back-to &lt;backto@protonmail.ch&gt; (1):
+      plugins.vk: _url_re update, allow embedded content, plugin cleanup (#1874)
+
+beardypig &lt;beardypig@protonmail.com&gt; (10):
+      plugins.t3cat: update validation rule, refactor plugin a little bit
+      plugins.atresplayer: update to support VOD streams
+      stream.dash: support for SegmentList streams with ranged segments
+      plugins.mjunoon: support for live and vod streams on mjunoon.tv
+      release: fix release notes manual install url
+      plugins.tv8cat: plugin removed - the live broadcast is no longer available
+      plugins.nineanime: no longer supported
+      release: set the date of the release for UTC time
+      plugin: support stream weights returned by DASHStream.parse_manifest
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-0-14-0-2018-06-26">
 <span id="streamlink-0-14-0-2018-06-26"></span><h2>streamlink 0.14.0 (2018-06-26)<a class="headerlink" href="#streamlink-0-14-0-2018-06-26" title="Permalink to this headline">¶</a></h2>
 <p>Here are the changes to this months release!</p>
@@ -2021,7 +2051,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.14.0',
+            VERSION:'0.14.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
