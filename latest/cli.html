@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 0.14.2+142.g7b5f4f7 documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 0.14.2+144.g056978c documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.14.2+142.g7b5f4f7 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.14.2+144.g056978c documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.14.2+142.g7b5f4f7</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.14.2+144.g056978c</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -599,7 +599,7 @@ depending on the implementation of the plugin being used.</p>
 <dt id="cmdoption-arg-stream">
 <code class="descname">STREAM</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-stream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stream to play.</p>
-<p>Use &quot;best&quot; or &quot;worst&quot; for selecting the highest or lowest available
+<p>Use <code class="docutils literal"><span class="pre">best</span></code> or <code class="docutils literal"><span class="pre">worst</span></code> for selecting the highest or lowest available
 quality.</p>
 <p>Fallback streams can be specified by using a comma-separated list:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;720p,480p,best&quot;</span>
@@ -939,7 +939,7 @@ and can be useful if set in a config file.</p>
 <dt id="cmdoption-default-stream">
 <code class="descname">--default-stream</code><code class="descclassname"> STREAM</code><a class="headerlink" href="#cmdoption-default-stream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stream to play.</p>
-<p>Use &quot;best&quot; or &quot;worst&quot; for selecting the highest or lowest available
+<p>Use <code class="docutils literal"><span class="pre">best</span></code> or <code class="docutils literal"><span class="pre">worst</span></code> for selecting the highest or lowest available
 quality.</p>
 <p>Fallback streams can be specified by using a comma-separated list:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;720p,480p,best&quot;</span>
@@ -989,12 +989,15 @@ be used as a wildcard to match any other type of stream, eg. muxed-stream.</p>
 <dl class="option">
 <dt id="cmdoption-stream-sorting-excludes">
 <code class="descname">--stream-sorting-excludes</code><code class="descclassname"> STREAMS</code><a class="headerlink" href="#cmdoption-stream-sorting-excludes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fine tune best/worst synonyms by excluding unwanted streams.</p>
+<dd><p>Fine tune the <code class="docutils literal"><span class="pre">best</span></code> and <code class="docutils literal"><span class="pre">worst</span></code> stream name synonyms by excluding unwanted streams.</p>
+<p>If all of the available streams get excluded, <code class="docutils literal"><span class="pre">best</span></code> and <code class="docutils literal"><span class="pre">worst</span></code> will become
+inaccessible and new special stream synonyms <code class="docutils literal"><span class="pre">best-unfiltered</span></code> and <code class="docutils literal"><span class="pre">worst-unfiltered</span></code>
+can be used as a fallback selection method.</p>
 <p>Uses a filter expression in the format:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">operator</span><span class="p">]</span><span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Valid operators are &gt;, &gt;=, &lt; and &lt;=. If no operator is specified then
+<p>Valid operators are <code class="docutils literal"><span class="pre">&gt;</span></code>, <code class="docutils literal"><span class="pre">&gt;=</span></code>, <code class="docutils literal"><span class="pre">&lt;</span></code> and <code class="docutils literal"><span class="pre">&lt;=</span></code>. If no operator is specified then
 equality is tested.</p>
 <p>For example this will exclude streams ranked higher than &quot;480p&quot;:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;&gt;480p&quot;</span>
@@ -1801,7 +1804,7 @@ the following types are allowed:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.14.2+142.g7b5f4f7',
+            VERSION:'0.14.2+144.g056978c',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
