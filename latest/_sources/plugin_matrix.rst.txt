@@ -108,6 +108,7 @@ livestream              new.livestream.com   Yes   --
 lrt                     lrt.lt               Yes   No
 ltv_lsm_lv              ltv.lsm.lv           Yes   No    Streams may be geo-restricted to Latvia.
 mediaklikk              mediaklikk.hu        Yes   No    Streams may be geo-restricted to Hungary.
+metube                  metube.id            Yes   Yes
 mitele                  mitele.es            Yes   No    Streams may be geo-restricted to Spain.
 mixer                   mixer.com            Yes   Yes
 mjunoon                 mjunoon.tv           Yes   Yes
@@ -219,6 +220,7 @@ tv5monde                - tv5monde.com       Yes   Yes   Streams may be geo-rest
 tv8                     tv8.com.tr           Yes   No
 tv360                   tv360.com.tr         Yes   No
 tvcatchup               tvcatchup.com        Yes   No    Streams may be geo-restricted to Great Britain.
+tvibo                   player.tvibo.com     Yes   --
 tvnbg                   - tvn.bg             Yes   -
                         - live.tvn.bg
 tvp                     tvpstream.vod.tvp.pl Yes   No    Streams may be geo-restricted to Poland.
