@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 0.14.2+182.g3d0efd1 documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 0.14.2+183.g07387e2 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.14.2+182.g3d0efd1 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 0.14.2+183.g07387e2 documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.14.2+182.g3d0efd1</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.14.2+183.g07387e2</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -918,13 +918,27 @@ the stream, so it doesn't need its own separate handling.</dd>
 <dl class="option">
 <dt id="cmdoption-f">
 <code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--force</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-f" title="Permalink to this definition">¶</a></dt>
-<dd><p>When using -o, always write to file even if it already exists.</p>
+<dd><p>When using -o or -r, always write to file even if it already exists.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-stdout">
 <code class="descname">-O</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--stdout</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-stdout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write stream data to stdout instead of playing it.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-r">
+<code class="descname">-r</code><code class="descclassname"> FILENAME</code><code class="descclassname">, </code><code class="descname">--record</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the stream in the player, while at the same time writing it to FILENAME.</p>
+<p>You will be prompted if the file already exists.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-record-and-pipe">
+<code class="descname">-R</code><code class="descclassname"> FILENAME</code><code class="descclassname">, </code><code class="descname">--record-and-pipe</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-record-and-pipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write stream data to stdout, while at the same time writing it to FILENAME.</p>
+<p>You will be prompted if the file already exists.</p>
 </dd></dl>
 
 </div>
@@ -1206,7 +1220,7 @@ processing (such as HDS) to avoid unnecessary background processing.</p>
 
 <dl class="option">
 <dt id="cmdoption-rtmp-rtmpdump">
-<code class="descname">--rtmp-rtmpdump</code><code class="descclassname"> FILENAME</code><code class="descclassname">, </code><code class="descname">--rtmpdump</code><code class="descclassname"> FILENAME</code><code class="descclassname">, </code><code class="descname">-r</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-rtmp-rtmpdump" title="Permalink to this definition">¶</a></dt>
+<code class="descname">--rtmp-rtmpdump</code><code class="descclassname"> FILENAME</code><code class="descclassname">, </code><code class="descname">--rtmpdump</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-rtmp-rtmpdump" title="Permalink to this definition">¶</a></dt>
 <dd><p>RTMPDump is used to access RTMP streams. You can specify the
 location of the rtmpdump executable if it is not in your PATH.</p>
 <p>Example: &quot;/usr/local/bin/rtmpdump&quot;</p>
@@ -1828,7 +1842,7 @@ the following types are allowed:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.14.2+182.g3d0efd1',
+            VERSION:'0.14.2+183.g07387e2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
