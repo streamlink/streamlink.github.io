@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Streamlink 0.14.2 documentation</title>
+  <title>Index &mdash; Streamlink 1.0.0 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
         <link rel="index" title="Index"
               href="#"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.14.2 documentation" href="index.html"/> 
+    <link rel="top" title="Streamlink 1.0.0 documentation" href="index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -52,7 +52,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.14.2</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.0.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -118,6 +118,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-0-0-2019-01-30">streamlink 1.0.0 (2019-01-30)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-2-2018-06-28">streamlink 0.14.2 (2018-06-28)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-0-2018-06-26">streamlink 0.14.0 (2018-06-26)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a></li>
@@ -491,7 +492,7 @@
 </li>
       </ul></li>
       <li>
-    --hls-duration HH:MM:SS
+    --hls-duration [HH:]MM:SS
 
       <ul>
         <li><a href="cli.html#cmdoption-hls-duration">command line option</a>
@@ -533,6 +534,13 @@
 </li>
       </ul></li>
       <li>
+    --hls-segment-key-uri URI
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-segment-key-uri">command line option</a>
+</li>
+      </ul></li>
+      <li>
     --hls-segment-threads THREADS
 
       <ul>
@@ -547,7 +555,7 @@
 </li>
       </ul></li>
       <li>
-    --hls-start-offset HH:MM:SS
+    --hls-start-offset [HH:]MM:SS
 
       <ul>
         <li><a href="cli.html#cmdoption-hls-start-offset">command line option</a>
@@ -673,10 +681,38 @@
 </li>
       </ul></li>
       <li>
+    --openrectv-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-openrectv-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --openrectv-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-openrectv-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
     --pixiv-password PASSWORD
 
       <ul>
         <li><a href="cli.html#cmdoption-pixiv-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --pixiv-performer USER
+
+      <ul>
+        <li><a href="cli.html#cmdoption-pixiv-performer">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --pixiv-purge-credentials
+
+      <ul>
+        <li><a href="cli.html#cmdoption-pixiv-purge-credentials">command line option</a>
 </li>
       </ul></li>
   </ul></td>
@@ -787,7 +823,7 @@
 </li>
       </ul></li>
       <li>
-    --rtmp-rtmpdump FILENAME, --rtmpdump FILENAME, -r FILENAME
+    --rtmp-rtmpdump FILENAME, --rtmpdump FILENAME
 
       <ul>
         <li><a href="cli.html#cmdoption-rtmp-rtmpdump">command line option</a>
@@ -805,6 +841,13 @@
 
       <ul>
         <li><a href="cli.html#cmdoption-rtve-mux-subtitles">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --sbscokr-id CHANNELID
+
+      <ul>
+        <li><a href="cli.html#cmdoption-sbscokr-id">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -1011,13 +1054,6 @@
 </li>
       </ul></li>
       <li>
-    --youtube-api-key
-
-      <ul>
-        <li><a href="cli.html#cmdoption-youtube-api-key">command line option</a>
-</li>
-      </ul></li>
-      <li>
     --yupptv-email EMAIL
 
       <ul>
@@ -1050,6 +1086,13 @@
 
       <ul>
         <li><a href="cli.html#cmdoption-zattoo-purge-credentials">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --zattoo-stream-types TYPES
+
+      <ul>
+        <li><a href="cli.html#cmdoption-zattoo-stream-types">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -1120,6 +1163,27 @@
 
       <ul>
         <li><a href="cli.html#cmdoption-q">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -r FILENAME, --record FILENAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-r">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -R FILENAME, --record-and-pipe FILENAME
+
+      <ul>
+        <li><a href="cli.html#cmdoption-record-and-pipe">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -t TITLE, --title TITLE
+
+      <ul>
+        <li><a href="cli.html#cmdoption-t">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -1246,7 +1310,7 @@
 </li>
         <li><a href="cli.html#cmdoption-hls-audio-select">--hls-audio-select CODE</a>
 </li>
-        <li><a href="cli.html#cmdoption-hls-duration">--hls-duration HH:MM:SS</a>
+        <li><a href="cli.html#cmdoption-hls-duration">--hls-duration [HH:]MM:SS</a>
 </li>
         <li><a href="cli.html#cmdoption-hls-live-edge">--hls-live-edge SEGMENTS</a>
 </li>
@@ -1258,11 +1322,13 @@
 </li>
         <li><a href="cli.html#cmdoption-hls-segment-ignore-names">--hls-segment-ignore-names NAMES</a>
 </li>
+        <li><a href="cli.html#cmdoption-hls-segment-key-uri">--hls-segment-key-uri URI</a>
+</li>
         <li><a href="cli.html#cmdoption-hls-segment-threads">--hls-segment-threads THREADS</a>
 </li>
         <li><a href="cli.html#cmdoption-hls-segment-timeout">--hls-segment-timeout TIMEOUT</a>
 </li>
-        <li><a href="cli.html#cmdoption-hls-start-offset">--hls-start-offset HH:MM:SS</a>
+        <li><a href="cli.html#cmdoption-hls-start-offset">--hls-start-offset [HH:]MM:SS</a>
 </li>
         <li><a href="cli.html#cmdoption-hls-timeout">--hls-timeout TIMEOUT</a>
 </li>
@@ -1298,7 +1364,15 @@
 </li>
         <li><a href="cli.html#cmdoption-npo-subtitles">--npo-subtitles</a>
 </li>
+        <li><a href="cli.html#cmdoption-openrectv-email">--openrectv-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-openrectv-password">--openrectv-password PASSWORD</a>
+</li>
         <li><a href="cli.html#cmdoption-pixiv-password">--pixiv-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-pixiv-performer">--pixiv-performer USER</a>
+</li>
+        <li><a href="cli.html#cmdoption-pixiv-purge-credentials">--pixiv-purge-credentials</a>
 </li>
         <li><a href="cli.html#cmdoption-pixiv-username">--pixiv-username USERNAME</a>
 </li>
@@ -1330,11 +1404,13 @@
 </li>
         <li><a href="cli.html#cmdoption-rtmp-proxy">--rtmp-proxy PROXY, --rtmpdump-proxy PROXY</a>
 </li>
-        <li><a href="cli.html#cmdoption-rtmp-rtmpdump">--rtmp-rtmpdump FILENAME, --rtmpdump FILENAME, -r FILENAME</a>
+        <li><a href="cli.html#cmdoption-rtmp-rtmpdump">--rtmp-rtmpdump FILENAME, --rtmpdump FILENAME</a>
 </li>
         <li><a href="cli.html#cmdoption-rtmp-timeout">--rtmp-timeout TIMEOUT</a>
 </li>
         <li><a href="cli.html#cmdoption-rtve-mux-subtitles">--rtve-mux-subtitles</a>
+</li>
+        <li><a href="cli.html#cmdoption-sbscokr-id">--sbscokr-id CHANNELID</a>
 </li>
         <li><a href="cli.html#cmdoption-schoolism-email">--schoolism-email EMAIL</a>
 </li>
@@ -1394,8 +1470,6 @@
 </li>
         <li><a href="cli.html#cmdoption-wwenetwork-password">--wwenetwork-password PASSWORD</a>
 </li>
-        <li><a href="cli.html#cmdoption-youtube-api-key">--youtube-api-key</a>
-</li>
         <li><a href="cli.html#cmdoption-yupptv-email">--yupptv-email EMAIL</a>
 </li>
         <li><a href="cli.html#cmdoption-yupptv-password">--yupptv-password PASSWORD</a>
@@ -1406,9 +1480,13 @@
 </li>
         <li><a href="cli.html#cmdoption-zattoo-purge-credentials">--zattoo-purge-credentials</a>
 </li>
+        <li><a href="cli.html#cmdoption-zattoo-stream-types">--zattoo-stream-types TYPES</a>
+</li>
         <li><a href="cli.html#cmdoption-stdout">-O, --stdout</a>
 </li>
         <li><a href="cli.html#cmdoption-q">-Q, --quiet</a>
+</li>
+        <li><a href="cli.html#cmdoption-record-and-pipe">-R FILENAME, --record-and-pipe FILENAME</a>
 </li>
         <li><a href="cli.html#cmdoption-v">-V, --version</a>
 </li>
@@ -1427,6 +1505,10 @@
         <li><a href="cli.html#cmdoption-o">-o FILENAME, --output FILENAME</a>
 </li>
         <li><a href="cli.html#cmdoption-p">-p COMMAND, --player COMMAND</a>
+</li>
+        <li><a href="cli.html#cmdoption-r">-r FILENAME, --record FILENAME</a>
+</li>
+        <li><a href="cli.html#cmdoption-t">-t TITLE, --title TITLE</a>
 </li>
         <li><a href="cli.html#cmdoption-verbose-player">-v, --verbose-player</a>
 </li>
@@ -1451,13 +1533,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#streamlink.Streamlink.get_option">get_option() (streamlink.Streamlink method)</a>
 </li>
-      <li><a href="api.html#streamlink.Streamlink.get_plugin_option">get_plugin_option() (streamlink.Streamlink method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#streamlink.Streamlink.get_plugins">get_plugins() (streamlink.Streamlink method)</a>
+      <li><a href="api.html#streamlink.Streamlink.get_plugin_option">get_plugin_option() (streamlink.Streamlink method)</a>
 </li>
-      <li><a href="api.html#streamlink.plugin.Plugin.get_streams">get_streams() (streamlink.plugin.Plugin method)</a>
+      <li><a href="api.html#streamlink.Streamlink.get_plugins">get_plugins() (streamlink.Streamlink method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1616,7 +1696,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Streamlink.
+        &copy; Copyright 2019, Streamlink.
     </p>
   </div>
 
@@ -1634,7 +1714,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.14.2',
+            VERSION:'1.0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

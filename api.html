@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; Streamlink 0.14.2 documentation</title>
+  <title>API Reference &mdash; Streamlink 1.0.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 0.14.2 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.0.0 documentation" href="index.html"/>
         <link rel="next" title="Changelog" href="changelog.html"/>
         <link rel="prev" title="API Guide" href="api_guide.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>0.14.2</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.0.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -119,6 +119,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-0-0-2019-01-30">streamlink 1.0.0 (2019-01-30)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-2-2018-06-28">streamlink 0.14.2 (2018-06-28)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-0-2018-06-26">streamlink 0.14.0 (2018-06-26)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a></li>
@@ -614,14 +615,6 @@ specify the <code class="docutils literal"><span class="pre">cookie_filter</span
 </dd></dl>
 
 <dl class="method">
-<dt id="streamlink.plugin.Plugin.get_streams">
-<code class="descname">get_streams</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.get_streams" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deprecated since version 1.9.0.</p>
-<p>Has been renamed to <a class="reference internal" href="#streamlink.plugin.Plugin.streams" title="streamlink.plugin.Plugin.streams"><code class="xref py py-func docutils literal"><span class="pre">Plugin.streams()</span></code></a>, this is an alias
-for backwards compatibility.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="streamlink.plugin.Plugin.load_cookies">
 <code class="descname">load_cookies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.load_cookies" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load any stored cookies for the plugin that have not expired.</p>
@@ -707,20 +700,6 @@ the best/worst synonyms.</li>
 </tr>
 </tbody>
 </table>
-<div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.4.2: </span>Added <em>priority</em> parameter.</p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.5.0: </span>Renamed <em>priority</em> to <em>stream_types</em> and changed behaviour
-slightly.</p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.5.0: </span>Added <em>sorting_excludes</em> parameter.</p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.6.0: </span><em>sorting_excludes</em> can now be a list of filter expressions
-or a function that is passed to filter().</p>
-</div>
 </dd></dl>
 
 </dd></dl>
@@ -876,9 +855,6 @@ from the stream before raising an error.</li>
 <li><code class="xref py py-attr docutils literal"><span class="pre">args</span></code> A <code class="xref py py-class docutils literal"><span class="pre">dict</span></code> containing keyword arguments passed
 to <code class="xref py py-meth docutils literal"><span class="pre">requests.request()</span></code>, such as headers and cookies.</li>
 </ul>
-<div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.7.0: </span>Added <em>args</em> attribute.</p>
-</div>
 <dl class="classmethod">
 <dt id="streamlink.stream.HLSStream.parse_variant_playlist">
 <em class="property">classmethod </em><code class="descname">parse_variant_playlist</code><span class="sig-paren">(</span><em>session_</em>, <em>url</em>, <em>name_key='name'</em>, <em>name_prefix=''</em>, <em>check_streams=False</em>, <em>force_restart=False</em>, <em>name_fmt=None</em>, <em>start_offset=0</em>, <em>duration=None</em>, <em>**request_params</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.parse_variant_playlist" title="Permalink to this definition">¶</a></dt>
@@ -1004,7 +980,7 @@ with this exception.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Streamlink.
+        &copy; Copyright 2019, Streamlink.
     </p>
   </div>
 
@@ -1022,7 +998,7 @@ with this exception.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.14.2',
+            VERSION:'1.0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
