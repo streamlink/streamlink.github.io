@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Streamlink 1.0.0 documentation</title>
+  <title>Installation &mdash; Streamlink 1.1.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.0.0 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.1.0 documentation" href="index.html"/>
         <link rel="next" title="Command-Line Interface" href="cli.html"/>
         <link rel="prev" title="Overview" href="index.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.0.0</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.1.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -73,8 +73,9 @@
         
             <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#linux-and-bsd-packages">Linux and BSD packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#other-platforms">Other platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macos">macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linux-and-bsd">Linux and BSD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#package-maintainers">Package maintainers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#source-code">Source code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#windows-binaries">Windows binaries</a></li>
@@ -119,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-0-2019-03-31">streamlink 1.1.0 (2019-03-31)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-0-0-2019-01-30">streamlink 1.0.0 (2019-01-30)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-2-2018-06-28">streamlink 0.14.2 (2018-06-28)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-0-2018-06-26">streamlink 0.14.0 (2018-06-26)</a></li>
@@ -205,8 +207,66 @@
             
   <span class="target" id="install"></span><div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="linux-and-bsd-packages">
-<h2>Linux and BSD packages<a class="headerlink" href="#linux-and-bsd-packages" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="table-custom-layout docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Installing</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Installers</td>
+<td>See the <a class="reference internal" href="#windows-binaries">Windows binaries</a> section below</td>
+</tr>
+<tr class="row-odd"><td>Portable</td>
+<td>See the <a class="reference internal" href="#windows-portable-version">Windows portable version</a> section below</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://chocolatey.org/packages/streamlink">Chocolatey</a></td>
+<td><div class="first highlight-bat"><div class="highlight"><pre><span></span>choco install streamlink
+</pre></div>
+</div>
+<p class="last"><a class="reference external" href="https://chocolatey.org">Installing Chocolatey packages</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="macos">
+<h2>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="table-custom-layout docutils">
+<colgroup>
+<col width="46%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Installing</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Easy install</td>
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>sudo easy_install -U streamlink
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/Homebrew/homebrew-core/blob/master/Formula/streamlink.rb">Homebrew</a></td>
+<td><div class="first highlight-bash"><div class="highlight"><pre><span></span>brew install streamlink
+</pre></div>
+</div>
+<p class="last"><a class="reference external" href="https://brew.sh">Installing Homebrew packages</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="linux-and-bsd">
+<h2>Linux and BSD<a class="headerlink" href="#linux-and-bsd" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="table-custom-layout docutils">
 <colgroup>
 <col width="21%" />
@@ -219,117 +279,86 @@
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><a class="reference external" href="https://www.archlinux.org/packages/community/any/streamlink/">Arch Linux</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pacman -S streamlink
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>sudo pacman -S streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (aur, git)</a></td>
-<td><div class="first highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pacaur -S streamlink-git
+<td><div class="first highlight-bash"><div class="highlight"><pre><span></span>git clone https://aur.archlinux.org/streamlink-git.git
+<span class="nb">cd</span> streamlink-git
+makepkg -si
 </pre></div>
 </div>
 <p class="last"><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">Installing AUR packages</a></p>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (sid, testing)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt update
-<span class="gp">#</span> apt install streamlink
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://bintray.com/amurzeau/streamlink-debian/streamlink">Debian (stable)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -qO- <span class="s2">&quot;https://bintray.com/user/downloadSubjectPublicKey?username=amurzeau&quot;</span> <span class="p">|</span> apt-key add -
-<span class="gp">#</span> <span class="nb">echo</span> <span class="s2">&quot;deb https://dl.bintray.com/amurzeau/streamlink-debian stretch-backports main&quot;</span> <span class="p">|</span> tee <span class="s2">&quot;/etc/apt/sources.list.d/streamlink.list&quot;</span>
-<span class="gp">#</span> apt update
-<span class="gp">#</span> apt install streamlink
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>wget -qO- <span class="s2">&quot;https://bintray.com/user/downloadSubjectPublicKey?username=amurzeau&quot;</span> <span class="p">|</span> sudo apt-key add -
+<span class="nb">echo</span> <span class="s2">&quot;deb https://dl.bintray.com/amurzeau/streamlink-debian stretch-backports main&quot;</span> <span class="p">|</span> sudo tee <span class="s2">&quot;/etc/apt/sources.list.d/streamlink.list&quot;</span>
+sudo apt update
+sudo apt install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://apps.fedoraproject.org/packages/python-streamlink">Fedora</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> dnf install streamlink
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>sudo dnf install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://packages.gentoo.org/package/net-misc/streamlink">Gentoo Linux</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> emerge net-misc/streamlink
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>sudo emerge net-misc/streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="http://pkgsrc.se/multimedia/streamlink">NetBSD (pkgsrc)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /usr/pkgsrc/multimedia/streamlink
-<span class="gp">#</span> make install clean
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /usr/pkgsrc/multimedia/streamlink
+sudo make install clean
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink">NixOS</a></td>
-<td><div class="first highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> nix-env -iA nixos.streamlink
+<td><div class="first highlight-bash"><div class="highlight"><pre><span></span>nix-env -iA nixos.streamlink
 </pre></div>
 </div>
 <p class="last"><a class="reference external" href="https://nixos.org/nixos/packages.html#streamlink">NixOS channel</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://dev.solus-project.com/source/streamlink/">Solus</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo eopkg install streamlink
+<tr class="row-even"><td><a class="reference external" href="http://openports.se/multimedia/streamlink">OpenBSD</a></td>
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>doas pkg_add streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu/pool/main/s/streamlink/">Ubuntu</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo add-apt-repository ppa:nilarimogard/webupd8
-<span class="gp">$</span> sudo apt update
-<span class="gp">$</span> sudo apt install streamlink
+<tr class="row-odd"><td><a class="reference external" href="https://dev.solus-project.com/source/streamlink/">Solus</a></td>
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>sudo eopkg install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink">Void</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> xbps-install streamlink
+<tr class="row-even"><td><a class="reference external" href="http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu/pool/main/s/streamlink/">Ubuntu</a></td>
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt update
+sudo apt install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="other-platforms">
-<h2>Other platforms<a class="headerlink" href="#other-platforms" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="table-custom-layout docutils">
-<colgroup>
-<col width="39%" />
-<col width="61%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Platform</th>
-<th class="head">Installing</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Mac OS X</td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> easy_install -U streamlink
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink">Void</a></td>
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>sudo xbps-install streamlink
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="https://github.com/Homebrew/homebrew-core/blob/master/Formula/streamlink.rb">Homebrew</a></td>
-<td><div class="first highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> brew install streamlink
-</pre></div>
-</div>
-<p class="last"><a class="reference external" href="https://brew.sh">Installing Homebrew packages</a></p>
-</td>
-</tr>
-<tr class="row-even"><td>Microsoft Windows</td>
-<td>See <a class="reference internal" href="#windows-binaries">Windows binaries</a> and <a class="reference internal" href="#windows-portable-version">Windows portable version</a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="https://chocolatey.org/packages/streamlink">Chocolatey</a></td>
-<td><div class="first highlight-console"><div class="highlight"><pre><span></span><span class="go">C:\&gt; choco install streamlink</span>
-</pre></div>
-</div>
-<p class="last"><a class="reference external" href="https://chocolatey.org">Installing Chocolatey packages</a></p>
 </td>
 </tr>
 </tbody>
@@ -372,19 +401,22 @@
 <tr class="row-odd"><td>NixOS</td>
 <td>Tuomas Tynkkynen &lt;tuomas.tynkkynen at iki.fi&gt;</td>
 </tr>
-<tr class="row-even"><td>Solus</td>
+<tr class="row-even"><td>OpenBSD</td>
+<td>Brian Callahan &lt;bcallah at openbsd.org&gt;</td>
+</tr>
+<tr class="row-odd"><td>Solus</td>
 <td>Bryan T. Meyers &lt;bmeyers at datadrake.com&gt;</td>
 </tr>
-<tr class="row-odd"><td>Ubuntu</td>
+<tr class="row-even"><td>Ubuntu</td>
 <td>Alin Andrei &lt;andrew at webupd8.org&gt;</td>
 </tr>
-<tr class="row-even"><td>Void</td>
+<tr class="row-odd"><td>Void</td>
 <td>wkuipers &lt;wietse at kuiprs.nl&gt;</td>
 </tr>
-<tr class="row-odd"><td>Windows binaries</td>
+<tr class="row-even"><td>Windows binaries</td>
 <td>beardypig &lt;beardypig at protonmail.com&gt;</td>
 </tr>
-<tr class="row-even"><td>Windows port. version</td>
+<tr class="row-odd"><td>Windows port. version</td>
 <td>RosadinTV &lt;RosadinTV at outlook.com&gt; <br />
 beardypig &lt;beardypig at protonmail.com&gt;</td>
 </tr>
@@ -393,23 +425,31 @@ beardypig &lt;beardypig at protonmail.com&gt;</td>
 </div>
 <div class="section" id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
-<p>If a package is not available for your platform (or it's out of date) you
-can install Streamlink via source.</p>
-<p>There are a few different methods to do this,
-<a class="reference external" href="http://pip.readthedocs.org/en/latest/installing.html">pip</a> the Python package
-manager, or by checking out the latest code with
-<a class="reference external" href="http://git-scm.com/downloads">Git</a>. Using <strong class="command">easy_install</strong> is no longer recommended.</p>
+<p>If a package is not available on your platform (or if it's out of date), Streamlink can be installed from source.</p>
+<p>This can be done in a couple of different ways, for example by using <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>, the Python package manager,
+or by checking out the source code with <a class="reference external" href="https://git-scm.com/">git</a> and installing it via setuptools. <br />
+Using <strong class="command">easy_install</strong> is no longer recommended.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>For some Linux distributions the Python headers package needs to be installed before installing streamlink
-(<code class="docutils literal"><span class="pre">python-devel</span></code> in RedHat, Fedora, etc.).</p>
-<p class="last">Ensure that you are using an up-to-date version of <strong class="command">pip</strong>, at least version <strong>6</strong> is recommended.</p>
+<p>On some Linux distributions, the Python headers package needs to be installed before installing Streamlink
+(<code class="docutils literal"><span class="pre">python-devel</span></code> on RedHat, Fedora, etc.).</p>
+<p class="last">Ensure that you are using an up-to-date version of <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>. At least version <strong>6</strong> is required.</p>
 </div>
-<p>The commands listed here will also upgrade any existing version of Streamlink.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>On Linux, when not using a virtual environment, it is recommended to install custom python packages like this
+only for the current user (see the <code class="docutils literal"><span class="pre">--user</span></code> parameter below), since system-wide packages can cause conflicts with
+the system's regular package manager.</p>
+<p>Those user-packages will be installed into <code class="docutils literal"><span class="pre">~/.local</span></code> instead of <code class="docutils literal"><span class="pre">/usr</span></code> and entry-scripts for
+running the programs can be found in <code class="docutils literal"><span class="pre">~/.local/bin</span></code>, eg. <code class="docutils literal"><span class="pre">~/.local/bin/streamlink</span></code>.</p>
+<p class="last">In order for the command line shell to be able to find these executables, the user's <code class="docutils literal"><span class="pre">PATH</span></code> environment variable
+needs to be extended. This can be done by adding <code class="docutils literal"><span class="pre">export</span> <span class="pre">PATH=&quot;${HOME}/.local/bin:${PATH}&quot;</span></code>
+to <code class="docutils literal"><span class="pre">~/.profile</span></code> or <code class="docutils literal"><span class="pre">~/.bashrc</span></code>.</p>
+</div>
 <table border="1" class="table-custom-layout docutils">
 <colgroup>
-<col width="35%" />
-<col width="65%" />
+<col width="31%" />
+<col width="69%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Version</th>
@@ -418,33 +458,70 @@ manager, or by checking out the latest code with
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><a class="reference external" href="https://pypi.python.org/pypi/streamlink">Latest release (pip)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pip install -U streamlink
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Current user</span>
+pip install --upgrade --user streamlink
+
+<span class="c1"># System wide</span>
+sudo pip install --upgrade streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://pypi.python.org/pypi/streamlink">Latest release (easy_install)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> easy_install -U streamlink
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/streamlink/streamlink">Development version (pip)</a></td>
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Current user</span>
+pip install --upgrade --user git+https://github.com/streamlink/streamlink.git
+
+<span class="c1"># System wide</span>
+sudo pip install --upgrade git+https://github.com/streamlink/streamlink.git
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://github.com/streamlink/streamlink">Development version (pip)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pip install -U git+https://github.com/streamlink/streamlink.git
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="https://github.com/streamlink/streamlink">Development version (git)</a></td>
-<td><div class="first last highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone git://github.com/streamlink/streamlink.git
-<span class="gp">$</span> <span class="nb">cd</span> streamlink
-<span class="gp">#</span> python setup.py install
+<tr class="row-even"><td><a class="reference external" href="https://github.com/streamlink/streamlink">Development version (git)</a></td>
+<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Current user</span>
+git clone https://github.com/streamlink/streamlink.git
+<span class="nb">cd</span> streamlink
+python setup.py install --user
+
+<span class="c1"># System wide</span>
+git clone https://github.com/streamlink/streamlink.git
+<span class="nb">cd</span> streamlink
+sudo python setup.py install
 </pre></div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="section" id="virtual-environment">
+<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">¶</a></h3>
+<p>Another method of installing Streamlink in a non-system-wide way is
+using <a class="reference external" href="https://virtualenv.readthedocs.io/en/latest/">virtualenv</a>, which creates a user owned Python environment instead.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Create a new environment</span>
+virtualenv ~/myenv
+
+<span class="c1"># Activate the environment</span>
+<span class="nb">source</span> ~/myenv/bin/activate
+
+<span class="c1"># Install Streamlink in the environment</span>
+pip install --upgrade streamlink
+
+<span class="c1"># Use Streamlink in the environment</span>
+streamlink ...
+
+<span class="c1"># Deactivate the environment</span>
+deactivate
+
+<span class="c1"># Use Streamlink without activating the environment</span>
+~/myenv/bin/streamlink ...
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This may also be required on some macOS versions that seem to have weird
+permission issues.</p>
+</div>
+</div>
 <div class="section" id="dependencies">
 <h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
 <p>To install Streamlink from source you will need these dependencies.</p>
@@ -522,36 +599,6 @@ audio and video streams, eg. YouTube 1080p+</td>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCRYPTO</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
 <span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCOUNTRY</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
 </pre></div>
-</div>
-</div>
-<div class="section" id="installing-without-root-permissions">
-<h3>Installing without root permissions<a class="headerlink" href="#installing-without-root-permissions" title="Permalink to this headline">¶</a></h3>
-<p>If you do not wish to install Streamlink globally on your system it's
-recommended to use <a class="reference external" href="https://virtualenv.readthedocs.io/en/latest/">virtualenv</a> to create a user owned Python environment
-instead.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Creating an environment</span>
-<span class="gp">$</span> virtualenv ~/myenv
-
-<span class="go">Activating the environment</span>
-<span class="gp">$</span> <span class="nb">source</span> ~/myenv/bin/activate
-
-<span class="go">Installing streamlink into the environment</span>
-<span class="gp">(myenv)$</span> pip install streamlink
-
-<span class="go">Using streamlink in the environment</span>
-<span class="gp">(myenv)$</span> streamlink ...
-
-<span class="go">Deactivating the environment</span>
-<span class="gp">(myenv)$</span> deactivate
-
-<span class="go">Using streamlink without activating the environment</span>
-<span class="gp">$</span> ~/myenv/bin/streamlink ...
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This may also be required on some OS X versions that seems to have weird
-permission issues.</p>
 </div>
 </div>
 </div>
@@ -664,7 +711,7 @@ from the command prompt or powershell without specifying its directory.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0.0',
+            VERSION:'1.1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
