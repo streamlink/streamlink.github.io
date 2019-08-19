@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Streamlink 1.1.1 documentation</title>
+  <title>Index &mdash; Streamlink 1.2.0 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
         <link rel="index" title="Index"
               href="#"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.1.1 documentation" href="index.html"/> 
+    <link rel="top" title="Streamlink 1.2.0 documentation" href="index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -52,7 +52,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.1.1</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.2.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -119,6 +119,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-2-0-2019-08-18">streamlink 1.2.0 (2019-08-18)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-1-2019-04-02">streamlink 1.1.1 (2019-04-02)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-0-2019-03-31">streamlink 1.1.0 (2019-03-31)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-0-0-2019-01-30">streamlink 1.0.0 (2019-01-30)</a></li>
@@ -345,6 +346,20 @@
 
       <ul>
         <li><a href="cli.html#cmdoption-can-handle-url-no-redirect">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --clubbingtv-password
+
+      <ul>
+        <li><a href="cli.html#cmdoption-clubbingtv-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --clubbingtv-username
+
+      <ul>
+        <li><a href="cli.html#cmdoption-clubbingtv-username">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -677,13 +692,6 @@
 </li>
       </ul></li>
       <li>
-    --npo-subtitles
-
-      <ul>
-        <li><a href="cli.html#cmdoption-npo-subtitles">command line option</a>
-</li>
-      </ul></li>
-      <li>
     --openrectv-email EMAIL
 
       <ul>
@@ -695,6 +703,13 @@
 
       <ul>
         <li><a href="cli.html#cmdoption-openrectv-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --pixiv-devicetoken DEVICETOKEN
+
+      <ul>
+        <li><a href="cli.html#cmdoption-pixiv-devicetoken">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -720,6 +735,13 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    --pixiv-sessionid SESSIONID
+
+      <ul>
+        <li><a href="cli.html#cmdoption-pixiv-sessionid">command line option</a>
+</li>
+      </ul></li>
       <li>
     --pixiv-username USERNAME
 
@@ -1029,13 +1051,6 @@
 </li>
       </ul></li>
       <li>
-    --ustvnow-station-code CODE
-
-      <ul>
-        <li><a href="cli.html#cmdoption-ustvnow-station-code">command line option</a>
-</li>
-      </ul></li>
-      <li>
     --ustvnow-username USERNAME
 
       <ul>
@@ -1047,6 +1062,13 @@
 
       <ul>
         <li><a href="cli.html#cmdoption-version-check">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --vimeo-mux-subtitles
+
+      <ul>
+        <li><a href="cli.html#cmdoption-vimeo-mux-subtitles">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -1278,6 +1300,10 @@
 </li>
         <li><a href="cli.html#cmdoption-can-handle-url-no-redirect">--can-handle-url-no-redirect URL</a>
 </li>
+        <li><a href="cli.html#cmdoption-clubbingtv-password">--clubbingtv-password</a>
+</li>
+        <li><a href="cli.html#cmdoption-clubbingtv-username">--clubbingtv-username</a>
+</li>
         <li><a href="cli.html#cmdoption-config">--config FILENAME</a>
 </li>
         <li><a href="cli.html#cmdoption-crunchyroll-password">--crunchyroll-password [PASSWORD]</a>
@@ -1372,17 +1398,19 @@
 </li>
         <li><a href="cli.html#cmdoption-locale">--locale LOCALE</a>
 </li>
-        <li><a href="cli.html#cmdoption-npo-subtitles">--npo-subtitles</a>
-</li>
         <li><a href="cli.html#cmdoption-openrectv-email">--openrectv-email EMAIL</a>
 </li>
         <li><a href="cli.html#cmdoption-openrectv-password">--openrectv-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-pixiv-devicetoken">--pixiv-devicetoken DEVICETOKEN</a>
 </li>
         <li><a href="cli.html#cmdoption-pixiv-password">--pixiv-password PASSWORD</a>
 </li>
         <li><a href="cli.html#cmdoption-pixiv-performer">--pixiv-performer USER</a>
 </li>
         <li><a href="cli.html#cmdoption-pixiv-purge-credentials">--pixiv-purge-credentials</a>
+</li>
+        <li><a href="cli.html#cmdoption-pixiv-sessionid">--pixiv-sessionid SESSIONID</a>
 </li>
         <li><a href="cli.html#cmdoption-pixiv-username">--pixiv-username USERNAME</a>
 </li>
@@ -1472,11 +1500,11 @@
 </li>
         <li><a href="cli.html#cmdoption-ustvnow-password">--ustvnow-password PASSWORD</a>
 </li>
-        <li><a href="cli.html#cmdoption-ustvnow-station-code">--ustvnow-station-code CODE</a>
-</li>
         <li><a href="cli.html#cmdoption-ustvnow-username">--ustvnow-username USERNAME</a>
 </li>
         <li><a href="cli.html#cmdoption-version-check">--version-check</a>
+</li>
+        <li><a href="cli.html#cmdoption-vimeo-mux-subtitles">--vimeo-mux-subtitles</a>
 </li>
         <li><a href="cli.html#cmdoption-wwenetwork-email">--wwenetwork-email EMAIL</a>
 </li>
@@ -1726,7 +1754,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.1.1',
+            VERSION:'1.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

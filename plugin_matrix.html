@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Plugins &mdash; Streamlink 1.1.1 documentation</title>
+  <title>Plugins &mdash; Streamlink 1.2.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.1.1 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.2.0 documentation" href="index.html"/>
         <link rel="next" title="Players" href="players.html"/>
         <link rel="prev" title="Command-Line Interface" href="cli.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.1.1</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.2.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -120,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-2-0-2019-08-18">streamlink 1.2.0 (2019-08-18)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-1-2019-04-02">streamlink 1.1.1 (2019-04-02)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-0-2019-03-31">streamlink 1.1.0 (2019-03-31)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-0-0-2019-01-30">streamlink 1.0.0 (2019-01-30)</a></li>
@@ -400,37 +401,43 @@ is limited.</p>
 <td>No</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>cnews</td>
+<tr class="row-even"><td>clubbingtv</td>
+<td>clubbingtv.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Requires a login.</td>
+</tr>
+<tr class="row-odd"><td>cnews</td>
 <td>cnews.fr</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>crunchyroll</td>
+<tr class="row-even"><td>crunchyroll</td>
 <td>crunchyroll.com</td>
 <td>--</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>cubetv</td>
-<td>cubetv.sg</td>
+<tr class="row-odd"><td>cubetv</td>
+<td>cube.tv</td>
 <td>Yes</td>
 <td>--</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>cybergame</td>
+<tr class="row-even"><td>cybergame</td>
 <td>cybergame.tv</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>dailymotion</td>
+<tr class="row-odd"><td>dailymotion</td>
 <td>dailymotion.com</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>delfi</td>
+<tr class="row-even"><td>delfi</td>
 <td><ul class="first last simple">
 <li>delfi.lt</li>
 <li>delfi.ee</li>
@@ -441,14 +448,20 @@ is limited.</p>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>deutschewelle</td>
+<tr class="row-odd"><td>deutschewelle</td>
 <td>dw.com</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>dingittv</td>
+<tr class="row-even"><td>dingittv</td>
 <td>dingit.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>dlive</td>
+<td>dlive.tv</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
@@ -675,13 +688,19 @@ is limited.</p>
 <td>--</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>live_russia_tv</td>
+<tr class="row-odd"><td>linelive</td>
+<td>live.line.me</td>
+<td>Yes</td>
+<td>--</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>live_russia_tv</td>
 <td>live.russia.tv</td>
 <td>Yes</td>
 <td>--</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>liveedu</td>
+<tr class="row-odd"><td>liveedu</td>
 <td><ul class="first last simple">
 <li>liveedu.tv</li>
 <li>livecoding.tv</li>
@@ -691,97 +710,86 @@ is limited.</p>
 <td>--</td>
 <td>Some streams require a login.</td>
 </tr>
-<tr class="row-odd"><td>liveme</td>
+<tr class="row-even"><td>liveme</td>
 <td>liveme.com</td>
 <td>Yes</td>
 <td>--</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>livestream</td>
+<tr class="row-odd"><td>livestream</td>
 <td>new.livestream.com</td>
 <td>Yes</td>
 <td>--</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>lrt</td>
+<tr class="row-even"><td>lrt</td>
 <td>lrt.lt</td>
 <td>Yes</td>
 <td>No</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>ltv_lsm_lv</td>
+<tr class="row-odd"><td>ltv_lsm_lv</td>
 <td>ltv.lsm.lv</td>
 <td>Yes</td>
 <td>No</td>
 <td>Streams may be geo-restricted to Latvia.</td>
 </tr>
-<tr class="row-odd"><td>mediaklikk</td>
+<tr class="row-even"><td>mediaklikk</td>
 <td>mediaklikk.hu</td>
 <td>Yes</td>
 <td>No</td>
 <td>Streams may be geo-restricted to Hungary.</td>
 </tr>
-<tr class="row-even"><td>metube</td>
+<tr class="row-odd"><td>metube</td>
 <td>metube.id</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>mitele</td>
+<tr class="row-even"><td>mitele</td>
 <td>mitele.es</td>
 <td>Yes</td>
 <td>No</td>
 <td>Streams may be geo-restricted to Spain.</td>
 </tr>
-<tr class="row-even"><td>mixer</td>
+<tr class="row-odd"><td>mixer</td>
 <td>mixer.com</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>mjunoon</td>
+<tr class="row-even"><td>mjunoon</td>
 <td>mjunoon.tv</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>mlgtv</td>
+<tr class="row-odd"><td>mlgtv</td>
 <td>mlg.tv</td>
 <td>Yes</td>
 <td>--</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>nbc</td>
+<tr class="row-even"><td>nbc</td>
 <td>nbc.com</td>
 <td>No</td>
 <td>Yes</td>
 <td>Streams are geo-restricted to USA. Authentication is not supported.</td>
 </tr>
-<tr class="row-even"><td>nbcsports</td>
+<tr class="row-odd"><td>nbcsports</td>
 <td>nbcsports.com</td>
 <td>No</td>
 <td>Yes</td>
 <td>Streams maybe be geo-restricted to USA. Authentication is not supported.</td>
 </tr>
-<tr class="row-odd"><td>nhkworld</td>
+<tr class="row-even"><td>nhkworld</td>
 <td>nhk.or.jp/nhkworld</td>
 <td>Yes</td>
 <td>No</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>nos</td>
+<tr class="row-odd"><td>nos</td>
 <td>nos.nl</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Netherlands.</td>
-</tr>
-<tr class="row-odd"><td>npo</td>
-<td><ul class="first last simple">
-<li>npo.nl</li>
-<li>zapp.nl</li>
-<li>zappelin.nl</li>
-</ul>
-</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Streams may be geo-restricted to Netherlands.</td>
@@ -814,7 +822,13 @@ is limited.</p>
 <td>Yes</td>
 <td>Only non-premium content is available.</td>
 </tr>
-<tr class="row-even"><td>onetv</td>
+<tr class="row-even"><td>oneplusone</td>
+<td>1plus1.video</td>
+<td>Yes</td>
+<td>No</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>onetv</td>
 <td><ul class="first last simple">
 <li>1tv.ru</li>
 <li>ctc.ru</li>
@@ -827,22 +841,16 @@ is limited.</p>
 <td>Yes</td>
 <td>Streams may be geo-restricted to Russia. VOD only for 1tv.ru</td>
 </tr>
-<tr class="row-odd"><td>openrectv</td>
+<tr class="row-even"><td>openrectv</td>
 <td>openrec.tv</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>orf_tvthek</td>
+<tr class="row-odd"><td>orf_tvthek</td>
 <td>tvthek.orf.at</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td>ovvatv</td>
-<td>ovva.tv</td>
-<td>Yes</td>
-<td>No</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>pandatv</td>
@@ -939,7 +947,13 @@ is limited.</p>
 <td>Yes</td>
 <td>Streams may be geo-restricted to Israel.</td>
 </tr>
-<tr class="row-even"><td>rtbf</td>
+<tr class="row-even"><td>reuters</td>
+<td>reuters.tv</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>rtbf</td>
 <td><ul class="first last simple">
 <li>rtbf.be/auvio</li>
 <li>rtbfradioplayer.be</li>
@@ -949,17 +963,11 @@ is limited.</p>
 <td>Yes</td>
 <td>Streams may be geo-restricted to Belgium or Europe.</td>
 </tr>
-<tr class="row-odd"><td>rtlxl</td>
+<tr class="row-even"><td>rtlxl</td>
 <td>rtlxl.nl</td>
 <td>No</td>
 <td>Yes</td>
 <td>Streams may be geo-restricted to The Netherlands. Livestreams not supported.</td>
-</tr>
-<tr class="row-even"><td>rte</td>
-<td>rte.ie/player</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>rtpplay</td>
 <td>rtp.pt/play</td>
@@ -1125,9 +1133,13 @@ K-S-V patches.</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>teamliquid</td>
-<td>teamliquid.net</td>
+<td><ul class="first last simple">
+<li>teamliquid.net</li>
+<li>tl.net</li>
+</ul>
+</td>
 <td>Yes</td>
-<td>Yes</td>
+<td>--</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>teleclubzoom</td>
@@ -1213,7 +1225,7 @@ K-S-V patches.</td>
 <tr class="row-even"><td>tv1channel</td>
 <td>tv1channel.org</td>
 <td>Yes</td>
-<td>Yes</td>
+<td>No</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>tv3cat</td>
@@ -1256,19 +1268,13 @@ Only non-premium streams currently supported.</td>
 <td>No</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>tvcatchup</td>
-<td>tvcatchup.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Great Britain.</td>
-</tr>
-<tr class="row-odd"><td>tvibo</td>
+<tr class="row-even"><td>tvibo</td>
 <td>player.tvibo.com</td>
 <td>Yes</td>
 <td>--</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>tvnbg</td>
+<tr class="row-odd"><td>tvnbg</td>
 <td><ul class="first last simple">
 <li>tvn.bg</li>
 <li>live.tvn.bg</li>
@@ -1281,56 +1287,56 @@ Only non-premium streams currently supported.</td>
 </td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>tvp</td>
+<tr class="row-even"><td>tvp</td>
 <td>tvpstream.vod.tvp.pl</td>
 <td>Yes</td>
 <td>No</td>
 <td>Streams may be geo-restricted to Poland.</td>
 </tr>
-<tr class="row-even"><td>tvplayer</td>
+<tr class="row-odd"><td>tvplayer</td>
 <td>tvplayer.com</td>
 <td>Yes</td>
 <td>No</td>
 <td>Streams may be geo-restricted to Great Britain. Premium streams are not supported.</td>
 </tr>
-<tr class="row-odd"><td>tvrby</td>
+<tr class="row-even"><td>tvrby</td>
 <td>tvr.by</td>
 <td>Yes</td>
 <td>No</td>
 <td>Streams may be geo-restricted to Belarus.</td>
 </tr>
-<tr class="row-even"><td>tvrplus</td>
+<tr class="row-odd"><td>tvrplus</td>
 <td>tvrplus.ro</td>
 <td>Yes</td>
 <td>No</td>
 <td>Streams may be geo-restricted to Romania.</td>
 </tr>
-<tr class="row-odd"><td>tvtoya</td>
+<tr class="row-even"><td>tvtoya</td>
 <td>tvtoya.pl</td>
 <td>Yes</td>
 <td>--</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>twitch</td>
+<tr class="row-odd"><td>twitch</td>
 <td>twitch.tv</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Possible to authenticate for access to
 subscription streams.</td>
 </tr>
-<tr class="row-odd"><td>ustreamtv</td>
+<tr class="row-even"><td>ustreamtv</td>
 <td>ustream.tv</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>ustvnow</td>
+<tr class="row-odd"><td>ustvnow</td>
 <td>ustvnow.com</td>
 <td>Yes</td>
 <td>--</td>
 <td>All streams require an account, some streams require a subscription.</td>
 </tr>
-<tr class="row-odd"><td>vaughnlive</td>
+<tr class="row-even"><td>vaughnlive</td>
 <td><ul class="first last simple">
 <li>vaughnlive.tv</li>
 <li>breakers.tv</li>
@@ -1342,7 +1348,7 @@ subscription streams.</td>
 <td>--</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>viasat</td>
+<tr class="row-odd"><td>viasat</td>
 <td><ul class="first last simple">
 <li>juicyplay.dk</li>
 <li>play.nova.bg</li>
@@ -1360,11 +1366,17 @@ subscription streams.</td>
 <td>Yes</td>
 <td>Streams may be geo-restricted.</td>
 </tr>
-<tr class="row-odd"><td>vidio</td>
+<tr class="row-even"><td>vidio</td>
 <td>vidio.com</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>vimeo</td>
+<td>vimeo.com</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Password-protected videos are not supported.</td>
 </tr>
 <tr class="row-even"><td>vinhlongtv</td>
 <td>thvli.vn</td>
@@ -1565,7 +1577,7 @@ subscription streams.</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.1.1',
+            VERSION:'1.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
