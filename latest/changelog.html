@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Streamlink 1.1.1+78.ga2e576b documentation</title>
+  <title>Changelog &mdash; Streamlink 1.1.1+79.g12f1e99 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.1.1+78.ga2e576b documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.1.1+79.g12f1e99 documentation" href="index.html"/>
         <link rel="next" title="Donating" href="donate.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.1.1+78.ga2e576b</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.1.1+79.g12f1e99</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -120,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-1-2-0-2019-08-18">streamlink 1.2.0 (2019-08-18)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-1-1-2019-04-02">streamlink 1.1.1 (2019-04-02)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-1-0-2019-03-31">streamlink 1.1.0 (2019-03-31)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-0-0-2019-01-30">streamlink 1.0.0 (2019-01-30)</a></li>
@@ -212,6 +213,96 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-1-2-0-2019-08-18">
+<h2>streamlink 1.2.0 (2019-08-18)<a class="headerlink" href="#streamlink-1-2-0-2019-08-18" title="Permalink to this headline">¶</a></h2>
+<p>Here are the changes for this month's release</p>
+<ul class="simple">
+<li>Multiple plugin fixes</li>
+<li>Fixed single hyphen params at the beginning of --player-args (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/2333">#2333</a>)</li>
+<li><code class="docutils literal"><span class="pre">--http-proxy</span></code> will set the default value of <code class="docutils literal"><span class="pre">--https-proxy</span></code> to same as <code class="docutils literal"><span class="pre">--http-proxy</span></code>. (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/2536">#2536</a>)</li>
+<li>DASH Streams will handle headers correctly (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/2545">#2545</a>)</li>
+<li>the timestamp for FFMPEGMuxer streams will start with zero (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/2559">#2559</a>)</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Davi Guimarães &lt;davi.guimaraesleite@gmail.com&gt; (1):
+      plugins.cubetv: base url changes (#2430)
+
+Forrest &lt;gravyboat@users.noreply.github.com&gt; (1):
+      Add a sponsor button (#2478)
+
+Jiting &lt;jiting@jtcat.com&gt; (1):
+      plugin.youtube: bug fix for YouTube live streams check
+
+Juan Ramirez &lt;jramirez@encompass.tv&gt; (2):
+      Invalid use of console.logger in CLI
+      Too many arguments for logging format string
+
+Mohamed El Morabity &lt;melmorabity@fedoraproject.org&gt; (9):
+      plugins.vimeo: new plugin for Vimeo streams
+      plugins.vimeo: add subtitle support for vimeo plugin
+      plugins.vimeo: fix alphabetical order in plugin matrix
+      Use class parameter instead of class name in class method
+      [plugins.bfmtv] Fix player regex
+      [plugins.idf1] Update for new website layout
+      plugins.gulli: enable HTTPS support
+      plugins.gulli: fix live stream fetching
+      plugins.tvrplus: fix for new website layout
+
+Mohamed El Morabity &lt;melmorabity@users.noreply.github.com&gt; (1):
+      plugins.clubbingtv: new plugin for Clubbing TV website (#2569)
+
+Viktor Kálmán &lt;kviktor@users.noreply.github.com&gt; (1):
+      plugins.mediaklikk: update broken plugin (#2401)
+
+Vladimir Stavrinov &lt;vstavrinov@gmail.com&gt; (2):
+      plugins.live_russia_tv: adjust to site changes (#2523)
+      plugins.oneplusone: fix site changes (#2425)
+
+YuuichiMizuoka &lt;32476209+YuuichiMizuoka@users.noreply.github.com&gt; (1):
+      add login posibility for pixiv using sessionid and devicetoken
+
+aqxa1 &lt;asheldon55@gmail.com&gt; (1):
+      Handle keyboard interrupts in can_handle_url checks (#2318)
+
+back-to &lt;backto@protonmail.ch&gt; (12):
+      cli.argparser: Fix single hyphen params at the beginning of --player-args
+      plugins.reuters: New Plugin
+      plugins: Removed rte and tvcatchup
+      utils.__init__: remove cElementTree, it&#39;s just an alias for ElementTree
+      plugins.teamliquid: New domain, fix stream_weight
+      plugins.vimeo: Fixed DASH Livestreams
+      plugin.api.useragents: update CHROME and FIREFOX User-Agent
+      ffmpegmux: use -start_at_zero with -copyts
+      plugins.youtube: fixed reason msg, updated _url_re
+      plugins.TV1Channel: Fixed new livestream iframe
+      plugins.npo: removed due to DRM
+      plugins.lrt: fixed livestreams
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (1):
+      plugins.welt: fix plugin
+
+beardypig &lt;beardypig@protonmail.com&gt; (13):
+      plugins.bbciplayer: small change to where the VPID is extracted from (#2376)
+      plugins.goodgame: fix for debug logging error
+      plugins.cdnbg: fix for bstv url
+      plugins.ustvnow: updated to handle new auth, and site design
+      plugin.schoolism: bug fix for videos with subtitles (#2524)
+      stream.dash: use the stream args in the writer and worker
+      session: default https-proxy to the same as http-proxy, can be overridden
+      plugins.beattv: partial fix for the be-at.tv streams
+      tests: test the behaviour of setting http-proxy and https-proxy
+      plugins.twitch: support for different clips URL
+      plugins.wwenetwork: support for new site
+      plugins.ustreamtv: add support for proxying WebSocket connections
+      plugins.wwenetwork: update for small page/api change
+
+skulblakka &lt;pascal.romahn@mailbox.org&gt; (1):
+      plugins.DLive: New Plugin for dlive.tv (#2419)
+
+ssaqua &lt;ssaqua@users.noreply.github.com&gt; (1):
+      plugins.linelive: new plugin for LINE LIVE (live.line.me) (#2574)
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-1-1-1-2019-04-02">
 <h2>streamlink 1.1.1 (2019-04-02)<a class="headerlink" href="#streamlink-1-1-1-2019-04-02" title="Permalink to this headline">¶</a></h2>
 <p>This is just a small patch release which fixes a build/deploy issue with the new special wheels for Windows on PyPI. (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/2392">#2392</a>)</p>
@@ -2376,7 +2467,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.1.1+78.ga2e576b',
+            VERSION:'1.1.1+79.g12f1e99',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
