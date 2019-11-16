@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 1.2.0+49.g408ec6a documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 1.2.0+51.g074c270 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.2.0+49.g408ec6a documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.2.0+51.g074c270 documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.2.0+49.g408ec6a</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.2.0+51.g074c270</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -215,16 +215,16 @@
 <span id="cli"></span><h1>Command-Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
-<p>Streamlink is command-line application, this means the commands described
-here should be typed into a terminal. On Windows this means you should open
-the <a class="reference external" href="http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8">command prompt</a> or <a class="reference external" href="http://www.microsoft.com/powershell">PowerShell</a>, on Mac OS X open the <a class="reference external" href="http://en.wikipedia.org/wiki/Terminal_(OS_X)">Terminal</a> app
+<p>Streamlink is a command-line application, which means that the commands described
+here should be typed into a terminal. On Windows, you have to open either the
+<a class="reference external" href="http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8">command prompt</a> or the <a class="reference external" href="http://www.microsoft.com/powershell">PowerShell</a>, on macOS open the <a class="reference external" href="http://en.wikipedia.org/wiki/Terminal_(OS_X)">Terminal</a> app
 and if you're on Linux or BSD you probably already know the drill.</p>
 <p>The way Streamlink works is that it's only a means to extract and transport
 the streams, and the playback is done by an external video player. Streamlink
 works best with <a class="reference external" href="http://videolan.org/">VLC</a> or <a class="reference external" href="http://mpv.io/">mpv</a>, which are also cross-platform, but other players
 may be compatible too, see the <a class="reference internal" href="players.html#players"><span class="std std-ref">Players</span></a> page for a complete overview.</p>
 <p>Now to get into actually using Streamlink, let's say you want to watch the
-stream located on <a class="reference external" href="http://twitch.tv/day9tv">http://twitch.tv/day9tv</a>, you start off by telling Streamlink
+stream located on twitch.tv/day9tv, you start off by telling Streamlink
 where to attempt to extract streams from. This is done by giving the URL to the
 command <strong class="command">streamlink</strong> as the first argument:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink twitch.tv/day9tv
@@ -234,7 +234,7 @@ command <strong class="command">streamlink</strong> as the first argument:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You don't need to include the protocol when dealing with HTTP URLs,
+<p class="last">You don't need to include the protocol when dealing with HTTP(s) URLs,
 e.g. just <code class="docutils literal"><span class="pre">twitch.tv/day9tv</span></code> is enough and quicker to type.</p>
 </div>
 <p>This command will tell Streamlink to attempt to extract streams from the URL
@@ -249,17 +249,17 @@ even on Windows.</p>
 <span class="go">Available streams: 180p (worst), 272p, 408p, 554p, 818p, 1744p (best)</span>
 </pre></div>
 </div>
-<p>To select a stream and start playback, we simply add the stream name as a second
+<p>To select a stream and start playback, simply add the stream name as a second
 argument to the <strong class="command">streamlink</strong> command:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink twitch.tv/day9tv <span class="nb">source</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink twitch.tv/day9tv 1080p60
 <span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
-<span class="go">[cli][info] Opening stream: source (hls)</span>
+<span class="go">[cli][info] Opening stream: 1080p60 (hls)</span>
 <span class="go">[cli][info] Starting player: vlc</span>
 </pre></div>
 </div>
 <p>The stream you chose should now be playing in the player. It's a common use case
-to just want start the highest quality stream and not be bothered with what it's
-named. To do this just specify <code class="docutils literal"><span class="pre">best</span></code> as the stream name and Streamlink will
+to just want to start the highest quality stream and not be bothered with what it's
+named. To do this, just specify <code class="docutils literal"><span class="pre">best</span></code> as the stream name and Streamlink will
 attempt to rank the streams and open the one of highest quality. You can also
 specify <code class="docutils literal"><span class="pre">worst</span></code> to get the lowest quality.</p>
 <p>Now that you have a basic grasp of how Streamlink works, you may want to look
@@ -1877,7 +1877,7 @@ the following types are allowed:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0+49.g408ec6a',
+            VERSION:'1.2.0+51.g074c270',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
