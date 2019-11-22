@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Streamlink 1.2.0 documentation</title>
+  <title>Changelog &mdash; Streamlink 1.3.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.2.0 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.3.0 documentation" href="index.html"/>
         <link rel="next" title="Donating" href="donate.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.2.0</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.3.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -120,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-1-3-0-2019-11-22">streamlink 1.3.0 (2019-11-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-2-0-2019-08-18">streamlink 1.2.0 (2019-08-18)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-1-1-2019-04-02">streamlink 1.1.1 (2019-04-02)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-1-0-2019-03-31">streamlink 1.1.0 (2019-03-31)</a></li>
@@ -209,6 +210,76 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-1-3-0-2019-11-22">
+<h2>streamlink 1.3.0 (2019-11-22)<a class="headerlink" href="#streamlink-1-3-0-2019-11-22" title="Permalink to this headline">¶</a></h2>
+<p>A new release with plugin updates and fixes, including Twitch.tv (see <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680">#2680</a></a>), which had to be delayed due to back and forth API changes.</p>
+<p>The Twitch.tv workarounds mentioned in <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680">#2680</a></a> don't have to be applied anymore, but authenticating via <code class="docutils literal"><span class="pre">--twitch-oauth-token</span></code> has been disabled, regardless of the origin of the OAuth token (via <code class="docutils literal"><span class="pre">--twitch-oauth-authenticate</span></code> or the Twitch website). In order to not introduce breaking changes, both parameters have been kept in this release and the user name will still be logged when using an OAuth token, but receiving item drops or accessing restricted streams is not possible anymore.</p>
+<p>Plugins for the following sites have also been added:</p>
+<ul class="simple">
+<li>albavision</li>
+<li>news.now.com</li>
+<li>twitcasting.tv</li>
+<li>viu.tv</li>
+<li>vlive.tv</li>
+<li>willax.tv</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Alexis Murzeau &lt;amubtdx@gmail.com&gt; (1):
+      plugins.pixiv: fix doc typo thats -&gt; that&#39;s
+
+Mohamed El Morabity &lt;melmorabity@fedoraproject.org&gt; (1):
+      plugins.idf1: HTTPS support
+
+Mohamed El Morabity &lt;melmorabity@users.noreply.github.com&gt; (1):
+      plugins.playtv: Fix for new stream data API (#2388)
+
+Ozan Karaali &lt;ozan.karaali@gmail.com&gt; (1):
+      plugins.foxtr: Extended support
+
+Ozan Karaali &lt;ozankaraali@users.noreply.github.com&gt; (1):
+      plugins.cinergroup: #2390 fix (#2629)
+
+Troogle &lt;Troogle@users.noreply.github.com&gt; (1):
+      plugins.bilibili: fix resolution issue
+
+Werner Robitza &lt;werner.robitza@gmail.com&gt; (1):
+      remove direct installation instructions, link to docs
+
+back-to &lt;backto@protonmail.ch&gt; (6):
+      setup.cfg: added flake8 settings
+      plugins.vk: use html_unescape for HLS streams
+      plugins.willax: new plugin for http://willax.tv/en-vivo/
+      plugins.zattoo: _url_re update for some new urls
+      plugin.api.useragents: update CHROME and FIREFOX User-Agent
+      stream.hls: Fix UnicodeDecodeError for log msg and name_prefix for stream_name
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (3):
+      ci/travis: install pynsist 2.4
+      plugins.twitch: fix API issue - 410 gone error
+      docs.cli: fix and reword the tutorial section
+
+beardypig &lt;beardypig@protonmail.com&gt; (10):
+      plugins.bbciplayer: update API URL to use https
+      plugins.nownews: added support for the HK news site news.now.com
+      plugins.tv8: update regex for the stream url
+      plugins.bbciplayer: fix issue with nonce extraction
+      plugins.bbciplayer: extract master brand/channel id from the state json
+      plugins.itvplayer: Use flash streams for ITV1/ITV4
+      plugins.viutv: support for the viu.tv live stream
+      plugins.albavision: support for some albavision live streams
+      plugins.bloomberg: fix issue where the incorrect playlist could be used
+      stream.streamprocess: check that a process is usable before using it
+
+derrod &lt;xlnedder@gmail.com&gt; (1):
+      plugins.vlive: Add support for V LIVE live streams
+
+printempw &lt;printempw@gmail.com&gt; (1):
+      plugins.twitcasting: new plugin for TwitCasting.tv
+
+ssaqua &lt;ssaqua@users.noreply.github.com&gt; (1):
+      plugins.linelive: update to support VOD/archived streams
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-1-2-0-2019-08-18">
 <h2>streamlink 1.2.0 (2019-08-18)<a class="headerlink" href="#streamlink-1-2-0-2019-08-18" title="Permalink to this headline">¶</a></h2>
 <p>Here are the changes for this month's release</p>
@@ -2463,7 +2534,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.2.0',
+            VERSION:'1.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
