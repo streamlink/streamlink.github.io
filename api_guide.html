@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Guide &mdash; Streamlink 1.3.0 documentation</title>
+  <title>API Guide &mdash; Streamlink 1.3.1 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.3.0 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.3.1 documentation" href="index.html"/>
         <link rel="next" title="API Reference" href="api.html"/>
         <link rel="prev" title="Common issues" href="issues.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.3.0</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.3.1</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -120,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-1-2020-01-27">streamlink 1.3.1 (2020-01-27)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-0-2019-11-22">streamlink 1.3.0 (2019-11-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-2-0-2019-08-18">streamlink 1.2.0 (2019-08-18)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-1-2019-04-02">streamlink 1.1.1 (2019-04-02)</a></li>
@@ -157,6 +158,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="thirdparty.html#liveproxy">LiveProxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#wtwitch">Wtwitch</a></li>
 </ul>
 </li>
 </ul>
@@ -288,14 +290,14 @@ when extracting streams more than once. You start by creating a
 <a class="reference external" href="http://gstreamer.freedesktop.org/">GStreamer</a> framework.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="kn">import</span> <span class="nn">gi</span>
 
-<span class="kn">from</span> <span class="nn">gi.repository</span> <span class="k">import</span> <span class="n">GObject</span> <span class="k">as</span> <span class="n">gobject</span><span class="p">,</span> <span class="n">Gst</span> <span class="k">as</span> <span class="n">gst</span>
-<span class="kn">from</span> <span class="nn">streamlink</span> <span class="k">import</span> <span class="n">Streamlink</span><span class="p">,</span> <span class="n">StreamError</span><span class="p">,</span> <span class="n">PluginError</span><span class="p">,</span> <span class="n">NoPluginError</span>
+<span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">GObject</span> <span class="k">as</span> <span class="n">gobject</span><span class="p">,</span> <span class="n">Gst</span> <span class="k">as</span> <span class="n">gst</span>
+<span class="kn">from</span> <span class="nn">streamlink</span> <span class="kn">import</span> <span class="n">Streamlink</span><span class="p">,</span> <span class="n">StreamError</span><span class="p">,</span> <span class="n">PluginError</span><span class="p">,</span> <span class="n">NoPluginError</span>
 
 
 <span class="k">def</span> <span class="nf">exit</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
@@ -304,7 +306,7 @@ when extracting streams more than once. You start by creating a
 
 
 <span class="k">class</span> <span class="nc">StreamlinkPlayer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fd</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mainloop</span> <span class="o">=</span> <span class="n">gobject</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
 
@@ -450,7 +452,7 @@ when extracting streams more than once. You start by creating a
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Streamlink.
+        &copy; Copyright 2020, Streamlink.
     </p>
   </div>
 
@@ -468,7 +470,7 @@ when extracting streams more than once. You start by creating a
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.3.0',
+            VERSION:'1.3.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
