@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 1.3.1+63.g24c4318 documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 1.3.1+66.gf203e0d documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.3.1+63.g24c4318 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.3.1+66.gf203e0d documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.3.1+63.g24c4318</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.3.1+66.gf203e0d</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -339,9 +339,6 @@ e.g. specifying a player with a path containing spaces.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Player options</span>
 <span class="nv">player</span><span class="o">=</span>mpv --cache <span class="m">2048</span>
 player-no-close
-
-<span class="c1"># Authenticate with Twitch</span>
-twitch-oauth-token<span class="o">=</span>mytoken
 </pre></div>
 </div>
 <div class="admonition note">
@@ -390,19 +387,6 @@ the name of each built-in plugin.</p>
 </div>
 <div class="section" id="plugin-specific-usage">
 <h2>Plugin specific usage<a class="headerlink" href="#plugin-specific-usage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="authenticating-with-twitch">
-<h3>Authenticating with Twitch<a class="headerlink" href="#authenticating-with-twitch" title="Permalink to this headline">¶</a></h3>
-<p>It's possible to access subscription content on Twitch by giving Streamlink
-access to your account.</p>
-<p>Authentication is done by creating an OAuth token that Streamlink will
-use to access your account. It's done like this:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --twitch-oauth-authenticate
-</pre></div>
-</div>
-<p>This will open a web browser where Twitch will ask you if you want to give
-Streamlink permission to access your account, then forwards you to a page
-with further instructions on how to use it.</p>
-</div>
 <div class="section" id="authenticating-with-crunchyroll">
 <h3>Authenticating with Crunchyroll<a class="headerlink" href="#authenticating-with-crunchyroll" title="Permalink to this headline">¶</a></h3>
 <p>Crunchyroll requires authenticating with a premium account to access some of
@@ -715,13 +699,6 @@ audio language.</p>
 <p>The locale is formatted as [language_code]_[country_code], eg. en_US or
 es_ES.</p>
 <p>Default is: <strong>system locale</strong>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-twitch-oauth-authenticate">
-<code class="descname">--twitch-oauth-authenticate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-twitch-oauth-authenticate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Open a web browser where you can grant Streamlink access to your Twitch
-account which creates a token for use with <a class="reference internal" href="#cmdoption-twitch-oauth-token"><code class="xref std std-option docutils literal"><span class="pre">--twitch-oauth-token</span></code></a>.</p>
 </dd></dl>
 
 </div>
@@ -1765,29 +1742,6 @@ required to access any Schoolism stream.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-twitch-oauth-token">
-<code class="descname">--twitch-oauth-token</code><code class="descclassname"> TOKEN</code><a class="headerlink" href="#cmdoption-twitch-oauth-token" title="Permalink to this definition">¶</a></dt>
-<dd><p>An OAuth token to use for Twitch authentication.
-Use <a class="reference internal" href="#cmdoption-twitch-oauth-authenticate"><code class="xref std std-option docutils literal"><span class="pre">--twitch-oauth-authenticate</span></code></a> to create a token.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-twitch-cookie">
-<code class="descname">--twitch-cookie</code><code class="descclassname"> COOKIES</code><a class="headerlink" href="#cmdoption-twitch-cookie" title="Permalink to this definition">¶</a></dt>
-<dd><p>Twitch cookies to authenticate to allow access to subscription channels.</p>
-<p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;_twitch_session_id=xxxxxx; persistent=xxxxx&quot;</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This method is the old and clunky way of authenticating with
-Twitch, using <a class="reference internal" href="#cmdoption-twitch-oauth-authenticate"><code class="xref std std-option docutils literal"><span class="pre">--twitch-oauth-authenticate</span></code></a> is the recommended and
-simpler way of doing it now.</p>
-</div>
-</dd></dl>
-
-<dl class="option">
 <dt id="cmdoption-twitch-disable-hosting">
 <code class="descname">--twitch-disable-hosting</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-twitch-disable-hosting" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do not open the stream if the target channel is hosting another channel.</p>
@@ -1944,7 +1898,7 @@ the following types are allowed:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.3.1+63.g24c4318',
+            VERSION:'1.3.1+66.gf203e0d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

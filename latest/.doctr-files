@@ -10,7 +10,6 @@ latest/_sources/issues.rst.txt
 latest/_sources/players.rst.txt
 latest/_sources/plugin_matrix.rst.txt
 latest/_sources/thirdparty.rst.txt
-latest/_sources/twitch_oauth.rst.txt
 latest/_static/ajax-loader.gif
 latest/_static/basic.css
 latest/_static/comment-bright.png
@@ -56,4 +55,3 @@ latest/plugin_matrix.html
 latest/search.html
 latest/searchindex.js
 latest/thirdparty.html
-latest/twitch_oauth.html
