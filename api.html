@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; Streamlink 1.3.1 documentation</title>
+  <title>API Reference &mdash; Streamlink 1.4.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.3.1 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.4.0 documentation" href="index.html"/>
         <link rel="next" title="Changelog" href="changelog.html"/>
         <link rel="prev" title="API Guide" href="api_guide.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.3.1</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.4.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -77,7 +77,7 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html#macos">macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd">Linux and BSD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#package-maintainers">Package maintainers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#pypi-package-and-source-code">PyPI package and source code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
 </ul>
 </li>
@@ -120,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-0-2020-04-22">streamlink 1.4.0 (2020-04-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-1-2020-01-27">streamlink 1.3.1 (2020-01-27)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-0-2019-11-22">streamlink 1.3.0 (2019-11-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-2-0-2019-08-18">streamlink 1.2.0 (2019-08-18)</a></li>
@@ -149,7 +150,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#streamlink-team">Streamlink Team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#bastimeyer">Bastimeyer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#beardypig">Beardypig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#gravyboat">Gravyboat</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
@@ -415,141 +418,145 @@ to download each HLS segment, default: <code class="docutils literal"><span clas
 <td>(int) The size of the thread pool used
 to download segments, default: <code class="docutils literal"><span class="pre">1</span></code></td>
 </tr>
-<tr class="row-odd"><td>hls-segment-timeout</td>
+<tr class="row-odd"><td>hls-segment-stream-data</td>
+<td>(bool) Stream HLS segment downloads,
+default: <code class="docutils literal"><span class="pre">False</span></code></td>
+</tr>
+<tr class="row-even"><td>hls-segment-timeout</td>
 <td>(float) HLS segment connect and read
 timeout, default: <code class="docutils literal"><span class="pre">10.0</span></code></td>
 </tr>
-<tr class="row-even"><td>hls-timeout</td>
+<tr class="row-odd"><td>hls-timeout</td>
 <td>(float) Timeout for reading data from
 HLS streams, default: <code class="docutils literal"><span class="pre">60.0</span></code></td>
 </tr>
-<tr class="row-odd"><td>http-proxy</td>
+<tr class="row-even"><td>http-proxy</td>
 <td>(str) Specify a HTTP proxy to use for
 all HTTP requests</td>
 </tr>
-<tr class="row-even"><td>https-proxy</td>
+<tr class="row-odd"><td>https-proxy</td>
 <td>(str) Specify a HTTPS proxy to use for
 all HTTPS requests</td>
 </tr>
-<tr class="row-odd"><td>http-cookies</td>
+<tr class="row-even"><td>http-cookies</td>
 <td>(dict or str) A dict or a semi-colon (;)
 delimited str of cookies to add to each
 HTTP request, e.g. <code class="docutils literal"><span class="pre">foo=bar;baz=qux</span></code></td>
 </tr>
-<tr class="row-even"><td>http-headers</td>
+<tr class="row-odd"><td>http-headers</td>
 <td>(dict or str) A dict or semi-colon (;)
 delimited str of headers to add to each
 HTTP request, e.g. <code class="docutils literal"><span class="pre">foo=bar;baz=qux</span></code></td>
 </tr>
-<tr class="row-odd"><td>http-query-params</td>
+<tr class="row-even"><td>http-query-params</td>
 <td>(dict or str) A dict or a ampersand (&amp;)
 delimited string of query parameters to
 add to each HTTP request,
 e.g. <code class="docutils literal"><span class="pre">foo=bar&amp;baz=qux</span></code></td>
 </tr>
-<tr class="row-even"><td>http-trust-env</td>
+<tr class="row-odd"><td>http-trust-env</td>
 <td>(bool) Trust HTTP settings set in the
 environment, such as environment
 variables (HTTP_PROXY, etc) and
 ~/.netrc authentication</td>
 </tr>
-<tr class="row-odd"><td>http-ssl-verify</td>
+<tr class="row-even"><td>http-ssl-verify</td>
 <td>(bool) Verify SSL certificates,
 default: <code class="docutils literal"><span class="pre">True</span></code></td>
 </tr>
-<tr class="row-even"><td>http-ssl-cert</td>
+<tr class="row-odd"><td>http-ssl-cert</td>
 <td>(str or tuple) SSL certificate to use,
 can be either a .pem file (str) or a
 .crt/.key pair (tuple)</td>
 </tr>
-<tr class="row-odd"><td>http-timeout</td>
+<tr class="row-even"><td>http-timeout</td>
 <td>(float) General timeout used by all HTTP
 requests except the ones covered by
 other options, default: <code class="docutils literal"><span class="pre">20.0</span></code></td>
 </tr>
-<tr class="row-even"><td>http-stream-timeout</td>
+<tr class="row-odd"><td>http-stream-timeout</td>
 <td>(float) Timeout for reading data from
 HTTP streams, default: <code class="docutils literal"><span class="pre">60.0</span></code></td>
 </tr>
-<tr class="row-odd"><td>subprocess-errorlog</td>
+<tr class="row-even"><td>subprocess-errorlog</td>
 <td>(bool) Log errors from subprocesses to
 a file located in the temp directory</td>
 </tr>
-<tr class="row-even"><td>subprocess-errorlog-path</td>
+<tr class="row-odd"><td>subprocess-errorlog-path</td>
 <td>(str) Log errors from subprocesses to
 a specific file</td>
 </tr>
-<tr class="row-odd"><td>ringbuffer-size</td>
+<tr class="row-even"><td>ringbuffer-size</td>
 <td>(int) The size of the internal ring
 buffer used by most stream types,
 default: <code class="docutils literal"><span class="pre">16777216</span></code> (16MB)</td>
 </tr>
-<tr class="row-even"><td>rtmp-proxy</td>
+<tr class="row-odd"><td>rtmp-proxy</td>
 <td>(str) Specify a proxy (SOCKS) that RTMP
 streams will use</td>
 </tr>
-<tr class="row-odd"><td>rtmp-rtmpdump</td>
+<tr class="row-even"><td>rtmp-rtmpdump</td>
 <td>(str) Specify the location of the
 rtmpdump executable used by RTMP streams,
 e.g. <code class="docutils literal"><span class="pre">/usr/local/bin/rtmpdump</span></code></td>
 </tr>
-<tr class="row-even"><td>rtmp-timeout</td>
+<tr class="row-odd"><td>rtmp-timeout</td>
 <td>(float) Timeout for reading data from
 RTMP streams, default: <code class="docutils literal"><span class="pre">60.0</span></code></td>
 </tr>
-<tr class="row-odd"><td>ffmpeg-ffmpeg</td>
+<tr class="row-even"><td>ffmpeg-ffmpeg</td>
 <td>(str) Specify the location of the
 ffmpeg executable use by Muxing streams
 e.g. <code class="docutils literal"><span class="pre">/usr/local/bin/ffmpeg</span></code></td>
 </tr>
-<tr class="row-even"><td>ffmpeg-verbose</td>
+<tr class="row-odd"><td>ffmpeg-verbose</td>
 <td>(bool) Log stderr from ffmpeg to the
 console</td>
 </tr>
-<tr class="row-odd"><td>ffmpeg-verbose-path</td>
+<tr class="row-even"><td>ffmpeg-verbose-path</td>
 <td>(str) Specify the location of the
 ffmpeg stderr log file</td>
 </tr>
-<tr class="row-even"><td>ffmpeg-video-transcode</td>
+<tr class="row-odd"><td>ffmpeg-video-transcode</td>
 <td>(str) The codec to use if transcoding
 video when muxing with ffmpeg
 e.g. <code class="docutils literal"><span class="pre">h264</span></code></td>
 </tr>
-<tr class="row-odd"><td>ffmpeg-audio-transcode</td>
+<tr class="row-even"><td>ffmpeg-audio-transcode</td>
 <td>(str) The codec to use if transcoding
 audio when muxing with ffmpeg
 e.g. <code class="docutils literal"><span class="pre">aac</span></code></td>
 </tr>
-<tr class="row-even"><td>stream-segment-attempts</td>
+<tr class="row-odd"><td>stream-segment-attempts</td>
 <td>(int) How many attempts should be done
 to download each segment, default: <code class="docutils literal"><span class="pre">3</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-odd"><td>stream-segment-threads</td>
+<tr class="row-even"><td>stream-segment-threads</td>
 <td>(int) The size of the thread pool used
 to download segments, default: <code class="docutils literal"><span class="pre">1</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-even"><td>stream-segment-timeout</td>
+<tr class="row-odd"><td>stream-segment-timeout</td>
 <td>(float) Segment connect and read
 timeout, default: <code class="docutils literal"><span class="pre">10.0</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-odd"><td>stream-timeout</td>
+<tr class="row-even"><td>stream-timeout</td>
 <td>(float) Timeout for reading data from
 stream, default: <code class="docutils literal"><span class="pre">60.0</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-even"><td>locale</td>
+<tr class="row-odd"><td>locale</td>
 <td>(str) Locale setting, in the RFC 1766 format
 eg. en_US or es_ES
 default: <code class="docutils literal"><span class="pre">system</span> <span class="pre">locale</span></code>.</td>
 </tr>
-<tr class="row-odd"><td>user-input-requester</td>
+<tr class="row-even"><td>user-input-requester</td>
 <td>(UserInputRequester) instance of UserInputRequester
 to collect input from the user at runtime. Must be
 set before the plugins are loaded.
@@ -1005,7 +1012,7 @@ with this exception.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.3.1',
+            VERSION:'1.4.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

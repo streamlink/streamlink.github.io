@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Streamlink 1.3.1 documentation</title>
+  <title>Index &mdash; Streamlink 1.4.0 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
         <link rel="index" title="Index"
               href="#"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.3.1 documentation" href="index.html"/> 
+    <link rel="top" title="Streamlink 1.4.0 documentation" href="index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -52,7 +52,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.3.1</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.4.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -76,7 +76,7 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html#macos">macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd">Linux and BSD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#package-maintainers">Package maintainers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#source-code">Source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#pypi-package-and-source-code">PyPI package and source code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
 </ul>
 </li>
@@ -119,6 +119,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-0-2020-04-22">streamlink 1.4.0 (2020-04-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-1-2020-01-27">streamlink 1.3.1 (2020-01-27)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-0-2019-11-22">streamlink 1.3.0 (2019-11-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-2-0-2019-08-18">streamlink 1.2.0 (2019-08-18)</a></li>
@@ -148,7 +149,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#streamlink-team">Streamlink Team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#bastimeyer">Bastimeyer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#beardypig">Beardypig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#gravyboat">Gravyboat</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
@@ -443,6 +446,13 @@
 </li>
       </ul></li>
       <li>
+    --force-progress
+
+      <ul>
+        <li><a href="cli.html#cmdoption-force-progress">command line option</a>
+</li>
+      </ul></li>
+      <li>
     --funimation-email
 
       <ul>
@@ -559,6 +569,13 @@
 
       <ul>
         <li><a href="cli.html#cmdoption-hls-segment-key-uri">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --hls-segment-stream-data
+
+      <ul>
+        <li><a href="cli.html#cmdoption-hls-segment-stream-data">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -695,6 +712,27 @@
 </li>
       </ul></li>
       <li>
+    --niconico-email EMAIL
+
+      <ul>
+        <li><a href="cli.html#cmdoption-niconico-email">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --niconico-password PASSWORD
+
+      <ul>
+        <li><a href="cli.html#cmdoption-niconico-password">command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --niconico-user-session VALUE
+
+      <ul>
+        <li><a href="cli.html#cmdoption-niconico-user-session">command line option</a>
+</li>
+      </ul></li>
+      <li>
     --openrectv-email EMAIL
 
       <ul>
@@ -708,18 +746,13 @@
         <li><a href="cli.html#cmdoption-openrectv-password">command line option</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     --pixiv-devicetoken DEVICETOKEN
 
       <ul>
         <li><a href="cli.html#cmdoption-pixiv-devicetoken">command line option</a>
-</li>
-      </ul></li>
-      <li>
-    --pixiv-password PASSWORD
-
-      <ul>
-        <li><a href="cli.html#cmdoption-pixiv-password">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -736,20 +769,11 @@
         <li><a href="cli.html#cmdoption-pixiv-purge-credentials">command line option</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     --pixiv-sessionid SESSIONID
 
       <ul>
         <li><a href="cli.html#cmdoption-pixiv-sessionid">command line option</a>
-</li>
-      </ul></li>
-      <li>
-    --pixiv-username USERNAME
-
-      <ul>
-        <li><a href="cli.html#cmdoption-pixiv-username">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -998,13 +1022,6 @@
 </li>
       </ul></li>
       <li>
-    --twitch-cookie COOKIES
-
-      <ul>
-        <li><a href="cli.html#cmdoption-twitch-cookie">command line option</a>
-</li>
-      </ul></li>
-      <li>
     --twitch-disable-ads
 
       <ul>
@@ -1026,17 +1043,10 @@
 </li>
       </ul></li>
       <li>
-    --twitch-oauth-authenticate
+    --twitch-low-latency
 
       <ul>
-        <li><a href="cli.html#cmdoption-twitch-oauth-authenticate">command line option</a>
-</li>
-      </ul></li>
-      <li>
-    --twitch-oauth-token TOKEN
-
-      <ul>
-        <li><a href="cli.html#cmdoption-twitch-oauth-token">command line option</a>
+        <li><a href="cli.html#cmdoption-twitch-low-latency">command line option</a>
 </li>
       </ul></li>
       <li>
@@ -1336,6 +1346,8 @@
 </li>
         <li><a href="cli.html#cmdoption-ffmpeg-video-transcode">--ffmpeg-video-transcode CODEC</a>
 </li>
+        <li><a href="cli.html#cmdoption-force-progress">--force-progress</a>
+</li>
         <li><a href="cli.html#cmdoption-funimation-email">--funimation-email</a>
 </li>
         <li><a href="cli.html#cmdoption-funimation-language">--funimation-language</a>
@@ -1369,6 +1381,8 @@
         <li><a href="cli.html#cmdoption-hls-segment-ignore-names">--hls-segment-ignore-names NAMES</a>
 </li>
         <li><a href="cli.html#cmdoption-hls-segment-key-uri">--hls-segment-key-uri URI</a>
+</li>
+        <li><a href="cli.html#cmdoption-hls-segment-stream-data">--hls-segment-stream-data</a>
 </li>
         <li><a href="cli.html#cmdoption-hls-segment-threads">--hls-segment-threads THREADS</a>
 </li>
@@ -1408,21 +1422,23 @@
 </li>
         <li><a href="cli.html#cmdoption-locale">--locale LOCALE</a>
 </li>
+        <li><a href="cli.html#cmdoption-niconico-email">--niconico-email EMAIL</a>
+</li>
+        <li><a href="cli.html#cmdoption-niconico-password">--niconico-password PASSWORD</a>
+</li>
+        <li><a href="cli.html#cmdoption-niconico-user-session">--niconico-user-session VALUE</a>
+</li>
         <li><a href="cli.html#cmdoption-openrectv-email">--openrectv-email EMAIL</a>
 </li>
         <li><a href="cli.html#cmdoption-openrectv-password">--openrectv-password PASSWORD</a>
 </li>
         <li><a href="cli.html#cmdoption-pixiv-devicetoken">--pixiv-devicetoken DEVICETOKEN</a>
 </li>
-        <li><a href="cli.html#cmdoption-pixiv-password">--pixiv-password PASSWORD</a>
-</li>
         <li><a href="cli.html#cmdoption-pixiv-performer">--pixiv-performer USER</a>
 </li>
         <li><a href="cli.html#cmdoption-pixiv-purge-credentials">--pixiv-purge-credentials</a>
 </li>
         <li><a href="cli.html#cmdoption-pixiv-sessionid">--pixiv-sessionid SESSIONID</a>
-</li>
-        <li><a href="cli.html#cmdoption-pixiv-username">--pixiv-username USERNAME</a>
 </li>
         <li><a href="cli.html#cmdoption-player-continuous-http">--player-continuous-http</a>
 </li>
@@ -1494,17 +1510,13 @@
 </li>
         <li><a href="cli.html#cmdoption-tvplayer-password">--tvplayer-password PASSWORD</a>
 </li>
-        <li><a href="cli.html#cmdoption-twitch-cookie">--twitch-cookie COOKIES</a>
-</li>
         <li><a href="cli.html#cmdoption-twitch-disable-ads">--twitch-disable-ads</a>
 </li>
         <li><a href="cli.html#cmdoption-twitch-disable-hosting">--twitch-disable-hosting</a>
 </li>
         <li><a href="cli.html#cmdoption-twitch-disable-reruns">--twitch-disable-reruns</a>
 </li>
-        <li><a href="cli.html#cmdoption-twitch-oauth-authenticate">--twitch-oauth-authenticate</a>
-</li>
-        <li><a href="cli.html#cmdoption-twitch-oauth-token">--twitch-oauth-token TOKEN</a>
+        <li><a href="cli.html#cmdoption-twitch-low-latency">--twitch-low-latency</a>
 </li>
         <li><a href="cli.html#cmdoption-url">--url URL</a>
 </li>
@@ -1704,7 +1716,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#streamlink.Streamlink">Streamlink (class in streamlink)</a>
 </li>
-      <li><a href="api.html#module-streamlink">streamlink (module)</a>, <a href="api_guide.html#module-streamlink">[1]</a>
+      <li><a href="api.html#module-streamlink">streamlink (module)</a>
 </li>
       <li><a href="api.html#module-streamlink.options">streamlink.options (module)</a>
 </li>
@@ -1766,7 +1778,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.3.1',
+            VERSION:'1.4.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

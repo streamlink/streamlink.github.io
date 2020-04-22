@@ -1,3 +1,4 @@
+./.buildinfo
 ./_sources/api.rst.txt
 ./_sources/api_guide.rst.txt
 ./_sources/applications.rst.txt
@@ -10,7 +11,6 @@
 ./_sources/players.rst.txt
 ./_sources/plugin_matrix.rst.txt
 ./_sources/thirdparty.rst.txt
-./_sources/twitch_oauth.rst.txt
 ./_static/ajax-loader.gif
 ./_static/basic.css
 ./_static/comment-bright.png
@@ -56,4 +56,3 @@
 ./search.html
 ./searchindex.js
 ./thirdparty.html
-./twitch_oauth.html
