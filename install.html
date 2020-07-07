@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Streamlink 1.4.1 documentation</title>
+  <title>Installation &mdash; Streamlink 1.5.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.4.1 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.5.0 documentation" href="index.html"/>
         <link rel="next" title="Command-Line Interface" href="cli.html"/>
         <link rel="prev" title="Overview" href="index.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.4.1</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -120,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-5-0-2020-07-07">streamlink 1.5.0 (2020-07-07)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-1-2020-04-24">streamlink 1.4.1 (2020-04-24)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-0-2020-04-22">streamlink 1.4.0 (2020-04-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-1-2020-01-27">streamlink 1.3.1 (2020-01-27)</a></li>
@@ -242,6 +243,13 @@
 <p class="last"><a class="reference external" href="https://chocolatey.org">Installing Chocolatey packages</a></p>
 </td>
 </tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/Streamlink/Streamlink">Windows Package Manager</a></td>
+<td><div class="first highlight-bat"><div class="highlight"><pre><span></span>winget install streamlink
+</pre></div>
+</div>
+<p class="last"><a class="reference external" href="https://docs.microsoft.com/en-us/windows/package-manager/">Installing Winget packages</a></p>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -278,8 +286,8 @@
 <h2>Linux and BSD<a class="headerlink" href="#linux-and-bsd" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="table-custom-layout docutils">
 <colgroup>
-<col width="21%" />
-<col width="79%" />
+<col width="24%" />
+<col width="76%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Distribution</th>
@@ -309,13 +317,15 @@ sudo apt install streamlink
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://bintray.com/amurzeau/streamlink-debian/streamlink">Debian (stable)</a></td>
-<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>wget -qO- <span class="s2">&quot;https://bintray.com/user/downloadSubjectPublicKey?username=amurzeau&quot;</span> <span class="p">|</span> sudo apt-key add -
-<span class="nb">echo</span> <span class="s2">&quot;deb https://dl.bintray.com/amurzeau/streamlink-debian stretch-backports main&quot;</span> <span class="p">|</span> sudo tee <span class="s2">&quot;/etc/apt/sources.list.d/streamlink.list&quot;</span>
+<tr class="row-odd"><td><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (stable)</a></td>
+<td><div class="first highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># If you don&#39;t have Debian backports already (see link below):</span>
+<span class="nb">echo</span> <span class="s2">&quot;deb http://deb.debian.org/debian buster-backports main&quot;</span> <span class="p">|</span> sudo tee <span class="s2">&quot;/etc/apt/sources.list.d/streamlink.list&quot;</span>
+
 sudo apt update
 sudo apt install streamlink
 </pre></div>
 </div>
+<p class="last"><a class="reference external" href="https://wiki.debian.org/Backports#Using_the_command_line">Installing Debian backported packages</a></p>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://apps.fedoraproject.org/packages/python-streamlink">Fedora</a></td>
@@ -611,11 +621,6 @@ audio and video streams, eg. YouTube 1080p+</td>
 </div>
 <div class="section" id="windows-binaries">
 <h2>Windows binaries<a class="headerlink" href="#windows-binaries" title="Permalink to this headline">¶</a></h2>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Windows XP is not supported. <br />
-Windows Vista requires at least SP2 to be installed.</p>
-</div>
 <table border="1" class="table-custom-layout docutils">
 <colgroup>
 <col width="30%" />
@@ -719,7 +724,7 @@ from the command prompt or powershell without specifying its directory.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.4.1',
+            VERSION:'1.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

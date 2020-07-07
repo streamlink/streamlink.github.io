@@ -29,7 +29,6 @@ ard_mediathek           - ardmediathek.de    Yes   Yes   Streams may be geo-rest
 artetv                  arte.tv              Yes   Yes
 atresplayer             atresplayer.com      Yes   No    Streams are geo-restricted to Spain.
 bbciplayer              bbc.co.uk/iplayer    Yes   Yes   Streams may be geo-restricted to the United Kingdom.
-beattv                  be-at.tv             Yes   Yes   Playlist not implemented yet.
 bfmtv                   bfmtv.com            Yes   Yes
                         01net.com
 bigo                    - live.bigo.tv       Yes   --
@@ -38,18 +37,17 @@ bilibili                live.bilibili.com    Yes   ?
 bloomberg               bloomberg.com        Yes   Yes
 brightcove              players.brig... [6]_ Yes   Yes
 btsports                sport.bt.com         Yes   Yes   Requires subscription account
-btv                     btv.bg               Yes   No    Requires login, and geo-restricted to Bulgaria.
+btv                     btvplus.bg           Yes   No    Streams are geo-restricted to Bulgaria.
 canalplus               mycanal.fr           No    Yes   Streams may be geo-restricted to France.
 cdnbg                   - tv.bnt.bg          Yes   No    Streams may be geo-restricted to Bulgaria.
                         - bgonair.bg
-                        - bitelevision.com
                         - bloombergtv.bg
-                        - bstv.bg
-                        - inlife.bg
-                        - kanal3.bg
                         - mmtvmusic.com
                         - mu-vi.tv
                         - nova.bg
+                        - armymedia.bg
+                        - chernomore.bg
+                        - i.cdn.bg
 ceskatelevize           ceskatelevize.cz     Yes   Yes   Streams may be geo-restricted to Czechia.
 cinergroup              - showtv.com.tr      Yes   No
                         - haberturk.com
@@ -123,9 +121,10 @@ ltv_lsm_lv              ltv.lsm.lv           Yes   No    Streams may be geo-rest
 mediaklikk              mediaklikk.hu        Yes   No    Streams may be geo-restricted to Hungary.
 metube                  metube.id            Yes   Yes
 mitele                  mitele.es            Yes   No    Streams may be geo-restricted to Spain.
-mixer                   mixer.com            Yes   Yes
 mjunoon                 mjunoon.tv           Yes   Yes
+n13tv                   13tv.co.il           Yes   Yes   Streams may be geo-restricted to Israel.
 nbc                     nbc.com              No    Yes   Streams are geo-restricted to USA. Authentication is not supported.
+nbcnews                 nbcnews.com          Yes   No
 nbcsports               nbcsports.com        No    Yes   Streams maybe be geo-restricted to USA. Authentication is not supported.
 nhkworld                nhk.or.jp/nhkworld   Yes   No
 nicolive                live.nicovideo.jp    Yes   Yes   Timeshift is supported. Some content may require login.
@@ -169,7 +168,6 @@ radionet                - radio.net          Yes   --
                         - radio.pt
                         - radio.se
 raiplay                 raiplay.it           Yes   No    Most streams are geo-restricted to Italy.
-reshet                  reshet.tv            Yes   Yes   Streams may be geo-restricted to Israel.
 reuters                 reuters.tv           Yes   Yes
 rotana                  rotana.net           Yes   --    Streams are geo-restricted to Saudi Arabia.
 rtbf                    - rtbf.be/auvio      Yes   Yes   Streams may be geo-restricted to Belgium or Europe.
@@ -239,8 +237,6 @@ tv5monde                - tv5monde.com       Yes   Yes   Streams may be geo-rest
 tv8                     tv8.com.tr           Yes   No
 tv360                   tv360.com.tr         Yes   No
 tvibo                   player.tvibo.com     Yes   --
-tvnbg                   - tvn.bg             Yes   -
-                        - live.tvn.bg
 tvp                     tvpstream.vod.tvp.pl Yes   No    Streams may be geo-restricted to Poland.
 tvplayer                tvplayer.com         Yes   No    Streams may be geo-restricted to Great Britain. Premium streams are not supported.
 tvrby                   tvr.by               Yes   No    Streams may be geo-restricted to Belarus.
@@ -256,7 +252,6 @@ vaughnlive              - vaughnlive.tv      Yes   --
                         - instagib.tv
                         - vapers.tv
 viasat                  - juicyplay.dk       Yes   Yes   Streams may be geo-restricted.
-                        - play.nova.bg
                         - skaties.lv
                         - tv3.dk
                         - tv3.ee
