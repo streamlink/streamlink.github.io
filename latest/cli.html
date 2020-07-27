@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 1.5.0+8.g8374168 documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 1.5.0+9.gbf1460c documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.5.0+8.g8374168 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.5.0+9.gbf1460c documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0+8.g8374168</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0+9.gbf1460c</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -1101,6 +1101,19 @@ giving up.</p>
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption-hls-playlist-reload-time">
+<code class="descname">--hls-playlist-reload-time</code><code class="descclassname"> TIME</code><a class="headerlink" href="#cmdoption-hls-playlist-reload-time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a custom HLS playlist reload time value, either in seconds
+or by using one of the following keywords:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">segment</span><span class="p">:</span> <span class="n">The</span> <span class="n">duration</span> <span class="n">of</span> <span class="n">the</span> <span class="n">last</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">playlist</span>
+<span class="n">live</span><span class="o">-</span><span class="n">edge</span><span class="p">:</span> <span class="n">The</span> <span class="nb">sum</span> <span class="n">of</span> <span class="n">segment</span> <span class="n">durations</span> <span class="n">of</span> <span class="n">the</span> <span class="n">live</span> <span class="n">edge</span> <span class="n">value</span> <span class="n">minus</span> <span class="n">one</span>
+<span class="n">default</span><span class="p">:</span> <span class="n">The</span> <span class="n">playlist</span><span class="s1">&#39;s target duration metadata</span>
+</pre></div>
+</div>
+<p>Default is: <strong>default</strong>.</p>
+</dd></dl>
+
+<dl class="option">
 <dt id="cmdoption-hls-segment-threads">
 <code class="descname">--hls-segment-threads</code><code class="descclassname"> THREADS</code><a class="headerlink" href="#cmdoption-hls-segment-threads" title="Permalink to this definition">¶</a></dt>
 <dd><p>The size of the thread pool used to download HLS segments. Minimum value
@@ -1880,7 +1893,7 @@ the following types are allowed:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0+8.g8374168',
+            VERSION:'1.5.0+9.gbf1460c',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
