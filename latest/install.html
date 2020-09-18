@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Streamlink 1.5.0+28.gebc791a documentation</title>
+  <title>Installation &mdash; Streamlink 1.5.0+31.g1913115 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.5.0+28.gebc791a documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.5.0+31.g1913115 documentation" href="index.html"/>
         <link rel="next" title="Command-Line Interface" href="cli.html"/>
         <link rel="prev" title="Overview" href="index.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0+28.gebc791a</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0+31.g1913115</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -262,8 +262,8 @@
 <h2>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="table-custom-layout docutils">
 <colgroup>
-<col width="46%" />
-<col width="54%" />
+<col width="40%" />
+<col width="60%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Method</th>
@@ -271,11 +271,8 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Easy install</td>
-<td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>sudo easy_install -U streamlink
-</pre></div>
-</div>
-</td>
+<tr class="row-even"><td>Python pip</td>
+<td>See the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> section below</td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://github.com/Homebrew/homebrew-core/blob/master/Formula/streamlink.rb">Homebrew</a></td>
 <td><div class="first highlight-bash"><div class="highlight"><pre><span></span>brew install streamlink
@@ -356,7 +353,7 @@ sudo make install clean
 <td><div class="first highlight-bash"><div class="highlight"><pre><span></span>nix-env -iA nixos.streamlink
 </pre></div>
 </div>
-<p class="last"><a class="reference external" href="https://nixos.org/nixos/packages.html#streamlink">NixOS channel</a></p>
+<p class="last"><a class="reference external" href="https://search.nixos.org/packages?show=streamlink&amp;query=streamlink">NixOS channel</a></p>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="http://openports.se/multimedia/streamlink">OpenBSD</a></td>
@@ -453,7 +450,8 @@ beardypig &lt;beardypig at protonmail.com&gt;</td>
 Streamlink can be installed via <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>, the Python package manager.</p>
 <p>In addition to using <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>, Streamlink can also be installed from source
 via <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/">setuptools</a> after cloning the <a class="reference external" href="https://git-scm.com/">git</a> repository.</p>
-<p>Using <strong class="command">easy_install</strong> is no longer recommended.</p>
+<p>Before running <strong class="command">pip</strong>, make sure that it's the Python 3 version of <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a> (to check, run <strong class="command">pip --version</strong>).
+On some systems, this isn't the case by default and an alternative, like <strong class="command">pip3</strong> for example, needs to be run instead.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>On some Linux distributions, the Python headers package needs to be installed before installing Streamlink
@@ -729,7 +727,7 @@ from the command prompt or powershell without specifying its directory.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0+28.gebc791a',
+            VERSION:'1.5.0+31.g1913115',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
