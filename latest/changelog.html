@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Streamlink 1.5.0+43.g1cf38c6 documentation</title>
+  <title>Changelog &mdash; Streamlink 1.5.0+45.g4fa902f documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.5.0+43.g1cf38c6 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.5.0+45.g4fa902f documentation" href="index.html"/>
         <link rel="next" title="Donating" href="donate.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0+43.g1cf38c6</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0+45.g4fa902f</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -120,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-1-6-0-2020-09-22">streamlink 1.6.0 (2020-09-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-5-0-2020-07-07">streamlink 1.5.0 (2020-07-07)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-4-1-2020-04-24">streamlink 1.4.1 (2020-04-24)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-4-0-2020-04-22">streamlink 1.4.0 (2020-04-22)</a></li>
@@ -222,6 +223,86 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-1-6-0-2020-09-22">
+<h2>streamlink 1.6.0 (2020-09-22)<a class="headerlink" href="#streamlink-1-6-0-2020-09-22" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li>Fixed: lots of broken plugins and minor plugin issues (see changelog down below)</li>
+<li>Fixed: embedded ads on Twitch with an ads workaround, removing pre-roll and mid-stream ads (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3173"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3173">#3173</a></a>)</li>
+<li>Fixed: read timeout error when filtering out HLS segments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3187"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3187">#3187</a></a>)</li>
+<li>Fixed: twitch plugin logging incorrect low-latency status when pre-roll ads exist (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3169"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3169">#3169</a></a>)</li>
+<li>Fixed: crunchyroll auth logic (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3150"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3150">#3150</a></a>)</li>
+<li>Added: the <code class="docutils literal"><span class="pre">--hls-playlist-reload-time</span></code> parameter for customizing HLS playlist reload times (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/2925"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/2925">#2925</a></a>)</li>
+<li>Added: <code class="docutils literal"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">streamlink</span></code> invocation style support (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3174"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3174">#3174</a></a>)</li>
+<li>Added: plugin for mrt.com.mk (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3097"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3097">#3097</a></a>)</li>
+<li>Changed: yupptv plugin and replaced email+pass with id+token authentication (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3116"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3116">#3116</a></a>)</li>
+<li>Removed: plugins for vaughnlive, pandatv, douyutv, cybergame, europaplus and startv</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (11):
+      docs: update turkuvaz plugin matrix entry (#3114)
+      docs: Add reuters.com for reuters plugin entry in plugin matrix (#3124)
+      Fix formatting for reuters plugin entry
+      plugins.huomao: fix/rewrite (#3126)
+      plugins.drdk: fix livestreams (#3115)
+      plugins.tvplayer: update regex and tests for /uk/ URLs
+      plugins.tv360: fix HLS URL regex and plugin (#3185)
+      plugins: fix unescaped literal dots in url_re entries (#3192)
+      plugins.svtplay: rewrite/fix (#3155)
+      plugins.yupptv: fix/minor rewrite (#3116)
+      plugins.ine: fix unescaped literal dots in js_re (#3196)
+
+Il Harper &lt;afanyiyu@hotmail.com&gt; (2):
+      Add OBS-Streamlink into thirdparty.rst
+      Apply suggestions from code review
+
+PleasantMachine9 &lt;65126927+PleasantMachine9@users.noreply.github.com&gt; (1):
+      support `python -m` cli invocation
+
+Sebastian Meyer &lt;mail@bastimeyer.de&gt; (4):
+      plugins.bloomberg: fix regex module anchor (#3131)
+      plugins.sportschau: rewrite and fix plugin (#3142)
+      plugins.raiplay: rewrite and fix plugin (#3147)
+      plugins.twitch: refactor worker, parser and tests (#3169)
+
+Tr4sK &lt;tr4sk+github@biboum.fr&gt; (1):
+      plugins.mrtmk: new plugin for http://play.mrt.com.mk/ (#3097)
+
+Yahya &lt;5457202+anakaiti@users.noreply.github.com&gt; (1):
+      docs: update reference to minimum VLC version
+
+back-to &lt;backto@protonmail.ch&gt; (9):
+      plugins.vaughnlive: removed
+      plugins.pandatv: removed
+      plugins.douyutv: removed
+      plugins.tv8: fix plugin with new api
+      plugins.cybergame: removed
+      plugins.europaplus: remove plugin
+      plugins.vk: remove &#39;\&#39; from data
+      plugins.nicolive: fix quality
+      plugins.wasd: fixed plugin (#3139)
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (8):
+      stream.hls: customizable playlist reload times
+      plugins.twitch: platform=_ in access_token request
+      docs: fix NixOS link
+      docs: replace easy_install macOS entry with pip
+      docs: add comment regarding pip/pip3 differences
+      stream.hls_filtered: implement FilteredHLSStream
+      plugins.twitch: use FilteredHLS{Writer,Reader}
+      stream.hls_filtered: fix tests
+
+beardypig &lt;beardypig@protonmail.com&gt; (1):
+      plugins.crunchyroll: update auth logic
+
+derFogel &lt;derFogel@users.noreply.github.com&gt; (1):
+      plugins.zattoo: fix quantum tv streaming (#3108)
+
+hymer-up &lt;34783904+hymer-up@users.noreply.github.com&gt; (2):
+      plugins.startv: remove plugin (#3163)
+      plugins.dogus: add startv URL (#3161)
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-1-5-0-2020-07-07">
 <h2>streamlink 1.5.0 (2020-07-07)<a class="headerlink" href="#streamlink-1-5-0-2020-07-07" title="Permalink to this headline">¶</a></h2>
 <p>A minor release with fixes for <code class="docutils literal"><span class="pre">pycountry==20.7.3</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3057"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3057">#3057</a></a>) and a few plugin additions and removals.</p>
@@ -2827,7 +2908,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0+43.g1cf38c6',
+            VERSION:'1.5.0+45.g4fa902f',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
