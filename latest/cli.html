@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 1.5.0+38.ge5b67df documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 1.5.0+42.g09ec66b documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.5.0+38.ge5b67df documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.5.0+42.g09ec66b documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0+38.ge5b67df</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0+42.g09ec66b</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -1815,15 +1815,24 @@ required to access any WWE Network stream.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-yupptv-email">
-<code class="descname">--yupptv-email</code><code class="descclassname"> EMAIL</code><a class="headerlink" href="#cmdoption-yupptv-email" title="Permalink to this definition">¶</a></dt>
-<dd><p>Your YuppTV account email</p>
+<dt id="cmdoption-yupptv-boxid">
+<code class="descname">--yupptv-boxid</code><code class="descclassname"> BOXID</code><a class="headerlink" href="#cmdoption-yupptv-boxid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The yupptv.com boxid that's used in the BoxId cookie.
+Can be used instead of the username/password login process.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-yupptv-password">
-<code class="descname">--yupptv-password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-yupptv-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>Your YuppTV account password.</p>
+<dt id="cmdoption-yupptv-yuppflixtoken">
+<code class="descname">--yupptv-yuppflixtoken</code><code class="descclassname"> YUPPFLIXTOKEN</code><a class="headerlink" href="#cmdoption-yupptv-yuppflixtoken" title="Permalink to this definition">¶</a></dt>
+<dd><p>The yupptv.com yuppflixtoken that's used in the YuppflixToken cookie.
+Can be used instead of the username/password login process.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-yupptv-purge-credentials">
+<code class="descname">--yupptv-purge-credentials</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-yupptv-purge-credentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Purge cached YuppTV credentials to initiate a new session
+and reauthenticate.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1899,7 +1908,7 @@ the following types are allowed:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0+38.ge5b67df',
+            VERSION:'1.5.0+42.g09ec66b',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
