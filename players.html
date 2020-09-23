@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Players &mdash; Streamlink 1.5.0 documentation</title>
+  <title>Players &mdash; Streamlink 1.6.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.5.0 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.6.0 documentation" href="index.html"/>
         <link rel="next" title="Common issues" href="issues.html"/>
         <link rel="prev" title="Plugins" href="plugin_matrix.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.5.0</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.6.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -120,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-6-0-2020-09-22">streamlink 1.6.0 (2020-09-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-5-0-2020-07-07">streamlink 1.5.0 (2020-07-07)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-1-2020-04-24">streamlink 1.4.1 (2020-04-24)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-0-2020-04-22">streamlink 1.4.0 (2020-04-22)</a></li>
@@ -164,6 +165,7 @@
 <li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="thirdparty.html#liveproxy">LiveProxy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thirdparty.html#wtwitch">Wtwitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#obs-streamlink">OBS-Streamlink</a></li>
 </ul>
 </li>
 </ul>
@@ -368,9 +370,8 @@ rtmpdump. Using the 32-bit version of VLC might help.</p>
 </div>
 <div class="section" id="youtube-live-does-not-work-with-vlc">
 <h3>Youtube Live does not work with VLC<a class="headerlink" href="#youtube-live-does-not-work-with-vlc" title="Permalink to this headline">¶</a></h3>
-<p>The stable version of VLC cannot play Youtube Live streams. This a known bug
-that is fixed in VLC 3, which is still in development. You can also try
-using a different player.</p>
+<p>VLC versions below 3 cannot play Youtube Live streams. Please update your
+player. You can also try using a different player.</p>
 </div>
 <div class="section" id="youtube-live-does-not-work-with-mplayer">
 <h3>Youtube Live does not work with Mplayer<a class="headerlink" href="#youtube-live-does-not-work-with-mplayer" title="Permalink to this headline">¶</a></h3>
@@ -426,7 +427,7 @@ For live streams it might be beneficial to also add the omxplayer parameter <cod
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.0',
+            VERSION:'1.6.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -58,7 +58,6 @@ clubbingtv              clubbingtv.com       Yes   Yes   Requires a login.
 cnews                   cnews.fr             Yes   Yes
 crunchyroll             crunchyroll.com      --    Yes
 cubetv                  cube.tv              Yes   --
-cybergame               cybergame.tv         Yes   Yes
 dailymotion             dailymotion.com      Yes   Yes
 delfi                   - delfi.lt           --    Yes
                         - delfi.ee
@@ -75,16 +74,14 @@ dogus                   - ntvspor.net        Yes   No
                         - kralmuzik.com.tr
                         - ntv.com.tr
                         - eurostartv.com.tr
+                        - startv.com.tr
 dommune                 dommune.com          Yes   --
-douyutv                 - douyu.com          Yes   Yes
-                        - v.douyu.com
-drdk                    dr.dk                Yes   Yes   Streams may be geo-restricted to Denmark.
+drdk                    dr.dk                Yes   No    Streams may be geo-restricted to Denmark.
 earthcam                earthcam.com         Yes   Yes   Only works for the cams hosted on EarthCam.
 egame                   egame.qq.com         Yes   No
 ellobo                  ellobo106.com        Yes   -
 eltrecetv               eltrecetv.com.ar     Yes   Yes   Streams may be geo-restricted to Argentina.
 euronews                euronews.com         Yes   No
-europaplus              europaplus.ru        Yes   --
 facebook                facebook.com         Yes   Yes
 filmon                  filmon.com           Yes   Yes   Only SD quality streams.
 foxtr                   fox.com.tr           Yes   No
@@ -101,7 +98,8 @@ gulli                   replay.gulli.fr      Yes   Yes   Streams may be geo-rest
 hitbox                  - hitbox.tv          Yes   Yes
                         - smashcast.tv
 huajiao                 huajiao.com          Yes   No
-huomao                  huomao.com           Yes   No
+huomao                  - huomao.com         Yes   Yes
+                        - huomao.tv
 huya                    huya.com             Yes   No    Temporarily only HLS streams available.
 idf1                    idf1.fr              Yes   Yes
 ine                     ine.com              ---   Yes
@@ -122,6 +120,7 @@ mediaklikk              mediaklikk.hu        Yes   No    Streams may be geo-rest
 metube                  metube.id            Yes   Yes
 mitele                  mitele.es            Yes   No    Streams may be geo-restricted to Spain.
 mjunoon                 mjunoon.tv           Yes   Yes
+mrtmk                   play.mrt.com.mk      Yes   Yes   Streams may be geo-restricted to North Macedonia.
 n13tv                   13tv.co.il           Yes   Yes   Streams may be geo-restricted to Israel.
 nbc                     nbc.com              No    Yes   Streams are geo-restricted to USA. Authentication is not supported.
 nbcnews                 nbcnews.com          Yes   No
@@ -143,7 +142,6 @@ onetv                   - 1tv.ru             Yes   Yes   Streams may be geo-rest
                         - domashny.ru
 openrectv               openrec.tv           Yes   Yes
 orf_tvthek              tvthek.orf.at        Yes   Yes
-pandatv                 panda.tv             Yes   ?
 periscope               periscope.tv         Yes   Yes   Replay/VOD is supported.
 picarto                 picarto.tv           Yes   Yes
 piczel                  piczel.tv            Yes   No
@@ -168,7 +166,8 @@ radionet                - radio.net          Yes   --
                         - radio.pt
                         - radio.se
 raiplay                 raiplay.it           Yes   No    Most streams are geo-restricted to Italy.
-reuters                 reuters.tv           Yes   Yes
+reuters                 - reuters.com        Yes   Yes
+                        - reuters.tv
 rotana                  rotana.net           Yes   --    Streams are geo-restricted to Saudi Arabia.
 rtbf                    - rtbf.be/auvio      Yes   Yes   Streams may be geo-restricted to Belgium or Europe.
                         - rtbfradioplayer.be
@@ -190,7 +189,6 @@ srgssr                  - srf.ch             Yes   No    Streams are geo-restric
                         - rtr.ch
 ssh101                  ssh101.com           Yes   No
 stadium                 watchstadium.com     Yes   No
-startv                  startv.com.tr        Yes   No
 steam                   steamcommunity.com   Yes   No    Some streams will require a Steam account.
 streamable              streamable.com       -     Yes
 streamingvideoprovider  streamingvid... [2]_ Yes   --    RTMP streams requires rtmpdump with
@@ -199,7 +197,6 @@ streamme                stream.me            Yes   --
 streann                 ott.streann.com      Yes   Yes
 stv                     player.stv.tv        Yes   No    Streams are geo-restricted to Great Britain.
 svtplay                 - svtplay.se         Yes   Yes   Streams may be geo-restricted to Sweden.
-                        - svtflow.se
                         - oppetarkiv.se
 swisstxt                - srf.ch             Yes   No    Streams are geo-restricted to Switzerland.
                         - rsi.ch
@@ -218,7 +215,7 @@ tigerdile               tigerdile.com        Yes   --
 tlctr                   tlctv.com.tr         Yes   No
 trt                     trt.net.tr           Yes   No    Some streams may be geo-restricted to Turkey.
 trtspor                 trtspor.com          Yes   No    Some streams are geo-restricted to Turkey.
-turkuvaz                - atv.com.tr         Yes   No
+turkuvaz                - atv.com.tr         Yes   No    Streams may be geo-restricted.
                         - a2tv.com.tr
                         - ahaber.com.tr
                         - anews.com.tr
@@ -247,10 +244,6 @@ twitch                  twitch.tv            Yes   Yes
 ustreamtv               - ustream.tv         Yes   Yes
                         - video.ibm.com
 ustvnow                 ustvnow.com          Yes   --    All streams require an account, some streams require a subscription.
-vaughnlive              - vaughnlive.tv      Yes   --
-                        - breakers.tv
-                        - instagib.tv
-                        - vapers.tv
 viasat                  - juicyplay.dk       Yes   Yes   Streams may be geo-restricted.
                         - skaties.lv
                         - tv3.dk
@@ -268,7 +261,7 @@ vk                      vk.com               Yes   Yes
 vlive                   vlive.tv             Yes   No    Embedded Naver VODs are not supported.
 vrtbe                   vrt.be/vrtnu         Yes   Yes
 vtvgo                   vtvgo.vn             Yes   No
-wasd                    wasd.tv              Yes   Yes
+wasd                    wasd.tv              Yes   No
 webcast_india_gov       webcast.gov.in       Yes   No    You can use #Channel to indicate CH number.
 webtv                   web.tv               Yes   --
 welt                    welt.de              Yes   Yes   Streams may be geo-restricted to Germany.
