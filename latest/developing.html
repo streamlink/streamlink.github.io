@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Players &mdash; Streamlink 1.6.0+40.g6dd920f documentation</title>
+  <title>Developing &mdash; Streamlink 1.6.0+40.g6dd920f documentation</title>
   
 
   
@@ -29,8 +29,8 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Streamlink 1.6.0+40.g6dd920f documentation" href="index.html"/>
-        <link rel="next" title="Common issues" href="issues.html"/>
-        <link rel="prev" title="Plugins" href="plugin_matrix.html"/> 
+        <link rel="next" title="API Guide" href="api_guide.html"/>
+        <link rel="prev" title="Common issues" href="issues.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -93,19 +93,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Players</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#transport-modes">Transport modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#player-compatibility">Player compatibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#known-issues-and-workarounds">Known issues and workarounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="players.html#transport-modes">Transport modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#player-compatibility">Player compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#validating-changes">Validating changes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#validating-changes">Validating changes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
@@ -212,7 +212,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Players</li>
+    <li>Developing</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -226,176 +226,100 @@
             </div>
             
             
-  <div class="section" id="players">
-<span id="id1"></span><h1>Players<a class="headerlink" href="#players" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="transport-modes">
-<h2>Transport modes<a class="headerlink" href="#transport-modes" title="Permalink to this headline">¶</a></h2>
-<p>There are three different modes of transporting the stream to the player.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="28%" />
-<col width="72%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Standard input pipe</td>
-<td>This is the default behaviour when there are no other
-options specified.</td>
-</tr>
-<tr class="row-odd"><td>Named pipe (FIFO)</td>
-<td>Use the <a class="reference internal" href="cli.html#cmdoption-n"><code class="xref std std-option docutils literal"><span class="pre">--player-fifo</span></code></a> option to enable.</td>
-</tr>
-<tr class="row-even"><td>HTTP</td>
-<td>Use the <a class="reference internal" href="cli.html#cmdoption-player-http"><code class="xref std std-option docutils literal"><span class="pre">--player-http</span></code></a> or
-<a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> options to enable.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="player-compatibility">
-<h2>Player compatibility<a class="headerlink" href="#player-compatibility" title="Permalink to this headline">¶</a></h2>
-<p>This is a list of video players and their compatibility with the transport
-modes.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="65%" />
-<col width="12%" />
-<col width="12%" />
-<col width="10%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Stdin Pipe</th>
-<th class="head">Named Pipe</th>
-<th class="head">HTTP</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><a class="reference external" href="http://potplayer.daum.net">Daum Pot Player</a></td>
-<td>Yes</td>
-<td>No</td>
-<td>Yes <a class="footnote-reference" href="#id7" id="id2">[1]</a></td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="http://mpc-hc.org/">MPC-HC</a></td>
-<td>Yes <a class="footnote-reference" href="#id8" id="id3">[2]</a></td>
-<td>No</td>
-<td>Yes <a class="footnote-reference" href="#id7" id="id4">[1]</a></td>
-</tr>
-<tr class="row-even"><td><a class="reference external" href="http://mplayerhq.hu">MPlayer</a></td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="http://mpv.io">mpv</a></td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr class="row-even"><td><a class="reference external" href="http://apple.com/quicktime">QuickTime</a></td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="http://videolan.org">VLC media player</a></td>
-<td>Yes <a class="footnote-reference" href="#id9" id="id5">[3]</a></td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr class="row-even"><td>OMXPlayer</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes <a class="footnote-reference" href="#id10" id="id6">[4]</a></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> must be used.
-Using HTTP with players that rely on Windows' codecs to access HTTP
-streams may have a long startup time since Windows tend to do multiple
-HTTP requests and Streamlink will attempt to open the stream for each
-request.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Stdin requires MPC-HC 1.7 or newer.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td><p class="first">Some versions of VLC might be unable to use the stdin pipe and
-prints the error message</p>
-<p>VLC is unable to open the MRL 'fd://0'</p>
-<p class="last">Use one of the other transport methods instead to work around this.</p>
-</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td><a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> has been reported to work for HLS
-streams when also using the timeout option for omxplayer
-(see <a class="reference internal" href="#when-using-omxplayer-the-stream-stops-unexpectedly">When using OMXPlayer the stream stops unexpectedly</a>.)
-Other stream types may not work as expected, it is recommended that
-<a class="reference internal" href="cli.html#cmdoption-n"><code class="xref std std-option docutils literal"><span class="pre">--player-fifo</span></code></a> be used.</td></tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="known-issues-and-workarounds">
-<h2>Known issues and workarounds<a class="headerlink" href="#known-issues-and-workarounds" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="mpc-hc-reports-file-not-found">
-<h3>MPC-HC reports &quot;File not found&quot;<a class="headerlink" href="#mpc-hc-reports-file-not-found" title="Permalink to this headline">¶</a></h3>
-<p>Upgrading to version 1.7 or newer will solve this issue since reading data
-from standard input is not supported in version 1.6.x of MPC-HC.</p>
-</div>
-<div class="section" id="mpc-hc-only-plays-sound-on-twitch-streams">
-<h3>MPC-HC only plays sound on Twitch streams<a class="headerlink" href="#mpc-hc-only-plays-sound-on-twitch-streams" title="Permalink to this headline">¶</a></h3>
-<p>Twitch sometimes returns badly muxed streams which may confuse players. The
-following workaround was contributed by MPC-HC developer <a class="reference external" href="https://github.com/kasper93">&#64;kasper93</a>:</p>
-<blockquote>
-<div><em>To fix this problem go to options -&gt; internal filters -&gt; open splitter
-settings and increase &quot;Stream Analysis Duration&quot; this will let ffmpeg to
-properly detect all streams.</em></div></blockquote>
-<p>Using <a class="reference internal" href="cli.html#cmdoption-player-passthrough"><code class="xref std std-option docutils literal"><span class="pre">--player-passthrough</span> <span class="pre">hls</span></code></a> has also been
-reported to work.</p>
-</div>
-<div class="section" id="mplayer-tries-to-play-twitch-streams-at-the-wrong-fps">
-<h3>MPlayer tries to play Twitch streams at the wrong FPS<a class="headerlink" href="#mplayer-tries-to-play-twitch-streams-at-the-wrong-fps" title="Permalink to this headline">¶</a></h3>
-<p>This is a bug in MPlayer, using the MPlayer fork <a class="reference external" href="http://mpv.io">mpv</a> instead
-is recommended.</p>
-</div>
-<div class="section" id="vlc-hangs-when-buffering-and-no-playback-starts">
-<h3>VLC hangs when buffering and no playback starts<a class="headerlink" href="#vlc-hangs-when-buffering-and-no-playback-starts" title="Permalink to this headline">¶</a></h3>
-<p>Some versions of 64-bit VLC seem to be unable to read the stream created by
-rtmpdump. Using the 32-bit version of VLC might help.</p>
-</div>
-<div class="section" id="youtube-live-does-not-work-with-vlc">
-<h3>Youtube Live does not work with VLC<a class="headerlink" href="#youtube-live-does-not-work-with-vlc" title="Permalink to this headline">¶</a></h3>
-<p>VLC versions below 3 cannot play Youtube Live streams. Please update your
-player. You can also try using a different player.</p>
-</div>
-<div class="section" id="youtube-live-does-not-work-with-mplayer">
-<h3>Youtube Live does not work with Mplayer<a class="headerlink" href="#youtube-live-does-not-work-with-mplayer" title="Permalink to this headline">¶</a></h3>
-<p>Some versions of Mplayer cannot play Youtube Live streams. And errors like:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Cannot seek backward in linear streams!</span>
-<span class="go">Seek failed</span>
+  <div class="section" id="developing">
+<h1>Developing<a class="headerlink" href="#developing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setting-up-the-repository">
+<h3>Setting up the repository<a class="headerlink" href="#setting-up-the-repository" title="Permalink to this headline">¶</a></h3>
+<p>In order to start working on Streamlink, you must first install the latest stable version of <code class="docutils literal"><span class="pre">git</span></code>, optionally fork the
+repository on Github onto your account if you want to submit changes in a pull request, and then locally clone the repository.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir streamlink
+<span class="nb">cd</span> streamlink
+git clone --origin<span class="o">=</span>upstream <span class="s1">&#39;https://github.com/streamlink/streamlink.git&#39;</span> .
+git remote add fork <span class="s1">&#39;git@github.com:&lt;YOUR-USERNAME&gt;/streamlink.git&#39;</span>
+git remote -v
+git fetch --all
 </pre></div>
 </div>
-<p>Switching to a recent fork such as mpv resolves the issue.</p>
+<p>When submitting a pull request, commit and push your changes onto a different branch.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git checkout master
+git pull upstream master
+git checkout -b new/feature/or/bugfix/branch
+git add ./foo
+git commit
+git push fork new/feature/or/bugfix/branch
+</pre></div>
 </div>
-<div class="section" id="when-using-omxplayer-the-stream-stops-unexpectedly">
-<h3>When using OMXPlayer the stream stops unexpectedly<a class="headerlink" href="#when-using-omxplayer-the-stream-stops-unexpectedly" title="Permalink to this headline">¶</a></h3>
-<p>When reading from a fifo pipe OMXPlayer will quit when there is no data, to fix
-this you can supply the timeout option to OMXPlayer using <a class="reference internal" href="cli.html#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span> <span class="pre">&quot;omxplayer</span> <span class="pre">--timeout</span> <span class="pre">20&quot;</span></code></a>.
-For live streams it might be beneficial to also add the omxplayer parameter <code class="docutils literal"><span class="pre">--live</span></code>.</p>
+</div>
+<div class="section" id="setting-up-a-new-environment">
+<h3>Setting up a new environment<a class="headerlink" href="#setting-up-a-new-environment" title="Permalink to this headline">¶</a></h3>
+<p>While working on any kind of python-based project, it is usually best to do this in a virtual environment which is isolated from
+the Python environment of the host system. This ensures that development can be done in a clean space which is free of version
+conflicts and other unrelated packages.</p>
+<p>First, make sure that you have the latest stable versions of Python and pip installed.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python --version
+pip --version
+</pre></div>
+</div>
+<p>As the second preparation step, install the latest version of <code class="docutils literal"><span class="pre">virtualenv</span></code>, either via your system's package manager or pip,
+and create a new virtual environment. These environments can be created separately for different Python versions. Please refer
+to the <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv documentation</a> for all available parameters. There are also several wrappers around virtualenv available.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install --upgrade --user virtualenv
+virtualenv --version
+
+<span class="c1"># replace ~/venvs/streamlink with your path of choice and give it a proper name</span>
+virtualenv --download --verbose ~/venvs/streamlink
+</pre></div>
+</div>
+<p>Now activate the virtual environment by sourcing the activation shell script.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/venvs/streamlink/bin/activate
+
+<span class="c1"># non-POSIX shells have their own activation script, eg. FISH</span>
+<span class="nb">source</span> ~/venvs/streamlink/bin/activate.fish
+
+<span class="c1"># on Windows, activation scripts are located in the Scripts/ subdirectory instead of bin/</span>
+<span class="nb">source</span> ~/venvs/streamlink/Scripts/activate
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-streamlink">
+<h3>Installing Streamlink<a class="headerlink" href="#installing-streamlink" title="Permalink to this headline">¶</a></h3>
+<p>After activating the new virtual environment, Streamlink's build dependencies and Streamlink itself need to be installed.
+Regular development dependencies and documentation related dependencies are listed in the text files shown below and need to
+be installed separately.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># install additional dependencies</span>
+pip install -r dev-requirements.txt
+pip install -r docs-requirements.txt
+
+<span class="c1"># install Streamlink from source</span>
+<span class="c1"># check setup.py for optional dependencies and install those manually if you need to</span>
+pip install -e .
+
+<span class="c1"># validate that Streamlink is working</span>
+which streamlink
+streamlink --version
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="validating-changes">
+<h2>Validating changes<a class="headerlink" href="#validating-changes" title="Permalink to this headline">¶</a></h2>
+<p>Before submitting a pull request, run tests, perform code linting and build the documentation on your system first, to see if
+your changes contain any mistakes or errors. This will be done automatically for each pull request on each change, but
+performing these checks locally avoids unnecessary build failures.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># run automated tests</span>
+python -m pytest -ra
+<span class="c1"># or just run a subset of all tests</span>
+python -m pytest -ra path/to/test-file.py::TestClassName::test_method_name ...
+
+<span class="c1"># check code for linting errors</span>
+flake8
+
+<span class="c1"># build the documentation</span>
+make --directory<span class="o">=</span>docs clean html
+<span class="nv">$BROWSER</span> ./docs/_build/html/index.html
+</pre></div>
 </div>
 </div>
 </div>
@@ -406,10 +330,10 @@ For live streams it might be beneficial to also add the omxplayer parameter <cod
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="issues.html" class="btn btn-neutral float-right" title="Common issues">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="api_guide.html" class="btn btn-neutral float-right" title="API Guide">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="plugin_matrix.html" class="btn btn-neutral" title="Plugins"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="issues.html" class="btn btn-neutral" title="Common issues"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
