@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Developing &mdash; Streamlink 1.6.0+49.gee4f837 documentation</title>
+  <title>Developing &mdash; Streamlink 1.6.0+50.gefe4e7d documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.6.0+49.gee4f837 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.6.0+50.gefe4e7d documentation" href="index.html"/>
         <link rel="next" title="API Guide" href="api_guide.html"/>
         <link rel="prev" title="Common issues" href="issues.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.6.0+49.gee4f837</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.6.0+50.gefe4e7d</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -106,6 +106,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Developing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#validating-changes">Validating changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plugins">Plugins</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
@@ -322,6 +323,26 @@ make --directory<span class="o">=</span>docs clean html
 </pre></div>
 </div>
 </div>
+<div class="section" id="plugins">
+<h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-plugins">
+<h3>Adding plugins<a class="headerlink" href="#adding-plugins" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Implement the plugin in <code class="docutils literal"><span class="pre">src/streamlink/plugins/</span></code>, similar to already existing plugins. Check the git log for recently
+added or modified plugins to help you get an overview of what's needed to properly implement a plugin. A complete guide
+is currently not available.</li>
+<li>Add at least tests for the URL regex matching in <code class="docutils literal"><span class="pre">tests/plugins/</span></code>. Once again, check other plugin tests from the git log.</li>
+</ol>
+</div>
+<div class="section" id="removing-plugins">
+<h3>Removing plugins<a class="headerlink" href="#removing-plugins" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Remove the plugin file in <code class="docutils literal"><span class="pre">src/streamlink/plugins/</span></code> and the test file in <code class="docutils literal"><span class="pre">tests/plugins/</span></code></li>
+<li>Remove the plugin entry from the documentation in <code class="docutils literal"><span class="pre">docs/plugin_matrix.rst</span></code></li>
+<li>Add an entry to <code class="docutils literal"><span class="pre">src/streamlink/plugins/.removed</span></code></li>
+</ol>
+</div>
+</div>
 </div>
 
 
@@ -360,7 +381,7 @@ make --directory<span class="o">=</span>docs clean html
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.6.0+49.gee4f837',
+            VERSION:'1.6.0+50.gefe4e7d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
