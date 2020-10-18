@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Streamlink 1.6.0 documentation</title>
+  <title>Changelog &mdash; Streamlink 1.7.0 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.6.0 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0 documentation" href="index.html"/>
         <link rel="next" title="Donating" href="donate.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.6.0</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="version-current">Stable</a></dd>
     <dd><a href="/latest/" class="">Latest</a></dd>
@@ -103,6 +103,12 @@
 <li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing.html#validating-changes">Validating changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developing.html#plugins">Plugins</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
@@ -120,6 +126,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#streamlink-1-7-0-2020-10-18">streamlink 1.7.0 (2020-10-18)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-6-0-2020-09-22">streamlink 1.6.0 (2020-09-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-5-0-2020-07-07">streamlink 1.5.0 (2020-07-07)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#streamlink-1-4-1-2020-04-24">streamlink 1.4.1 (2020-04-24)</a></li>
@@ -219,6 +226,83 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-1-7-0-2020-10-18">
+<h2>streamlink 1.7.0 (2020-10-18)<a class="headerlink" href="#streamlink-1-7-0-2020-10-18" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li>Added: new plugins for micous.com, tv999.bg and cbsnews.com</li>
+<li>Added: new embedded ad detection for Twitch streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3213"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3213">#3213</a></a>)</li>
+<li>Fixed: a few broken plugins and minor plugin issues (see changelog down below)</li>
+<li>Fixed: arguments in config files were read too late before taking effect (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3255"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3255">#3255</a></a>)</li>
+<li>Fixed: Arte plugin returning too many streams and overriding primary ones (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3228"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3228">#3228</a></a>)</li>
+<li>Fixed: Twitch plugin error when stream metadata API response is empty (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3223"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3223">#3223</a></a>)</li>
+<li>Fixed: Zattoo login issues (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3202"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3202">#3202</a></a>)</li>
+<li>Changed: plugin request and submission guidelines (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3244"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3244">#3244</a></a>)</li>
+<li>Changed: refactored and cleaned up Twitch plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3227"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3227">#3227</a></a>)</li>
+<li>Removed: <code class="docutils literal"><span class="pre">platform=_</span></code> stream token request parameter from Twitch plugin (again) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3220"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3220">#3220</a></a>)</li>
+<li>Removed: plugins for itvplayer, aljazeeraen, srgssr and dingittv</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Alexis Murzeau &lt;amubtdx@gmail.com&gt; (1):
+      docs: use recommonmark as an extension
+
+Billy2011 &lt;kschmidt2007@googlemail.com&gt; (3):
+      plugins.zattoo: use hello api v2 for zattoo.com (#3202)
+      plugins.dlive: rewrite plugin (#3239)
+      utils.l10n: use DEFAULT_LANGUAGE_CODE if locale lookup fails (#3055)
+
+Forrest &lt;gravyboat@users.noreply.github.com&gt; (1):
+      plugins.itvplayer: remove due to DRM (#2934)
+
+Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (8):
+      plugins.mico: new plugin for http://www.micous.com/ (#3188)
+      plugins.cdnbg: update url_re, plugin test, plugin matrix (#3205)
+      plugins.tv999: new plugin for http://tv999.bg/live.html (#3199)
+      plugins.aljazeeraen: plugin removal (#3207)
+      plugins.srgssr: plugin removal
+      plugins.tv3cat: update URL match, test and plugin matrix
+      chore: update issue templates (#3250)
+      docs: add plugin addition/removal infos (#3249)
+
+Sebastian Meyer &lt;mail@bastimeyer.de&gt; (2):
+      Improve coverage reports on codecov (#3200)
+      plugins.twitch: remove platform access token param (#3220)
+
+back-to &lt;backto@protonmail.ch&gt; (4):
+      plugin.api.useragents: update User-Agent
+      plugins.livestream: remove AkamaiHDStream, use only secure HLSStream (#3243)
+      plugins.dingittv: removed, website is unmaintained
+      plugins: mark some plugins as broken (#3262)
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (21):
+      ci.coverage: increase threshold of tests status
+      tests: add stream_hls mixin for testing HLSStreams
+      stream.hls_filtered: refactor tests, use mixin
+      plugins.twitch: refactor tests, use mixin
+      stream.hls: refactor reload time tests, use mixin
+      stream.hls: separate variant playlist tests
+      stream.hls: separate default and encrypted tests
+      stream.hls_playlist: implement EXT-X-DATERANGE tag
+      plugins.twitch: filter ads by EXT-X-DATERANGE tag
+      plugins.twitch: fix metadata API response handling
+      ci: add python 3.9 test runners
+      tests: fix early writer close in stream_hls mixin
+      stream.segmented: gracefully shut down thread pool
+      plugins.twitch: remove video-type distinction
+      plugins.twitch: refactor Twitch API related code
+      plugins.twitch: refactor _get_hls_streams
+      plugins.twitch: remove stream weights and clean up
+      docs: fix working tree check in deploy script
+      docs: update plugin guidelines
+      docs: add developing menu with basic setup steps
+      docs: add generic pull request template
+
+beardypig &lt;beardypig@protonmail.com&gt; (3):
+      plugins.cbsnews: support for live streams from CBS News (#3251)
+      plugins.artetv: only pick the first variant of the stream (#3228)
+      cli: make config based args available during early setup (#3255)
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-1-6-0-2020-09-22">
 <h2>streamlink 1.6.0 (2020-09-22)<a class="headerlink" href="#streamlink-1-6-0-2020-09-22" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
@@ -2904,7 +2988,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.6.0',
+            VERSION:'1.7.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

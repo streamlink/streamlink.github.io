@@ -4,6 +4,7 @@
 ./_sources/applications.rst.txt
 ./_sources/changelog.md.txt
 ./_sources/cli.rst.txt
+./_sources/developing.rst.txt
 ./_sources/donate.rst.txt
 ./_sources/index.rst.txt
 ./_sources/install.rst.txt
@@ -45,6 +46,7 @@
 ./applications.html
 ./changelog.html
 ./cli.html
+./developing.html
 ./donate.html
 ./genindex.html
 ./index.html

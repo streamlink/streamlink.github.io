@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Streamlink Applications &mdash; Streamlink 1.7.0 documentation</title>
+  <title>Developing &mdash; Streamlink 1.7.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Streamlink 1.7.0 documentation" href="index.html"/>
-        <link rel="next" title="Third Party Applications" href="thirdparty.html"/>
-        <link rel="prev" title="Donating" href="donate.html"/> 
+        <link rel="next" title="API Guide" href="api_guide.html"/>
+        <link rel="prev" title="Common issues" href="issues.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -103,10 +103,10 @@
 <li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#validating-changes">Validating changes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#plugins">Plugins</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#validating-changes">Validating changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plugins">Plugins</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
@@ -165,8 +165,8 @@
 <li class="toctree-l2"><a class="reference internal" href="donate.html#gravyboat">Gravyboat</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Streamlink Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a><ul>
@@ -214,7 +214,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Streamlink Applications</li>
+    <li>Developing</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -224,37 +224,121 @@
           <div role="main">
             
             
-  <style>
-    .rst-content table.field-list td {
-        padding-top: 8px;
-    }
-</style><div class="section" id="streamlink-applications">
-<h1>Streamlink Applications<a class="headerlink" href="#streamlink-applications" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="streamlink-twitch-gui">
-<h2>Streamlink Twitch GUI<a class="headerlink" href="#streamlink-twitch-gui" title="Permalink to this headline">¶</a></h2>
-<img alt="Streamlink Twitch GUI" src="https://user-images.githubusercontent.com/467294/28097570-3415020e-66b1-11e7-928d-4b9da35daf13.jpg" />
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body">A multi platform Twitch.tv browser for Streamlink</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">Graphical User Interface</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">OS:</th><td class="field-body"><i class="fa fa-fw fa-windows"></i> <i class="fa fa-fw fa-apple"></i> <i class="fa fa-fw fa-linux"></i></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Author:</th><td class="field-body"><a class="reference external" href="https://github.com/bastimeyer">Sebastian Meyer</a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Website:</th><td class="field-body"><a class="reference external" href="https://streamlink.github.io/streamlink-twitch-gui">https://streamlink.github.io/streamlink-twitch-gui</a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Source code:</th><td class="field-body"><a class="reference external" href="https://github.com/streamlink/streamlink-twitch-gui">https://github.com/streamlink/streamlink-twitch-gui</a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Info:</th><td class="field-body">A NW.js based desktop web application, formerly known as <em>Livestreamer Twitch GUI</em>. Browse Twitch.tv and watch
-multiple streams at once. Filter streams by language, receive desktop notifications when followed channels start
-streaming and access the Twitch chat by using customizable chat applications.</td>
-</tr>
-</tbody>
-</table>
+  <div class="section" id="developing">
+<h1>Developing<a class="headerlink" href="#developing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setting-up-the-repository">
+<h3>Setting up the repository<a class="headerlink" href="#setting-up-the-repository" title="Permalink to this headline">¶</a></h3>
+<p>In order to start working on Streamlink, you must first install the latest stable version of <code class="docutils literal"><span class="pre">git</span></code>, optionally fork the
+repository on Github onto your account if you want to submit changes in a pull request, and then locally clone the repository.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir streamlink
+<span class="nb">cd</span> streamlink
+git clone --origin<span class="o">=</span>upstream <span class="s1">&#39;https://github.com/streamlink/streamlink.git&#39;</span> .
+git remote add fork <span class="s1">&#39;git@github.com:&lt;YOUR-USERNAME&gt;/streamlink.git&#39;</span>
+git remote -v
+git fetch --all
+</pre></div>
+</div>
+<p>When submitting a pull request, commit and push your changes onto a different branch.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git checkout master
+git pull upstream master
+git checkout -b new/feature/or/bugfix/branch
+git add ./foo
+git commit
+git push fork new/feature/or/bugfix/branch
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-a-new-environment">
+<h3>Setting up a new environment<a class="headerlink" href="#setting-up-a-new-environment" title="Permalink to this headline">¶</a></h3>
+<p>While working on any kind of python-based project, it is usually best to do this in a virtual environment which is isolated from
+the Python environment of the host system. This ensures that development can be done in a clean space which is free of version
+conflicts and other unrelated packages.</p>
+<p>First, make sure that you have the latest stable versions of Python and pip installed.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python --version
+pip --version
+</pre></div>
+</div>
+<p>As the second preparation step, install the latest version of <code class="docutils literal"><span class="pre">virtualenv</span></code>, either via your system's package manager or pip,
+and create a new virtual environment. These environments can be created separately for different Python versions. Please refer
+to the <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv documentation</a> for all available parameters. There are also several wrappers around virtualenv available.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install --upgrade --user virtualenv
+virtualenv --version
+
+<span class="c1"># replace ~/venvs/streamlink with your path of choice and give it a proper name</span>
+virtualenv --download --verbose ~/venvs/streamlink
+</pre></div>
+</div>
+<p>Now activate the virtual environment by sourcing the activation shell script.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/venvs/streamlink/bin/activate
+
+<span class="c1"># non-POSIX shells have their own activation script, eg. FISH</span>
+<span class="nb">source</span> ~/venvs/streamlink/bin/activate.fish
+
+<span class="c1"># on Windows, activation scripts are located in the Scripts/ subdirectory instead of bin/</span>
+<span class="nb">source</span> ~/venvs/streamlink/Scripts/activate
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-streamlink">
+<h3>Installing Streamlink<a class="headerlink" href="#installing-streamlink" title="Permalink to this headline">¶</a></h3>
+<p>After activating the new virtual environment, Streamlink's build dependencies and Streamlink itself need to be installed.
+Regular development dependencies and documentation related dependencies are listed in the text files shown below and need to
+be installed separately.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># install additional dependencies</span>
+pip install -r dev-requirements.txt
+pip install -r docs-requirements.txt
+
+<span class="c1"># install Streamlink from source</span>
+<span class="c1"># check setup.py for optional dependencies and install those manually if you need to</span>
+pip install -e .
+
+<span class="c1"># validate that Streamlink is working</span>
+which streamlink
+streamlink --version
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="validating-changes">
+<h2>Validating changes<a class="headerlink" href="#validating-changes" title="Permalink to this headline">¶</a></h2>
+<p>Before submitting a pull request, run tests, perform code linting and build the documentation on your system first, to see if
+your changes contain any mistakes or errors. This will be done automatically for each pull request on each change, but
+performing these checks locally avoids unnecessary build failures.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># run automated tests</span>
+python -m pytest -ra
+<span class="c1"># or just run a subset of all tests</span>
+python -m pytest -ra path/to/test-file.py::TestClassName::test_method_name ...
+
+<span class="c1"># check code for linting errors</span>
+flake8
+
+<span class="c1"># build the documentation</span>
+make --directory<span class="o">=</span>docs clean html
+<span class="nv">$BROWSER</span> ./docs/_build/html/index.html
+</pre></div>
+</div>
+</div>
+<div class="section" id="plugins">
+<h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-plugins">
+<h3>Adding plugins<a class="headerlink" href="#adding-plugins" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Implement the plugin in <code class="docutils literal"><span class="pre">src/streamlink/plugins/</span></code>, similar to already existing plugins. Check the git log for recently
+added or modified plugins to help you get an overview of what's needed to properly implement a plugin. A complete guide
+is currently not available.</li>
+<li>Add at least tests for the URL regex matching in <code class="docutils literal"><span class="pre">tests/plugins/</span></code>. Once again, check other plugin tests from the git log.</li>
+</ol>
+</div>
+<div class="section" id="removing-plugins">
+<h3>Removing plugins<a class="headerlink" href="#removing-plugins" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Remove the plugin file in <code class="docutils literal"><span class="pre">src/streamlink/plugins/</span></code> and the test file in <code class="docutils literal"><span class="pre">tests/plugins/</span></code></li>
+<li>Remove the plugin entry from the documentation in <code class="docutils literal"><span class="pre">docs/plugin_matrix.rst</span></code></li>
+<li>Add an entry to <code class="docutils literal"><span class="pre">src/streamlink/plugins/.removed</span></code></li>
+</ol>
+</div>
 </div>
 </div>
 
@@ -264,10 +348,10 @@ streaming and access the Twitch chat by using customizable chat applications.</t
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="thirdparty.html" class="btn btn-neutral float-right" title="Third Party Applications">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="api_guide.html" class="btn btn-neutral float-right" title="API Guide">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="donate.html" class="btn btn-neutral" title="Donating"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="issues.html" class="btn btn-neutral" title="Common issues"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

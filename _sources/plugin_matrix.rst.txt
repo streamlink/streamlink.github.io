@@ -20,7 +20,6 @@ albavision              - tvc.com.ec         Yes   No    Some streams are geo-re
                         - rts.com.ec
                         - elnueve.com.ar
                         - atv.pe
-aljazeeraen             aljazeera.com        Yes   Yes   English version of the site.
 animelab                animelab.com         --    Yes   Requires a login. Streams may be geo-restricted to Australia and New Zealand.
 app17                   17app.co             Yes   --
 ard_live                daserste.de          Yes   Yes   Streams may be geo-restricted to Germany.
@@ -39,15 +38,15 @@ brightcove              players.brig... [6]_ Yes   Yes
 btsports                sport.bt.com         Yes   Yes   Requires subscription account
 btv                     btvplus.bg           Yes   No    Streams are geo-restricted to Bulgaria.
 canalplus               mycanal.fr           No    Yes   Streams may be geo-restricted to France.
-cdnbg                   - tv.bnt.bg          Yes   No    Streams may be geo-restricted to Bulgaria.
+cbsnews                 cbsnews.com          Yes   No
+cdnbg                   - armymedia.bg       Yes   No    Streams may be geo-restricted to Bulgaria
                         - bgonair.bg
                         - bloombergtv.bg
-                        - mmtvmusic.com
-                        - mu-vi.tv
-                        - nova.bg
-                        - armymedia.bg
-                        - chernomore.bg
+                        - bnt.bg
+                        - live.bstv.bg
                         - i.cdn.bg
+                        - nova.bg
+                        - mu-vi.tv
 ceskatelevize           ceskatelevize.cz     Yes   Yes   Streams may be geo-restricted to Czechia.
 cinergroup              - showtv.com.tr      Yes   No
                         - haberturk.com
@@ -63,7 +62,6 @@ delfi                   - delfi.lt           --    Yes
                         - delfi.ee
                         - delfi.lv
 deutschewelle           dw.com               Yes   Yes
-dingittv                dingit.tv            Yes   Yes
 dlive                   dlive.tv             Yes   Yes
 dogan                   - teve2.com.tr       Yes   Yes   VOD is supported for teve2 and kanald
                         - kanald.com.tr
@@ -103,7 +101,6 @@ huomao                  - huomao.com         Yes   Yes
 huya                    huya.com             Yes   No    Temporarily only HLS streams available.
 idf1                    idf1.fr              Yes   Yes
 ine                     ine.com              ---   Yes
-itvplayer               itv.com/itvplayer    Yes   Yes   Streams may be geo-restricted to Great Britain.
 invintus                player.invintus.com  Yes   Yes
 kingkong                kingkong.com.tw      Yes   --
 kugou                   fanxing.kugou.com    Yes   --
@@ -113,11 +110,12 @@ live_russia_tv          live.russia.tv       Yes   --
 liveedu                 - liveedu.tv         Yes   --    Some streams require a login.
                         - livecoding.tv
 liveme                  liveme.com           Yes   --
-livestream              new.livestream.com   Yes   --
+livestream              livestream.com       Yes   --
 lrt                     lrt.lt               Yes   No
 ltv_lsm_lv              ltv.lsm.lv           Yes   No    Streams may be geo-restricted to Latvia.
 mediaklikk              mediaklikk.hu        Yes   No    Streams may be geo-restricted to Hungary.
 metube                  metube.id            Yes   Yes
+mico                    micous.com           Yes   --
 mitele                  mitele.es            Yes   No    Streams may be geo-restricted to Spain.
 mjunoon                 mjunoon.tv           Yes   Yes
 mrtmk                   play.mrt.com.mk      Yes   Yes   Streams may be geo-restricted to North Macedonia.
@@ -183,10 +181,6 @@ showroom                showroom-live.com    Yes   No
 skai                    skai.gr              Yes   No    Only embedded youtube live streams are supported
 sportal                 sportal.bg           Yes   No
 sportschau              sportschau.de        Yes   No
-srgssr                  - srf.ch             Yes   No    Streams are geo-restricted to Switzerland.
-                        - rts.ch
-                        - rsi.ch
-                        - rtr.ch
 ssh101                  ssh101.com           Yes   No
 stadium                 watchstadium.com     Yes   No
 steam                   steamcommunity.com   Yes   No    Some streams will require a Steam account.
@@ -224,7 +218,7 @@ turkuvaz                - atv.com.tr         Yes   No    Streams may be geo-rest
                         - minikacocuk.com.tr
                         - minikago.com.tr
                         - sabah.com.tr
-tv3cat                  tv3.cat              Yes   Yes   Streams may be geo-restricted to Spain.
+tv3cat                  ccma.cat             Yes   Yes   Streams may be geo-restricted to Spain.
 tv4play                 - tv4play.se         Yes   Yes   Streams may be geo-restricted to Sweden.
                                                          Only non-premium streams currently supported.
                         - fotbollskanalen.se
@@ -233,6 +227,7 @@ tv5monde                - tv5monde.com       Yes   Yes   Streams may be geo-rest
                         - tv5mondepl... [8]_
 tv8                     tv8.com.tr           Yes   No
 tv360                   tv360.com.tr         Yes   No
+tv999                   tv999.bg             Yes   --    Streams are geo-restricted to Bulgaria
 tvibo                   player.tvibo.com     Yes   --
 tvp                     tvpstream.vod.tvp.pl Yes   No    Streams may be geo-restricted to Poland.
 tvplayer                tvplayer.com         Yes   No    Streams may be geo-restricted to Great Britain. Premium streams are not supported.
