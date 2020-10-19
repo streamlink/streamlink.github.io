@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Streamlink 1.7.0 documentation</title>
+  <title>Installation &mdash; Streamlink 1.7.0+1.g8034b16 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0+1.g8034b16 documentation" href="index.html"/>
         <link rel="next" title="Command-Line Interface" href="cli.html"/>
         <link rel="prev" title="Overview" href="index.html"/> 
 
@@ -53,10 +53,10 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+1.g8034b16</span>
   <dl class="wy-side-nav-versions-others">
-    <dd><a href="/" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/" class="">Latest</a></dd>
+    <dd><a href="/" class="">Stable</a></dd>
+    <dd><a href="/latest/" class="version-current">Latest</a></dd>
   </dl>
 </div>
         <div class="wy-side-nav-search" role="search">
@@ -222,6 +222,10 @@
   <hr/>
 </div>
           <div role="main">
+            
+            <div class="admonition version-warning">
+              <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+            </div>
             
             
   <span class="target" id="install"></span><div class="section" id="installation">
@@ -564,21 +568,15 @@ permission issues.</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><a class="reference external" href="https://www.python.org/">Python</a></td>
-<td>At least version <strong>2.7</strong> or <strong>3.5</strong>.</td>
+<td>At least version <strong>3.5</strong>.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://pypi.org/project/setuptools/">python-setuptools</a></td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td colspan="2"><strong>Automatically installed by the setup script</strong></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://pypi.org/project/futures/">python-futures</a></td>
-<td>Only needed on Python <strong>2.7</strong>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference external" href="http://python-requests.org/">python-requests</a></td>
+<tr class="row-odd"><td><a class="reference external" href="http://python-requests.org/">python-requests</a></td>
 <td>At least version <strong>2.21.0</strong>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="https://pypi.org/project/singledispatch/">python-singledispatch</a></td>
-<td>Only needed on Python <strong>2.7</strong>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a></td>
 <td>Required to play some encrypted streams</td>
@@ -597,12 +595,6 @@ permission issues.</p>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://pypi.org/project/websocket-client/">websocket-client</a></td>
 <td>Used for some plugins</td>
-</tr>
-<tr class="row-even"><td><a class="reference external" href="https://pypi.org/project/backports.shutil_get_terminal_size/">shutil_get_terminal_size</a></td>
-<td>Only needed on Python <strong>2.7</strong>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="https://pypi.org/project/backports.shutil_which/">shutil_which</a></td>
-<td>Only needed on Python <strong>2.7</strong>.</td>
 </tr>
 <tr class="row-even"><td colspan="2"><strong>Optional</strong></td>
 </tr>
@@ -731,7 +723,7 @@ from the command prompt or powershell without specifying its directory.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.0',
+            VERSION:'1.7.0+1.g8034b16',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
