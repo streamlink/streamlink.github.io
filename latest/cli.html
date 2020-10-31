@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 1.7.0+44.g2c8f46b documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 1.7.0+45.gea703e3 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+44.g2c8f46b documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0+45.gea703e3 documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+44.g2c8f46b</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+45.gea703e3</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -751,24 +751,30 @@ not log any custom player arguments.</p>
 <dt id="cmdoption-a">
 <code class="descname">-a</code><code class="descclassname"> ARGUMENTS</code><code class="descclassname">, </code><code class="descname">--player-args</code><code class="descclassname"> ARGUMENTS</code><a class="headerlink" href="#cmdoption-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>This option allows you to customize the default arguments which are put
-together with the value of <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> to create a command to execute.
-Unlike the <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> parameter, custom player arguments will not be logged.</p>
-<p>This value can contain formatting variables surrounded by curly braces,
+together with the value of <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> to create a command to execute.</p>
+<p>It's usually enough to only use <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> instead of this unless you need
+to add arguments after the player's input argument or if you don't want
+any of the player arguments to be logged.</p>
+<p>The value can contain formatting variables surrounded by curly braces,
 { and }. If you need to include a brace character, it can be escaped
 by doubling, e.g. {{ and }}.</p>
 <p>Formatting variables available:</p>
 <dl class="docutils">
+<dt>{playerinput}</dt>
+<dd>This is the input that the player will use. For standard input (stdin),
+it is <code class="docutils literal"><span class="pre">-</span></code>, but it can also be a URL, depending on the options used.</dd>
 <dt>{filename}</dt>
-<dd>This is the filename that the player will use. It's usually &quot;-&quot;
-(stdin), but can also be a URL or a file depending on the options
-used.</dd>
+<dd>The old fallback variable name with the same functionality.</dd>
 </dl>
-<p>It's usually enough to use <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> instead of this unless you need to
-add arguments after the filename.</p>
-<p>Default is: <strong>&quot;{filename}&quot;</strong>.</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">vlc</span> <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;--play-and-exit </span><span class="si">{filename}</span><span class="s2">&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">vlc</span> <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;--play-and-exit </span><span class="si">{playerinput}</span><span class="s2">&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When neither of the variables are found, <code class="docutils literal"><span class="pre">{playerinput}</span></code>
+will be appended to the whole parameter value, to ensure that the player
+always receives an input argument.</p>
 </div>
 </dd></dl>
 
@@ -1916,7 +1922,7 @@ the following types are allowed:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.0+44.g2c8f46b',
+            VERSION:'1.7.0+45.gea703e3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
