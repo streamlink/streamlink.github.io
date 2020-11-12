@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Streamlink 1.7.0+58.g02924fb documentation</title>
+  <title>Installation &mdash; Streamlink 1.7.0+60.g9d6c606 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+58.g02924fb documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0+60.g9d6c606 documentation" href="index.html"/>
         <link rel="next" title="Command-Line Interface" href="cli.html"/>
         <link rel="prev" title="Overview" href="index.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+58.g02924fb</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+60.g9d6c606</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -228,7 +228,7 @@
             </div>
             
             
-  <span class="target" id="install"></span><div class="section" id="installation">
+  <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
@@ -350,7 +350,7 @@ sudo apt install streamlink
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="http://pkgsrc.se/multimedia/streamlink">NetBSD (pkgsrc)</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://pkgsrc.se/multimedia/streamlink">NetBSD (pkgsrc)</a></td>
 <td><div class="first last highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /usr/pkgsrc/multimedia/streamlink
 sudo make install clean
 </pre></div>
@@ -364,7 +364,7 @@ sudo make install clean
 <p class="last"><a class="reference external" href="https://search.nixos.org/packages?show=streamlink&amp;query=streamlink">NixOS channel</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="http://openports.se/multimedia/streamlink">OpenBSD</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://openports.se/multimedia/streamlink">OpenBSD</a></td>
 <td><div class="first last highlight-bash"><div class="highlight"><pre><span></span>doas pkg_add streamlink
 </pre></div>
 </div>
@@ -453,7 +453,7 @@ beardypig &lt;beardypig at protonmail.com&gt;</td>
 </table>
 </div>
 <div class="section" id="pypi-package-and-source-code">
-<span id="id1"></span><h2>PyPI package and source code<a class="headerlink" href="#pypi-package-and-source-code" title="Permalink to this headline">¶</a></h2>
+<h2>PyPI package and source code<a class="headerlink" href="#pypi-package-and-source-code" title="Permalink to this headline">¶</a></h2>
 <p>If a package is not available on your platform, or if it's out of date,
 Streamlink can be installed via <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>, the Python package manager.</p>
 <p>In addition to using <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>, Streamlink can also be installed from source
@@ -554,7 +554,7 @@ permission issues.</p>
 </div>
 </div>
 <div class="section" id="dependencies">
-<span id="id2"></span><h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
 <p>To install Streamlink from source you will need these dependencies.</p>
 <table border="1" class="table-custom-layout docutils">
 <colgroup>
@@ -575,7 +575,7 @@ permission issues.</p>
 </tr>
 <tr class="row-even"><td colspan="2"><strong>Automatically installed by the setup script</strong></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://python-requests.org/">python-requests</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://requests.readthedocs.io/en/master/">python-requests</a></td>
 <td>At least version <strong>2.21.0</strong>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a></td>
@@ -598,7 +598,7 @@ permission issues.</p>
 </tr>
 <tr class="row-even"><td colspan="2"><strong>Optional</strong></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://rtmpdump.mplayerhq.hu/">RTMPDump</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://rtmpdump.mplayerhq.hu/">RTMPDump</a></td>
 <td>Required to play RTMP streams.</td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a></td>
@@ -655,7 +655,7 @@ in a <a class="reference internal" href="#dependencies"><span class="std std-ref
 <ul class="simple">
 <li>A compiled version of Streamlink that <strong>does not require an existing Python
 installation</strong></li>
-<li><a class="reference external" href="http://rtmpdump.mplayerhq.hu/">RTMPDump</a> for viewing RTMP streams</li>
+<li><a class="reference external" href="https://rtmpdump.mplayerhq.hu/">RTMPDump</a> for viewing RTMP streams</li>
 <li><a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a> for muxing streams</li>
 </ul>
 <p>and perform the following tasks:</p>
@@ -732,7 +732,7 @@ from the command prompt or powershell without specifying its directory.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.0+58.g02924fb',
+            VERSION:'1.7.0+60.g9d6c606',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

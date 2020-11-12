@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Players &mdash; Streamlink 1.7.0+58.g02924fb documentation</title>
+  <title>Players &mdash; Streamlink 1.7.0+60.g9d6c606 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+58.g02924fb documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0+60.g9d6c606 documentation" href="index.html"/>
         <link rel="next" title="Common issues" href="issues.html"/>
         <link rel="prev" title="Plugins" href="plugin_matrix.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+58.g02924fb</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+60.g9d6c606</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -229,7 +229,7 @@
             
             
   <div class="section" id="players">
-<span id="id1"></span><h1>Players<a class="headerlink" href="#players" title="Permalink to this headline">¶</a></h1>
+<h1>Players<a class="headerlink" href="#players" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="transport-modes">
 <h2>Transport modes<a class="headerlink" href="#transport-modes" title="Permalink to this headline">¶</a></h2>
 <p>There are three different modes of transporting the stream to the player.</p>
@@ -277,60 +277,60 @@ modes.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><a class="reference external" href="http://potplayer.daum.net">Daum Pot Player</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://potplayer.daum.net">Daum Pot Player</a></td>
 <td>Yes</td>
 <td>No</td>
-<td>Yes <a class="footnote-reference" href="#id7" id="id2">[1]</a></td>
+<td>Yes <a class="footnote-reference" href="#id6" id="id1">[1]</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://mpc-hc.org/">MPC-HC</a></td>
-<td>Yes <a class="footnote-reference" href="#id8" id="id3">[2]</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://mpc-hc.org/">MPC-HC</a></td>
+<td>Yes <a class="footnote-reference" href="#id7" id="id2">[2]</a></td>
 <td>No</td>
-<td>Yes <a class="footnote-reference" href="#id7" id="id4">[1]</a></td>
+<td>Yes <a class="footnote-reference" href="#id6" id="id3">[1]</a></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="http://mplayerhq.hu">MPlayer</a></td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr class="row-odd"><td><a class="reference external" href="http://mpv.io">mpv</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://mplayerhq.hu">MPlayer</a></td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="http://apple.com/quicktime">QuickTime</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://mpv.io">mpv</a></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.raspberrypi.org/documentation/raspbian/applications/omxplayer.md">OMXPlayer</a></td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes <a class="footnote-reference" href="#id9" id="id4">[4]</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://apple.com/quicktime">QuickTime</a></td>
 <td>No</td>
 <td>No</td>
 <td>No</td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://videolan.org">VLC media player</a></td>
-<td>Yes <a class="footnote-reference" href="#id9" id="id5">[3]</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://videolan.org">VLC media player</a></td>
+<td>Yes <a class="footnote-reference" href="#id8" id="id5">[3]</a></td>
 <td>Yes</td>
 <td>Yes</td>
-</tr>
-<tr class="row-even"><td>OMXPlayer</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes <a class="footnote-reference" href="#id10" id="id6">[4]</a></td>
 </tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
+<table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> must be used.
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> <a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> must be used.
 Using HTTP with players that rely on Windows' codecs to access HTTP
 streams may have a long startup time since Windows tend to do multiple
 HTTP requests and Streamlink will attempt to open the stream for each
 request.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
+<table class="docutils footnote" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>Stdin requires MPC-HC 1.7 or newer.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Stdin requires MPC-HC 1.7 or newer.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
+<table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td><p class="first">Some versions of VLC might be unable to use the stdin pipe and
@@ -340,10 +340,10 @@ prints the error message</p>
 </td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td><a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> has been reported to work for HLS
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal"><span class="pre">--player-continuous-http</span></code></a> has been reported to work for HLS
 streams when also using the timeout option for omxplayer
 (see <a class="reference internal" href="#when-using-omxplayer-the-stream-stops-unexpectedly">When using OMXPlayer the stream stops unexpectedly</a>.)
 Other stream types may not work as expected, it is recommended that
@@ -371,7 +371,7 @@ reported to work.</p>
 </div>
 <div class="section" id="mplayer-tries-to-play-twitch-streams-at-the-wrong-fps">
 <h3>MPlayer tries to play Twitch streams at the wrong FPS<a class="headerlink" href="#mplayer-tries-to-play-twitch-streams-at-the-wrong-fps" title="Permalink to this headline">¶</a></h3>
-<p>This is a bug in MPlayer, using the MPlayer fork <a class="reference external" href="http://mpv.io">mpv</a> instead
+<p>This is a bug in MPlayer, using the MPlayer fork <a class="reference external" href="https://mpv.io">mpv</a> instead
 is recommended.</p>
 </div>
 <div class="section" id="vlc-hangs-when-buffering-and-no-playback-starts">
@@ -438,7 +438,7 @@ For live streams it might be beneficial to also add the omxplayer parameter <cod
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.0+58.g02924fb',
+            VERSION:'1.7.0+60.g9d6c606',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

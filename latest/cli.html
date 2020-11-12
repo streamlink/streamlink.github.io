@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 1.7.0+58.g02924fb documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 1.7.0+60.g9d6c606 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+58.g02924fb documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0+60.g9d6c606 documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+58.g02924fb</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+60.g9d6c606</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -229,16 +229,16 @@
             
             
   <div class="section" id="command-line-interface">
-<span id="cli"></span><h1>Command-Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
+<h1>Command-Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink is a command-line application, which means that the commands described
 here should be typed into a terminal. On Windows, you have to open either the
-<a class="reference external" href="http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8">command prompt</a> or the <a class="reference external" href="http://www.microsoft.com/powershell">PowerShell</a>, on macOS open the <a class="reference external" href="http://en.wikipedia.org/wiki/Terminal_(OS_X)">Terminal</a> app
+<a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">Command Prompt</a>, <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a> or <a class="reference external" href="https://docs.microsoft.com/en-us/windows/terminal/get-started">Windows Terminal</a>, on macOS open the <a class="reference external" href="macOS-Terminal">Terminal</a> app,
 and if you're on Linux or BSD you probably already know the drill.</p>
 <p>The way Streamlink works is that it's only a means to extract and transport
 the streams, and the playback is done by an external video player. Streamlink
-works best with <a class="reference external" href="http://videolan.org/">VLC</a> or <a class="reference external" href="http://mpv.io/">mpv</a>, which are also cross-platform, but other players
+works best with <a class="reference external" href="https://videolan.org/">VLC</a> or <a class="reference external" href="https://mpv.io/">mpv</a>, which are also cross-platform, but other players
 may be compatible too, see the <a class="reference internal" href="players.html#players"><span class="std std-ref">Players</span></a> page for a complete overview.</p>
 <p>Now to get into actually using Streamlink, let's say you want to watch the
 stream located on twitch.tv/day9tv, you start off by telling Streamlink
@@ -282,14 +282,14 @@ specify <code class="docutils literal"><span class="pre">worst</span></code> to 
 <p>Now that you have a basic grasp of how Streamlink works, you may want to look
 into customizing it to your own needs, such as:</p>
 <ul class="simple">
-<li>Creating a <a class="reference internal" href="#cli-streamlinkrc"><span class="std std-ref">configuration file</span></a> of options you
+<li>Creating a <a class="reference internal" href="#configuration-file"><span class="std std-ref">configuration file</span></a> of options you
 want to use</li>
-<li>Setting up your player to <a class="reference internal" href="issues.html#issues-player-caching"><span class="std std-ref">cache some data</span></a>
+<li>Setting up your player to <a class="reference internal" href="issues.html#streams-are-buffering-lagging"><span class="std std-ref">cache some data</span></a>
 before playing the stream to help avoiding buffering issues</li>
 </ul>
 </div>
 <div class="section" id="configuration-file">
-<span id="cli-streamlinkrc"></span><h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
 <p>Writing the command-line options every time is inconvenient, that's why Streamlink
 is capable of reading options from a configuration file instead.</p>
 <p>Streamlink will look for config files in different locations depending on
@@ -333,7 +333,7 @@ other platform you must create the file yourself.</p>
 <div class="section" id="syntax">
 <h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
 <p>The config file is a simple text file and should contain one
-<a class="reference internal" href="#cli-options"><span class="std std-ref">command-line option</span></a> (omitting the dashes) per
+<a class="reference internal" href="#command-line-usage"><span class="std std-ref">command-line option</span></a> (omitting the dashes) per
 line in the format:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">option</span><span class="o">=</span><span class="n">value</span>
 </pre></div>
@@ -395,7 +395,7 @@ with <code class="docutils literal"><span class="pre">.&lt;plugin</span> <span c
 </tr>
 </tbody>
 </table>
-<p>Have a look at the <a class="reference internal" href="plugin_matrix.html#plugin-matrix"><span class="std std-ref">list of plugins</span></a> to see
+<p>Have a look at the <a class="reference internal" href="plugin_matrix.html#plugins"><span class="std std-ref">list of plugins</span></a> to see
 the name of each built-in plugin.</p>
 </div>
 </div>
@@ -407,7 +407,7 @@ the name of each built-in plugin.</p>
 their content. To do so, the plugin provides a couple of options to input your
 information, <a class="reference internal" href="#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal"><span class="pre">--crunchyroll-username</span></code></a> and <a class="reference internal" href="#cmdoption-crunchyroll-password"><code class="xref std std-option docutils literal"><span class="pre">--crunchyroll-password</span></code></a>.</p>
 <p>You can login like this:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --crunchyroll-username<span class="o">=</span>xxxx --crunchyroll-password<span class="o">=</span>xxx http://crunchyroll.com/a-crunchyroll-episode-link
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --crunchyroll-username<span class="o">=</span>xxxx --crunchyroll-password<span class="o">=</span>xxx https://crunchyroll.com/a-crunchyroll-episode-link
 </pre></div>
 </div>
 <div class="admonition note">
@@ -418,7 +418,7 @@ information, <a class="reference internal" href="#cmdoption-crunchyroll-username
 asking your username and password again.</p>
 <p>Nevertheless, these credentials are valid for a limited amount of time, so it
 might be a good idea to save your username and password in your
-<a class="reference internal" href="#cli-streamlinkrc"><span class="std std-ref">configuration file</span></a> anyway.</p>
+<a class="reference internal" href="#configuration-file"><span class="std std-ref">configuration file</span></a> anyway.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">The API this plugin uses isn't supposed to be available to use it on
@@ -442,7 +442,7 @@ option, which removes your saved session and credentials and tries to log
 in again using your username and password.</p>
 </div>
 <div class="section" id="authenticating-with-funimationnow">
-<span id="cli-funimationnow"></span><h3>Authenticating with FunimationNow<a class="headerlink" href="#authenticating-with-funimationnow" title="Permalink to this headline">¶</a></h3>
+<h3>Authenticating with FunimationNow<a class="headerlink" href="#authenticating-with-funimationnow" title="Permalink to this headline">¶</a></h3>
 <p>Like Crunchyroll, the FunimationNow plugin requires authenticating with a premium account to access some
 content: <a class="reference internal" href="#cmdoption-funimation-email"><code class="xref std std-option docutils literal"><span class="pre">--funimation-email</span></code></a>, <a class="reference internal" href="#cmdoption-funimation-password"><code class="xref std std-option docutils literal"><span class="pre">--funimation-password</span></code></a>. In addition, this plugin requires a <code class="docutils literal"><span class="pre">incap_ses</span></code> cookie to be
 sent with each HTTP request (see issue <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2088">#2088</a>); this unique session cookie can be found in your browser and sent via the <a class="reference internal" href="#cmdoption-http-cookie"><code class="xref std std-option docutils literal"><span class="pre">--http-cookie</span></code></a> option.</p>
@@ -455,7 +455,7 @@ sent with each HTTP request (see issue <a class="reference external" href="https
 <p>There are multiple ways to retrieve the required cookie.  For more
 information on browser cookies, please consult the following:</p>
 <ul class="last simple">
-<li><a class="reference external" href="http://www.whatarecookies.com/view.asp">What are cookies?</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/HTTP_cookie">What are cookies?</a></li>
 </ul>
 </div>
 </div>
@@ -572,7 +572,7 @@ a Adobe HDS stream:</p>
 </div>
 </div>
 <div class="section" id="proxy-support">
-<span id="cli-options"></span><h2>Proxy Support<a class="headerlink" href="#proxy-support" title="Permalink to this headline">¶</a></h2>
+<h2>Proxy Support<a class="headerlink" href="#proxy-support" title="Permalink to this headline">¶</a></h2>
 <p>You can use the <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal"><span class="pre">--http-proxy</span></code></a> and <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal"><span class="pre">--https-proxy</span></code></a> options to
 change the proxy server that Streamlink will use for HTTP and HTTPS requests respectively.
 As HTTP and HTTPS requests can be handled by separate proxies, you may need to specify both
@@ -1922,7 +1922,7 @@ the following types are allowed:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.0+58.g02924fb',
+            VERSION:'1.7.0+60.g9d6c606',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

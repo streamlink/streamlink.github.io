@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Guide &mdash; Streamlink 1.7.0+58.g02924fb documentation</title>
+  <title>API Guide &mdash; Streamlink 1.7.0+60.g9d6c606 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+58.g02924fb documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0+60.g9d6c606 documentation" href="index.html"/>
         <link rel="next" title="API Reference" href="api.html"/>
         <link rel="prev" title="Developing" href="developing.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+58.g02924fb</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+60.g9d6c606</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -229,14 +229,14 @@
             
             
   <div class="section" id="api-guide">
-<span id="id1"></span><h1>API Guide<a class="headerlink" href="#api-guide" title="Permalink to this headline">¶</a></h1>
-<p>This API is what powers the <a class="reference internal" href="cli.html#cli"><span class="std std-ref">Command-Line Interface</span></a> but is also available to developers that wish
+<h1>API Guide<a class="headerlink" href="#api-guide" title="Permalink to this headline">¶</a></h1>
+<p>This API is what powers the <a class="reference internal" href="cli.html#command-line-interface"><span class="std std-ref">cli</span></a> but is also available to developers that wish
 to make use of the data Streamlink can retrieve in their own application.</p>
 <div class="section" id="extracting-streams">
 <h2>Extracting streams<a class="headerlink" href="#extracting-streams" title="Permalink to this headline">¶</a></h2>
 <p>The simplest use of the Streamlink API looks like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">streamlink</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">streamlink</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">&quot;http://twitch.tv/day9tv&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">streamlink</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">&quot;https://twitch.tv/day9tv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This simply attempts to find a plugin and use it to extract streams from
@@ -244,13 +244,13 @@ the URL. This works great in simple cases but if you want more
 fine tuning you need to use a <a class="reference internal" href="#session-object">session object</a> instead.</p>
 <p>The returned value is a dict containing <code class="xref py py-class docutils literal"><span class="pre">Stream</span></code> objects:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span>
-<span class="go">{&#39;best&#39;: &lt;HLSStream(&#39;http://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
-<span class="go"> &#39;high&#39;: &lt;HLSStream(&#39;http://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
-<span class="go"> &#39;low&#39;: &lt;HLSStream(&#39;http://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
-<span class="go"> &#39;medium&#39;: &lt;HLSStream(&#39;http://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
-<span class="go"> &#39;mobile&#39;: &lt;HLSStream(&#39;http://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
-<span class="go"> &#39;source&#39;: &lt;HLSStream(&#39;http://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
-<span class="go"> &#39;worst&#39;: &lt;HLSStream(&#39;http://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;}</span>
+<span class="go">{&#39;best&#39;: &lt;HLSStream(&#39;https://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
+<span class="go"> &#39;high&#39;: &lt;HLSStream(&#39;https://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
+<span class="go"> &#39;low&#39;: &lt;HLSStream(&#39;https://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
+<span class="go"> &#39;medium&#39;: &lt;HLSStream(&#39;https://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
+<span class="go"> &#39;mobile&#39;: &lt;HLSStream(&#39;https://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
+<span class="go"> &#39;source&#39;: &lt;HLSStream(&#39;https://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;,</span>
+<span class="go"> &#39;worst&#39;: &lt;HLSStream(&#39;https://video11.fra01.hls.twitch.tv/ ...&#39;)&gt;}</span>
 </pre></div>
 </div>
 <p>If no plugin for the URL is found, a <code class="xref py py-exc docutils literal"><span class="pre">NoPluginError</span></code> will be raised.
@@ -271,13 +271,13 @@ returned, which you can call <cite>.read(size)</cite> and <cite>.close()</cite> 
 </div>
 <div class="section" id="inspecting-streams">
 <h2>Inspecting streams<a class="headerlink" href="#inspecting-streams" title="Permalink to this headline">¶</a></h2>
-<p>It's also possible to inspect streams internal parameters, see
-<a class="reference internal" href="api.html#api-stream-subclasses"><span class="std std-ref">Stream subclasses</span></a> to see what attributes are available
+<p>It's also possible to inspect streams internal parameters, go to
+<a class="reference internal" href="api.html#stream-subclasses"><span class="std std-ref">Stream subclasses</span></a> to see what attributes are available
 for inspection for each stream type.</p>
 <p>For example this is a <code class="xref py py-class docutils literal"><span class="pre">HLSStream</span></code> object which
 contains a <cite>url</cite> attribute.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stream</span><span class="o">.</span><span class="n">url</span>
-<span class="go">&#39;http://video38.ams01.hls.twitch.tv/hls11/ ...&#39;</span>
+<span class="go">&#39;https://video38.ams01.hls.twitch.tv/hls11/ ...&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -291,7 +291,7 @@ when extracting streams more than once. You start by creating a
 </pre></div>
 </div>
 <p>You can then extract streams like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">&quot;http://twitch.tv/day9tv&quot;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">&quot;https://twitch.tv/day9tv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or set options like this:</p>
@@ -305,7 +305,7 @@ when extracting streams more than once. You start by creating a
 <div class="section" id="simple-player">
 <h3>Simple player<a class="headerlink" href="#simple-player" title="Permalink to this headline">¶</a></h3>
 <p>This example uses the <a class="reference external" href="https://wiki.gnome.org/action/show/Projects/PyGObject">PyGObject</a> module to playback a stream using the
-<a class="reference external" href="http://gstreamer.freedesktop.org/">GStreamer</a> framework.</p>
+<a class="reference external" href="https://gstreamer.freedesktop.org/">GStreamer</a> framework.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
@@ -488,7 +488,7 @@ when extracting streams more than once. You start by creating a
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.0+58.g02924fb',
+            VERSION:'1.7.0+60.g9d6c606',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

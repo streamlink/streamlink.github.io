@@ -1,5 +1,3 @@
-.. _install:
-
 .. |br| raw:: html
 
   <br />
@@ -140,9 +138,9 @@ Distribution                         Installing
 .. _Debian (stable): https://packages.debian.org/unstable/streamlink
 .. _Fedora: https://apps.fedoraproject.org/packages/python-streamlink
 .. _Gentoo Linux: https://packages.gentoo.org/package/net-misc/streamlink
-.. _NetBSD (pkgsrc): http://pkgsrc.se/multimedia/streamlink
+.. _NetBSD (pkgsrc): https://pkgsrc.se/multimedia/streamlink
 .. _NixOS: https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink
-.. _OpenBSD: http://openports.se/multimedia/streamlink
+.. _OpenBSD: https://openports.se/multimedia/streamlink
 .. _Solus: https://dev.solus-project.com/source/streamlink/
 .. _Ubuntu: http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu/pool/main/s/streamlink/
 .. _Void: https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink
@@ -177,7 +175,6 @@ Windows port. version                RosadinTV <RosadinTV at outlook.com> |br|
                                      beardypig <beardypig at protonmail.com>
 ==================================== ===========================================
 
-.. _PyPI package and source code:
 
 PyPI package and source code
 ----------------------------
@@ -286,8 +283,6 @@ using `virtualenv`_, which creates a user owned Python environment instead.
 
 .. _virtualenv: https://virtualenv.readthedocs.io/en/latest/
 
-.. _Dependencies:
-
 Dependencies
 ^^^^^^^^^^^^
 
@@ -331,8 +326,8 @@ With these two environment variables it is possible to use `pycrypto`_ instead o
 
 .. _Python: https://www.python.org/
 .. _python-setuptools: https://pypi.org/project/setuptools/
-.. _python-requests: http://python-requests.org/
-.. _RTMPDump: http://rtmpdump.mplayerhq.hu/
+.. _python-requests: https://requests.readthedocs.io/en/master/
+.. _RTMPDump: https://rtmpdump.mplayerhq.hu/
 .. _pycountry: https://pypi.org/project/pycountry/
 .. _pycrypto: https://www.dlitz.net/software/pycrypto/
 .. _pycryptodome: https://pycryptodome.readthedocs.io/en/latest/
@@ -368,8 +363,8 @@ Release                              Notes
     Be aware that the packages for `Chocolatey`_ and the `Windows Package Manager`_ are just wrappers
     around the stable installer and thus depend on Windows 7+ as well.
 
-    Alternatively, :ref:`Streamlink can be installed via python-pip<PyPI package and source code>`
-    in a :ref:`compatible<Dependencies>` Python environment.
+    Alternatively, :ref:`Streamlink can be installed via python-pip <install:PyPI package and source code>`
+    in a :ref:`compatible <install:Dependencies>` Python environment.
 
 .. _Stable release:
 .. _GitHub releases page: https://github.com/streamlink/streamlink/releases/latest
