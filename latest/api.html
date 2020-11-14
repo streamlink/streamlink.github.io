@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; Streamlink 1.7.0+60.g9d6c606 documentation</title>
+  <title>API Reference &mdash; Streamlink 1.7.0+63.gd0b6598 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+60.g9d6c606 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0+63.gd0b6598 documentation" href="index.html"/>
         <link rel="next" title="Changelog" href="changelog.html"/>
         <link rel="prev" title="API Guide" href="api_guide.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+60.g9d6c606</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+63.gd0b6598</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -505,36 +505,40 @@ e.g. <code class="docutils literal"><span class="pre">h264</span></code></td>
 audio when muxing with ffmpeg
 e.g. <code class="docutils literal"><span class="pre">aac</span></code></td>
 </tr>
-<tr class="row-odd"><td>stream-segment-attempts</td>
+<tr class="row-odd"><td>mux-subtitles</td>
+<td>(bool) Mux available subtitles into the
+output stream.</td>
+</tr>
+<tr class="row-even"><td>stream-segment-attempts</td>
 <td>(int) How many attempts should be done
 to download each segment, default: <code class="docutils literal"><span class="pre">3</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-even"><td>stream-segment-threads</td>
+<tr class="row-odd"><td>stream-segment-threads</td>
 <td>(int) The size of the thread pool used
 to download segments, default: <code class="docutils literal"><span class="pre">1</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-odd"><td>stream-segment-timeout</td>
+<tr class="row-even"><td>stream-segment-timeout</td>
 <td>(float) Segment connect and read
 timeout, default: <code class="docutils literal"><span class="pre">10.0</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-even"><td>stream-timeout</td>
+<tr class="row-odd"><td>stream-timeout</td>
 <td>(float) Timeout for reading data from
 stream, default: <code class="docutils literal"><span class="pre">60.0</span></code>.
 General option used by streams not
 covered by other options.</td>
 </tr>
-<tr class="row-odd"><td>locale</td>
+<tr class="row-even"><td>locale</td>
 <td>(str) Locale setting, in the RFC 1766 format
 eg. en_US or es_ES
 default: <code class="docutils literal"><span class="pre">system</span> <span class="pre">locale</span></code>.</td>
 </tr>
-<tr class="row-even"><td>user-input-requester</td>
+<tr class="row-odd"><td>user-input-requester</td>
 <td>(UserInputRequester) instance of UserInputRequester
 to collect input from the user at runtime. Must be
 set before the plugins are loaded.
@@ -735,13 +739,13 @@ the best/worst synonyms.</li>
 
 <dl class="class">
 <dt id="streamlink.options.Argument">
-<em class="property">class </em><code class="descclassname">streamlink.options.</code><code class="descname">Argument</code><span class="sig-paren">(</span><em>name</em>, <em>required=False</em>, <em>requires=None</em>, <em>prompt=None</em>, <em>sensitive=False</em>, <em>argument_name=None</em>, <em>dest=None</em>, <em>**options</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">streamlink.options.</code><code class="descname">Argument</code><span class="sig-paren">(</span><em>name</em>, <em>required=False</em>, <em>requires=None</em>, <em>prompt=None</em>, <em>sensitive=False</em>, <em>argument_name=None</em>, <em>dest=None</em>, <em>is_global=False</em>, <em>**options</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal"><span class="pre">Argument</span></code></a> accepts most of the same parameters as <code class="xref py py-func docutils literal"><span class="pre">ArgumentParser.add_argument()</span></code>,
 except requires is a special case as in this case it is only enforced if the plugin is in use.
 In addition the name parameter is the name relative to the plugin eg. username, password, etc.</p>
 <dl class="method">
 <dt id="streamlink.options.Argument.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em>, <em>required=False</em>, <em>requires=None</em>, <em>prompt=None</em>, <em>sensitive=False</em>, <em>argument_name=None</em>, <em>dest=None</em>, <em>**options</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>name</em>, <em>required=False</em>, <em>requires=None</em>, <em>prompt=None</em>, <em>sensitive=False</em>, <em>argument_name=None</em>, <em>dest=None</em>, <em>is_global=False</em>, <em>**options</em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -990,7 +994,7 @@ with this exception.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.0+60.g9d6c606',
+            VERSION:'1.7.0+63.gd0b6598',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
