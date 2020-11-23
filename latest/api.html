@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; Streamlink 1.7.0+79.g9ea16da documentation</title>
+  <title>API Reference &mdash; Streamlink 1.7.0+80.g568c89d documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+79.g9ea16da documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0+80.g568c89d documentation" href="index.html"/>
         <link rel="next" title="Changelog" href="changelog.html"/>
         <link rel="prev" title="API Guide" href="api_guide.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+79.g9ea16da</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+80.g568c89d</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -495,15 +495,24 @@ console</td>
 <td>(str) Specify the location of the
 ffmpeg stderr log file</td>
 </tr>
-<tr class="row-odd"><td>ffmpeg-video-transcode</td>
+<tr class="row-odd"><td>ffmpeg-fout</td>
+<td>(str) The output file format
+when muxing with ffmpeg
+e.g. <code class="docutils literal"><span class="pre">matroska</span></code></td>
+</tr>
+<tr class="row-even"><td>ffmpeg-video-transcode</td>
 <td>(str) The codec to use if transcoding
 video when muxing with ffmpeg
 e.g. <code class="docutils literal"><span class="pre">h264</span></code></td>
 </tr>
-<tr class="row-even"><td>ffmpeg-audio-transcode</td>
+<tr class="row-odd"><td>ffmpeg-audio-transcode</td>
 <td>(str) The codec to use if transcoding
 audio when muxing with ffmpeg
 e.g. <code class="docutils literal"><span class="pre">aac</span></code></td>
+</tr>
+<tr class="row-even"><td>ffmpeg-start-at-zero</td>
+<td>(bool) When used with ffmpeg and copyts,
+shift input timestamps so they start at zero</td>
 </tr>
 <tr class="row-odd"><td>mux-subtitles</td>
 <td>(bool) Mux available subtitles into the
@@ -994,7 +1003,7 @@ with this exception.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.0+79.g9ea16da',
+            VERSION:'1.7.0+80.g568c89d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
