@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command-Line Interface &mdash; Streamlink 1.7.0+93.g4727f53 documentation</title>
+  <title>Command-Line Interface &mdash; Streamlink 1.7.0+95.g51a391f documentation</title>
   
 
   
@@ -28,7 +28,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+93.g4727f53 documentation" href="index.html"/>
+    <link rel="top" title="Streamlink 1.7.0+95.g51a391f documentation" href="index.html"/>
         <link rel="next" title="Plugins" href="plugin_matrix.html"/>
         <link rel="prev" title="Installation" href="install.html"/> 
 
@@ -53,7 +53,7 @@
         
 
         <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+93.g4727f53</span>
+  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+95.g51a391f</span>
   <dl class="wy-side-nav-versions-others">
     <dd><a href="/" class="">Stable</a></dd>
     <dd><a href="/latest/" class="version-current">Latest</a></dd>
@@ -85,8 +85,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#tutorial">Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-file">Configuration file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#plugin-specific-usage">Plugin specific usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sideloading-plugins">Sideloading plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plugin-specific-usage">Plugin specific usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#proxy-support">Proxy Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#command-line-usage">Command-line usage</a></li>
@@ -327,7 +327,7 @@ your platform:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">On Windows there is a default config created by the installer but on any
+<p class="last">On Windows, there is a default config created by the installer, but on any
 other platform you must create the file yourself.</p>
 </div>
 <div class="section" id="syntax">
@@ -338,14 +338,14 @@ line in the format:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">option</span><span class="o">=</span><span class="n">value</span>
 </pre></div>
 </div>
-<p>or for a option without value:</p>
+<p>or for an option without value:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">option</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Any quotes used will be part of the value, so only use when the value needs them,
-e.g. specifying a player with a path containing spaces.</p>
+<p class="last">Any quotes used will be part of the value, so only use them when the value needs them,
+e.g. when specifying a player with a path which contains spaces.</p>
 </div>
 </div>
 <div class="section" id="example">
@@ -395,69 +395,8 @@ with <code class="docutils literal"><span class="pre">.&lt;plugin</span> <span c
 </tr>
 </tbody>
 </table>
-<p>Have a look at the <a class="reference internal" href="plugin_matrix.html#plugins"><span class="std std-ref">list of plugins</span></a> to see
-the name of each built-in plugin.</p>
-</div>
-</div>
-<div class="section" id="plugin-specific-usage">
-<h2>Plugin specific usage<a class="headerlink" href="#plugin-specific-usage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="authenticating-with-crunchyroll">
-<h3>Authenticating with Crunchyroll<a class="headerlink" href="#authenticating-with-crunchyroll" title="Permalink to this headline">¶</a></h3>
-<p>Crunchyroll requires authenticating with a premium account to access some of
-their content. To do so, the plugin provides a couple of options to input your
-information, <a class="reference internal" href="#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal"><span class="pre">--crunchyroll-username</span></code></a> and <a class="reference internal" href="#cmdoption-crunchyroll-password"><code class="xref std std-option docutils literal"><span class="pre">--crunchyroll-password</span></code></a>.</p>
-<p>You can login like this:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --crunchyroll-username<span class="o">=</span>xxxx --crunchyroll-password<span class="o">=</span>xxx https://crunchyroll.com/a-crunchyroll-episode-link
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you omit the password, streamlink will ask for it.</p>
-</div>
-<p>Once logged in, the plugin makes sure to save the session credentials to avoid
-asking your username and password again.</p>
-<p>Nevertheless, these credentials are valid for a limited amount of time, so it
-might be a good idea to save your username and password in your
-<a class="reference internal" href="#configuration-file"><span class="std std-ref">configuration file</span></a> anyway.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The API this plugin uses isn't supposed to be available to use it on
-computers. The plugin tries to blend in as a valid device using custom
-headers and following the API usual flow (e.g. reusing credentials), but
-this does not assure that your account will be safe from being spotted for
-unusual behavior.</p>
-</div>
-</div>
-<div class="section" id="http-proxy-with-crunchyroll">
-<h3>HTTP proxy with Crunchyroll<a class="headerlink" href="#http-proxy-with-crunchyroll" title="Permalink to this headline">¶</a></h3>
-<p>You can use the <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal"><span class="pre">--http-proxy</span></code></a> <strong>and</strong> <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal"><span class="pre">--https-proxy</span></code></a>
-options (you need both since the plugin uses both protocols) to access the
-Crunchyroll servers through a proxy to be able to stream region locked content.</p>
-<p>When doing this, it's very probable that you will get denied to access the
-stream; this occurs because the session and credentials used by the plugin
-where obtained when logged from your own region, and the server still assumes
-you're in that region.</p>
-<p>For this, the plugin provides the <a class="reference internal" href="#cmdoption-crunchyroll-purge-credentials"><code class="xref std std-option docutils literal"><span class="pre">--crunchyroll-purge-credentials</span></code></a>
-option, which removes your saved session and credentials and tries to log
-in again using your username and password.</p>
-</div>
-<div class="section" id="authenticating-with-funimationnow">
-<h3>Authenticating with FunimationNow<a class="headerlink" href="#authenticating-with-funimationnow" title="Permalink to this headline">¶</a></h3>
-<p>Like Crunchyroll, the FunimationNow plugin requires authenticating with a premium account to access some
-content: <a class="reference internal" href="#cmdoption-funimation-email"><code class="xref std std-option docutils literal"><span class="pre">--funimation-email</span></code></a>, <a class="reference internal" href="#cmdoption-funimation-password"><code class="xref std std-option docutils literal"><span class="pre">--funimation-password</span></code></a>. In addition, this plugin requires a <code class="docutils literal"><span class="pre">incap_ses</span></code> cookie to be
-sent with each HTTP request (see issue <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2088">#2088</a>); this unique session cookie can be found in your browser and sent via the <a class="reference internal" href="#cmdoption-http-cookie"><code class="xref std std-option docutils literal"><span class="pre">--http-cookie</span></code></a> option.</p>
-<p>For example:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --funimation-email<span class="o">=</span><span class="s1">&#39;xxx&#39;</span> --funimation-password<span class="o">=</span><span class="s1">&#39;xxx&#39;</span> --http-cookie <span class="s1">&#39;incap_ses_xxx=xxxx=&#39;</span> https://funimation.com/shows/show/an-episode-link
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>There are multiple ways to retrieve the required cookie.  For more
-information on browser cookies, please consult the following:</p>
-<ul class="last simple">
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/HTTP_cookie">What are cookies?</a></li>
-</ul>
-</div>
+<p>Have a look at the <a class="reference internal" href="plugin_matrix.html#plugins"><span class="std std-ref">list of plugins</span></a>, or
+check the <a class="reference internal" href="#cmdoption-plugins"><code class="xref std std-option docutils literal"><span class="pre">--plugins</span></code></a> option to see the name of each built-in plugin.</p>
 </div>
 </div>
 <div class="section" id="sideloading-plugins">
@@ -484,9 +423,69 @@ information on browser cookies, please consult the following:</p>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If a plugin is added with the same name as a built-in plugin then
+<p class="last">If a plugin is added with the same name as a built-in plugin, then
 the added plugin will take precedence. This is useful if you want
 to upgrade plugins independently of the Streamlink version.</p>
+</div>
+</div>
+<div class="section" id="plugin-specific-usage">
+<h2>Plugin specific usage<a class="headerlink" href="#plugin-specific-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="authenticating-with-crunchyroll">
+<h3>Authenticating with Crunchyroll<a class="headerlink" href="#authenticating-with-crunchyroll" title="Permalink to this headline">¶</a></h3>
+<p>Crunchyroll requires authenticating with a premium account to access some of
+their content. To do so, the plugin provides a couple of options to input your
+information, <a class="reference internal" href="#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal"><span class="pre">--crunchyroll-username</span></code></a> and <a class="reference internal" href="#cmdoption-crunchyroll-password"><code class="xref std std-option docutils literal"><span class="pre">--crunchyroll-password</span></code></a>.</p>
+<p>You can login like this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --crunchyroll-username<span class="o">=</span>xxxx --crunchyroll-password<span class="o">=</span>xxx https://crunchyroll.com/a-crunchyroll-episode-link
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you omit the password, streamlink will ask for it.</p>
+</div>
+<p>Once logged in, the plugin makes sure to save the session credentials to avoid
+asking your username and password again.</p>
+<p>Nevertheless, these credentials are valid for a limited amount of time, so it
+might be a good idea to save your username and password in your
+<a class="reference internal" href="#configuration-file"><span class="std std-ref">configuration file</span></a> anyway.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The API this plugin uses isn't supposed to be available on desktop
+computers. The plugin tries to blend in as a valid device using custom
+headers and following the API's usual flow (e.g. reusing credentials), but
+this does not assure that your account will be safe from being spotted for
+unusual behavior.</p>
+</div>
+</div>
+<div class="section" id="http-proxy-with-crunchyroll">
+<h3>HTTP proxy with Crunchyroll<a class="headerlink" href="#http-proxy-with-crunchyroll" title="Permalink to this headline">¶</a></h3>
+<p>To be able to stream region locked content, you can use Streamlink's proxy
+options, which are described in the <a class="reference internal" href="#proxy-support"><span class="std std-ref">Proxy Support</span></a> section.</p>
+<p>When doing this, it's possible that access to the stream will still be denied;
+this can happen because the session and credentials used by the plugin
+were obtained while being logged from your own region, and the server still assumes
+you're in that region.</p>
+<p>For cases like this, the plugin provides the <a class="reference internal" href="#cmdoption-crunchyroll-purge-credentials"><code class="xref std std-option docutils literal"><span class="pre">--crunchyroll-purge-credentials</span></code></a>
+option, which removes your saved session and credentials and tries to log
+in again using your username and password.</p>
+</div>
+<div class="section" id="authenticating-with-funimationnow">
+<h3>Authenticating with FunimationNow<a class="headerlink" href="#authenticating-with-funimationnow" title="Permalink to this headline">¶</a></h3>
+<p>Like Crunchyroll, the FunimationNow plugin requires authenticating with a premium account to access some
+content: <a class="reference internal" href="#cmdoption-funimation-email"><code class="xref std std-option docutils literal"><span class="pre">--funimation-email</span></code></a>, <a class="reference internal" href="#cmdoption-funimation-password"><code class="xref std std-option docutils literal"><span class="pre">--funimation-password</span></code></a>. In addition, this plugin requires
+the <code class="docutils literal"><span class="pre">incap_ses</span></code> cookie to be sent with each HTTP request (see issue <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2088">#2088</a>). This unique session cookie
+can be found in your browser and sent via the <a class="reference internal" href="#cmdoption-http-cookie"><code class="xref std std-option docutils literal"><span class="pre">--http-cookie</span></code></a> option.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --funimation-email<span class="o">=</span><span class="s1">&#39;xxx&#39;</span> --funimation-password<span class="o">=</span><span class="s1">&#39;xxx&#39;</span> --http-cookie <span class="s1">&#39;incap_ses_xxx=xxxx=&#39;</span> https://funimation.com/shows/show/an-episode-link
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>There are multiple ways to retrieve the required cookie. For more
+information on browser cookies, please consult the following:</p>
+<ul class="last simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/HTTP_cookie">What are cookies?</a></li>
+</ul>
+</div>
 </div>
 </div>
 <div class="section" id="playing-built-in-streaming-protocols-directly">
@@ -504,23 +503,24 @@ to extract the streams from a URL for you.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="s2">&quot;rtmp://streaming.server.net/playpath live=1 swfVfy=http://server.net/flashplayer.swf&quot;</span>
 </pre></div>
 </div>
-<p>When passing parameters to the built-in stream plugins the values will either be treated as plain
-strings, as is the case in the above example for <code class="docutils literal"><span class="pre">swfVry</span></code>, or they will be interpreted as Python literals. For
-example you can pass a Python dict or Python list as one of the parameters.</p>
+<p>When passing parameters to the built-in stream plugins, the values will either
+be treated as plain strings, as is the case in the example above for <code class="docutils literal"><span class="pre">swfVry</span></code>,
+or they will be interpreted as Python literals. For example, you can pass a
+Python dict or Python list as one of the parameters.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="s2">&quot;rtmp://streaming.server.net/playpath conn=[&#39;B:1&#39;, &#39;S:authMe&#39;, &#39;O:1&#39;, &#39;NN:code:1.23&#39;, &#39;NS:flag:ok&#39;, &#39;O:0&#39;]&quot;</span>
 <span class="gp">$</span> streamlink <span class="s2">&quot;hls://streaming.server.net/playpath params={&#39;token&#39;: &#39;magicToken&#39;}&quot;</span>
 </pre></div>
 </div>
-<p>In the above examples <code class="docutils literal"><span class="pre">conn</span></code> will be passed as the Python list:</p>
+<p>In the examples above, <code class="docutils literal"><span class="pre">conn</span></code> will be passed as a Python list:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;B:1&#39;</span><span class="p">,</span> <span class="s1">&#39;S:authMe&#39;</span><span class="p">,</span> <span class="s1">&#39;O:1&#39;</span><span class="p">,</span> <span class="s1">&#39;NN:code:1.23&#39;</span><span class="p">,</span> <span class="s1">&#39;NS:flag:ok&#39;</span><span class="p">,</span> <span class="s1">&#39;O:0&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>and <code class="docutils literal"><span class="pre">params</span></code> will be passed as the Python dict:</p>
+<p>and <code class="docutils literal"><span class="pre">params</span></code> will be passed as a Python dict:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;token&#39;</span><span class="p">:</span> <span class="s1">&#39;magicToken&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Most streaming technologies simply requires you to pass a HTTP URL, this is
-a Adobe HDS stream:</p>
+<p>Most streaming protocols only require you to pass a simple URL.
+This is an Adobe HDS stream:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink hds://streaming.server.net/playpath/manifest.f4m
 </pre></div>
 </div>
@@ -573,18 +573,17 @@ a Adobe HDS stream:</p>
 </div>
 <div class="section" id="proxy-support">
 <h2>Proxy Support<a class="headerlink" href="#proxy-support" title="Permalink to this headline">¶</a></h2>
-<p>You can use the <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal"><span class="pre">--http-proxy</span></code></a> and <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal"><span class="pre">--https-proxy</span></code></a> options to
+<p>You can use the <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal"><span class="pre">--http-proxy</span></code></a> or <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal"><span class="pre">--https-proxy</span></code></a> options to
 change the proxy server that Streamlink will use for HTTP and HTTPS requests respectively.
-As HTTP and HTTPS requests can be handled by separate proxies, you may need to specify both
-options if the plugin you use makes HTTP and HTTPS requests.</p>
-<p>Both HTTP and SOCKS proxies are supported, authentication is supported for both types.</p>
+For convenience reasons, <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal"><span class="pre">--http-proxy</span></code></a> will automatically set the
+value of <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal"><span class="pre">--https-proxy</span></code></a> as well, if it has not been set by the user.</p>
+<p>Both HTTP and SOCKS proxies are supported, as well as authentication in each of them.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">When using a SOCKS proxy the <code class="docutils literal"><span class="pre">socks4</span></code> and <code class="docutils literal"><span class="pre">socks5</span></code> schemes mean that DNS lookups are done
+<p class="last">When using a SOCKS proxy, the <code class="docutils literal"><span class="pre">socks4</span></code> and <code class="docutils literal"><span class="pre">socks5</span></code> schemes mean that DNS lookups are done
 locally, rather than on the proxy server. To have the proxy server perform the DNS lookups, the
 <code class="docutils literal"><span class="pre">socks4a</span></code> and <code class="docutils literal"><span class="pre">socks5h</span></code> schemes should be used instead.</p>
 </div>
-<p>For example:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --http-proxy <span class="s2">&quot;http://user:pass@10.10.1.10:3128/&quot;</span> --https-proxy <span class="s2">&quot;socks5://10.10.1.10:1242&quot;</span>
 <span class="gp">$</span> streamlink --http-proxy <span class="s2">&quot;socks4a://10.10.1.10:1235&quot;</span> --https-proxy <span class="s2">&quot;socks5h://10.10.1.10:1234&quot;</span>
 </pre></div>
@@ -625,13 +624,17 @@ of available streams will be printed.</p>
 <h3>General options<a class="headerlink" href="#general-options" title="Permalink to this headline">¶</a></h3>
 <dl class="option">
 <dt id="cmdoption-h">
-<code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-help">
+<code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-help" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show this help message and exit.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-v">
-<code class="descname">-V</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--version</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-v" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-version">
+<code class="descname">--version</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show version number and exit.</p>
 </dd></dl>
 
@@ -673,21 +676,27 @@ merged on top of each other where the last config has highest priority.</p>
 
 <dl class="option">
 <dt id="cmdoption-l">
-<code class="descname">-l</code><code class="descclassname"> LEVEL</code><code class="descclassname">, </code><code class="descname">--loglevel</code><code class="descclassname"> LEVEL</code><a class="headerlink" href="#cmdoption-l" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-l</code><code class="descclassname"> LEVEL</code><a class="headerlink" href="#cmdoption-l" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-loglevel">
+<code class="descname">--loglevel</code><code class="descclassname"> LEVEL</code><a class="headerlink" href="#cmdoption-loglevel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the log message threshold.</p>
 <p>Valid levels are: none, error, warning, info, debug, trace</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-q">
-<code class="descname">-Q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-q" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-Q</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-q" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-quiet">
+<code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quiet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hide all log output.</p>
 <p>Alias for &quot;--loglevel none&quot;.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-j">
-<code class="descname">-j</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--json</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-j" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-j</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-j" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-json">
+<code class="descname">--json</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output JSON representations instead of the normal text output.</p>
 <p>Useful for external scripting.</p>
 </dd></dl>
@@ -720,7 +729,9 @@ es_ES.</p>
 <h3>Player options<a class="headerlink" href="#player-options" title="Permalink to this headline">¶</a></h3>
 <dl class="option">
 <dt id="cmdoption-p">
-<code class="descname">-p</code><code class="descclassname"> COMMAND</code><code class="descclassname">, </code><code class="descname">--player</code><code class="descclassname"> COMMAND</code><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-p</code><code class="descclassname"> COMMAND</code><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-player">
+<code class="descname">--player</code><code class="descclassname"> COMMAND</code><a class="headerlink" href="#cmdoption-player" title="Permalink to this definition">¶</a></dt>
 <dd><p>Player to feed stream data to. By default, VLC will be used if it can be
 found in its default location.</p>
 <p>This is a shell-like syntax to support using a specific player:</p>
@@ -743,16 +754,18 @@ parameter or its value:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span> <span class="s2">&quot;vlc --file-caching=5000&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>As an alternative to this, see the <a class="reference internal" href="#cmdoption-a"><code class="xref std std-option docutils literal"><span class="pre">--player-args</span></code></a> parameter, which does
+<p>As an alternative to this, see the <a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal"><span class="pre">--player-args</span></code></a> parameter, which does
 not log any custom player arguments.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-a">
-<code class="descname">-a</code><code class="descclassname"> ARGUMENTS</code><code class="descclassname">, </code><code class="descname">--player-args</code><code class="descclassname"> ARGUMENTS</code><a class="headerlink" href="#cmdoption-a" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-a</code><code class="descclassname"> ARGUMENTS</code><a class="headerlink" href="#cmdoption-a" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-player-args">
+<code class="descname">--player-args</code><code class="descclassname"> ARGUMENTS</code><a class="headerlink" href="#cmdoption-player-args" title="Permalink to this definition">¶</a></dt>
 <dd><p>This option allows you to customize the default arguments which are put
-together with the value of <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> to create a command to execute.</p>
-<p>It's usually enough to only use <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> instead of this unless you need
+together with the value of <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> to create a command to execute.</p>
+<p>It's usually enough to only use <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> instead of this unless you need
 to add arguments after the player's input argument or if you don't want
 any of the player arguments to be logged.</p>
 <p>The value can contain formatting variables surrounded by curly braces,
@@ -779,14 +792,20 @@ always receives an input argument.</p>
 </dd></dl>
 
 <dl class="option">
+<dt id="id6">
+<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
 <dt id="cmdoption-verbose-player">
-<code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose-player</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-verbose-player" title="Permalink to this definition">¶</a></dt>
+<code class="descname">--verbose-player</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-verbose-player" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow the player to display its console output.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-n">
-<code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--player-fifo</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--fifo</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-n" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-n</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-n" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-player-fifo">
+<code class="descname">--player-fifo</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-player-fifo" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-fifo">
+<code class="descname">--fifo</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-fifo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make the player read the stream through a named pipe instead of the
 stdin pipe.</p>
 </dd></dl>
@@ -854,7 +873,9 @@ player before it has played back all of its cached data.</p>
 
 <dl class="option">
 <dt id="cmdoption-t">
-<code class="descname">-t</code><code class="descclassname"> TITLE</code><code class="descclassname">, </code><code class="descname">--title</code><code class="descclassname"> TITLE</code><a class="headerlink" href="#cmdoption-t" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-t</code><code class="descclassname"> TITLE</code><a class="headerlink" href="#cmdoption-t" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-title">
+<code class="descname">--title</code><code class="descclassname"> TITLE</code><a class="headerlink" href="#cmdoption-title" title="Permalink to this definition">¶</a></dt>
 <dd><p>This option allows you to supply a title to be displayed in the
 title bar of the window that the video player is launched in.</p>
 <p>This value can contain formatting variables surrounded by curly braces,
@@ -882,7 +903,7 @@ inserted inside your --title string.</p>
 <a class="reference external" href="https://mpv.io/manual/stable/#property-list">https://mpv.io/manual/stable/#property-list</a></p>
 </dd>
 </dl>
-<p>Formatting variables available to use in <a class="reference internal" href="#cmdoption-t"><code class="xref std std-option docutils literal"><span class="pre">--title</span></code></a>:</p>
+<p>Formatting variables available to use in <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal"><span class="pre">--title</span></code></a>:</p>
 <dl class="docutils">
 <dt>{title}</dt>
 <dd>If available, this is the title of the stream.
@@ -917,14 +938,18 @@ the stream, so it doesn't need its own separate handling.</dd>
 <h3>File output options<a class="headerlink" href="#file-output-options" title="Permalink to this headline">¶</a></h3>
 <dl class="option">
 <dt id="cmdoption-o">
-<code class="descname">-o</code><code class="descclassname"> FILENAME</code><code class="descclassname">, </code><code class="descname">--output</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-o" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-o</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-o" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-output">
+<code class="descname">--output</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write stream data to FILENAME instead of playing it.</p>
 <p>You will be prompted if the file already exists.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-f">
-<code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--force</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-f" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-force">
+<code class="descname">--force</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-force" title="Permalink to this definition">¶</a></dt>
 <dd><p>When using -o or -r, always write to file even if it already exists.</p>
 </dd></dl>
 
@@ -936,21 +961,27 @@ show the download progress bar even if there is no terminal.</p>
 </dd></dl>
 
 <dl class="option">
+<dt id="id7">
+<code class="descname">-O</code><code class="descclassname"></code><a class="headerlink" href="#id7" title="Permalink to this definition">¶</a></dt>
 <dt id="cmdoption-stdout">
-<code class="descname">-O</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--stdout</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-stdout" title="Permalink to this definition">¶</a></dt>
+<code class="descname">--stdout</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-stdout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write stream data to stdout instead of playing it.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-r">
-<code class="descname">-r</code><code class="descclassname"> FILENAME</code><code class="descclassname">, </code><code class="descname">--record</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-r" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-r</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-r" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-record">
+<code class="descname">--record</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-record" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the stream in the player, while at the same time writing it to FILENAME.</p>
 <p>You will be prompted if the file already exists.</p>
 </dd></dl>
 
 <dl class="option">
+<dt id="id8">
+<code class="descname">-R</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#id8" title="Permalink to this definition">¶</a></dt>
 <dt id="cmdoption-record-and-pipe">
-<code class="descname">-R</code><code class="descclassname"> FILENAME</code><code class="descclassname">, </code><code class="descname">--record-and-pipe</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-record-and-pipe" title="Permalink to this definition">¶</a></dt>
+<code class="descname">--record-and-pipe</code><code class="descclassname"> FILENAME</code><a class="headerlink" href="#cmdoption-record-and-pipe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write stream data to stdout, while at the same time writing it to FILENAME.</p>
 <p>You will be prompted if the file already exists.</p>
 </dd></dl>
@@ -1010,7 +1041,9 @@ giving up.</p>
 
 <dl class="option">
 <dt id="cmdoption-stream-types">
-<code class="descname">--stream-types</code><code class="descclassname"> TYPES</code><code class="descclassname">, </code><code class="descname">--stream-priority</code><code class="descclassname"> TYPES</code><a class="headerlink" href="#cmdoption-stream-types" title="Permalink to this definition">¶</a></dt>
+<code class="descname">--stream-types</code><code class="descclassname"> TYPES</code><a class="headerlink" href="#cmdoption-stream-types" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-stream-priority">
+<code class="descname">--stream-priority</code><code class="descclassname"> TYPES</code><a class="headerlink" href="#cmdoption-stream-priority" title="Permalink to this definition">¶</a></dt>
 <dd><p>A comma-delimited list of stream types to allow.</p>
 <p>The order will be used to separate streams when there are multiple
 streams with the same name but different stream types. Any stream type
@@ -1791,7 +1824,7 @@ Regular streams can cause buffering issues with this option enabled.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">The caching/buffering settings of the chosen player may need to be adjusted as well.
 Please refer to the player's own documentation for the required parameters and its configuration.
-Player parameters can be set via Streamlink's <a class="reference internal" href="#cmdoption-p"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> or <a class="reference internal" href="#cmdoption-a"><code class="xref std std-option docutils literal"><span class="pre">--player-args</span></code></a> parameters.</p>
+Player parameters can be set via Streamlink's <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> or <a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal"><span class="pre">--player-args</span></code></a> parameters.</p>
 </div>
 </dd></dl>
 
@@ -1920,7 +1953,7 @@ the following types are allowed:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.0+93.g4727f53',
+            VERSION:'1.7.0+95.g51a391f',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
