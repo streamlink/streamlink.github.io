@@ -1,233 +1,177 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developing" href="developing.html" /><link rel="prev" title="Players" href="players.html" />
 
-
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Common issues &mdash; Streamlink 1.7.0+103.g401440c documentation</title>
-  
-
-  
-  
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  
-  
+    <meta name="generator" content="sphinx-3.3.1, furo 2020.12.09.beta21"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
+  <link rel="shortcut icon" href="/_static/favicon.ico">
+  <link rel="manifest" href="/_static/site.webmanifest">
+        <title>Common issues - Streamlink 1.7.0+114.gf62dd98 documentation</title>
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=a3f371badb8538d75df213ccffb17a4f6e8f3ac5">
+    <link rel="stylesheet" href="_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
     
 
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
   
-
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+103.g401440c documentation" href="index.html"/>
-        <link rel="next" title="Developing" href="developing.html"/>
-        <link rel="prev" title="Players" href="players.html"/> 
+    }
+  }
 
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document" data-spy="scroll" data-target=".wy-menu-vertical > ul > li.current > ul">
-
-  <div class="wy-grid-for-nav">
-
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
+    <link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60">
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script defer src="_static/jquery.js"></script>
+    <script defer src="_static/underscore.js"></script>
+    <script defer src="_static/doctools.js"></script>
+    <script defer src="_static/language_data.js"></script>
+    <script defer src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></head>
+  <body dir="">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-header">
-        <a href="index.html"> Streamlink</a>
-        
-        <div class="tablet-hide">
-          <small>Command-line utility that extracts streams from various services and pipes them into a video player of choice.</small>
-          <hr />
-        </div>
-        
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
 
-        <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+103.g401440c</span>
-  <dl class="wy-side-nav-versions-others">
-    <dd><a href="/" class="">Stable</a></dd>
-    <dd><a href="/latest/" class="version-current">Latest</a></dd>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Streamlink 1.7.0+114.gf62dd98 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand centered" href="index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/icon.svg" alt="Streamlink"/>
+  </div>
+  <p class="sidebar-brand-text">Streamlink</p>
+  <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
+</a>
+<div class="sidebar-versions centered" role="note" aria-label="versions">
+  <pre class="sidebar-versions-current">1.7.0+114.gf62dd98</pre>
+  <dl class="sidebar-versions-others">
+    <dd><a href="/issues.html" class="">Stable</a></dd>
+    <dd><a href="/latest/issues.html" class="version-current">Latest</a></dd>
   </dl>
-</div>
-        <div class="wy-side-nav-search" role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install.html#windows">Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#macos">macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd">Linux and BSD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#package-maintainers">Package maintainers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#pypi-package-and-source-code">PyPI package and source code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#tutorial">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#configuration-file">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#sideloading-plugins">Sideloading plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-usage">Plugin specific usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#proxy-support">Proxy Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#command-line-usage">Command-line usage</a></li>
-</ul>
-</li>
+</div><form class="sidebar-search-container" method="get" action="search.html">
+  <input class="sidebar-search" placeholder="Search" name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="players.html#transport-modes">Transport modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players.html#player-compatibility">Player compatibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Common issues</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#validating-changes">Validating changes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#plugins">Plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#inspecting-streams">Inspecting streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#session-object">Session object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#streamlink">Streamlink</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#session">Session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#module-streamlink.plugin">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#streams">Streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-7-0-2020-10-18">streamlink 1.7.0 (2020-10-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-6-0-2020-09-22">streamlink 1.6.0 (2020-09-22)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-5-0-2020-07-07">streamlink 1.5.0 (2020-07-07)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-1-2020-04-24">streamlink 1.4.1 (2020-04-24)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-0-2020-04-22">streamlink 1.4.0 (2020-04-22)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-1-2020-01-27">streamlink 1.3.1 (2020-01-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-0-2019-11-22">streamlink 1.3.0 (2019-11-22)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-2-0-2019-08-18">streamlink 1.2.0 (2019-08-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-1-2019-04-02">streamlink 1.1.1 (2019-04-02)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-0-2019-03-31">streamlink 1.1.0 (2019-03-31)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-0-0-2019-01-30">streamlink 1.0.0 (2019-01-30)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-2-2018-06-28">streamlink 0.14.2 (2018-06-28)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-0-2018-06-26">streamlink 0.14.0 (2018-06-26)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-1-2018-05-07">streamlink 0.12.1 (2018-05-07)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-0-2018-05-07">streamlink 0.12.0 (2018-05-07)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-11-0-2018-03-08">streamlink 0.11.0 (2018-03-08)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-10-0-2018-01-23">streamlink 0.10.0 (2018-01-23)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-9-0-2017-11-14">streamlink 0.9.0 (2017-11-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-8-1-2017-09-12">Streamlink 0.8.1 (2017-09-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-7-0-2017-06-30">streamlink 0.7.0 (2017-06-30)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-6-0-2017-05-11">streamlink 0.6.0 (2017-05-11)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-5-0-2017-04-04">streamlink 0.5.0 (2017-04-04)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-4-0-2017-03-09">streamlink 0.4.0 (2017-03-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-2-2017-02-10">streamlink 0.3.2 (2017-02-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-1-2017-02-03">streamlink 0.3.1 (2017-02-03)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-0-2017-01-24">streamlink 0.3.0 (2017-01-24)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-2-0-2016-12-16">streamlink 0.2.0 (2016-12-16)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-1-0-2016-11-21">streamlink 0.1.0 (2016-11-21)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-2-2016-10-12">streamlink 0.0.2 (2016-10-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-1-2016-09-23">streamlink 0.0.1 (2016-09-23)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#bastimeyer">Bastimeyer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#beardypig">Beardypig</a></li>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#gravyboat">Gravyboat</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="applications.html#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#liveproxy">LiveProxy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#wtwitch">Wtwitch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#obs-streamlink">OBS-Streamlink</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Common issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a></li>
 </ul>
 
-        
-      </div>
-
-
-      
-      <div class="tablet-hide">
-        <hr />
-		<p class="wy-text-center">
-	        <a href="https://github.com/streamlink/streamlink"
-			   class="github-button" data-icon="octicon-mark-github"
-		       data-count-href="/streamlink/streamlink/stargazers"
-			   data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
-	        <a href="https://github.com/streamlink/streamlink/issues"
-			   class="github-button" data-icon="octicon-issue-opened">Issues</a>
-
-        </p>
+</div><div class="github-buttons centered">
+  <a href="https://github.com/streamlink/streamlink"
+    class="github-button"
+    data-icon="octicon-mark-github"
+    data-count-href="/streamlink/streamlink/stargazers"
+    data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+  <a href="https://github.com/streamlink/streamlink/issues"
+    class="github-button"
+    data-icon="octicon-issue-opened">Issues</a>
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</div></div>
       </div>
       
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Streamlink</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Common issues</li>
-      <li class="wy-breadcrumbs-aside">
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
         
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            
-            <div class="admonition version-warning">
-              <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-            </div>
-            
-            
+  
+    <div class="admonition important version-warning">
+      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+    </div>
+  
   <div class="section" id="common-issues">
 <h1>Common issues<a class="headerlink" href="#common-issues" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="streams-are-buffering-lagging">
@@ -237,72 +181,72 @@
 <p>By default most players do not cache the data they receive from Streamlink.
 Caching can reduce the amount of buffering you run into because the player will
 have some breathing room between receiving the data and playing it.</p>
-<table border="1" class="docutils">
+<div class="table-wrapper"><table class="docutils align-default">
 <colgroup>
-<col width="15%" />
-<col width="36%" />
-<col width="49%" />
+<col style="width: 15%"/>
+<col style="width: 36%"/>
+<col style="width: 49%"/>
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Player</th>
-<th class="head">Parameter</th>
-<th class="head">Note</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Player</p></th>
+<th class="head"><p>Parameter</p></th>
+<th class="head"><p>Note</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>MPC-HC</td>
-<td>--</td>
-<td>Currently no way of configuring the cache</td>
+<tbody>
+<tr class="row-even"><td><p>MPC-HC</p></td>
+<td><p>--</p></td>
+<td><p>Currently no way of configuring the cache</p></td>
 </tr>
-<tr class="row-odd"><td>MPlayer</td>
-<td><code class="docutils literal"><span class="pre">-cache</span> <span class="pre">&lt;kbytes&gt;</span></code></td>
-<td>Between 1024 and 8192 is recommended</td>
+<tr class="row-odd"><td><p>MPlayer</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-cache</span> <span class="pre">&lt;kbytes&gt;</span></code></p></td>
+<td><p>Between 1024 and 8192 is recommended</p></td>
 </tr>
-<tr class="row-even"><td>mpv</td>
-<td><code class="docutils literal"><span class="pre">--cache=yes</span>
-<span class="pre">--demuxer-max-bytes=&lt;kbytes&gt;</span></code></td>
-<td>Between 1024 and 8192 is recommended</td>
+<tr class="row-even"><td><p>mpv</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--cache=yes</span>
+<span class="pre">--demuxer-max-bytes=&lt;kbytes&gt;</span></code></p></td>
+<td><p>Between 1024 and 8192 is recommended</p></td>
 </tr>
-<tr class="row-odd"><td>VLC</td>
-<td><code class="docutils literal"><span class="pre">--file-caching</span> <span class="pre">&lt;ms&gt;</span>
-<span class="pre">--network-caching</span> <span class="pre">&lt;ms&gt;</span></code></td>
-<td>Between 1000 and 10000 is recommended</td>
+<tr class="row-odd"><td><p>VLC</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--file-caching</span> <span class="pre">&lt;ms&gt;</span>
+<span class="pre">--network-caching</span> <span class="pre">&lt;ms&gt;</span></code></p></td>
+<td><p>Between 1000 and 10000 is recommended</p></td>
 </tr>
 </tbody>
-</table>
-<p>Use the <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal"><span class="pre">--player-args</span></code></a> or <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal"><span class="pre">--player</span></code></a> option to pass these options to your player.</p>
+</table></div>
+<p>Use the <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> or <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> option to pass these options to your player.</p>
 </div>
 <div class="section" id="multi-threaded-streaming">
 <h3>Multi-threaded streaming<a class="headerlink" href="#multi-threaded-streaming" title="Permalink to this headline">¶</a></h3>
 <p>On segmented streaming protocols (such as HLS and HDS) it's possible to use
 multiple threads to potentially increase the throughput.
 Each stream type has its own option, and these are the ones that are currently available:</p>
-<table border="1" class="docutils">
+<div class="table-wrapper"><table class="docutils align-default">
 <colgroup>
-<col width="43%" />
-<col width="57%" />
+<col style="width: 43%"/>
+<col style="width: 57%"/>
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Option</th>
-<th class="head">Used by these plugins</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Used by these plugins</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><a class="reference internal" href="cli.html#cmdoption-hls-segment-threads"><code class="xref std std-option docutils literal"><span class="pre">--hls-segment-threads</span></code></a></td>
-<td><cite>twitch</cite>, <cite>youtube</cite> and many more.</td>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="cli.html#cmdoption-hls-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-threads</span></code></a></p></td>
+<td><p><cite>twitch</cite>, <cite>youtube</cite> and many more.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="cli.html#cmdoption-hds-segment-threads"><code class="xref std std-option docutils literal"><span class="pre">--hds-segment-threads</span></code></a></td>
-<td><cite>dailymotion</cite> and many more.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="cli.html#cmdoption-hds-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hds-segment-threads</span></code></a></p></td>
+<td><p><cite>dailymotion</cite> and many more.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="cli.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal"><span class="pre">--stream-segment-threads</span></code></a></td>
-<td><cite>ustreamtv</cite> and any other plugins implementing
-their own segmented streaming protocol.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="cli.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code></a></p></td>
+<td><p><cite>ustreamtv</cite> and any other plugins implementing
+their own segmented streaming protocol.</p></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Using 2 or 3 threads should be enough to see an impact on live streams,
+<p class="admonition-title">Note</p>
+<p>Using 2 or 3 threads should be enough to see an impact on live streams,
 any more will likely not show much effect.</p>
 </div>
 </div>
@@ -310,72 +254,72 @@ any more will likely not show much effect.</p>
 </div>
 
 
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="developing.html" class="btn btn-neutral float-right" title="Developing">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="players.html" class="btn btn-neutral" title="Players"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="developing.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Developing</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="players.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Players</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2020, Streamlink
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        </div>
+        
+      </footer>
     </div>
-  
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Common issues</a><ul>
+<li><a class="reference internal" href="#streams-are-buffering-lagging">Streams are buffering/lagging</a><ul>
+<li><a class="reference internal" href="#enable-caching-in-your-player">Enable caching in your player</a></li>
+<li><a class="reference internal" href="#multi-threaded-streaming">Multi-threaded streaming</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Streamlink.
-    </p>
-  </div>
-
-  <a href="https://github.com/chrippa/sphinx_rtd_theme_violet">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
-</footer>
+          </div>
         </div>
       </div>
-
-    </section>
-
-  </div>
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.7.0+103.g401440c',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-  <script type="text/javascript" src="_static/js/scrollspy.js"></script>
-
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-  
-
-
-  
-  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-   
-
-</body>
+      
+      
+    </aside>
+  </main>
+</div>
+  </body>
 </html>

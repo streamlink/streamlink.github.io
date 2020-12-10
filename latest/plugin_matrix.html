@@ -1,1576 +1,1475 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Players" href="players.html" /><link rel="prev" title="Command-Line Interface" href="cli.html" />
 
-
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Plugins &mdash; Streamlink 1.7.0+103.g401440c documentation</title>
-  
-
-  
-  
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  
-  
+    <meta name="generator" content="sphinx-3.3.1, furo 2020.12.09.beta21"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
+  <link rel="shortcut icon" href="/_static/favicon.ico">
+  <link rel="manifest" href="/_static/site.webmanifest">
+        <title>Plugins - Streamlink 1.7.0+114.gf62dd98 documentation</title>
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=a3f371badb8538d75df213ccffb17a4f6e8f3ac5">
+    <link rel="stylesheet" href="_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
     
 
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
   
-
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Streamlink 1.7.0+103.g401440c documentation" href="index.html"/>
-        <link rel="next" title="Players" href="players.html"/>
-        <link rel="prev" title="Command-Line Interface" href="cli.html"/> 
+    }
+  }
 
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document" data-spy="scroll" data-target=".wy-menu-vertical > ul > li.current > ul">
-
-  <div class="wy-grid-for-nav">
-
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
+    <link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60">
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script defer src="_static/jquery.js"></script>
+    <script defer src="_static/underscore.js"></script>
+    <script defer src="_static/doctools.js"></script>
+    <script defer src="_static/language_data.js"></script>
+    <script defer src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></head>
+  <body dir="">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-header">
-        <a href="index.html"> Streamlink</a>
-        
-        <div class="tablet-hide">
-          <small>Command-line utility that extracts streams from various services and pipes them into a video player of choice.</small>
-          <hr />
-        </div>
-        
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
 
-        <div class="wy-side-nav-versions" role="note" aria-label="versions">
-  <span class="wy-side-nav-versions-current"><i class="fa fa-book"></i>1.7.0+103.g401440c</span>
-  <dl class="wy-side-nav-versions-others">
-    <dd><a href="/" class="">Stable</a></dd>
-    <dd><a href="/latest/" class="version-current">Latest</a></dd>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Streamlink 1.7.0+114.gf62dd98 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand centered" href="index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/icon.svg" alt="Streamlink"/>
+  </div>
+  <p class="sidebar-brand-text">Streamlink</p>
+  <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
+</a>
+<div class="sidebar-versions centered" role="note" aria-label="versions">
+  <pre class="sidebar-versions-current">1.7.0+114.gf62dd98</pre>
+  <dl class="sidebar-versions-others">
+    <dd><a href="/plugin_matrix.html" class="">Stable</a></dd>
+    <dd><a href="/latest/plugin_matrix.html" class="version-current">Latest</a></dd>
   </dl>
-</div>
-        <div class="wy-side-nav-search" role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install.html#windows">Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#macos">macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#linux-and-bsd">Linux and BSD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#package-maintainers">Package maintainers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#pypi-package-and-source-code">PyPI package and source code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#tutorial">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#configuration-file">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-configuration-file">Plugin specific configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#sideloading-plugins">Sideloading plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#plugin-specific-usage">Plugin specific usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#proxy-support">Proxy Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#command-line-usage">Command-line usage</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Plugins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="players.html#transport-modes">Transport modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players.html#player-compatibility">Player compatibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="players.html#known-issues-and-workarounds">Known issues and workarounds</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="issues.html#streams-are-buffering-lagging">Streams are buffering/lagging</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#validating-changes">Validating changes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing.html#plugins">Plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#extracting-streams">Extracting streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#opening-streams-to-read-data">Opening streams to read data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#inspecting-streams">Inspecting streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#session-object">Session object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_guide.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#streamlink">Streamlink</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#session">Session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#module-streamlink.plugin">Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#streams">Streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-7-0-2020-10-18">streamlink 1.7.0 (2020-10-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-6-0-2020-09-22">streamlink 1.6.0 (2020-09-22)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-5-0-2020-07-07">streamlink 1.5.0 (2020-07-07)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-1-2020-04-24">streamlink 1.4.1 (2020-04-24)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-4-0-2020-04-22">streamlink 1.4.0 (2020-04-22)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-1-2020-01-27">streamlink 1.3.1 (2020-01-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-3-0-2019-11-22">streamlink 1.3.0 (2019-11-22)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-2-0-2019-08-18">streamlink 1.2.0 (2019-08-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-1-2019-04-02">streamlink 1.1.1 (2019-04-02)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-1-0-2019-03-31">streamlink 1.1.0 (2019-03-31)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-1-0-0-2019-01-30">streamlink 1.0.0 (2019-01-30)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-2-2018-06-28">streamlink 0.14.2 (2018-06-28)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-14-0-2018-06-26">streamlink 0.14.0 (2018-06-26)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-13-0-2018-06-06">streamlink 0.13.0 (2018-06-06)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-1-2018-05-07">streamlink 0.12.1 (2018-05-07)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-12-0-2018-05-07">streamlink 0.12.0 (2018-05-07)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-11-0-2018-03-08">streamlink 0.11.0 (2018-03-08)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-10-0-2018-01-23">streamlink 0.10.0 (2018-01-23)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-9-0-2017-11-14">streamlink 0.9.0 (2017-11-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-8-1-2017-09-12">Streamlink 0.8.1 (2017-09-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-7-0-2017-06-30">streamlink 0.7.0 (2017-06-30)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-6-0-2017-05-11">streamlink 0.6.0 (2017-05-11)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-5-0-2017-04-04">streamlink 0.5.0 (2017-04-04)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-4-0-2017-03-09">streamlink 0.4.0 (2017-03-09)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-2-2017-02-10">streamlink 0.3.2 (2017-02-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-1-2017-02-03">streamlink 0.3.1 (2017-02-03)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-3-0-2017-01-24">streamlink 0.3.0 (2017-01-24)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-2-0-2016-12-16">streamlink 0.2.0 (2016-12-16)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-1-0-2016-11-21">streamlink 0.1.0 (2016-11-21)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-2-2016-10-12">streamlink 0.0.2 (2016-10-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-0-0-1-2016-09-23">streamlink 0.0.1 (2016-09-23)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#bastimeyer">Bastimeyer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#beardypig">Beardypig</a></li>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#gravyboat">Gravyboat</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="applications.html#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#liveproxy">LiveProxy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#wtwitch">Wtwitch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty.html#obs-streamlink">OBS-Streamlink</a></li>
-</ul>
-</li>
+</div><form class="sidebar-search-container" method="get" action="search.html">
+  <input class="sidebar-search" placeholder="Search" name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a></li>
 </ul>
 
-        
-      </div>
-
-
-      
-      <div class="tablet-hide">
-        <hr />
-		<p class="wy-text-center">
-	        <a href="https://github.com/streamlink/streamlink"
-			   class="github-button" data-icon="octicon-mark-github"
-		       data-count-href="/streamlink/streamlink/stargazers"
-			   data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
-	        <a href="https://github.com/streamlink/streamlink/issues"
-			   class="github-button" data-icon="octicon-issue-opened">Issues</a>
-
-        </p>
+</div><div class="github-buttons centered">
+  <a href="https://github.com/streamlink/streamlink"
+    class="github-button"
+    data-icon="octicon-mark-github"
+    data-count-href="/streamlink/streamlink/stargazers"
+    data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+  <a href="https://github.com/streamlink/streamlink/issues"
+    class="github-button"
+    data-icon="octicon-issue-opened">Issues</a>
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</div></div>
       </div>
       
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Streamlink</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Plugins</li>
-      <li class="wy-breadcrumbs-aside">
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
         
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            
-            <div class="admonition version-warning">
-              <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-            </div>
-            
-            
+  
+    <div class="admonition important version-warning">
+      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+    </div>
+  
   <div class="section" id="plugins">
 <h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
 <p>This is a list of the currently built in plugins and what URLs and features
 they support. Streamlink's primary focus is live streams, so VOD support
 is limited.</p>
-<table border="1" class="docutils">
+<div class="table-wrapper"><table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="15%" />
-<col width="4%" />
-<col width="4%" />
-<col width="61%" />
+<col style="width: 17%"/>
+<col style="width: 15%"/>
+<col style="width: 4%"/>
+<col style="width: 4%"/>
+<col style="width: 61%"/>
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">URL(s)</th>
-<th class="head">Live</th>
-<th class="head">VOD</th>
-<th class="head">Notes</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>URL(s)</p></th>
+<th class="head"><p>Live</p></th>
+<th class="head"><p>VOD</p></th>
+<th class="head"><p>Notes</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>abematv</td>
-<td>abema.tv</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams are geo-restricted to Japan.</td>
+<tbody>
+<tr class="row-even"><td><p>abematv</p></td>
+<td><p>abema.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams are geo-restricted to Japan.</p></td>
 </tr>
-<tr class="row-odd"><td>abweb</td>
-<td>abweb.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>Requires a login and a subscription.</td>
+<tr class="row-odd"><td><p>abweb</p></td>
+<td><p>abweb.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Requires a login and a subscription.</p></td>
 </tr>
-<tr class="row-even"><td>adultswim</td>
-<td>adultswim.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted, some VOD streams are protected by DRM.</td>
+<tr class="row-even"><td><p>adultswim</p></td>
+<td><p>adultswim.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted, some VOD streams are protected by DRM.</p></td>
 </tr>
-<tr class="row-odd"><td>afreeca</td>
-<td>play.afreecatv.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>afreeca</p></td>
+<td><p>play.afreecatv.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>albavision</td>
-<td><ul class="first last simple">
-<li>tvc.com.ec</li>
-<li>rts.com.ec</li>
-<li>elnueve.com.ar</li>
-<li>atv.pe</li>
+<tr class="row-even"><td><p>albavision</p></td>
+<td><ul class="simple">
+<li><p>tvc.com.ec</p></li>
+<li><p>rts.com.ec</p></li>
+<li><p>elnueve.com.ar</p></li>
+<li><p>atv.pe</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>No</td>
-<td>Some streams are geo-restricted.</td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Some streams are geo-restricted.</p></td>
 </tr>
-<tr class="row-odd"><td>animelab</td>
-<td>animelab.com</td>
-<td>--</td>
-<td>Yes</td>
-<td>Requires a login. Streams may be geo-restricted to Australia and New Zealand.</td>
+<tr class="row-odd"><td><p>animelab</p></td>
+<td><p>animelab.com</p></td>
+<td><p>--</p></td>
+<td><p>Yes</p></td>
+<td><p>Requires a login. Streams may be geo-restricted to Australia and New Zealand.</p></td>
 </tr>
-<tr class="row-even"><td>app17</td>
-<td>17app.co</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>app17</p></td>
+<td><p>17app.co</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>ard_live</td>
-<td>daserste.de</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Germany.</td>
+<tr class="row-odd"><td><p>ard_live</p></td>
+<td><p>daserste.de</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Germany.</p></td>
 </tr>
-<tr class="row-even"><td>ard_mediathek</td>
-<td><ul class="first last simple">
-<li>ardmediathek.de</li>
-<li>mediathek... <a class="footnote-reference" href="#id10" id="id1">[5]</a></li>
+<tr class="row-even"><td><p>ard_mediathek</p></td>
+<td><ul class="simple">
+<li><p>ardmediathek.de</p></li>
+<li><p>mediathek... <a class="footnote-reference brackets" href="#id10" id="id1">5</a></p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Germany.</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Germany.</p></td>
 </tr>
-<tr class="row-odd"><td>artetv</td>
-<td>arte.tv</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>artetv</p></td>
+<td><p>arte.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>atresplayer</td>
-<td>atresplayer.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams are geo-restricted to Spain.</td>
+<tr class="row-even"><td><p>atresplayer</p></td>
+<td><p>atresplayer.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams are geo-restricted to Spain.</p></td>
 </tr>
-<tr class="row-odd"><td>bbciplayer</td>
-<td>bbc.co.uk/iplayer</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to the United Kingdom.</td>
+<tr class="row-odd"><td><p>bbciplayer</p></td>
+<td><p>bbc.co.uk/iplayer</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to the United Kingdom.</p></td>
 </tr>
-<tr class="row-even"><td>bfmtv</td>
-<td>bfmtv.com
-01net.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>bfmtv</p></td>
+<td><p>bfmtv.com
+01net.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>bigo</td>
-<td><ul class="first last simple">
-<li>live.bigo.tv</li>
-<li>bigoweb.co</li>
+<tr class="row-odd"><td><p>bigo</p></td>
+<td><ul class="simple">
+<li><p>live.bigo.tv</p></li>
+<li><p>bigoweb.co</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>bilibili</td>
-<td>live.bilibili.com</td>
-<td>Yes</td>
-<td>?</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>bilibili</p></td>
+<td><p>live.bilibili.com</p></td>
+<td><p>Yes</p></td>
+<td><p>?</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>bloomberg</td>
-<td>bloomberg.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>bloomberg</p></td>
+<td><p>bloomberg.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>brightcove</td>
-<td>players.brig... <a class="footnote-reference" href="#id11" id="id2">[6]</a></td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>brightcove</p></td>
+<td><p>players.brig... <a class="footnote-reference brackets" href="#id11" id="id2">6</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>btsports</td>
-<td>sport.bt.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Requires subscription account</td>
+<tr class="row-odd"><td><p>btsports</p></td>
+<td><p>sport.bt.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Requires subscription account</p></td>
 </tr>
-<tr class="row-even"><td>btv</td>
-<td>btvplus.bg</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams are geo-restricted to Bulgaria.</td>
+<tr class="row-even"><td><p>btv</p></td>
+<td><p>btvplus.bg</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams are geo-restricted to Bulgaria.</p></td>
 </tr>
-<tr class="row-odd"><td>canalplus</td>
-<td>mycanal.fr</td>
-<td>No</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to France.</td>
+<tr class="row-odd"><td><p>canalplus</p></td>
+<td><p>mycanal.fr</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to France.</p></td>
 </tr>
-<tr class="row-even"><td>cbsnews</td>
-<td>cbsnews.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>cbsnews</p></td>
+<td><p>cbsnews.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>cdnbg</td>
-<td><ul class="first last simple">
-<li>armymedia.bg</li>
-<li>bgonair.bg</li>
-<li>bloombergtv.bg</li>
-<li>bnt.bg</li>
-<li>live.bstv.bg</li>
-<li>i.cdn.bg</li>
-<li>nova.bg</li>
-<li>mu-vi.tv</li>
+<tr class="row-odd"><td><p>cdnbg</p></td>
+<td><ul class="simple">
+<li><p>armymedia.bg</p></li>
+<li><p>bgonair.bg</p></li>
+<li><p>bloombergtv.bg</p></li>
+<li><p>bnt.bg</p></li>
+<li><p>live.bstv.bg</p></li>
+<li><p>i.cdn.bg</p></li>
+<li><p>nova.bg</p></li>
+<li><p>mu-vi.tv</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Bulgaria</td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Bulgaria</p></td>
 </tr>
-<tr class="row-even"><td>ceskatelevize</td>
-<td>ceskatelevize.cz</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Czechia.</td>
+<tr class="row-even"><td><p>ceskatelevize</p></td>
+<td><p>ceskatelevize.cz</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Czechia.</p></td>
 </tr>
-<tr class="row-odd"><td>cinergroup</td>
-<td><ul class="first last simple">
-<li>showtv.com.tr</li>
-<li>haberturk.com</li>
-<li>showmax.com.tr</li>
-<li>showturk.com.tr</li>
-<li>bloomberght.com</li>
+<tr class="row-odd"><td><p>cinergroup</p></td>
+<td><ul class="simple">
+<li><p>showtv.com.tr</p></li>
+<li><p>haberturk.com</p></li>
+<li><p>showmax.com.tr</p></li>
+<li><p>showturk.com.tr</p></li>
+<li><p>bloomberght.com</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>clubbingtv</td>
-<td>clubbingtv.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Requires a login.</td>
+<tr class="row-even"><td><p>clubbingtv</p></td>
+<td><p>clubbingtv.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Requires a login.</p></td>
 </tr>
-<tr class="row-odd"><td>cnews</td>
-<td>cnews.fr</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>cnews</p></td>
+<td><p>cnews.fr</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>crunchyroll</td>
-<td>crunchyroll.com</td>
-<td>--</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>crunchyroll</p></td>
+<td><p>crunchyroll.com</p></td>
+<td><p>--</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>dailymotion</td>
-<td>dailymotion.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>dailymotion</p></td>
+<td><p>dailymotion.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>delfi</td>
-<td><ul class="first last simple">
-<li>delfi.lt</li>
-<li>delfi.ee</li>
-<li>delfi.lv</li>
+<tr class="row-even"><td><p>delfi</p></td>
+<td><ul class="simple">
+<li><p>delfi.lt</p></li>
+<li><p>delfi.ee</p></li>
+<li><p>delfi.lv</p></li>
 </ul>
 </td>
-<td>--</td>
-<td>Yes</td>
-<td>&#160;</td>
+<td><p>--</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>deutschewelle</td>
-<td>dw.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>deutschewelle</p></td>
+<td><p>dw.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>dlive</td>
-<td>dlive.tv</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>dlive</p></td>
+<td><p>dlive.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>dogan</td>
-<td><ul class="first last simple">
-<li>teve2.com.tr</li>
-<li>kanald.com.tr</li>
-<li>dreamtv.com.tr</li>
-<li>cnnturk.com</li>
-<li>dreamturk.com.tr</li>
+<tr class="row-odd"><td><p>dogan</p></td>
+<td><ul class="simple">
+<li><p>teve2.com.tr</p></li>
+<li><p>kanald.com.tr</p></li>
+<li><p>dreamtv.com.tr</p></li>
+<li><p>cnnturk.com</p></li>
+<li><p>dreamturk.com.tr</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>VOD is supported for teve2 and kanald</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>VOD is supported for teve2 and kanald</p></td>
 </tr>
-<tr class="row-even"><td>dogus</td>
-<td><ul class="first last simple">
-<li>ntvspor.net</li>
-<li>kralmuzik.com.tr</li>
-<li>ntv.com.tr</li>
-<li>eurostartv.com.tr</li>
-<li>startv.com.tr</li>
+<tr class="row-even"><td><p>dogus</p></td>
+<td><ul class="simple">
+<li><p>ntvspor.net</p></li>
+<li><p>kralmuzik.com.tr</p></li>
+<li><p>ntv.com.tr</p></li>
+<li><p>eurostartv.com.tr</p></li>
+<li><p>startv.com.tr</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>dommune</td>
-<td>dommune.com</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>dommune</p></td>
+<td><p>dommune.com</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>drdk</td>
-<td>dr.dk</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Denmark.</td>
+<tr class="row-even"><td><p>drdk</p></td>
+<td><p>dr.dk</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Denmark.</p></td>
 </tr>
-<tr class="row-odd"><td>earthcam</td>
-<td>earthcam.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Only works for the cams hosted on EarthCam.</td>
+<tr class="row-odd"><td><p>earthcam</p></td>
+<td><p>earthcam.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Only works for the cams hosted on EarthCam.</p></td>
 </tr>
-<tr class="row-even"><td>egame</td>
-<td>egame.qq.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>egame</p></td>
+<td><p>egame.qq.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>eltrecetv</td>
-<td>eltrecetv.com.ar</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Argentina.</td>
+<tr class="row-odd"><td><p>eltrecetv</p></td>
+<td><p>eltrecetv.com.ar</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Argentina.</p></td>
 </tr>
-<tr class="row-even"><td>euronews</td>
-<td>euronews.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>euronews</p></td>
+<td><p>euronews.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>facebook</td>
-<td>facebook.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>facebook</p></td>
+<td><p>facebook.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>filmon</td>
-<td>filmon.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Only SD quality streams.</td>
+<tr class="row-even"><td><p>filmon</p></td>
+<td><p>filmon.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Only SD quality streams.</p></td>
 </tr>
-<tr class="row-odd"><td>foxtr</td>
-<td>fox.com.tr</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>foxtr</p></td>
+<td><p>fox.com.tr</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>funimationnow</td>
-<td><ul class="first last simple">
-<li>funimation.com</li>
-<li>funimationnow.uk</li>
+<tr class="row-even"><td><p>funimationnow</p></td>
+<td><ul class="simple">
+<li><p>funimation.com</p></li>
+<li><p>funimationnow.uk</p></li>
 </ul>
 </td>
-<td>--</td>
-<td>Yes</td>
-<td><a class="reference internal" href="cli.html#authenticating-with-funimationnow"><span class="std std-ref">Requires session cookies</span></a></td>
+<td><p>--</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="reference internal" href="cli.html#authenticating-with-funimationnow"><span class="std std-ref">Requires session cookies</span></a></p></td>
 </tr>
-<tr class="row-odd"><td>galatasaraytv</td>
-<td>galatasaray.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>galatasaraytv</p></td>
+<td><p>galatasaray.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>gardenersworld</td>
-<td>gardenersworld.com</td>
-<td>--</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>gardenersworld</p></td>
+<td><p>gardenersworld.com</p></td>
+<td><p>--</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>garena</td>
-<td>garena.live</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>garena</p></td>
+<td><p>garena.live</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>goltelevision</td>
-<td>goltelevision.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Spain.</td>
+<tr class="row-even"><td><p>goltelevision</p></td>
+<td><p>goltelevision.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Spain.</p></td>
 </tr>
-<tr class="row-odd"><td>goodgame</td>
-<td>goodgame.ru</td>
-<td>Yes</td>
-<td>No</td>
-<td>Only HLS streams are available.</td>
+<tr class="row-odd"><td><p>goodgame</p></td>
+<td><p>goodgame.ru</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Only HLS streams are available.</p></td>
 </tr>
-<tr class="row-even"><td>googledrive</td>
-<td><ul class="first last simple">
-<li>docs.google.com</li>
-<li>drive.google.com</li>
+<tr class="row-even"><td><p>googledrive</p></td>
+<td><ul class="simple">
+<li><p>docs.google.com</p></li>
+<li><p>drive.google.com</p></li>
 </ul>
 </td>
-<td>--</td>
-<td>Yes</td>
-<td>&#160;</td>
+<td><p>--</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>gulli</td>
-<td>replay.gulli.fr</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to France.</td>
+<tr class="row-odd"><td><p>gulli</p></td>
+<td><p>replay.gulli.fr</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to France.</p></td>
 </tr>
-<tr class="row-even"><td>hitbox</td>
-<td><ul class="first last simple">
-<li>hitbox.tv</li>
-<li>smashcast.tv</li>
+<tr class="row-even"><td><p>hitbox</p></td>
+<td><ul class="simple">
+<li><p>hitbox.tv</p></li>
+<li><p>smashcast.tv</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>huajiao</td>
-<td>huajiao.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>huajiao</p></td>
+<td><p>huajiao.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>huomao</td>
-<td><ul class="first last simple">
-<li>huomao.com</li>
-<li>huomao.tv</li>
+<tr class="row-even"><td><p>huomao</p></td>
+<td><ul class="simple">
+<li><p>huomao.com</p></li>
+<li><p>huomao.tv</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>huya</td>
-<td>huya.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>huya</p></td>
+<td><p>huya.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>idf1</td>
-<td>idf1.fr</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>idf1</p></td>
+<td><p>idf1.fr</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>ine</td>
-<td>ine.com</td>
-<td>---</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>ine</p></td>
+<td><p>ine.com</p></td>
+<td><p>---</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>invintus</td>
-<td>player.invintus.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>invintus</p></td>
+<td><p>player.invintus.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>kugou</td>
-<td>fanxing.kugou.com</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>kugou</p></td>
+<td><p>fanxing.kugou.com</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>latina</td>
-<td>latina.pe</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Peru.</td>
+<tr class="row-even"><td><p>latina</p></td>
+<td><p>latina.pe</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Peru.</p></td>
 </tr>
-<tr class="row-odd"><td>linelive</td>
-<td>live.line.me</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>linelive</p></td>
+<td><p>live.line.me</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>live_russia_tv</td>
-<td>live.russia.tv</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>live_russia_tv</p></td>
+<td><p>live.russia.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>liveedu</td>
-<td><ul class="first last simple">
-<li>liveedu.tv</li>
-<li>livecoding.tv</li>
+<tr class="row-odd"><td><p>liveedu</p></td>
+<td><ul class="simple">
+<li><p>liveedu.tv</p></li>
+<li><p>livecoding.tv</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>--</td>
-<td>Some streams require a login.</td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td><p>Some streams require a login.</p></td>
 </tr>
-<tr class="row-even"><td>liveme</td>
-<td>liveme.com</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>liveme</p></td>
+<td><p>liveme.com</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>livestream</td>
-<td>livestream.com</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>livestream</p></td>
+<td><p>livestream.com</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>lrt</td>
-<td>lrt.lt</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>lrt</p></td>
+<td><p>lrt.lt</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>ltv_lsm_lv</td>
-<td>ltv.lsm.lv</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Latvia.</td>
+<tr class="row-odd"><td><p>ltv_lsm_lv</p></td>
+<td><p>ltv.lsm.lv</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Latvia.</p></td>
 </tr>
-<tr class="row-even"><td>mediaklikk</td>
-<td>mediaklikk.hu</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Hungary.</td>
+<tr class="row-even"><td><p>mediaklikk</p></td>
+<td><p>mediaklikk.hu</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Hungary.</p></td>
 </tr>
-<tr class="row-odd"><td>mico</td>
-<td>micous.com</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>mico</p></td>
+<td><p>micous.com</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>mitele</td>
-<td>mitele.es</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Spain.</td>
+<tr class="row-even"><td><p>mitele</p></td>
+<td><p>mitele.es</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Spain.</p></td>
 </tr>
-<tr class="row-odd"><td>mjunoon</td>
-<td>mjunoon.tv</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>mjunoon</p></td>
+<td><p>mjunoon.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>mrtmk</td>
-<td>play.mrt.com.mk</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to North Macedonia.</td>
+<tr class="row-even"><td><p>mrtmk</p></td>
+<td><p>play.mrt.com.mk</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to North Macedonia.</p></td>
 </tr>
-<tr class="row-odd"><td>n13tv</td>
-<td>13tv.co.il</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Israel.</td>
+<tr class="row-odd"><td><p>n13tv</p></td>
+<td><p>13tv.co.il</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Israel.</p></td>
 </tr>
-<tr class="row-even"><td>nbc</td>
-<td>nbc.com</td>
-<td>No</td>
-<td>Yes</td>
-<td>Streams are geo-restricted to USA. Authentication is not supported.</td>
+<tr class="row-even"><td><p>nbc</p></td>
+<td><p>nbc.com</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams are geo-restricted to USA. Authentication is not supported.</p></td>
 </tr>
-<tr class="row-odd"><td>nbcnews</td>
-<td>nbcnews.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>nbcnews</p></td>
+<td><p>nbcnews.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>nbcsports</td>
-<td>nbcsports.com</td>
-<td>No</td>
-<td>Yes</td>
-<td>Streams maybe be geo-restricted to USA. Authentication is not supported.</td>
+<tr class="row-even"><td><p>nbcsports</p></td>
+<td><p>nbcsports.com</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams maybe be geo-restricted to USA. Authentication is not supported.</p></td>
 </tr>
-<tr class="row-odd"><td>nhkworld</td>
-<td>nhk.or.jp/nhkworld</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>nhkworld</p></td>
+<td><p>nhk.or.jp/nhkworld</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>nicolive</td>
-<td>live.nicovideo.jp</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Timeshift is supported. Some content may require login.</td>
+<tr class="row-even"><td><p>nicolive</p></td>
+<td><p>live.nicovideo.jp</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Timeshift is supported. Some content may require login.</p></td>
 </tr>
-<tr class="row-odd"><td>nos</td>
-<td>nos.nl</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Netherlands.</td>
+<tr class="row-odd"><td><p>nos</p></td>
+<td><p>nos.nl</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Netherlands.</p></td>
 </tr>
-<tr class="row-even"><td>nownews</td>
-<td>news.now.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>nownews</p></td>
+<td><p>news.now.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>nrk</td>
-<td><ul class="first last simple">
-<li>tv.nrk.no</li>
-<li>radio.nrk.no</li>
+<tr class="row-odd"><td><p>nrk</p></td>
+<td><ul class="simple">
+<li><p>tv.nrk.no</p></li>
+<li><p>radio.nrk.no</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Norway.</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Norway.</p></td>
 </tr>
-<tr class="row-even"><td>ntv</td>
-<td>ntv.ru</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>ntv</p></td>
+<td><p>ntv.ru</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>okru</td>
-<td>ok.ru</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>okru</p></td>
+<td><p>ok.ru</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>olympicchannel</td>
-<td>olympicchannel.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Only non-premium content is available.</td>
+<tr class="row-even"><td><p>olympicchannel</p></td>
+<td><p>olympicchannel.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Only non-premium content is available.</p></td>
 </tr>
-<tr class="row-odd"><td>oneplusone</td>
-<td>1plus1.video</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>oneplusone</p></td>
+<td><p>1plus1.video</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>onetv</td>
-<td><ul class="first last simple">
-<li>1tv.ru</li>
-<li>ctc.ru</li>
-<li>chetv.ru</li>
-<li>ctclove.ru</li>
-<li>domashny.ru</li>
+<tr class="row-even"><td><p>onetv</p></td>
+<td><ul class="simple">
+<li><p>1tv.ru</p></li>
+<li><p>ctc.ru</p></li>
+<li><p>chetv.ru</p></li>
+<li><p>ctclove.ru</p></li>
+<li><p>domashny.ru</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Russia. VOD only for 1tv.ru</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Russia. VOD only for 1tv.ru</p></td>
 </tr>
-<tr class="row-odd"><td>openrectv</td>
-<td>openrec.tv</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>openrectv</p></td>
+<td><p>openrec.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>orf_tvthek</td>
-<td>tvthek.orf.at</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>orf_tvthek</p></td>
+<td><p>tvthek.orf.at</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>periscope</td>
-<td>periscope.tv</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Replay/VOD is supported.</td>
+<tr class="row-odd"><td><p>periscope</p></td>
+<td><p>periscope.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Replay/VOD is supported.</p></td>
 </tr>
-<tr class="row-even"><td>picarto</td>
-<td>picarto.tv</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>picarto</p></td>
+<td><p>picarto.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>piczel</td>
-<td>piczel.tv</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>piczel</p></td>
+<td><p>piczel.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>pixiv</td>
-<td>sketch.pixiv.net</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>pixiv</p></td>
+<td><p>sketch.pixiv.net</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>playtv</td>
-<td><ul class="first last simple">
-<li>playtv.fr</li>
-<li>play.tv</li>
+<tr class="row-odd"><td><p>playtv</p></td>
+<td><ul class="simple">
+<li><p>playtv.fr</p></li>
+<li><p>play.tv</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>--</td>
-<td>Streams may be geo-restricted to France.</td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td><p>Streams may be geo-restricted to France.</p></td>
 </tr>
-<tr class="row-even"><td>pluto</td>
-<td>pluto.tv</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>pluto</p></td>
+<td><p>pluto.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>pluzz</td>
-<td><ul class="first last simple">
-<li>france.tv</li>
-<li>ludo.fr</li>
-<li>zouzous.fr</li>
-<li>francetvinfo.fr</li>
+<tr class="row-odd"><td><p>pluzz</p></td>
+<td><ul class="simple">
+<li><p>france.tv</p></li>
+<li><p>ludo.fr</p></li>
+<li><p>zouzous.fr</p></li>
+<li><p>francetvinfo.fr</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to France, Andorra and Monaco.</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to France, Andorra and Monaco.</p></td>
 </tr>
-<tr class="row-even"><td>powerapp</td>
-<td>powerapp.com.tr</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>powerapp</p></td>
+<td><p>powerapp.com.tr</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>qq</td>
-<td>live.qq.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>qq</p></td>
+<td><p>live.qq.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>radiko</td>
-<td>radiko.jp</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams are geo-restricted to Japan.</td>
+<tr class="row-even"><td><p>radiko</p></td>
+<td><p>radiko.jp</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams are geo-restricted to Japan.</p></td>
 </tr>
-<tr class="row-odd"><td>radionet</td>
-<td><ul class="first last simple">
-<li>radio.net</li>
-<li>radio.at</li>
-<li>radio.de</li>
-<li>radio.dk</li>
-<li>radio.es</li>
-<li>radio.fr</li>
-<li>radio.it</li>
-<li>radio.pl</li>
-<li>radio.pt</li>
-<li>radio.se</li>
+<tr class="row-odd"><td><p>radionet</p></td>
+<td><ul class="simple">
+<li><p>radio.net</p></li>
+<li><p>radio.at</p></li>
+<li><p>radio.de</p></li>
+<li><p>radio.dk</p></li>
+<li><p>radio.es</p></li>
+<li><p>radio.fr</p></li>
+<li><p>radio.it</p></li>
+<li><p>radio.pl</p></li>
+<li><p>radio.pt</p></li>
+<li><p>radio.se</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>raiplay</td>
-<td>raiplay.it</td>
-<td>Yes</td>
-<td>No</td>
-<td>Most streams are geo-restricted to Italy.</td>
+<tr class="row-even"><td><p>raiplay</p></td>
+<td><p>raiplay.it</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Most streams are geo-restricted to Italy.</p></td>
 </tr>
-<tr class="row-odd"><td>reuters</td>
-<td><ul class="first last simple">
-<li>reuters.com</li>
-<li>reuters.tv</li>
+<tr class="row-odd"><td><p>reuters</p></td>
+<td><ul class="simple">
+<li><p>reuters.com</p></li>
+<li><p>reuters.tv</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>rotana</td>
-<td>rotana.net</td>
-<td>Yes</td>
-<td>--</td>
-<td>Streams are geo-restricted to Saudi Arabia.</td>
+<tr class="row-even"><td><p>rotana</p></td>
+<td><p>rotana.net</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td><p>Streams are geo-restricted to Saudi Arabia.</p></td>
 </tr>
-<tr class="row-odd"><td>rtbf</td>
-<td><ul class="first last simple">
-<li>rtbf.be/auvio</li>
-<li>rtbfradioplayer.be</li>
+<tr class="row-odd"><td><p>rtbf</p></td>
+<td><ul class="simple">
+<li><p>rtbf.be/auvio</p></li>
+<li><p>rtbfradioplayer.be</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Belgium or Europe.</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Belgium or Europe.</p></td>
 </tr>
-<tr class="row-even"><td>rtlxl</td>
-<td>rtlxl.nl</td>
-<td>No</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to The Netherlands. Livestreams not supported.</td>
+<tr class="row-even"><td><p>rtlxl</p></td>
+<td><p>rtlxl.nl</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to The Netherlands. Livestreams not supported.</p></td>
 </tr>
-<tr class="row-odd"><td>rtpplay</td>
-<td>rtp.pt/play</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Portugal.</td>
+<tr class="row-odd"><td><p>rtpplay</p></td>
+<td><p>rtp.pt/play</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Portugal.</p></td>
 </tr>
-<tr class="row-even"><td>rtve</td>
-<td>rtve.es</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Spain.</td>
+<tr class="row-even"><td><p>rtve</p></td>
+<td><p>rtve.es</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Spain.</p></td>
 </tr>
-<tr class="row-odd"><td>rtvs</td>
-<td>rtvs.sk</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Slovakia.</td>
+<tr class="row-odd"><td><p>rtvs</p></td>
+<td><p>rtvs.sk</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Slovakia.</p></td>
 </tr>
-<tr class="row-even"><td>ruv</td>
-<td>ruv.is</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Iceland.</td>
+<tr class="row-even"><td><p>ruv</p></td>
+<td><p>ruv.is</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Iceland.</p></td>
 </tr>
-<tr class="row-odd"><td>sbscokr</td>
-<td>play.sbs.co.kr</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to South Korea.</td>
+<tr class="row-odd"><td><p>sbscokr</p></td>
+<td><p>play.sbs.co.kr</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to South Korea.</p></td>
 </tr>
-<tr class="row-even"><td>schoolism</td>
-<td>schoolism.com</td>
-<td>--</td>
-<td>Yes</td>
-<td>Requires a login and a subscription.</td>
+<tr class="row-even"><td><p>schoolism</p></td>
+<td><p>schoolism.com</p></td>
+<td><p>--</p></td>
+<td><p>Yes</p></td>
+<td><p>Requires a login and a subscription.</p></td>
 </tr>
-<tr class="row-odd"><td>senategov</td>
-<td>senate.gov</td>
-<td>--</td>
-<td>Yes</td>
-<td>Supports hearing streams.</td>
+<tr class="row-odd"><td><p>senategov</p></td>
+<td><p>senate.gov</p></td>
+<td><p>--</p></td>
+<td><p>Yes</p></td>
+<td><p>Supports hearing streams.</p></td>
 </tr>
-<tr class="row-even"><td>showroom</td>
-<td>showroom-live.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>showroom</p></td>
+<td><p>showroom-live.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>sportal</td>
-<td>sportal.bg</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>sportal</p></td>
+<td><p>sportal.bg</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>sportschau</td>
-<td>sportschau.de</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>sportschau</p></td>
+<td><p>sportschau.de</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>ssh101</td>
-<td>ssh101.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>ssh101</p></td>
+<td><p>ssh101.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>stadium</td>
-<td>watchstadium.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>stadium</p></td>
+<td><p>watchstadium.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>steam</td>
-<td>steamcommunity.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>Some streams will require a Steam account.</td>
+<tr class="row-odd"><td><p>steam</p></td>
+<td><p>steamcommunity.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Some streams will require a Steam account.</p></td>
 </tr>
-<tr class="row-even"><td>streamable</td>
-<td>streamable.com</td>
-<td><ul class="first last simple">
+<tr class="row-even"><td><p>streamable</p></td>
+<td><p>streamable.com</p></td>
+<td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>streamingvideoprovider</td>
-<td>streamingvid... <a class="footnote-reference" href="#id9" id="id3">[2]</a></td>
-<td>Yes</td>
-<td>--</td>
-<td>RTMP streams requires rtmpdump with
-K-S-V patches.</td>
+<tr class="row-odd"><td><p>streamingvideoprovider</p></td>
+<td><p>streamingvid... <a class="footnote-reference brackets" href="#id9" id="id3">2</a></p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td><p>RTMP streams requires rtmpdump with
+K-S-V patches.</p></td>
 </tr>
-<tr class="row-even"><td>streann</td>
-<td>ott.streann.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>streann</p></td>
+<td><p>ott.streann.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>stv</td>
-<td>player.stv.tv</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams are geo-restricted to Great Britain.</td>
+<tr class="row-odd"><td><p>stv</p></td>
+<td><p>player.stv.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams are geo-restricted to Great Britain.</p></td>
 </tr>
-<tr class="row-even"><td>svtplay</td>
-<td><ul class="first last simple">
-<li>svtplay.se</li>
-<li>oppetarkiv.se</li>
+<tr class="row-even"><td><p>svtplay</p></td>
+<td><ul class="simple">
+<li><p>svtplay.se</p></li>
+<li><p>oppetarkiv.se</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Sweden.</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Sweden.</p></td>
 </tr>
-<tr class="row-odd"><td>swisstxt</td>
-<td><ul class="first last simple">
-<li>srf.ch</li>
-<li>rsi.ch</li>
+<tr class="row-odd"><td><p>swisstxt</p></td>
+<td><ul class="simple">
+<li><p>srf.ch</p></li>
+<li><p>rsi.ch</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams are geo-restricted to Switzerland.</td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams are geo-restricted to Switzerland.</p></td>
 </tr>
-<tr class="row-even"><td>teamliquid</td>
-<td><ul class="first last simple">
-<li>teamliquid.net</li>
-<li>tl.net</li>
+<tr class="row-even"><td><p>teamliquid</p></td>
+<td><ul class="simple">
+<li><p>teamliquid.net</p></li>
+<li><p>tl.net</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>teleclubzoom</td>
-<td>teleclubzoom.ch</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams are geo-restricted to Switzerland.</td>
+<tr class="row-odd"><td><p>teleclubzoom</p></td>
+<td><p>teleclubzoom.ch</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams are geo-restricted to Switzerland.</p></td>
 </tr>
-<tr class="row-even"><td>telefe</td>
-<td>telefe.com</td>
-<td>No</td>
-<td>Yes</td>
-<td>Streams are geo-restricted to Argentina.</td>
+<tr class="row-even"><td><p>telefe</p></td>
+<td><p>telefe.com</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams are geo-restricted to Argentina.</p></td>
 </tr>
-<tr class="row-odd"><td>tf1</td>
-<td><ul class="first last simple">
-<li>tf1.fr</li>
-<li>lci.fr</li>
+<tr class="row-odd"><td><p>tf1</p></td>
+<td><ul class="simple">
+<li><p>tf1.fr</p></li>
+<li><p>lci.fr</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to France.</td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to France.</p></td>
 </tr>
-<tr class="row-even"><td>tga</td>
-<td><ul class="first last simple">
-<li>star.plu.cn</li>
-<li>star.tga.plu.cn</li>
-<li>star.longzhu.com</li>
+<tr class="row-even"><td><p>tga</p></td>
+<td><ul class="simple">
+<li><p>star.plu.cn</p></li>
+<li><p>star.tga.plu.cn</p></li>
+<li><p>star.longzhu.com</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>theplatform</td>
-<td>player.thepl... <a class="footnote-reference" href="#id12" id="id4">[7]</a></td>
-<td>No</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>theplatform</p></td>
+<td><p>player.thepl... <a class="footnote-reference brackets" href="#id12" id="id4">7</a></p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>tigerdile</td>
-<td>tigerdile.com</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>tigerdile</p></td>
+<td><p>tigerdile.com</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>tlctr</td>
-<td>tlctv.com.tr</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>tlctr</p></td>
+<td><p>tlctv.com.tr</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>turkuvaz</td>
-<td><ul class="first last simple">
-<li>atv.com.tr</li>
-<li>a2tv.com.tr</li>
-<li>ahaber.com.tr</li>
-<li>anews.com.tr</li>
-<li>aspor.com.tr</li>
-<li>atvavrupa.tv</li>
-<li>minikacocuk.com.tr</li>
-<li>minikago.com.tr</li>
-<li>sabah.com.tr</li>
+<tr class="row-even"><td><p>turkuvaz</p></td>
+<td><ul class="simple">
+<li><p>atv.com.tr</p></li>
+<li><p>a2tv.com.tr</p></li>
+<li><p>ahaber.com.tr</p></li>
+<li><p>anews.com.tr</p></li>
+<li><p>aspor.com.tr</p></li>
+<li><p>atvavrupa.tv</p></li>
+<li><p>minikacocuk.com.tr</p></li>
+<li><p>minikago.com.tr</p></li>
+<li><p>sabah.com.tr</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted.</td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted.</p></td>
 </tr>
-<tr class="row-odd"><td>tv3cat</td>
-<td>ccma.cat</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Spain.</td>
+<tr class="row-odd"><td><p>tv3cat</p></td>
+<td><p>ccma.cat</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Spain.</p></td>
 </tr>
-<tr class="row-even"><td>tv4play</td>
-<td><ul class="first last simple">
-<li>tv4play.se</li>
-<li>fotbollskanalen.se</li>
+<tr class="row-even"><td><p>tv4play</p></td>
+<td><ul class="simple">
+<li><p>tv4play.se</p></li>
+<li><p>fotbollskanalen.se</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Sweden.
-Only non-premium streams currently supported.</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Sweden.
+Only non-premium streams currently supported.</p></td>
 </tr>
-<tr class="row-odd"><td>tv5monde</td>
-<td><ul class="first last simple">
-<li>tv5monde.com</li>
-<li>tv5mondeplus.com</li>
-<li>tv5mondepl... <a class="footnote-reference" href="#id13" id="id5">[8]</a></li>
+<tr class="row-odd"><td><p>tv5monde</p></td>
+<td><ul class="simple">
+<li><p>tv5monde.com</p></li>
+<li><p>tv5mondeplus.com</p></li>
+<li><p>tv5mondepl... <a class="footnote-reference brackets" href="#id13" id="id5">8</a></p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to France, Belgium and Switzerland.</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to France, Belgium and Switzerland.</p></td>
 </tr>
-<tr class="row-even"><td>tv8</td>
-<td>tv8.com.tr</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>tv8</p></td>
+<td><p>tv8.com.tr</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>tv360</td>
-<td>tv360.com.tr</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>tv360</p></td>
+<td><p>tv360.com.tr</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>tv999</td>
-<td>tv999.bg</td>
-<td>Yes</td>
-<td>--</td>
-<td>Streams are geo-restricted to Bulgaria</td>
+<tr class="row-even"><td><p>tv999</p></td>
+<td><p>tv999.bg</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td><p>Streams are geo-restricted to Bulgaria</p></td>
 </tr>
-<tr class="row-odd"><td>tvibo</td>
-<td>player.tvibo.com</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>tvibo</p></td>
+<td><p>player.tvibo.com</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>tvp</td>
-<td>tvpstream.vod.tvp.pl</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Poland.</td>
+<tr class="row-even"><td><p>tvp</p></td>
+<td><p>tvpstream.vod.tvp.pl</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Poland.</p></td>
 </tr>
-<tr class="row-odd"><td>tvplayer</td>
-<td>tvplayer.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Great Britain. Premium streams are not supported.</td>
+<tr class="row-odd"><td><p>tvplayer</p></td>
+<td><p>tvplayer.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Great Britain. Premium streams are not supported.</p></td>
 </tr>
-<tr class="row-even"><td>tvrby</td>
-<td>tvr.by</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Belarus.</td>
+<tr class="row-even"><td><p>tvrby</p></td>
+<td><p>tvr.by</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Belarus.</p></td>
 </tr>
-<tr class="row-odd"><td>tvrplus</td>
-<td>tvrplus.ro</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams may be geo-restricted to Romania.</td>
+<tr class="row-odd"><td><p>tvrplus</p></td>
+<td><p>tvrplus.ro</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams may be geo-restricted to Romania.</p></td>
 </tr>
-<tr class="row-even"><td>tvtoya</td>
-<td>tvtoya.pl</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>tvtoya</p></td>
+<td><p>tvtoya.pl</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>twitcasting</td>
-<td>twitcasting.tv</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>twitcasting</p></td>
+<td><p>twitcasting.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>twitch</td>
-<td>twitch.tv</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>twitch</p></td>
+<td><p>twitch.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>ustreamtv</td>
-<td><ul class="first last simple">
-<li>ustream.tv</li>
-<li>video.ibm.com</li>
+<tr class="row-odd"><td><p>ustreamtv</p></td>
+<td><ul class="simple">
+<li><p>ustream.tv</p></li>
+<li><p>video.ibm.com</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>ustvnow</td>
-<td>ustvnow.com</td>
-<td>Yes</td>
-<td>--</td>
-<td>All streams require an account, some streams require a subscription.</td>
+<tr class="row-even"><td><p>ustvnow</p></td>
+<td><p>ustvnow.com</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td><p>All streams require an account, some streams require a subscription.</p></td>
 </tr>
-<tr class="row-odd"><td>viasat</td>
-<td><ul class="first last simple">
-<li>juicyplay.dk</li>
-<li>skaties.lv</li>
-<li>tv3.dk</li>
-<li>tv3.ee</li>
-<li>tv3.lt</li>
-<li>tv6play.no</li>
-<li>viafree.dk</li>
-<li>viafree.no</li>
-<li>viafree.se</li>
+<tr class="row-odd"><td><p>viasat</p></td>
+<td><ul class="simple">
+<li><p>juicyplay.dk</p></li>
+<li><p>skaties.lv</p></li>
+<li><p>tv3.dk</p></li>
+<li><p>tv3.ee</p></li>
+<li><p>tv3.lt</p></li>
+<li><p>tv6play.no</p></li>
+<li><p>viafree.dk</p></li>
+<li><p>viafree.no</p></li>
+<li><p>viafree.se</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted.</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted.</p></td>
 </tr>
-<tr class="row-even"><td>vidio</td>
-<td>vidio.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>vidio</p></td>
+<td><p>vidio.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>vimeo</td>
-<td>vimeo.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Password-protected videos are not supported.</td>
+<tr class="row-odd"><td><p>vimeo</p></td>
+<td><p>vimeo.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Password-protected videos are not supported.</p></td>
 </tr>
-<tr class="row-even"><td>vinhlongtv</td>
-<td>thvli.vn</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams are geo-restricted to Vietnam</td>
+<tr class="row-even"><td><p>vinhlongtv</p></td>
+<td><p>thvli.vn</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams are geo-restricted to Vietnam</p></td>
 </tr>
-<tr class="row-odd"><td>viutv</td>
-<td>viu.tv</td>
-<td>Yes</td>
-<td>No</td>
-<td>Streams are geo-restricted to Hong Kong</td>
+<tr class="row-odd"><td><p>viutv</p></td>
+<td><p>viu.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Streams are geo-restricted to Hong Kong</p></td>
 </tr>
-<tr class="row-even"><td>vk</td>
-<td>vk.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>vk</p></td>
+<td><p>vk.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>vlive</td>
-<td>vlive.tv</td>
-<td>Yes</td>
-<td>No</td>
-<td>Embedded Naver VODs are not supported.</td>
+<tr class="row-odd"><td><p>vlive</p></td>
+<td><p>vlive.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Embedded Naver VODs are not supported.</p></td>
 </tr>
-<tr class="row-even"><td>vrtbe</td>
-<td>vrt.be/vrtnu</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>vrtbe</p></td>
+<td><p>vrt.be/vrtnu</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>vtvgo</td>
-<td>vtvgo.vn</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>vtvgo</p></td>
+<td><p>vtvgo.vn</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>wasd</td>
-<td>wasd.tv</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>wasd</p></td>
+<td><p>wasd.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>webcast_india_gov</td>
-<td>webcast.gov.in</td>
-<td>Yes</td>
-<td>No</td>
-<td>You can use #Channel to indicate CH number.</td>
+<tr class="row-odd"><td><p>webcast_india_gov</p></td>
+<td><p>webcast.gov.in</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>You can use #Channel to indicate CH number.</p></td>
 </tr>
-<tr class="row-even"><td>webtv</td>
-<td>web.tv</td>
-<td>Yes</td>
-<td>--</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>webtv</p></td>
+<td><p>web.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>--</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>welt</td>
-<td>welt.de</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Germany.</td>
+<tr class="row-odd"><td><p>welt</p></td>
+<td><p>welt.de</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Germany.</p></td>
 </tr>
-<tr class="row-even"><td>wwenetwork</td>
-<td>network.wwe.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Requires an account to access any content.</td>
+<tr class="row-even"><td><p>wwenetwork</p></td>
+<td><p>network.wwe.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Requires an account to access any content.</p></td>
 </tr>
-<tr class="row-odd"><td>youtube</td>
-<td><ul class="first last simple">
-<li>youtube.com</li>
-<li>youtu.be</li>
+<tr class="row-odd"><td><p>youtube</p></td>
+<td><ul class="simple">
+<li><p>youtube.com</p></li>
+<li><p>youtu.be</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Protected videos are not supported.</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Protected videos are not supported.</p></td>
 </tr>
-<tr class="row-even"><td>yupptv</td>
-<td>yupptv.com</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Some streams require an account and subscription.</td>
+<tr class="row-even"><td><p>yupptv</p></td>
+<td><p>yupptv.com</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Some streams require an account and subscription.</p></td>
 </tr>
-<tr class="row-odd"><td>zattoo</td>
-<td><ul class="first last simple">
-<li>zattoo.com</li>
-<li>nettv.net... <a class="footnote-reference" href="#id14" id="id6">[9]</a></li>
-<li>tvonline.ewe.de</li>
-<li>iptv.glat... <a class="footnote-reference" href="#id15" id="id7">[10]</a></li>
-<li>mobiltv.q... <a class="footnote-reference" href="#id16" id="id8">[11]</a></li>
-<li>player.waly.tv</li>
-<li>tvplus.m-net.de</li>
-<li>www.bbv-tv.net</li>
-<li>www.meinewelt.cc</li>
-<li>www.myvisiontv.ch</li>
-<li>www.netplus.tv</li>
-<li>www.quantum-tv.com</li>
-<li>www.saktv.ch</li>
-<li>www.vtxtv.ch</li>
-<li>www.1und1.tv</li>
+<tr class="row-odd"><td><p>zattoo</p></td>
+<td><ul class="simple">
+<li><p>zattoo.com</p></li>
+<li><p>nettv.net... <a class="footnote-reference brackets" href="#id14" id="id6">9</a></p></li>
+<li><p>tvonline.ewe.de</p></li>
+<li><p>iptv.glat... <a class="footnote-reference brackets" href="#id15" id="id7">10</a></p></li>
+<li><p>mobiltv.q... <a class="footnote-reference brackets" href="#id16" id="id8">11</a></p></li>
+<li><p>player.waly.tv</p></li>
+<li><p>tvplus.m-net.de</p></li>
+<li><p>www.bbv-tv.net</p></li>
+<li><p>www.meinewelt.cc</p></li>
+<li><p>www.myvisiontv.ch</p></li>
+<li><p>www.netplus.tv</p></li>
+<li><p>www.quantum-tv.com</p></li>
+<li><p>www.saktv.ch</p></li>
+<li><p>www.vtxtv.ch</p></li>
+<li><p>www.1und1.tv</p></li>
 </ul>
 </td>
-<td>Yes</td>
-<td>Yes</td>
-<td>&#160;</td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>zdf_mediathek</td>
-<td>zdf.de</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Streams may be geo-restricted to Germany.</td>
+<tr class="row-even"><td><p>zdf_mediathek</p></td>
+<td><p>zdf.de</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Streams may be geo-restricted to Germany.</p></td>
 </tr>
-<tr class="row-odd"><td>zeenews</td>
-<td>zeenews.india.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>zeenews</p></td>
+<td><p>zeenews.india.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>zengatv</td>
-<td>zengatv.com</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>zengatv</p></td>
+<td><p>zengatv.com</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>zhanqi</td>
-<td>zhanqi.tv</td>
-<td>Yes</td>
-<td>No</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>zhanqi</p></td>
+<td><p>zhanqi.tv</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td></td>
 </tr>
 </tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>streamingvideoprovider.co.uk</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[5]</a></td><td>mediathek.daserste.de</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[6]</a></td><td>players.brightcove.net</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id12" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[7]</a></td><td>player.theplatform.com</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id13" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[8]</a></td><td>tv5mondeplusafrique.com</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id14" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[9]</a></td><td>nettv.netcologne.de</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id15" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[10]</a></td><td>iptv.glattvision.ch</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id16" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[11]</a></td><td>mobiltv.quickline.com</td></tr>
-</tbody>
-</table>
+</table></div>
+<dl class="footnote brackets">
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>streamingvideoprovider.co.uk</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id1">5</a></span></dt>
+<dd><p>mediathek.daserste.de</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id2">6</a></span></dt>
+<dd><p>players.brightcove.net</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id4">7</a></span></dt>
+<dd><p>player.theplatform.com</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id5">8</a></span></dt>
+<dd><p>tv5mondeplusafrique.com</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id6">9</a></span></dt>
+<dd><p>nettv.netcologne.de</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id7">10</a></span></dt>
+<dd><p>iptv.glattvision.ch</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id8">11</a></span></dt>
+<dd><p>mobiltv.quickline.com</p>
+</dd>
+</dl>
 </div>
 
 
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="players.html" class="btn btn-neutral float-right" title="Players">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="cli.html" class="btn btn-neutral" title="Command-Line Interface"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Streamlink.
-    </p>
-  </div>
-
-  <a href="https://github.com/chrippa/sphinx_rtd_theme_violet">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
-</footer>
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="players.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Players</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="cli.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Command-Line Interface</div>
+                
+              </div>
+            </a>
         </div>
-      </div>
 
-    </section>
-
-  </div>
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.7.0+103.g401440c',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-  <script type="text/javascript" src="_static/js/scrollspy.js"></script>
-
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-  
-
-
-  
-  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-   
-
-</body>
+        <div class="related-information">
+              Copyright &#169; 2020, Streamlink
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </main>
+</div>
+  </body>
 </html>
