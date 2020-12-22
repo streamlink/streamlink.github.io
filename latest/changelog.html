@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 1.7.0+130.gabffcf3 documentation</title>
+        <title>Changelog - Streamlink 1.7.0+131.gb31d1ac documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=a3f371badb8538d75df213ccffb17a4f6e8f3ac5">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 1.7.0+130.gabffcf3 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 1.7.0+131.gb31d1ac documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">1.7.0+130.gabffcf3</pre>
+  <pre class="sidebar-versions-current">1.7.0+131.gb31d1ac</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -173,6 +173,219 @@
   
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-2-0-0-2020-12-22">
+<h2>streamlink 2.0.0 (2020-12-22)<a class="headerlink" href="#streamlink-2-0-0-2020-12-22" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>BREAKING: dropped support for Python 2 and Python 3.5 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3232"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3232">#3232</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3269"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3269">#3269</a></a>)</p></li>
+<li><p>BREAKING: updated the Python version of the Windows installer to 3.8 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3330"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3330">#3330</a></a>)<br/>Users of Windows 7 will need their system to be fully upgraded.</p></li>
+<li><p>BREAKING: removed all deprecated CLI arguments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3277"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3277">#3277</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3349"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3349">#3349</a></a>)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--http-cookies</span></code>, <code class="docutils literal notranslate"><span class="pre">--http-headers</span></code>, <code class="docutils literal notranslate"><span class="pre">--http-query-params</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--no-version-check</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--rtmpdump-proxy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--cmdline</span></code>, <code class="docutils literal notranslate"><span class="pre">-c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--errorlog</span></code>, <code class="docutils literal notranslate"><span class="pre">-e</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--errorlog-path</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--btv-username</span></code>, <code class="docutils literal notranslate"><span class="pre">--btv-password</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--crunchyroll-locale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--pixiv-username</span></code>, <code class="docutils literal notranslate"><span class="pre">--pixiv-password</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--twitch-oauth-authenticate</span></code>, <code class="docutils literal notranslate"><span class="pre">--twitch-oauth-token</span></code>, <code class="docutils literal notranslate"><span class="pre">--twitch-cookie</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--ustvnow-station-code</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--youtube-api-key</span></code></p></li>
+</ul>
+</li>
+<li><p>BREAKING: replaced various subtitle muxing CLI arguments with <code class="docutils literal notranslate"><span class="pre">--mux-subtitles</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3324"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3324">#3324</a></a>)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--funimationnow-mux-subtitles</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--pluzz-mux-subtitles</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--rtve-mux-subtitles</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--svtplay-mux-subtitles</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--vimeo-mux-subtitles</span></code></p></li>
+</ul>
+</li>
+<li><p>BREAKING: sideloading faulty plugins will now raise an <code class="docutils literal notranslate"><span class="pre">Exception</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3366"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3366">#3366</a></a>)</p></li>
+<li><p>BREAKING: changed trace logging timestamp format (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3273"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3273">#3273</a></a>)</p></li>
+<li><p>BREAKING/API: removed deprecated <code class="docutils literal notranslate"><span class="pre">Session</span></code> compat options (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3349"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3349">#3349</a></a>)</p></li>
+<li><p>BREAKING/API: removed deprecated custom <code class="docutils literal notranslate"><span class="pre">Logger</span></code> and <code class="docutils literal notranslate"><span class="pre">LogRecord</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3273"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3273">#3273</a></a>)</p></li>
+<li><p>BREAKING/API: removed deprecated parameters from <code class="docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3347"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3347">#3347</a></a>)</p></li>
+<li><p>BREAKING/API: removed <code class="docutils literal notranslate"><span class="pre">plugin.api.support_plugin</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3398"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3398">#3398</a></a>)</p></li>
+<li><p>Added: new plugin for pluto.tv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3363"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3363">#3363</a></a>)</p></li>
+<li><p>Added: support for HLS master playlist URLs to <code class="docutils literal notranslate"><span class="pre">--stream-url</span></code> / <code class="docutils literal notranslate"><span class="pre">--json</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3300"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3300">#3300</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--ffmpeg-fout</span></code> for changing the output format of muxed streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/2892"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/2892">#2892</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--ffmpeg-copyts</span></code> and <code class="docutils literal notranslate"><span class="pre">--ffmpeg-start-at-zero</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3404"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3404">#3404</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3413"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3413">#3413</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--streann-url</span></code> for iframe referencing (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3356"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3356">#3356</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--niconico-timeshift-offset</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3425"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3425">#3425</a></a>)</p></li>
+<li><p>Fixed: duplicate stream names in DASH inputs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3410"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3410">#3410</a></a>)</p></li>
+<li><p>Fixed: youtube live playback (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3268"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3268">#3268</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3372"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3372">#3372</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3428"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3428">#3428</a></a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">--twitch-disable-reruns</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3375"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3375">#3375</a></a>)</p></li>
+<li><p>Fixed: various plugins issues (see detailed changelog down below)</p></li>
+<li><p>Changed: <code class="docutils literal notranslate"><span class="pre">{filename}</span></code> variable in <code class="docutils literal notranslate"><span class="pre">--player-args</span></code> / <code class="docutils literal notranslate"><span class="pre">-a</span></code> to <code class="docutils literal notranslate"><span class="pre">{playerinput}</span></code> and made both optional (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3313"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3313">#3313</a></a>)</p></li>
+<li><p>Changed: and fixed <code class="docutils literal notranslate"><span class="pre">streamlinkrc</span></code> config file in the Windows installer (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3350"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3350">#3350</a></a>)</p></li>
+<li><p>Changed: MPV’s automated <code class="docutils literal notranslate"><span class="pre">--title</span></code> argument to <code class="docutils literal notranslate"><span class="pre">--force-media-title</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3405"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3405">#3405</a></a>)</p></li>
+<li><p>Changed: HTML documentation theme to <a class="reference external" href="https://github.com/pradyunsg/furo">furo</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3335"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3335">#3335</a></a>)</p></li>
+<li><p>Removed: plugins for <code class="docutils literal notranslate"><span class="pre">skai</span></code>, <code class="docutils literal notranslate"><span class="pre">kingkong</span></code>, <code class="docutils literal notranslate"><span class="pre">ellobo</span></code>, <code class="docutils literal notranslate"><span class="pre">trt</span></code>/<code class="docutils literal notranslate"><span class="pre">trtspor</span></code>, <code class="docutils literal notranslate"><span class="pre">tamago</span></code>, <code class="docutils literal notranslate"><span class="pre">streamme</span></code>, <code class="docutils literal notranslate"><span class="pre">metube</span></code>, <code class="docutils literal notranslate"><span class="pre">cubetv</span></code>, <code class="docutils literal notranslate"><span class="pre">willax</span></code></p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Billy2011 &lt;kschmidt2007@googlemail.com&gt; (2):
+      plugins.youtube: fix live playback (#3268)
+      stream.ffmpegmux: add --ffmpeg-copyts option (#3404)
+
+Forrest Alvarez &lt;gravyboat@users.noreply.github.com&gt; (1):
+      Update author email to shared email
+
+Hunter Peavey &lt;srht@krathalan.net&gt; (1):
+      docs: update wtwitch in thirdparty list (#3286)
+
+Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (9):
+      plugins.skai: plugin removal
+      plugins.kingkong: plugin removal
+      plugins.cnews: fix video ID search, add schema
+      plugins.ellobo: plugin removal
+      plugins.nbcnews: fix video ID search, add schemas
+      plugins.bfmtv: fix ID &amp; embed re, use Dailymotion
+      plugins.filmon: mitigate for non-JSON data response
+      plugins.schoolism: fix and test for colon in title (#3421)
+      plugins.dogan: fix/update
+
+Jon Bergli Heier &lt;snakebite@jvnv.net&gt; (1):
+      plugins.nrk: fix/rewrite plugin (#3318)
+
+Mark Ignacio &lt;mark@ignacio.io&gt; (1):
+      plugins.NicoLive: add --niconico-timeshift-offset option (#3425)
+
+Martin Buck &lt;mb-tmp-tvguho.pbz@gromit.dyndns.org&gt; (1):
+      plugins.zdf_mediathek: also support 3sat mediathek
+
+Sean Greenslade &lt;sean@seangreenslade.com&gt; (1):
+      plugins.picarto: explicitly detect and fail on private streams (#3278)
+
+Sebastian Meyer &lt;mail@bastimeyer.de&gt; (2):
+      chore: drop support for Python 3.5 (#3269)
+      ci.github: run lint step before test step (#3294)
+
+Seonjae Hyeon &lt;hsj106@mju.ac.kr&gt; (1):
+      plugins.vlive: fix URL regex and plugin (#3315)
+
+azizLIGHT &lt;azizLIGHT@users.noreply.github.com&gt; (1):
+      docs: fix mpv property-list link in --title description (#3342)
+
+back-to &lt;backto@protonmail.ch&gt; (26):
+      plugins.facebook: remove User-Agent (#3272)
+      plugins.trt/trtspor: remove plugins
+      plugin.api.useragents: update User-Agent
+      plugins: remove FIREFOX User-Agent imports
+      plugins.abweb: fixed login issues
+      plugins.huya: use FLV stream with multiple mirrors
+      plugin.api.useragents: update User-Agent's
+      plugins.tamago: removed dead plugin
+      plugins.streamme: removed dead plugin
+      plugins.metube: removed dead plugin
+      plugins.cubetv: removed dead plugin
+      cli.utils: remove named_pipe.py file, use streamlink.utils import
+      plugins.willax: removed plugin, they use streann
+      plugins.streann: allow different source URLs
+      plugins.pixiv: set headers for stream data, fixed login issue
+      plugins.pluto: new plugin for https://pluto.tv/ (#3363)
+      plugins.twitch: fix ads
+      plugins.twitch: fix --twitch-disable-reruns
+      plugins.youtube: quickfix for "/live" URL
+      plugins.pluto: ignore invalid channels
+      stream.dash: allow '_alt' streams with the same resolution (#3410)
+      plugins.afreeca: update '_get_channel_info' with 'bno', plugin cleanup (#3408)
+      plugins.plugin: use the same cls.logger 'plugins'
+      stream.ffmpegmux: disable -start_at_zero for -copyts as default (#3413)
+      plugin.api.useragents: update User-Agent
+      plugins.youtube: Fix 'ytInitialData' for channel pages
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (71):
+      chore: drop support for Python 2
+      chore: remove is_py{2,3} compat checks
+      chore: remove compat imports of builtins
+      chore: remove streamlink.utils.encoding
+      chore: remove simple aliased compat imports
+      chore: remove compat imports of removed py2 deps
+      chore: remove compat import of html module
+      chore: remove compat imports of urllib and queue
+      chore: remove remaining inspect compat import
+      chore: remove unneeded __future__ imports
+      chore: remove file encoding header comments
+      chore: remove compat imports from tests
+      logger: replace self.logger calls in plugins
+      logger: format all log messages directly
+      logger: remove deprecated compat logger
+      logger: refactor StringFormatter
+      chore: remove old LIVESTREAMER_VERSION constant
+      chore: remove deprecated CLI arguments
+      flake8: add import-order linting config
+      plugins.twitch: player_type access token parameter
+      ci.github: install latest version of pynsist
+      chore: implicit py3 super() calls
+      chore: remove u-strings
+      ci.github: set ubuntu to 20.04 and python to 3.9
+      cli: optional player-args input variable
+      cli: add support for stream manifest URL output
+      installer: upgrade to Python 3.9.0
+      installer: switch back to latest pynsist release
+      installer: downgrade to python 3.8
+      docs: add note about supported Windows versions
+      docs: add autosectionlabel Sphinx extension
+      docs: fix most http links
+      plugin: implement global plugin arguments
+      plugins: turn mux-subtitles into a global argument
+      plugins.twitch: remove player_type parameter
+      plugins.twitch: move access_token request to GQL
+      chore: remove HLS variant playlist compat params
+      chore: remove old rtmpdump/subprocess CLI args
+      installer: fix + rewrite streamlinkrc config file
+      stream.ffmpegmux: only close FFMPEGMuxer once
+      chore: add dev version checkbox to issue templates
+      chore: inherit from object implicitly
+      chore: set literals and dict comprehensions
+      chore: use yield from where possible
+      chore: replace old errors classes with OSError
+      chore: drop python six compat stuff
+      chore: fix deprecated logging.Logger.warn calls
+      docs: fix CLI page
+      docs: split CLI args in HTML output into rows
+      session: replace usage of deprecated imp module
+      docs: add warning to plugin sideloading section
+      refactor: test_session, move testplugin files
+      plugin.api: remove support_plugin
+      tests: fix test_cmdline{,_title}
+      chore: add issue template config with more links
+      docs: switch theme to furo, bump sphinx to &gt;=3.0
+      docs: remove custom sphinx_rtd_theme_violet
+      tools: update editorconfig for docs theme files
+      docs: add index page to toctree
+      docs: add custom stylesheet and customize sidebar
+      docs: change/fix fonts, brand colors and spacings
+      docs: add version warning message
+      docs: fix applications and donate pages
+      cli: move plugin args into their own args group
+      docs: fix scrollbar issues in both sidebars
+      docs: add favicons and PWA manifest
+      cli.output: replace MPV player title parameter
+      stream.hls: merge hls_filtered with hls
+      cli: move --stream-url to different args group
+      cache: catch OverflowError in set()
+      docs: fix link in readme
+
+beardypig &lt;beardypig@protonmail.com&gt; (6):
+      tests: fix log tests when run on a system with a non-UTC timezone
+      chore: use new py3 yield from syntax
+      chore: sort imports, fix a dependency cycle and use absolute imports
+      tests: validate all plugins' global arguments
+      plugins.mitele: update plugin to support new website APIs (#3338)
+      stream.ffmpegmux: Add support for specifying output file format and audio sync option (#2892)
+
+enilfodne &lt;john.d.willington@gmail.com&gt; (1):
+      plugins.cdnbg: simplify and fix iframes without schema
+
+smallbomb &lt;rockon590+git@gmail.com&gt; (1):
+      plugins: fix radiko.py url (#3394)
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-1-7-0-2020-10-18">
 <h2>streamlink 1.7.0 (2020-10-18)<a class="headerlink" href="#streamlink-1-7-0-2020-10-18" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
@@ -1605,7 +1818,7 @@ wlerin &lt;wlerin@gmail.com&gt; (1):
 </div>
 </div>
 <div class="section" id="streamlink-0-8-1-2017-09-12">
-<h2>Streamlink 0.8.1 (2017-09-12)<a class="headerlink" href="#streamlink-0-8-1-2017-09-12" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.8.1 (2017-09-12)<a class="headerlink" href="#streamlink-0-8-1-2017-09-12" title="Permalink to this headline">¶</a></h2>
 <p>0.8.1 of Streamlink!</p>
 <p>97 commits have occurred since the last release, including a large majority of plugin changes.</p>
 <p>Here’s the outline of what’s new:</p>
@@ -2950,6 +3163,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-2-0-0-2020-12-22">streamlink 2.0.0 (2020-12-22)</a></li>
 <li><a class="reference internal" href="#streamlink-1-7-0-2020-10-18">streamlink 1.7.0 (2020-10-18)</a></li>
 <li><a class="reference internal" href="#streamlink-1-6-0-2020-09-22">streamlink 1.6.0 (2020-09-22)</a></li>
 <li><a class="reference internal" href="#streamlink-1-5-0-2020-07-07">streamlink 1.5.0 (2020-07-07)</a></li>
@@ -2969,7 +3183,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
 <li><a class="reference internal" href="#streamlink-0-11-0-2018-03-08">streamlink 0.11.0 (2018-03-08)</a></li>
 <li><a class="reference internal" href="#streamlink-0-10-0-2018-01-23">streamlink 0.10.0 (2018-01-23)</a></li>
 <li><a class="reference internal" href="#streamlink-0-9-0-2017-11-14">streamlink 0.9.0 (2017-11-14)</a></li>
-<li><a class="reference internal" href="#streamlink-0-8-1-2017-09-12">Streamlink 0.8.1 (2017-09-12)</a></li>
+<li><a class="reference internal" href="#streamlink-0-8-1-2017-09-12">streamlink 0.8.1 (2017-09-12)</a></li>
 <li><a class="reference internal" href="#streamlink-0-7-0-2017-06-30">streamlink 0.7.0 (2017-06-30)</a></li>
 <li><a class="reference internal" href="#streamlink-0-6-0-2017-05-11">streamlink 0.6.0 (2017-05-11)</a></li>
 <li><a class="reference internal" href="#streamlink-0-5-0-2017-04-04">streamlink 0.5.0 (2017-04-04)</a></li>
