@@ -1,5 +1,3 @@
-.. _cli:
-
 Command-Line Interface
 ======================
 
@@ -8,13 +6,13 @@ Tutorial
 
 Streamlink is a command-line application, which means that the commands described
 here should be typed into a terminal. On Windows, you have to open either the
-`command prompt`_ or the `PowerShell`_, on macOS open the `Terminal`_ app
+`Command Prompt`_, `PowerShell`_ or `Windows Terminal`_, on macOS open the `Terminal <macOS-Terminal>`_ app,
 and if you're on Linux or BSD you probably already know the drill.
 
 The way Streamlink works is that it's only a means to extract and transport
 the streams, and the playback is done by an external video player. Streamlink
 works best with `VLC`_ or `mpv`_, which are also cross-platform, but other players
-may be compatible too, see the :ref:`Players` page for a complete overview.
+may be compatible too, see the :ref:`Players <players:Players>` page for a complete overview.
 
 Now to get into actually using Streamlink, let's say you want to watch the
 stream located on twitch.tv/day9tv, you start off by telling Streamlink
@@ -69,20 +67,19 @@ specify ``worst`` to get the lowest quality.
 Now that you have a basic grasp of how Streamlink works, you may want to look
 into customizing it to your own needs, such as:
 
-- Creating a :ref:`configuration file <cli-streamlinkrc>` of options you
+- Creating a :ref:`configuration file <cli:Configuration file>` of options you
   want to use
-- Setting up your player to :ref:`cache some data <issues-player_caching>`
+- Setting up your player to :ref:`cache some data <issues:Streams are buffering/lagging>`
   before playing the stream to help avoiding buffering issues
 
 
-.. _command prompt: http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8
-.. _PowerShell: http://www.microsoft.com/powershell
-.. _Terminal: http://en.wikipedia.org/wiki/Terminal_(OS_X)
-.. _VLC: http://videolan.org/
-.. _mpv: http://mpv.io/
+.. _Command Prompt: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands
+.. _PowerShell: https://docs.microsoft.com/en-us/powershell/
+.. _Windows Terminal: https://docs.microsoft.com/en-us/windows/terminal/get-started
+.. _macOS Terminal: https://support.apple.com/guide/terminal/welcome/mac
+.. _VLC: https://videolan.org/
+.. _mpv: https://mpv.io/
 
-
-.. _cli-streamlinkrc:
 
 Configuration file
 ------------------
@@ -110,7 +107,7 @@ You can also specify the location yourself using the :option:`--config` option.
 
 .. note::
 
-  On Windows there is a default config created by the installer but on any
+  On Windows, there is a default config created by the installer, but on any
   other platform you must create the file yourself.
 
 
@@ -118,18 +115,18 @@ Syntax
 ^^^^^^
 
 The config file is a simple text file and should contain one
-:ref:`command-line option <cli-options>` (omitting the dashes) per
+:ref:`command-line option <cli:Command-line usage>` (omitting the dashes) per
 line in the format::
 
   option=value
 
-or for a option without value::
+or for an option without value::
 
   option
 
 .. note::
-    Any quotes used will be part of the value, so only use when the value needs them,
-    e.g. specifying a player with a path containing spaces.
+    Any quotes used will be part of the value, so only use them when the value needs them,
+    e.g. when specifying a player with a path which contains spaces.
 
 Example
 ^^^^^^^
@@ -143,6 +140,7 @@ Example
 .. note::
     Full player paths are supported via configuration file options such as
     ``player="C:\mpv-x86_64\mpv"``
+
 
 Plugin specific configuration file
 ----------------------------------
@@ -166,8 +164,34 @@ Unix-like (POSIX) - $XDG_CONFIG_HOME/streamlink/config\ **.twitch**
 Windows           %APPDATA%\\streamlink\\streamlinkrc\ **.youtube**
 ================= ====================================================
 
-Have a look at the :ref:`list of plugins <plugin_matrix>` to see
-the name of each built-in plugin.
+Have a look at the :ref:`list of plugins <plugin_matrix:Plugins>`, or
+check the :option:`--plugins` option to see the name of each built-in plugin.
+
+
+Sideloading plugins
+-------------------
+
+Streamlink will attempt to load standalone plugins from these directories:
+
+================= ====================================================
+Platform          Location
+================= ====================================================
+Unix-like (POSIX) $XDG_CONFIG_HOME/streamlink/plugins
+Windows           %APPDATA%\\streamlink\\plugins
+================= ====================================================
+
+.. note::
+
+    If a plugin is added with the same name as a built-in plugin, then
+    the added plugin will take precedence. This is useful if you want
+    to upgrade plugins independently of the Streamlink version.
+
+.. warning::
+
+    If one of the sideloaded plugins fails to load, eg. due to a
+    ``SyntaxError`` being raised by the parser, this exception will
+    not get caught by Streamlink and the execution will stop, even if
+    the input stream URL does not match the faulty plugin.
 
 
 Plugin specific usage
@@ -184,7 +208,7 @@ You can login like this:
 
 .. sourcecode:: console
 
-    $ streamlink --crunchyroll-username=xxxx --crunchyroll-password=xxx http://crunchyroll.com/a-crunchyroll-episode-link
+    $ streamlink --crunchyroll-username=xxxx --crunchyroll-password=xxx https://crunchyroll.com/a-crunchyroll-episode-link
 
 .. note::
 
@@ -195,40 +219,36 @@ asking your username and password again.
 
 Nevertheless, these credentials are valid for a limited amount of time, so it
 might be a good idea to save your username and password in your
-:ref:`configuration file <cli-streamlinkrc>` anyway.
+:ref:`configuration file <cli:Configuration file>` anyway.
 
 .. warning::
 
-    The API this plugin uses isn't supposed to be available to use it on
+    The API this plugin uses isn't supposed to be available on desktop
     computers. The plugin tries to blend in as a valid device using custom
-    headers and following the API usual flow (e.g. reusing credentials), but
+    headers and following the API's usual flow (e.g. reusing credentials), but
     this does not assure that your account will be safe from being spotted for
     unusual behavior.
 
 HTTP proxy with Crunchyroll
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You can use the :option:`--http-proxy` **and** :option:`--https-proxy`
-options (you need both since the plugin uses both protocols) to access the
-Crunchyroll servers through a proxy to be able to stream region locked content.
+To be able to stream region locked content, you can use Streamlink's proxy
+options, which are described in the :ref:`Proxy Support <cli:Proxy Support>` section.
 
-When doing this, it's very probable that you will get denied to access the
-stream; this occurs because the session and credentials used by the plugin
-where obtained when logged from your own region, and the server still assumes
+When doing this, it's possible that access to the stream will still be denied;
+this can happen because the session and credentials used by the plugin
+were obtained while being logged from your own region, and the server still assumes
 you're in that region.
 
-For this, the plugin provides the :option:`--crunchyroll-purge-credentials`
+For cases like this, the plugin provides the :option:`--crunchyroll-purge-credentials`
 option, which removes your saved session and credentials and tries to log
 in again using your username and password.
-
-.. _cli-funimationnow:
 
 Authenticating with FunimationNow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Like Crunchyroll, the FunimationNow plugin requires authenticating with a premium account to access some
-content: :option:`--funimation-email`, :option:`--funimation-password`. In addition, this plugin requires a ``incap_ses`` cookie to be
-sent with each HTTP request (see issue #2088); this unique session cookie can be found in your browser and sent via the :option:`--http-cookie` option.
-
-For example:
+content: :option:`--funimation-email`, :option:`--funimation-password`. In addition, this plugin requires
+the ``incap_ses`` cookie to be sent with each HTTP request (see issue #2088). This unique session cookie
+can be found in your browser and sent via the :option:`--http-cookie` option.
 
 .. sourcecode:: console
 
@@ -236,28 +256,10 @@ For example:
 
 .. note::
 
-    There are multiple ways to retrieve the required cookie.  For more
+    There are multiple ways to retrieve the required cookie. For more
     information on browser cookies, please consult the following:
 
-    - `What are cookies? <http://www.whatarecookies.com/view.asp>`_
-
-Sideloading plugins
--------------------
-
-Streamlink will attempt to load standalone plugins from these directories:
-
-================= ====================================================
-Platform          Location
-================= ====================================================
-Unix-like (POSIX) $XDG_CONFIG_HOME/streamlink/plugins
-Windows           %APPDATA%\\streamlink\\plugins
-================= ====================================================
-
-.. note::
-
-    If a plugin is added with the same name as a built-in plugin then
-    the added plugin will take precedence. This is useful if you want
-    to upgrade plugins independently of the Streamlink version.
+    - `What are cookies? <https://en.wikipedia.org/wiki/HTTP_cookie>`_
 
 
 Playing built-in streaming protocols directly
@@ -279,34 +281,34 @@ Accessing a stream that requires extra parameters to be passed along
 
     $ streamlink "rtmp://streaming.server.net/playpath live=1 swfVfy=http://server.net/flashplayer.swf"
 
-When passing parameters to the built-in stream plugins the values will either be treated as plain
-strings, as is the case in the above example for ``swfVry``, or they will be interpreted as Python literals. For
-example you can pass a Python dict or Python list as one of the parameters.
+When passing parameters to the built-in stream plugins, the values will either
+be treated as plain strings, as is the case in the example above for ``swfVry``,
+or they will be interpreted as Python literals. For example, you can pass a
+Python dict or Python list as one of the parameters.
 
 .. code-block:: console
 
     $ streamlink "rtmp://streaming.server.net/playpath conn=['B:1', 'S:authMe', 'O:1', 'NN:code:1.23', 'NS:flag:ok', 'O:0']"
     $ streamlink "hls://streaming.server.net/playpath params={'token': 'magicToken'}"
 
-In the above examples ``conn`` will be passed as the Python list:
+In the examples above, ``conn`` will be passed as a Python list:
 
 .. code-block:: python
 
     ['B:1', 'S:authMe', 'O:1', 'NN:code:1.23', 'NS:flag:ok', 'O:0']
 
-and ``params`` will be passed as the Python dict:
+and ``params`` will be passed as a Python dict:
 
 .. code-block:: python
 
     {'token': 'magicToken'}
 
-Most streaming technologies simply requires you to pass a HTTP URL, this is
-a Adobe HDS stream:
+Most streaming protocols only require you to pass a simple URL.
+This is an Adobe HDS stream:
 
 .. code-block:: console
 
     $ streamlink hds://streaming.server.net/playpath/manifest.f4m
-
 
 Supported streaming protocols
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -324,29 +326,28 @@ Progressive HTTP, HTTPS, etc   httpstream:// [1]_
 
 .. [1] supports local files using the file:// protocol
 .. [2] Dynamic Adaptive Streaming over HTTP
-.. _cli-options:
+
 
 Proxy Support
 -------------
 
-You can use the :option:`--http-proxy` and :option:`--https-proxy` options to
+You can use the :option:`--http-proxy` or :option:`--https-proxy` options to
 change the proxy server that Streamlink will use for HTTP and HTTPS requests respectively.
-As HTTP and HTTPS requests can be handled by separate proxies, you may need to specify both
-options if the plugin you use makes HTTP and HTTPS requests.
+For convenience reasons, :option:`--http-proxy` will automatically set the
+value of :option:`--https-proxy` as well, if it has not been set by the user.
 
-Both HTTP and SOCKS proxies are supported, authentication is supported for both types.
+Both HTTP and SOCKS proxies are supported, as well as authentication in each of them.
 
 .. note::
-    When using a SOCKS proxy the ``socks4`` and ``socks5`` schemes mean that DNS lookups are done
+    When using a SOCKS proxy, the ``socks4`` and ``socks5`` schemes mean that DNS lookups are done
     locally, rather than on the proxy server. To have the proxy server perform the DNS lookups, the
     ``socks4a`` and ``socks5h`` schemes should be used instead.
-
-For example:
 
 .. code-block:: console
 
     $ streamlink --http-proxy "http://user:pass@10.10.1.10:3128/" --https-proxy "socks5://10.10.1.10:1242"
     $ streamlink --http-proxy "socks4a://10.10.1.10:1235" --https-proxy "socks5h://10.10.1.10:1234"
+
 
 Command-line usage
 ------------------
