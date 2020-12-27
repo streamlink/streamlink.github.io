@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Guide - Streamlink 2.0.0+5.g3ca1179 documentation</title>
+        <title>API Guide - Streamlink 2.0.0+6.g468a3f2 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=a3f371badb8538d75df213ccffb17a4f6e8f3ac5">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.0.0+5.g3ca1179 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.0.0+6.g468a3f2 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.0.0+5.g3ca1179</pre>
+  <pre class="sidebar-versions-current">2.0.0+6.g468a3f2</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api_guide.html" class="">Stable</a></dd>
     <dd><a href="/latest/api_guide.html" class="version-current">Latest</a></dd>
@@ -243,156 +243,6 @@ when extracting streams more than once. You start by creating a
 </div>
 <p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">Streamlink.set_option()</span></code> to see which options are available.</p>
 </div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="simple-player">
-<h3>Simple player<a class="headerlink" href="#simple-player" title="Permalink to this headline">¶</a></h3>
-<p>This example uses the <a class="reference external" href="https://wiki.gnome.org/action/show/Projects/PyGObject">PyGObject</a> module to playback a stream using the
-<a class="reference external" href="https://gstreamer.freedesktop.org/">GStreamer</a> framework.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="kn">import</span> <span class="nn">gi</span>
-
-<span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">GObject</span> <span class="k">as</span> <span class="n">gobject</span><span class="p">,</span> <span class="n">Gst</span> <span class="k">as</span> <span class="n">gst</span>
-<span class="kn">from</span> <span class="nn">streamlink</span> <span class="kn">import</span> <span class="n">Streamlink</span><span class="p">,</span> <span class="n">StreamError</span><span class="p">,</span> <span class="n">PluginError</span><span class="p">,</span> <span class="n">NoPluginError</span>
-
-
-<span class="k">def</span> <span class="nf">exit</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
-
-
-<span class="k">class</span> <span class="nc">StreamlinkPlayer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fd</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mainloop</span> <span class="o">=</span> <span class="n">gobject</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
-
-        <span class="c1"># This creates a playbin pipeline and using the appsrc source</span>
-        <span class="c1"># we can feed it our stream data</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">gst</span><span class="o">.</span><span class="n">ElementFactory</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"playbin"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="s2">"uri"</span><span class="p">,</span> <span class="s2">"appsrc://"</span><span class="p">)</span>
-
-        <span class="c1"># When the playbin creates the appsrc source it will call</span>
-        <span class="c1"># this callback and allow us to configure it</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"source-setup"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_source_setup</span><span class="p">)</span>
-
-        <span class="c1"># Creates a bus and set callbacks to receive errors</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">get_bus</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bus</span><span class="o">.</span><span class="n">add_signal_watch</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bus</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"message::eos"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_eos</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bus</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"message::error"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_error</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-        <span class="n">exit</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Stop playback and exit mainloop</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">gst</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">NULL</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mainloop</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-
-        <span class="c1"># Close the stream</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fd</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">fd</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
-        <span class="c1"># Attempt to open the stream</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">fd</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
-        <span class="k">except</span> <span class="n">StreamError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">"Failed to open stream: </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
-
-        <span class="c1"># Start playback</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">gst</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">PLAYING</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mainloop</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">on_source_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-        <span class="c1"># When this callback is called the appsrc expects</span>
-        <span class="c1"># us to feed it more data</span>
-        <span class="n">source</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"need-data"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_source_need_data</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">on_source_need_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-        <span class="c1"># Attempt to read data from the stream</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fd</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">"Failed to read data from stream: </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
-
-        <span class="c1"># If data is empty it's the end of stream</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
-            <span class="n">source</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s2">"end-of-stream"</span><span class="p">)</span>
-            <span class="k">return</span>
-
-        <span class="c1"># Convert the Python bytes into a GStreamer Buffer</span>
-        <span class="c1"># and then push it to the appsrc</span>
-        <span class="n">buf</span> <span class="o">=</span> <span class="n">gst</span><span class="o">.</span><span class="n">Buffer</span><span class="o">.</span><span class="n">new_wrapped</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="n">source</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s2">"push-buffer"</span><span class="p">,</span> <span class="n">buf</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">on_eos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-        <span class="c1"># Stop playback on end of stream</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">on_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-        <span class="c1"># Print error message and exit on error</span>
-        <span class="n">error</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">parse_error</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="s2">"Usage: </span><span class="si">{0}</span><span class="s2"> &lt;url&gt; &lt;quality&gt;"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-
-    <span class="c1"># Initialize and check GStreamer version</span>
-    <span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s2">"Gst"</span><span class="p">,</span> <span class="s2">"1.0"</span><span class="p">)</span>
-    <span class="n">gobject</span><span class="o">.</span><span class="n">threads_init</span><span class="p">()</span>
-    <span class="n">gst</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-
-    <span class="c1"># Collect arguments</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">quality</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-
-    <span class="c1"># Create the Streamlink session</span>
-    <span class="n">streamlink</span> <span class="o">=</span> <span class="n">Streamlink</span><span class="p">()</span>
-
-    <span class="c1"># Enable logging</span>
-    <span class="n">streamlink</span><span class="o">.</span><span class="n">set_loglevel</span><span class="p">(</span><span class="s2">"info"</span><span class="p">)</span>
-    <span class="n">streamlink</span><span class="o">.</span><span class="n">set_logoutput</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
-
-    <span class="c1"># Attempt to fetch streams</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">streams</span> <span class="o">=</span> <span class="n">streamlink</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">except</span> <span class="n">NoPluginError</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="s2">"Streamlink is unable to handle the URL '</span><span class="si">{0}</span><span class="s2">'"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
-    <span class="k">except</span> <span class="n">PluginError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="s2">"Plugin error: </span><span class="si">{0}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">streams</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="s2">"No streams found on URL '</span><span class="si">{0}</span><span class="s2">'"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
-
-    <span class="c1"># Look for specified stream</span>
-    <span class="k">if</span> <span class="n">quality</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">streams</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="s2">"Unable to find '</span><span class="si">{0}</span><span class="s2">' stream on URL '</span><span class="si">{1}</span><span class="s2">'"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quality</span><span class="p">,</span> <span class="n">url</span><span class="p">))</span>
-
-    <span class="c1"># We found the stream</span>
-    <span class="n">stream</span> <span class="o">=</span> <span class="n">streams</span><span class="p">[</span><span class="n">quality</span><span class="p">]</span>
-
-    <span class="c1"># Create the player and start playback</span>
-    <span class="n">player</span> <span class="o">=</span> <span class="n">StreamlinkPlayer</span><span class="p">()</span>
-
-    <span class="c1"># Blocks until playback is done</span>
-    <span class="n">player</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 
 
@@ -450,10 +300,6 @@ when extracting streams more than once. You start by creating a
 <li><a class="reference internal" href="#opening-streams-to-read-data">Opening streams to read data</a></li>
 <li><a class="reference internal" href="#inspecting-streams">Inspecting streams</a></li>
 <li><a class="reference internal" href="#session-object">Session object</a></li>
-<li><a class="reference internal" href="#examples">Examples</a><ul>
-<li><a class="reference internal" href="#simple-player">Simple player</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
