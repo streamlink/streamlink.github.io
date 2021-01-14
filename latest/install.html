@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Installation - Streamlink 2.0.0+21.g92d7554 documentation</title>
+        <title>Installation - Streamlink 2.0.0+22.gb9d0d18 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.0.0+21.g92d7554 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.0.0+22.gb9d0d18 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.0.0+21.g92d7554</pre>
+  <pre class="sidebar-versions-current">2.0.0+22.gb9d0d18</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -398,21 +398,19 @@ beardypig &lt;beardypig at protonmail.com&gt;</p></td>
 <div class="section" id="pypi-package-and-source-code">
 <h2>PyPI package and source code<a class="headerlink" href="#pypi-package-and-source-code" title="Permalink to this headline">¶</a></h2>
 <p>If a package is not available on your platform, or if it's out of date,
-Streamlink can be installed via <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>, the Python package manager.</p>
-<p>In addition to using <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>, Streamlink can also be installed from source
-via <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/">setuptools</a> after cloning the <a class="reference external" href="https://git-scm.com/">git</a> repository.</p>
-<p>Before running <strong class="command">pip</strong>, make sure that it's the Python 3 version of <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a> (to check, run <strong class="command">pip --version</strong>).
+Streamlink can be installed via <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>, the Python package manager.</p>
+<p>Before running <strong class="command">pip</strong>, make sure that it's the Python 3 version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> (to check, run <strong class="command">pip --version</strong>).
 On some systems, this isn't the case by default and an alternative, like <strong class="command">pip3</strong> for example, needs to be run instead.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On some Linux distributions, the Python headers package needs to be installed before installing Streamlink
 (<code class="docutils literal notranslate"><span class="pre">python-devel</span></code> on RedHat, Fedora, etc.).</p>
-<p>Ensure that you are using an up-to-date version of <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>. At least version <strong>6</strong> is required.</p>
+<p>Ensure that you are using an up-to-date version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>. At least version <strong>6</strong> is required.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On Linux, when not using a virtual environment, it is recommended to install custom python packages like this
-only for the current user (see the <code class="docutils literal notranslate"><span class="pre">--user</span></code> parameter below), since system-wide packages can cause conflicts with
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On Linux, when not using a virtual environment, it is recommended to <strong>install custom python packages like this
+only for the current user</strong> (see the <code class="docutils literal notranslate"><span class="pre">--user</span></code> parameter below), since system-wide packages can cause conflicts with
 the system's regular package manager.</p>
 <p>Those user-packages will be installed into <code class="docutils literal notranslate"><span class="pre">~/.local</span></code> instead of <code class="docutils literal notranslate"><span class="pre">/usr</span></code> and entry-scripts for
 running the programs can be found in <code class="docutils literal notranslate"><span class="pre">~/.local/bin</span></code>, eg. <code class="docutils literal notranslate"><span class="pre">~/.local/bin/streamlink</span></code>.</p>
@@ -422,8 +420,8 @@ to <code class="docutils literal notranslate"><span class="pre">~/.profile</span
 </div>
 <div class="table-wrapper"><table class="table-custom-layout docutils align-default">
 <colgroup>
-<col style="width: 31%"/>
-<col style="width: 69%"/>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Version</p></th>
@@ -431,36 +429,20 @@ to <code class="docutils literal notranslate"><span class="pre">~/.profile</span
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://pypi.python.org/pypi/streamlink">Latest release (pip)</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Current user</span>
-pip install --upgrade --user streamlink
-
-<span class="c1"># System wide</span>
-sudo pip install --upgrade streamlink
+<tr class="row-even"><td><p><a class="reference external" href="https://pypi.python.org/pypi/streamlink">Latest release</a></p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user --upgrade streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/streamlink">Development version (pip)</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Current user</span>
-pip install --upgrade --user git+https://github.com/streamlink/streamlink.git
-
-<span class="c1"># System wide</span>
-sudo pip install --upgrade git+https://github.com/streamlink/streamlink.git
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/streamlink/commits/master">Master branch</a></p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user --upgrade git+https://github.com/streamlink/streamlink.git
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/streamlink/streamlink">Development version (git)</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Current user</span>
-git clone https://github.com/streamlink/streamlink.git
-<span class="nb">cd</span> streamlink
-python setup.py install --user
-
-<span class="c1"># System wide</span>
-git clone https://github.com/streamlink/streamlink.git
-<span class="nb">cd</span> streamlink
-sudo python setup.py install
+<tr class="row-even"><td><p><a class="reference external" href="https://pip.pypa.io/en/stable/reference/pip_install/#git">Specific tag/branch or commit</a></p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user --upgrade git+https://github.com/USERNAME/streamlink.git@BRANCH-OR-COMMIT
 </pre></div>
 </div>
 </td>
@@ -555,8 +537,8 @@ audio and video streams, eg. YouTube 1080p+</p></td>
 <h3>Using pycrypto and pycountry<a class="headerlink" href="#using-pycrypto-and-pycountry" title="Permalink to this headline">¶</a></h3>
 <p>With these two environment variables it is possible to use <a class="reference external" href="https://www.dlitz.net/software/pycrypto/">pycrypto</a> instead of
 <a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a> and <a class="reference external" href="https://pypi.org/project/pycountry/">pycountry</a> instead of <a class="reference external" href="https://pypi.org/project/iso-639/">iso-639</a> and <a class="reference external" href="https://pypi.org/project/iso3166/">iso3166</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCRYPTO</span><span class="o">=</span><span class="s2">"true"</span>
-<span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCOUNTRY</span><span class="o">=</span><span class="s2">"true"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCRYPTO</span><span class="o">=</span><span class="s2">"true"</span>
+<span class="gp">$ </span><span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCOUNTRY</span><span class="o">=</span><span class="s2">"true"</span>
 </pre></div>
 </div>
 </div>

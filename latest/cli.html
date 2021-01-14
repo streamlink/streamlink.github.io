@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Command-Line Interface - Streamlink 2.0.0+21.g92d7554 documentation</title>
+        <title>Command-Line Interface - Streamlink 2.0.0+22.gb9d0d18 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.0.0+21.g92d7554 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.0.0+22.gb9d0d18 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.0.0+21.g92d7554</pre>
+  <pre class="sidebar-versions-current">2.0.0+22.gb9d0d18</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -187,7 +187,7 @@ may be compatible too, see the <a class="reference internal" href="players.html#
 stream located on twitch.tv/day9tv, you start off by telling Streamlink
 where to attempt to extract streams from. This is done by giving the URL to the
 command <strong class="command">streamlink</strong> as the first argument:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink twitch.tv/day9tv
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink twitch.tv/day9tv
 <span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
 <span class="go">Available streams: audio, high, low, medium, mobile (worst), source (best)</span>
 </pre></div>
@@ -204,14 +204,14 @@ from.</p>
 using the <code class="docutils literal notranslate"><span class="pre">file://</span></code> protocol, for example a local HLS playlist can be played.
 Relative file paths and absolute paths are supported. All path separators are <code class="docutils literal notranslate"><span class="pre">/</span></code>,
 even on Windows.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink hls://file://C:/hls/playlist.m3u8
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink hls://file://C:/hls/playlist.m3u8
 <span class="go">[cli][info] Found matching plugin stream for URL hls://file://C:/hls/playlist.m3u8</span>
 <span class="go">Available streams: 180p (worst), 272p, 408p, 554p, 818p, 1744p (best)</span>
 </pre></div>
 </div>
 <p>To select a stream and start playback, simply add the stream name as a second
 argument to the <strong class="command">streamlink</strong> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink twitch.tv/day9tv 1080p60
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink twitch.tv/day9tv 1080p60
 <span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
 <span class="go">[cli][info] Opening stream: 1080p60 (hls)</span>
 <span class="go">[cli][info] Starting player: vlc</span>
@@ -386,7 +386,7 @@ the input stream URL does not match the faulty plugin.</p>
 their content. To do so, the plugin provides a couple of options to input your
 information, <a class="reference internal" href="#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a> and <a class="reference internal" href="#cmdoption-crunchyroll-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-password</span></code></a>.</p>
 <p>You can login like this:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --crunchyroll-username<span class="o">=</span>xxxx --crunchyroll-password<span class="o">=</span>xxx https://crunchyroll.com/a-crunchyroll-episode-link
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink --crunchyroll-username<span class="o">=</span>xxxx --crunchyroll-password<span class="o">=</span>xxx https://crunchyroll.com/a-crunchyroll-episode-link
 </pre></div>
 </div>
 <div class="admonition note">
@@ -425,7 +425,7 @@ in again using your username and password.</p>
 content: <a class="reference internal" href="#cmdoption-funimation-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--funimation-email</span></code></a>, <a class="reference internal" href="#cmdoption-funimation-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--funimation-password</span></code></a>. In addition, this plugin requires
 the <code class="docutils literal notranslate"><span class="pre">incap_ses</span></code> cookie to be sent with each HTTP request (see issue <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2088">#2088</a>). This unique session cookie
 can be found in your browser and sent via the <a class="reference internal" href="#cmdoption-http-cookie"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-cookie</span></code></a> option.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --funimation-email<span class="o">=</span><span class="s1">'xxx'</span> --funimation-password<span class="o">=</span><span class="s1">'xxx'</span> --http-cookie <span class="s1">'incap_ses_xxx=xxxx='</span> https://funimation.com/shows/show/an-episode-link
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink --funimation-email<span class="o">=</span><span class="s1">'xxx'</span> --funimation-password<span class="o">=</span><span class="s1">'xxx'</span> --http-cookie <span class="s1">'incap_ses_xxx=xxxx='</span> https://funimation.com/shows/show/an-episode-link
 </pre></div>
 </div>
 <div class="admonition note">
@@ -450,15 +450,15 @@ to extract the streams from a URL for you.</p>
 </div>
 <p>Accessing a stream that requires extra parameters to be passed along
 (e.g. RTMP):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="s2">"rtmp://streaming.server.net/playpath live=1 swfVfy=http://server.net/flashplayer.swf"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"rtmp://streaming.server.net/playpath live=1 swfVfy=http://server.net/flashplayer.swf"</span>
 </pre></div>
 </div>
 <p>When passing parameters to the built-in stream plugins, the values will either
 be treated as plain strings, as is the case in the example above for <code class="docutils literal notranslate"><span class="pre">swfVry</span></code>,
 or they will be interpreted as Python literals. For example, you can pass a
 Python dict or Python list as one of the parameters.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="s2">"rtmp://streaming.server.net/playpath conn=['B:1', 'S:authMe', 'O:1', 'NN:code:1.23', 'NS:flag:ok', 'O:0']"</span>
-<span class="gp">$</span> streamlink <span class="s2">"hls://streaming.server.net/playpath params={'token': 'magicToken'}"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"rtmp://streaming.server.net/playpath conn=['B:1', 'S:authMe', 'O:1', 'NN:code:1.23', 'NS:flag:ok', 'O:0']"</span>
+<span class="gp">$ </span>streamlink <span class="s2">"hls://streaming.server.net/playpath params={'token': 'magicToken'}"</span>
 </pre></div>
 </div>
 <p>In the examples above, <code class="docutils literal notranslate"><span class="pre">conn</span></code> will be passed as a Python list:</p>
@@ -471,7 +471,7 @@ Python dict or Python list as one of the parameters.</p>
 </div>
 <p>Most streaming protocols only require you to pass a simple URL.
 This is an Adobe HDS stream:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink hds://streaming.server.net/playpath/manifest.f4m
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink hds://streaming.server.net/playpath/manifest.f4m
 </pre></div>
 </div>
 <div class="section" id="supported-streaming-protocols">
@@ -530,14 +530,14 @@ value of <a class="reference internal" href="#cmdoption-https-proxy"><code class
 locally, rather than on the proxy server. To have the proxy server perform the DNS lookups, the
 <code class="docutils literal notranslate"><span class="pre">socks4a</span></code> and <code class="docutils literal notranslate"><span class="pre">socks5h</span></code> schemes should be used instead.</p>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink --http-proxy <span class="s2">"http://user:pass@10.10.1.10:3128/"</span> --https-proxy <span class="s2">"socks5://10.10.1.10:1242"</span>
-<span class="gp">$</span> streamlink --http-proxy <span class="s2">"socks4a://10.10.1.10:1235"</span> --https-proxy <span class="s2">"socks5h://10.10.1.10:1234"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink --http-proxy <span class="s2">"http://user:pass@10.10.1.10:3128/"</span> --https-proxy <span class="s2">"socks5://10.10.1.10:1242"</span>
+<span class="gp">$ </span>streamlink --http-proxy <span class="s2">"socks4a://10.10.1.10:1235"</span> --https-proxy <span class="s2">"socks5h://10.10.1.10:1234"</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="command-line-usage">
 <h2>Command-line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> streamlink <span class="o">[</span>OPTIONS<span class="o">]</span> &lt;URL&gt; <span class="o">[</span>STREAM<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="o">[</span>OPTIONS<span class="o">]</span> &lt;URL&gt; <span class="o">[</span>STREAM<span class="o">]</span>
 </pre></div>
 </div>
 <div class="section" id="positional-arguments">
