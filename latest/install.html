@@ -3,13 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Command-Line Interface" href="cli.html" /><link rel="prev" title="Streamlink" href="index.html" />
 
-    <meta name="generator" content="sphinx-3.5.1, furo 2020.12.28.beta23"/>
+    <meta name="generator" content="sphinx-3.5.2, furo 2020.12.28.beta23"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Installation - Streamlink 2.0.0+52.ga2b97c9 documentation</title>
+        <title>Installation - Streamlink 2.0.0+53.gcee5ac9 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.0.0+52.ga2b97c9 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.0.0+53.gcee5ac9 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.0.0+52.ga2b97c9</pre>
+  <pre class="sidebar-versions-current">2.0.0+53.gcee5ac9</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -248,13 +248,16 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.archlinux.org/packages/community/any/streamlink/">Arch Linux</a></p></td>
+<tr class="row-even"><td><p>AppImage</p></td>
+<td><p>See the <a class="reference internal" href="#appimages">AppImages</a> section below</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.archlinux.org/packages/community/any/streamlink/">Arch Linux</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo pacman -S streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (aur, git)</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (aur, git)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://aur.archlinux.org/streamlink-git.git
 <span class="nb">cd</span> streamlink-git
 makepkg -si
@@ -263,14 +266,14 @@ makepkg -si
 <p><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">Installing AUR packages</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (sid, testing)</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (sid, testing)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
 sudo apt install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (stable)</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (stable)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you don't have Debian backports already (see link below):</span>
 <span class="nb">echo</span> <span class="s2">"deb http://deb.debian.org/debian buster-backports main"</span> <span class="p">|</span> sudo tee <span class="s2">"/etc/apt/sources.list.d/streamlink.list"</span>
 
@@ -281,45 +284,45 @@ sudo apt -t buster-backports install streamlink
 <p><a class="reference external" href="https://wiki.debian.org/Backports#Using_the_command_line">Installing Debian backported packages</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://src.fedoraproject.org/rpms/python-streamlink">Fedora</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://src.fedoraproject.org/rpms/python-streamlink">Fedora</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://packages.gentoo.org/package/net-misc/streamlink">Gentoo Linux</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://packages.gentoo.org/package/net-misc/streamlink">Gentoo Linux</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo emerge net-misc/streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://pkgsrc.se/multimedia/streamlink">NetBSD (pkgsrc)</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://pkgsrc.se/multimedia/streamlink">NetBSD (pkgsrc)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /usr/pkgsrc/multimedia/streamlink
 sudo make install clean
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink">NixOS</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink">NixOS</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nix-env -iA nixos.streamlink
 </pre></div>
 </div>
 <p><a class="reference external" href="https://search.nixos.org/packages?show=streamlink&amp;query=streamlink">NixOS channel</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://openports.se/multimedia/streamlink">OpenBSD</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://openports.se/multimedia/streamlink">OpenBSD</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>doas pkg_add streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://dev.solus-project.com/source/streamlink/">Solus</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://dev.solus-project.com/source/streamlink/">Solus</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo eopkg install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu/pool/main/s/streamlink/">Ubuntu</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu/pool/main/s/streamlink/">Ubuntu</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt update
 sudo apt install streamlink
@@ -327,7 +330,7 @@ sudo apt install streamlink
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink">Void</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink">Void</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo xbps-install streamlink
 </pre></div>
 </div>
@@ -335,6 +338,8 @@ sudo apt install streamlink
 </tr>
 </tbody>
 </table></div>
+<p>Please see the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> or <a class="reference internal" href="#appimages">AppImages</a> sections down below
+if a package is not available for your distro or platform, or if it's out of date.</p>
 </div>
 <div class="section" id="package-maintainers">
 <h2>Package maintainers<a class="headerlink" href="#package-maintainers" title="Permalink to this headline">¶</a></h2>
@@ -613,6 +618,34 @@ from the command prompt or powershell without specifying its directory.</p></li>
 </table></div>
 </div>
 </div>
+<div class="section" id="appimages">
+<h2>AppImages<a class="headerlink" href="#appimages" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-setup">
+<h3>Download &amp; Setup<a class="headerlink" href="#download-setup" title="Permalink to this headline">¶</a></h3>
+<p>First, download the latest <a class="reference external" href="https://github.com/streamlink/streamlink-appimage">Streamlink AppImage</a> which matches your system's
+architecture from the <a class="reference external" href="https://github.com/streamlink/streamlink-appimage/releases">Streamlink AppImage releases page</a>. Then simply set the
+executable flag and run the app.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the executable flag. Note that all AppImage release file names include</span>
+<span class="c1"># the release version, Python version, platform name and CPU architecture</span>
+chmod +x streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage
+
+<span class="c1"># Run the Streamlink AppImage with any parameter supported by Streamlink</span>
+./streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage --version
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-are-appimages">
+<h3>What are AppImages?<a class="headerlink" href="#what-are-appimages" title="Permalink to this headline">¶</a></h3>
+<p>AppImages are portable apps for Linux which are independent of the distro and
+package management.</p>
+<p>Note: Check out <a class="reference external" href="https://github.com/TheAssassin/AppImageLauncher">AppImageLauncher</a>, which automates the setup and system
+integration of AppImages. AppImageLauncher may also be available via your
+distro's package management.</p>
+<p>Additional information, like for example how to inspect the AppImage contents or
+how to extract the contents if <a class="reference external" href="https://docs.appimage.org/user-guide/troubleshooting/fuse.html">FUSE</a> is not available on your system, can be
+found in the <a class="reference external" href="https://docs.appimage.org/user-guide/run-appimages.html">AppImage documentation</a>.</p>
+</div>
+</div>
 </div>
 
 
@@ -678,6 +711,11 @@ from the command prompt or powershell without specifying its directory.</p></li>
 </li>
 <li><a class="reference internal" href="#windows-binaries">Windows binaries</a><ul>
 <li><a class="reference internal" href="#windows-portable-version">Windows portable version</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#appimages">AppImages</a><ul>
+<li><a class="reference internal" href="#download-setup">Download &amp; Setup</a></li>
+<li><a class="reference internal" href="#what-are-appimages">What are AppImages?</a></li>
 </ul>
 </li>
 </ul>
