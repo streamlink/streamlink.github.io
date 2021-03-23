@@ -1,4 +1,6 @@
 ./.buildinfo
+./_man.html
+./_sources/_man.rst.txt
 ./_sources/api.rst.txt
 ./_sources/api_guide.rst.txt
 ./_sources/applications.rst.txt
@@ -39,7 +41,7 @@
 ./_static/styles/furo-extensions.css.map
 ./_static/styles/furo.css
 ./_static/styles/furo.css.map
-./_static/underscore-1.3.1.js
+./_static/underscore-1.12.0.js
 ./_static/underscore.js
 ./api.html
 ./api_guide.html

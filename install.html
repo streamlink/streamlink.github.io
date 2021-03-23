@@ -3,14 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Command-Line Interface" href="cli.html" /><link rel="prev" title="Streamlink" href="index.html" />
 
-    <meta name="generator" content="sphinx-3.4.0, furo 2020.12.09.beta21"/>
+    <meta name="generator" content="sphinx-3.5.3, furo 2020.12.28.beta23"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Installation - Streamlink 2.0.0 documentation</title>
-      <link rel="stylesheet" href="_static/styles/furo.css?digest=a3f371badb8538d75df213ccffb17a4f6e8f3ac5">
+        <title>Installation - Streamlink 2.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
     
@@ -41,16 +41,15 @@
   --color-code-foreground: #d0d0d0;
   
   }
-</style><link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
+</style><link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
     <link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60">
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script defer src="_static/jquery.js"></script>
-    <script defer src="_static/underscore.js"></script>
-    <script defer src="_static/doctools.js"></script>
+    <script defer="defer" src="_static/jquery.js"></script>
+    <script defer="defer" src="_static/underscore.js"></script>
+    <script defer="defer" src="_static/doctools.js"></script>
     <script defer src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></head>
   <body dir="">
     
@@ -91,6 +90,7 @@
 <label class="overlay toc-overlay" for="__toc"></label>
 
 
+
 <div class="page">
   <header class="mobile-header">
     <div class="header-left">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.0.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,13 +118,13 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.0.0</pre>
+  <pre class="sidebar-versions-current">2.1.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/install.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html">
-  <input class="sidebar-search" placeholder="Search" name="q">
+  <input class="sidebar-search" placeholder=Search name="q">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-tree">
@@ -173,8 +173,8 @@
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <div class="table-wrapper"><table class="table-custom-layout docutils align-default">
 <colgroup>
-<col style="width: 42%"/>
-<col style="width: 58%"/>
+<col style="width: 40%"/>
+<col style="width: 60%"/>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -188,14 +188,17 @@
 <tr class="row-odd"><td><p>Portable</p></td>
 <td><p>See the <a class="reference internal" href="#windows-portable-version">Windows portable version</a> section below</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://chocolatey.org/packages/streamlink">Chocolatey</a></p></td>
+<tr class="row-even"><td><p>Python pip</p></td>
+<td><p>See the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> section below</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://chocolatey.org/packages/streamlink">Chocolatey</a></p></td>
 <td><div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>choco install streamlink
 </pre></div>
 </div>
 <p><a class="reference external" href="https://chocolatey.org">Installing Chocolatey packages</a></p>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/Streamlink/Streamlink">Windows Package Manager</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/Streamlink/Streamlink">Windows Package Manager</a></p></td>
 <td><div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>winget install streamlink
 </pre></div>
 </div>
@@ -244,6 +247,12 @@
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p>AppImage</p></td>
+<td><p>See the <a class="reference internal" href="#appimages">AppImages</a> section below</p></td>
+</tr>
+<tr class="row-odd"><td><p>Python pip</p></td>
+<td><p>See the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> section below</p></td>
+</tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://www.archlinux.org/packages/community/any/streamlink/">Arch Linux</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo pacman -S streamlink
 </pre></div>
@@ -271,13 +280,13 @@ sudo apt install streamlink
 <span class="nb">echo</span> <span class="s2">"deb http://deb.debian.org/debian buster-backports main"</span> <span class="p">|</span> sudo tee <span class="s2">"/etc/apt/sources.list.d/streamlink.list"</span>
 
 sudo apt update
-sudo apt install streamlink
+sudo apt -t buster-backports install streamlink
 </pre></div>
 </div>
 <p><a class="reference external" href="https://wiki.debian.org/Backports#Using_the_command_line">Installing Debian backported packages</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://apps.fedoraproject.org/packages/python-streamlink">Fedora</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://src.fedoraproject.org/rpms/python-streamlink">Fedora</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install streamlink
 </pre></div>
 </div>
@@ -331,6 +340,8 @@ sudo apt install streamlink
 </tr>
 </tbody>
 </table></div>
+<p>Please see the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> or <a class="reference internal" href="#appimages">AppImages</a> sections down below
+if a package is not available for your distro or platform, or if it's out of date.</p>
 </div>
 <div class="section" id="package-maintainers">
 <h2>Package maintainers<a class="headerlink" href="#package-maintainers" title="Permalink to this headline">¶</a></h2>
@@ -385,8 +396,7 @@ sudo apt install streamlink
 <td><p>beardypig &lt;beardypig at protonmail.com&gt;</p></td>
 </tr>
 <tr class="row-odd"><td><p>Windows port. version</p></td>
-<td><p>RosadinTV &lt;RosadinTV at outlook.com&gt; <br/>
-beardypig &lt;beardypig at protonmail.com&gt;</p></td>
+<td><p>beardypig &lt;beardypig at protonmail.com&gt;</p></td>
 </tr>
 </tbody>
 </table></div>
@@ -394,21 +404,19 @@ beardypig &lt;beardypig at protonmail.com&gt;</p></td>
 <div class="section" id="pypi-package-and-source-code">
 <h2>PyPI package and source code<a class="headerlink" href="#pypi-package-and-source-code" title="Permalink to this headline">¶</a></h2>
 <p>If a package is not available on your platform, or if it's out of date,
-Streamlink can be installed via <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>, the Python package manager.</p>
-<p>In addition to using <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>, Streamlink can also be installed from source
-via <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/">setuptools</a> after cloning the <a class="reference external" href="https://git-scm.com/">git</a> repository.</p>
-<p>Before running <strong class="command">pip</strong>, make sure that it's the Python 3 version of <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a> (to check, run <strong class="command">pip --version</strong>).
+Streamlink can be installed via <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>, the Python package manager.</p>
+<p>Before running <strong class="command">pip</strong>, make sure that it's the Python 3 version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> (to check, run <strong class="command">pip --version</strong>).
 On some systems, this isn't the case by default and an alternative, like <strong class="command">pip3</strong> for example, needs to be run instead.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On some Linux distributions, the Python headers package needs to be installed before installing Streamlink
 (<code class="docutils literal notranslate"><span class="pre">python-devel</span></code> on RedHat, Fedora, etc.).</p>
-<p>Ensure that you are using an up-to-date version of <a class="reference external" href="https://pip.readthedocs.org/en/latest/installing.html">pip</a>. At least version <strong>6</strong> is required.</p>
+<p>Ensure that you are using an up-to-date version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>. At least version <strong>6</strong> is required.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On Linux, when not using a virtual environment, it is recommended to install custom python packages like this
-only for the current user (see the <code class="docutils literal notranslate"><span class="pre">--user</span></code> parameter below), since system-wide packages can cause conflicts with
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On Linux, when not using a virtual environment, it is recommended to <strong>install custom python packages like this
+only for the current user</strong> (see the <code class="docutils literal notranslate"><span class="pre">--user</span></code> parameter below), since system-wide packages can cause conflicts with
 the system's regular package manager.</p>
 <p>Those user-packages will be installed into <code class="docutils literal notranslate"><span class="pre">~/.local</span></code> instead of <code class="docutils literal notranslate"><span class="pre">/usr</span></code> and entry-scripts for
 running the programs can be found in <code class="docutils literal notranslate"><span class="pre">~/.local/bin</span></code>, eg. <code class="docutils literal notranslate"><span class="pre">~/.local/bin/streamlink</span></code>.</p>
@@ -418,8 +426,8 @@ to <code class="docutils literal notranslate"><span class="pre">~/.profile</span
 </div>
 <div class="table-wrapper"><table class="table-custom-layout docutils align-default">
 <colgroup>
-<col style="width: 31%"/>
-<col style="width: 69%"/>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Version</p></th>
@@ -427,36 +435,20 @@ to <code class="docutils literal notranslate"><span class="pre">~/.profile</span
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://pypi.python.org/pypi/streamlink">Latest release (pip)</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Current user</span>
-pip install --upgrade --user streamlink
-
-<span class="c1"># System wide</span>
-sudo pip install --upgrade streamlink
+<tr class="row-even"><td><p><a class="reference external" href="https://pypi.python.org/pypi/streamlink">Latest release</a></p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user --upgrade streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/streamlink">Development version (pip)</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Current user</span>
-pip install --upgrade --user git+https://github.com/streamlink/streamlink.git
-
-<span class="c1"># System wide</span>
-sudo pip install --upgrade git+https://github.com/streamlink/streamlink.git
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/streamlink/commits/master">Master branch</a></p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user --upgrade git+https://github.com/streamlink/streamlink.git
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/streamlink/streamlink">Development version (git)</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Current user</span>
-git clone https://github.com/streamlink/streamlink.git
-<span class="nb">cd</span> streamlink
-python setup.py install --user
-
-<span class="c1"># System wide</span>
-git clone https://github.com/streamlink/streamlink.git
-<span class="nb">cd</span> streamlink
-sudo python setup.py install
+<tr class="row-even"><td><p><a class="reference external" href="https://pip.pypa.io/en/stable/reference/pip_install/#git">Specific tag/branch or commit</a></p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user --upgrade git+https://github.com/USERNAME/streamlink.git@BRANCH-OR-COMMIT
 </pre></div>
 </div>
 </td>
@@ -533,7 +525,7 @@ permission issues.</p>
 <td><p>Used for SOCKS Proxies</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://pypi.org/project/websocket-client/">websocket-client</a></p></td>
-<td><p>Used for some plugins</p></td>
+<td><p>At least version <strong>0.58.0</strong>. (used for some plugins)</p></td>
 </tr>
 <tr class="row-even"><td colspan="2"><p><strong>Optional</strong></p></td>
 </tr>
@@ -551,8 +543,8 @@ audio and video streams, eg. YouTube 1080p+</p></td>
 <h3>Using pycrypto and pycountry<a class="headerlink" href="#using-pycrypto-and-pycountry" title="Permalink to this headline">¶</a></h3>
 <p>With these two environment variables it is possible to use <a class="reference external" href="https://www.dlitz.net/software/pycrypto/">pycrypto</a> instead of
 <a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a> and <a class="reference external" href="https://pypi.org/project/pycountry/">pycountry</a> instead of <a class="reference external" href="https://pypi.org/project/iso-639/">iso-639</a> and <a class="reference external" href="https://pypi.org/project/iso3166/">iso3166</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCRYPTO</span><span class="o">=</span><span class="s2">"true"</span>
-<span class="gp">$</span> <span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCOUNTRY</span><span class="o">=</span><span class="s2">"true"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCRYPTO</span><span class="o">=</span><span class="s2">"true"</span>
+<span class="gp">$ </span><span class="nb">export</span> <span class="nv">STREAMLINK_USE_PYCOUNTRY</span><span class="o">=</span><span class="s2">"true"</span>
 </pre></div>
 </div>
 </div>
@@ -619,18 +611,41 @@ from the command prompt or powershell without specifying its directory.</p></li>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>RosadinTV</p></td>
-<td><p><a class="reference external" href="https://github.com/streamlink/streamlink-portable/releases/latest">Latest precompiled stable release</a> <br/>
-<a class="reference external" href="https://github.com/streamlink/streamlink-portable/archive/master.zip">Latest builder</a> <br/>
-<a class="reference external" href="https://github.com/streamlink/streamlink-portable">More info</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Beardypig</p></td>
+<tr class="row-even"><td><p>Beardypig</p></td>
 <td><p><a class="reference external" href="https://github.com/beardypig/streamlink-portable/releases/latest">Latest precompiled stable release</a> <br/>
 <a class="reference external" href="https://github.com/beardypig/streamlink-portable/archive/master.zip">Latest builder</a> <br/>
 <a class="reference external" href="https://github.com/beardypig/streamlink-portable">More info</a></p></td>
 </tr>
 </tbody>
 </table></div>
+</div>
+</div>
+<div class="section" id="appimages">
+<h2>AppImages<a class="headerlink" href="#appimages" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-setup">
+<h3>Download &amp; Setup<a class="headerlink" href="#download-setup" title="Permalink to this headline">¶</a></h3>
+<p>First, download the latest <a class="reference external" href="https://github.com/streamlink/streamlink-appimage">Streamlink AppImage</a> which matches your system's
+architecture from the <a class="reference external" href="https://github.com/streamlink/streamlink-appimage/releases">Streamlink AppImage releases page</a>. Then simply set the
+executable flag and run the app.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the executable flag. Note that all AppImage release file names include</span>
+<span class="c1"># the release version, Python version, platform name and CPU architecture</span>
+chmod +x streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage
+
+<span class="c1"># Run the Streamlink AppImage with any parameter supported by Streamlink</span>
+./streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage --version
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-are-appimages">
+<h3>What are AppImages?<a class="headerlink" href="#what-are-appimages" title="Permalink to this headline">¶</a></h3>
+<p>AppImages are portable apps for Linux which are independent of the distro and
+package management.</p>
+<p>Note: Check out <a class="reference external" href="https://github.com/TheAssassin/AppImageLauncher">AppImageLauncher</a>, which automates the setup and system
+integration of AppImages. AppImageLauncher may also be available via your
+distro's package management.</p>
+<p>Additional information, like for example how to inspect the AppImage contents or
+how to extract the contents if <a class="reference external" href="https://docs.appimage.org/user-guide/troubleshooting/fuse.html">FUSE</a> is not available on your system, can be
+found in the <a class="reference external" href="https://docs.appimage.org/user-guide/run-appimages.html">AppImage documentation</a>.</p>
 </div>
 </div>
 </div>
@@ -663,7 +678,7 @@ from the command prompt or powershell without specifying its directory.</p></li>
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2020, Streamlink
+              Copyright &#169; 2021, Streamlink
             |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
@@ -698,6 +713,11 @@ from the command prompt or powershell without specifying its directory.</p></li>
 </li>
 <li><a class="reference internal" href="#windows-binaries">Windows binaries</a><ul>
 <li><a class="reference internal" href="#windows-portable-version">Windows portable version</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#appimages">AppImages</a><ul>
+<li><a class="reference internal" href="#download-setup">Download &amp; Setup</a></li>
+<li><a class="reference internal" href="#what-are-appimages">What are AppImages?</a></li>
 </ul>
 </li>
 </ul>

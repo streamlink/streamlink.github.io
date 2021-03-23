@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Plugins" href="plugin_matrix.html" /><link rel="prev" title="Installation" href="install.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <meta name="generator" content="sphinx-3.5.3, furo 2020.12.28.beta23"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Command-Line Interface - Streamlink 2.1.0 documentation</title>
+        <title>Streamlink - Streamlink 2.1.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -120,18 +120,18 @@
 <div class="sidebar-versions centered" role="note" aria-label="versions">
   <pre class="sidebar-versions-current">2.1.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/cli.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/cli.html" class="">Latest</a></dd>
+    <dd><a href="/_man.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/_man.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Search name="q">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-tree">
-  <ul class="current">
+  <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Command-Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
@@ -167,384 +167,35 @@
         </label>
         
   
-  <div class="section" id="command-line-interface">
-<h1>Command-Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="tutorial">
-<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
-<p>Streamlink is a command-line application, which means that the commands described
-here should be typed into a terminal. On Windows, you have to open either the
-<a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">Command Prompt</a>, <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a> or <a class="reference external" href="https://docs.microsoft.com/en-us/windows/terminal/get-started">Windows Terminal</a>, on macOS open the <a class="reference external" href="macOS-Terminal">Terminal</a> app,
-and if you're on Linux or BSD you probably already know the drill.</p>
-<p>The way Streamlink works is that it's only a means to extract and transport
-the streams, and the playback is done by an external video player. Streamlink
-works best with <a class="reference external" href="https://videolan.org/">VLC</a> or <a class="reference external" href="https://mpv.io/">mpv</a>, which are also cross-platform, but other players
-may be compatible too, see the <a class="reference internal" href="players.html#players"><span class="std std-ref">Players</span></a> page for a complete overview.</p>
-<p>Now to get into actually using Streamlink, let's say you want to watch the
-stream located on twitch.tv/day9tv, you start off by telling Streamlink
-where to attempt to extract streams from. This is done by giving the URL to the
-command <strong class="command">streamlink</strong> as the first argument:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink twitch.tv/day9tv
-<span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
-<span class="go">Available streams: audio, high, low, medium, mobile (worst), source (best)</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You don't need to include the protocol when dealing with HTTP(s) URLs,
-e.g. just <code class="docutils literal notranslate"><span class="pre">twitch.tv/day9tv</span></code> is enough and quicker to type.</p>
-</div>
-<p>This command will tell Streamlink to attempt to extract streams from the URL
-specified, and if it's successful, print out a list of available streams to choose
-from.</p>
-<p>In some cases  (<a class="reference internal" href="#supported-streaming-protocols">Supported streaming protocols</a>)  local files are supported
-using the <code class="docutils literal notranslate"><span class="pre">file://</span></code> protocol, for example a local HLS playlist can be played.
-Relative file paths and absolute paths are supported. All path separators are <code class="docutils literal notranslate"><span class="pre">/</span></code>,
-even on Windows.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink hls://file://C:/hls/playlist.m3u8
-<span class="go">[cli][info] Found matching plugin stream for URL hls://file://C:/hls/playlist.m3u8</span>
-<span class="go">Available streams: 180p (worst), 272p, 408p, 554p, 818p, 1744p (best)</span>
-</pre></div>
-</div>
-<p>To select a stream and start playback, simply add the stream name as a second
-argument to the <strong class="command">streamlink</strong> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink twitch.tv/day9tv 1080p60
-<span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
-<span class="go">[cli][info] Opening stream: 1080p60 (hls)</span>
-<span class="go">[cli][info] Starting player: vlc</span>
-</pre></div>
-</div>
-<p>The stream you chose should now be playing in the player. It's a common use case
-to just want to start the highest quality stream and not be bothered with what it's
-named. To do this, just specify <code class="docutils literal notranslate"><span class="pre">best</span></code> as the stream name and Streamlink will
-attempt to rank the streams and open the one of highest quality. You can also
-specify <code class="docutils literal notranslate"><span class="pre">worst</span></code> to get the lowest quality.</p>
-<p>Now that you have a basic grasp of how Streamlink works, you may want to look
-into customizing it to your own needs, such as:</p>
-<ul class="simple">
-<li><p>Creating a <a class="reference internal" href="#configuration-file"><span class="std std-ref">configuration file</span></a> of options you
-want to use</p></li>
-<li><p>Setting up your player to <a class="reference internal" href="issues.html#streams-are-buffering-lagging"><span class="std std-ref">cache some data</span></a>
-before playing the stream to help avoiding buffering issues</p></li>
-</ul>
-</div>
-<div class="section" id="configuration-file">
-<h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
-<p>Writing the command-line options every time is inconvenient, that's why Streamlink
-is capable of reading options from a configuration file instead.</p>
-<p>Streamlink will look for config files in different locations depending on
-your platform:</p>
-<div class="table-wrapper"><table class="docutils align-default">
-<colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Platform</p></th>
-<th class="head"><p>Location</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Unix-like (POSIX)</p></td>
-<td><ul class="simple">
-<li><p>$XDG_CONFIG_HOME/streamlink/config</p></li>
-<li><p>~/.streamlinkrc</p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Windows</p></td>
-<td><p>%APPDATA%\streamlink\streamlinkrc</p></td>
-</tr>
-</tbody>
-</table></div>
-<p>You can also specify the location yourself using the <a class="reference internal" href="#cmdoption-config"><code class="xref std std-option docutils literal notranslate"><span class="pre">--config</span></code></a> option.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul class="simple">
-<li><p><cite>$XDG_CONFIG_HOME</cite> is <code class="docutils literal notranslate"><span class="pre">~/.config</span></code> if it has not been overridden</p></li>
-<li><p><cite>%APPDATA%</cite> is usually <code class="docutils literal notranslate"><span class="pre">&lt;your</span> <span class="pre">user</span> <span class="pre">directory&gt;\AppData</span></code></p></li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On Windows, there is a default config created by the installer, but on any
-other platform you must create the file yourself.</p>
-</div>
-<div class="section" id="syntax">
-<h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
-<p>The config file is a simple text file and should contain one
-<a class="reference internal" href="#command-line-usage"><span class="std std-ref">command-line option</span></a> (omitting the dashes) per
-line in the format:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">option</span><span class="o">=</span><span class="n">value</span>
-</pre></div>
-</div>
-<p>or for an option without value:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">option</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Any quotes used will be part of the value, so only use them when the value needs them,
-e.g. when specifying a player with a path which contains spaces.</p>
-</div>
-</div>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Player options</span>
-<span class="nv">player</span><span class="o">=</span>mpv --cache <span class="m">2048</span>
-player-no-close
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Full player paths are supported via configuration file options such as
-<code class="docutils literal notranslate"><span class="pre">player="C:\mpv-x86_64\mpv"</span></code></p>
-</div>
-</div>
-</div>
-<div class="section" id="plugin-specific-configuration-file">
-<h2>Plugin specific configuration file<a class="headerlink" href="#plugin-specific-configuration-file" title="Permalink to this headline">¶</a></h2>
-<p>You may want to use specific options for some plugins only. This
-can be accomplished by placing those settings inside a plugin specific
-config file. Options inside these config files will override the main
-config file when a URL matching the plugin is used.</p>
-<p>Streamlink expects this config to be named like the main config but
-with <code class="docutils literal notranslate"><span class="pre">.&lt;plugin</span> <span class="pre">name&gt;</span></code> attached to the end.</p>
-<div class="section" id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
-<div class="table-wrapper"><table class="docutils align-default">
-<colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Platform</p></th>
-<th class="head"><p>Location</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Unix-like (POSIX)</p></td>
-<td><ul class="simple">
-<li><p>$XDG_CONFIG_HOME/streamlink/config<strong>.twitch</strong></p></li>
-<li><p>~/.streamlinkrc<strong>.ustreamtv</strong></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Windows</p></td>
-<td><p>%APPDATA%\streamlink\streamlinkrc<strong>.youtube</strong></p></td>
-</tr>
-</tbody>
-</table></div>
-<p>Have a look at the <a class="reference internal" href="plugin_matrix.html#plugins"><span class="std std-ref">list of plugins</span></a>, or
-check the <a class="reference internal" href="#cmdoption-plugins"><code class="xref std std-option docutils literal notranslate"><span class="pre">--plugins</span></code></a> option to see the name of each built-in plugin.</p>
-</div>
-</div>
-<div class="section" id="sideloading-plugins">
-<h2>Sideloading plugins<a class="headerlink" href="#sideloading-plugins" title="Permalink to this headline">¶</a></h2>
-<p>Streamlink will attempt to load standalone plugins from these directories:</p>
-<div class="table-wrapper"><table class="docutils align-default">
-<colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Platform</p></th>
-<th class="head"><p>Location</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Unix-like (POSIX)</p></td>
-<td><p>$XDG_CONFIG_HOME/streamlink/plugins</p></td>
-</tr>
-<tr class="row-odd"><td><p>Windows</p></td>
-<td><p>%APPDATA%\streamlink\plugins</p></td>
-</tr>
-</tbody>
-</table></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If a plugin is added with the same name as a built-in plugin, then
-the added plugin will take precedence. This is useful if you want
-to upgrade plugins independently of the Streamlink version.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If one of the sideloaded plugins fails to load, eg. due to a
-<code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> being raised by the parser, this exception will
-not get caught by Streamlink and the execution will stop, even if
-the input stream URL does not match the faulty plugin.</p>
-</div>
-</div>
-<div class="section" id="plugin-specific-usage">
-<h2>Plugin specific usage<a class="headerlink" href="#plugin-specific-usage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="authenticating-with-crunchyroll">
-<h3>Authenticating with Crunchyroll<a class="headerlink" href="#authenticating-with-crunchyroll" title="Permalink to this headline">¶</a></h3>
-<p>Crunchyroll requires authenticating with a premium account to access some of
-their content. To do so, the plugin provides a couple of options to input your
-information, <a class="reference internal" href="#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a> and <a class="reference internal" href="#cmdoption-crunchyroll-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-password</span></code></a>.</p>
-<p>You can login like this:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink --crunchyroll-username<span class="o">=</span>xxxx --crunchyroll-password<span class="o">=</span>xxx https://crunchyroll.com/a-crunchyroll-episode-link
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you omit the password, streamlink will ask for it.</p>
-</div>
-<p>Once logged in, the plugin makes sure to save the session credentials to avoid
-asking your username and password again.</p>
-<p>Nevertheless, these credentials are valid for a limited amount of time, so it
-might be a good idea to save your username and password in your
-<a class="reference internal" href="#configuration-file"><span class="std std-ref">configuration file</span></a> anyway.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The API this plugin uses isn't supposed to be available on desktop
-computers. The plugin tries to blend in as a valid device using custom
-headers and following the API's usual flow (e.g. reusing credentials), but
-this does not assure that your account will be safe from being spotted for
-unusual behavior.</p>
-</div>
-</div>
-<div class="section" id="http-proxy-with-crunchyroll">
-<h3>HTTP proxy with Crunchyroll<a class="headerlink" href="#http-proxy-with-crunchyroll" title="Permalink to this headline">¶</a></h3>
-<p>To be able to stream region locked content, you can use Streamlink's proxy
-options, which are described in the <a class="reference internal" href="#proxy-support"><span class="std std-ref">Proxy Support</span></a> section.</p>
-<p>When doing this, it's possible that access to the stream will still be denied;
-this can happen because the session and credentials used by the plugin
-were obtained while being logged from your own region, and the server still assumes
-you're in that region.</p>
-<p>For cases like this, the plugin provides the <a class="reference internal" href="#cmdoption-crunchyroll-purge-credentials"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-purge-credentials</span></code></a>
-option, which removes your saved session and credentials and tries to log
-in again using your username and password.</p>
-</div>
-<div class="section" id="authenticating-with-funimationnow">
-<h3>Authenticating with FunimationNow<a class="headerlink" href="#authenticating-with-funimationnow" title="Permalink to this headline">¶</a></h3>
-<p>Like Crunchyroll, the FunimationNow plugin requires authenticating with a premium account to access some
-content: <a class="reference internal" href="#cmdoption-funimation-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--funimation-email</span></code></a>, <a class="reference internal" href="#cmdoption-funimation-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--funimation-password</span></code></a>. In addition, this plugin requires
-the <code class="docutils literal notranslate"><span class="pre">incap_ses</span></code> cookie to be sent with each HTTP request (see issue <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2088">#2088</a>). This unique session cookie
-can be found in your browser and sent via the <a class="reference internal" href="#cmdoption-http-cookie"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-cookie</span></code></a> option.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink --funimation-email<span class="o">=</span><span class="s1">'xxx'</span> --funimation-password<span class="o">=</span><span class="s1">'xxx'</span> --http-cookie <span class="s1">'incap_ses_xxx=xxxx='</span> https://funimation.com/shows/show/an-episode-link
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There are multiple ways to retrieve the required cookie. For more
-information on browser cookies, please consult the following:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/HTTP_cookie">What are cookies?</a></p></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="section" id="playing-built-in-streaming-protocols-directly">
-<h2>Playing built-in streaming protocols directly<a class="headerlink" href="#playing-built-in-streaming-protocols-directly" title="Permalink to this headline">¶</a></h2>
-<p>There are many types of streaming protocols used by services today and
-Streamlink supports most of them. It's possible to tell Streamlink
-to access a streaming protocol directly instead of relying on a plugin
-to extract the streams from a URL for you.</p>
-<p>A protocol can be accessed directly by specifying it in the URL format:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">protocol</span><span class="p">:</span><span class="o">//</span><span class="n">path</span> <span class="p">[</span><span class="n">key</span><span class="o">=</span><span class="n">value</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Accessing a stream that requires extra parameters to be passed along
-(e.g. RTMP):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"rtmp://streaming.server.net/playpath live=1 swfVfy=http://server.net/flashplayer.swf"</span>
-</pre></div>
-</div>
-<p>When passing parameters to the built-in stream plugins, the values will either
-be treated as plain strings, as is the case in the example above for <code class="docutils literal notranslate"><span class="pre">swfVry</span></code>,
-or they will be interpreted as Python literals. For example, you can pass a
-Python dict or Python list as one of the parameters.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"rtmp://streaming.server.net/playpath conn=['B:1', 'S:authMe', 'O:1', 'NN:code:1.23', 'NS:flag:ok', 'O:0']"</span>
-<span class="gp">$ </span>streamlink <span class="s2">"hls://streaming.server.net/playpath params={'token': 'magicToken'}"</span>
-</pre></div>
-</div>
-<p>In the examples above, <code class="docutils literal notranslate"><span class="pre">conn</span></code> will be passed as a Python list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">'B:1'</span><span class="p">,</span> <span class="s1">'S:authMe'</span><span class="p">,</span> <span class="s1">'O:1'</span><span class="p">,</span> <span class="s1">'NN:code:1.23'</span><span class="p">,</span> <span class="s1">'NS:flag:ok'</span><span class="p">,</span> <span class="s1">'O:0'</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>and <code class="docutils literal notranslate"><span class="pre">params</span></code> will be passed as a Python dict:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">'token'</span><span class="p">:</span> <span class="s1">'magicToken'</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>Most streaming protocols only require you to pass a simple URL.
-This is an Adobe HDS stream:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink hds://streaming.server.net/playpath/manifest.f4m
-</pre></div>
-</div>
-<div class="section" id="supported-streaming-protocols">
-<h3>Supported streaming protocols<a class="headerlink" href="#supported-streaming-protocols" title="Permalink to this headline">¶</a></h3>
-<div class="table-wrapper"><table class="docutils align-default">
-<colgroup>
-<col style="width: 38%"/>
-<col style="width: 62%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Prefix</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Adobe HTTP Dynamic Streaming</p></td>
-<td><p>hds://</p></td>
-</tr>
-<tr class="row-odd"><td><p>Akamai HD Adaptive Streaming</p></td>
-<td><p>akamaihd://</p></td>
-</tr>
-<tr class="row-even"><td><p>Apple HTTP Live Streaming</p></td>
-<td><p>hls:// <a class="footnote-reference brackets" href="#id4" id="id1">1</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>MPEG-DASH <a class="footnote-reference brackets" href="#id5" id="id2">2</a></p></td>
-<td><p>dash://</p></td>
-</tr>
-<tr class="row-even"><td><p>Real Time Messaging Protocol</p></td>
-<td><p>rtmp:// rtmpe:// rtmps:// rtmpt:// rtmpte://</p></td>
-</tr>
-<tr class="row-odd"><td><p>Progressive HTTP, HTTPS, etc</p></td>
-<td><p>httpstream:// <a class="footnote-reference brackets" href="#id4" id="id3">1</a></p></td>
-</tr>
-</tbody>
-</table></div>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
-<dd><p>supports local files using the <a class="reference external" href="file://">file://</a> protocol</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Dynamic Adaptive Streaming over HTTP</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="section" id="proxy-support">
-<h2>Proxy Support<a class="headerlink" href="#proxy-support" title="Permalink to this headline">¶</a></h2>
-<p>You can use the <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-proxy</span></code></a> or <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--https-proxy</span></code></a> options to
-change the proxy server that Streamlink will use for HTTP and HTTPS requests respectively.
-For convenience reasons, <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-proxy</span></code></a> will automatically set the
-value of <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--https-proxy</span></code></a> as well, if it has not been set by the user.</p>
-<p>Both HTTP and SOCKS proxies are supported, as well as authentication in each of them.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When using a SOCKS proxy, the <code class="docutils literal notranslate"><span class="pre">socks4</span></code> and <code class="docutils literal notranslate"><span class="pre">socks5</span></code> schemes mean that DNS lookups are done
-locally, rather than on the proxy server. To have the proxy server perform the DNS lookups, the
-<code class="docutils literal notranslate"><span class="pre">socks4a</span></code> and <code class="docutils literal notranslate"><span class="pre">socks5h</span></code> schemes should be used instead.</p>
-</div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink --http-proxy <span class="s2">"http://user:pass@10.10.1.10:3128/"</span> --https-proxy <span class="s2">"socks5://10.10.1.10:1242"</span>
-<span class="gp">$ </span>streamlink --http-proxy <span class="s2">"socks4a://10.10.1.10:1235"</span> --https-proxy <span class="s2">"socks5h://10.10.1.10:1234"</span>
+  <div class="section" id="streamlink">
+<h1>Streamlink<a class="headerlink" href="#streamlink" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">streamlink [OPTIONS] &lt;URL&gt; [STREAM]</span>
+
+<span class="go">streamlink --loglevel debug youtu.be/VIDEO-ID best</span>
+<span class="go">streamlink --player mpv --player-args '--no-border --no-keepaspect-window' twitch.tv/CHANNEL 1080p60</span>
+<span class="go">streamlink --player-external-http --player-external-http-port 8888 URL STREAM</span>
+<span class="go">streamlink --output /path/to/file --http-timeout 60 URL STREAM</span>
+<span class="go">streamlink --stdout URL STREAM | ffmpeg -i pipe:0 ...</span>
+<span class="go">streamlink --http-header 'Authorization=OAuth TOKEN' --http-header 'Referer=URL' URL STREAM</span>
+<span class="go">streamlink --hls-live-edge 5 --hls-segment-threads 5 'hls://https://host/playlist.m3u8' best</span>
+<span class="go">streamlink --twitch-low-latency -p mpv -a '--cache=yes --demuxer-max-bytes=750k' twitch.tv/CHANNEL best</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="command-line-usage">
-<h2>Command-line usage<a class="headerlink" href="#command-line-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="o">[</span>OPTIONS<span class="o">]</span> &lt;URL&gt; <span class="o">[</span>STREAM<span class="o">]</span>
-</pre></div>
 </div>
+<div class="section" id="options">
+<h1>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="positional-arguments">
-<h3>Positional arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this headline">¶</a></h3>
+<h2>Positional arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
 <dt id="cmdoption-arg-URL">
 <span id="cmdoption-arg-url"></span><code class="sig-name descname"><span class="pre">URL</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-URL" title="Permalink to this definition">¶</a></dt>
 <dd><p>A URL to attempt to extract streams from.</p>
 <p>Usually, the protocol of http(s) URLs can be omitted ("<a class="reference external" href="https://">https://</a>"),
 depending on the implementation of the plugin being used.</p>
-<p>Alternatively, the URL can also be specified by using the <a class="reference internal" href="#cmdoption-url"><code class="xref std std-option docutils literal notranslate"><span class="pre">--url</span></code></a> option.</p>
+<p>Alternatively, the URL can also be specified by using the <a class="reference internal" href="cli.html#cmdoption-url"><code class="xref std std-option docutils literal notranslate"><span class="pre">--url</span></code></a> option.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-arg-STREAM">
@@ -556,12 +207,12 @@ quality.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">"720p,480p,best"</span>
 </pre></div>
 </div>
-<p>If no stream is specified and <a class="reference internal" href="#cmdoption-default-stream"><code class="xref std std-option docutils literal notranslate"><span class="pre">--default-stream</span></code></a> is not used, then a list
+<p>If no stream is specified and <a class="reference internal" href="cli.html#cmdoption-default-stream"><code class="xref std std-option docutils literal notranslate"><span class="pre">--default-stream</span></code></a> is not used, then a list
 of available streams will be printed.</p>
 </dd></dl>
 </div>
 <div class="section" id="general-options">
-<h3>General options<a class="headerlink" href="#general-options" title="Permalink to this headline">¶</a></h3>
+<h2>General options<a class="headerlink" href="#general-options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
 <dt id="cmdoption-h">
 <code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Permalink to this definition">¶</a></dt>
@@ -597,7 +248,7 @@ of available streams will be printed.</p>
 <dl class="std option">
 <dt id="cmdoption-can-handle-url-no-redirect">
 <code class="sig-name descname"><span class="pre">--can-handle-url-no-redirect</span></code><code class="sig-prename descclassname"> <span class="pre">URL</span></code><a class="headerlink" href="#cmdoption-can-handle-url-no-redirect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as <a class="reference internal" href="#cmdoption-can-handle-url"><code class="xref std std-option docutils literal notranslate"><span class="pre">--can-handle-url</span></code></a> but without following redirects when looking up
+<dd><p>Same as <a class="reference internal" href="cli.html#cmdoption-can-handle-url"><code class="xref std std-option docutils literal notranslate"><span class="pre">--can-handle-url</span></code></a> but without following redirects when looking up
 the URL.</p>
 </dd></dl>
 <dl class="std option">
@@ -661,18 +312,18 @@ es_ES.</p>
 <code class="sig-name descname"><span class="pre">-4</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-4" title="Permalink to this definition">¶</a></dt>
 <dt id="cmdoption-ipv4">
 <code class="sig-name descname"><span class="pre">--ipv4</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipv4" title="Permalink to this definition">¶</a></dt>
-<dd><p>Resolve address names to IPv4 only. This option overrides <a class="reference internal" href="#cmdoption-6"><code class="xref std std-option docutils literal notranslate"><span class="pre">-6</span></code></a>.</p>
+<dd><p>Resolve address names to IPv4 only. This option overrides <a class="reference internal" href="cli.html#cmdoption-6"><code class="xref std std-option docutils literal notranslate"><span class="pre">-6</span></code></a>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-6">
 <code class="sig-name descname"><span class="pre">-6</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-6" title="Permalink to this definition">¶</a></dt>
 <dt id="cmdoption-ipv6">
 <code class="sig-name descname"><span class="pre">--ipv6</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipv6" title="Permalink to this definition">¶</a></dt>
-<dd><p>Resolve address names to IPv6 only. This option overrides <a class="reference internal" href="#cmdoption-4"><code class="xref std std-option docutils literal notranslate"><span class="pre">-4</span></code></a>.</p>
+<dd><p>Resolve address names to IPv6 only. This option overrides <a class="reference internal" href="cli.html#cmdoption-4"><code class="xref std std-option docutils literal notranslate"><span class="pre">-4</span></code></a>.</p>
 </dd></dl>
 </div>
 <div class="section" id="player-options">
-<h3>Player options<a class="headerlink" href="#player-options" title="Permalink to this headline">¶</a></h3>
+<h2>Player options<a class="headerlink" href="#player-options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
 <dt id="cmdoption-p">
 <code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"> <span class="pre">COMMAND</span></code><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">¶</a></dt>
@@ -700,7 +351,7 @@ parameter or its value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span> <span class="s2">"vlc --file-caching=5000"</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>As an alternative to this, see the <a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> parameter, which does
+<p>As an alternative to this, see the <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> parameter, which does
 not log any custom player arguments.</p>
 </dd></dl>
 <dl class="std option">
@@ -709,8 +360,8 @@ not log any custom player arguments.</p>
 <dt id="cmdoption-player-args">
 <code class="sig-name descname"><span class="pre">--player-args</span></code><code class="sig-prename descclassname"> <span class="pre">ARGUMENTS</span></code><a class="headerlink" href="#cmdoption-player-args" title="Permalink to this definition">¶</a></dt>
 <dd><p>This option allows you to customize the default arguments which are put
-together with the value of <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> to create a command to execute.</p>
-<p>It's usually enough to only use <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> instead of this unless you need
+together with the value of <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> to create a command to execute.</p>
+<p>It's usually enough to only use <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> instead of this unless you need
 to add arguments after the player's input argument or if you don't want
 any of the player arguments to be logged.</p>
 <p>The value can contain formatting variables surrounded by curly braces,
@@ -760,7 +411,7 @@ stdin pipe.</p>
 <dl class="std option">
 <dt id="cmdoption-player-continuous-http">
 <code class="sig-name descname"><span class="pre">--player-continuous-http</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-player-continuous-http" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make the player read the stream through HTTP, but unlike <a class="reference internal" href="#cmdoption-player-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-http</span></code></a>
+<dd><p>Make the player read the stream through HTTP, but unlike <a class="reference internal" href="cli.html#cmdoption-player-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-http</span></code></a>
 it will continuously try to open the stream if the player requests it.</p>
 <p>This makes it possible to handle stream disconnects if your player is
 capable of reconnecting to a HTTP stream. This is usually done by
@@ -837,7 +488,7 @@ inserted inside your --title string.</p>
 <a class="reference external" href="https://mpv.io/manual/stable/#property-list">https://mpv.io/manual/stable/#property-list</a></p>
 </dd>
 </dl>
-<p>Formatting variables available to use in <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a>:</p>
+<p>Formatting variables available to use in <a class="reference internal" href="cli.html#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a>:</p>
 <dl>
 <dt>{title}</dt><dd><p>If available, this is the title of the stream.
 Otherwise, it is the string "Unknown Title"</p>
@@ -867,7 +518,7 @@ the stream, so it doesn't need its own separate handling.</p>
 </dd></dl>
 </div>
 <div class="section" id="file-output-options">
-<h3>File output options<a class="headerlink" href="#file-output-options" title="Permalink to this headline">¶</a></h3>
+<h2>File output options<a class="headerlink" href="#file-output-options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
 <dt id="cmdoption-o">
 <code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"> <span class="pre">FILENAME</span></code><a class="headerlink" href="#cmdoption-o" title="Permalink to this definition">¶</a></dt>
@@ -914,7 +565,7 @@ show the download progress bar even if there is no terminal.</p>
 </dd></dl>
 </div>
 <div class="section" id="stream-options">
-<h3>Stream options<a class="headerlink" href="#stream-options" title="Permalink to this headline">¶</a></h3>
+<h2>Stream options<a class="headerlink" href="#stream-options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
 <dt id="cmdoption-url">
 <code class="sig-name descname"><span class="pre">--url</span></code><code class="sig-prename descclassname"> <span class="pre">URL</span></code><a class="headerlink" href="#cmdoption-url" title="Permalink to this definition">¶</a></dt>
@@ -948,14 +599,14 @@ and can be useful if set in a config file.</p>
 <dd><p>Retry fetching the list of available streams until streams are found
 while waiting DELAY second(s) between each attempt. If unset, only one
 attempt will be made to fetch the list of streams available.</p>
-<p>The number of fetch retry attempts can be capped with <a class="reference internal" href="#cmdoption-retry-max"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-max</span></code></a>.</p>
+<p>The number of fetch retry attempts can be capped with <a class="reference internal" href="cli.html#cmdoption-retry-max"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-max</span></code></a>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-retry-max">
 <code class="sig-name descname"><span class="pre">--retry-max</span></code><code class="sig-prename descclassname"> <span class="pre">COUNT</span></code><a class="headerlink" href="#cmdoption-retry-max" title="Permalink to this definition">¶</a></dt>
-<dd><p>When using <a class="reference internal" href="#cmdoption-retry-streams"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-streams</span></code></a>, stop retrying the fetch after COUNT retry
+<dd><p>When using <a class="reference internal" href="cli.html#cmdoption-retry-streams"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-streams</span></code></a>, stop retrying the fetch after COUNT retry
 attempt(s). Fetch will retry infinitely if COUNT is zero or unset.</p>
-<p>If <a class="reference internal" href="#cmdoption-retry-max"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-max</span></code></a> is set without setting <a class="reference internal" href="#cmdoption-retry-streams"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-streams</span></code></a>, the delay between
+<p>If <a class="reference internal" href="cli.html#cmdoption-retry-max"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-max</span></code></a> is set without setting <a class="reference internal" href="cli.html#cmdoption-retry-streams"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-streams</span></code></a>, the delay between
 retries will default to 1 second.</p>
 </dd></dl>
 <dl class="std option">
@@ -1002,7 +653,7 @@ equality is tested.</p>
 </dd></dl>
 </div>
 <div class="section" id="stream-transport-options">
-<h3>Stream transport options<a class="headerlink" href="#stream-transport-options" title="Permalink to this headline">¶</a></h3>
+<h2>Stream transport options<a class="headerlink" href="#stream-transport-options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
 <dt id="cmdoption-hds-live-edge">
 <code class="sig-name descname"><span class="pre">--hds-live-edge</span></code><code class="sig-prename descclassname"> <span class="pre">SECONDS</span></code><a class="headerlink" href="#cmdoption-hds-live-edge" title="Permalink to this definition">¶</a></dt>
@@ -1317,7 +968,7 @@ the initial start time offset value.</p>
 </dd></dl>
 </div>
 <div class="section" id="http-options">
-<h3>HTTP options<a class="headerlink" href="#http-options" title="Permalink to this headline">¶</a></h3>
+<h2>HTTP options<a class="headerlink" href="#http-options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
 <dt id="cmdoption-http-proxy">
 <code class="sig-name descname"><span class="pre">--http-proxy</span></code><code class="sig-prename descclassname"> <span class="pre">HTTP_PROXY</span></code><a class="headerlink" href="#cmdoption-http-proxy" title="Permalink to this definition">¶</a></dt>
@@ -1388,9 +1039,9 @@ other options.</p>
 </dd></dl>
 </div>
 <div class="section" id="plugin-options">
-<h3>Plugin options<a class="headerlink" href="#plugin-options" title="Permalink to this headline">¶</a></h3>
+<h2>Plugin options<a class="headerlink" href="#plugin-options" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="abweb">
-<h4>Abweb<a class="headerlink" href="#abweb" title="Permalink to this headline">¶</a></h4>
+<h3>Abweb<a class="headerlink" href="#abweb" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-abweb-username">
 <code class="sig-name descname"><span class="pre">--abweb-username</span></code><code class="sig-prename descclassname"> <span class="pre">USERNAME</span></code><a class="headerlink" href="#cmdoption-abweb-username" title="Permalink to this definition">¶</a></dt>
@@ -1400,7 +1051,7 @@ ABweb stream.</p>
 <dl class="std option">
 <dt id="cmdoption-abweb-password">
 <code class="sig-name descname"><span class="pre">--abweb-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-abweb-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A ABweb account password to use with <a class="reference internal" href="#cmdoption-abweb-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--abweb-username</span></code></a>.</p>
+<dd><p>A ABweb account password to use with <a class="reference internal" href="cli.html#cmdoption-abweb-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--abweb-username</span></code></a>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-abweb-purge-credentials">
@@ -1410,7 +1061,7 @@ reauthenticate.</p>
 </dd></dl>
 </div>
 <div class="section" id="afreeca">
-<h4>Afreeca<a class="headerlink" href="#afreeca" title="Permalink to this headline">¶</a></h4>
+<h3>Afreeca<a class="headerlink" href="#afreeca" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-afreeca-username">
 <code class="sig-name descname"><span class="pre">--afreeca-username</span></code><code class="sig-prename descclassname"> <span class="pre">USERNAME</span></code><a class="headerlink" href="#cmdoption-afreeca-username" title="Permalink to this definition">¶</a></dt>
@@ -1419,7 +1070,7 @@ reauthenticate.</p>
 <dl class="std option">
 <dt id="cmdoption-afreeca-password">
 <code class="sig-name descname"><span class="pre">--afreeca-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-afreeca-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A afreecatv.com account password to use with <a class="reference internal" href="#cmdoption-afreeca-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--afreeca-username</span></code></a>.</p>
+<dd><p>A afreecatv.com account password to use with <a class="reference internal" href="cli.html#cmdoption-afreeca-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--afreeca-username</span></code></a>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-afreeca-purge-credentials">
@@ -1429,7 +1080,7 @@ and reauthenticate.</p>
 </dd></dl>
 </div>
 <div class="section" id="animelab">
-<h4>Animelab<a class="headerlink" href="#animelab" title="Permalink to this headline">¶</a></h4>
+<h3>Animelab<a class="headerlink" href="#animelab" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-animelab-email">
 <code class="sig-name descname"><span class="pre">--animelab-email</span></code><code class="sig-prename descclassname"> <span class="pre">EMAIL</span></code><a class="headerlink" href="#cmdoption-animelab-email" title="Permalink to this definition">¶</a></dt>
@@ -1438,11 +1089,11 @@ and reauthenticate.</p>
 <dl class="std option">
 <dt id="cmdoption-animelab-password">
 <code class="sig-name descname"><span class="pre">--animelab-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-animelab-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A animelab.com account password to use with <a class="reference internal" href="#cmdoption-animelab-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--animelab-email</span></code></a>.</p>
+<dd><p>A animelab.com account password to use with <a class="reference internal" href="cli.html#cmdoption-animelab-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--animelab-email</span></code></a>.</p>
 </dd></dl>
 </div>
 <div class="section" id="bbciplayer">
-<h4>Bbciplayer<a class="headerlink" href="#bbciplayer" title="Permalink to this headline">¶</a></h4>
+<h3>Bbciplayer<a class="headerlink" href="#bbciplayer" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-bbciplayer-username">
 <code class="sig-name descname"><span class="pre">--bbciplayer-username</span></code><code class="sig-prename descclassname"> <span class="pre">USERNAME</span></code><a class="headerlink" href="#cmdoption-bbciplayer-username" title="Permalink to this definition">¶</a></dt>
@@ -1451,7 +1102,7 @@ and reauthenticate.</p>
 <dl class="std option">
 <dt id="cmdoption-bbciplayer-password">
 <code class="sig-name descname"><span class="pre">--bbciplayer-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-bbciplayer-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A bbc.co.uk account password to use with <a class="reference internal" href="#cmdoption-bbciplayer-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--bbciplayer-username</span></code></a>.</p>
+<dd><p>A bbc.co.uk account password to use with <a class="reference internal" href="cli.html#cmdoption-bbciplayer-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--bbciplayer-username</span></code></a>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-bbciplayer-hd">
@@ -1461,7 +1112,7 @@ not be broadcast in HD.</p>
 </dd></dl>
 </div>
 <div class="section" id="clubbingtv">
-<h4>Clubbingtv<a class="headerlink" href="#clubbingtv" title="Permalink to this headline">¶</a></h4>
+<h3>Clubbingtv<a class="headerlink" href="#clubbingtv" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-clubbingtv-username">
 <code class="sig-name descname"><span class="pre">--clubbingtv-username</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-clubbingtv-username" title="Permalink to this definition">¶</a></dt>
@@ -1470,11 +1121,11 @@ not be broadcast in HD.</p>
 <dl class="std option">
 <dt id="cmdoption-clubbingtv-password">
 <code class="sig-name descname"><span class="pre">--clubbingtv-password</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-clubbingtv-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A Clubbing TV account password to use with <a class="reference internal" href="#cmdoption-clubbingtv-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--clubbingtv-username</span></code></a>.</p>
+<dd><p>A Clubbing TV account password to use with <a class="reference internal" href="cli.html#cmdoption-clubbingtv-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--clubbingtv-username</span></code></a>.</p>
 </dd></dl>
 </div>
 <div class="section" id="crunchyroll">
-<h4>Crunchyroll<a class="headerlink" href="#crunchyroll" title="Permalink to this headline">¶</a></h4>
+<h3>Crunchyroll<a class="headerlink" href="#crunchyroll" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-crunchyroll-username">
 <code class="sig-name descname"><span class="pre">--crunchyroll-username</span></code><code class="sig-prename descclassname"> <span class="pre">USERNAME</span></code><a class="headerlink" href="#cmdoption-crunchyroll-username" title="Permalink to this definition">¶</a></dt>
@@ -1483,7 +1134,7 @@ not be broadcast in HD.</p>
 <dl class="std option">
 <dt id="cmdoption-crunchyroll-password">
 <code class="sig-name descname"><span class="pre">--crunchyroll-password</span></code><code class="sig-prename descclassname"> <span class="pre">[PASSWORD]</span></code><a class="headerlink" href="#cmdoption-crunchyroll-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A Crunchyroll password for use with <a class="reference internal" href="#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a>.</p>
+<dd><p>A Crunchyroll password for use with <a class="reference internal" href="cli.html#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a>.</p>
 <p>If left blank you will be prompted.</p>
 </dd></dl>
 <dl class="std option">
@@ -1507,7 +1158,7 @@ and the session ID does not match the account.</p>
 </dd></dl>
 </div>
 <div class="section" id="funimationnow">
-<h4>Funimationnow<a class="headerlink" href="#funimationnow" title="Permalink to this headline">¶</a></h4>
+<h3>Funimationnow<a class="headerlink" href="#funimationnow" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-funimation-email">
 <code class="sig-name descname"><span class="pre">--funimation-email</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-funimation-email" title="Permalink to this definition">¶</a></dt>
@@ -1526,7 +1177,7 @@ and the session ID does not match the account.</p>
 </dd></dl>
 </div>
 <div class="section" id="liveedu">
-<h4>Liveedu<a class="headerlink" href="#liveedu" title="Permalink to this headline">¶</a></h4>
+<h3>Liveedu<a class="headerlink" href="#liveedu" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-liveedu-email">
 <code class="sig-name descname"><span class="pre">--liveedu-email</span></code><code class="sig-prename descclassname"> <span class="pre">EMAIL</span></code><a class="headerlink" href="#cmdoption-liveedu-email" title="Permalink to this definition">¶</a></dt>
@@ -1535,11 +1186,11 @@ and the session ID does not match the account.</p>
 <dl class="std option">
 <dt id="cmdoption-liveedu-password">
 <code class="sig-name descname"><span class="pre">--liveedu-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-liveedu-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A LiveEdu account password to use with <a class="reference internal" href="#cmdoption-liveedu-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--liveedu-email</span></code></a>.</p>
+<dd><p>A LiveEdu account password to use with <a class="reference internal" href="cli.html#cmdoption-liveedu-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--liveedu-email</span></code></a>.</p>
 </dd></dl>
 </div>
 <div class="section" id="nicolive">
-<h4>Nicolive<a class="headerlink" href="#nicolive" title="Permalink to this headline">¶</a></h4>
+<h3>Nicolive<a class="headerlink" href="#nicolive" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-niconico-email">
 <code class="sig-name descname"><span class="pre">--niconico-email</span></code><code class="sig-prename descclassname"> <span class="pre">EMAIL</span></code><a class="headerlink" href="#cmdoption-niconico-email" title="Permalink to this definition">¶</a></dt>
@@ -1569,7 +1220,7 @@ and reauthenticate.</p>
 </dd></dl>
 </div>
 <div class="section" id="openrectv">
-<h4>Openrectv<a class="headerlink" href="#openrectv" title="Permalink to this headline">¶</a></h4>
+<h3>Openrectv<a class="headerlink" href="#openrectv" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-openrectv-email">
 <code class="sig-name descname"><span class="pre">--openrectv-email</span></code><code class="sig-prename descclassname"> <span class="pre">EMAIL</span></code><a class="headerlink" href="#cmdoption-openrectv-email" title="Permalink to this definition">¶</a></dt>
@@ -1579,11 +1230,11 @@ required to access any openrectv stream.</p>
 <dl class="std option">
 <dt id="cmdoption-openrectv-password">
 <code class="sig-name descname"><span class="pre">--openrectv-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-openrectv-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>An openrectv account password to use with <a class="reference internal" href="#cmdoption-openrectv-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--openrectv-email</span></code></a>.</p>
+<dd><p>An openrectv account password to use with <a class="reference internal" href="cli.html#cmdoption-openrectv-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--openrectv-email</span></code></a>.</p>
 </dd></dl>
 </div>
 <div class="section" id="pixiv">
-<h4>Pixiv<a class="headerlink" href="#pixiv" title="Permalink to this headline">¶</a></h4>
+<h3>Pixiv<a class="headerlink" href="#pixiv" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-pixiv-sessionid">
 <code class="sig-name descname"><span class="pre">--pixiv-sessionid</span></code><code class="sig-prename descclassname"> <span class="pre">SESSIONID</span></code><a class="headerlink" href="#cmdoption-pixiv-sessionid" title="Permalink to this definition">¶</a></dt>
@@ -1609,7 +1260,7 @@ and reauthenticate.</p>
 </dd></dl>
 </div>
 <div class="section" id="sbscokr">
-<h4>Sbscokr<a class="headerlink" href="#sbscokr" title="Permalink to this headline">¶</a></h4>
+<h3>Sbscokr<a class="headerlink" href="#sbscokr" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-sbscokr-id">
 <code class="sig-name descname"><span class="pre">--sbscokr-id</span></code><code class="sig-prename descclassname"> <span class="pre">CHANNELID</span></code><a class="headerlink" href="#cmdoption-sbscokr-id" title="Permalink to this definition">¶</a></dt>
@@ -1621,7 +1272,7 @@ and reauthenticate.</p>
 </dd></dl>
 </div>
 <div class="section" id="schoolism">
-<h4>Schoolism<a class="headerlink" href="#schoolism" title="Permalink to this headline">¶</a></h4>
+<h3>Schoolism<a class="headerlink" href="#schoolism" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-schoolism-email">
 <code class="sig-name descname"><span class="pre">--schoolism-email</span></code><code class="sig-prename descclassname"> <span class="pre">EMAIL</span></code><a class="headerlink" href="#cmdoption-schoolism-email" title="Permalink to this definition">¶</a></dt>
@@ -1631,7 +1282,7 @@ required to access any Schoolism stream.</p>
 <dl class="std option">
 <dt id="cmdoption-schoolism-password">
 <code class="sig-name descname"><span class="pre">--schoolism-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-schoolism-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A Schoolism account password to use with <a class="reference internal" href="#cmdoption-schoolism-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--schoolism-email</span></code></a>.</p>
+<dd><p>A Schoolism account password to use with <a class="reference internal" href="cli.html#cmdoption-schoolism-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--schoolism-email</span></code></a>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-schoolism-part">
@@ -1641,7 +1292,7 @@ required to access any Schoolism stream.</p>
 </dd></dl>
 </div>
 <div class="section" id="steam">
-<h4>Steam<a class="headerlink" href="#steam" title="Permalink to this headline">¶</a></h4>
+<h3>Steam<a class="headerlink" href="#steam" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-steam-email">
 <code class="sig-name descname"><span class="pre">--steam-email</span></code><code class="sig-prename descclassname"> <span class="pre">EMAIL</span></code><a class="headerlink" href="#cmdoption-steam-email" title="Permalink to this definition">¶</a></dt>
@@ -1650,11 +1301,11 @@ required to access any Schoolism stream.</p>
 <dl class="std option">
 <dt id="cmdoption-steam-password">
 <code class="sig-name descname"><span class="pre">--steam-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-steam-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A Steam account password to use with <a class="reference internal" href="#cmdoption-steam-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--steam-email</span></code></a>.</p>
+<dd><p>A Steam account password to use with <a class="reference internal" href="cli.html#cmdoption-steam-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--steam-email</span></code></a>.</p>
 </dd></dl>
 </div>
 <div class="section" id="streann">
-<h4>Streann<a class="headerlink" href="#streann" title="Permalink to this headline">¶</a></h4>
+<h3>Streann<a class="headerlink" href="#streann" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-streann-url">
 <code class="sig-name descname"><span class="pre">--streann-url</span></code><code class="sig-prename descclassname"> <span class="pre">URL</span></code><a class="headerlink" href="#cmdoption-streann-url" title="Permalink to this definition">¶</a></dt>
@@ -1663,7 +1314,7 @@ only required for direct URLs of <cite>ott.streann.com</cite></p>
 </dd></dl>
 </div>
 <div class="section" id="tvplayer">
-<h4>Tvplayer<a class="headerlink" href="#tvplayer" title="Permalink to this headline">¶</a></h4>
+<h3>Tvplayer<a class="headerlink" href="#tvplayer" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-tvplayer-email">
 <code class="sig-name descname"><span class="pre">--tvplayer-email</span></code><code class="sig-prename descclassname"> <span class="pre">EMAIL</span></code><a class="headerlink" href="#cmdoption-tvplayer-email" title="Permalink to this definition">¶</a></dt>
@@ -1676,7 +1327,7 @@ only required for direct URLs of <cite>ott.streann.com</cite></p>
 </dd></dl>
 </div>
 <div class="section" id="twitcasting">
-<h4>Twitcasting<a class="headerlink" href="#twitcasting" title="Permalink to this headline">¶</a></h4>
+<h3>Twitcasting<a class="headerlink" href="#twitcasting" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-twitcasting-password">
 <code class="sig-name descname"><span class="pre">--twitcasting-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-twitcasting-password" title="Permalink to this definition">¶</a></dt>
@@ -1684,7 +1335,7 @@ only required for direct URLs of <cite>ott.streann.com</cite></p>
 </dd></dl>
 </div>
 <div class="section" id="twitch">
-<h4>Twitch<a class="headerlink" href="#twitch" title="Permalink to this headline">¶</a></h4>
+<h3>Twitch<a class="headerlink" href="#twitch" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-twitch-disable-hosting">
 <code class="sig-name descname"><span class="pre">--twitch-disable-hosting</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-twitch-disable-hosting" title="Permalink to this definition">¶</a></dt>
@@ -1705,20 +1356,20 @@ Will cause these segments to be missing from the stream.</p>
 <dt id="cmdoption-twitch-low-latency">
 <code class="sig-name descname"><span class="pre">--twitch-low-latency</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-twitch-low-latency" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enables low latency streaming by prefetching HLS segments.
-Sets <a class="reference internal" href="#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> to true and <a class="reference internal" href="#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to 2, if it is higher.
-Reducing <a class="reference internal" href="#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to 1 will result in the lowest latency possible.</p>
+Sets <a class="reference internal" href="cli.html#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> to true and <a class="reference internal" href="cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to 2, if it is higher.
+Reducing <a class="reference internal" href="cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to 1 will result in the lowest latency possible.</p>
 <p>Low latency streams have to be enabled by the broadcasters on Twitch themselves.
 Regular streams can cause buffering issues with this option enabled.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The caching/buffering settings of the chosen player may need to be adjusted as well.
 Please refer to the player's own documentation for the required parameters and its configuration.
-Player parameters can be set via Streamlink's <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> or <a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> parameters.</p>
+Player parameters can be set via Streamlink's <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> or <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> parameters.</p>
 </div>
 </dd></dl>
 </div>
 <div class="section" id="ustreamtv">
-<h4>Ustreamtv<a class="headerlink" href="#ustreamtv" title="Permalink to this headline">¶</a></h4>
+<h3>Ustreamtv<a class="headerlink" href="#ustreamtv" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-ustream-password">
 <code class="sig-name descname"><span class="pre">--ustream-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-ustream-password" title="Permalink to this definition">¶</a></dt>
@@ -1726,7 +1377,7 @@ Player parameters can be set via Streamlink's <a class="reference internal" href
 </dd></dl>
 </div>
 <div class="section" id="ustvnow">
-<h4>Ustvnow<a class="headerlink" href="#ustvnow" title="Permalink to this headline">¶</a></h4>
+<h3>Ustvnow<a class="headerlink" href="#ustvnow" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-ustvnow-username">
 <code class="sig-name descname"><span class="pre">--ustvnow-username</span></code><code class="sig-prename descclassname"> <span class="pre">USERNAME</span></code><a class="headerlink" href="#cmdoption-ustvnow-username" title="Permalink to this definition">¶</a></dt>
@@ -1739,7 +1390,7 @@ Player parameters can be set via Streamlink's <a class="reference internal" href
 </dd></dl>
 </div>
 <div class="section" id="wwenetwork">
-<h4>Wwenetwork<a class="headerlink" href="#wwenetwork" title="Permalink to this headline">¶</a></h4>
+<h3>Wwenetwork<a class="headerlink" href="#wwenetwork" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-wwenetwork-email">
 <code class="sig-name descname"><span class="pre">--wwenetwork-email</span></code><code class="sig-prename descclassname"> <span class="pre">EMAIL</span></code><a class="headerlink" href="#cmdoption-wwenetwork-email" title="Permalink to this definition">¶</a></dt>
@@ -1749,11 +1400,11 @@ required to access any WWE Network stream.</p>
 <dl class="std option">
 <dt id="cmdoption-wwenetwork-password">
 <code class="sig-name descname"><span class="pre">--wwenetwork-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-wwenetwork-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A WWE Network account password to use with <a class="reference internal" href="#cmdoption-wwenetwork-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--wwenetwork-email</span></code></a>.</p>
+<dd><p>A WWE Network account password to use with <a class="reference internal" href="cli.html#cmdoption-wwenetwork-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--wwenetwork-email</span></code></a>.</p>
 </dd></dl>
 </div>
 <div class="section" id="yupptv">
-<h4>Yupptv<a class="headerlink" href="#yupptv" title="Permalink to this headline">¶</a></h4>
+<h3>Yupptv<a class="headerlink" href="#yupptv" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-yupptv-boxid">
 <code class="sig-name descname"><span class="pre">--yupptv-boxid</span></code><code class="sig-prename descclassname"> <span class="pre">BOXID</span></code><a class="headerlink" href="#cmdoption-yupptv-boxid" title="Permalink to this definition">¶</a></dt>
@@ -1774,7 +1425,7 @@ and reauthenticate.</p>
 </dd></dl>
 </div>
 <div class="section" id="zattoo">
-<h4>Zattoo<a class="headerlink" href="#zattoo" title="Permalink to this headline">¶</a></h4>
+<h3>Zattoo<a class="headerlink" href="#zattoo" title="Permalink to this headline">¶</a></h3>
 <dl class="std option">
 <dt id="cmdoption-zattoo-email">
 <code class="sig-name descname"><span class="pre">--zattoo-email</span></code><code class="sig-prename descclassname"> <span class="pre">EMAIL</span></code><a class="headerlink" href="#cmdoption-zattoo-email" title="Permalink to this definition">¶</a></dt>
@@ -1784,7 +1435,7 @@ required to access any zattoo stream.</p>
 <dl class="std option">
 <dt id="cmdoption-zattoo-password">
 <code class="sig-name descname"><span class="pre">--zattoo-password</span></code><code class="sig-prename descclassname"> <span class="pre">PASSWORD</span></code><a class="headerlink" href="#cmdoption-zattoo-password" title="Permalink to this definition">¶</a></dt>
-<dd><p>A zattoo account password to use with <a class="reference internal" href="#cmdoption-zattoo-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--zattoo-email</span></code></a>.</p>
+<dd><p>A zattoo account password to use with <a class="reference internal" href="cli.html#cmdoption-zattoo-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--zattoo-email</span></code></a>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-zattoo-purge-credentials">
@@ -1806,33 +1457,14 @@ the following types are allowed:</p>
 </div>
 </div>
 </div>
-</div>
 
 
       </article>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="plugin_matrix.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Plugins</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="install.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Installation</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
 
         <div class="related-information">
@@ -1858,30 +1490,11 @@ the following types are allowed:</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Command-Line Interface</a><ul>
-<li><a class="reference internal" href="#tutorial">Tutorial</a></li>
-<li><a class="reference internal" href="#configuration-file">Configuration file</a><ul>
-<li><a class="reference internal" href="#syntax">Syntax</a></li>
-<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#">Streamlink</a><ul>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#plugin-specific-configuration-file">Plugin specific configuration file</a><ul>
-<li><a class="reference internal" href="#examples">Examples</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sideloading-plugins">Sideloading plugins</a></li>
-<li><a class="reference internal" href="#plugin-specific-usage">Plugin specific usage</a><ul>
-<li><a class="reference internal" href="#authenticating-with-crunchyroll">Authenticating with Crunchyroll</a></li>
-<li><a class="reference internal" href="#http-proxy-with-crunchyroll">HTTP proxy with Crunchyroll</a></li>
-<li><a class="reference internal" href="#authenticating-with-funimationnow">Authenticating with FunimationNow</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a><ul>
-<li><a class="reference internal" href="#supported-streaming-protocols">Supported streaming protocols</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#proxy-support">Proxy Support</a></li>
-<li><a class="reference internal" href="#command-line-usage">Command-line usage</a><ul>
+<li><a class="reference internal" href="#options">Options</a><ul>
 <li><a class="reference internal" href="#positional-arguments">Positional arguments</a></li>
 <li><a class="reference internal" href="#general-options">General options</a></li>
 <li><a class="reference internal" href="#player-options">Player options</a></li>
@@ -1913,8 +1526,6 @@ the following types are allowed:</p>
 <li><a class="reference internal" href="#wwenetwork">Wwenetwork</a></li>
 <li><a class="reference internal" href="#yupptv">Yupptv</a></li>
 <li><a class="reference internal" href="#zattoo">Zattoo</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

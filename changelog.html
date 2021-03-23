@@ -3,14 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Donating" href="donate.html" /><link rel="prev" title="API Reference" href="api.html" />
 
-    <meta name="generator" content="sphinx-3.4.0, furo 2020.12.09.beta21"/>
+    <meta name="generator" content="sphinx-3.5.3, furo 2020.12.28.beta23"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 2.0.0 documentation</title>
-      <link rel="stylesheet" href="_static/styles/furo.css?digest=a3f371badb8538d75df213ccffb17a4f6e8f3ac5">
+        <title>Changelog - Streamlink 2.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
     
@@ -41,16 +41,15 @@
   --color-code-foreground: #d0d0d0;
   
   }
-</style><link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
+</style><link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
     <link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60">
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script defer src="_static/jquery.js"></script>
-    <script defer src="_static/underscore.js"></script>
-    <script defer src="_static/doctools.js"></script>
+    <script defer="defer" src="_static/jquery.js"></script>
+    <script defer="defer" src="_static/underscore.js"></script>
+    <script defer="defer" src="_static/doctools.js"></script>
     <script defer src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></head>
   <body dir="">
     
@@ -91,6 +90,7 @@
 <label class="overlay toc-overlay" for="__toc"></label>
 
 
+
 <div class="page">
   <header class="mobile-header">
     <div class="header-left">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.0.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,13 +118,13 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.0.0</pre>
+  <pre class="sidebar-versions-current">2.1.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html">
-  <input class="sidebar-search" placeholder="Search" name="q">
+  <input class="sidebar-search" placeholder=Search name="q">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-tree">
@@ -169,6 +169,121 @@
   
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-2-1-0-2021-03-22">
+<h2>streamlink 2.1.0 (2021-03-22)<a class="headerlink" href="#streamlink-2-1-0-2021-03-22" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--interface</span></code>, <code class="docutils literal notranslate"><span class="pre">-4</span></code> / <code class="docutils literal notranslate"><span class="pre">--ipv4</span></code> and <code class="docutils literal notranslate"><span class="pre">-6</span></code> / <code class="docutils literal notranslate"><span class="pre">--ipv6</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3483"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3483">#3483</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--niconico-purge-credentials</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3434"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3434">#3434</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--twitcasting-password</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3505"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3505">#3505</a></a>)</p></li>
+<li><p>Added: Linux AppImages (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3611"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3611">#3611</a></a>)</p></li>
+<li><p>Added: pre-built man page to bdist wheels and sdist tarballs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3459"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3459">#3459</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3510"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3510">#3510</a></a>)</p></li>
+<li><p>Added: plugin for ahaber.com.tr and atv.com.tr (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3484"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3484">#3484</a></a>), nimo.tv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3508"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3508">#3508</a></a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">--player-http</span></code> / <code class="docutils literal notranslate"><span class="pre">--player-continuous-http</span></code> HTTP server being bound to all interfaces (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3450"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3450">#3450</a></a>)</p></li>
+<li><p>Fixed: handling of languages without alpha_2 code when using pycountry (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3518"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3518">#3518</a></a>)</p></li>
+<li><p>Fixed: memory leak when calling <code class="docutils literal notranslate"><span class="pre">streamlink.streams()</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3486"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3486">#3486</a></a>)</p></li>
+<li><p>Fixed: race condition in HLS related tests (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3454"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3454">#3454</a></a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">--player-fifo</span></code> issues on Windows with VLC or MPV (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3619"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3619">#3619</a></a>)</p></li>
+<li><p>Fixed: various plugins issues (see detailed changelog down below)</p></li>
+<li><p>Removed: Windows portable (RosadinTV) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3535"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3535">#3535</a></a>)</p></li>
+<li><p>Removed: plugin for micous.com (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3457"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3457">#3457</a></a>), ntvspor.net (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3485"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3485">#3485</a></a>), btsports (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3636"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3636">#3636</a></a>)</p></li>
+<li><p>Dependencies: set <code class="docutils literal notranslate"><span class="pre">websocket-client</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=0.58.0</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3634"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3634">#3634</a></a>)</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Alexis Murzeau &lt;amubtdx@gmail.com&gt; (1):
+      docs: update Debian stable install instructions
+
+Billy2011 &lt;kschmidt2007@googlemail.com&gt; (1):
+      plugins.stadium: adaptions for new player api (#3506)
+
+Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (7):
+      plugins.mico: plugin removal
+      plugins.dogus: remove channel and update test
+      plugins.turkuvaz: add channels and URL tests
+      plugins.tvtoya: fix playlist regex
+      plugins.nimotv: new plugin
+      plugins.tvtoya: minor fixes
+      plugins.mjunoon: rewrite/fix
+
+Jefffrey &lt;22608443+Jefffrey@users.noreply.github.com&gt; (1):
+      plugins.Nicolive: login before getting wss api url
+
+Miguel Valadas &lt;mvaladas@gmail.com&gt; (1):
+      plugins.rtpplay: add schema and fix HLS URL (#3627)
+
+Vladimir Stavrinov &lt;9163352+vstavrinov@users.noreply.github.com&gt; (1):
+      plugins.oneplusone: fix iframe url pattern (#3503)
+
+alnj &lt;carre.matthieu.lucien@gmail.com&gt; (1):
+      plugins.twitcasting: add support for private/password-protected streams (#3505)
+
+back-to &lt;backto@protonmail.ch&gt; (11):
+      cli.main: use *_args, **_kwargs for create_http_server (#3450)
+      plugins.nicolive: added --niconico-purge-credentials
+      docs: remove outdated gst-player example
+      plugins.facebook: Add 'Log into Facebook' error message.
+      plugins.afreeca: use 'gs_cdn_pc_web' and 'common'
+      stream.dash: Fix static playlist - refresh_wait - Pipe copy aborted - Read timeout
+      plugin.api: update useragents (#3637)
+      plugins.zattoo: use 'dash' as default stream
+      setup.py: require websocket-client&gt;=0.58.0
+      plugins.nicolive: fixed websocket-client
+      plugins.btsports: remove plugin
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (36):
+      tools: force LF line endings via .gitattributes
+      docs: add minimalist code of conduct
+      stream.hls: open reader from class attribute
+      tests.hls: await all filtered-HLS writer calls
+      plugins.twitch: fix access_token on invalid inputs
+      ci: add netlify docs preview deploy config
+      docs: add thank-you section to index page
+      build: include man page in wheels
+      docs: bump furo docs req to 2020.12.28.beta23
+      2021
+      http_session: remove HTTPAdapterWithReadTimeout
+      docs: improve install-via-pip section
+      docs: fix description of `--ffmpeg-fout`
+      build: include man page in sdist tarballs
+      utils/l10n: fix langs without alpha_2 in pycountry
+      plugins.bloomberg: fix and refactor plugin
+      utils: remove custom memoize decorator
+      docs: remove CLI tutorial from man page
+      session: implement --interface, --ipv4 and --ipv6
+      docs: remove RosadinTV Windows portable version
+      ci.github: increase git fetch depth of tests
+      tests: fix test code coverage
+      ci.codecov: 100% tests target, add patch status
+      docs: clean up package maintainers list
+      plugins.vtvgo: ignore duplicate params
+      ci.codecov: disable GH status check annotations
+      chore: reorder and improve issue templates
+      plugins: fix invalid plugin class names
+      tests.plugins: parametrize can_handle_url tests
+      plugins: fix and update removed plugins list
+      docs: add appimages section to install docs
+      ci.netlify: build docs when CHANGELOG.md changes
+      docs: add pip to packages lists
+      cli.output: fix named pipe player input on Windows
+      cli: debug-log arguments set by the user
+      cli: refactor log_current_versions and add tests
+
+bururaku &lt;rakuburu@gmail.com&gt; (1):
+      plugins.abematv: Update abematv.py (#3617)
+
+fenopa &lt;62562166+fenopa@users.noreply.github.com&gt; (1):
+      installer: upgrade to python 3.8.7
+
+losuler &lt;losuler@posteo.net&gt; (1):
+      docs: update URL to Fedora repo
+
+onde2rock &lt;onde2rock@users.noreply.github.com&gt; (1):
+      plugins.bfmtv : fix rmcstory and rmcdecouverte (#3471)
+
+vinyl-umbrella &lt;61788251+vinyl-umbrella@users.noreply.github.com&gt; (1):
+      plugins.openrectv: update/fix (#3583)
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-2-0-0-2020-12-22">
 <h2>streamlink 2.0.0 (2020-12-22)<a class="headerlink" href="#streamlink-2-0-0-2020-12-22" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
@@ -3136,7 +3251,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2020, Streamlink
+              Copyright &#169; 2021, Streamlink
             |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
@@ -3159,6 +3274,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-2-1-0-2021-03-22">streamlink 2.1.0 (2021-03-22)</a></li>
 <li><a class="reference internal" href="#streamlink-2-0-0-2020-12-22">streamlink 2.0.0 (2020-12-22)</a></li>
 <li><a class="reference internal" href="#streamlink-1-7-0-2020-10-18">streamlink 1.7.0 (2020-10-18)</a></li>
 <li><a class="reference internal" href="#streamlink-1-6-0-2020-09-22">streamlink 1.6.0 (2020-09-22)</a></li>
