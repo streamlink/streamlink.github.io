@@ -1,7 +1,8 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Reference" href="api.html" /><link rel="prev" title="Developing" href="developing.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Reference" href="api.html" /><link rel="prev" title="Developing" href="developing.html" />
 
     <meta name="generator" content="sphinx-3.5.3, furo 2020.12.28.beta23"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -9,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Guide - Streamlink 2.1.1+2.g0db69be documentation</title>
+        <title>API Guide - Streamlink 2.1.1+3.gd568f43 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +100,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.1+2.g0db69be documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.1.1+3.gd568f43 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +119,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.1+2.g0db69be</pre>
+  <pre class="sidebar-versions-current">2.1.1+3.gd568f43</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api_guide.html" class="">Stable</a></dd>
     <dd><a href="/latest/api_guide.html" class="version-current">Latest</a></dd>
@@ -171,11 +172,11 @@
       <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
     </div>
   
-  <div class="section" id="api-guide">
+  <section id="api-guide">
 <h1>API Guide<a class="headerlink" href="#api-guide" title="Permalink to this headline">¶</a></h1>
 <p>This API is what powers the <a class="reference internal" href="cli.html#command-line-interface"><span class="std std-ref">cli</span></a> but is also available to developers that wish
 to make use of the data Streamlink can retrieve in their own application.</p>
-<div class="section" id="extracting-streams">
+<section id="extracting-streams">
 <h2>Extracting streams<a class="headerlink" href="#extracting-streams" title="Permalink to this headline">¶</a></h2>
 <p>The simplest use of the Streamlink API looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">streamlink</span>
@@ -198,8 +199,8 @@ fine tuning you need to use a <a class="reference internal" href="#session-objec
 </div>
 <p>If no plugin for the URL is found, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">NoPluginError</span></code> will be raised.
 If an error occurs while fetching streams, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">PluginError</span></code> will be raised.</p>
-</div>
-<div class="section" id="opening-streams-to-read-data">
+</section>
+<section id="opening-streams-to-read-data">
 <h2>Opening streams to read data<a class="headerlink" href="#opening-streams-to-read-data" title="Permalink to this headline">¶</a></h2>
 <p>Now that you have extracted some streams we might want to read some data from
 one of them. When you call <cite>open()</cite> on a stream, a file-like object will be
@@ -211,8 +212,8 @@ returned, which you can call <cite>.read(size)</cite> and <cite>.close()</cite> 
 </pre></div>
 </div>
 <p>If an error occurs while opening a stream, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> will be raised.</p>
-</div>
-<div class="section" id="inspecting-streams">
+</section>
+<section id="inspecting-streams">
 <h2>Inspecting streams<a class="headerlink" href="#inspecting-streams" title="Permalink to this headline">¶</a></h2>
 <p>It's also possible to inspect streams internal parameters, go to
 <a class="reference internal" href="api.html#stream-subclasses"><span class="std std-ref">Stream subclasses</span></a> to see what attributes are available
@@ -223,8 +224,8 @@ contains a <cite>url</cite> attribute.</p>
 <span class="go">'https://video38.ams01.hls.twitch.tv/hls11/ ...'</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="session-object">
+</section>
+<section id="session-object">
 <h2>Session object<a class="headerlink" href="#session-object" title="Permalink to this headline">¶</a></h2>
 <p>The session allows you to set various options and is more efficient
 when extracting streams more than once. You start by creating a
@@ -242,8 +243,8 @@ when extracting streams more than once. You start by creating a
 </pre></div>
 </div>
 <p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">Streamlink.set_option()</span></code> to see which options are available.</p>
-</div>
-</div>
+</section>
+</section>
 
 
       </article>

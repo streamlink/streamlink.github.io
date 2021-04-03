@@ -1,7 +1,8 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Guide" href="api_guide.html" /><link rel="prev" title="Common issues" href="issues.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Guide" href="api_guide.html" /><link rel="prev" title="Common issues" href="issues.html" />
 
     <meta name="generator" content="sphinx-3.5.3, furo 2020.12.28.beta23"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -9,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Developing - Streamlink 2.1.1+2.g0db69be documentation</title>
+        <title>Developing - Streamlink 2.1.1+3.gd568f43 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +100,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.1+2.g0db69be documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.1.1+3.gd568f43 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +119,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.1+2.g0db69be</pre>
+  <pre class="sidebar-versions-current">2.1.1+3.gd568f43</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="version-current">Latest</a></dd>
@@ -171,11 +172,11 @@
       <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
     </div>
   
-  <div class="section" id="developing">
+  <section id="developing">
 <h1>Developing<a class="headerlink" href="#developing" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="setup">
+<section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="setting-up-the-repository">
+<section id="setting-up-the-repository">
 <h3>Setting up the repository<a class="headerlink" href="#setting-up-the-repository" title="Permalink to this headline">¶</a></h3>
 <p>In order to start working on Streamlink, you must first install the latest stable version of <code class="docutils literal notranslate"><span class="pre">git</span></code>, optionally fork the
 repository on Github onto your account if you want to submit changes in a pull request, and then locally clone the repository.</p>
@@ -196,8 +197,8 @@ git commit
 git push fork new/feature/or/bugfix/branch
 </pre></div>
 </div>
-</div>
-<div class="section" id="setting-up-a-new-environment">
+</section>
+<section id="setting-up-a-new-environment">
 <h3>Setting up a new environment<a class="headerlink" href="#setting-up-a-new-environment" title="Permalink to this headline">¶</a></h3>
 <p>While working on any kind of python-based project, it is usually best to do this in a virtual environment which is isolated from
 the Python environment of the host system. This ensures that development can be done in a clean space which is free of version
@@ -227,8 +228,8 @@ virtualenv --download --verbose ~/venvs/streamlink
 <span class="nb">source</span> ~/venvs/streamlink/Scripts/activate
 </pre></div>
 </div>
-</div>
-<div class="section" id="installing-streamlink">
+</section>
+<section id="installing-streamlink">
 <h3>Installing Streamlink<a class="headerlink" href="#installing-streamlink" title="Permalink to this headline">¶</a></h3>
 <p>After activating the new virtual environment, Streamlink's build dependencies and Streamlink itself need to be installed.
 Regular development dependencies and documentation related dependencies are listed in the text files shown below and need to
@@ -246,9 +247,9 @@ which streamlink
 streamlink --version
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="validating-changes">
+</section>
+</section>
+<section id="validating-changes">
 <h2>Validating changes<a class="headerlink" href="#validating-changes" title="Permalink to this headline">¶</a></h2>
 <p>Before submitting a pull request, run tests, perform code linting and build the documentation on your system first, to see if
 your changes contain any mistakes or errors. This will be done automatically for each pull request on each change, but
@@ -266,10 +267,10 @@ make --directory<span class="o">=</span>docs clean html
 <span class="nv">$BROWSER</span> ./docs/_build/html/index.html
 </pre></div>
 </div>
-</div>
-<div class="section" id="plugins">
+</section>
+<section id="plugins">
 <h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="adding-plugins">
+<section id="adding-plugins">
 <h3>Adding plugins<a class="headerlink" href="#adding-plugins" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Implement the plugin in <code class="docutils literal notranslate"><span class="pre">src/streamlink/plugins/</span></code>, similar to already existing plugins. Check the git log for recently
@@ -277,17 +278,17 @@ added or modified plugins to help you get an overview of what's needed to proper
 is currently not available.</p></li>
 <li><p>Add at least tests for the URL regex matching in <code class="docutils literal notranslate"><span class="pre">tests/plugins/</span></code>. Once again, check other plugin tests from the git log.</p></li>
 </ol>
-</div>
-<div class="section" id="removing-plugins">
+</section>
+<section id="removing-plugins">
 <h3>Removing plugins<a class="headerlink" href="#removing-plugins" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Remove the plugin file in <code class="docutils literal notranslate"><span class="pre">src/streamlink/plugins/</span></code> and the test file in <code class="docutils literal notranslate"><span class="pre">tests/plugins/</span></code></p></li>
 <li><p>Remove the plugin entry from the documentation in <code class="docutils literal notranslate"><span class="pre">docs/plugin_matrix.rst</span></code></p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">script/update-removed-plugins.sh</span></code> once to update <code class="docutils literal notranslate"><span class="pre">src/streamlink/plugins/.removed</span></code></p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
       </article>
