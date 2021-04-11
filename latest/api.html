@@ -1,16 +1,15 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="API Guide" href="api_guide.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="API Guide" href="api_guide.html" />
 
-    <meta name="generator" content="sphinx-3.5.3, furo 2020.12.28.beta23"/>
+    <meta name="generator" content="sphinx-3.5.4, furo 2020.12.28.beta23"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Reference - Streamlink 2.1.1+6.g1baa545 documentation</title>
+        <title>API Reference - Streamlink 2.1.1+7.ge6ef40e documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -100,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.1+6.g1baa545 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.1.1+7.ge6ef40e documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -119,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.1+6.g1baa545</pre>
+  <pre class="sidebar-versions-current">2.1.1+7.ge6ef40e</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="">Stable</a></dd>
     <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
@@ -172,10 +171,10 @@
       <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
     </div>
   
-  <section id="module-streamlink">
+  <div class="section" id="module-streamlink">
 <span id="api-reference"></span><h1>API Reference<a class="headerlink" href="#module-streamlink" title="Permalink to this headline">¶</a></h1>
 <p>This ia reference of all the available API methods in Streamlink.</p>
-<section id="streamlink">
+<div class="section" id="streamlink">
 <h2>Streamlink<a class="headerlink" href="#streamlink" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="streamlink.streams">
@@ -184,8 +183,8 @@
 <p><em>params</em> are passed to <code class="xref py py-func docutils literal notranslate"><span class="pre">Plugin.streams()</span></code>.</p>
 <p>Raises <a class="reference internal" href="#streamlink.NoPluginError" title="streamlink.NoPluginError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoPluginError</span></code></a> if no plugin is found.</p>
 </dd></dl>
-</section>
-<section id="session">
+</div>
+<div class="section" id="session">
 <h2>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="streamlink.Streamlink">
@@ -516,8 +515,8 @@ from this session object.</p>
 <p>Raises <a class="reference internal" href="#streamlink.NoPluginError" title="streamlink.NoPluginError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoPluginError</span></code></a> if no plugin is found.</p>
 </dd></dl>
 </dd></dl>
-</section>
-<section id="module-streamlink.plugin">
+</div>
+<div class="section" id="module-streamlink.plugin">
 <span id="plugins"></span><h2>Plugins<a class="headerlink" href="#module-streamlink.plugin" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="streamlink.plugin.Plugin">
@@ -675,8 +674,8 @@ prompted use askpass</p></li>
 </dl>
 </dd></dl>
 </dd></dl>
-</section>
-<section id="streams">
+</div>
+<div class="section" id="streams">
 <h2>Streams<a class="headerlink" href="#streams" title="Permalink to this headline">¶</a></h2>
 <p>All streams inherit from the <code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code> class.</p>
 <span class="target" id="module-streamlink.stream"></span><dl class="py class">
@@ -690,7 +689,7 @@ Returns a file-like object that can be used to read the stream data.</p>
 <p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
 </dd></dl>
 </dd></dl>
-<section id="stream-subclasses">
+<div class="section" id="stream-subclasses">
 <h3>Stream subclasses<a class="headerlink" href="#stream-subclasses" title="Permalink to this headline">¶</a></h3>
 <p>You are able to inspect the parameters used by each stream,
 different properties are available depending on stream type.</p>
@@ -850,9 +849,9 @@ Returns a file-like object that can be used to read the stream data.</p>
 </dl>
 </dd></dl>
 </dd></dl>
-</section>
-</section>
-<section id="exceptions">
+</div>
+</div>
+<div class="section" id="exceptions">
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink has three types of exceptions:</p>
 <dl class="py exception">
@@ -876,8 +875,8 @@ with this exception.</p>
 <em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.</span></code><code class="sig-name descname"><span class="pre">StreamError</span></code><a class="headerlink" href="#streamlink.StreamError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stream related error.</p>
 </dd></dl>
-</section>
-</section>
+</div>
+</div>
 
 
       </article>

@@ -1,16 +1,15 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developing" href="developing.html" /><link rel="prev" title="Players" href="players.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developing" href="developing.html" /><link rel="prev" title="Players" href="players.html" />
 
-    <meta name="generator" content="sphinx-3.5.3, furo 2020.12.28.beta23"/>
+    <meta name="generator" content="sphinx-3.5.4, furo 2020.12.28.beta23"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Common issues - Streamlink 2.1.1+6.g1baa545 documentation</title>
+        <title>Common issues - Streamlink 2.1.1+7.ge6ef40e documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -100,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.1+6.g1baa545 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.1.1+7.ge6ef40e documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -119,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.1+6.g1baa545</pre>
+  <pre class="sidebar-versions-current">2.1.1+7.ge6ef40e</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/issues.html" class="">Stable</a></dd>
     <dd><a href="/latest/issues.html" class="version-current">Latest</a></dd>
@@ -172,11 +171,11 @@
       <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
     </div>
   
-  <section id="common-issues">
+  <div class="section" id="common-issues">
 <h1>Common issues<a class="headerlink" href="#common-issues" title="Permalink to this headline">¶</a></h1>
-<section id="streams-are-buffering-lagging">
+<div class="section" id="streams-are-buffering-lagging">
 <h2>Streams are buffering/lagging<a class="headerlink" href="#streams-are-buffering-lagging" title="Permalink to this headline">¶</a></h2>
-<section id="enable-caching-in-your-player">
+<div class="section" id="enable-caching-in-your-player">
 <h3>Enable caching in your player<a class="headerlink" href="#enable-caching-in-your-player" title="Permalink to this headline">¶</a></h3>
 <p>By default most players do not cache the data they receive from Streamlink.
 Caching can reduce the amount of buffering you run into because the player will
@@ -215,8 +214,8 @@ have some breathing room between receiving the data and playing it.</p>
 </tbody>
 </table></div>
 <p>Use the <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> or <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> option to pass these options to your player.</p>
-</section>
-<section id="multi-threaded-streaming">
+</div>
+<div class="section" id="multi-threaded-streaming">
 <h3>Multi-threaded streaming<a class="headerlink" href="#multi-threaded-streaming" title="Permalink to this headline">¶</a></h3>
 <p>On segmented streaming protocols (such as HLS and HDS) it's possible to use
 multiple threads to potentially increase the throughput.
@@ -249,9 +248,9 @@ their own segmented streaming protocol.</p></td>
 <p>Using 2 or 3 threads should be enough to see an impact on live streams,
 any more will likely not show much effect.</p>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
       </article>
