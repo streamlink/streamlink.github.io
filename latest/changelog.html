@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 2.1.1+17.g46c1776 documentation</title>
+        <title>Changelog - Streamlink 2.1.2 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.1+17.g46c1776 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.1.2 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,10 +118,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.1+17.g46c1776</pre>
+  <pre class="sidebar-versions-current">2.1.2</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Search name="q">
@@ -167,12 +167,53 @@
         </label>
         
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-2-1-2-2021-05-20">
+<h2>streamlink 2.1.2 (2021-05-20)<a class="headerlink" href="#streamlink-2-1-2-2021-05-20" title="Permalink to this headline">¶</a></h2>
+<p>Patch release:</p>
+<ul class="simple">
+<li><p>Fixed: youtube 404 errors (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3732"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3732">#3732</a></a>), consent dialog (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3672"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3672">#3672</a></a>) and added short URLs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3677"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3677">#3677</a></a>)</p></li>
+<li><p>Fixed: picarto plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3661"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3661">#3661</a></a>)</p></li>
+<li><p>Fixed: euronews plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3698"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3698">#3698</a></a>)</p></li>
+<li><p>Fixed: bbciplayer plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3725"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3725">#3725</a></a>)</p></li>
+<li><p>Fixed: missing removed-plugins-file in <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">build</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3653"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3653">#3653</a></a>)</p></li>
+<li><p>Changed: HLS streams to use rounded bandwidth names (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3721"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3721">#3721</a></a>)</p></li>
+<li><p>Removed: plugin for hitbox.tv / smashcast.tv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3686"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3686">#3686</a></a>), tvplayer.com (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3673"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3673">#3673</a></a>)</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Alexis Murzeau &lt;amubtdx@gmail.com&gt; (1):
+      build: include .removed file in build
+
+Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (3):
+      plugins.tvplayer: plugin removal
+      plugins.picarto: rewrite/fix (#3661)
+      plugins.bbciplayer: fix/update state_re regex
+
+Kagamia &lt;amethyst50504724@msn.com&gt; (1):
+      plugins.nicolive: fix proxy arguments (#3710)
+
+Yavuz Kömeçoğlu &lt;komecoglu.yavuz@gmail.com&gt; (1):
+      plugins.youtube: add html5=1 parameter (#3732)
+
+back-to &lt;backto@protonmail.ch&gt; (3):
+      plugins.youtube: fix consent dialog (#3672)
+      plugins.mitele: use '_{bitrate}' and remove duplicates
+      stream.hls_playlist: round BANDWIDTH and parse as int (#3721)
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (7):
+      plugins.youtube: add short video URLs
+      plugins.hitbox: remove plugin
+      chore: remove square brackets from issue titles
+      plugins.euronews: rewrite and fix live streams
+      utils.named_pipe: rewrite named pipes
+      docs: fix winget package link
+      ci.github: add python 3.10-dev to test runners
+
+bururaku &lt;rakuburu@gmail.com&gt; (1):
+      plugins.abematv: Fixed download problem again. (#3658)
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-2-1-1-2021-03-25">
 <h2>streamlink 2.1.1 (2021-03-25)<a class="headerlink" href="#streamlink-2-1-1-2021-03-25" title="Permalink to this headline">¶</a></h2>
 <p>Patch release:</p>
@@ -3292,6 +3333,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-2-1-2-2021-05-20">streamlink 2.1.2 (2021-05-20)</a></li>
 <li><a class="reference internal" href="#streamlink-2-1-1-2021-03-25">streamlink 2.1.1 (2021-03-25)</a></li>
 <li><a class="reference internal" href="#streamlink-2-1-0-2021-03-22">streamlink 2.1.0 (2021-03-22)</a></li>
 <li><a class="reference internal" href="#streamlink-2-0-0-2020-12-22">streamlink 2.0.0 (2020-12-22)</a></li>
