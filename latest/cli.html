@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Command-Line Interface - Streamlink 2.1.2+33.g565397e documentation</title>
+        <title>Command-Line Interface - Streamlink 2.1.2+35.g6cdc3eb documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.2+33.g565397e documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.1.2+35.g6cdc3eb documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.2+33.g565397e</pre>
+  <pre class="sidebar-versions-current">2.1.2+35.g6cdc3eb</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -251,6 +251,9 @@ your platform:</p>
 <tr class="row-even"><td><p>Linux, BSD</p></td>
 <td><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/config</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc</span></code></p></li>
 </ul>
 </td>
@@ -258,6 +261,9 @@ your platform:</p>
 <tr class="row-odd"><td><p>macOS</p></td>
 <td><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application Support/streamlink/config</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/config</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc</span></code></p></li>
 </ul>
@@ -266,6 +272,9 @@ your platform:</p>
 <tr class="row-even"><td><p>Windows</p></td>
 <td><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\config</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\streamlinkrc</span></code></p></li>
 </ul>
 </td>
@@ -334,6 +343,9 @@ with <code class="docutils literal notranslate"><span class="pre">.&lt;plugin</s
 <tr class="row-even"><td><p>Linux, BSD</p></td>
 <td><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/config.pluginname</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc.pluginname</span></code></p></li>
 </ul>
 </td>
@@ -341,6 +353,9 @@ with <code class="docutils literal notranslate"><span class="pre">.&lt;plugin</s
 <tr class="row-odd"><td><p>macOS</p></td>
 <td><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application Support/streamlink/config.pluginname</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/config.pluginname</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc.pluginname</span></code></p></li>
 </ul>
@@ -349,6 +364,9 @@ with <code class="docutils literal notranslate"><span class="pre">.&lt;plugin</s
 <tr class="row-even"><td><p>Windows</p></td>
 <td><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\config.pluginname</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\streamlinkrc.pluginname</span></code></p></li>
 </ul>
 </td>
@@ -376,6 +394,9 @@ check the <a class="reference internal" href="#cmdoption-plugins"><code class="x
 <tr class="row-even"><td><p>Linux, BSD</p></td>
 <td><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${XDG_DATA_HOME:-${HOME}/.local/share}/streamlink/plugins</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/plugins</span></code></p></li>
 </ul>
 </td>
@@ -383,6 +404,9 @@ check the <a class="reference internal" href="#cmdoption-plugins"><code class="x
 <tr class="row-odd"><td><p>macOS</p></td>
 <td><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application Support/streamlink/plugins</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/plugins</span></code></p></li>
 </ul>
 </td>
