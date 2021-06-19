@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Streamlink - Streamlink 2.1.2 documentation</title>
+        <title>Streamlink - Streamlink 2.2.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.2 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.2</pre>
+  <pre class="sidebar-versions-current">2.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/_man.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/_man.html" class="">Latest</a></dd>
@@ -265,6 +265,26 @@ merged on top of each other where the last config has highest priority.</p>
 <code class="sig-name descname"><span class="pre">--loglevel</span></code><code class="sig-prename descclassname"> <span class="pre">LEVEL</span></code><a class="headerlink" href="#cmdoption-loglevel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the log message threshold.</p>
 <p>Valid levels are: none, error, warning, info, debug, trace</p>
+</dd></dl>
+<dl class="std option">
+<dt id="cmdoption-logfile">
+<code class="sig-name descname"><span class="pre">--logfile</span></code><code class="sig-prename descclassname"> <span class="pre">FILE</span></code><a class="headerlink" href="#cmdoption-logfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append log output to FILE instead of writing to stdout/stderr.</p>
+<p>User prompts and download progress won't be written to FILE.</p>
+<p>A value of <code class="docutils literal notranslate"><span class="pre">-</span></code> will set the file name to an ISO8601-like string
+and will choose the following default log directories.</p>
+<p>Windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">TEMP</span><span class="o">%</span>\<span class="n">streamlink</span>\<span class="n">logs</span>
+</pre></div>
+</div>
+<p>macOS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${HOME}/Library/Logs/streamlink
+</pre></div>
+</div>
+<p>Linux/BSD:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${XDG_STATE_HOME:-${HOME}/.local/state}/streamlink/logs
+</pre></div>
+</div>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-Q">

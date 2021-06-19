@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 2.1.2 documentation</title>
+        <title>Changelog - Streamlink 2.2.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.2 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.2</pre>
+  <pre class="sidebar-versions-current">2.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -169,6 +169,113 @@
   
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-2-2-0-2021-06-19">
+<h2>streamlink 2.2.0 (2021-06-19)<a class="headerlink" href="#streamlink-2-2-0-2021-06-19" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul>
+<li><p>Changed: default config file path on macOS and Windows (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3766"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3766">#3766</a></a>)</p>
+<ul class="simple">
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application</span> <span class="pre">Support/streamlink/config</span></code></p></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\config</span></code></p></li>
+</ul>
+</li>
+<li><p>Changed: default custom plugins directory path on macOS and Linux/BSD (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3766"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3766">#3766</a></a>)</p>
+<ul class="simple">
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application</span> <span class="pre">Support/streamlink/plugins</span></code></p></li>
+<li><p>Linux/BSD: <code class="docutils literal notranslate"><span class="pre">${XDG_DATA_HOME:-${HOME}/.local/share}/streamlink/plugins</span></code></p></li>
+</ul>
+</li>
+<li><p>Deprecated: old config file paths and old custom plugins directory paths (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3784"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3784">#3784</a></a>)</p>
+<ul class="simple">
+<li><p>Windows:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\streamlinkrc</span></code></p></li>
+</ul>
+</li>
+<li><p>macOS:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/config</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/plugins</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc</span></code></p></li>
+</ul>
+</li>
+<li><p>Linux/BSD:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/plugins</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Support for these old paths will be dropped in the future.<br/>See the <a class="reference external" href="https://streamlink.github.io/cli.html">CLI documentation</a> for all the details regarding these changes.</p>
+</li>
+<li><p>Implemented: <code class="docutils literal notranslate"><span class="pre">--logfile</span></code> CLI argument (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3753"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3753">#3753</a></a>)</p></li>
+<li><p>Fixed: Youtube 404 errors by dropping private API calls (plugin rewrite) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3797"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3797">#3797</a></a>)</p></li>
+<li><p>Fixed: Twitch clips (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3762"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3762">#3762</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3775"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3775">#3775</a></a>) and hosted channel redirection (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3776"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3776">#3776</a></a>)</p></li>
+<li><p>Fixed: Olympicchannel plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3760"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3760">#3760</a></a>)</p></li>
+<li><p>Fixed: various Zattoo plugin issues (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3773"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3773">#3773</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3780"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3780">#3780</a></a>)</p></li>
+<li><p>Fixed: HTTP responses with truncated body and mismatching content-length header (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3768"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3768">#3768</a></a>)</p></li>
+<li><p>Fixed: scheme-less URLs with address:port for <code class="docutils literal notranslate"><span class="pre">--http-proxy</span></code>, etc. (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3765"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3765">#3765</a></a>)</p></li>
+<li><p>Fixed: rendered man page path on Sphinx 4 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3750"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3750">#3750</a></a>)</p></li>
+<li><p>Added plugins: mildom.com (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3584"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3584">#3584</a></a>), booyah.live (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3585"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3585">#3585</a></a>), mediavitrina.ru (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3743"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3743">#3743</a></a>)</p></li>
+<li><p>Removed plugins: ine.com (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3781"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3781">#3781</a></a>), playtv.fr (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3798"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3798">#3798</a></a>)</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Billy2011 &lt;kschmidt2007@googlemail.com&gt; (2):
+      plugins.mediaklikk: add m4sport.hu (#3757)
+      plugins.olympicchannel: fix / rewrite
+
+DESK-coder &lt;sascha@kleinert.email&gt; (1):
+      plugins.zattoo: changes to hello_v3 and new token.js (#3773)
+
+FaceHiddenInsideTheDark &lt;wesleywitz@gmail.com&gt; (1):
+      plugins.funimationnow: fix subtitle language (#3752)
+
+Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (2):
+      plugins.bfmtv: fix/find Brightcove video data in JS (#3662)
+      plugins.booyah: new plugin
+
+back-to &lt;backto@protonmail.ch&gt; (7):
+      plugins.tf1: fixed api_url
+      plugins.onetv: cleanup
+      plugins.mediavitrina: new plugin
+      plugin.api: update useragents, remove EDGE
+      plugins.ine: removed
+      plugins.zattoo: cleanup, fix other domains
+      plugins.playtv: removed - SEC_ERROR_EXPIRED_CERTIFICATE (#3798)
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (27):
+      plugins.rtpplay: fix obfuscated HLS URL parsing
+      utils.url: add encoding options to update_qsd
+      docs: set man_make_section_directory to false
+      tests.hls: test headers on segment+key requests
+      cli.argparser: fix description text
+      utils.url: fix update_scheme with implicit schemes
+      plugins.twitch: add access token to clips
+      tests: refactor TestCLIMainLogging
+      cli: implement --logfile
+      plugins.twitch: fix clips URL regex
+      plugin.api.http_session: refactor HTTPSession
+      plugin.api.http_session: enforce_content_length
+      stream.hls: replace custom PKCS#7 unpad function
+      plugin.api.validate: add nested lookups to get()
+      plugin.api.validate: implement union_get()
+      plugins.twitch: query hosted channels on GQL
+      plugins.twitch: tidy up API calls
+      cli: refactor CONFIG_FILES and PLUGIN_DIRS
+      cli: add XDG_DATA_HOME as first plugins dir
+      cli: rename config file on Windows to "config"
+      cli: use correct config and plugins dir on macOS
+      cli: deprecate old config files and plugin dirs
+      cli: fix order of config file deprecation log msgs
+      plugins.youtube: clean up a bit
+      plugins.youtube: update URL regex, translate URLs
+      plugins.youtube: replace private API calls
+      plugins.youtube: unescape consent form values
+
+shirokumacode &lt;79662880+shirokumacode@users.noreply.github.com&gt; (1):
+      plugins.mildom: new plugin for mildom.com (#3584)
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-2-1-2-2021-05-20">
 <h2>streamlink 2.1.2 (2021-05-20)<a class="headerlink" href="#streamlink-2-1-2-2021-05-20" title="Permalink to this headline">¶</a></h2>
 <p>Patch release:</p>
@@ -3333,6 +3440,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-2-2-0-2021-06-19">streamlink 2.2.0 (2021-06-19)</a></li>
 <li><a class="reference internal" href="#streamlink-2-1-2-2021-05-20">streamlink 2.1.2 (2021-05-20)</a></li>
 <li><a class="reference internal" href="#streamlink-2-1-1-2021-03-25">streamlink 2.1.1 (2021-03-25)</a></li>
 <li><a class="reference internal" href="#streamlink-2-1-0-2021-03-22">streamlink 2.1.0 (2021-03-22)</a></li>

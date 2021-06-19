@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Reference - Streamlink 2.1.2 documentation</title>
+        <title>API Reference - Streamlink 2.2.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.2 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.2</pre>
+  <pre class="sidebar-versions-current">2.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api.html" class="">Latest</a></dd>
@@ -217,11 +217,14 @@ options and log settings.</p>
 </dd></dl>
 <dl class="py method">
 <dt id="streamlink.Streamlink.load_plugins">
-<code class="sig-name descname"><span class="pre">load_plugins</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.load_plugins" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">load_plugins</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> → <span class="pre">bool</span><a class="headerlink" href="#streamlink.Streamlink.load_plugins" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to load plugins from the path specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>path</strong> -- full path to a directory where to look for plugins</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>success</p>
 </dd>
 </dl>
 </dd></dl>

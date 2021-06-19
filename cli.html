@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Command-Line Interface - Streamlink 2.1.2 documentation</title>
+        <title>Command-Line Interface - Streamlink 2.2.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.1.2 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.1.2</pre>
+  <pre class="sidebar-versions-current">2.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="">Latest</a></dd>
@@ -233,10 +233,10 @@ before playing the stream to help avoiding buffering issues</p></li>
 is capable of reading options from a configuration file instead.</p>
 <p>Streamlink will look for config files in different locations depending on
 your platform:</p>
-<div class="table-wrapper"><table class="docutils align-default">
+<div class="table-wrapper"><table class="table-custom-layout table-custom-layout-platform-locations docutils align-default">
 <colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Platform</p></th>
@@ -244,28 +244,42 @@ your platform:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Unix-like (POSIX)</p></td>
+<tr class="row-even"><td><p>Linux, BSD</p></td>
 <td><ul class="simple">
-<li><p>$XDG_CONFIG_HOME/streamlink/config</p></li>
-<li><p>~/.streamlinkrc</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/config</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc</span></code></p></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td><p>Windows</p></td>
-<td><p>%APPDATA%\streamlink\streamlinkrc</p></td>
+<tr class="row-odd"><td><p>macOS</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application Support/streamlink/config</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/config</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc</span></code></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\config</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\streamlinkrc</span></code></p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table></div>
 <p>You can also specify the location yourself using the <a class="reference internal" href="#cmdoption-config"><code class="xref std std-option docutils literal notranslate"><span class="pre">--config</span></code></a> option.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul class="simple">
-<li><p><cite>$XDG_CONFIG_HOME</cite> is <code class="docutils literal notranslate"><span class="pre">~/.config</span></code> if it has not been overridden</p></li>
-<li><p><cite>%APPDATA%</cite> is usually <code class="docutils literal notranslate"><span class="pre">&lt;your</span> <span class="pre">user</span> <span class="pre">directory&gt;\AppData</span></code></p></li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>On Windows, there is a default config created by the installer, but on any
 other platform you must create the file yourself.</p>
 </div>
@@ -311,10 +325,10 @@ config file when a URL matching the plugin is used.</p>
 with <code class="docutils literal notranslate"><span class="pre">.&lt;plugin</span> <span class="pre">name&gt;</span></code> attached to the end.</p>
 <div class="section" id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
-<div class="table-wrapper"><table class="docutils align-default">
+<div class="table-wrapper"><table class="table-custom-layout table-custom-layout-platform-locations docutils align-default">
 <colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
+<col style="width: 20%"/>
+<col style="width: 80%"/>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Platform</p></th>
@@ -322,15 +336,36 @@ with <code class="docutils literal notranslate"><span class="pre">.&lt;plugin</s
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Unix-like (POSIX)</p></td>
+<tr class="row-even"><td><p>Linux, BSD</p></td>
 <td><ul class="simple">
-<li><p>$XDG_CONFIG_HOME/streamlink/config<strong>.twitch</strong></p></li>
-<li><p>~/.streamlinkrc<strong>.ustreamtv</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/config.pluginname</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc.pluginname</span></code></p></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td><p>Windows</p></td>
-<td><p>%APPDATA%\streamlink\streamlinkrc<strong>.youtube</strong></p></td>
+<tr class="row-odd"><td><p>macOS</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application Support/streamlink/config.pluginname</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/config.pluginname</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/.streamlinkrc.pluginname</span></code></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\config.pluginname</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\streamlinkrc.pluginname</span></code></p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -341,10 +376,10 @@ check the <a class="reference internal" href="#cmdoption-plugins"><code class="x
 <div class="section" id="sideloading-plugins">
 <h2>Sideloading plugins<a class="headerlink" href="#sideloading-plugins" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink will attempt to load standalone plugins from these directories:</p>
-<div class="table-wrapper"><table class="docutils align-default">
+<div class="table-wrapper"><table class="table-custom-layout table-custom-layout-platform-locations docutils align-default">
 <colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Platform</p></th>
@@ -352,11 +387,31 @@ check the <a class="reference internal" href="#cmdoption-plugins"><code class="x
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Unix-like (POSIX)</p></td>
-<td><p>$XDG_CONFIG_HOME/streamlink/plugins</p></td>
+<tr class="row-even"><td><p>Linux, BSD</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_DATA_HOME:-${HOME}/.local/share}/streamlink/plugins</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/plugins</span></code></p></li>
+</ul>
+</td>
 </tr>
-<tr class="row-odd"><td><p>Windows</p></td>
-<td><p>%APPDATA%\streamlink\plugins</p></td>
+<tr class="row-odd"><td><p>macOS</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application Support/streamlink/plugins</span></code></p></li>
+</ul>
+<p>Deprecated:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/plugins</span></code></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\plugins</span></code></p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -614,6 +669,26 @@ merged on top of each other where the last config has highest priority.</p>
 <code class="sig-name descname"><span class="pre">--loglevel</span></code><code class="sig-prename descclassname"> <span class="pre">LEVEL</span></code><a class="headerlink" href="#cmdoption-loglevel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the log message threshold.</p>
 <p>Valid levels are: none, error, warning, info, debug, trace</p>
+</dd></dl>
+<dl class="std option">
+<dt id="cmdoption-logfile">
+<code class="sig-name descname"><span class="pre">--logfile</span></code><code class="sig-prename descclassname"> <span class="pre">FILE</span></code><a class="headerlink" href="#cmdoption-logfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append log output to FILE instead of writing to stdout/stderr.</p>
+<p>User prompts and download progress won't be written to FILE.</p>
+<p>A value of <code class="docutils literal notranslate"><span class="pre">-</span></code> will set the file name to an ISO8601-like string
+and will choose the following default log directories.</p>
+<p>Windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">TEMP</span><span class="o">%</span>\<span class="n">streamlink</span>\<span class="n">logs</span>
+</pre></div>
+</div>
+<p>macOS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${HOME}/Library/Logs/streamlink
+</pre></div>
+</div>
+<p>Linux/BSD:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${XDG_STATE_HOME:-${HOME}/.local/state}/streamlink/logs
+</pre></div>
+</div>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-Q">
