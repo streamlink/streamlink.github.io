@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 2.2.0 documentation</title>
+        <title>Changelog - Streamlink 2.3.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.2.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.3.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.2.0</pre>
+  <pre class="sidebar-versions-current">2.3.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -135,6 +135,7 @@
 <li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
@@ -169,6 +170,77 @@
   
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-2-3-0-2021-07-26">
+<h2>streamlink 2.3.0 (2021-07-26)<a class="headerlink" href="#streamlink-2-3-0-2021-07-26" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Implemented: new plugin URL matching API (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/3814"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3814">#3814</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3821"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3821">#3821</a></a>)<br/>Third-party plugins which use the old API will still be resolved, but those plugins will have to upgrade in the future. See the documentation’s <a class="reference external" href="https://streamlink.github.io/latest/deprecations.html#streamlink-2-3-0">deprecations page</a> for more information.</p></li>
+<li><p>Implemented: HLS media initialization section (fragmented MPEG-4 streams) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3828"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3828">#3828</a></a>)</p></li>
+<li><p>Upgraded: <code class="docutils literal notranslate"><span class="pre">requests</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=2.26.0,&lt;3</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">==2.25.1</span></code> on Windows (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3864"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3864">#3864</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3880"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3880">#3880</a></a>)</p></li>
+<li><p>Fixed: YouTube channel URLs, premiering live streams, added API fallback (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3847"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3847">#3847</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3873"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3873">#3873</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3809"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3809">#3809</a></a>)</p></li>
+<li><p>Removed plugins: canalplus (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3841"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3841">#3841</a></a>), dommune (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3818"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3818">#3818</a></a>), liveedu (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3845"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3845">#3845</a></a>), periscope (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3813"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3813">#3813</a></a>), powerapp (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3816"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3816">#3816</a></a>), rtlxl (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3842"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3842">#3842</a></a>), streamingvideoprovider (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3843"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3843">#3843</a></a>), teleclubzoom (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3817"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3817">#3817</a></a>), tigerdile (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3819"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3819">#3819</a></a>)</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Hakkin Lain &lt;Hakkin@users.noreply.github.com&gt; (1):
+      stream.hls: set fallback playlist reload time to 6 seconds (#3887)
+
+back-to &lt;backto@protonmail.ch&gt; (16):
+      plugins.youtube: added API fallback
+      plugins.rtvs: fixed livestream
+      plugins.nos: Fixed Livestream and VOD
+      plugins.vlive: fixed livestream (#3820)
+      plugins.Tigerdile: removed
+      plugins.Dommune: removed
+      plugins.PowerApp: removed
+      plugins.TeleclubZoom: removed (#3817)
+      plugins.cdnbg: Fix regex and referer issues
+      plugins.rtlxl: removed
+      plugins.CanalPlus: removed
+      plugins.liveedu: removed
+      plugins.Streamingvideoprovider: removed
+      plugin.api: update useragents
+      plugins.youtube: detect Livestreams with 'isLive'
+      plugins.nimotv: use 'mStreamPkg'
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (30):
+      plugins.youtube: translate embed_live URLs
+      plugins.periscope: remove plugin
+      plugins.mediaklikk: rewrite plugin
+      stream.hls: add type hints and refactor
+      stream.hls: implement media initialization section
+      plugin: new matchers API
+      plugins: update protocol plugins
+      plugins: update basic plugins
+      plugins: update plugins with URL capture groups
+      plugins: update plugins with spec. can_handle_url
+      plugins: update plugins with multiple URL matchers
+      plugins: update plugins with URL translations
+      session: resolve deprecated plugins
+      plugins.zdf_mediathek: refactor plugin, drop HDS
+      docs: add deprecations page
+      plugins.tv8: remove API, find HLS via simple regex
+      plugins.youtube: find videoId on channel pages
+      chore: replace issue templates with forms
+      chore: fix issue forms checklist
+      tests: remove mock from dev dependencies
+      vendor: set requests to &gt;=2.26.0,&lt;3
+      tests: temporarily skip broken tests on win32
+      tests: fix unnecessary hostname lookup in cli_main
+      docs: fix headline anchors on deprecations page
+      vendor: downgrade requests to 2.25.1 on Windows
+      tests: refactor TestMixinStreamHLS
+      streams.segmented: refactor worker and writer
+      streams.segmented: refactor reader
+      streams.hls: refactor worker
+      streams.hls: fix playlist_reload_time
+
+gustaf &lt;gustaf@protonmail.ch&gt; (1):
+      plugins.tv4play: fix plugin URL regex
+
+vinyl-umbrella &lt;61788251+vinyl-umbrella@users.noreply.github.com&gt; (1):
+      plugins.openrectv: update HLS URLs (#3850)
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-2-2-0-2021-06-19">
 <h2>streamlink 2.2.0 (2021-06-19)<a class="headerlink" href="#streamlink-2-2-0-2021-06-19" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
@@ -3440,6 +3512,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-2-3-0-2021-07-26">streamlink 2.3.0 (2021-07-26)</a></li>
 <li><a class="reference internal" href="#streamlink-2-2-0-2021-06-19">streamlink 2.2.0 (2021-06-19)</a></li>
 <li><a class="reference internal" href="#streamlink-2-1-2-2021-05-20">streamlink 2.1.2 (2021-05-20)</a></li>
 <li><a class="reference internal" href="#streamlink-2-1-1-2021-03-25">streamlink 2.1.1 (2021-03-25)</a></li>

@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Reference - Streamlink 2.2.0 documentation</title>
+        <title>API Reference - Streamlink 2.3.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.2.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.3.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.2.0</pre>
+  <pre class="sidebar-versions-current">2.3.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api.html" class="">Latest</a></dd>
@@ -135,6 +135,7 @@
 <li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Reference</a></li>
@@ -230,7 +231,7 @@ options and log settings.</p>
 </dd></dl>
 <dl class="py method">
 <dt id="streamlink.Streamlink.resolve_url">
-<code class="sig-name descname"><span class="pre">resolve_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">follow_redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">resolve_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">follow_redirect</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> → <span class="pre">streamlink.plugin.plugin.Plugin</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to find a plugin that can use this URL.</p>
 <p>The default protocol (http) will be prefixed to the URL if
 not specified.</p>
@@ -519,7 +520,7 @@ from this session object.</p>
 <span id="plugins"></span><h2>Plugins<a class="headerlink" href="#module-streamlink.plugin" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="streamlink.plugin.Plugin">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></code><code class="sig-name descname"><span class="pre">Plugin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></code><code class="sig-name descname"><span class="pre">Plugin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin" title="Permalink to this definition">¶</a></dt>
 <dd><p>A plugin can retrieve stream information from the URL specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -549,13 +550,6 @@ specify the <code class="docutils literal notranslate"><span class="pre">cookie_
 <dd class="field-odd"><p>list of the restored cookie names</p>
 </dd>
 </dl>
-</dd></dl>
-<dl class="py method">
-<dt id="streamlink.plugin.Plugin.priority">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">priority</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.priority" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the plugin priority for a given URL, by default it returns
-NORMAL priority.
-:return: priority level</p>
 </dd></dl>
 <dl class="py method">
 <dt id="streamlink.plugin.Plugin.save_cookies">

@@ -34,7 +34,6 @@ bloomberg               bloomberg.com        Yes   Yes
 booyah                  booyah.live          Yes   Yes
 brightcove              players.brig... [6]_ Yes   Yes
 btv                     btvplus.bg           Yes   No    Streams are geo-restricted to Bulgaria.
-canalplus               mycanal.fr           No    Yes   Streams may be geo-restricted to France.
 cbsnews                 cbsnews.com          Yes   No
 cdnbg                   - armymedia.bg       Yes   No    Streams may be geo-restricted to Bulgaria
                         - bgonair.bg
@@ -68,7 +67,6 @@ dogus                   - eurostartv.com.tr  Yes   No
                         - kralmuzik.com.tr
                         - ntv.com.tr
                         - startv.com.tr
-dommune                 dommune.com          Yes   --
 drdk                    dr.dk                Yes   No    Streams may be geo-restricted to Denmark.
 earthcam                earthcam.com         Yes   Yes   Only works for the cams hosted on EarthCam.
 egame                   egame.qq.com         Yes   No
@@ -97,8 +95,6 @@ kugou                   fanxing.kugou.com    Yes   --
 latina                  latina.pe            Yes   No    Streams may be geo-restricted to Peru.
 linelive                live.line.me         Yes   Yes
 live_russia_tv          live.russia.tv       Yes   --
-liveedu                 - liveedu.tv         Yes   --    Some streams require a login.
-                        - livecoding.tv
 liveme                  liveme.com           Yes   --
 livestream              livestream.com       Yes   --
 lrt                     lrt.lt               Yes   No
@@ -129,7 +125,6 @@ oneplusone              1plus1.video         Yes   No
 onetv                   1tv.ru               Yes   No    Streams may be geo-restricted to Russia.
 openrectv               openrec.tv           Yes   Yes
 orf_tvthek              tvthek.orf.at        Yes   Yes
-periscope               periscope.tv         Yes   Yes   Replay/VOD is supported.
 picarto                 picarto.tv           Yes   Yes
 piczel                  piczel.tv            Yes   No
 pixiv                   sketch.pixiv.net     Yes   --
@@ -138,7 +133,6 @@ pluzz                   - france.tv          Yes   Yes   Streams may be geo-rest
                         - ludo.fr
                         - zouzous.fr
                         - francetvinfo.fr
-powerapp                powerapp.com.tr      Yes   No
 qq                      live.qq.com          Yes   No
 radiko                  radiko.jp            Yes   Yes   Streams are geo-restricted to Japan.
 radionet                - radio.net          Yes   --
@@ -157,7 +151,6 @@ reuters                 - reuters.com        Yes   Yes
 rotana                  rotana.net           Yes   --    Streams are geo-restricted to Saudi Arabia.
 rtbf                    - rtbf.be/auvio      Yes   Yes   Streams may be geo-restricted to Belgium or Europe.
                         - rtbfradioplayer.be
-rtlxl                   rtlxl.nl             No    Yes   Streams may be geo-restricted to The Netherlands. Livestreams not supported.
 rtpplay                 rtp.pt/play          Yes   Yes   Streams may be geo-restricted to Portugal.
 rtve                    rtve.es              Yes   No    Streams may be geo-restricted to Spain.
 rtvs                    rtvs.sk              Yes   No    Streams may be geo-restricted to Slovakia.
@@ -172,8 +165,6 @@ ssh101                  ssh101.com           Yes   No
 stadium                 watchstadium.com     Yes   No
 steam                   steamcommunity.com   Yes   No    Some streams will require a Steam account.
 streamable              streamable.com       -     Yes
-streamingvideoprovider  streamingvid... [2]_ Yes   --    RTMP streams requires rtmpdump with
-                                                         K-S-V patches.
 streann                 ott.streann.com      Yes   Yes
 stv                     player.stv.tv        Yes   No    Streams are geo-restricted to Great Britain.
 svtplay                 - svtplay.se         Yes   Yes   Streams may be geo-restricted to Sweden.
@@ -182,7 +173,6 @@ swisstxt                - srf.ch             Yes   No    Streams are geo-restric
                         - rsi.ch
 teamliquid              - teamliquid.net     Yes   --
                         - tl.net
-teleclubzoom            teleclubzoom.ch      Yes   No    Streams are geo-restricted to Switzerland.
 telefe                  telefe.com           No    Yes   Streams are geo-restricted to Argentina.
 tf1                     - tf1.fr             Yes   No    Streams may be geo-restricted to France.
                         - lci.fr
@@ -190,7 +180,6 @@ tga                     - star.plu.cn        Yes   No
                         - star.tga.plu.cn
                         - star.longzhu.com
 theplatform             player.thepl... [7]_ No    Yes
-tigerdile               tigerdile.com        Yes   --
 tlctr                   tlctv.com.tr         Yes   No
 turkuvaz                - atv.com.tr         Yes   No    Streams may be geo-restricted.
                         - a2tv.com.tr
@@ -268,7 +257,6 @@ zhanqi                  zhanqi.tv            Yes   No
 ======================= ==================== ===== ===== ===========================
 
 
-.. [2] streamingvideoprovider.co.uk
 .. [5] mediathek.daserste.de
 .. [6] players.brightcove.net
 .. [7] player.theplatform.com

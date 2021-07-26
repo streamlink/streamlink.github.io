@@ -6,6 +6,7 @@
 ./_sources/applications.rst.txt
 ./_sources/changelog.md.txt
 ./_sources/cli.rst.txt
+./_sources/deprecations.rst.txt
 ./_sources/developing.rst.txt
 ./_sources/donate.rst.txt
 ./_sources/index.rst.txt
@@ -48,6 +49,7 @@
 ./applications.html
 ./changelog.html
 ./cli.html
+./deprecations.html
 ./developing.html
 ./donate.html
 ./genindex.html
