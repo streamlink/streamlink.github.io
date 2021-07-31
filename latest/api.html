@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Reference - Streamlink 2.3.0 documentation</title>
+        <title>API Reference - Streamlink 2.3.0+1.ge253c4b documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.3.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.3.0+1.ge253c4b documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,10 +118,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.3.0</pre>
+  <pre class="sidebar-versions-current">2.3.0+1.ge253c4b</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/api.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/api.html" class="">Latest</a></dd>
+    <dd><a href="/api.html" class="">Stable</a></dd>
+    <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Search name="q">
@@ -167,6 +167,10 @@
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         
+  
+    <div class="admonition important version-warning">
+      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+    </div>
   
   <div class="section" id="module-streamlink">
 <span id="api-reference"></span><h1>API Reference<a class="headerlink" href="#module-streamlink" title="Permalink to this headline">¶</a></h1>
@@ -295,50 +299,18 @@ This option overrides ipv4, default: <code class="docutils literal notranslate">
 streams will start from the edge of
 stream, default: <code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>hds-segment-attempts</p></td>
-<td><p>(int) How many attempts should be done
-to download each HDS segment, default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>hds-segment-threads</p></td>
-<td><p>(int) The size of the thread pool used
-to download segments, default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>hds-segment-timeout</p></td>
-<td><p>(float) HDS segment connect and read
-timeout, default: <code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>hds-timeout</p></td>
-<td><p>(float) Timeout for reading data from
-HDS streams, default: <code class="docutils literal notranslate"><span class="pre">60.0</span></code></p></td>
-</tr>
 <tr class="row-odd"><td><p>hls-live-edge</p></td>
 <td><p>(int) How many segments from the end
 to start live streams on, default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>hls-segment-attempts</p></td>
-<td><p>(int) How many attempts should be done
-to download each HLS segment, default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-segment-ignore-names</p></td>
+<tr class="row-even"><td><p>hls-segment-ignore-names</p></td>
 <td><p>(str[]) List of segment names without
 file endings which should get filtered out,
 default: <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>hls-segment-threads</p></td>
-<td><p>(int) The size of the thread pool used
-to download segments, default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-</tr>
 <tr class="row-odd"><td><p>hls-segment-stream-data</p></td>
 <td><p>(bool) Stream HLS segment downloads,
 default: <code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>hls-segment-timeout</p></td>
-<td><p>(float) HLS segment connect and read
-timeout, default: <code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-timeout</p></td>
-<td><p>(float) Timeout for reading data from
-HLS streams, default: <code class="docutils literal notranslate"><span class="pre">60.0</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>http-proxy</p></td>
 <td><p>(str) Specify a HTTP proxy to use for
@@ -384,35 +356,27 @@ can be either a .pem file (str) or a
 requests except the ones covered by
 other options, default: <code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>http-stream-timeout</p></td>
-<td><p>(float) Timeout for reading data from
-HTTP streams, default: <code class="docutils literal notranslate"><span class="pre">60.0</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>subprocess-errorlog</p></td>
+<tr class="row-odd"><td><p>subprocess-errorlog</p></td>
 <td><p>(bool) Log errors from subprocesses to
 a file located in the temp directory</p></td>
 </tr>
-<tr class="row-odd"><td><p>subprocess-errorlog-path</p></td>
+<tr class="row-even"><td><p>subprocess-errorlog-path</p></td>
 <td><p>(str) Log errors from subprocesses to
 a specific file</p></td>
 </tr>
-<tr class="row-even"><td><p>ringbuffer-size</p></td>
+<tr class="row-odd"><td><p>ringbuffer-size</p></td>
 <td><p>(int) The size of the internal ring
 buffer used by most stream types,
 default: <code class="docutils literal notranslate"><span class="pre">16777216</span></code> (16MB)</p></td>
 </tr>
-<tr class="row-odd"><td><p>rtmp-proxy</p></td>
+<tr class="row-even"><td><p>rtmp-proxy</p></td>
 <td><p>(str) Specify a proxy (SOCKS) that RTMP
 streams will use</p></td>
 </tr>
-<tr class="row-even"><td><p>rtmp-rtmpdump</p></td>
+<tr class="row-odd"><td><p>rtmp-rtmpdump</p></td>
 <td><p>(str) Specify the location of the
 rtmpdump executable used by RTMP streams,
 e.g. <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/rtmpdump</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>rtmp-timeout</p></td>
-<td><p>(float) Timeout for reading data from
-RTMP streams, default: <code class="docutils literal notranslate"><span class="pre">60.0</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>ffmpeg-ffmpeg</p></td>
 <td><p>(str) Specify the location of the
@@ -456,27 +420,19 @@ output stream.</p></td>
 </tr>
 <tr class="row-odd"><td><p>stream-segment-attempts</p></td>
 <td><p>(int) How many attempts should be done
-to download each segment, default: <code class="docutils literal notranslate"><span class="pre">3</span></code>.
-General option used by streams not
-covered by other options.</p></td>
+to download each segment, default: <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p>stream-segment-threads</p></td>
 <td><p>(int) The size of the thread pool used
-to download segments, default: <code class="docutils literal notranslate"><span class="pre">1</span></code>.
-General option used by streams not
-covered by other options.</p></td>
+to download segments, default: <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>stream-segment-timeout</p></td>
 <td><p>(float) Segment connect and read
-timeout, default: <code class="docutils literal notranslate"><span class="pre">10.0</span></code>.
-General option used by streams not
-covered by other options.</p></td>
+timeout, default: <code class="docutils literal notranslate"><span class="pre">10.0</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p>stream-timeout</p></td>
 <td><p>(float) Timeout for reading data from
-stream, default: <code class="docutils literal notranslate"><span class="pre">60.0</span></code>.
-General option used by streams not
-covered by other options.</p></td>
+stream, default: <code class="docutils literal notranslate"><span class="pre">60.0</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>locale</p></td>
 <td><p>(str) Locale setting, in the RFC 1766 format

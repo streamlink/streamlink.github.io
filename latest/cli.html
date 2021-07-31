@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Command-Line Interface - Streamlink 2.3.0 documentation</title>
+        <title>Command-Line Interface - Streamlink 2.3.0+1.ge253c4b documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.3.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.3.0+1.ge253c4b documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,10 +118,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.3.0</pre>
+  <pre class="sidebar-versions-current">2.3.0+1.ge253c4b</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/cli.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/cli.html" class="">Latest</a></dd>
+    <dd><a href="/cli.html" class="">Stable</a></dd>
+    <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Search name="q">
@@ -167,6 +167,10 @@
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         
+  
+    <div class="admonition important version-warning">
+      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+    </div>
   
   <div class="section" id="command-line-interface">
 <h1>Command-Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
@@ -1086,32 +1090,6 @@ equality is tested.</p>
 <p>Default is: <strong>10.0</strong>.</p>
 </dd></dl>
 <dl class="std option">
-<dt id="cmdoption-hds-segment-attempts">
-<code class="sig-name descname"><span class="pre">--hds-segment-attempts</span></code><code class="sig-prename descclassname"> <span class="pre">ATTEMPTS</span></code><a class="headerlink" href="#cmdoption-hds-segment-attempts" title="Permalink to this definition">¶</a></dt>
-<dd><p>How many attempts should be done to download each HDS segment before
-giving up.</p>
-<p>Default is: <strong>3</strong>.</p>
-</dd></dl>
-<dl class="std option">
-<dt id="cmdoption-hds-segment-threads">
-<code class="sig-name descname"><span class="pre">--hds-segment-threads</span></code><code class="sig-prename descclassname"> <span class="pre">THREADS</span></code><a class="headerlink" href="#cmdoption-hds-segment-threads" title="Permalink to this definition">¶</a></dt>
-<dd><p>The size of the thread pool used to download HDS segments. Minimum value
-is 1 and maximum is 10.</p>
-<p>Default is: <strong>1</strong>.</p>
-</dd></dl>
-<dl class="std option">
-<dt id="cmdoption-hds-segment-timeout">
-<code class="sig-name descname"><span class="pre">--hds-segment-timeout</span></code><code class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></code><a class="headerlink" href="#cmdoption-hds-segment-timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>HDS segment connect and read timeout.</p>
-<p>Default is: <strong>10.0</strong>.</p>
-</dd></dl>
-<dl class="std option">
-<dt id="cmdoption-hds-timeout">
-<code class="sig-name descname"><span class="pre">--hds-timeout</span></code><code class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></code><a class="headerlink" href="#cmdoption-hds-timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>Timeout for reading data from HDS streams.</p>
-<p>Default is: <strong>60.0</strong>.</p>
-</dd></dl>
-<dl class="std option">
 <dt id="cmdoption-hls-live-edge">
 <code class="sig-name descname"><span class="pre">--hls-live-edge</span></code><code class="sig-prename descclassname"> <span class="pre">SEGMENTS</span></code><a class="headerlink" href="#cmdoption-hls-live-edge" title="Permalink to this definition">¶</a></dt>
 <dd><p>How many segments from the end to start live HLS streams on.</p>
@@ -1123,13 +1101,6 @@ but also increases the chance of buffering.</p>
 <dt id="cmdoption-hls-segment-stream-data">
 <code class="sig-name descname"><span class="pre">--hls-segment-stream-data</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-hls-segment-stream-data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Immediately write segment data into output buffer while downloading.</p>
-</dd></dl>
-<dl class="std option">
-<dt id="cmdoption-hls-segment-attempts">
-<code class="sig-name descname"><span class="pre">--hls-segment-attempts</span></code><code class="sig-prename descclassname"> <span class="pre">ATTEMPTS</span></code><a class="headerlink" href="#cmdoption-hls-segment-attempts" title="Permalink to this definition">¶</a></dt>
-<dd><p>How many attempts should be done to download each HLS segment before
-giving up.</p>
-<p>Default is: <strong>3</strong>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-hls-playlist-reload-attempts">
@@ -1149,19 +1120,6 @@ or by using one of the following keywords:</p>
 </pre></div>
 </div>
 <p>Default is: <strong>default</strong>.</p>
-</dd></dl>
-<dl class="std option">
-<dt id="cmdoption-hls-segment-threads">
-<code class="sig-name descname"><span class="pre">--hls-segment-threads</span></code><code class="sig-prename descclassname"> <span class="pre">THREADS</span></code><a class="headerlink" href="#cmdoption-hls-segment-threads" title="Permalink to this definition">¶</a></dt>
-<dd><p>The size of the thread pool used to download HLS segments. Minimum value
-is 1 and maximum is 10.</p>
-<p>Default is: <strong>1</strong>.</p>
-</dd></dl>
-<dl class="std option">
-<dt id="cmdoption-hls-segment-timeout">
-<code class="sig-name descname"><span class="pre">--hls-segment-timeout</span></code><code class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></code><a class="headerlink" href="#cmdoption-hls-segment-timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>HLS segment connect and read timeout.</p>
-<p>Default is: <strong>10.0</strong>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-hls-segment-ignore-names">
@@ -1209,12 +1167,6 @@ exists.</p>
 </div>
 </dd></dl>
 <dl class="std option">
-<dt id="cmdoption-hls-timeout">
-<code class="sig-name descname"><span class="pre">--hls-timeout</span></code><code class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></code><a class="headerlink" href="#cmdoption-hls-timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>Timeout for reading data from HLS streams.</p>
-<p>Default is: <strong>60.0</strong>.</p>
-</dd></dl>
-<dl class="std option">
 <dt id="cmdoption-hls-start-offset">
 <code class="sig-name descname"><span class="pre">--hls-start-offset</span></code><code class="sig-prename descclassname"> <span class="pre">[HH:]MM:SS</span></code><a class="headerlink" href="#cmdoption-hls-start-offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Amount of time to skip from the beginning of the stream. For live
@@ -1233,12 +1185,6 @@ nearest HLS segment.</p>
 <dt id="cmdoption-hls-live-restart">
 <code class="sig-name descname"><span class="pre">--hls-live-restart</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-hls-live-restart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Skip to the beginning of a live stream, or as far back as possible.</p>
-</dd></dl>
-<dl class="std option">
-<dt id="cmdoption-http-stream-timeout">
-<code class="sig-name descname"><span class="pre">--http-stream-timeout</span></code><code class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></code><a class="headerlink" href="#cmdoption-http-stream-timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>Timeout for reading data from HTTP streams.</p>
-<p>Default is: <strong>60.0</strong>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-ringbuffer-size">
@@ -1275,43 +1221,31 @@ location of the rtmpdump executable if it is not in your PATH.</p>
 <p>Example: "/usr/local/bin/rtmpdump"</p>
 </dd></dl>
 <dl class="std option">
-<dt id="cmdoption-rtmp-timeout">
-<code class="sig-name descname"><span class="pre">--rtmp-timeout</span></code><code class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></code><a class="headerlink" href="#cmdoption-rtmp-timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>Timeout for reading data from RTMP streams.</p>
-<p>Default is: <strong>60.0</strong>.</p>
-</dd></dl>
-<dl class="std option">
 <dt id="cmdoption-stream-segment-attempts">
 <code class="sig-name descname"><span class="pre">--stream-segment-attempts</span></code><code class="sig-prename descclassname"> <span class="pre">ATTEMPTS</span></code><a class="headerlink" href="#cmdoption-stream-segment-attempts" title="Permalink to this definition">¶</a></dt>
-<dd><p>How many attempts should be done to download each segment before giving
-up.</p>
-<p>This is generic option used by streams not covered by other options,
-such as stream protocols specific to plugins, e.g. UStream.</p>
+<dd><p>How many attempts should be done to download each segment before giving up.</p>
+<p>This applies to all different kinds of segmented stream types, such as DASH, HDS, HLS, etc.</p>
 <p>Default is: <strong>3</strong>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-stream-segment-threads">
 <code class="sig-name descname"><span class="pre">--stream-segment-threads</span></code><code class="sig-prename descclassname"> <span class="pre">THREADS</span></code><a class="headerlink" href="#cmdoption-stream-segment-threads" title="Permalink to this definition">¶</a></dt>
-<dd><p>The size of the thread pool used to download segments. Minimum value is
-1 and maximum is 10.</p>
-<p>This is generic option used by streams not covered by other options,
-such as stream protocols specific to plugins, e.g. UStream.</p>
+<dd><p>The size of the thread pool used to download segments. Minimum value is 1 and maximum is 10.</p>
+<p>This applies to all different kinds of segmented stream types, such as DASH, HDS, HLS, etc.</p>
 <p>Default is: <strong>1</strong>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-stream-segment-timeout">
 <code class="sig-name descname"><span class="pre">--stream-segment-timeout</span></code><code class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></code><a class="headerlink" href="#cmdoption-stream-segment-timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Segment connect and read timeout.</p>
-<p>This is generic option used by streams not covered by other options,
-such as stream protocols specific to plugins, e.g. UStream.</p>
+<p>This applies to all different kinds of segmented stream types, such as DASH, HDS, HLS, etc.</p>
 <p>Default is: <strong>10.0</strong>.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-stream-timeout">
 <code class="sig-name descname"><span class="pre">--stream-timeout</span></code><code class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></code><a class="headerlink" href="#cmdoption-stream-timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Timeout for reading data from streams.</p>
-<p>This is generic option used by streams not covered by other options,
-such as stream protocols specific to plugins, e.g. UStream.</p>
+<p>This applies to all different kinds of stream types, such as DASH, HDS, HLS, HTTP, RTMP, etc.</p>
 <p>Default is: <strong>60.0</strong>.</p>
 </dd></dl>
 <dl class="std option">
