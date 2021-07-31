@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Streamlink - Streamlink 2.3.0+1.ge253c4b documentation</title>
+        <title>Streamlink - Streamlink 2.3.0+2.gccdd84b documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.3.0+1.ge253c4b documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.3.0+2.gccdd84b documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.3.0+1.ge253c4b</pre>
+  <pre class="sidebar-versions-current">2.3.0+2.gccdd84b</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/_man.html" class="">Stable</a></dd>
     <dd><a href="/latest/_man.html" class="version-current">Latest</a></dd>
@@ -692,11 +692,6 @@ equality is tested.</p>
 <p>The lower the value the lower latency from the source you will be,
 but also increases the chance of buffering.</p>
 <p>Default is: <strong>3</strong>.</p>
-</dd></dl>
-<dl class="std option">
-<dt id="cmdoption-hls-segment-stream-data">
-<code class="sig-name descname"><span class="pre">--hls-segment-stream-data</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-hls-segment-stream-data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Immediately write segment data into output buffer while downloading.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-hls-playlist-reload-attempts">
@@ -1285,15 +1280,16 @@ Will cause these segments to be missing from the stream.</p>
 <dt id="cmdoption-twitch-low-latency">
 <code class="sig-name descname"><span class="pre">--twitch-low-latency</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-twitch-low-latency" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enables low latency streaming by prefetching HLS segments.
-Sets <a class="reference internal" href="cli.html#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> to true and <a class="reference internal" href="cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to 2, if it is higher.
-Reducing <a class="reference internal" href="cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to 1 will result in the lowest latency possible.</p>
-<p>Low latency streams have to be enabled by the broadcasters on Twitch themselves.
-Regular streams can cause buffering issues with this option enabled.</p>
+Sets <a class="reference internal" href="cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to 2, if it is higher.
+Reducing it to 1 will result in the lowest latency possible, but will most likely cause buffering.</p>
+<p>In order to achieve true low latency streaming during playback, the player's caching/buffering settings will
+need to be adjusted and reduced to a value as low as possible, but still high enough to not cause any buffering.
+This depends on the stream's bitrate and the quality of the connection to Twitch's servers. Please refer to the
+player's own documentation for the required configuration. Player parameters can be set via <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The caching/buffering settings of the chosen player may need to be adjusted as well.
-Please refer to the player's own documentation for the required parameters and its configuration.
-Player parameters can be set via Streamlink's <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> or <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> parameters.</p>
+<p>Low latency streams have to be enabled by the broadcasters on Twitch themselves.
+Regular streams can cause buffering issues with this option enabled due to the reduced <a class="reference internal" href="cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> value.</p>
 </div>
 </dd></dl>
 </div>
