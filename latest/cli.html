@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Command-Line Interface - Streamlink 2.3.0+29.gedcdd16 documentation</title>
+        <title>Command-Line Interface - Streamlink 2.3.0+30.g89b51a9 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.3.0+29.gedcdd16 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.3.0+30.g89b51a9 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.3.0+29.gedcdd16</pre>
+  <pre class="sidebar-versions-current">2.3.0+30.g89b51a9</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -955,6 +955,8 @@ the stream, so it doesn't need its own separate handling.</p>
 <code class="sig-name descname"><span class="pre">--output</span></code><code class="sig-prename descclassname"> <span class="pre">FILENAME</span></code><a class="headerlink" href="#cmdoption-output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write stream data to FILENAME instead of playing it.</p>
 <p>You will be prompted if the file already exists.</p>
+<p>The formatting variables available for the <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> option may be used.
+Unsupported characters in substituted variables will be replaced with an underscore.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-f">
@@ -983,6 +985,8 @@ show the download progress bar even if there is no terminal.</p>
 <code class="sig-name descname"><span class="pre">--record</span></code><code class="sig-prename descclassname"> <span class="pre">FILENAME</span></code><a class="headerlink" href="#cmdoption-record" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the stream in the player, while at the same time writing it to FILENAME.</p>
 <p>You will be prompted if the file already exists.</p>
+<p>The formatting variables available for the <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> option may be used.
+Unsupported characters in substituted variables will be replaced with an underscore.</p>
 </dd></dl>
 <dl class="std option">
 <dt id="cmdoption-R">
@@ -991,6 +995,23 @@ show the download progress bar even if there is no terminal.</p>
 <code class="sig-name descname"><span class="pre">--record-and-pipe</span></code><code class="sig-prename descclassname"> <span class="pre">FILENAME</span></code><a class="headerlink" href="#cmdoption-record-and-pipe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write stream data to stdout, while at the same time writing it to FILENAME.</p>
 <p>You will be prompted if the file already exists.</p>
+<p>The formatting variables available for the <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> option may be used.
+Unsupported characters in substituted variables will be replaced with an underscore.</p>
+</dd></dl>
+<dl class="std option">
+<dt id="cmdoption-fs-safe-rules">
+<code class="sig-name descname"><span class="pre">--fs-safe-rules</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fs-safe-rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>The rules used to make formatting variables filesystem-safe are chosen
+automatically according to the type of system in use. This overrides
+the automatic detection.</p>
+<p>Intended for use when Streamlink is running on a UNIX-like OS but writing
+to Windows filesystems such as NTFS; USB devices using VFAT or exFAT; CIFS
+shares that are enforcing Windows filename limitations, etc.</p>
+<p>These characters are replaced with an underscore for the rules in use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POSIX</span>  <span class="p">:</span> \<span class="n">x00</span><span class="o">-</span>\<span class="n">x1F</span> <span class="o">/</span>
+<span class="n">Windows</span><span class="p">:</span> \<span class="n">x00</span><span class="o">-</span>\<span class="n">x1F</span> \<span class="n">x7F</span> <span class="s2">" * / : &lt; &gt; ? \ |</span>
+</pre></div>
+</div>
 </dd></dl>
 </div>
 <div class="section" id="stream-options">
