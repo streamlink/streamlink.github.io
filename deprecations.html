@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Deprecations - Streamlink 2.3.0 documentation</title>
+        <title>Deprecations - Streamlink 2.4.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.3.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,7 +118,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.3.0</pre>
+  <pre class="sidebar-versions-current">2.4.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/deprecations.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/deprecations.html" class="">Latest</a></dd>
@@ -170,6 +170,20 @@
   
   <div class="section" id="deprecations">
 <h1>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-2-4-0">
+<h2>streamlink 2.4.0<a class="headerlink" href="#streamlink-2-4-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stream-type-related-cli-arguments">
+<h3>Stream-type related CLI arguments<a class="headerlink" href="#stream-type-related-cli-arguments" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="cli.html#stream-transport-options"><span class="std std-ref">Stream-type related CLI arguments</span></a> and the respective <a class="reference internal" href="api.html#session"><span class="std std-ref">Session options</span></a>
+have been deprecated in favor of existing generic arguments/options, to avoid redundancy and potential confusion.</p>
+<ul class="simple">
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-attempts"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-attempts</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-attempts</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-threads</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-timeout</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls,rtmp,http-stream}-timeout</span></code></p></li>
+</ul>
+</div>
+</div>
 <div class="section" id="streamlink-2-3-0">
 <h2>streamlink 2.3.0<a class="headerlink" href="#streamlink-2-3-0" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="plugin-can-handle-url-and-plugin-priority">
@@ -425,6 +439,10 @@ Old and deprecated paths will be dropped in the future.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Deprecations</a><ul>
+<li><a class="reference internal" href="#streamlink-2-4-0">streamlink 2.4.0</a><ul>
+<li><a class="reference internal" href="#stream-type-related-cli-arguments">Stream-type related CLI arguments</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#streamlink-2-3-0">streamlink 2.3.0</a><ul>
 <li><a class="reference internal" href="#plugin-can-handle-url-and-plugin-priority">Plugin.can_handle_url() and Plugin.priority()</a></li>
 </ul>

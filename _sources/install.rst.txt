@@ -284,11 +284,12 @@ Name                                 Notes
 
 **Automatically installed by the setup script**
 --------------------------------------------------------------------------------
-`python-requests`_                   At least version **2.21.0**.
+`python-requests`_                   At least version **2.26.0**
 `pycryptodome`_                      Required to play some encrypted streams
 `iso-639`_                           Used for localization settings, provides language information
 `iso3166`_                           Used for localization settings, provides country information
 `isodate`_                           Used for MPEG-DASH streams
+`lxml`_                              Used for processing HTML and XML data
 `PySocks`_                           Used for SOCKS Proxies
 `websocket-client`_                  At least version **0.58.0**. (used for some plugins)
 
@@ -312,7 +313,7 @@ With these two environment variables it is possible to use `pycrypto`_ instead o
 
 .. _Python: https://www.python.org/
 .. _python-setuptools: https://pypi.org/project/setuptools/
-.. _python-requests: https://requests.readthedocs.io/en/master/
+.. _python-requests: https://docs.python-requests.org/en/master/
 .. _RTMPDump: https://rtmpdump.mplayerhq.hu/
 .. _pycountry: https://pypi.org/project/pycountry/
 .. _pycrypto: https://www.dlitz.net/software/pycrypto/
@@ -321,6 +322,7 @@ With these two environment variables it is possible to use `pycrypto`_ instead o
 .. _iso-639: https://pypi.org/project/iso-639/
 .. _iso3166: https://pypi.org/project/iso3166/
 .. _isodate: https://pypi.org/project/isodate/
+.. _lxml: https://lxml.de/
 .. _PySocks: https://github.com/Anorov/PySocks
 .. _websocket-client: https://pypi.org/project/websocket-client/
 
@@ -341,16 +343,16 @@ Release                              Notes
                                      See the `commit log`_ for a list of changes since the last stable release.
 ==================================== ====================================
 
-.. note::
+.. warning::
 
-    **The Streamlink installer for Windows is currently based on Python 3.8.** |br|
-    Versions of Windows prior to 7 are not supported.
+    **The Streamlink installer for Windows is currently based on Python 3.9.** |br|
+    Versions of Windows prior to 10 are **not** supported.
 
     Be aware that the packages for `Chocolatey`_ and the `Windows Package Manager`_ are just wrappers
-    around the stable installer and thus depend on Windows 7+ as well.
+    around the stable installer and thus depend on Windows 10+ as well.
 
     Alternatively, :ref:`Streamlink can be installed via python-pip <install:PyPI package and source code>`
-    in a :ref:`compatible <install:Dependencies>` Python environment.
+    in a :ref:`compatible Python environment <install:Dependencies>`.
 
 .. _Stable release:
 .. _GitHub releases page: https://github.com/streamlink/streamlink/releases/latest

@@ -17,7 +17,6 @@ albavision              - tvc.com.ec         Yes   No    Some streams are geo-re
                         - rts.com.ec
                         - elnueve.com.ar
                         - atv.pe
-animelab                animelab.com         --    Yes   Requires a login. Streams may be geo-restricted to Australia and New Zealand.
 app17                   17app.co             Yes   --
 ard_live                daserste.de          Yes   Yes   Streams may be geo-restricted to Germany.
 ard_mediathek           - ardmediathek.de    Yes   Yes   Streams may be geo-restricted to Germany.
@@ -78,7 +77,6 @@ foxtr                   fox.com.tr           Yes   No
 funimationnow           - funimation.com     --    Yes   :ref:`Requires session cookies <cli:Authenticating with FunimationNow>`
                         - funimationnow.uk
 galatasaraytv           galatasaray.com      Yes   No
-gardenersworld          gardenersworld.com   --    Yes
 garena                  garena.live          Yes   --
 goltelevision           goltelevision.com    Yes   No    Streams may be geo-restricted to Spain.
 goodgame                goodgame.ru          Yes   No    Only HLS streams are available.
@@ -86,8 +84,6 @@ googledrive             - docs.google.com    --    Yes
                         - drive.google.com
 gulli                   replay.gulli.fr      Yes   Yes   Streams may be geo-restricted to France.
 huajiao                 huajiao.com          Yes   No
-huomao                  - huomao.com         Yes   Yes
-                        - huomao.tv
 huya                    huya.com             Yes   No
 idf1                    idf1.fr              Yes   Yes
 invintus                player.invintus.com  Yes   Yes
@@ -152,7 +148,7 @@ rotana                  rotana.net           Yes   --    Streams are geo-restric
 rtbf                    - rtbf.be/auvio      Yes   Yes   Streams may be geo-restricted to Belgium or Europe.
                         - rtbfradioplayer.be
 rtpplay                 rtp.pt/play          Yes   Yes   Streams may be geo-restricted to Portugal.
-rtve                    rtve.es              Yes   No    Streams may be geo-restricted to Spain.
+rtve                    rtve.es              Yes   Yes   Streams may be geo-restricted to Spain.
 rtvs                    rtvs.sk              Yes   No    Streams may be geo-restricted to Slovakia.
 ruv                     ruv.is               Yes   Yes   Streams may be geo-restricted to Iceland.
 sbscokr                 play.sbs.co.kr       Yes   No    Streams may be geo-restricted to South Korea.
@@ -235,21 +231,7 @@ wwenetwork              network.wwe.com      Yes   Yes   Requires an account to 
 youtube                 - youtube.com        Yes   Yes   Protected videos are not supported.
                         - youtu.be
 yupptv                  yupptv.com           Yes   Yes   Some streams require an account and subscription.
-zattoo                  - zattoo.com         Yes   Yes
-                        - nettv.net... [9]_
-                        - tvonline.ewe.de
-                        - iptv.glat... [10]_
-                        - mobiltv.q... [11]_
-                        - player.waly.tv
-                        - tvplus.m-net.de
-                        - www.bbv-tv.net
-                        - www.meinewelt.cc
-                        - www.myvisiontv.ch
-                        - www.netplus.tv
-                        - www.quantum-tv.com
-                        - www.saktv.ch
-                        - www.vtxtv.ch
-                        - www.1und1.tv
+zattoo                  zattoo.com           Yes   Yes   Other sub-providers are also available.
 zdf_mediathek           zdf.de               Yes   Yes   Streams may be geo-restricted to Germany.
 zeenews                 zeenews.india.com    Yes   No
 zengatv                 zengatv.com          Yes   No
@@ -261,6 +243,3 @@ zhanqi                  zhanqi.tv            Yes   No
 .. [6] players.brightcove.net
 .. [7] player.theplatform.com
 .. [8] tv5mondeplusafrique.com
-.. [9] nettv.netcologne.de
-.. [10] iptv.glattvision.ch
-.. [11] mobiltv.quickline.com
