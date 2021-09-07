@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 2.3.0+54.g2293f62 documentation</title>
+        <title>Changelog - Streamlink 2.4.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -99,7 +99,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.3.0+54.g2293f62 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -118,10 +118,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.3.0+54.g2293f62</pre>
+  <pre class="sidebar-versions-current">2.4.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Search name="q">
@@ -168,12 +168,107 @@
         </label>
         
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="streamlink-2-4-0-2021-09-07">
+<h2>streamlink 2.4.0 (2021-09-07)<a class="headerlink" href="#streamlink-2-4-0-2021-09-07" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul>
+<li><p>Deprecated: stream-type specific stream transport options in favor of generic options (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3893"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3893">#3893</a></a>)</p>
+<ul class="simple">
+<li><p>use <code class="docutils literal notranslate"><span class="pre">--stream-segment-attempts</span></code> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-attempts</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-threads</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">--stream-segment-timeout</span></code> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-timeout</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">--stream-timeout</span></code> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls,rtmp,http-stream}-timeout</span></code></p></li>
+</ul>
+<p>See the documentation’s <a class="reference external" href="https://streamlink.github.io/latest/deprecations.html#streamlink-2-4-0">deprecations page</a> for more information.</p>
+</li>
+<li><p>Deprecated: <code class="docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code> option and made it always stream segment data (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3894"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3894">#3894</a></a>)</p></li>
+<li><p>Updated: Python version of the Windows installer from 3.8 to 3.9 and dropped support for Windows 7 due to Python incompatibilities (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3918"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3918">#3918</a></a>)<br/>See the documentation’s <a class="reference external" href="https://streamlink.github.io/install.html">install page</a> for alternative installation methods on Windows 7.</p></li>
+<li><p>Updated: FFmpeg in the Windows Installer from 4.2 (Zeranoe) to 4.4 (<a class="reference external" href="https://github.com/streamlink/FFmpeg-Builds">streamlink/FFmpeg-Builds</a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3981"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3981">#3981</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">{author}</span></code>, <code class="docutils literal notranslate"><span class="pre">{category}</span></code>/<code class="docutils literal notranslate"><span class="pre">{game}</span></code>, <code class="docutils literal notranslate"><span class="pre">{title}</span></code> and <code class="docutils literal notranslate"><span class="pre">{url}</span></code> variables to <code class="docutils literal notranslate"><span class="pre">--output</span></code>, <code class="docutils literal notranslate"><span class="pre">--record</span></code> and <code class="docutils literal notranslate"><span class="pre">--record-and-play</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3962"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3962">#3962</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">{time}</span></code>/<code class="docutils literal notranslate"><span class="pre">{time:custom-format}</span></code> variable to <code class="docutils literal notranslate"><span class="pre">--title</span></code>, <code class="docutils literal notranslate"><span class="pre">--output</span></code>, <code class="docutils literal notranslate"><span class="pre">--record</span></code> and <code class="docutils literal notranslate"><span class="pre">--record-and-play</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3993"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3993">#3993</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--fs-safe-rules</span></code> for changing character replacement rules in file outputs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3962"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3962">#3962</a></a>)</p></li>
+<li><p>Added: plugin metadata to <code class="docutils literal notranslate"><span class="pre">--json</span></code> stream data output (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3987"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3987">#3987</a></a>)</p></li>
+<li><p>Fixed: named pipes not being cleaned up by FFMPEGMuxer (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3992"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3992">#3992</a></a>)</p></li>
+<li><p>Fixed: KeyError on invalid variables in <code class="docutils literal notranslate"><span class="pre">--player-args</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3988"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3988">#3988</a></a>)</p></li>
+<li><p>Fixed: tests failing in certain cases when run in different order (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3920"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3920">#3920</a></a>)</p></li>
+<li><p>Fixed: initial HLS playlist parsing issues (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3903"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3903">#3903</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3910"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3910">#3910</a></a>)</p></li>
+<li><p>Fixed: various plugin issues. Please see the changelog down below.</p></li>
+<li><p>Dependencies: added <code class="docutils literal notranslate"><span class="pre">lxml&gt;=4.6.3</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3952"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3952">#3952</a></a>)</p></li>
+<li><p>Dependencies: switched back to <code class="docutils literal notranslate"><span class="pre">requests&gt;=2.26.0</span></code> on Windows (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3930"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3930">#3930</a></a>)</p></li>
+<li><p>Removed plugins: animeworld (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3951"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3951">#3951</a></a>), gardenersworld (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3966"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3966">#3966</a></a>), huomao (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3932"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3932">#3932</a></a>)</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Grabien &lt;60237587+Grabien@users.noreply.github.com&gt; (1):
+      plugins.nbcnews: fix stream URL extraction (#3909)
+
+Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (2):
+      plugins.huomao: plugin removal
+      plugins.pluto: fix URL match for 2 letter language codes
+
+Leonardo Nascimento &lt;lbnascimento@inf.ufrgs.br&gt; (1):
+      plugins.booyah: add support for source stream (#3969)
+
+back-to &lt;backto@protonmail.ch&gt; (9):
+      stream.hls: handle exception StreamError in Thread-HLSStreamWorker - iter_segments
+      plugins.raiplay: use 'res.encoding = "UTF-8"'
+      plugins.rtve: update for /play/ URLs
+      plugins.zattoo: fix HLS stream, added more debug details
+      tests.mixins.stream_hls: increase TIMEOUT_AWAIT_WRITE timeout, use --durations 10 for pytest
+      setup: update requests version &gt;=2.26.0 and makeinstaller.sh
+      plugins.abematv: skip invalid ad segments
+      plugins.animelab: removed
+      cli.argparser: Fixed ValueError for streamlink --help
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (39):
+      session: deprecate options for spec. stream types
+      stream.hls: remove hls-segment-stream-data option
+      docs: reorganize stream transport options
+      stream.hls: except more errors raised by requests
+      tests.hls: fix playlist reload time tests
+      stream.hls: close stream on initial parsing error
+      installer: upgrade to python 3.9
+      tests: fix Plugin.bind(session) calls
+      plugin: fix cookie related error messages
+      docs: update python-requests version comment
+      plugins.twitch: replace remaining kraken API calls
+      plugins.twitch: refactor TwitchAPI class methods
+      plugins.euronews: add API fallback requests
+      plugins.sportschau: fix audio streams
+      vendor: add lxml dependency
+      plugins.deutschewelle: rewrite plugin
+      plugins.gardenersworld: remove plugin
+      cli: player title and file output metadata vars
+      plugin.api.validate: switch to lxml.etree
+      plugin.api.validate: add args+kwargs to transform
+      plugin.api.validate: add parse_{json,html,xml,qsd}
+      plugin: metadata attributes
+      plugins: fix utils imports
+      plugins.welt: rewrite and simplify using XPath
+      plugins.deutschewelle: validate.parse_html
+      plugins.reuters: rewrite and fix using XPath
+      plugins.euronews: rewrite and fix using XPath
+      installer: move assets config to local JSON file
+      installer: switch to streamlink/FFmpeg-Builds
+      cli.main: f-strings
+      cli.main: annotate types of global vars
+      cli.main: check args.json instead of console.json
+      cli.console: refactor ConsoleOutput
+      cli: include plugin metadata in --json output
+      cli.output: fix unknown vars in --player-args / -a
+      stream.ffmpegmux: always clean up named pipes
+      cli.utils.formatter: rewrite Formatter
+      cli.utils.formatter: implement format_spec
+      cli: add {time:format} var to --output / --title
+
+gustaf &lt;gustaf@protonmail.ch&gt; (1):
+      plugins.svtplay: fix plugin video id
+
+steven7851 &lt;steven7851@msn.com&gt; (1):
+      plugins.app17: fix API_URL and URL match (#3989)
+</pre></div>
+</div>
+</div>
 <div class="section" id="streamlink-2-3-0-2021-07-26">
 <h2>streamlink 2.3.0 (2021-07-26)<a class="headerlink" href="#streamlink-2-3-0-2021-07-26" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
@@ -3516,6 +3611,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-2-4-0-2021-09-07">streamlink 2.4.0 (2021-09-07)</a></li>
 <li><a class="reference internal" href="#streamlink-2-3-0-2021-07-26">streamlink 2.3.0 (2021-07-26)</a></li>
 <li><a class="reference internal" href="#streamlink-2-2-0-2021-06-19">streamlink 2.2.0 (2021-06-19)</a></li>
 <li><a class="reference internal" href="#streamlink-2-1-2-2021-05-20">streamlink 2.1.2 (2021-05-20)</a></li>
