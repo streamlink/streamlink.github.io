@@ -1,64 +1,58 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="API Guide" href="api_guide.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="API Guide" href="api_guide.html" />
 
-    <meta name="generator" content="sphinx-3.5.4, furo 2020.12.28.beta23"/>
+    <meta name="generator" content="sphinx-4.1.2, furo 2021.09.08"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Reference - Streamlink 2.4.0+1.gc6a101a documentation</title>
-      <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
-    <link rel="stylesheet" href="_static/pygments.css">
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
+        <title>API Reference - Streamlink 2.4.0+2.g66c0c45 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
+    
     
 
 
 <style>
-  :root {
+  body {
     --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   
   }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
   @media (prefers-color-scheme: dark) {
-    :root {
+    body:not([data-theme="light"]) {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
   }
-
-  /* For allowing end-user-specific overrides */
-  .override-light {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  .override-dark {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-</style><link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
-    <link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60">
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script defer="defer" src="_static/jquery.js"></script>
-    <script defer="defer" src="_static/underscore.js"></script>
-    <script defer="defer" src="_static/doctools.js"></script>
-    <script defer src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></head>
-  <body dir="">
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
       <line x1="4" y1="6" x2="20" y2="6" />
       <line x1="10" y1="12" x2="20" y2="12" />
       <line x1="6" y1="18" x2="20" y2="18" />
@@ -66,9 +60,8 @@
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -76,18 +69,57 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-chevron-right">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
     </svg>
   </symbol>
 </svg>
 
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 
 
@@ -95,14 +127,24 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
         <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.4.0+1.gc6a101a documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.4.0+2.g66c0c45 documentation</div></a>
     </div>
     <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -118,16 +160,17 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.4.0+1.gc6a101a</pre>
+  <pre class="sidebar-versions-current">2.4.0+2.g66c0c45</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="">Stable</a></dd>
     <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
   </dl>
-</div><form class="sidebar-search-container" method="get" action="search.html">
-  <input class="sidebar-search" placeholder=Search name="q">
+</div><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
-</form><div class="sidebar-tree">
+</form>
+<div id="searchbox"></div><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
@@ -160,41 +203,53 @@
       
     </div>
   </aside>
-  <main class="main">
+  <div class="main">
     <div class="content">
-      <article role="main">
-        <label class="toc-overlay-icon toc-content-icon" for="__toc">
-          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-        </label>
-        
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
   
     <div class="admonition important version-warning">
       <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
     </div>
   
-  <div class="section" id="module-streamlink">
+  <section id="module-streamlink">
 <span id="api-reference"></span><h1>API Reference<a class="headerlink" href="#module-streamlink" title="Permalink to this headline">¶</a></h1>
 <p>This ia reference of all the available API methods in Streamlink.</p>
-<div class="section" id="streamlink">
+<section id="streamlink">
 <h2>Streamlink<a class="headerlink" href="#streamlink" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="streamlink.streams">
-<code class="sig-prename descclassname"><span class="pre">streamlink.</span></code><code class="sig-name descname"><span class="pre">streams</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.streams" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.streams">
+<span class="sig-prename descclassname"><span class="pre">streamlink.</span></span><span class="sig-name descname"><span class="pre">streams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.streams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to find a plugin and extract streams from the <em>url</em>.</p>
 <p><em>params</em> are passed to <code class="xref py py-func docutils literal notranslate"><span class="pre">Plugin.streams()</span></code>.</p>
 <p>Raises <a class="reference internal" href="#streamlink.NoPluginError" title="streamlink.NoPluginError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoPluginError</span></code></a> if no plugin is found.</p>
 </dd></dl>
-</div>
-<div class="section" id="session">
+</section>
+<section id="session">
 <h2>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="streamlink.Streamlink">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.</span></code><code class="sig-name descname"><span class="pre">Streamlink</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.</span></span><span class="sig-name descname"><span class="pre">Streamlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Streamlink session is used to keep track of plugins,
 options and log settings.</p>
 <dl class="py method">
-<dt id="streamlink.Streamlink.get_option">
-<code class="sig-name descname"><span class="pre">get_option</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.get_option" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink.get_option">
+<span class="sig-name descname"><span class="pre">get_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.get_option" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns current value of specified option.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -203,8 +258,8 @@ options and log settings.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.Streamlink.get_plugin_option">
-<code class="sig-name descname"><span class="pre">get_plugin_option</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.get_plugin_option" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink.get_plugin_option">
+<span class="sig-name descname"><span class="pre">get_plugin_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.get_plugin_option" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns current value of plugin specific option.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -216,13 +271,13 @@ options and log settings.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.Streamlink.get_plugins">
-<code class="sig-name descname"><span class="pre">get_plugins</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.get_plugins" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink.get_plugins">
+<span class="sig-name descname"><span class="pre">get_plugins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.get_plugins" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the loaded plugins for the session.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.Streamlink.load_plugins">
-<code class="sig-name descname"><span class="pre">load_plugins</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> → <span class="pre">bool</span><a class="headerlink" href="#streamlink.Streamlink.load_plugins" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink.load_plugins">
+<span class="sig-name descname"><span class="pre">load_plugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#streamlink.Streamlink.load_plugins" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to load plugins from the path specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -234,8 +289,8 @@ options and log settings.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.Streamlink.resolve_url">
-<code class="sig-name descname"><span class="pre">resolve_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">follow_redirect</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> → <span class="pre">streamlink.plugin.plugin.Plugin</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink.resolve_url">
+<span class="sig-name descname"><span class="pre">resolve_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">follow_redirect</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><span class="pre">streamlink.plugin.plugin.Plugin</span></a></span></span><a class="headerlink" href="#streamlink.Streamlink.resolve_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to find a plugin that can use this URL.</p>
 <p>The default protocol (http) will be prefixed to the URL if
 not specified.</p>
@@ -250,8 +305,8 @@ not specified.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.Streamlink.resolve_url_no_redirect">
-<code class="sig-name descname"><span class="pre">resolve_url_no_redirect</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url_no_redirect" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink.resolve_url_no_redirect">
+<span class="sig-name descname"><span class="pre">resolve_url_no_redirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url_no_redirect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to find a plugin that can use this URL.</p>
 <p>The default protocol (http) will be prefixed to the URL if
 not specified.</p>
@@ -263,8 +318,8 @@ not specified.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.Streamlink.set_option">
-<code class="sig-name descname"><span class="pre">set_option</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.set_option" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink.set_option">
+<span class="sig-name descname"><span class="pre">set_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.set_option" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets general options used by plugins and streams originating
 from this session object.</p>
 <dl class="field-list simple">
@@ -449,8 +504,8 @@ default: <code class="docutils literal notranslate"><span class="pre">UserInputR
 </table></div>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.Streamlink.set_plugin_option">
-<code class="sig-name descname"><span class="pre">set_plugin_option</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.set_plugin_option" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink.set_plugin_option">
+<span class="sig-name descname"><span class="pre">set_plugin_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.set_plugin_option" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets plugin specific options used by plugins originating
 from this session object.</p>
 <dl class="field-list simple">
@@ -464,19 +519,19 @@ from this session object.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.Streamlink.streams">
-<code class="sig-name descname"><span class="pre">streams</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.streams" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.Streamlink.streams">
+<span class="sig-name descname"><span class="pre">streams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.streams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to find a plugin and extract streams from the <em>url</em>.</p>
 <p><em>params</em> are passed to <code class="xref py py-func docutils literal notranslate"><span class="pre">Plugin.streams()</span></code>.</p>
 <p>Raises <a class="reference internal" href="#streamlink.NoPluginError" title="streamlink.NoPluginError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoPluginError</span></code></a> if no plugin is found.</p>
 </dd></dl>
 </dd></dl>
-</div>
-<div class="section" id="module-streamlink.plugin">
+</section>
+<section id="module-streamlink.plugin">
 <span id="plugins"></span><h2>Plugins<a class="headerlink" href="#module-streamlink.plugin" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="streamlink.plugin.Plugin">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></code><code class="sig-name descname"><span class="pre">Plugin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.plugin.Plugin">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">Plugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin" title="Permalink to this definition">¶</a></dt>
 <dd><p>A plugin can retrieve stream information from the URL specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -484,8 +539,8 @@ from this session object.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="streamlink.plugin.Plugin.clear_cookies">
-<code class="sig-name descname"><span class="pre">clear_cookies</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookie_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.clear_cookies" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.plugin.Plugin.clear_cookies">
+<span class="sig-name descname"><span class="pre">clear_cookies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookie_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.clear_cookies" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes all of the saved cookies for this Plugin. To filter the cookies that are deleted
 specify the <code class="docutils literal notranslate"><span class="pre">cookie_filter</span></code> argument (see <a class="reference internal" href="#streamlink.plugin.Plugin.save_cookies" title="streamlink.plugin.Plugin.save_cookies"><code class="xref py py-func docutils literal notranslate"><span class="pre">save_cookies()</span></code></a>).</p>
 <dl class="field-list simple">
@@ -498,8 +553,8 @@ specify the <code class="docutils literal notranslate"><span class="pre">cookie_
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.plugin.Plugin.load_cookies">
-<code class="sig-name descname"><span class="pre">load_cookies</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.load_cookies" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.plugin.Plugin.load_cookies">
+<span class="sig-name descname"><span class="pre">load_cookies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.load_cookies" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load any stored cookies for the plugin that have not expired.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -508,8 +563,8 @@ specify the <code class="docutils literal notranslate"><span class="pre">cookie_
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.plugin.Plugin.save_cookies">
-<code class="sig-name descname"><span class="pre">save_cookies</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookie_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_expires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">604800</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.save_cookies" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.plugin.Plugin.save_cookies">
+<span class="sig-name descname"><span class="pre">save_cookies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookie_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_expires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">604800</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.save_cookies" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store the cookies from <code class="docutils literal notranslate"><span class="pre">http</span></code> in the plugin cache until they expire. The cookies can be filtered
 by supplying a filter method. eg. <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">c:</span> <span class="pre">"auth"</span> <span class="pre">in</span> <span class="pre">c.name</span></code>. If no expiry date is given in the
 cookie then the <code class="docutils literal notranslate"><span class="pre">default_expires</span></code> value will be used.</p>
@@ -526,8 +581,8 @@ cookie then the <code class="docutils literal notranslate"><span class="pre">def
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.plugin.Plugin.streams">
-<code class="sig-name descname"><span class="pre">streams</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorting_excludes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.streams" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.plugin.Plugin.streams">
+<span class="sig-name descname"><span class="pre">streams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorting_excludes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.streams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to extract available streams.</p>
 <p>Returns a <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> containing the streams, where the key is
 the name of the stream, most commonly the quality and the value
@@ -565,8 +620,8 @@ the best/worst synonyms.</p></li>
 </dd></dl>
 </dd></dl>
 <span class="target" id="module-streamlink.options"></span><dl class="py class">
-<dt id="streamlink.options.Arguments">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.options.</span></code><code class="sig-name descname"><span class="pre">Arguments</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Arguments" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.options.Arguments">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.options.</span></span><span class="sig-name descname"><span class="pre">Arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Arguments" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides a wrapper around a list of <a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a>. For example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PluginExample</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
     <span class="n">arguments</span> <span class="o">=</span> <span class="n">PluginArguments</span><span class="p">(</span>
@@ -584,8 +639,8 @@ the best/worst synonyms.</p></li>
 <p>This will add the <code class="docutils literal notranslate"><span class="pre">--plugin-username</span></code> and <code class="docutils literal notranslate"><span class="pre">--plugin-password</span></code> arguments to the CLI
 (assuming the plugin module is <code class="docutils literal notranslate"><span class="pre">plugin</span></code>).</p>
 <dl class="py method">
-<dt id="streamlink.options.Arguments.requires">
-<code class="sig-name descname"><span class="pre">requires</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Arguments.requires" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.options.Arguments.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Arguments.requires" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all the arguments required by name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -598,14 +653,14 @@ the best/worst synonyms.</p></li>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="streamlink.options.Argument">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.options.</span></code><code class="sig-name descname"><span class="pre">Argument</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.options.Argument">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.options.</span></span><span class="sig-name descname"><span class="pre">Argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a> accepts most of the same parameters as <code class="xref py py-func docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code>,
 except requires is a special case as in this case it is only enforced if the plugin is in use.
 In addition the name parameter is the name relative to the plugin eg. username, password, etc.</p>
 <dl class="py method">
-<dt id="streamlink.options.Argument.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.options.Argument.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -623,28 +678,28 @@ prompted use askpass</p></li>
 </dl>
 </dd></dl>
 </dd></dl>
-</div>
-<div class="section" id="streams">
+</section>
+<section id="streams">
 <h2>Streams<a class="headerlink" href="#streams" title="Permalink to this headline">¶</a></h2>
 <p>All streams inherit from the <code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code> class.</p>
 <span class="target" id="module-streamlink.stream"></span><dl class="py class">
-<dt id="streamlink.stream.Stream">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></code><code class="sig-name descname"><span class="pre">Stream</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.Stream" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.Stream">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">Stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.Stream" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt id="streamlink.stream.Stream.open">
-<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.Stream.open" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.Stream.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.Stream.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to open a connection to the stream.
 Returns a file-like object that can be used to read the stream data.</p>
 <p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
 </dd></dl>
 </dd></dl>
-<div class="section" id="stream-subclasses">
+<section id="stream-subclasses">
 <h3>Stream subclasses<a class="headerlink" href="#stream-subclasses" title="Permalink to this headline">¶</a></h3>
 <p>You are able to inspect the parameters used by each stream,
 different properties are available depending on stream type.</p>
 <dl class="py class">
-<dt id="streamlink.stream.AkamaiHDStream">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></code><code class="sig-name descname"><span class="pre">AkamaiHDStream</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seek</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.AkamaiHDStream" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.AkamaiHDStream">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">AkamaiHDStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seek</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.AkamaiHDStream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements the AkamaiHD Adaptive Streaming protocol</p>
 <p><em>Attributes:</em></p>
 <ul class="simple">
@@ -653,16 +708,16 @@ different properties are available depending on stream type.</p>
 <li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">seek</span></code> Position to seek to when opening the stream</p></li>
 </ul>
 <dl class="py method">
-<dt id="streamlink.stream.AkamaiHDStream.open">
-<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.AkamaiHDStream.open" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.AkamaiHDStream.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.AkamaiHDStream.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to open a connection to the stream.
 Returns a file-like object that can be used to read the stream data.</p>
 <p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="streamlink.stream.HDSStream">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></code><code class="sig-name descname"><span class="pre">HDSStream</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseurl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HDSStream" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.HDSStream">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">HDSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseurl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HDSStream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements the Adobe HTTP Dynamic Streaming protocol</p>
 <p><em>Attributes:</em></p>
 <ul class="simple">
@@ -677,15 +732,15 @@ that contains metadata about the stream, such as height, width and
 bitrate</p></li>
 </ul>
 <dl class="py method">
-<dt id="streamlink.stream.HDSStream.open">
-<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HDSStream.open" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.HDSStream.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HDSStream.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to open a connection to the stream.
 Returns a file-like object that can be used to read the stream data.</p>
 <p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.stream.HDSStream.parse_manifest">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">parse_manifest</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvswf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_akamai</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HDSStream.parse_manifest" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.HDSStream.parse_manifest">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">parse_manifest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvswf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_akamai</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HDSStream.parse_manifest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses a HDS manifest and returns its substreams.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -701,8 +756,8 @@ from the stream before raising an error.</p></li>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="streamlink.stream.HLSStream">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></code><code class="sig-name descname"><span class="pre">HLSStream</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.HLSStream">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">HLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of the Apple HTTP Live Streaming protocol</p>
 <p><em>Attributes:</em></p>
 <ul class="simple">
@@ -711,15 +766,15 @@ from the stream before raising an error.</p></li>
 to <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code>, such as headers and cookies.</p></li>
 </ul>
 <dl class="py method">
-<dt id="streamlink.stream.HLSStream.open">
-<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.open" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.HLSStream.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to open a connection to the stream.
 Returns a file-like object that can be used to read the stream data.</p>
 <p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.stream.HLSStream.parse_variant_playlist">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">parse_variant_playlist</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'name'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_streams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.parse_variant_playlist" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.HLSStream.parse_variant_playlist">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">parse_variant_playlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'name'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_streams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.parse_variant_playlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to parse a variant playlist and return its streams.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -738,8 +793,8 @@ name, pixels, bitrate.</p></li>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="streamlink.stream.HTTPStream">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></code><code class="sig-name descname"><span class="pre">HTTPStream</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HTTPStream" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.HTTPStream">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">HTTPStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HTTPStream" title="Permalink to this definition">¶</a></dt>
 <dd><p>A HTTP stream using the requests library.</p>
 <p><em>Attributes:</em></p>
 <ul class="simple">
@@ -748,42 +803,42 @@ name, pixels, bitrate.</p></li>
 to <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code>, such as headers and cookies.</p></li>
 </ul>
 <dl class="py method">
-<dt id="streamlink.stream.HTTPStream.open">
-<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HTTPStream.open" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.HTTPStream.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HTTPStream.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to open a connection to the stream.
 Returns a file-like object that can be used to read the stream data.</p>
 <p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="streamlink.stream.RTMPStream">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></code><code class="sig-name descname"><span class="pre">RTMPStream</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.RTMPStream" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.RTMPStream">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">RTMPStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.RTMPStream" title="Permalink to this definition">¶</a></dt>
 <dd><p>RTMP stream using rtmpdump.</p>
 <p><em>Attributes:</em></p>
 <ul class="simple">
 <li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">params</span></code> A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> containing parameters passed to rtmpdump</p></li>
 </ul>
 <dl class="py method">
-<dt id="streamlink.stream.RTMPStream.open">
-<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.RTMPStream.open" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.RTMPStream.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.RTMPStream.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to open a connection to the stream.
 Returns a file-like object that can be used to read the stream data.</p>
 <p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="streamlink.stream.DASHStream">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></code><code class="sig-name descname"><span class="pre">DASHStream</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.DASHStream">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">DASHStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt id="streamlink.stream.DASHStream.open">
-<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream.open" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.DASHStream.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to open a connection to the stream.
 Returns a file-like object that can be used to read the stream data.</p>
 <p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="streamlink.stream.DASHStream.parse_manifest">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">parse_manifest</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_or_manifest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream.parse_manifest" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.stream.DASHStream.parse_manifest">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">parse_manifest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_or_manifest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream.parse_manifest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to parse a DASH manifest file and return its streams</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -798,37 +853,38 @@ Returns a file-like object that can be used to read the stream data.</p>
 </dl>
 </dd></dl>
 </dd></dl>
-</div>
-</div>
-<div class="section" id="exceptions">
+</section>
+</section>
+<section id="exceptions">
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink has three types of exceptions:</p>
 <dl class="py exception">
-<dt id="streamlink.StreamlinkError">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.</span></code><code class="sig-name descname"><span class="pre">StreamlinkError</span></code><a class="headerlink" href="#streamlink.StreamlinkError" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.StreamlinkError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.</span></span><span class="sig-name descname"><span class="pre">StreamlinkError</span></span><a class="headerlink" href="#streamlink.StreamlinkError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Any error caused by Streamlink will be caught
 with this exception.</p>
 </dd></dl>
 <dl class="py exception">
-<dt id="streamlink.PluginError">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.</span></code><code class="sig-name descname"><span class="pre">PluginError</span></code><a class="headerlink" href="#streamlink.PluginError" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.PluginError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.</span></span><span class="sig-name descname"><span class="pre">PluginError</span></span><a class="headerlink" href="#streamlink.PluginError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plugin related error.</p>
 </dd></dl>
 <dl class="py exception">
-<dt id="streamlink.NoPluginError">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.</span></code><code class="sig-name descname"><span class="pre">NoPluginError</span></code><a class="headerlink" href="#streamlink.NoPluginError" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.NoPluginError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.</span></span><span class="sig-name descname"><span class="pre">NoPluginError</span></span><a class="headerlink" href="#streamlink.NoPluginError" title="Permalink to this definition">¶</a></dt>
 <dd><p>No relevant plugin has been loaded.</p>
 </dd></dl>
 <dl class="py exception">
-<dt id="streamlink.StreamError">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">streamlink.</span></code><code class="sig-name descname"><span class="pre">StreamError</span></code><a class="headerlink" href="#streamlink.StreamError" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.StreamError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">streamlink.</span></span><span class="sig-name descname"><span class="pre">StreamError</span></span><a class="headerlink" href="#streamlink.StreamError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stream related error.</p>
 </dd></dl>
-</div>
-</div>
+</section>
+</section>
 
 
-      </article>
+        </article>
+      </div>
       <footer>
         
         <div class="related-pages">
@@ -855,8 +911,7 @@ with this exception.</p>
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Streamlink
-            |
+              Copyright &#169; 2021, Streamlink |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -896,7 +951,11 @@ with this exception.</p>
       
       
     </aside>
-  </main>
-</div>
-  </body>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/main.js"></script>
+    </body>
 </html>

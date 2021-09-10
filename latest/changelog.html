@@ -1,64 +1,58 @@
 <!doctype html>
 <html class="no-js">
   <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Donating" href="donate.html" /><link rel="prev" title="API Reference" href="api.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Donating" href="donate.html" /><link rel="prev" title="API Reference" href="api.html" />
 
-    <meta name="generator" content="sphinx-3.5.4, furo 2020.12.28.beta23"/>
+    <meta name="generator" content="sphinx-4.1.2, furo 2021.09.08"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 2.4.0+1.gc6a101a documentation</title>
-      <link rel="stylesheet" href="_static/styles/furo.css?digest=20bc478bf5d5bbc431750131711b664607ab852d">
-    <link rel="stylesheet" href="_static/pygments.css">
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
+        <title>Changelog - Streamlink 2.4.0+2.g66c0c45 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
+    
     
 
 
 <style>
-  :root {
+  body {
     --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   
   }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
   @media (prefers-color-scheme: dark) {
-    :root {
+    body:not([data-theme="light"]) {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
   }
-
-  /* For allowing end-user-specific overrides */
-  .override-light {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  .override-dark {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-</style><link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
-    <link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=26485485040e7aaf717c13fd0188a5ad2c2deb60">
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script defer="defer" src="_static/jquery.js"></script>
-    <script defer="defer" src="_static/underscore.js"></script>
-    <script defer="defer" src="_static/doctools.js"></script>
-    <script defer src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></head>
-  <body dir="">
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
       <line x1="4" y1="6" x2="20" y2="6" />
       <line x1="10" y1="12" x2="20" y2="12" />
       <line x1="6" y1="18" x2="20" y2="18" />
@@ -66,9 +60,8 @@
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -76,18 +69,57 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-chevron-right">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
     </svg>
   </symbol>
 </svg>
 
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 
 
@@ -95,14 +127,24 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
         <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.4.0+1.gc6a101a documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.4.0+2.g66c0c45 documentation</div></a>
     </div>
     <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -118,16 +160,17 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.4.0+1.gc6a101a</pre>
+  <pre class="sidebar-versions-current">2.4.0+2.g66c0c45</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
   </dl>
-</div><form class="sidebar-search-container" method="get" action="search.html">
-  <input class="sidebar-search" placeholder=Search name="q">
+</div><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
-</form><div class="sidebar-tree">
+</form>
+<div id="searchbox"></div><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
@@ -160,21 +203,33 @@
       
     </div>
   </aside>
-  <main class="main">
+  <div class="main">
     <div class="content">
-      <article role="main">
-        <label class="toc-overlay-icon toc-content-icon" for="__toc">
-          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-        </label>
-        
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
   
     <div class="admonition important version-warning">
       <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
     </div>
   
-  <div class="section" id="changelog">
+  <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="streamlink-2-4-0-2021-09-07">
+<section id="streamlink-2-4-0-2021-09-07">
 <h2>streamlink 2.4.0 (2021-09-07)<a class="headerlink" href="#streamlink-2-4-0-2021-09-07" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
 <ul>
@@ -272,8 +327,8 @@ steven7851 &lt;steven7851@msn.com&gt; (1):
       plugins.app17: fix API_URL and URL match (#3989)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-2-3-0-2021-07-26">
+</section>
+<section id="streamlink-2-3-0-2021-07-26">
 <h2>streamlink 2.3.0 (2021-07-26)<a class="headerlink" href="#streamlink-2-3-0-2021-07-26" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
@@ -343,8 +398,8 @@ vinyl-umbrella &lt;61788251+vinyl-umbrella@users.noreply.github.com&gt; (1):
       plugins.openrectv: update HLS URLs (#3850)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-2-2-0-2021-06-19">
+</section>
+<section id="streamlink-2-2-0-2021-06-19">
 <h2>streamlink 2.2.0 (2021-06-19)<a class="headerlink" href="#streamlink-2-2-0-2021-06-19" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
 <ul>
@@ -450,8 +505,8 @@ shirokumacode &lt;79662880+shirokumacode@users.noreply.github.com&gt; (1):
       plugins.mildom: new plugin for mildom.com (#3584)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-2-1-2-2021-05-20">
+</section>
+<section id="streamlink-2-1-2-2021-05-20">
 <h2>streamlink 2.1.2 (2021-05-20)<a class="headerlink" href="#streamlink-2-1-2-2021-05-20" title="Permalink to this headline">¶</a></h2>
 <p>Patch release:</p>
 <ul class="simple">
@@ -495,8 +550,8 @@ bururaku &lt;rakuburu@gmail.com&gt; (1):
       plugins.abematv: Fixed download problem again. (#3658)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-2-1-1-2021-03-25">
+</section>
+<section id="streamlink-2-1-1-2021-03-25">
 <h2>streamlink 2.1.1 (2021-03-25)<a class="headerlink" href="#streamlink-2-1-1-2021-03-25" title="Permalink to this headline">¶</a></h2>
 <p>Patch release:</p>
 <ul class="simple">
@@ -509,8 +564,8 @@ bastimeyer &lt;mail@bastimeyer.de&gt; (1):
       build: include removed plugins file in sdist
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-2-1-0-2021-03-22">
+</section>
+<section id="streamlink-2-1-0-2021-03-22">
 <h2>streamlink 2.1.0 (2021-03-22)<a class="headerlink" href="#streamlink-2-1-0-2021-03-22" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
@@ -624,8 +679,8 @@ vinyl-umbrella &lt;61788251+vinyl-umbrella@users.noreply.github.com&gt; (1):
       plugins.openrectv: update/fix (#3583)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-2-0-0-2020-12-22">
+</section>
+<section id="streamlink-2-0-0-2020-12-22">
 <h2>streamlink 2.0.0 (2020-12-22)<a class="headerlink" href="#streamlink-2-0-0-2020-12-22" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
@@ -837,8 +892,8 @@ smallbomb &lt;rockon590+git@gmail.com&gt; (1):
       plugins: fix radiko.py url (#3394)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-7-0-2020-10-18">
+</section>
+<section id="streamlink-1-7-0-2020-10-18">
 <h2>streamlink 1.7.0 (2020-10-18)<a class="headerlink" href="#streamlink-1-7-0-2020-10-18" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
@@ -914,8 +969,8 @@ beardypig &lt;beardypig@protonmail.com&gt; (3):
       cli: make config based args available during early setup (#3255)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-6-0-2020-09-22">
+</section>
+<section id="streamlink-1-6-0-2020-09-22">
 <h2>streamlink 1.6.0 (2020-09-22)<a class="headerlink" href="#streamlink-1-6-0-2020-09-22" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
@@ -994,8 +1049,8 @@ hymer-up &lt;34783904+hymer-up@users.noreply.github.com&gt; (2):
       plugins.dogus: add startv URL (#3161)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-5-0-2020-07-07">
+</section>
+<section id="streamlink-1-5-0-2020-07-07">
 <h2>streamlink 1.5.0 (2020-07-07)<a class="headerlink" href="#streamlink-1-5-0-2020-07-07" title="Permalink to this headline">¶</a></h2>
 <p>A minor release with fixes for <code class="docutils literal notranslate"><span class="pre">pycountry==20.7.3</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3057"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/3057">#3057</a></a>) and a few plugin additions and removals.</p>
 <p>And of course the usual plugin fixes and upgrades, which you can see in the git shortlog down below. Thank you to everyone involved!</p>
@@ -1073,16 +1128,16 @@ wiresp33d &lt;66558220+wiresp33d@users.noreply.github.com&gt; (2):
       plugins.nicolive: resolve new api format (#3039)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-4-1-2020-04-24">
+</section>
+<section id="streamlink-1-4-1-2020-04-24">
 <h2>streamlink 1.4.1 (2020-04-24)<a class="headerlink" href="#streamlink-1-4-1-2020-04-24" title="Permalink to this headline">¶</a></h2>
 <p>No code changes. <a class="reference external" href="https://github.com/streamlink/streamlink/releases/tag/1.4.0">See the full <code class="docutils literal notranslate"><span class="pre">1.4.0</span></code> changelog here.</a></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>beardypig &lt;beardypig@protonmail.com&gt; (1):
       build: include correct signing key: 0xE3DB9E282E390FA0
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-4-0-2020-04-22">
+</section>
+<section id="streamlink-1-4-0-2020-04-22">
 <h2>streamlink 1.4.0 (2020-04-22)<a class="headerlink" href="#streamlink-1-4-0-2020-04-22" title="Permalink to this headline">¶</a></h2>
 <p>This will be the last release with support for Python 2, as it has finally reached its EOL at the beginning of this year.</p>
 <p>Streamlink 1.4.0 comes with lots of plugin fixes/improvements, as well as some new features and plugins, and also a few plugin removals.</p>
@@ -1243,8 +1298,8 @@ tarkah &lt;cforsstrom18@gmail.com&gt; (1):
       stream.hls: add templating for hls-segment-key-uri option (#2821)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-3-1-2020-01-27">
+</section>
+<section id="streamlink-1-3-1-2020-01-27">
 <h2>streamlink 1.3.1 (2020-01-27)<a class="headerlink" href="#streamlink-1-3-1-2020-01-27" title="Permalink to this headline">¶</a></h2>
 <p>A small patch release that addresses the removal of <a class="reference external" href="https://mpv.io/manual/master/#legacy-option-syntax">MPV’s legacy option syntax</a>, also with fixes of several plugins, the addition of the <code class="docutils literal notranslate"><span class="pre">--twitch-disable-reruns</span></code> parameter and dropped support for Python 3.4.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Hunter Peavey &lt;krathalan@disroot.org&gt; (4):
@@ -1275,8 +1330,8 @@ skulblakka &lt;pascal.romahn@mailbox.org&gt; (1):
       Allow to disable twitch reruns (#2722)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-3-0-2019-11-22">
+</section>
+<section id="streamlink-1-3-0-2019-11-22">
 <h2>streamlink 1.3.0 (2019-11-22)<a class="headerlink" href="#streamlink-1-3-0-2019-11-22" title="Permalink to this headline">¶</a></h2>
 <p>A new release with plugin updates and fixes, including Twitch.tv (see <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680">#2680</a></a>), which had to be delayed due to back and forth API changes.</p>
 <p>The Twitch.tv workarounds mentioned in <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680">#2680</a></a> don’t have to be applied anymore, but authenticating via <code class="docutils literal notranslate"><span class="pre">--twitch-oauth-token</span></code> has been disabled, regardless of the origin of the OAuth token (via <code class="docutils literal notranslate"><span class="pre">--twitch-oauth-authenticate</span></code> or the Twitch website). In order to not introduce breaking changes, both parameters have been kept in this release and the user name will still be logged when using an OAuth token, but receiving item drops or accessing restricted streams is not possible anymore.</p>
@@ -1345,8 +1400,8 @@ ssaqua &lt;ssaqua@users.noreply.github.com&gt; (1):
       plugins.linelive: update to support VOD/archived streams
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-2-0-2019-08-18">
+</section>
+<section id="streamlink-1-2-0-2019-08-18">
 <h2>streamlink 1.2.0 (2019-08-18)<a class="headerlink" href="#streamlink-1-2-0-2019-08-18" title="Permalink to this headline">¶</a></h2>
 <p>Here are the changes for this month’s release</p>
 <ul class="simple">
@@ -1435,8 +1490,8 @@ ssaqua &lt;ssaqua@users.noreply.github.com&gt; (1):
       plugins.linelive: new plugin for LINE LIVE (live.line.me) (#2574)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-1-1-2019-04-02">
+</section>
+<section id="streamlink-1-1-1-2019-04-02">
 <h2>streamlink 1.1.1 (2019-04-02)<a class="headerlink" href="#streamlink-1-1-1-2019-04-02" title="Permalink to this headline">¶</a></h2>
 <p>This is just a small patch release which fixes a build/deploy issue with the new special wheels for Windows on PyPI. (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/2392">#2392</a>)</p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/releases/tag/1.1.0">Please see the full changelog of the <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code> release!</a></p>
@@ -1444,8 +1499,8 @@ ssaqua &lt;ssaqua@users.noreply.github.com&gt; (1):
       build: remove cygwin from wheels for Windows (#2393)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-1-0-2019-03-31">
+</section>
+<section id="streamlink-1-1-0-2019-03-31">
 <h2>streamlink 1.1.0 (2019-03-31)<a class="headerlink" href="#streamlink-1-1-0-2019-03-31" title="Permalink to this headline">¶</a></h2>
 <p>These are the highlights of Streamlink’s first minor release after the 1.0.0 milestone:</p>
 <ul class="simple">
@@ -1518,8 +1573,8 @@ lon &lt;rliouke@gmail.com&gt; (1):
       plugins.crunchyroll: Allow CR's multilingual URLs to be handled (#2304)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-1-0-0-2019-01-30">
+</section>
+<section id="streamlink-1-0-0-2019-01-30">
 <h2>streamlink 1.0.0 (2019-01-30)<a class="headerlink" href="#streamlink-1-0-0-2019-01-30" title="Permalink to this headline">¶</a></h2>
 <p>The celebratory release of Streamlink 1.0.0!</p>
 <p><em>A lot</em> of hard work has gone into getting Streamlink to where it is. Not only is Streamlink used across multiple applications and platforms, but companies as well.</p>
@@ -1752,8 +1807,8 @@ yoya3312 &lt;40212627+yoya3312@users.noreply.github.com&gt; (1):
       plugins.youtube: use new "hlsManifestUrl" for Livestreams (#2238)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-14-2-2018-06-28">
+</section>
+<section id="streamlink-0-14-2-2018-06-28">
 <h2>streamlink 0.14.2 (2018-06-28)<a class="headerlink" href="#streamlink-0-14-2-2018-06-28" title="Permalink to this headline">¶</a></h2>
 <p>Just a few small fixes in this release.</p>
 <ul class="simple">
@@ -1781,8 +1836,8 @@ beardypig &lt;beardypig@protonmail.com&gt; (10):
       plugin: support stream weights returned by DASHStream.parse_manifest
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-14-0-2018-06-26">
+</section>
+<section id="streamlink-0-14-0-2018-06-26">
 <h2>streamlink 0.14.0 (2018-06-26)<a class="headerlink" href="#streamlink-0-14-0-2018-06-26" title="Permalink to this headline">¶</a></h2>
 <p>Here are the changes to this months release!</p>
 <ul class="simple">
@@ -1858,8 +1913,8 @@ fozzy &lt;fozzy@fozzy.co&gt; (1):
       fix bug caused by indentation and add support for url pattern like 'xingxiu.panda.tv'
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-13-0-2018-06-06">
+</section>
+<section id="streamlink-0-13-0-2018-06-06">
 <h2>streamlink 0.13.0 (2018-06-06)<a class="headerlink" href="#streamlink-0-13-0-2018-06-06" title="Permalink to this headline">¶</a></h2>
 <p>Massive release this month!</p>
 <p>Here are the changes:</p>
@@ -1959,8 +2014,8 @@ yhel &lt;yhel@users.noreply.github.com&gt; (1):
       Feature/france.tv sport (#1700)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-12-1-2018-05-07">
+</section>
+<section id="streamlink-0-12-1-2018-05-07">
 <h2>streamlink 0.12.1 (2018-05-07)<a class="headerlink" href="#streamlink-0-12-1-2018-05-07" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink 0.12.1</p>
 <p>Small release to fix a pip / Windows.exe generation bug!</p>
@@ -1968,8 +2023,8 @@ yhel &lt;yhel@users.noreply.github.com&gt; (1):
       0.12.0 Release
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-12-0-2018-05-07">
+</section>
+<section id="streamlink-0-12-0-2018-05-07">
 <h2>streamlink 0.12.0 (2018-05-07)<a class="headerlink" href="#streamlink-0-12-0-2018-05-07" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink 0.12.0</p>
 <p>Thanks for all the contributors to this month’s release!</p>
@@ -2049,8 +2104,8 @@ steven7851 &lt;steven7851@msn.com&gt; (1):
       [app17] Fix HLS URL (#1600)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-11-0-2018-03-08">
+</section>
+<section id="streamlink-0-11-0-2018-03-08">
 <h2>streamlink 0.11.0 (2018-03-08)<a class="headerlink" href="#streamlink-0-11-0-2018-03-08" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink 0.11.0!</p>
 <p>Here’s what’s new:</p>
@@ -2121,8 +2176,8 @@ unnutricious &lt;unnutricious@protonmail.com&gt; (1):
       [bigo] update video regex to match current website (#1412)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-10-0-2018-01-23">
+</section>
+<section id="streamlink-0-10-0-2018-01-23">
 <h2>streamlink 0.10.0 (2018-01-23)<a class="headerlink" href="#streamlink-0-10-0-2018-01-23" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink 0.10.0!</p>
 <p>There’s been a lot of activity since our November release.</p>
@@ -2205,8 +2260,8 @@ xela722 &lt;alex0722@comcast.net&gt; (1):
       Add plugin for olympicchannel.com (#1353)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-9-0-2017-11-14">
+</section>
+<section id="streamlink-0-9-0-2017-11-14">
 <h2>streamlink 0.9.0 (2017-11-14)<a class="headerlink" href="#streamlink-0-9-0-2017-11-14" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink 0.9.0 has been released!</p>
 <p>This release is mostly code refactoring as well as module inclusion.</p>
@@ -2268,8 +2323,8 @@ wlerin &lt;wlerin@gmail.com&gt; (1):
       plugin.showroom: update to new api (#1311)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-8-1-2017-09-12">
+</section>
+<section id="streamlink-0-8-1-2017-09-12">
 <h2>streamlink 0.8.1 (2017-09-12)<a class="headerlink" href="#streamlink-0-8-1-2017-09-12" title="Permalink to this headline">¶</a></h2>
 <p>0.8.1 of Streamlink!</p>
 <p>97 commits have occurred since the last release, including a large majority of plugin changes.</p>
@@ -2373,8 +2428,8 @@ unnutricious &lt;unnutricious@protonmail.com&gt; (2):
       bigo: improve plugin url regex
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-7-0-2017-06-30">
+</section>
+<section id="streamlink-0-7-0-2017-06-30">
 <h2>streamlink 0.7.0 (2017-06-30)<a class="headerlink" href="#streamlink-0-7-0-2017-06-30" title="Permalink to this headline">¶</a></h2>
 <p>0.7.0 of Streamlink!</p>
 <p>Since our May release, we’ve incorporated quite a few changes!</p>
@@ -2478,8 +2533,8 @@ yhel &lt;yhelae@gmail.com&gt; (1):
       Add capability of extracting current sport.francetv stream
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-6-0-2017-05-11">
+</section>
+<section id="streamlink-0-6-0-2017-05-11">
 <h2>streamlink 0.6.0 (2017-05-11)<a class="headerlink" href="#streamlink-0-6-0-2017-05-11" title="Permalink to this headline">¶</a></h2>
 <p>Another release of Streamlink!</p>
 <p>We’ve updated more plugins, improved documentation, and moved out nightly builds to Bintray (S3 was costing <em>wayyyy</em> too much).</p>
@@ -2584,8 +2639,8 @@ zp@users.noreply.github.com &lt;zp@users.noreply.github.com&gt; (1):
       New plugin for Facebook 360p streams https://gist.github.com/zp/c461761565dba764c90548758ee5ae9f
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-5-0-2017-04-04">
+</section>
+<section id="streamlink-0-5-0-2017-04-04">
 <h2>streamlink 0.5.0 (2017-04-04)<a class="headerlink" href="#streamlink-0-5-0-2017-04-04" title="Permalink to this headline">¶</a></h2>
 <p>Streamlink 0.5.0!</p>
 <p>Lot’s of contributions since the last release. As always, lot’s of updating to plugins!</p>
@@ -2636,8 +2691,8 @@ steven7851 &lt;steven7851@msn.com&gt; (3):
       plugins.douyutv: support vod (#706)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-4-0-2017-03-09">
+</section>
+<section id="streamlink-0-4-0-2017-03-09">
 <h2>streamlink 0.4.0 (2017-03-09)<a class="headerlink" href="#streamlink-0-4-0-2017-03-09" title="Permalink to this headline">¶</a></h2>
 <p>0.4.0 of Streamlink!</p>
 <p>114 commits since the last release and <em>a lot</em> has changed.</p>
@@ -2799,8 +2854,8 @@ wlerin &lt;wlerin@gmail.com&gt; (1):
       plugins.showroom: add support for showroom-live.com live streams (#633)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-3-2-2017-02-10">
+</section>
+<section id="streamlink-0-3-2-2017-02-10">
 <h2>streamlink 0.3.2 (2017-02-10)<a class="headerlink" href="#streamlink-0-3-2-2017-02-10" title="Permalink to this headline">¶</a></h2>
 <p>0.3.2 release of Streamlink!</p>
 <p>A minor bug release of 0.3.2 to fix a few issues with stream providers.</p>
@@ -2826,8 +2881,8 @@ intact &lt;intact.devel@gmail.com&gt; (1):
       Add Rtvs.sk Plugin
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-3-1-2017-02-03">
+</section>
+<section id="streamlink-0-3-1-2017-02-03">
 <h2>streamlink 0.3.1 (2017-02-03)<a class="headerlink" href="#streamlink-0-3-1-2017-02-03" title="Permalink to this headline">¶</a></h2>
 <p>0.3.1 release of Streamlink</p>
 <p>A <em>minor</em> release, we update our source code upload to <em>not</em> include the ffmpeg.exe binary as well as update a multitude of plugins.</p>
@@ -2879,8 +2934,8 @@ steven7851 &lt;steven7851@msn.com&gt; (1):
       plugins.douyutv: fix room id regex (#514)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-3-0-2017-01-24">
+</section>
+<section id="streamlink-0-3-0-2017-01-24">
 <h2>streamlink 0.3.0 (2017-01-24)<a class="headerlink" href="#streamlink-0-3-0-2017-01-24" title="Permalink to this headline">¶</a></h2>
 <p>Release 0.3.0 of Streamlink!</p>
 <p>A lot of updates to each plugin (thank you <a class="reference external" href="https://github.com/beardypig">@beardypig</a> !), automated Windows releases, PEP8 formatting throughout Streamlink are some of the few updates to this release as we near a stable 1.0.0 release.</p>
@@ -3001,8 +3056,8 @@ stepshal &lt;stepshal@users.noreply.github.com&gt; (2):
       PEP8 (#414)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-2-0-2016-12-16">
+</section>
+<section id="streamlink-0-2-0-2016-12-16">
 <h2>streamlink 0.2.0 (2016-12-16)<a class="headerlink" href="#streamlink-0-2-0-2016-12-16" title="Permalink to this headline">¶</a></h2>
 <p>Release 0.2.0 of Streamlink!</p>
 <p>We’ve done numerous changes to plugins as well as fixed quite a few
@@ -3089,8 +3144,8 @@ thatlinuxfur &lt;toss1@zootboy.com&gt; (1):
       Added tigerdile.com support. (#221)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-1-0-2016-11-21">
+</section>
+<section id="streamlink-0-1-0-2016-11-21">
 <h2>streamlink 0.1.0 (2016-11-21)<a class="headerlink" href="#streamlink-0-1-0-2016-11-21" title="Permalink to this headline">¶</a></h2>
 <p>A major update to Streamlink.</p>
 <p>With this release, we include a Windows binary as well as numerous
@@ -3181,8 +3236,8 @@ tam1m &lt;tam1m@users.noreply.github.com&gt; (1):
       Fix zdf_mediathek TypeError (#156)
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-0-2-2016-10-12">
+</section>
+<section id="streamlink-0-0-2-2016-10-12">
 <h2>streamlink 0.0.2 (2016-10-12)<a class="headerlink" href="#streamlink-0-0-2-2016-10-12" title="Permalink to this headline">¶</a></h2>
 <p>The second ever release of Streamlink!</p>
 <p>In this release we’ve not only set the stepping stone for the further
@@ -3260,8 +3315,8 @@ steven7851 &lt;steven7851@msn.com&gt; (1):
       Update plugin.douyutv
 </pre></div>
 </div>
-</div>
-<div class="section" id="streamlink-0-0-1-2016-09-23">
+</section>
+<section id="streamlink-0-0-1-2016-09-23">
 <h2>streamlink 0.0.1 (2016-09-23)<a class="headerlink" href="#streamlink-0-0-1-2016-09-23" title="Permalink to this headline">¶</a></h2>
 <p>The first release of Streamlink!</p>
 <p>This is the first release from the initial fork of Livestreamer. We aim
@@ -3561,11 +3616,12 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
       fix video_player error
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
-      </article>
+        </article>
+      </div>
       <footer>
         
         <div class="related-pages">
@@ -3592,8 +3648,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Streamlink
-            |
+              Copyright &#169; 2021, Streamlink |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -3663,7 +3718,11 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
       
       
     </aside>
-  </main>
-</div>
-  </body>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/main.js"></script>
+    </body>
 </html>
