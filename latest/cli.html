@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Command-Line Interface - Streamlink 2.4.0+88.gce60a55 documentation</title>
+        <title>Command-Line Interface - Streamlink 2.4.0+89.g0cc2046 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.4.0+88.gce60a55 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.4.0+89.g0cc2046 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.4.0+88.gce60a55</pre>
+  <pre class="sidebar-versions-current">2.4.0+89.g0cc2046</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -568,14 +568,15 @@ The following example shows HLS streams (<code class="docutils literal notransla
 </div>
 <p>When passing parameters to the built-in streaming protocols, the values will either be treated as plain strings
 or they will be interpreted as Python literals:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"httpstream://https://streamingserver/path params={'abc':123} json=['foo','bar','baz']"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"httpstream://https://streamingserver/path method=POST params={'abc':123} json=['foo','bar','baz']"</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"key"</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="o">=</span><span class="s2">"POST"</span>
+<span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"key"</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
 <span class="n">json</span><span class="o">=</span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">,</span> <span class="s2">"baz"</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The parameters from the example above are used to make an HTTP <code class="docutils literal notranslate"><span class="pre">GET</span></code> request with <code class="docutils literal notranslate"><span class="pre">abc=123</span></code> added
+<p>The parameters from the example above are used to make an HTTP <code class="docutils literal notranslate"><span class="pre">POST</span></code> request with <code class="docutils literal notranslate"><span class="pre">abc=123</span></code> added
 to the query string and <code class="docutils literal notranslate"><span class="pre">["foo",</span> <span class="pre">"bar",</span> <span class="pre">"baz"]</span></code> used as the content of the HTTP request's body (the serialized JSON data).</p>
 <p>Some parameters allow you to configure the behavior of the streaming protocol implementation directly:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"hls://https://streamingserver/path start_offset=123 duration=321 force_restart=True"</span>
