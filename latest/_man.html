@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Streamlink - Streamlink 2.4.0+86.g46817a1 documentation</title>
+        <title>Streamlink - Streamlink 2.4.0+87.ga7063e1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.4.0+86.g46817a1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.4.0+87.ga7063e1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.4.0+86.g46817a1</pre>
+  <pre class="sidebar-versions-current">2.4.0+87.ga7063e1</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/_man.html" class="">Stable</a></dd>
     <dd><a href="/latest/_man.html" class="version-current">Latest</a></dd>
@@ -524,7 +524,6 @@ let it handle the transport of the stream instead.</p>
 <ul class="simple">
 <li><p>hls</p></li>
 <li><p>http</p></li>
-<li><p>rtmp</p></li>
 </ul>
 <p>Make sure your player can handle the stream type when using this.</p>
 </dd></dl>
@@ -731,7 +730,7 @@ giving up.</p>
 streams with the same name but different stream types. Any stream type
 not listed will be omitted from the available streams list.  A <code class="docutils literal notranslate"><span class="pre">*</span></code> can
 be used as a wildcard to match any other type of stream, eg. muxed-stream.</p>
-<p>Default is: <strong>"rtmp,hls,http,*"</strong>.</p>
+<p>Default is: <strong>"hls,http,*"</strong>.</p>
 </dd></dl>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-stream-sorting-excludes">
@@ -802,7 +801,7 @@ some extra processing to avoid unnecessary background processing.</p>
 <dt class="sig sig-object std" id="cmdoption-stream-timeout">
 <span class="sig-name descname"><span class="pre">--stream-timeout</span></span><span class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></span><a class="headerlink" href="#cmdoption-stream-timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Timeout for reading data from streams.</p>
-<p>This applies to all different kinds of stream types, such as DASH, HLS, HTTP, RTMP, etc.</p>
+<p>This applies to all different kinds of stream types, such as DASH, HLS, HTTP, etc.</p>
 <p>Default is: <strong>60.0</strong>.</p>
 </dd></dl>
 <dl class="std option">
@@ -917,45 +916,6 @@ nearest HLS segment.</p>
 <dt class="sig sig-object std" id="cmdoption-hls-live-restart">
 <span class="sig-name descname"><span class="pre">--hls-live-restart</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-hls-live-restart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Skip to the beginning of a live stream, or as far back as possible.</p>
-</dd></dl>
-</section>
-<section id="rtmp-options">
-<h3>RTMP options<a class="headerlink" href="#rtmp-options" title="Permalink to this headline">¶</a></h3>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-rtmp-rtmpdump">
-<span class="sig-name descname"><span class="pre">--rtmp-rtmpdump</span></span><span class="sig-prename descclassname"> <span class="pre">FILENAME</span></span><a class="headerlink" href="#cmdoption-rtmp-rtmpdump" title="Permalink to this definition">¶</a></dt>
-<dd><p>RTMPDump is used to access RTMP streams. You can specify the
-location of the rtmpdump executable if it is not in your PATH.</p>
-<p>Example: "/usr/local/bin/rtmpdump"</p>
-</dd></dl>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-rtmp-proxy">
-<span class="sig-name descname"><span class="pre">--rtmp-proxy</span></span><span class="sig-prename descclassname"> <span class="pre">PROXY</span></span><a class="headerlink" href="#cmdoption-rtmp-proxy" title="Permalink to this definition">¶</a></dt>
-<dd><p>A SOCKS proxy that RTMP streams will use.</p>
-<p>Example: 127.0.0.1:9050</p>
-</dd></dl>
-</section>
-<section id="subprocess-options">
-<h3>Subprocess options<a class="headerlink" href="#subprocess-options" title="Permalink to this headline">¶</a></h3>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-subprocess-cmdline">
-<span class="sig-name descname"><span class="pre">--subprocess-cmdline</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-subprocess-cmdline" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print the command-line used internally to play the stream.</p>
-<p>This is only available on RTMP streams.</p>
-</dd></dl>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-subprocess-errorlog">
-<span class="sig-name descname"><span class="pre">--subprocess-errorlog</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-subprocess-errorlog" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log possible errors from internal subprocesses to a temporary file. The
-file will be saved in your systems temporary directory.</p>
-<p>Useful when debugging rtmpdump related issues.</p>
-</dd></dl>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-subprocess-errorlog-path">
-<span class="sig-name descname"><span class="pre">--subprocess-errorlog-path</span></span><span class="sig-prename descclassname"> <span class="pre">PATH</span></span><a class="headerlink" href="#cmdoption-subprocess-errorlog-path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log the subprocess errorlog to a specific file rather than a temporary
-file. Takes precedence over subprocess-errorlog.</p>
-<p>Useful when debugging rtmpdump related issues.</p>
 </dd></dl>
 </section>
 <section id="ffmpeg-options">
@@ -1507,8 +1467,6 @@ the following types are allowed:</p>
 <li><a class="reference internal" href="#stream-options">Stream options</a></li>
 <li><a class="reference internal" href="#stream-transport-options">Stream transport options</a><ul>
 <li><a class="reference internal" href="#hls-options">HLS options</a></li>
-<li><a class="reference internal" href="#rtmp-options">RTMP options</a></li>
-<li><a class="reference internal" href="#subprocess-options">Subprocess options</a></li>
 <li><a class="reference internal" href="#ffmpeg-options">FFmpeg options</a></li>
 </ul>
 </li>

@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Command-Line Interface - Streamlink 2.4.0+86.g46817a1 documentation</title>
+        <title>Command-Line Interface - Streamlink 2.4.0+87.ga7063e1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.4.0+86.g46817a1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.4.0+87.ga7063e1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.4.0+86.g46817a1</pre>
+  <pre class="sidebar-versions-current">2.4.0+87.ga7063e1</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -555,34 +555,30 @@ information on browser cookies, please consult the following:</p>
 Streamlink supports most of them. It's possible to tell Streamlink
 to access a streaming protocol directly instead of relying on a plugin
 to extract the streams from a URL for you.</p>
-<p>A protocol can be accessed directly by specifying it in the URL format:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">protocol</span><span class="p">:</span><span class="o">//</span><span class="n">path</span> <span class="p">[</span><span class="n">key</span><span class="o">=</span><span class="n">value</span><span class="p">]</span>
+<p>A streaming protocol can be accessed directly by specifying it in the <code class="docutils literal notranslate"><span class="pre">protocol://URL</span></code> format
+with an optional list of parameters, like so:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"protocol://https://streamingserver/path key1=value1 key2=value2"</span>
 </pre></div>
 </div>
-<p>Accessing a stream that requires extra parameters to be passed along
-(e.g. RTMP):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"rtmp://streaming.server.net/playpath live=1 swfVfy=http://server.net/flashplayer.swf"</span>
+<p>Depending on the input URL, the explicit protocol scheme may be omitted.
+The following example shows HLS streams (<code class="docutils literal notranslate"><span class="pre">.m3u8</span></code>) and DASH streams (<code class="docutils literal notranslate"><span class="pre">.mdp</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"https://streamingserver/playlist.m3u8"</span>
+<span class="gp">$ </span>streamlink <span class="s2">"https://streamingserver/manifest.mpd"</span>
 </pre></div>
 </div>
-<p>When passing parameters to the built-in stream plugins, the values will either
-be treated as plain strings, as is the case in the example above for <code class="docutils literal notranslate"><span class="pre">swfVry</span></code>,
-or they will be interpreted as Python literals. For example, you can pass a
-Python dict or Python list as one of the parameters.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"rtmp://streaming.server.net/playpath conn=['B:1', 'S:authMe', 'O:1', 'NN:code:1.23', 'NS:flag:ok', 'O:0']"</span>
-<span class="gp">$ </span>streamlink <span class="s2">"hls://streaming.server.net/playpath params={'token': 'magicToken'}"</span>
+<p>When passing parameters to the built-in streaming protocols, the values will either be treated as plain strings
+or they will be interpreted as Python literals:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"httpstream://https://streamingserver/path params={'abc':123} json=['foo','bar','baz']"</span>
 </pre></div>
 </div>
-<p>In the examples above, <code class="docutils literal notranslate"><span class="pre">conn</span></code> will be passed as a Python list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">'B:1'</span><span class="p">,</span> <span class="s1">'S:authMe'</span><span class="p">,</span> <span class="s1">'O:1'</span><span class="p">,</span> <span class="s1">'NN:code:1.23'</span><span class="p">,</span> <span class="s1">'NS:flag:ok'</span><span class="p">,</span> <span class="s1">'O:0'</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"key"</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
+<span class="n">json</span><span class="o">=</span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">,</span> <span class="s2">"baz"</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>and <code class="docutils literal notranslate"><span class="pre">params</span></code> will be passed as a Python dict:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">'token'</span><span class="p">:</span> <span class="s1">'magicToken'</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>Most streaming protocols only require you to pass a simple URL.
-This is an HLS stream:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink hls://https://streaming.server.net/playlist.m3u8
+<p>The parameters from the example above are used to make an HTTP <code class="docutils literal notranslate"><span class="pre">GET</span></code> request with <code class="docutils literal notranslate"><span class="pre">abc=123</span></code> added
+to the query string and <code class="docutils literal notranslate"><span class="pre">["foo",</span> <span class="pre">"bar",</span> <span class="pre">"baz"]</span></code> used as the content of the HTTP request's body (the serialized JSON data).</p>
+<p>Some parameters allow you to configure the behavior of the streaming protocol implementation directly:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"hls://https://streamingserver/path start_offset=123 duration=321 force_restart=True"</span>
 </pre></div>
 </div>
 <section id="supported-streaming-protocols">
@@ -604,10 +600,7 @@ This is an HLS stream:</p>
 <tr class="row-odd"><td><p>MPEG-DASH <a class="footnote-reference brackets" href="#id5" id="id2">2</a></p></td>
 <td><p>dash://</p></td>
 </tr>
-<tr class="row-even"><td><p>Real Time Messaging Protocol</p></td>
-<td><p>rtmp:// rtmpe:// rtmps:// rtmpt:// rtmpte://</p></td>
-</tr>
-<tr class="row-odd"><td><p>Progressive HTTP, HTTPS, etc</p></td>
+<tr class="row-even"><td><p>Progressive HTTP, HTTPS, etc</p></td>
 <td><p>httpstream:// <a class="footnote-reference brackets" href="#id4" id="id3">1</a></p></td>
 </tr>
 </tbody>
@@ -925,7 +918,6 @@ let it handle the transport of the stream instead.</p>
 <ul class="simple">
 <li><p>hls</p></li>
 <li><p>http</p></li>
-<li><p>rtmp</p></li>
 </ul>
 <p>Make sure your player can handle the stream type when using this.</p>
 </dd></dl>
@@ -1132,7 +1124,7 @@ giving up.</p>
 streams with the same name but different stream types. Any stream type
 not listed will be omitted from the available streams list.  A <code class="docutils literal notranslate"><span class="pre">*</span></code> can
 be used as a wildcard to match any other type of stream, eg. muxed-stream.</p>
-<p>Default is: <strong>"rtmp,hls,http,*"</strong>.</p>
+<p>Default is: <strong>"hls,http,*"</strong>.</p>
 </dd></dl>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-stream-sorting-excludes">
@@ -1203,7 +1195,7 @@ some extra processing to avoid unnecessary background processing.</p>
 <dt class="sig sig-object std" id="cmdoption-stream-timeout">
 <span class="sig-name descname"><span class="pre">--stream-timeout</span></span><span class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></span><a class="headerlink" href="#cmdoption-stream-timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Timeout for reading data from streams.</p>
-<p>This applies to all different kinds of stream types, such as DASH, HLS, HTTP, RTMP, etc.</p>
+<p>This applies to all different kinds of stream types, such as DASH, HLS, HTTP, etc.</p>
 <p>Default is: <strong>60.0</strong>.</p>
 </dd></dl>
 <dl class="std option">
@@ -1318,45 +1310,6 @@ nearest HLS segment.</p>
 <dt class="sig sig-object std" id="cmdoption-hls-live-restart">
 <span class="sig-name descname"><span class="pre">--hls-live-restart</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-hls-live-restart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Skip to the beginning of a live stream, or as far back as possible.</p>
-</dd></dl>
-</section>
-<section id="rtmp-options">
-<h4>RTMP options<a class="headerlink" href="#rtmp-options" title="Permalink to this headline">¶</a></h4>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-rtmp-rtmpdump">
-<span class="sig-name descname"><span class="pre">--rtmp-rtmpdump</span></span><span class="sig-prename descclassname"> <span class="pre">FILENAME</span></span><a class="headerlink" href="#cmdoption-rtmp-rtmpdump" title="Permalink to this definition">¶</a></dt>
-<dd><p>RTMPDump is used to access RTMP streams. You can specify the
-location of the rtmpdump executable if it is not in your PATH.</p>
-<p>Example: "/usr/local/bin/rtmpdump"</p>
-</dd></dl>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-rtmp-proxy">
-<span class="sig-name descname"><span class="pre">--rtmp-proxy</span></span><span class="sig-prename descclassname"> <span class="pre">PROXY</span></span><a class="headerlink" href="#cmdoption-rtmp-proxy" title="Permalink to this definition">¶</a></dt>
-<dd><p>A SOCKS proxy that RTMP streams will use.</p>
-<p>Example: 127.0.0.1:9050</p>
-</dd></dl>
-</section>
-<section id="subprocess-options">
-<h4>Subprocess options<a class="headerlink" href="#subprocess-options" title="Permalink to this headline">¶</a></h4>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-subprocess-cmdline">
-<span class="sig-name descname"><span class="pre">--subprocess-cmdline</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-subprocess-cmdline" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print the command-line used internally to play the stream.</p>
-<p>This is only available on RTMP streams.</p>
-</dd></dl>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-subprocess-errorlog">
-<span class="sig-name descname"><span class="pre">--subprocess-errorlog</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-subprocess-errorlog" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log possible errors from internal subprocesses to a temporary file. The
-file will be saved in your systems temporary directory.</p>
-<p>Useful when debugging rtmpdump related issues.</p>
-</dd></dl>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-subprocess-errorlog-path">
-<span class="sig-name descname"><span class="pre">--subprocess-errorlog-path</span></span><span class="sig-prename descclassname"> <span class="pre">PATH</span></span><a class="headerlink" href="#cmdoption-subprocess-errorlog-path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log the subprocess errorlog to a specific file rather than a temporary
-file. Takes precedence over subprocess-errorlog.</p>
-<p>Useful when debugging rtmpdump related issues.</p>
 </dd></dl>
 </section>
 <section id="ffmpeg-options">
@@ -1946,8 +1899,6 @@ the following types are allowed:</p>
 <li><a class="reference internal" href="#stream-options">Stream options</a></li>
 <li><a class="reference internal" href="#stream-transport-options">Stream transport options</a><ul>
 <li><a class="reference internal" href="#hls-options">HLS options</a></li>
-<li><a class="reference internal" href="#rtmp-options">RTMP options</a></li>
-<li><a class="reference internal" href="#subprocess-options">Subprocess options</a></li>
 <li><a class="reference internal" href="#ffmpeg-options">FFmpeg options</a></li>
 </ul>
 </li>

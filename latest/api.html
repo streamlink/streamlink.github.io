@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Reference - Streamlink 2.4.0+86.g46817a1 documentation</title>
+        <title>API Reference - Streamlink 2.4.0+87.ga7063e1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.4.0+86.g46817a1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 2.4.0+87.ga7063e1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.4.0+86.g46817a1</pre>
+  <pre class="sidebar-versions-current">2.4.0+87.ga7063e1</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="">Stable</a></dd>
     <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
@@ -406,27 +406,10 @@ can be either a .pem file (str) or a
 requests except the ones covered by
 other options, default: <code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>subprocess-errorlog</p></td>
-<td><p>(bool) Log errors from subprocesses to
-a file located in the temp directory</p></td>
-</tr>
-<tr class="row-odd"><td><p>subprocess-errorlog-path</p></td>
-<td><p>(str) Log errors from subprocesses to
-a specific file</p></td>
-</tr>
 <tr class="row-even"><td><p>ringbuffer-size</p></td>
 <td><p>(int) The size of the internal ring
 buffer used by most stream types,
 default: <code class="docutils literal notranslate"><span class="pre">16777216</span></code> (16MB)</p></td>
-</tr>
-<tr class="row-odd"><td><p>rtmp-proxy</p></td>
-<td><p>(str) Specify a proxy (SOCKS) that RTMP
-streams will use</p></td>
-</tr>
-<tr class="row-even"><td><p>rtmp-rtmpdump</p></td>
-<td><p>(str) Specify the location of the
-rtmpdump executable used by RTMP streams,
-e.g. <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/rtmpdump</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>ffmpeg-ffmpeg</p></td>
 <td><p>(str) Specify the location of the
@@ -742,22 +725,6 @@ to <code class="xref py py-meth docutils literal notranslate"><span class="pre">
 <dl class="py method">
 <dt class="sig sig-object py" id="streamlink.stream.HTTPStream.open">
 <span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HTTPStream.open" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attempts to open a connection to the stream.
-Returns a file-like object that can be used to read the stream data.</p>
-<p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
-</dd></dl>
-</dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.stream.RTMPStream">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">RTMPStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.RTMPStream" title="Permalink to this definition">¶</a></dt>
-<dd><p>RTMP stream using rtmpdump.</p>
-<p><em>Attributes:</em></p>
-<ul class="simple">
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">params</span></code> A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> containing parameters passed to rtmpdump</p></li>
-</ul>
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.stream.RTMPStream.open">
-<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.RTMPStream.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to open a connection to the stream.
 Returns a file-like object that can be used to read the stream data.</p>
 <p>Raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> on failure.</p>
