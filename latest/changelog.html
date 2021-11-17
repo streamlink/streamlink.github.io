@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 2.4.0+93.g2eb9689 documentation</title>
+        <title>Changelog - Streamlink 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 2.4.0+93.g2eb9689 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 3.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,10 +160,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">2.4.0+93.g2eb9689</pre>
+  <pre class="sidebar-versions-current">3.0.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -223,12 +223,164 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<section id="streamlink-3-0-0-2021-11-17">
+<h2>streamlink 3.0.0 (2021-11-17)<a class="headerlink" href="#streamlink-3-0-0-2021-11-17" title="Permalink to this headline">¶</a></h2>
+<p>Breaking changes:</p>
+<ul class="simple">
+<li><p>BREAKING: dropped support for RTMP, HDS and AkamaiHD streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4169"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4169">#4169</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4168"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4168">#4168</a></a>)</p>
+<ul>
+<li><p>removed the <code class="docutils literal notranslate"><span class="pre">rtmp://</span></code>, <code class="docutils literal notranslate"><span class="pre">hds://</span></code> and <code class="docutils literal notranslate"><span class="pre">akamaihd://</span></code> protocol plugins</p></li>
+<li><p>removed all Flash related code</p></li>
+<li><p>upgraded all plugins using these old streaming protocols</p></li>
+<li><p>dropped RTMPDump dependency</p></li>
+</ul>
+</li>
+<li><p>BREAKING: removed the following CLI arguments (and respective session options): (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4169"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4169">#4169</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4168"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4168">#4168</a></a>)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--rtmp-rtmpdump</span></code>, <code class="docutils literal notranslate"><span class="pre">--rtmpdump</span></code>, <code class="docutils literal notranslate"><span class="pre">--rtmp-proxy</span></code>, <code class="docutils literal notranslate"><span class="pre">--rtmp-timeout</span></code><br/>Users of Streamlink’s Windows installer will need to update their <a class="reference external" href="https://streamlink.github.io/cli.html#configuration-file">config file</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--subprocess-cmdline</span></code>, <code class="docutils literal notranslate"><span class="pre">--subprocess-errorlog</span></code>, <code class="docutils literal notranslate"><span class="pre">--subprocess-errorlog-path</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hds-live-edge</span></code>, <code class="docutils literal notranslate"><span class="pre">--hds-segment-attempts</span></code>, <code class="docutils literal notranslate"><span class="pre">--hds-segment-threads</span></code>, <code class="docutils literal notranslate"><span class="pre">--hds-segment-timeout</span></code>, <code class="docutils literal notranslate"><span class="pre">--hds-timeout</span></code></p></li>
+</ul>
+</li>
+<li><p>BREAKING: switched from HTTP to HTTPS for all kinds of scheme-less input URLs. If a site or http-proxy doesn’t support HTTPS, then HTTP needs to be set explicitly. (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4068"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4068">#4068</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4053"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4053">#4053</a></a>)</p></li>
+<li><p>BREAKING/API: changed <code class="docutils literal notranslate"><span class="pre">Session.resolve_url()</span></code> and <code class="docutils literal notranslate"><span class="pre">Session.resolve_url_no_redirect()</span></code> to return a tuple of a plugin class and the resolved URL instead of an initialized plugin class instance. This fixes the availability of plugin options in a plugin’s constructor. (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4163"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4163">#4163</a></a>)</p></li>
+<li><p>BREAKING/requirements: dropped alternative dependency <code class="docutils literal notranslate"><span class="pre">pycrypto</span></code> and removed the <code class="docutils literal notranslate"><span class="pre">STREAMLINK_USE_PYCRYPTO</span></code> env var switch (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4174"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4174">#4174</a></a>)</p></li>
+<li><p>BREAKING/requirements: switched from <code class="docutils literal notranslate"><span class="pre">iso-639</span></code>+<code class="docutils literal notranslate"><span class="pre">iso3166</span></code> to <code class="docutils literal notranslate"><span class="pre">pycountry</span></code> and removed the <code class="docutils literal notranslate"><span class="pre">STREAMLINK_USE_PYCOUNTRY</span></code> env var switch (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4175"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4175">#4175</a></a>)</p></li>
+<li><p>BREAKING/setup: disabled unsupported Python versions, disabled the deprecated <code class="docutils literal notranslate"><span class="pre">test</span></code> setuptools command, removed the <code class="docutils literal notranslate"><span class="pre">NO_DEPS</span></code> env var, and switched to declarative package data via <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4079"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4079">#4079</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4107"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4107">#4107</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4115"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4115">#4115</a></a> <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4113"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4113">#4113</a></a>)</p></li>
+</ul>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Deprecated: <code class="docutils literal notranslate"><span class="pre">--https-proxy</span></code> in favor of a single <code class="docutils literal notranslate"><span class="pre">--http-proxy</span></code> CLI argument (and respective session option). Both now set the same proxy for all HTTPS/HTTP requests and websocket connections. <a class="reference external" href="https://streamlink.github.io/deprecations.html#streamlink-3-0-0"><code class="docutils literal notranslate"><span class="pre">--https-proxy</span></code> will be removed in a future release.</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4120"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4120">#4120</a></a>)</p></li>
+<li><p>Added: official support for Python 3.10 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4144"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4144">#4144</a></a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--twitch-api-header</span></code> for only setting Twitch.tv API requests headers (for authentication, etc.) as an alternative to <code class="docutils literal notranslate"><span class="pre">--http-header</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4156"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4156">#4156</a></a>)</p></li>
+<li><p>Added: BASH and ZSH completions to sdist tarball and wheels. (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4048"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4048">#4048</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4178"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4178">#4178</a></a>)</p></li>
+<li><p>Added: support for creating parent directories via metadata variables in file output paths (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4085"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4085">#4085</a></a>)</p></li>
+<li><p>Added: new WebsocketClient implementation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4153"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4153">#4153</a></a>)</p></li>
+<li><p>Updated: plugins using websocket connections - nicolive, ustreamtv, twitcasting (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4155"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4155">#4155</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4164"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4164">#4164</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4154"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4154">#4154</a></a>)</p></li>
+<li><p>Updated: circumvention for YouTube’s age verification (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4058"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4058">#4058</a></a>)</p></li>
+<li><p>Updated: and fixed lots of other plugins, see the detailed changelog below</p></li>
+<li><p>Reverted: HLS segment downloads always being streamed, and added back <code class="docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code> to prevent connection issues (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4159"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4159">#4159</a></a>)</p></li>
+<li><p>Fixed: URL percent-encoding for sites which require the lowercase format (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4003"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4003">#4003</a></a>)</p></li>
+<li><p>Fixed: XML parsing issues (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4075"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4075">#4075</a></a>)</p></li>
+<li><p>Fixed: broken <code class="docutils literal notranslate"><span class="pre">method</span></code> parameter when using the <code class="docutils literal notranslate"><span class="pre">httpstream://</span></code> protocol plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4171"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4171">#4171</a></a>)</p></li>
+<li><p>Fixed: test failures when the <code class="docutils literal notranslate"><span class="pre">brotli</span></code> package is installed (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4022"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4022">#4022</a></a>)</p></li>
+<li><p>Requirements: bumped <code class="docutils literal notranslate"><span class="pre">lxml</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;4.6.4,&lt;5.0</span></code> and <code class="docutils literal notranslate"><span class="pre">websocket-client</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=1.2.1,&lt;2.0</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4143"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4143">#4143</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4153"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4153">#4153</a></a>)</p></li>
+<li><p>Windows installer: upgraded Python to <code class="docutils literal notranslate"><span class="pre">3.9.8</span></code> and FFmpeg to <code class="docutils literal notranslate"><span class="pre">n4.4.1</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4176"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4176">#4176</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4124"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4124">#4124</a></a>)</p></li>
+<li><p>Documentation: upgraded to first stable version of the Furo theme (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4000"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4000">#4000</a></a>)</p></li>
+<li><p>New plugins: pandalive (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4064"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4064">#4064</a></a>)</p></li>
+<li><p>Removed plugins: tga (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4129"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4129">#4129</a></a>), viasat (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4087"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4087">#4087</a></a>), viutv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4018"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4018">#4018</a></a>), webcast_india_gov (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4024"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4024">#4024</a></a>)</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (4):
+      plugins.bbciplayer: remove HDSStream, upgrade scheme (#4041)
+      plugins.pandalive: new plugin
+      plugins.facebook: update onion address
+      plugins.picarto: update URL regex and logic
+
+MinePlayersPE &lt;mineplayerspealt@gmail.com&gt; (1):
+      plugins.youtube: better API age-gate bypassing (#4058)
+
+back-to &lt;backto@protonmail.ch&gt; (14):
+      ci: temporary windows python 3.10 fix for missing `lxml 4.6.3` wheel
+      stream.hls: Fix error msg for 'Unable to decrypt cipher ...'
+      plugins.viutv: removed
+      plugins.webcast_india_gov: removed
+      plugins.oneplusone: cleanup and add auto session reload (#4049)
+      plugins.showroom: cleanup (#4065)
+      plugins.tv999: use parse_html
+      plugins.ssh101: use parse_html
+      plugins.app17: remove RTMPStream, cleanup
+      plugins.viasat: removed
+      plugins.twitch: add device-id headers (#4086)
+      plugin.api: update useragents
+      plugins.twitch: new plugin command --twitch-api-header
+      plugins.goltelevision: fix api url and update plugin url
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (70):
+      docs: fix CLI argument example in manpage
+      docs: bump furo docs req to 2021.09.08
+      http_session: override urllib3 percent-encoding
+      installer: upgrade python from 3.9.6 to 3.9.7
+      tests: fix typo in pytest skipif marker
+      tests: fix deprecated module imports on py310
+      plugins.ardlive: rewrite plugin
+      utils: replace LazyFormatter with new Formatter
+      utils: move all URL methods to utils.url
+      tests: fix Accept-Encoding headers in stream_json
+      plugins.pluzz: rewrite plugin
+      plugins: clean up imports of parse_* utils
+      utils: split into submodules and fix imports
+      plugins.artetv: rewrite plugin using v2 API
+      plugins.bloomberg: rewrite plugin
+      stream: clean up imports
+      tests: move tests/streams to tests/stream
+      plugins.earthcam: rewrite plugin, remove rtmp
+      build: include bash and zsh completions in wheels
+      plugins.picarto: fix HLS URL hostname
+      utils.url: make update_scheme always update target
+      plugins: fix update_scheme calls
+      plugins.bfmtv: rewrite plugin using XPath
+      plugins.youtube: replace itertags with XPath
+      tests: fix partial coverage in can_handle_url
+      session: don't override https-proxy scheme
+      session: move from http to https as default scheme
+      plugins.brightcove: rewrite plugin
+      ci.github: add regular py310 test runners
+      utils.parse: fix ignore_ns in parse_xml
+      script: fix update-removed-plugins bash script
+      plugins.tv5monde: remove plugin
+      plugins.tv5monde: re-implement plugin
+      setup: show error on older python versions
+      cli: refactor FileOutput and Formatter
+      plugin.api: remove StreamMapper
+      plugins.okru: rewrite plugin, drop RTMP
+      ci.github: switch to codecov-action@v2
+      setup: disable test command
+      docs: fix Solus package link
+      plugins.twitch: remove device-id headers
+      installer: remove unneeded 3rd party license texts
+      setup: switch to declarative package metadata
+      setup: remove NO_DEPS env var
+      plugin: trim metadata strings
+      plugins.brightcove: add more HLS source types
+      installer: bump ffmpeg to n4.4.1
+      plugins.tga: remove plugin
+      vendor: bump lxml to &gt;4.6.4,&lt;5.0
+      setup: add Python 3.10 to classifiers list
+      ci.github: check for unicode bidi control chars
+      installer: bump lxml to 4.6.4
+      logger: fix warning import and trace export
+      plugin.api: implement WebsocketClient
+      plugins.twitcasting: re-implement websocket client
+      plugins.nicolive: re-implement plugin
+      revert: stream.hls: remove hls-segment-stream-data option
+      plugin.api.websocket: add reconnect method
+      plugins.ustreamtv: re-implement plugin
+      session.resolve_url: return plugin class + URL
+      cli.main: add plugin type annotations
+      plugins.twitch: refactor api-headers
+      streams: remove HDS/AkamaiHD and flashmedia pkg
+      stream: remove RTMP and RTMPDump dependency
+      plugins.rtmp: add to removed plugins list
+      stream.http: fix custom method argument
+      setup: drop pycrypto support
+      setup: drop iso-639/iso3166, default to pycountry
+      installer: upgrade python from 3.9.7 to 3.9.8
+      setup: include shell completions in sdist
+
+beardypig &lt;beardypig@protonmail.com&gt; (2):
+      cli: deprecate the --https-proxy option as well as the Session options
+      plugins.ltv_lsm_lv: update the plugin for the new page layout
+
+nnrm &lt;91910832+nnrm@users.noreply.github.com&gt; (1):
+      plugins.nicolive: add support for community urls
+
+vinyl-umbrella &lt;61788251+vinyl-umbrella@users.noreply.github.com&gt; (1):
+      plugins.openrectv: be able to get subscription video (#4130)
+</pre></div>
+</div>
+</section>
 <section id="streamlink-2-4-0-2021-09-07">
 <h2>streamlink 2.4.0 (2021-09-07)<a class="headerlink" href="#streamlink-2-4-0-2021-09-07" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
@@ -3670,6 +3822,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-3-0-0-2021-11-17">streamlink 3.0.0 (2021-11-17)</a></li>
 <li><a class="reference internal" href="#streamlink-2-4-0-2021-09-07">streamlink 2.4.0 (2021-09-07)</a></li>
 <li><a class="reference internal" href="#streamlink-2-3-0-2021-07-26">streamlink 2.3.0 (2021-07-26)</a></li>
 <li><a class="reference internal" href="#streamlink-2-2-0-2021-06-19">streamlink 2.2.0 (2021-06-19)</a></li>
