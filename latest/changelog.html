@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 3.0.1+16.gad9ab21 documentation</title>
+        <title>Changelog - Streamlink 3.0.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 3.0.1+16.gad9ab21 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 3.0.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,10 +160,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.0.1+16.gad9ab21</pre>
+  <pre class="sidebar-versions-current">3.0.2</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -223,19 +223,51 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<section id="streamlink-3-0-2-2021-11-25">
+<h2>streamlink 3.0.2 (2021-11-25)<a class="headerlink" href="#streamlink-3-0-2-2021-11-25" title="Permalink to this headline">¶</a></h2>
+<p>Patch release:</p>
+<ul class="simple">
+<li><p>Added: support for the <code class="docutils literal notranslate"><span class="pre">id</span></code> plugin metadata property (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4203"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4203">#4203</a></a>)</p></li>
+<li><p>Updated: Twitch access token request parameter regarding embedded ads (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4194"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4194">#4194</a></a>)</p></li>
+<li><p>Fixed: early <code class="docutils literal notranslate"><span class="pre">SIGINT</span></code>/<code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code> signal handling (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4190"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4190">#4190</a></a>)</p></li>
+<li><p>Fixed: broken character set decoding when parsing HTML documents (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4201"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4201">#4201</a></a>)</p></li>
+<li><p>Fixed: missing home directory expansion (tilde character) in file output paths (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4204"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4204">#4204</a></a>)</p></li>
+<li><p>New plugin: tviplayer (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4199"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4199">#4199</a></a>)</p></li>
+</ul>
+<p>Please see the <a class="reference external" href="https://streamlink.github.io/changelog.html#streamlink-3-0-0-2021-11-17">changelog of 3.0.0</a>, as it contains breaking changes that may require user interaction.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>back-to &lt;backto@protonmail.ch&gt; (1):
+      plugins.tviplayer: new plugin
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (14):
+      cli: override default signal handlers
+      chore: add GH gist link to issue templates
+      plugins.twitch: set playerType back to embed
+      plugins.twitch: add type annotations
+      plugins.twitch: avg duration for prefetch segments
+      plugins.ard_mediathek: rewrite plugin
+      utils.parse: fix encoding in parse_html
+      plugins.ard_mediathek: fix plugin
+      cli: expand user in file output paths
+      cli.output: remove MPV title variable escape logic
+      plugin: add 'id' metadata property
+      plugins.youtube: add 'id' metadata
+      plugins.twitch: add 'id' metadata
+      docs: add dedicated metadata variables section
+
+kyldery &lt;kyldery@protonmail.com&gt; (1):
+      plugins.crunchyroll: add metadata attributes (#4185)
+</pre></div>
+</div>
+</section>
 <section id="streamlink-3-0-1-2021-11-17">
 <h2>streamlink 3.0.1 (2021-11-17)<a class="headerlink" href="#streamlink-3-0-1-2021-11-17" title="Permalink to this headline">¶</a></h2>
 <p>Patch release:</p>
 <ul class="simple">
 <li><p>Fixed: broken pycountry import in Windows installer’s Python environment (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4180"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4180">#4180</a></a>)</p></li>
 </ul>
-<p>Please see the <a class="reference external" href="https://streamlink.github.io/changelog.html#streamlink-3-0-0-2021-11-17">changelog of 3.0.0</a> for all the breaking and regular changes of this major release.</p>
+<p>Please see the <a class="reference external" href="https://streamlink.github.io/changelog.html#streamlink-3-0-0-2021-11-17">changelog of 3.0.0</a>, as it contains breaking changes that may require user interaction.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bastimeyer &lt;mail@bastimeyer.de&gt; (1):
       installer: rewrite wheels config, fix pycountry
 </pre></div>
@@ -264,7 +296,7 @@
 <li><p>BREAKING/API: changed <code class="docutils literal notranslate"><span class="pre">Session.resolve_url()</span></code> and <code class="docutils literal notranslate"><span class="pre">Session.resolve_url_no_redirect()</span></code> to return a tuple of a plugin class and the resolved URL instead of an initialized plugin class instance. This fixes the availability of plugin options in a plugin’s constructor. (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4163"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4163">#4163</a></a>)</p></li>
 <li><p>BREAKING/requirements: dropped alternative dependency <code class="docutils literal notranslate"><span class="pre">pycrypto</span></code> and removed the <code class="docutils literal notranslate"><span class="pre">STREAMLINK_USE_PYCRYPTO</span></code> env var switch (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4174"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4174">#4174</a></a>)</p></li>
 <li><p>BREAKING/requirements: switched from <code class="docutils literal notranslate"><span class="pre">iso-639</span></code>+<code class="docutils literal notranslate"><span class="pre">iso3166</span></code> to <code class="docutils literal notranslate"><span class="pre">pycountry</span></code> and removed the <code class="docutils literal notranslate"><span class="pre">STREAMLINK_USE_PYCOUNTRY</span></code> env var switch (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4175"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4175">#4175</a></a>)</p></li>
-<li><p>BREAKING/setup: disabled unsupported Python versions, disabled the deprecated <code class="docutils literal notranslate"><span class="pre">test</span></code> setuptools command, removed the <code class="docutils literal notranslate"><span class="pre">NO_DEPS</span></code> env var, and switched to declarative package data via <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4079"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4079">#4079</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4107"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4107">#4107</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4115"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4115">#4115</a></a> <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4113"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4113">#4113</a></a>)</p></li>
+<li><p>BREAKING/setup: disabled unsupported Python versions, disabled the deprecated <code class="docutils literal notranslate"><span class="pre">test</span></code> setuptools command, removed the <code class="docutils literal notranslate"><span class="pre">NO_DEPS</span></code> env var, and switched to declarative package data via <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4079"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4079">#4079</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4107"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4107">#4107</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4115"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4115">#4115</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4113"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4113">#4113</a></a>)</p></li>
 </ul>
 <p>Release highlights:</p>
 <ul class="simple">
@@ -3838,6 +3870,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-3-0-2-2021-11-25">streamlink 3.0.2 (2021-11-25)</a></li>
 <li><a class="reference internal" href="#streamlink-3-0-1-2021-11-17">streamlink 3.0.1 (2021-11-17)</a></li>
 <li><a class="reference internal" href="#streamlink-3-0-0-2021-11-17">streamlink 3.0.0 (2021-11-17)</a></li>
 <li><a class="reference internal" href="#streamlink-2-4-0-2021-09-07">streamlink 2.4.0 (2021-09-07)</a></li>
