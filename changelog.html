@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Donating" href="donate.html" /><link rel="prev" title="API Reference" href="api.html" />
 
-    <meta name="generator" content="sphinx-4.3.1, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 3.0.3 documentation</title>
+        <title>Changelog - Streamlink 3.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 3.0.3 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 3.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.0.3</pre>
+  <pre class="sidebar-versions-current">3.1.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -225,6 +225,71 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<section id="streamlink-3-1-0-2022-01-22">
+<h2>streamlink 3.1.0 (2022-01-22)<a class="headerlink" href="#streamlink-3-1-0-2022-01-22" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Changed: file overwrite prompt to wait for user input before opening streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4252"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4252">#4252</a></a>)</p></li>
+<li><p>Fixed: log messages appearing in <code class="docutils literal notranslate"><span class="pre">--json</span></code> output (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4258"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4258">#4258</a></a>)</p></li>
+<li><p>Fixed: keep-alive TCP connections when filtering out HLS segments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4229"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4229">#4229</a></a>)</p></li>
+<li><p>Fixed: sort order of DASH streams with the same video resolution (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4220"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4220">#4220</a></a>)</p></li>
+<li><p>Fixed: HLS segment byterange offsets (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4301"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4301">#4301</a></a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4302"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4302">#4302</a></a>)</p></li>
+<li><p>Fixed: YouTube /live URLs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4222"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4222">#4222</a></a>)</p></li>
+<li><p>Fixed: UStream websocket address (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4238"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4238">#4238</a></a>)</p></li>
+<li><p>Fixed: Pluto desync issues by filtering out bumper segments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4255"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4255">#4255</a></a>)</p></li>
+<li><p>Fixed: various plugin issues - please see the changelog down below</p></li>
+<li><p>Removed plugins: abweb (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4270"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4270">#4270</a></a>), latina (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4269"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4269">#4269</a></a>), live_russia_tv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4263"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4263">#4263</a></a>), liveme (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4264"><a class="reference external" href="https://github.com/streamlink/streamlink/issues/4264">#4264</a></a>)</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Christian Kündig &lt;christian@kuendig.info&gt; (1):
+      plugins.yupptv: override encoding, set Origin header (#4261)
+
+Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (4):
+      plugins.pluto: rewrite/fix
+      plugins.albavision: fix/update
+      plugins.albavision: update plugin_matrix.rst
+      plugins.pluto: add filtering of bumper segments
+
+PleasantMachine9 &lt;65126927+PleasantMachine9@users.noreply.github.com&gt; (1):
+      stream.hls: read and discard filtered sequences properly
+
+back-to &lt;backto@protonmail.ch&gt; (8):
+      stream.dash: sort video duplicated resolutions by bandwidth
+      plugins.onetv: added support for channel with different timezone +4
+      plugins.ceskatelevize: Fix Livestreams
+      plugins.mediavitrina: better support for different channel names
+      plugins.live_russia_tv: removed outdated plugin
+      plugins.liveme: removed
+      plugins.abweb: removed
+      plugins.dogus: update and cleanup
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (21):
+      plugins.youtube: fix metadata on /live URLs
+      plugins.ustreamtv: fix websocket address
+      plugins.steam: refactor plugin
+      plugins.stadium: rewrite
+      cli: create file output before opening the stream
+      logger: change NONE loglevel to sys.maxsize
+      cli.console: ignore msg() calls if json=True
+      tests: fix named pipe being created in CLI tests
+      plugins.vtvgo: remove itertags
+      plugins.vk: rewrite and remove itertags
+      plugins.latina: remove plugin
+      plugins.streann: remove itertags
+      plugins.nos: remove itertags
+      tests: rewrite plugins_meta tests
+      2022
+      plugins.foxtr: fix regex
+      plugins.delfi: rewrite plugin
+      plugins.twitch: fix pluginmatcher regex
+      docs: fix linux package infos
+      stream.hls: fix byterange parser
+      stream.hls: refactor segment byterange calculation
+
+zappepappe &lt;zappepappe@users.noreply.github.com&gt; (1):
+      plugins.svtplay: fix live channel URL matching (#4219)
+</pre></div>
+</div>
+</section>
 <section id="streamlink-3-0-3-2021-11-27">
 <h2>streamlink 3.0.3 (2021-11-27)<a class="headerlink" href="#streamlink-3-0-3-2021-11-27" title="Permalink to this headline">¶</a></h2>
 <p>Patch release:</p>
@@ -3861,7 +3926,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Streamlink |
+              Copyright &#169; 2022, Streamlink |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -3883,6 +3948,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-3-1-0-2022-01-22">streamlink 3.1.0 (2022-01-22)</a></li>
 <li><a class="reference internal" href="#streamlink-3-0-3-2021-11-27">streamlink 3.0.3 (2021-11-27)</a></li>
 <li><a class="reference internal" href="#streamlink-3-0-2-2021-11-25">streamlink 3.0.2 (2021-11-25)</a></li>
 <li><a class="reference internal" href="#streamlink-3-0-1-2021-11-17">streamlink 3.0.1 (2021-11-17)</a></li>

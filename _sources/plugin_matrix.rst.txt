@@ -10,13 +10,21 @@ is limited.
 Name                    URL(s)               Live  VOD   Notes
 ======================= ==================== ===== ===== ===========================
 abematv                 abema.tv             Yes   Yes   Streams are geo-restricted to Japan.
-abweb                   abweb.com            Yes   No    Requires a login and a subscription.
 adultswim               adultswim.com        Yes   Yes   Streams may be geo-restricted, some VOD streams are protected by DRM.
 afreeca                 play.afreecatv.com   Yes   No
-albavision              - tvc.com.ec         Yes   No    Some streams are geo-restricted.
-                        - rts.com.ec
-                        - elnueve.com.ar
+albavision              - antena7.com.do     Yes   No    Some streams are geo-restricted.
                         - atv.pe
+                        - c9n.com.py
+                        - canal10.com.ni
+                        - canal12.com.sv
+                        - chapintv.com
+                        - elnueve.com.ar
+                        - redbolivis... [4]_
+                        - repretel.com
+                        - rts.com.ec
+                        - snt.com.py
+                        - tvc.com.ec
+                        - vtv.com.hn
 app17                   17app.co             Yes   --
 ard_live                daserste.de          Yes   Yes   Streams may be geo-restricted to Germany.
 ard_mediathek           - ardmediathek.de    Yes   Yes   Streams may be geo-restricted to Germany.
@@ -42,7 +50,7 @@ cdnbg                   - armymedia.bg       Yes   No    Streams may be geo-rest
                         - i.cdn.bg
                         - nova.bg
                         - mu-vi.tv
-ceskatelevize           ceskatelevize.cz     Yes   Yes   Streams may be geo-restricted to Czechia.
+ceskatelevize           ceskatelevize.cz     Yes   No    Streams may be geo-restricted to Czechia.
 cinergroup              - showtv.com.tr      Yes   No
                         - haberturk.com
                         - showmax.com.tr
@@ -88,10 +96,7 @@ huya                    huya.com             Yes   No
 idf1                    idf1.fr              Yes   Yes
 invintus                player.invintus.com  Yes   Yes
 kugou                   fanxing.kugou.com    Yes   --
-latina                  latina.pe            Yes   No    Streams may be geo-restricted to Peru.
 linelive                live.line.me         Yes   Yes
-live_russia_tv          live.russia.tv       Yes   --
-liveme                  liveme.com           Yes   --
 livestream              livestream.com       Yes   --
 lrt                     lrt.lt               Yes   No
 ltv_lsm_lv              ltv.lsm.lv           Yes   No    Streams may be geo-restricted to Latvia.
@@ -157,7 +162,7 @@ showroom                showroom-live.com    Yes   No
 sportal                 sportal.bg           Yes   No
 sportschau              sportschau.de        Yes   No
 ssh101                  ssh101.com           Yes   No
-stadium                 watchstadium.com     Yes   No
+stadium                 watchstadium.com     Yes   Yes
 steam                   steamcommunity.com   Yes   No    Some streams will require a Steam account.
 streamable              streamable.com       -     Yes
 streann                 ott.streann.com      Yes   Yes
@@ -224,6 +229,7 @@ zhanqi                  zhanqi.tv            Yes   No
 ======================= ==================== ===== ===== ===========================
 
 
+.. [4] redbolivision.tv.bo
 .. [5] mediathek.daserste.de
 .. [6] players.brightcove.net
 .. [7] player.theplatform.com
