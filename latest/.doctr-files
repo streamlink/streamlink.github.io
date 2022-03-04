@@ -13,7 +13,7 @@ latest/_sources/index.rst.txt
 latest/_sources/install.rst.txt
 latest/_sources/issues.rst.txt
 latest/_sources/players.rst.txt
-latest/_sources/plugin_matrix.rst.txt
+latest/_sources/plugins.rst.txt
 latest/_sources/thirdparty.rst.txt
 latest/_static/apple-touch-icon.png
 latest/_static/basic.css
@@ -55,7 +55,7 @@ latest/install.html
 latest/issues.html
 latest/objects.inv
 latest/players.html
-latest/plugin_matrix.html
+latest/plugins.html
 latest/search.html
 latest/searchindex.js
 latest/thirdparty.html
