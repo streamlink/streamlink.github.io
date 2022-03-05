@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 3.1.1+30.gc19548d documentation</title>
+        <title>Changelog - Streamlink 3.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 3.1.1+30.gc19548d documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 3.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,10 +160,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.1.1+30.gc19548d</pre>
+  <pre class="sidebar-versions-current">3.2.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -223,12 +223,68 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<section id="streamlink-3-2-0-2022-03-05">
+<h2>streamlink 3.2.0 (2022-03-05)<a class="headerlink" href="#streamlink-3-2-0-2022-03-05" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: log message for the resolved path when writing output to file (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4336">#4336</a>)</p></li>
+<li><p>Added: new plugins for rtpa.es (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4344">#4344</a>) and lnk.lt (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4364">#4364</a>)</p></li>
+<li><p>Changed: metadata requirements for built-in plugins (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4374">#4374</a>)</p></li>
+<li><p>Improved: plugins documentation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4374">#4374</a>)</p></li>
+<li><p>Fixed: filmon plugin, requires at least OpenSSL 1.1.0 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4335">#4335</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4345">#4345</a>)</p></li>
+<li><p>Fixed: mildom plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4375">#4375</a>)</p></li>
+<li><p>Fixed: nicolive email logins with confirmation codes (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4380">#4380</a>)</p></li>
+<li><p>Fixed: various other plugin issues, see the changelog down below</p></li>
+<li><p>Upgraded: Windows installer’s Python and dependency versions (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4330">#4330</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4347">#4347</a>)</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Dylan &lt;71848660+dylan-roussin@users.noreply.github.com&gt; (1):
+      typo of "steams" to "streams" in opencv-face.py
+
+Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (3):
+      plugin.api.http_session: add class TLSSecLevel1Adapter()
+      plugins.filmon: fix/update
+      docs: correct minor typo
+
+Justinas Stankevičius &lt;justinas@users.noreply.github.com&gt; (1):
+      plugins.lnk: add new plugin (#4364)
+
+back-to &lt;backto@protonmail.ch&gt; (1):
+      plugins.nicolive: fix login via email (#4380)
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (22):
+      plugins.pluzz: fix workflow value in API schema
+      installer: upgrade python from 3.9.8 to 3.9.10
+      cli: log resolved file output path
+      plugins.rtpa: add new plugin
+      installer: update wheels to latest versions
+      plugins.pandalive: fix plugin
+      plugins.ard_live: fix live.daserste.de inputs
+      tests.plugins: implement should_match_groups
+      tests.plugins: test URL capture groups
+      plugins.goltelevision: fix API URL
+      tests: rewrite TestPlugins using pytest fixtures
+      tests: add parametrized TestPluginTests
+      tests: add parametrized TestRemovedPluginsFile
+      tests: move global plugin arguments test
+      docs: update Streamlink Twitch GUI image
+      docs: fix GithubReferences transform
+      docs: add icon to external links
+      plugins: add metadata header comments
+      docs: rename plugin_matrix to plugins
+      docs: dynamically build list of plugins
+      docs: update developing page
+      docs: fix plugin metadata example
+
+fireattack &lt;human.peng@gmail.com&gt; (1):
+      plugins.openrectv: get URLs from subs_trial_media (#4349)
+
+vvto33 &lt;54504675+vvto33@users.noreply.github.com&gt; (1):
+      plugins.mildom: get token for livestream (#4375)
+</pre></div>
+</div>
+</section>
 <section id="streamlink-3-1-1-2022-01-25">
 <h2>streamlink 3.1.1 (2022-01-25)<a class="headerlink" href="#streamlink-3-1-1-2022-01-25" title="Permalink to this headline">¶</a></h2>
 <p>Patch release:</p>
@@ -3969,6 +4025,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-3-2-0-2022-03-05">streamlink 3.2.0 (2022-03-05)</a></li>
 <li><a class="reference internal" href="#streamlink-3-1-1-2022-01-25">streamlink 3.1.1 (2022-01-25)</a></li>
 <li><a class="reference internal" href="#streamlink-3-1-0-2022-01-22">streamlink 3.1.0 (2022-01-22)</a></li>
 <li><a class="reference internal" href="#streamlink-3-0-3-2021-11-27">streamlink 3.0.3 (2021-11-27)</a></li>
