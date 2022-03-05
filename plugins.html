@@ -1,0 +1,3286 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Players" href="players.html" /><link rel="prev" title="Command-Line Interface" href="cli.html" />
+
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
+  <link rel="shortcut icon" href="/_static/favicon.ico">
+  <link rel="manifest" href="/_static/site.webmanifest">
+        <title>Plugins - Streamlink 3.2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Streamlink 3.2.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand centered" href="index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/icon.svg" alt="Streamlink"/>
+  </div>
+  <p class="sidebar-brand-text">Streamlink</p>
+  <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
+</a>
+<div class="sidebar-versions centered" role="note" aria-label="versions">
+  <pre class="sidebar-versions-current">3.2.0</pre>
+  <dl class="sidebar-versions-others">
+    <dd><a href="/plugins.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/plugins.html" class="">Latest</a></dd>
+  </dl>
+</div><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a></li>
+</ul>
+
+</div><div class="github-buttons centered">
+  <a href="https://github.com/streamlink/streamlink"
+    class="github-button"
+    data-icon="octicon-mark-github"
+    data-count-href="/streamlink/streamlink/stargazers"
+    data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+  <a href="https://github.com/streamlink/streamlink/issues"
+    class="github-button"
+    data-icon="octicon-issue-opened">Issues</a>
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
+  
+  <section id="plugins">
+<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+<p>This is a list of the currently built-in plugins and what URLs and features
+they support. Streamlink's primary focus is live streams, so VOD support
+is limited.</p>
+<section id="abematv">
+<h2>abematv<a class="headerlink" href="#abematv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>abema.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Japan</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/abematv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.abematv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="adultswim">
+<h2>adultswim<a class="headerlink" href="#adultswim" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>adultswim.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>various</p>
+</dd>
+<dt class="field-even">Notes</dt>
+<dd class="field-even"><p>VODs may be protected by DRM</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/adultswim.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.adultswim">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="afreeca">
+<h2>afreeca<a class="headerlink" href="#afreeca" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>play.afreecatv.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-afreeca-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--afreeca-username</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-afreeca-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--afreeca-password</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-afreeca-purge-credentials"><code class="xref std std-option docutils literal notranslate"><span class="pre">--afreeca-purge-credentials</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/afreeca.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.afreeca">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="albavision">
+<h2>albavision<a class="headerlink" href="#albavision" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>antena7.com.do</p></li>
+<li><p>atv.pe</p></li>
+<li><p>c9n.com.py</p></li>
+<li><p>canal10.com.ni</p></li>
+<li><p>canal12.com.sv</p></li>
+<li><p>chapintv.com</p></li>
+<li><p>elnueve.com.ar</p></li>
+<li><p>redbolivision.tv.bo</p></li>
+<li><p>repretel.com</p></li>
+<li><p>rts.com.ec</p></li>
+<li><p>snt.com.py</p></li>
+<li><p>tvc.com.ec</p></li>
+<li><p>vtv.com.hn</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>various</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/albavision.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.albavision">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="app17">
+<h2>app17<a class="headerlink" href="#app17" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>17app.co</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/app17.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.app17">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="ard-live">
+<h2>ard_live<a class="headerlink" href="#ard-live" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>daserste.de</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Germany</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/ard_live.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.ard_live">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="ard-mediathek">
+<h2>ard_mediathek<a class="headerlink" href="#ard-mediathek" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ardmediathek.de</p></li>
+<li><p>mediathek.daserste.de</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Germany</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/ard_mediathek.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.ard_mediathek">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="artetv">
+<h2>artetv<a class="headerlink" href="#artetv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>arte.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/artetv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.artetv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="atresplayer">
+<h2>atresplayer<a class="headerlink" href="#atresplayer" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>atresplayer.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Spain</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/atresplayer.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.atresplayer">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="bbciplayer">
+<h2>bbciplayer<a class="headerlink" href="#bbciplayer" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>bbc.co.uk/iplayer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>United Kingdom</p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-bbciplayer-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--bbciplayer-username</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-bbciplayer-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--bbciplayer-password</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-bbciplayer-hd"><code class="xref std std-option docutils literal notranslate"><span class="pre">--bbciplayer-hd</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/bbciplayer.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.bbciplayer">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="bfmtv">
+<h2>bfmtv<a class="headerlink" href="#bfmtv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>bfmtv.com</p></li>
+<li><p>01net.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/bfmtv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.bfmtv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="bigo">
+<h2>bigo<a class="headerlink" href="#bigo" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>live.bigo.tv</p></li>
+<li><p>bigoweb.co</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/bigo.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.bigo">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="bilibili">
+<h2>bilibili<a class="headerlink" href="#bilibili" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>live.bilibili.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/bilibili.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.bilibili">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="bloomberg">
+<h2>bloomberg<a class="headerlink" href="#bloomberg" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>bloomberg.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/bloomberg.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.bloomberg">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="booyah">
+<h2>booyah<a class="headerlink" href="#booyah" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>booyah.live</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/booyah.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.booyah">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="brightcove">
+<h2>brightcove<a class="headerlink" href="#brightcove" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>players.brightcove.net</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/brightcove.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.brightcove">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="btv">
+<h2>btv<a class="headerlink" href="#btv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>btvplus.bg</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Bulgaria</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/btv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.btv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="cbsnews">
+<h2>cbsnews<a class="headerlink" href="#cbsnews" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>cbsnews.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/cbsnews.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.cbsnews">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="cdnbg">
+<h2>cdnbg<a class="headerlink" href="#cdnbg" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>armymedia.bg</p></li>
+<li><p>bgonair.bg</p></li>
+<li><p>bloombergtv.bg</p></li>
+<li><p>bnt.bg</p></li>
+<li><p>live.bstv.bg</p></li>
+<li><p>i.cdn.bg</p></li>
+<li><p>nova.bg</p></li>
+<li><p>mu-vi.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Bulgaria</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/cdnbg.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.cdnbg">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="ceskatelevize">
+<h2>ceskatelevize<a class="headerlink" href="#ceskatelevize" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ceskatelevize.cz</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Czechia</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/ceskatelevize.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.ceskatelevize">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="cinergroup">
+<h2>cinergroup<a class="headerlink" href="#cinergroup" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>showtv.com.tr</p></li>
+<li><p>haberturk.com</p></li>
+<li><p>showmax.com.tr</p></li>
+<li><p>showturk.com.tr</p></li>
+<li><p>bloomberght.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/cinergroup.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.cinergroup">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="clubbingtv">
+<h2>clubbingtv<a class="headerlink" href="#clubbingtv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>clubbingtv.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Account</dt>
+<dd class="field-odd"><p>Login required</p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-clubbingtv-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--clubbingtv-username</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-clubbingtv-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--clubbingtv-password</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/clubbingtv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.clubbingtv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="cnews">
+<h2>cnews<a class="headerlink" href="#cnews" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>cnews.fr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/cnews.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.cnews">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="crunchyroll">
+<h2>crunchyroll<a class="headerlink" href="#crunchyroll" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>crunchyroll.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-crunchyroll-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-password</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-crunchyroll-purge-credentials"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-purge-credentials</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-crunchyroll-session-id"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-session-id</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/crunchyroll.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.crunchyroll">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="dailymotion">
+<h2>dailymotion<a class="headerlink" href="#dailymotion" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>dailymotion.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/dailymotion.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.dailymotion">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="delfi">
+<h2>delfi<a class="headerlink" href="#delfi" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>delfi.lt</p></li>
+<li><p>delfi.ee</p></li>
+<li><p>delfi.lv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/delfi.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.delfi">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="deutschewelle">
+<h2>deutschewelle<a class="headerlink" href="#deutschewelle" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>dw.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/deutschewelle.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.deutschewelle">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="dlive">
+<h2>dlive<a class="headerlink" href="#dlive" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>dlive.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/dlive.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.dlive">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="dogan">
+<h2>dogan<a class="headerlink" href="#dogan" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>cnnturk.com</p></li>
+<li><p>dreamturk.com.tr</p></li>
+<li><p>dreamtv.com.tr</p></li>
+<li><p>kanald.com.tr</p></li>
+<li><p>teve2.com.tr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/dogan.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.dogan">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="dogus">
+<h2>dogus<a class="headerlink" href="#dogus" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>eurostartv.com.tr</p></li>
+<li><p>kralmuzik.com.tr</p></li>
+<li><p>ntv.com.tr</p></li>
+<li><p>startv.com.tr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/dogus.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.dogus">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="drdk">
+<h2>drdk<a class="headerlink" href="#drdk" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>dr.dk</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Denmark</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/drdk.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.drdk">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="earthcam">
+<h2>earthcam<a class="headerlink" href="#earthcam" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>earthcam.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Notes</dt>
+<dd class="field-odd"><p>Only works for the cams hosted on EarthCam</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/earthcam.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.earthcam">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="egame">
+<h2>egame<a class="headerlink" href="#egame" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>egame.qq.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/egame.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.egame">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="eltrecetv">
+<h2>eltrecetv<a class="headerlink" href="#eltrecetv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>eltrecetv.com.ar</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Argentina</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/eltrecetv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.eltrecetv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="euronews">
+<h2>euronews<a class="headerlink" href="#euronews" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>euronews.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/euronews.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.euronews">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="facebook">
+<h2>facebook<a class="headerlink" href="#facebook" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>facebook.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/facebook.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.facebook">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="filmon">
+<h2>filmon<a class="headerlink" href="#filmon" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>filmon.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Notes</dt>
+<dd class="field-odd"><p>Some VODs are mp4 which may not stream, use -o to download</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/filmon.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.filmon">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="foxtr">
+<h2>foxtr<a class="headerlink" href="#foxtr" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>fox.com.tr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/foxtr.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.foxtr">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="funimationnow">
+<h2>funimationnow<a class="headerlink" href="#funimationnow" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>funimation.com</p></li>
+<li><p>funimationnow.uk</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">Notes</dt>
+<dd class="field-odd"><p><a class="reference internal" href="cli.html#authenticating-with-funimationnow"><span class="std std-ref">Requires session cookies</span></a></p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-funimation-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--funimation-email</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-funimation-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--funimation-password</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-funimation-language"><code class="xref std std-option docutils literal notranslate"><span class="pre">--funimation-language</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/funimationnow.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.funimationnow">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="galatasaraytv">
+<h2>galatasaraytv<a class="headerlink" href="#galatasaraytv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>galatasaray.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/galatasaraytv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.galatasaraytv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="garena">
+<h2>garena<a class="headerlink" href="#garena" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>garena.live</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/garena.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.garena">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="goltelevision">
+<h2>goltelevision<a class="headerlink" href="#goltelevision" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>goltelevision.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Spain</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/goltelevision.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.goltelevision">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="goodgame">
+<h2>goodgame<a class="headerlink" href="#goodgame" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>goodgame.ru</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/goodgame.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.goodgame">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="googledrive">
+<h2>googledrive<a class="headerlink" href="#googledrive" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>docs.google.com</p></li>
+<li><p>drive.google.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/googledrive.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.googledrive">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="gulli">
+<h2>gulli<a class="headerlink" href="#gulli" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>replay.gulli.fr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>France</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/gulli.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.gulli">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="huajiao">
+<h2>huajiao<a class="headerlink" href="#huajiao" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>huajiao.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/huajiao.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.huajiao">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="huya">
+<h2>huya<a class="headerlink" href="#huya" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>huya.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/huya.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.huya">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="idf1">
+<h2>idf1<a class="headerlink" href="#idf1" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>idf1.fr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/idf1.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.idf1">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="invintus">
+<h2>invintus<a class="headerlink" href="#invintus" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>player.invintus.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/invintus.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.invintus">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="kugou">
+<h2>kugou<a class="headerlink" href="#kugou" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>fanxing.kugou.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/kugou.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.kugou">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="linelive">
+<h2>linelive<a class="headerlink" href="#linelive" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>live.line.me</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/linelive.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.linelive">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="livestream">
+<h2>livestream<a class="headerlink" href="#livestream" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>livestream.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/livestream.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.livestream">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="lnk">
+<h2>lnk<a class="headerlink" href="#lnk" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>lnk.lt</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Lithuania</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/lnk.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.lnk">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="lrt">
+<h2>lrt<a class="headerlink" href="#lrt" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>lrt.lt</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/lrt.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.lrt">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="ltv-lsm-lv">
+<h2>ltv_lsm_lv<a class="headerlink" href="#ltv-lsm-lv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ltv.lsm.lv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Latvia</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/ltv_lsm_lv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.ltv_lsm_lv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="mediaklikk">
+<h2>mediaklikk<a class="headerlink" href="#mediaklikk" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>mediaklikk.hu</p></li>
+<li><p>m4sport.hu</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Hungary</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/mediaklikk.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.mediaklikk">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="mediavitrina">
+<h2>mediavitrina<a class="headerlink" href="#mediavitrina" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>mediavitrina.ru</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Russia</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/mediavitrina.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.mediavitrina">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="mildom">
+<h2>mildom<a class="headerlink" href="#mildom" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>mildom.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/mildom.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.mildom">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="mitele">
+<h2>mitele<a class="headerlink" href="#mitele" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>mitele.es</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Spain</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/mitele.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.mitele">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="mjunoon">
+<h2>mjunoon<a class="headerlink" href="#mjunoon" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>mjunoon.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Pakistan</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/mjunoon.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.mjunoon">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="mrtmk">
+<h2>mrtmk<a class="headerlink" href="#mrtmk" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>play.mrt.com.mk</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>North Macedonia</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/mrtmk.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.mrtmk">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="n13tv">
+<h2>n13tv<a class="headerlink" href="#n13tv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>13tv.co.il</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Israel</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/n13tv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.n13tv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="nbc">
+<h2>nbc<a class="headerlink" href="#nbc" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>nbc.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>United States of America</p>
+</dd>
+<dt class="field-even">Account</dt>
+<dd class="field-even"><p>Authentication is unsupported</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/nbc.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.nbc">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="nbcnews">
+<h2>nbcnews<a class="headerlink" href="#nbcnews" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>nbcnews.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/nbcnews.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.nbcnews">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="nbcsports">
+<h2>nbcsports<a class="headerlink" href="#nbcsports" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>nbcsports.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>United States of America</p>
+</dd>
+<dt class="field-even">Account</dt>
+<dd class="field-even"><p>Authentication is unsupported</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/nbcsports.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.nbcsports">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="nhkworld">
+<h2>nhkworld<a class="headerlink" href="#nhkworld" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>nhk.or.jp/nhkworld</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/nhkworld.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.nhkworld">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="nicolive">
+<h2>nicolive<a class="headerlink" href="#nicolive" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>live.nicovideo.jp</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Account</dt>
+<dd class="field-odd"><p>Required by some streams</p>
+</dd>
+<dt class="field-even">Notes</dt>
+<dd class="field-even"><p>Timeshift is supported</p>
+</dd>
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-niconico-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--niconico-email</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-niconico-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--niconico-password</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-niconico-user-session"><code class="xref std std-option docutils literal notranslate"><span class="pre">--niconico-user-session</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-niconico-purge-credentials"><code class="xref std std-option docutils literal notranslate"><span class="pre">--niconico-purge-credentials</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-niconico-timeshift-offset"><code class="xref std std-option docutils literal notranslate"><span class="pre">--niconico-timeshift-offset</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/nicolive.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.nicolive">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="nimotv">
+<h2>nimotv<a class="headerlink" href="#nimotv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>nimo.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/nimotv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.nimotv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="nos">
+<h2>nos<a class="headerlink" href="#nos" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>nos.nl</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Netherlands</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/nos.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.nos">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="nownews">
+<h2>nownews<a class="headerlink" href="#nownews" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>news.now.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/nownews.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.nownews">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="nrk">
+<h2>nrk<a class="headerlink" href="#nrk" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tv.nrk.no</p></li>
+<li><p>radio.nrk.no</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Norway</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/nrk.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.nrk">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="ntv">
+<h2>ntv<a class="headerlink" href="#ntv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ntv.ru</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/ntv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.ntv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="okru">
+<h2>okru<a class="headerlink" href="#okru" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ok.ru</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/okru.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.okru">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="olympicchannel">
+<h2>olympicchannel<a class="headerlink" href="#olympicchannel" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>olympicchannel.com</p></li>
+<li><p>olympics.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Notes</dt>
+<dd class="field-odd"><p>Only non-premium content is available</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/olympicchannel.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.olympicchannel">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="oneplusone">
+<h2>oneplusone<a class="headerlink" href="#oneplusone" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>1plus1.video</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/oneplusone.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.oneplusone">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="onetv">
+<h2>onetv<a class="headerlink" href="#onetv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>1tv.ru</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Russia</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/onetv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.onetv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="openrectv">
+<h2>openrectv<a class="headerlink" href="#openrectv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>openrec.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-openrectv-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--openrectv-email</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-openrectv-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--openrectv-password</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/openrectv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.openrectv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="orf-tvthek">
+<h2>orf_tvthek<a class="headerlink" href="#orf-tvthek" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tvthek.orf.at</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/orf_tvthek.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.orf_tvthek">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="pandalive">
+<h2>pandalive<a class="headerlink" href="#pandalive" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>pandalive.co.kr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/pandalive.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.pandalive">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="picarto">
+<h2>picarto<a class="headerlink" href="#picarto" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>picarto.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/picarto.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.picarto">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="piczel">
+<h2>piczel<a class="headerlink" href="#piczel" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>piczel.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/piczel.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.piczel">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="pixiv">
+<h2>pixiv<a class="headerlink" href="#pixiv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>sketch.pixiv.net</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-pixiv-sessionid"><code class="xref std std-option docutils literal notranslate"><span class="pre">--pixiv-sessionid</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-pixiv-devicetoken"><code class="xref std std-option docutils literal notranslate"><span class="pre">--pixiv-devicetoken</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-pixiv-purge-credentials"><code class="xref std std-option docutils literal notranslate"><span class="pre">--pixiv-purge-credentials</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-pixiv-performer"><code class="xref std std-option docutils literal notranslate"><span class="pre">--pixiv-performer</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/pixiv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.pixiv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="pluto">
+<h2>pluto<a class="headerlink" href="#pluto" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>pluto.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/pluto.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.pluto">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="pluzz">
+<h2>pluzz<a class="headerlink" href="#pluzz" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>france.tv</p></li>
+<li><p>francetvinfo.fr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>France, Andorra, Monaco</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/pluzz.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.pluzz">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="qq">
+<h2>qq<a class="headerlink" href="#qq" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>live.qq.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/qq.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.qq">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="radiko">
+<h2>radiko<a class="headerlink" href="#radiko" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>radiko.jp</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Japan</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/radiko.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.radiko">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="radionet">
+<h2>radionet<a class="headerlink" href="#radionet" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>radio.net</p></li>
+<li><p>radio.at</p></li>
+<li><p>radio.de</p></li>
+<li><p>radio.dk</p></li>
+<li><p>radio.es</p></li>
+<li><p>radio.fr</p></li>
+<li><p>radio.it</p></li>
+<li><p>radio.pl</p></li>
+<li><p>radio.pt</p></li>
+<li><p>radio.se</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/radionet.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.radionet">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="raiplay">
+<h2>raiplay<a class="headerlink" href="#raiplay" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>raiplay.it</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Italy</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/raiplay.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.raiplay">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="reuters">
+<h2>reuters<a class="headerlink" href="#reuters" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>reuters.com</p></li>
+<li><p>reuters.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/reuters.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.reuters">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="rotana">
+<h2>rotana<a class="headerlink" href="#rotana" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>rotana.net</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Saudi Arabia</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/rotana.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.rotana">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="rtbf">
+<h2>rtbf<a class="headerlink" href="#rtbf" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>rtbf.be/auvio</p></li>
+<li><p>rtbfradioplayer.be</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Belgium, Europe</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/rtbf.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.rtbf">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="rtpa">
+<h2>rtpa<a class="headerlink" href="#rtpa" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>rtpa.es</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/rtpa.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.rtpa">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="rtpplay">
+<h2>rtpplay<a class="headerlink" href="#rtpplay" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>rtp.pt/play</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Portugal</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/rtpplay.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.rtpplay">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="rtve">
+<h2>rtve<a class="headerlink" href="#rtve" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>rtve.es</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Spain</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/rtve.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.rtve">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="rtvs">
+<h2>rtvs<a class="headerlink" href="#rtvs" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>rtvs.sk</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Slovakia</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/rtvs.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.rtvs">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="ruv">
+<h2>ruv<a class="headerlink" href="#ruv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ruv.is</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Iceland</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/ruv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.ruv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="sbscokr">
+<h2>sbscokr<a class="headerlink" href="#sbscokr" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>play.sbs.co.kr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>South Korea</p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-sbscokr-id"><code class="xref std std-option docutils literal notranslate"><span class="pre">--sbscokr-id</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/sbscokr.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.sbscokr">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="schoolism">
+<h2>schoolism<a class="headerlink" href="#schoolism" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>schoolism.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">Account</dt>
+<dd class="field-odd"><p>Login and subscription required</p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-schoolism-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--schoolism-email</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-schoolism-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--schoolism-password</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-schoolism-part"><code class="xref std std-option docutils literal notranslate"><span class="pre">--schoolism-part</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/schoolism.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.schoolism">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="senategov">
+<h2>senategov<a class="headerlink" href="#senategov" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>senate.gov</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">Notes</dt>
+<dd class="field-odd"><p>Supports hearing streams</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/senategov.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.senategov">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="showroom">
+<h2>showroom<a class="headerlink" href="#showroom" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>showroom-live.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/showroom.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.showroom">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="sportal">
+<h2>sportal<a class="headerlink" href="#sportal" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>sportal.bg</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/sportal.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.sportal">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="sportschau">
+<h2>sportschau<a class="headerlink" href="#sportschau" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>sportschau.de</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/sportschau.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.sportschau">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="ssh101">
+<h2>ssh101<a class="headerlink" href="#ssh101" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ssh101.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/ssh101.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.ssh101">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="stadium">
+<h2>stadium<a class="headerlink" href="#stadium" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>watchstadium.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/stadium.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.stadium">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="steam">
+<h2>steam<a class="headerlink" href="#steam" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>steamcommunity.com</p></li>
+<li><p>steam.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Account</dt>
+<dd class="field-odd"><p>Some streams require a login</p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-steam-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--steam-email</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-steam-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--steam-password</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/steam.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.steam">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="streamable">
+<h2>streamable<a class="headerlink" href="#streamable" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>streamable.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/streamable.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.streamable">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="streann">
+<h2>streann<a class="headerlink" href="#streann" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ott.streann.com</p></li>
+<li><p>centroecuador.ec</p></li>
+<li><p>columnaestilos.com</p></li>
+<li><p>evtv.online/noticias-de-venezuela</p></li>
+<li><p>telecuracao.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-streann-url"><code class="xref std std-option docutils literal notranslate"><span class="pre">--streann-url</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/streann.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.streann">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="stv">
+<h2>stv<a class="headerlink" href="#stv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>player.stv.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>United Kingdom</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/stv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.stv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="svtplay">
+<h2>svtplay<a class="headerlink" href="#svtplay" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>svtplay.se</p></li>
+<li><p>oppetarkiv.se</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Sweden</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/svtplay.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.svtplay">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="swisstxt">
+<h2>swisstxt<a class="headerlink" href="#swisstxt" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>srf.ch</p></li>
+<li><p>rsi.ch</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Switzerland</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/swisstxt.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.swisstxt">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="teamliquid">
+<h2>teamliquid<a class="headerlink" href="#teamliquid" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>teamliquid.net</p></li>
+<li><p>tl.net</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/teamliquid.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.teamliquid">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="telefe">
+<h2>telefe<a class="headerlink" href="#telefe" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>telefe.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Argentina</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/telefe.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.telefe">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tf1">
+<h2>tf1<a class="headerlink" href="#tf1" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tf1.fr</p></li>
+<li><p>lci.fr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>France</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tf1.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tf1">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="theplatform">
+<h2>theplatform<a class="headerlink" href="#theplatform" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>player.theplatform.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/theplatform.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.theplatform">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tlctr">
+<h2>tlctr<a class="headerlink" href="#tlctr" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tlctv.com.tr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tlctr.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tlctr">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="turkuvaz">
+<h2>turkuvaz<a class="headerlink" href="#turkuvaz" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>atv.com.tr</p></li>
+<li><p>a2tv.com.tr</p></li>
+<li><p>ahaber.com.tr</p></li>
+<li><p>anews.com.tr</p></li>
+<li><p>aspor.com.tr</p></li>
+<li><p>atvavrupa.tv</p></li>
+<li><p>minikacocuk.com.tr</p></li>
+<li><p>minikago.com.tr</p></li>
+<li><p>sabah.com.tr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>various</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/turkuvaz.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.turkuvaz">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tv360">
+<h2>tv360<a class="headerlink" href="#tv360" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tv360.com.tr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tv360.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tv360">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tv3cat">
+<h2>tv3cat<a class="headerlink" href="#tv3cat" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ccma.cat</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Spain</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tv3cat.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tv3cat">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tv4play">
+<h2>tv4play<a class="headerlink" href="#tv4play" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tv4play.se</p></li>
+<li><p>fotbollskanalen.se</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Sweden</p>
+</dd>
+<dt class="field-even">Notes</dt>
+<dd class="field-even"><p>Only non-premium streams are supported</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tv4play.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tv4play">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tv5monde">
+<h2>tv5monde<a class="headerlink" href="#tv5monde" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tv5monde.com</p></li>
+<li><p>tivi5mondeplus.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>France, Belgium, Switzerland</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tv5monde.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tv5monde">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tv8">
+<h2>tv8<a class="headerlink" href="#tv8" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tv8.com.tr</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tv8.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tv8">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tv999">
+<h2>tv999<a class="headerlink" href="#tv999" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tv999.bg</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Bulgaria</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tv999.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tv999">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tvibo">
+<h2>tvibo<a class="headerlink" href="#tvibo" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>player.tvibo.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tvibo.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tvibo">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tviplayer">
+<h2>tviplayer<a class="headerlink" href="#tviplayer" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tviplayer.iol.pt</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tviplayer.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tviplayer">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tvp">
+<h2>tvp<a class="headerlink" href="#tvp" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tvpstream.vod.tvp.pl</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Poland</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tvp.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tvp">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tvrby">
+<h2>tvrby<a class="headerlink" href="#tvrby" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tvr.by</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Belarus</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tvrby.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tvrby">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tvrplus">
+<h2>tvrplus<a class="headerlink" href="#tvrplus" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tvrplus.ro</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Romania</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tvrplus.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tvrplus">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="tvtoya">
+<h2>tvtoya<a class="headerlink" href="#tvtoya" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>tvtoya.pl</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tvtoya.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tvtoya">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="twitcasting">
+<h2>twitcasting<a class="headerlink" href="#twitcasting" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>twitcasting.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-twitcasting-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitcasting-password</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/twitcasting.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.twitcasting">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="twitch">
+<h2>twitch<a class="headerlink" href="#twitch" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>twitch.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Notes</dt>
+<dd class="field-odd"><p>Low latency streaming is supported</p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-twitch-disable-hosting"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-disable-hosting</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-twitch-disable-ads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-disable-ads</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-twitch-disable-reruns"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-disable-reruns</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-twitch-api-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-api-header</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/twitch.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.twitch">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="ustreamtv">
+<h2>ustreamtv<a class="headerlink" href="#ustreamtv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ustream.tv</p></li>
+<li><p>video.ibm.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-ustream-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ustream-password</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/ustreamtv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.ustreamtv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="ustvnow">
+<h2>ustvnow<a class="headerlink" href="#ustvnow" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>ustvnow.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Account</dt>
+<dd class="field-odd"><p>Required, additional subscription required by some streams</p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-ustvnow-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ustvnow-username</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-ustvnow-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ustvnow-password</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/ustvnow.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.ustvnow">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="vidio">
+<h2>vidio<a class="headerlink" href="#vidio" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>vidio.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vidio.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vidio">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="vimeo">
+<h2>vimeo<a class="headerlink" href="#vimeo" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>vimeo.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Notes</dt>
+<dd class="field-odd"><p>Password protected streams are not supported</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vimeo.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vimeo">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="vinhlongtv">
+<h2>vinhlongtv<a class="headerlink" href="#vinhlongtv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>thvli.vn</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Vietnam</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vinhlongtv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vinhlongtv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="vk">
+<h2>vk<a class="headerlink" href="#vk" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>vk.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vk.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vk">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="vlive">
+<h2>vlive<a class="headerlink" href="#vlive" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>vlive.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">Notes</dt>
+<dd class="field-odd"><p>Embedded Naver VODs are not supported</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vlive.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vlive">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="vrtbe">
+<h2>vrtbe<a class="headerlink" href="#vrtbe" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>vrt.be/vrtnu</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vrtbe.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vrtbe">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="vtvgo">
+<h2>vtvgo<a class="headerlink" href="#vtvgo" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>vtvgo.vn</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vtvgo.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vtvgo">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="wasd">
+<h2>wasd<a class="headerlink" href="#wasd" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>wasd.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/wasd.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.wasd">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="webtv">
+<h2>webtv<a class="headerlink" href="#webtv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>web.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/webtv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.webtv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="welt">
+<h2>welt<a class="headerlink" href="#welt" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>welt.de</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Germany</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/welt.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.welt">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="wwenetwork">
+<h2>wwenetwork<a class="headerlink" href="#wwenetwork" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>network.wwe.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Account</dt>
+<dd class="field-odd"><p>Required</p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-wwenetwork-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--wwenetwork-email</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-wwenetwork-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--wwenetwork-password</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/wwenetwork.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.wwenetwork">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="youtube">
+<h2>youtube<a class="headerlink" href="#youtube" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>youtube.com</p></li>
+<li><p>youtu.be</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Notes</dt>
+<dd class="field-odd"><p>Protected videos are not supported</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/youtube.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.youtube">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="yupptv">
+<h2>yupptv<a class="headerlink" href="#yupptv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>yupptv.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Account</dt>
+<dd class="field-odd"><p>Some streams require an account and subscription</p>
+</dd>
+<dt class="field-even">Arguments</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-yupptv-boxid"><code class="xref std std-option docutils literal notranslate"><span class="pre">--yupptv-boxid</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-yupptv-yuppflixtoken"><code class="xref std std-option docutils literal notranslate"><span class="pre">--yupptv-yuppflixtoken</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-yupptv-purge-credentials"><code class="xref std std-option docutils literal notranslate"><span class="pre">--yupptv-purge-credentials</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/yupptv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.yupptv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="zattoo">
+<h2>zattoo<a class="headerlink" href="#zattoo" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>zattoo.com</p></li>
+<li><p>iptv.glattvision.ch</p></li>
+<li><p>www.saktv.ch</p></li>
+<li><p>www.vtxtv.ch</p></li>
+<li><p>mobiltv.quickline.com</p></li>
+<li><p>www.quantum-tv.com</p></li>
+<li><p>tvonline.ewe.de</p></li>
+<li><p>nettv.netcologne.de</p></li>
+<li><p>tvplus.m-net.de</p></li>
+<li><p>player.waly.tv</p></li>
+<li><p>www.1und1.tv</p></li>
+<li><p>www.netplus.tv</p></li>
+<li><p>www.bbv-tv.net</p></li>
+<li><p>www.meinewelt.cc</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="cli.html#cmdoption-zattoo-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--zattoo-email</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-zattoo-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--zattoo-password</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-zattoo-purge-credentials"><code class="xref std std-option docutils literal notranslate"><span class="pre">--zattoo-purge-credentials</span></code></a></p></li>
+<li><p><a class="reference internal" href="cli.html#cmdoption-zattoo-stream-types"><code class="xref std std-option docutils literal notranslate"><span class="pre">--zattoo-stream-types</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/zattoo.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.zattoo">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="zdf-mediathek">
+<h2>zdf_mediathek<a class="headerlink" href="#zdf-mediathek" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>zdf.de</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live, vod</p>
+</dd>
+<dt class="field-odd">Region</dt>
+<dd class="field-odd"><p>Germany</p>
+</dd>
+<dt class="field-even">GitHub</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/zdf_mediathek.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.zdf_mediathek">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="zeenews">
+<h2>zeenews<a class="headerlink" href="#zeenews" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>zeenews.india.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/zeenews.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.zeenews">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="zengatv">
+<h2>zengatv<a class="headerlink" href="#zengatv" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>zengatv.com</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/zengatv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.zengatv">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="zhanqi">
+<h2>zhanqi<a class="headerlink" href="#zhanqi" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">URL(s)</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>zhanqi.tv</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>live</p>
+</dd>
+<dt class="field-odd">GitHub</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/zhanqi.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.zhanqi">Issues</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="players.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Players</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="cli.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Command-Line Interface</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2022, Streamlink |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Plugins</a><ul>
+<li><a class="reference internal" href="#abematv">abematv</a></li>
+<li><a class="reference internal" href="#adultswim">adultswim</a></li>
+<li><a class="reference internal" href="#afreeca">afreeca</a></li>
+<li><a class="reference internal" href="#albavision">albavision</a></li>
+<li><a class="reference internal" href="#app17">app17</a></li>
+<li><a class="reference internal" href="#ard-live">ard_live</a></li>
+<li><a class="reference internal" href="#ard-mediathek">ard_mediathek</a></li>
+<li><a class="reference internal" href="#artetv">artetv</a></li>
+<li><a class="reference internal" href="#atresplayer">atresplayer</a></li>
+<li><a class="reference internal" href="#bbciplayer">bbciplayer</a></li>
+<li><a class="reference internal" href="#bfmtv">bfmtv</a></li>
+<li><a class="reference internal" href="#bigo">bigo</a></li>
+<li><a class="reference internal" href="#bilibili">bilibili</a></li>
+<li><a class="reference internal" href="#bloomberg">bloomberg</a></li>
+<li><a class="reference internal" href="#booyah">booyah</a></li>
+<li><a class="reference internal" href="#brightcove">brightcove</a></li>
+<li><a class="reference internal" href="#btv">btv</a></li>
+<li><a class="reference internal" href="#cbsnews">cbsnews</a></li>
+<li><a class="reference internal" href="#cdnbg">cdnbg</a></li>
+<li><a class="reference internal" href="#ceskatelevize">ceskatelevize</a></li>
+<li><a class="reference internal" href="#cinergroup">cinergroup</a></li>
+<li><a class="reference internal" href="#clubbingtv">clubbingtv</a></li>
+<li><a class="reference internal" href="#cnews">cnews</a></li>
+<li><a class="reference internal" href="#crunchyroll">crunchyroll</a></li>
+<li><a class="reference internal" href="#dailymotion">dailymotion</a></li>
+<li><a class="reference internal" href="#delfi">delfi</a></li>
+<li><a class="reference internal" href="#deutschewelle">deutschewelle</a></li>
+<li><a class="reference internal" href="#dlive">dlive</a></li>
+<li><a class="reference internal" href="#dogan">dogan</a></li>
+<li><a class="reference internal" href="#dogus">dogus</a></li>
+<li><a class="reference internal" href="#drdk">drdk</a></li>
+<li><a class="reference internal" href="#earthcam">earthcam</a></li>
+<li><a class="reference internal" href="#egame">egame</a></li>
+<li><a class="reference internal" href="#eltrecetv">eltrecetv</a></li>
+<li><a class="reference internal" href="#euronews">euronews</a></li>
+<li><a class="reference internal" href="#facebook">facebook</a></li>
+<li><a class="reference internal" href="#filmon">filmon</a></li>
+<li><a class="reference internal" href="#foxtr">foxtr</a></li>
+<li><a class="reference internal" href="#funimationnow">funimationnow</a></li>
+<li><a class="reference internal" href="#galatasaraytv">galatasaraytv</a></li>
+<li><a class="reference internal" href="#garena">garena</a></li>
+<li><a class="reference internal" href="#goltelevision">goltelevision</a></li>
+<li><a class="reference internal" href="#goodgame">goodgame</a></li>
+<li><a class="reference internal" href="#googledrive">googledrive</a></li>
+<li><a class="reference internal" href="#gulli">gulli</a></li>
+<li><a class="reference internal" href="#huajiao">huajiao</a></li>
+<li><a class="reference internal" href="#huya">huya</a></li>
+<li><a class="reference internal" href="#idf1">idf1</a></li>
+<li><a class="reference internal" href="#invintus">invintus</a></li>
+<li><a class="reference internal" href="#kugou">kugou</a></li>
+<li><a class="reference internal" href="#linelive">linelive</a></li>
+<li><a class="reference internal" href="#livestream">livestream</a></li>
+<li><a class="reference internal" href="#lnk">lnk</a></li>
+<li><a class="reference internal" href="#lrt">lrt</a></li>
+<li><a class="reference internal" href="#ltv-lsm-lv">ltv_lsm_lv</a></li>
+<li><a class="reference internal" href="#mediaklikk">mediaklikk</a></li>
+<li><a class="reference internal" href="#mediavitrina">mediavitrina</a></li>
+<li><a class="reference internal" href="#mildom">mildom</a></li>
+<li><a class="reference internal" href="#mitele">mitele</a></li>
+<li><a class="reference internal" href="#mjunoon">mjunoon</a></li>
+<li><a class="reference internal" href="#mrtmk">mrtmk</a></li>
+<li><a class="reference internal" href="#n13tv">n13tv</a></li>
+<li><a class="reference internal" href="#nbc">nbc</a></li>
+<li><a class="reference internal" href="#nbcnews">nbcnews</a></li>
+<li><a class="reference internal" href="#nbcsports">nbcsports</a></li>
+<li><a class="reference internal" href="#nhkworld">nhkworld</a></li>
+<li><a class="reference internal" href="#nicolive">nicolive</a></li>
+<li><a class="reference internal" href="#nimotv">nimotv</a></li>
+<li><a class="reference internal" href="#nos">nos</a></li>
+<li><a class="reference internal" href="#nownews">nownews</a></li>
+<li><a class="reference internal" href="#nrk">nrk</a></li>
+<li><a class="reference internal" href="#ntv">ntv</a></li>
+<li><a class="reference internal" href="#okru">okru</a></li>
+<li><a class="reference internal" href="#olympicchannel">olympicchannel</a></li>
+<li><a class="reference internal" href="#oneplusone">oneplusone</a></li>
+<li><a class="reference internal" href="#onetv">onetv</a></li>
+<li><a class="reference internal" href="#openrectv">openrectv</a></li>
+<li><a class="reference internal" href="#orf-tvthek">orf_tvthek</a></li>
+<li><a class="reference internal" href="#pandalive">pandalive</a></li>
+<li><a class="reference internal" href="#picarto">picarto</a></li>
+<li><a class="reference internal" href="#piczel">piczel</a></li>
+<li><a class="reference internal" href="#pixiv">pixiv</a></li>
+<li><a class="reference internal" href="#pluto">pluto</a></li>
+<li><a class="reference internal" href="#pluzz">pluzz</a></li>
+<li><a class="reference internal" href="#qq">qq</a></li>
+<li><a class="reference internal" href="#radiko">radiko</a></li>
+<li><a class="reference internal" href="#radionet">radionet</a></li>
+<li><a class="reference internal" href="#raiplay">raiplay</a></li>
+<li><a class="reference internal" href="#reuters">reuters</a></li>
+<li><a class="reference internal" href="#rotana">rotana</a></li>
+<li><a class="reference internal" href="#rtbf">rtbf</a></li>
+<li><a class="reference internal" href="#rtpa">rtpa</a></li>
+<li><a class="reference internal" href="#rtpplay">rtpplay</a></li>
+<li><a class="reference internal" href="#rtve">rtve</a></li>
+<li><a class="reference internal" href="#rtvs">rtvs</a></li>
+<li><a class="reference internal" href="#ruv">ruv</a></li>
+<li><a class="reference internal" href="#sbscokr">sbscokr</a></li>
+<li><a class="reference internal" href="#schoolism">schoolism</a></li>
+<li><a class="reference internal" href="#senategov">senategov</a></li>
+<li><a class="reference internal" href="#showroom">showroom</a></li>
+<li><a class="reference internal" href="#sportal">sportal</a></li>
+<li><a class="reference internal" href="#sportschau">sportschau</a></li>
+<li><a class="reference internal" href="#ssh101">ssh101</a></li>
+<li><a class="reference internal" href="#stadium">stadium</a></li>
+<li><a class="reference internal" href="#steam">steam</a></li>
+<li><a class="reference internal" href="#streamable">streamable</a></li>
+<li><a class="reference internal" href="#streann">streann</a></li>
+<li><a class="reference internal" href="#stv">stv</a></li>
+<li><a class="reference internal" href="#svtplay">svtplay</a></li>
+<li><a class="reference internal" href="#swisstxt">swisstxt</a></li>
+<li><a class="reference internal" href="#teamliquid">teamliquid</a></li>
+<li><a class="reference internal" href="#telefe">telefe</a></li>
+<li><a class="reference internal" href="#tf1">tf1</a></li>
+<li><a class="reference internal" href="#theplatform">theplatform</a></li>
+<li><a class="reference internal" href="#tlctr">tlctr</a></li>
+<li><a class="reference internal" href="#turkuvaz">turkuvaz</a></li>
+<li><a class="reference internal" href="#tv360">tv360</a></li>
+<li><a class="reference internal" href="#tv3cat">tv3cat</a></li>
+<li><a class="reference internal" href="#tv4play">tv4play</a></li>
+<li><a class="reference internal" href="#tv5monde">tv5monde</a></li>
+<li><a class="reference internal" href="#tv8">tv8</a></li>
+<li><a class="reference internal" href="#tv999">tv999</a></li>
+<li><a class="reference internal" href="#tvibo">tvibo</a></li>
+<li><a class="reference internal" href="#tviplayer">tviplayer</a></li>
+<li><a class="reference internal" href="#tvp">tvp</a></li>
+<li><a class="reference internal" href="#tvrby">tvrby</a></li>
+<li><a class="reference internal" href="#tvrplus">tvrplus</a></li>
+<li><a class="reference internal" href="#tvtoya">tvtoya</a></li>
+<li><a class="reference internal" href="#twitcasting">twitcasting</a></li>
+<li><a class="reference internal" href="#twitch">twitch</a></li>
+<li><a class="reference internal" href="#ustreamtv">ustreamtv</a></li>
+<li><a class="reference internal" href="#ustvnow">ustvnow</a></li>
+<li><a class="reference internal" href="#vidio">vidio</a></li>
+<li><a class="reference internal" href="#vimeo">vimeo</a></li>
+<li><a class="reference internal" href="#vinhlongtv">vinhlongtv</a></li>
+<li><a class="reference internal" href="#vk">vk</a></li>
+<li><a class="reference internal" href="#vlive">vlive</a></li>
+<li><a class="reference internal" href="#vrtbe">vrtbe</a></li>
+<li><a class="reference internal" href="#vtvgo">vtvgo</a></li>
+<li><a class="reference internal" href="#wasd">wasd</a></li>
+<li><a class="reference internal" href="#webtv">webtv</a></li>
+<li><a class="reference internal" href="#welt">welt</a></li>
+<li><a class="reference internal" href="#wwenetwork">wwenetwork</a></li>
+<li><a class="reference internal" href="#youtube">youtube</a></li>
+<li><a class="reference internal" href="#yupptv">yupptv</a></li>
+<li><a class="reference internal" href="#zattoo">zattoo</a></li>
+<li><a class="reference internal" href="#zdf-mediathek">zdf_mediathek</a></li>
+<li><a class="reference internal" href="#zeenews">zeenews</a></li>
+<li><a class="reference internal" href="#zengatv">zengatv</a></li>
+<li><a class="reference internal" href="#zhanqi">zhanqi</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/main.js"></script>
+    </body>
+</html>

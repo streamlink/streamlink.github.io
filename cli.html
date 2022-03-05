@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Plugins" href="plugin_matrix.html" /><link rel="prev" title="Installation" href="install.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Plugins" href="plugins.html" /><link rel="prev" title="Installation" href="install.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Command-Line Interface - Streamlink 3.1.1 documentation</title>
+        <title>Command-Line Interface - Streamlink 3.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 3.1.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 3.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.1.1</pre>
+  <pre class="sidebar-versions-current">3.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="">Latest</a></dd>
@@ -175,7 +175,7 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Command-Line Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plugin_matrix.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
@@ -425,7 +425,7 @@ with <code class="docutils literal notranslate"><span class="pre">.&lt;plugin</s
 </tr>
 </tbody>
 </table></div>
-<p>Have a look at the <a class="reference internal" href="plugin_matrix.html#plugins"><span class="std std-ref">list of plugins</span></a>, or
+<p>Have a look at the <a class="reference internal" href="plugins.html#plugins"><span class="std std-ref">list of plugins</span></a>, or
 check the <a class="reference internal" href="#cmdoption-plugins"><code class="xref std std-option docutils literal notranslate"><span class="pre">--plugins</span></code></a> option to see the name of each built-in plugin.</p>
 </section>
 </section>
@@ -557,7 +557,7 @@ with an optional list of parameters, like so:</p>
 </pre></div>
 </div>
 <p>Depending on the input URL, the explicit protocol scheme may be omitted.
-The following example shows HLS streams (<code class="docutils literal notranslate"><span class="pre">.m3u8</span></code>) and DASH streams (<code class="docutils literal notranslate"><span class="pre">.mdp</span></code>):</p>
+The following example shows HLS streams (<code class="docutils literal notranslate"><span class="pre">.m3u8</span></code>) and DASH streams (<code class="docutils literal notranslate"><span class="pre">.mpd</span></code>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"https://streamingserver/playlist.m3u8"</span>
 <span class="gp">$ </span>streamlink <span class="s2">"https://streamingserver/manifest.mpd"</span>
 </pre></div>
@@ -1832,7 +1832,7 @@ the following types are allowed:</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="plugin_matrix.html">
+          <a class="next-page" href="plugins.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>

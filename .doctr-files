@@ -13,7 +13,7 @@
 ./_sources/install.rst.txt
 ./_sources/issues.rst.txt
 ./_sources/players.rst.txt
-./_sources/plugin_matrix.rst.txt
+./_sources/plugins.rst.txt
 ./_sources/thirdparty.rst.txt
 ./_static/apple-touch-icon.png
 ./_static/basic.css
@@ -55,7 +55,7 @@
 ./issues.html
 ./objects.inv
 ./players.html
-./plugin_matrix.html
+./plugins.html
 ./search.html
 ./searchindex.js
 ./thirdparty.html

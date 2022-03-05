@@ -189,7 +189,7 @@ Windows           - ``%APPDATA%\streamlink\config.pluginname``
                   - ``%APPDATA%\streamlink\streamlinkrc.pluginname``
 ================= ====================================================
 
-Have a look at the :ref:`list of plugins <plugin_matrix:Plugins>`, or
+Have a look at the :ref:`list of plugins <plugins:Plugins>`, or
 check the :option:`--plugins` option to see the name of each built-in plugin.
 
 
@@ -314,7 +314,7 @@ with an optional list of parameters, like so:
     $ streamlink "protocol://https://streamingserver/path key1=value1 key2=value2"
 
 Depending on the input URL, the explicit protocol scheme may be omitted.
-The following example shows HLS streams (``.m3u8``) and DASH streams (``.mdp``):
+The following example shows HLS streams (``.m3u8``) and DASH streams (``.mpd``):
 
 .. code-block:: console
 
