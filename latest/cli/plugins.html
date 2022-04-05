@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Plugins" href="../plugins.html" /><link rel="prev" title="Metadata" href="metadata.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Crunchyroll" href="plugins/crunchyroll.html" /><link rel="prev" title="Metadata" href="metadata.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2021.09.08"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Plugin specific usage - Streamlink 3.2.0+14.g38f535c documentation</title>
+        <title>Plugin specific usage - Streamlink 3.2.0+15.ge6223bc documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 3.2.0+14.g38f535c documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 3.2.0+15.ge6223bc documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.2.0+14.g38f535c</pre>
+  <pre class="sidebar-versions-current">3.2.0+15.ge6223bc</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/plugins.html" class="version-current">Latest</a></dd>
@@ -182,7 +182,12 @@
 <li class="toctree-l2"><a class="reference internal" href="protocols.html">Streaming protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proxy.html">Proxy support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Plugin specific usage</a></li>
+<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Plugin specific usage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="plugins/crunchyroll.html">Crunchyroll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugins/funimationnow.html">FunimationNow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugins/twitch.html">Twitch</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../plugins.html">Plugins</a></li>
@@ -225,7 +230,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -239,63 +244,28 @@
   
   <section id="plugin-specific-usage">
 <h1>Plugin specific usage<a class="headerlink" href="#plugin-specific-usage" title="Permalink to this headline">¶</a></h1>
-<section id="authenticating-with-crunchyroll">
-<h2>Authenticating with Crunchyroll<a class="headerlink" href="#authenticating-with-crunchyroll" title="Permalink to this headline">¶</a></h2>
-<p>Crunchyroll requires authenticating with a premium account to access some of
-their content. To do so, the plugin provides a couple of options to input your
-information, <a class="reference internal" href="../cli.html#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a> and <a class="reference internal" href="../cli.html#cmdoption-crunchyroll-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-password</span></code></a>.</p>
-<p>You can login like this:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink --crunchyroll-username<span class="o">=</span>xxxx --crunchyroll-password<span class="o">=</span>xxx https://crunchyroll.com/a-crunchyroll-episode-link
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you omit the password, streamlink will ask for it.</p>
-</div>
-<p>Once logged in, the plugin makes sure to save the session credentials to avoid
-asking your username and password again.</p>
-<p>Nevertheless, these credentials are valid for a limited amount of time, so it
-might be a good idea to save your username and password in your
-<a class="reference internal" href="config.html#configuration-file"><span class="std std-ref">configuration file</span></a> anyway.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The API this plugin uses isn't supposed to be available on desktop
-computers. The plugin tries to blend in as a valid device using custom
-headers and following the API's usual flow (e.g. reusing credentials), but
-this does not assure that your account will be safe from being spotted for
-unusual behavior.</p>
-</div>
-<section id="http-proxy-with-crunchyroll">
-<h3>HTTP proxy with Crunchyroll<a class="headerlink" href="#http-proxy-with-crunchyroll" title="Permalink to this headline">¶</a></h3>
-<p>To be able to stream region locked content, you can use Streamlink's proxy
-options, which are described in the <a class="reference internal" href="proxy.html#proxy-support"><span class="std std-ref">Proxy Support</span></a> section.</p>
-<p>When doing this, it's possible that access to the stream will still be denied;
-this can happen because the session and credentials used by the plugin
-were obtained while being logged from your own region, and the server still assumes
-you're in that region.</p>
-<p>For cases like this, the plugin provides the <a class="reference internal" href="../cli.html#cmdoption-crunchyroll-purge-credentials"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-purge-credentials</span></code></a>
-option, which removes your saved session and credentials and tries to log
-in again using your username and password.</p>
-</section>
-</section>
-<section id="authenticating-with-funimationnow">
-<h2>Authenticating with FunimationNow<a class="headerlink" href="#authenticating-with-funimationnow" title="Permalink to this headline">¶</a></h2>
-<p>Like Crunchyroll, the FunimationNow plugin requires authenticating with a premium account to access some
-content: <a class="reference internal" href="../cli.html#cmdoption-funimation-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--funimation-email</span></code></a>, <a class="reference internal" href="../cli.html#cmdoption-funimation-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--funimation-password</span></code></a>. In addition, this plugin requires
-the <code class="docutils literal notranslate"><span class="pre">incap_ses</span></code> cookie to be sent with each HTTP request (see issue <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2088">#2088</a>). This unique session cookie
-can be found in your browser and sent via the <a class="reference internal" href="../cli.html#cmdoption-http-cookie"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-cookie</span></code></a> option.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink --funimation-email<span class="o">=</span><span class="s1">'xxx'</span> --funimation-password<span class="o">=</span><span class="s1">'xxx'</span> --http-cookie <span class="s1">'incap_ses_xxx=xxxx='</span> https://funimation.com/shows/show/an-episode-link
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There are multiple ways to retrieve the required cookie. For more
-information on browser cookies, please consult the following:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/HTTP_cookie">What are cookies?</a></p></li>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/crunchyroll.html">Crunchyroll</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plugins/crunchyroll.html#authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/crunchyroll.html#http-proxy">HTTP proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/funimationnow.html">FunimationNow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plugins/funimationnow.html#authentication">Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/twitch.html">Twitch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plugins/twitch.html#authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/twitch.html#embedded-ads">Embedded ads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/twitch.html#low-latency-streaming">Low latency streaming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plugins/twitch.html#player-buffer-tweaks">Player buffer tweaks</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
-</section>
 </section>
 
 
@@ -304,12 +274,12 @@ information on browser cookies, please consult the following:</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../plugins.html">
+          <a class="next-page" href="plugins/crunchyroll.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Plugins</div>
+                <div class="title">Crunchyroll</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -336,31 +306,8 @@ information on browser cookies, please consult the following:</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Plugin specific usage</a><ul>
-<li><a class="reference internal" href="#authenticating-with-crunchyroll">Authenticating with Crunchyroll</a><ul>
-<li><a class="reference internal" href="#http-proxy-with-crunchyroll">HTTP proxy with Crunchyroll</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#authenticating-with-funimationnow">Authenticating with FunimationNow</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
