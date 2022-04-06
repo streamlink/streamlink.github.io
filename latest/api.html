@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Reference - Streamlink 3.2.0+18.g83abb0f documentation</title>
+        <title>API Reference - Streamlink 3.2.0+20.gc62c3e2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 3.2.0+18.g83abb0f documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 3.2.0+20.gc62c3e2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.2.0+18.g83abb0f</pre>
+  <pre class="sidebar-versions-current">3.2.0+20.gc62c3e2</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="">Stable</a></dd>
     <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
@@ -909,7 +909,8 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 <li><p><strong>name_fmt</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- A format string for the name, allowed format keys are: name, pixels, bitrate</p></li>
 <li><p><strong>start_offset</strong> (<em>float</em>) -- Number of seconds to be skipped from the beginning</p></li>
 <li><p><strong>duration</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) -- Number of second until ending the stream</p></li>
-<li><p><strong>request_params</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code></p></li>
+<li><p><strong>request_params</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a>, <a class="reference internal" href="#streamlink.stream.MuxedHLSStream" title="streamlink.stream.MuxedHLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a>,
+or <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
