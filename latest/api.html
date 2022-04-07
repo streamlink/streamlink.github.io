@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Reference - Streamlink 3.2.0+20.gc62c3e2 documentation</title>
+        <title>API Reference - Streamlink 3.2.0+21.gfcee0d2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 3.2.0+20.gc62c3e2 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 3.2.0+21.gfcee0d2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.2.0+20.gc62c3e2</pre>
+  <pre class="sidebar-versions-current">3.2.0+21.gfcee0d2</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="">Stable</a></dd>
     <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
@@ -282,7 +282,7 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.Streamlink.http">
 <span class="sig-name descname"><span class="pre">http</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">streamlink.plugin.api.http_session.HTTPSession</span></em><a class="headerlink" href="#streamlink.Streamlink.http" title="Permalink to this definition">¶</a></dt>
-<dd><p>An instance of Streamlink's <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.Session</span></code> subclass.
+<dd><p>An instance of Streamlink's <a class="reference external" href="https://docs.python-requests.org/en/stable/api/#requests.Session" title="(in Requests v2.27.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">requests.Session</span></code></a> subclass.
 Used for any kind of HTTP request made by plugin and stream implementations.</p>
 </dd></dl>
 <dl class="py method">
@@ -850,26 +850,26 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 <dt class="sig sig-object py" id="streamlink.stream.HTTPStream">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">HTTPStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HTTPStream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.stream.stream.Stream</span></code></a></p>
-<p>An HTTP stream using the <code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code> library.</p>
+<p>An HTTP stream using the <a class="reference external" href="https://docs.python-requests.org/en/stable/api/#module-requests" title="(in Requests v2.27.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code></a> library.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>url</strong> (<em>str</em>) -- The URL of the HTTP stream</p></li>
 <li><p><strong>buffered</strong> (<em>bool</em>) -- Wrap stream output in an additional reader-thread</p></li>
-<li><p><strong>args</strong> (<em>Dict</em>) -- Additional keyword arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code></p></li>
+<li><p><strong>args</strong> (<em>Dict</em>) -- Additional keyword arguments passed to <a class="reference external" href="https://docs.python-requests.org/en/stable/api/#requests.Session.request" title="(in Requests v2.27.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.stream.HTTPStream.args">
 <span class="sig-name descname"><span class="pre">args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#streamlink.stream.HTTPStream.args" title="Permalink to this definition">¶</a></dt>
-<dd><p>A dict of keyword arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code>, such as method, headers, cookies, etc.</p>
+<dd><p>A dict of keyword arguments passed to <a class="reference external" href="https://docs.python-requests.org/en/stable/api/#requests.Session.request" title="(in Requests v2.27.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a>, such as method, headers, cookies, etc.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="streamlink.stream.HTTPStream.url">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#streamlink.stream.HTTPStream.url" title="Permalink to this definition">¶</a></dt>
-<dd><p>The URL to the stream, prepared by <code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code> with parameters read from <a class="reference internal" href="#streamlink.stream.HTTPStream.args" title="streamlink.stream.HTTPStream.args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">args</span></code></a>.</p>
+<dd><p>The URL to the stream, prepared by <a class="reference external" href="https://docs.python-requests.org/en/stable/api/#module-requests" title="(in Requests v2.27.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code></a> with parameters read from <a class="reference internal" href="#streamlink.stream.HTTPStream.args" title="streamlink.stream.HTTPStream.args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">args</span></code></a>.</p>
 </dd></dl>
 </dd></dl>
 </section>
@@ -889,7 +889,7 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 <li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
 <li><p><strong>start_offset</strong> (<em>float</em>) -- Number of seconds to be skipped from the beginning</p></li>
 <li><p><strong>duration</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) -- Number of seconds until ending the stream</p></li>
-<li><p><strong>args</strong> (<em>Dict</em>) -- Additional keyword arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code></p></li>
+<li><p><strong>args</strong> (<em>Dict</em>) -- Additional keyword arguments passed to <a class="reference external" href="https://docs.python-requests.org/en/stable/api/#requests.Session.request" title="(in Requests v2.27.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -910,7 +910,7 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 <li><p><strong>start_offset</strong> (<em>float</em>) -- Number of seconds to be skipped from the beginning</p></li>
 <li><p><strong>duration</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) -- Number of second until ending the stream</p></li>
 <li><p><strong>request_params</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a>, <a class="reference internal" href="#streamlink.stream.MuxedHLSStream" title="streamlink.stream.MuxedHLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a>,
-or <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code></p></li>
+or <a class="reference external" href="https://docs.python-requests.org/en/stable/api/#requests.Session.request" title="(in Requests v2.27.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -957,7 +957,7 @@ or <code class="xref py py-meth docutils literal notranslate"><span class="pre">
 <li><p><strong>video_representation</strong> (<em>Optional</em><em>[</em><em>streamlink.stream.dash_manifest.Representation</em><em>]</em>) -- Video representation</p></li>
 <li><p><strong>audio_representation</strong> (<em>Optional</em><em>[</em><em>streamlink.stream.dash_manifest.Representation</em><em>]</em>) -- Audio representation</p></li>
 <li><p><strong>period</strong> (<em>float</em>) -- Update period</p></li>
-<li><p><strong>args</strong> -- Additional keyword arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code></p></li>
+<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://docs.python-requests.org/en/stable/api/#requests.Session.request" title="(in Requests v2.27.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -970,7 +970,7 @@ or <code class="xref py py-meth docutils literal notranslate"><span class="pre">
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>url_or_manifest</strong> (<em>str</em>) -- URL of the manifest file or an XML manifest string</p></li>
-<li><p><strong>args</strong> -- Additional keyword arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.request()</span></code></p></li>
+<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://docs.python-requests.org/en/stable/api/#requests.Session.request" title="(in Requests v2.27.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
