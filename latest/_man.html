@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Streamlink - Streamlink 3.2.0+41.ge4490ad3 documentation</title>
+        <title>Streamlink - Streamlink 3.2.0+42.g77f5e1d6 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 3.2.0+41.ge4490ad3 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 3.2.0+42.g77f5e1d6 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.2.0+41.ge4490ad3</pre>
+  <pre class="sidebar-versions-current">3.2.0+42.g77f5e1d6</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/_man.html" class="">Stable</a></dd>
     <dd><a href="/latest/_man.html" class="version-current">Latest</a></dd>
@@ -584,6 +584,7 @@ the string "\$A" could be inserted inside the --title string.</p>
 <span class="sig-name descname"><span class="pre">--output</span></span><span class="sig-prename descclassname"> <span class="pre">FILENAME</span></span><a class="headerlink" href="#cmdoption-output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write stream data to FILENAME instead of playing it. If FILENAME is set to - (dash), then the stream data will be
 written to stdout, similar to the <a class="reference internal" href="cli.html#cmdoption-stdout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stdout</span></code></a> argument.</p>
+<p>Non-existent directories and subdirectories will be created if they do not exist, if filesystem permissions allow.</p>
 <p>You will be prompted if the file already exists.</p>
 <p>Please see the "Metadata variables" section of Streamlink's CLI documentation for all available metadata variables.</p>
 <p>Unsupported characters in substituted variables will be replaced with an underscore.</p>
@@ -619,6 +620,7 @@ show the download progress bar even if there is no terminal.</p>
 <span class="sig-name descname"><span class="pre">--record</span></span><span class="sig-prename descclassname"> <span class="pre">FILENAME</span></span><a class="headerlink" href="#cmdoption-record" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the stream in the player, while at the same time writing it to FILENAME. If FILENAME is set to - (dash), then the
 stream data will be written to stdout, similar to the <a class="reference internal" href="cli.html#cmdoption-stdout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stdout</span></code></a> argument, while still opening the player.</p>
+<p>Non-existent directories and subdirectories will be created if they do not exist, if filesystem permissions allow.</p>
 <p>You will be prompted if the file already exists.</p>
 <p>Please see the "Metadata variables" section of Streamlink's CLI documentation for all available metadata variables.</p>
 <p>Unsupported characters in substituted variables will be replaced with an underscore.</p>
@@ -633,6 +635,7 @@ stream data will be written to stdout, similar to the <a class="reference intern
 <dt class="sig sig-object std" id="cmdoption-record-and-pipe">
 <span class="sig-name descname"><span class="pre">--record-and-pipe</span></span><span class="sig-prename descclassname"> <span class="pre">FILENAME</span></span><a class="headerlink" href="#cmdoption-record-and-pipe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write stream data to stdout, while at the same time writing it to FILENAME.</p>
+<p>Non-existent directories and subdirectories will be created if they do not exist, if filesystem permissions allow.</p>
 <p>You will be prompted if the file already exists.</p>
 <p>Please see the "Metadata variables" section of Streamlink's CLI documentation for all available metadata variables.</p>
 <p>Unsupported characters in substituted variables will be replaced with an underscore.</p>
