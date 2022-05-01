@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 3.2.0+50.g414a1eb8 documentation</title>
+        <title>Changelog - Streamlink 4.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 3.2.0+50.g414a1eb8 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,10 +160,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.2.0+50.g414a1eb8</pre>
+  <pre class="sidebar-versions-current">4.0.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -238,12 +238,102 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<section id="streamlink-4-0-0-2022-05-01">
+<h2>streamlink 4.0.0 (2022-05-01)<a class="headerlink" href="#streamlink-4-0-0-2022-05-01" title="Permalink to this headline">¶</a></h2>
+<p>Breaking changes:</p>
+<ul class="simple">
+<li><p>BREAKING: dropped support for Python 3.6 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4442">#4442</a>)</p></li>
+<li><p>BREAKING/API: removed <a class="reference external" href="https://streamlink.github.io/deprecations.html#removal-of-streamlink-plugin-api-utils"><code class="docutils literal notranslate"><span class="pre">streamlink.plugin.api.utils</span></code></a> module (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4467">#4467</a>)</p></li>
+<li><p>BREAKING/setup: switched to PEP 518 build system declaration and replaced versioneer in favor of versioningit (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4440">#4440</a>)</p></li>
+<li><p>BREAKING/packaging: replaced Windows installers with new ones built at <a class="reference external" href="https://github.com/streamlink/windows-installer">streamlink/windows-installer</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4405">#4405</a>)</p>
+<ul>
+<li><p>Added: new embedded Python builds for 3.8 and 3.10, both x86 and x86_64</p></li>
+<li><p>Updated: embedded FFmpeg to 5.0</p></li>
+</ul>
+</li>
+</ul>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: support for <code class="docutils literal notranslate"><span class="pre">--record=-</span></code>, for writing data to stdout while watching at the same time (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4462">#4462</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">plugin</span></code> variable for <code class="docutils literal notranslate"><span class="pre">--title</span></code>, <code class="docutils literal notranslate"><span class="pre">--output</span></code>, <code class="docutils literal notranslate"><span class="pre">--record</span></code> and <code class="docutils literal notranslate"><span class="pre">--record-and-pipe</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4437">#4437</a>)</p></li>
+<li><p>Added: missing CLI protocol parameter support for DASH streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4434">#4434</a>)</p></li>
+<li><p>Updated: CLI and API documentation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4415">#4415</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4424">#4424</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4430">#4430</a>)</p></li>
+<li><p>Updated: plugin description documentation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4391">#4391</a>)</p></li>
+<li><p>Fixed: nicolive email logins (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4380">#4380</a>)</p></li>
+<li><p>Fixed: various other plugin issues (see the changelog down below)</p></li>
+<li><p>New plugins: cmmedia (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4416">#4416</a>), htv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4431">#4431</a>), mdstrm (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4395">#4395</a>), trovo (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4471">#4471</a>)</p></li>
+<li><p>Removed plugins: abweb (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4270">#4270</a>), garena (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4460">#4460</a>), senategov (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4458">#4458</a>), teamliquid (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4393">#4393</a>), tlctr (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4432">#4432</a>), vrtbe (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4459">#4459</a>)</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Ekang Monyet &lt;ekangmonyet@posteo.net&gt; (1):
+      plugins.nicolive: fix timeshift-offset option
+
+Ian Cameron &lt;1661072+mkbloke@users.noreply.github.com&gt; (7):
+      plugins: add missing "description" metadata tags
+      plugins.teamliquid: plugin removal
+      plugins.cmmedia: new plugin
+      docs: README.md update link to plugins list
+      plugins.htv: new plugin
+      cli.argparser: update help with dir/subdir creation info
+      plugins.trovo: new plugin
+
+Mozi &lt;29089388+pzhlkj6612@users.noreply.github.com&gt; (1):
+      cli: add "overwrite" to --force help text (#4396)
+
+back-to &lt;backto@protonmail.ch&gt; (4):
+      plugins.mdstrm: new plugin for mdstrm.com livestreams (#4395)
+      plugins.oneplusone: fix iframe
+      plugins.tlctr: remove plugin
+      plugins.garena: remove plugin
+
+bastimeyer &lt;mail@bastimeyer.de&gt; (34):
+      chore: clean up some imports
+      installer: bump python to 3.9.11
+      chore: remove unneeded release script
+      docs: fix CLI argument line breaks
+      docs: split CLI into submenus
+      installer: drop Windows installer build config
+      docs: split cli/plugin, add cli/plugin/twitch
+      docs: update API page, add type annotations
+      plugins.dash: add support for parameters
+      docs: add protocol-plugin parameters documentation
+      docs: add intersphinx config
+      tests: add proper tests for CLI metadata variables
+      cli: add `plugin` metadata variable
+      build: drop removed plugins file from package_data
+      chore: drop support for Python 3.6
+      build: add pyproject.toml, switch to versioningit
+      build: move imports in setup.py
+      plugins.cdnbg: rewrite plugin
+      plugins.funimationnow: replace itertags
+      plugins.vrtbe: remove plugin
+      plugins.senategov: remove plugin
+      cli: add support for --record=-
+      chore: remove unnecessary collection.OrderedDict
+      ci: fix netlify PR preview builds
+      plugins.facebook: replace itertags
+      plugin.api: remove utils module
+      docs: update debian backports info
+      plugins.showroom: fix plugin
+      chore: move coverage config to pyproject.toml
+      chore: clean up flake8 config
+      chore: update GitHub release template
+      docs: update and fix donations page
+      docs: fix incorrect min setuptools version
+      tests.plugins: make description metadata mandatory
+
+code-review-doctor &lt;72647856+code-review-doctor@users.noreply.github.com&gt; (1):
+      tests: fix accidental URL string concatenation (#4387)
+
+iwconfig &lt;snelhingst@gmail.com&gt; (1):
+      plugins.svtplay: oppetarkiv.se is not functional anymore (#4443)
+
+takayuki &lt;nirasawa@gmail.com&gt; (1):
+      plugins.linelive: fix API URL
+</pre></div>
+</div>
+</section>
 <section id="streamlink-3-2-0-2022-03-05">
 <h2>streamlink 3.2.0 (2022-03-05)<a class="headerlink" href="#streamlink-3-2-0-2022-03-05" title="Permalink to this headline">¶</a></h2>
 <p>Release highlights:</p>
@@ -4044,6 +4134,7 @@ wolftankk &lt;wolftankk@gmail.com&gt; (3):
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-4-0-0-2022-05-01">streamlink 4.0.0 (2022-05-01)</a></li>
 <li><a class="reference internal" href="#streamlink-3-2-0-2022-03-05">streamlink 3.2.0 (2022-03-05)</a></li>
 <li><a class="reference internal" href="#streamlink-3-1-1-2022-01-25">streamlink 3.1.1 (2022-01-25)</a></li>
 <li><a class="reference internal" href="#streamlink-3-1-0-2022-01-22">streamlink 3.1.0 (2022-01-22)</a></li>
