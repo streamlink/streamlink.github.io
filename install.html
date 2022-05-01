@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Command-Line Interface" href="cli.html" /><link rel="prev" title="Streamlink" href="index.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.5.0, furo 2021.09.08"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Installation - Streamlink 3.2.0 documentation</title>
+        <title>Installation - Streamlink 4.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 3.2.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">3.2.0</pre>
+  <pre class="sidebar-versions-current">4.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/install.html" class="">Latest</a></dd>
@@ -174,7 +174,22 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cli.html">Command-Line Interface</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Command-line usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/tutorial.html">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/config.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/plugin-sideloading.html">Plugin sideloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/protocols.html">Streaming protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/proxy.html">Proxy support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/metadata.html">Metadata</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli/plugins/crunchyroll.html">Crunchyroll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli/plugins/funimationnow.html">FunimationNow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli/plugins/twitch.html">Twitch</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
@@ -238,23 +253,26 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Installers</p></td>
-<td><p>See the <a class="reference internal" href="#windows-binaries">Windows binaries</a> section below</p></td>
+<tr class="row-even"><td><p>Installers (stable)</p></td>
+<td><p>See the <a class="reference internal" href="#windows-stable-installers">Windows stable installers</a> section below</p></td>
 </tr>
-<tr class="row-odd"><td><p>Portable</p></td>
-<td><p>See the <a class="reference internal" href="#windows-portable-version">Windows portable version</a> section below</p></td>
+<tr class="row-odd"><td><p>Installers (nightly)</p></td>
+<td><p>See the <a class="reference internal" href="#windows-nightly-installers">Windows nightly installers</a> section below</p></td>
 </tr>
-<tr class="row-even"><td><p>Python pip</p></td>
+<tr class="row-even"><td><p>Portable</p></td>
+<td><p>See the <a class="reference internal" href="#windows-portable-builds">Windows portable builds</a> section below</p></td>
+</tr>
+<tr class="row-odd"><td><p>Python pip</p></td>
 <td><p>See the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> section below</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://chocolatey.org/packages/streamlink">Chocolatey</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://chocolatey.org/packages/streamlink">Chocolatey</a></p></td>
 <td><div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>choco install streamlink
 </pre></div>
 </div>
 <p><a class="reference external" href="https://chocolatey.org">Installing Chocolatey packages</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/s/Streamlink/Streamlink">Windows Package Manager</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/s/Streamlink/Streamlink">Windows Package Manager</a></p></td>
 <td><div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>winget install streamlink
 </pre></div>
 </div>
@@ -294,8 +312,8 @@
 <h2>Linux and BSD<a class="headerlink" href="#linux-and-bsd" title="Permalink to this headline">¶</a></h2>
 <div class="table-wrapper"><table class="table-custom-layout docutils align-default">
 <colgroup>
-<col style="width: 24%"/>
-<col style="width: 76%"/>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Distribution</p></th>
@@ -333,10 +351,10 @@ sudo apt install streamlink
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (stable)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you don't have Debian backports already (see link below):</span>
-<span class="nb">echo</span> <span class="s2">"deb http://deb.debian.org/debian buster-backports main"</span> <span class="p">|</span> sudo tee <span class="s2">"/etc/apt/sources.list.d/streamlink.list"</span>
+<span class="nb">echo</span> <span class="s2">"deb http://deb.debian.org/debian bullseye-backports main"</span> <span class="p">|</span> sudo tee <span class="s2">"/etc/apt/sources.list.d/streamlink.list"</span>
 
 sudo apt update
-sudo apt -t buster-backports install streamlink
+sudo apt -t bullseye-backports install streamlink
 </pre></div>
 </div>
 <p><a class="reference external" href="https://wiki.debian.org/Backports#Using_the_command_line">Installing Debian backported packages</a></p>
@@ -449,7 +467,7 @@ if a package is not available for your distro or platform, or if it's out of dat
 <td><p>Michal Vasilek &lt;michal at vasilek.cz&gt;</p></td>
 </tr>
 <tr class="row-even"><td><p>Windows binaries</p></td>
-<td><p>beardypig &lt;beardypig at protonmail.com&gt;</p></td>
+<td><p>Sebastian Meyer &lt;mail at bastimeyer.de&gt;</p></td>
 </tr>
 <tr class="row-odd"><td><p>Windows port. version</p></td>
 <td><p>beardypig &lt;beardypig at protonmail.com&gt;</p></td>
@@ -555,10 +573,10 @@ permission issues.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://www.python.org/">Python</a></p></td>
-<td><p>At least version <strong>3.6</strong>.</p></td>
+<td><p>At least version <strong>3.7</strong>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://setuptools.pypa.io/en/latest/">python-setuptools</a></p></td>
-<td><p>At least version <strong>42.0.0</strong>.</p></td>
+<td><p>At least version <strong>45.0.0</strong>.</p></td>
 </tr>
 <tr class="row-even"><td colspan="2"><p><strong>Automatically installed by the setup script</strong></p></td>
 </tr>
@@ -599,57 +617,55 @@ permission issues.</p>
 </section>
 <section id="windows-binaries">
 <h2>Windows binaries<a class="headerlink" href="#windows-binaries" title="Permalink to this headline">¶</a></h2>
+<p>Since late March 2022, Windows installers for Streamlink can be found at the <a class="reference external" href="https://github.com/streamlink/windows-installer">streamlink/windows-installer</a> repository
+on GitHub, with support for different architectures and different Python versions.</p>
+<p>These installers contain</p>
+<ul class="simple">
+<li><p>an embedded Python version, built at <a class="reference external" href="https://github.com/streamlink/python-windows-embed">streamlink/python-windows-embed</a></p></li>
+<li><p>FFmpeg, for muxing streams, built at <a class="reference external" href="https://github.com/streamlink/FFmpeg-Builds">streamlink/FFmpeg-Builds</a></p></li>
+</ul>
+<p>For further information, please see the README file of the <a class="reference external" href="https://github.com/streamlink/windows-installer">streamlink/windows-installer</a> repository.</p>
+<section id="windows-stable-installers">
+<h3>Windows stable installers<a class="headerlink" href="#windows-stable-installers" title="Permalink to this headline">¶</a></h3>
 <div class="table-wrapper"><table class="table-custom-layout docutils align-default">
 <colgroup>
-<col style="width: 30%"/>
-<col style="width: 70%"/>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Release</p></th>
+<tr class="row-odd"><th class="head"><p>Installer flavor</p></th>
 <th class="head"><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">Stable release</a></p></td>
-<td><p>Download the installer from the <a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">GitHub releases page</a>.</p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/streamlink/windows-installer/releases">Python 3.10, x86_64</a></p></td>
+<td><p>for Windows 8+, 64-bit</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/streamlink/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster">Development build</a></p></td>
-<td><p>For testing purposes only! Built each day at midnight (UTC). <br/>
-Download the zipped installer from the <a class="reference external" href="https://github.com/streamlink/streamlink/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster">build artifacts</a> section of one of
-the recent scheduled builds. Build artifacts are stored by Github for 90 days. <br/>
-See the <a class="reference external" href="https://github.com/streamlink/streamlink/commits/master">commit log</a> for a list of changes since the last stable release.</p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/windows-installer/releases">Python 3.10, x86</a></p></td>
+<td><p>for Windows 8+, 32-bit</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/streamlink/windows-installer/releases">Python 3.8, x86_64</a></p></td>
+<td><p>for Windows 7, 64-bit</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/windows-installer/releases">Python 3.8, x86</a></p></td>
+<td><p>for Windows 7, 32-bit</p></td>
 </tr>
 </tbody>
 </table></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>The Streamlink installer for Windows is currently based on Python 3.9.</strong> <br/>
-Versions of Windows prior to 10 are <strong>not</strong> supported.</p>
-<p>Be aware that the packages for <a class="reference external" href="https://chocolatey.org/packages/streamlink">Chocolatey</a> and the <a class="reference external" href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/s/Streamlink/Streamlink">Windows Package Manager</a> are just wrappers
-around the stable installer and thus depend on Windows 10+ as well.</p>
-<p>Alternatively, <a class="reference internal" href="#pypi-package-and-source-code"><span class="std std-ref">Streamlink can be installed via python-pip</span></a>
-in a <a class="reference internal" href="#dependencies"><span class="std std-ref">compatible Python environment</span></a>.</p>
-</div>
-<p>These installers contain:</p>
-<ul class="simple">
-<li><p>A compiled version of Streamlink that <strong>does not require an existing Python installation</strong></p></li>
-<li><p><a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a> for muxing streams</p></li>
-</ul>
-<p>and perform the following tasks:</p>
-<ul class="simple">
-<li><p>Add Streamlink to the system's list of installed applications. <br/>
-An uninstaller will automatically be created during installation.</p></li>
-<li><p>Add Streamlink's installation directory to the system's <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable. <br/>
-This allows the user to run the <code class="docutils literal notranslate"><span class="pre">streamlink</span></code> command globally
-from the command prompt or powershell without specifying its directory.</p></li>
-</ul>
-<p>To build the installer on your own, <code class="docutils literal notranslate"><span class="pre">NSIS</span></code> and <code class="docutils literal notranslate"><span class="pre">pynsist</span></code> need to be installed.</p>
-<section id="windows-portable-version">
-<h3>Windows portable version<a class="headerlink" href="#windows-portable-version" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="windows-nightly-installers">
+<h3>Windows nightly installers<a class="headerlink" href="#windows-nightly-installers" title="Permalink to this headline">¶</a></h3>
+<p>Built once each day at midnight UTC from Streamlink's master branch. <br/>
+This includes the most recent changes, but is not considered "stable". <br/>
+Download from the build-artifacts of the <a class="reference external" href="https://github.com/streamlink/windows-installer/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster">scheduled nightly build runs</a> (requires a GitHub login). <br/>
+See the <a class="reference external" href="https://github.com/streamlink/streamlink/commits/master">commit log</a> of Steamlink's master branch for all the recent changes.</p>
+</section>
+<section id="windows-portable-builds">
+<h3>Windows portable builds<a class="headerlink" href="#windows-portable-builds" title="Permalink to this headline">¶</a></h3>
 <div class="table-wrapper"><table class="table-custom-layout docutils align-default">
 <colgroup>
-<col style="width: 46%"/>
-<col style="width: 54%"/>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Maintainer</p></th>
@@ -658,7 +674,7 @@ from the command prompt or powershell without specifying its directory.</p></li>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Beardypig</p></td>
-<td><p><a class="reference external" href="https://github.com/beardypig/streamlink-portable/releases/latest">Latest precompiled stable release</a> <br/>
+<td><p><a class="reference external" href="https://github.com/beardypig/streamlink-portable/releases">Latest precompiled stable release</a> <br/>
 <a class="reference external" href="https://github.com/beardypig/streamlink-portable/archive/master.zip">Latest builder</a> <br/>
 <a class="reference external" href="https://github.com/beardypig/streamlink-portable">More info</a></p></td>
 </tr>
@@ -757,7 +773,9 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
 </ul>
 </li>
 <li><a class="reference internal" href="#windows-binaries">Windows binaries</a><ul>
-<li><a class="reference internal" href="#windows-portable-version">Windows portable version</a></li>
+<li><a class="reference internal" href="#windows-stable-installers">Windows stable installers</a></li>
+<li><a class="reference internal" href="#windows-nightly-installers">Windows nightly installers</a></li>
+<li><a class="reference internal" href="#windows-portable-builds">Windows portable builds</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#appimages">AppImages</a><ul>

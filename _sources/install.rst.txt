@@ -13,9 +13,11 @@ Windows
 ==================================== ===========================================
 Method                               Installing
 ==================================== ===========================================
-Installers                           See the `Windows binaries`_ section below
+Installers (stable)                  See the `Windows stable installers`_ section below
 
-Portable                             See the `Windows portable version`_ section below
+Installers (nightly)                 See the `Windows nightly installers`_ section below
+
+Portable                             See the `Windows portable builds`_ section below
 
 Python pip                           See the `PyPI package and source code`_ section below
 
@@ -33,11 +35,8 @@ Python pip                           See the `PyPI package and source code`_ sec
 ==================================== ===========================================
 
 .. _Chocolatey: https://chocolatey.org/packages/streamlink
-
 .. _Windows Package Manager: https://github.com/microsoft/winget-pkgs/tree/master/manifests/s/Streamlink/Streamlink
-
 .. _Installing Chocolatey packages: https://chocolatey.org
-
 .. _Installing Winget packages: https://docs.microsoft.com/en-us/windows/package-manager/
 
 macOS
@@ -93,10 +92,10 @@ Python pip                           See the `PyPI package and source code`_ sec
 `Debian (stable)`_                   .. code-block:: bash
 
                                         # If you don't have Debian backports already (see link below):
-                                        echo "deb http://deb.debian.org/debian buster-backports main" | sudo tee "/etc/apt/sources.list.d/streamlink.list"
+                                        echo "deb http://deb.debian.org/debian bullseye-backports main" | sudo tee "/etc/apt/sources.list.d/streamlink.list"
 
                                         sudo apt update
-                                        sudo apt -t buster-backports install streamlink
+                                        sudo apt -t bullseye-backports install streamlink
 
                                      `Installing Debian backported packages`_
 
@@ -179,7 +178,7 @@ OpenBSD                              Brian Callahan <bcallah at openbsd.org>
 Solus                                Joey Riches <josephriches at gmail.com>
 Ubuntu                               Alin Andrei <andrew at webupd8.org>
 Void                                 Michal Vasilek <michal at vasilek.cz>
-Windows binaries                     beardypig <beardypig at protonmail.com>
+Windows binaries                     Sebastian Meyer <mail at bastimeyer.de>
 Windows port. version                beardypig <beardypig at protonmail.com>
 ==================================== ===========================================
 
@@ -279,8 +278,8 @@ To install Streamlink from source you will need these dependencies.
 ==================================== ===========================================
 Name                                 Notes
 ==================================== ===========================================
-`Python`_                            At least version **3.6**.
-`python-setuptools`_                 At least version **42.0.0**.
+`Python`_                            At least version **3.7**.
+`python-setuptools`_                 At least version **45.0.0**.
 
 **Automatically installed by the setup script**
 --------------------------------------------------------------------------------
@@ -318,68 +317,61 @@ Name                                 Notes
 Windows binaries
 ----------------
 
+Since late March 2022, Windows installers for Streamlink can be found at the `streamlink/windows-installer`_ repository
+on GitHub, with support for different architectures and different Python versions.
+
+These installers contain
+
+- an embedded Python version, built at `streamlink/python-windows-embed`_
+- FFmpeg, for muxing streams, built at `streamlink/FFmpeg-Builds`_
+
+For further information, please see the README file of the `streamlink/windows-installer`_ repository.
+
+Windows stable installers
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. rst-class:: table-custom-layout
 
-==================================== ====================================
-Release                              Notes
-==================================== ====================================
-`Stable release`_                    Download the installer from the `GitHub releases page`_.
+================================================== ==================================================
+Installer flavor                                   Notes
+================================================== ==================================================
+`Python 3.10, x86_64 <windows-stable_>`_           for Windows 8+, 64-bit
+`Python 3.10, x86 <windows-stable_>`_              for Windows 8+, 32-bit
+`Python 3.8, x86_64 <windows-stable_>`_            for Windows 7, 64-bit
+`Python 3.8, x86 <windows-stable_>`_               for Windows 7, 32-bit
+================================================== ==================================================
 
-`Development build`_                 For testing purposes only! Built each day at midnight (UTC). |br|
-                                     Download the zipped installer from the `build artifacts`_ section of one of
-                                     the recent scheduled builds. Build artifacts are stored by Github for 90 days. |br|
-                                     See the `commit log`_ for a list of changes since the last stable release.
-==================================== ====================================
+Windows nightly installers
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. warning::
+Built once each day at midnight UTC from Streamlink's master branch. |br|
+This includes the most recent changes, but is not considered "stable". |br|
+Download from the build-artifacts of the `scheduled nightly build runs <windows-nightly_>`_ (requires a GitHub login). |br|
+See the `commit log <streamlink-master_>`_ of Steamlink's master branch for all the recent changes.
 
-    **The Streamlink installer for Windows is currently based on Python 3.9.** |br|
-    Versions of Windows prior to 10 are **not** supported.
-
-    Be aware that the packages for `Chocolatey`_ and the `Windows Package Manager`_ are just wrappers
-    around the stable installer and thus depend on Windows 10+ as well.
-
-    Alternatively, :ref:`Streamlink can be installed via python-pip <install:PyPI package and source code>`
-    in a :ref:`compatible Python environment <install:Dependencies>`.
-
-.. _Stable release:
-.. _GitHub releases page: https://github.com/streamlink/streamlink/releases/latest
-.. _Development build:
-.. _build artifacts: https://github.com/streamlink/streamlink/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster
-.. _commit log: https://github.com/streamlink/streamlink/commits/master
-
-These installers contain:
-
-- A compiled version of Streamlink that **does not require an existing Python installation**
-- `ffmpeg`_ for muxing streams
-
-and perform the following tasks:
-
-- Add Streamlink to the system's list of installed applications. |br|
-  An uninstaller will automatically be created during installation.
-- Add Streamlink's installation directory to the system's ``PATH`` environment variable. |br|
-  This allows the user to run the ``streamlink`` command globally
-  from the command prompt or powershell without specifying its directory.
-
-To build the installer on your own, ``NSIS`` and ``pynsist`` need to be installed.
-
-
-Windows portable version
-^^^^^^^^^^^^^^^^^^^^^^^^
+Windows portable builds
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. rst-class:: table-custom-layout
 
 ==================================== ===========================================
 Maintainer                           Links
 ==================================== ===========================================
-Beardypig                            `Latest precompiled stable release`__ |br|
-                                     `Latest builder`__ |br|
-                                     `More info`__
+Beardypig                            `Latest precompiled stable release <windows-portable-beardypig-releases_>`_ |br|
+                                     `Latest builder <windows-portable-beardypig-latest_>`_ |br|
+                                     `More info <windows-portable-beardypig_>`_
 ==================================== ===========================================
 
-__ https://github.com/beardypig/streamlink-portable/releases/latest
-__ https://github.com/beardypig/streamlink-portable/archive/master.zip
-__ https://github.com/beardypig/streamlink-portable
+.. _streamlink/windows-installer: https://github.com/streamlink/windows-installer
+.. _streamlink/python-windows-embed: https://github.com/streamlink/python-windows-embed
+.. _streamlink/FFmpeg-Builds: https://github.com/streamlink/FFmpeg-Builds
+.. _windows-stable: https://github.com/streamlink/windows-installer/releases
+.. _windows-nightly: https://github.com/streamlink/windows-installer/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster
+.. _streamlink-master: https://github.com/streamlink/streamlink/commits/master
+
+.. _windows-portable-beardypig: https://github.com/beardypig/streamlink-portable
+.. _windows-portable-beardypig-releases: https://github.com/beardypig/streamlink-portable/releases
+.. _windows-portable-beardypig-latest: https://github.com/beardypig/streamlink-portable/archive/master.zip
 
 
 AppImages

@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Third Party Applications" href="thirdparty.html" /><link rel="prev" title="Donating" href="donate.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Metadata" href="metadata.html" /><link rel="prev" title="Streaming protocols" href="protocols.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2021.09.08"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,11 +11,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Streamlink Applications - Streamlink 4.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
+        <title>Proxy Support - Streamlink 4.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.0.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 4.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -152,9 +152,9 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand centered" href="index.html">
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand centered" href="../index.html">
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="_static/icon.svg" alt="Streamlink"/>
+    <img class="sidebar-logo" src="../_static/icon.svg" alt="Streamlink"/>
   </div>
   <p class="sidebar-brand-text">Streamlink</p>
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
@@ -162,45 +162,45 @@
 <div class="sidebar-versions centered" role="note" aria-label="versions">
   <pre class="sidebar-versions-current">4.0.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/applications.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/applications.html" class="">Latest</a></dd>
+    <dd><a href="/cli/proxy.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/cli/proxy.html" class="">Latest</a></dd>
   </dl>
-</div><form class="sidebar-search-container" method="get" action="search.html" role="search">
+</div><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="cli.html">Command-Line Interface</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli.html">Command-line usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli/tutorial.html">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli/config.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli/plugin-sideloading.html">Plugin sideloading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli/protocols.html">Streaming protocols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli/proxy.html">Proxy support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli/metadata.html">Metadata</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="cli/plugins/crunchyroll.html">Crunchyroll</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cli/plugins/funimationnow.html">FunimationNow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cli/plugins/twitch.html">Twitch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../cli.html">Command-Line Interface</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cli.html">Command-line usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugin-sideloading.html">Plugin sideloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocols.html">Streaming protocols</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Proxy support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="plugins/crunchyroll.html">Crunchyroll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugins/funimationnow.html">FunimationNow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Streamlink Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues.html">Common issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deprecations.html">Deprecations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing.html">Developing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_guide.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications.html">Streamlink Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thirdparty.html">Third Party Applications</a></li>
 </ul>
 
 </div><div class="github-buttons centered">
@@ -230,7 +230,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -238,44 +238,26 @@
         <article role="main">
           
   
-  <style>
-    .rst-content table.field-list td {
-        padding-top: 8px;
-    }
-    i.fab.fa-fw {
-        font-size: 1.333em;
-    }
-</style><section id="streamlink-applications">
-<h1>Streamlink Applications<a class="headerlink" href="#streamlink-applications" title="Permalink to this headline">¶</a></h1>
-<section id="streamlink-twitch-gui">
-<h2>Streamlink Twitch GUI<a class="headerlink" href="#streamlink-twitch-gui" title="Permalink to this headline">¶</a></h2>
-<img alt="Streamlink Twitch GUI" src="https://user-images.githubusercontent.com/467294/151660267-97a8c0a3-62b3-4aa5-b960-c307da1b4fb2.png"/>
-<dl class="field-list simple">
-<dt class="field-odd">Description</dt>
-<dd class="field-odd"><p>A multi platform Twitch.tv browser for Streamlink</p>
-</dd>
-<dt class="field-even">Type</dt>
-<dd class="field-even"><p>Graphical User Interface</p>
-</dd>
-<dt class="field-odd">OS</dt>
-<dd class="field-odd"><p><i class="fab fa-fw fa-windows"></i> <i class="fab fa-fw fa-apple"></i> <i class="fab fa-fw fa-linux"></i></p>
-</dd>
-<dt class="field-even">Author</dt>
-<dd class="field-even"><p><a class="reference external" href="https://github.com/bastimeyer">Sebastian Meyer</a></p>
-</dd>
-<dt class="field-odd">Website</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://streamlink.github.io/streamlink-twitch-gui">https://streamlink.github.io/streamlink-twitch-gui</a></p>
-</dd>
-<dt class="field-even">Source code</dt>
-<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink-twitch-gui">https://github.com/streamlink/streamlink-twitch-gui</a></p>
-</dd>
-<dt class="field-odd">Info</dt>
-<dd class="field-odd"><p>An NW.js based desktop web application. Browse Twitch.tv and watch multiple streams at once.
-Filter streams by language, receive desktop notifications when followed channels start
-streaming and access the Twitch chat by using customizable chat applications.</p>
-</dd>
-</dl>
-</section>
+  <section id="proxy-support">
+<h1>Proxy Support<a class="headerlink" href="#proxy-support" title="Permalink to this headline">¶</a></h1>
+<p>You can use the <a class="reference internal" href="../cli.html#cmdoption-http-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-proxy</span></code></a> option to change the proxy server
+that Streamlink will use for HTTP and HTTPS requests. <a class="reference internal" href="../cli.html#cmdoption-http-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-proxy</span></code></a> sets
+the proxy for all HTTP and HTTPS requests, including WebSocket connections.</p>
+<p>If separate proxies for each protocol are required, they can be set using
+environment variables - see the <a class="reference external" href="https://2.python-requests.org/en/master/user/advanced/#proxies">Requests Proxies Documentation</a>.</p>
+<p>Both HTTP and SOCKS proxies are supported, as well as authentication in each of them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using a SOCKS proxy, the <code class="docutils literal notranslate"><span class="pre">socks4</span></code> and <code class="docutils literal notranslate"><span class="pre">socks5</span></code> schemes mean that DNS lookups are done
+locally, rather than on the proxy server. To have the proxy server perform the DNS lookups, the
+<code class="docutils literal notranslate"><span class="pre">socks4a</span></code> and <code class="docutils literal notranslate"><span class="pre">socks5h</span></code> schemes should be used instead.</p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink --http-proxy <span class="s2">"http://address:port"</span>
+<span class="gp">$ </span>streamlink --http-proxy <span class="s2">"https://address:port"</span>
+<span class="gp">$ </span>streamlink --http-proxy <span class="s2">"socks4a://address:port"</span>
+<span class="gp">$ </span>streamlink --http-proxy <span class="s2">"socks5h://address:port"</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -284,23 +266,23 @@ streaming and access the Twitch chat by using customizable chat applications.</p
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="thirdparty.html">
+          <a class="next-page" href="metadata.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Third Party Applications</div>
+                <div class="title">Metadata</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="donate.html">
+          <a class="prev-page" href="protocols.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Donating</div>
+                <div class="title">Streaming protocols</div>
                 
               </div>
             </a>
@@ -316,35 +298,16 @@ streaming and access the Twitch chat by using customizable chat applications.</p
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Streamlink Applications</a><ul>
-<li><a class="reference internal" href="#streamlink-twitch-gui">Streamlink Twitch GUI</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/main.js"></script>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
     </body>
 </html>

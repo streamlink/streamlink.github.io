@@ -1,0 +1,412 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Plugins" href="../../plugins.html" /><link rel="prev" title="FunimationNow" href="funimationnow.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2021.09.08"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
+  <link rel="shortcut icon" href="/_static/favicon.ico">
+  <link rel="manifest" href="/_static/site.webmanifest">
+        <title>Twitch - Streamlink 4.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Streamlink 4.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand centered" href="../../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/icon.svg" alt="Streamlink"/>
+  </div>
+  <p class="sidebar-brand-text">Streamlink</p>
+  <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
+</a>
+<div class="sidebar-versions centered" role="note" aria-label="versions">
+  <pre class="sidebar-versions-current">4.0.0</pre>
+  <dl class="sidebar-versions-others">
+    <dd><a href="/cli/plugins/twitch.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/cli/plugins/twitch.html" class="">Latest</a></dd>
+  </dl>
+</div><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../cli.html">Command-Line Interface</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cli.html">Command-line usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugin-sideloading.html">Plugin sideloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocols.html">Streaming protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proxy.html">Proxy support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metadata.html">Metadata</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../plugins.html">Plugin specific usage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="crunchyroll.html">Crunchyroll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="funimationnow.html">FunimationNow</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Twitch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../issues.html">Common issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deprecations.html">Deprecations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developing.html">Developing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_guide.html">API Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../applications.html">Streamlink Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thirdparty.html">Third Party Applications</a></li>
+</ul>
+
+</div><div class="github-buttons centered">
+  <a href="https://github.com/streamlink/streamlink"
+    class="github-button"
+    data-icon="octicon-mark-github"
+    data-count-href="/streamlink/streamlink/stargazers"
+    data-count-api="/repos/streamlink/streamlink#stargazers_count">Github</a>
+  <a href="https://github.com/streamlink/streamlink/issues"
+    class="github-button"
+    data-icon="octicon-issue-opened">Issues</a>
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
+  
+  <section id="twitch">
+<h1>Twitch<a class="headerlink" href="#twitch" title="Permalink to this headline">¶</a></h1>
+<section id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h2>
+<p>Official authentication support for Twitch via the <code class="docutils literal notranslate"><span class="pre">--twitch-oauth-token</span></code> and <code class="docutils literal notranslate"><span class="pre">--twitch-oauth-authenticate</span></code> CLI arguments
+had to be disabled in Streamlink's <a class="reference internal" href="../../changelog.html#streamlink-1-3-0-2019-11-22"><span class="std std-ref">1.3.0 release in November 2019</span></a> and both
+arguments were finally removed in the <a class="reference internal" href="../../changelog.html#streamlink-2-0-0-2020-12-22"><span class="std std-ref">2.0.0 release in December 2020</span></a> due to
+<a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680#issuecomment-557605851">restrictive changes</a> on Twitch's private REST API which prevented proper authentication flows from third party applications
+like Streamlink.</p>
+<p>The issue was that authentication data generated from third party applications could not be sent while acquiring streaming
+access tokens which are required for watching streams. Only authentication data generated by Twitch's website was accepted by
+the Twitch API. Later on in January 2021, Twitch moved the respective API endpoints to their GraphQL API which was already
+in use by their website for several years and shut down the old, private REST API.</p>
+<p>This means that authentication data, aka. the "OAuth token", needs to be read from the web browser after logging in on Twitch's
+website and it then needs to be set as a certain request header on these API endpoints. This unfortunately can't be automated
+easily by applications like Streamlink, so a new authentication feature was never implemented.</p>
+<p><strong>In order to get the personal OAuth token from Twitch's website which identifies your account</strong>, open Twitch.tv in your web
+browser and after a successful login, open the developer tools by pressing <kbd class="kbd docutils literal notranslate">F12</kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">SHIFT</kbd>+<kbd class="kbd docutils literal notranslate">I</kbd></kbd>. Then navigate to
+the "Console" tab or its equivalent of your web browser and execute the following JavaScript snippet, which reads the value of
+the <code class="docutils literal notranslate"><span class="pre">auth-token</span></code> cookie, if it exists:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"; "</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="nx">item</span><span class="p">=&gt;</span><span class="nx">item</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">"auth-token="</span><span class="p">))</span><span class="o">?</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"="</span><span class="p">)[</span><span class="mf">1</span><span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Copy the resulting string consisting of 30 alphanumerical characters without any quotations.</p>
+<p>The final <code class="docutils literal notranslate"><span class="pre">Authentication</span></code> header which will identify your account while requesting a streaming access token can then be set
+via Streamlink's <a class="reference internal" href="../../cli.html#cmdoption-http-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-header</span></code></a> or <a class="reference internal" href="../../cli.html#cmdoption-twitch-api-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-api-header</span></code></a> CLI arguments. The former will set the header on any
+HTTP request made by Streamlink, even HLS Streams, while the latter will only do that on Twitch API requests, which is what
+should be done when authenticating and which is the reason why this CLI argument was added.</p>
+<p>The value of the <code class="docutils literal notranslate"><span class="pre">Authentication</span></code> header must be in the format of <code class="docutils literal notranslate"><span class="pre">OAuth</span> <span class="pre">YOUR_TOKEN</span></code>. Notice the space character in the
+argument value, which requires quotation on command line shells:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"--twitch-api-header=Authentication=OAuth abcdefghijklmnopqrstuvwxyz0123"</span> twitch.tv/CHANNEL best
+</pre></div>
+</div>
+<p>The entire argument can optionally be added to Streamlink's (Twitch plugin specific)
+<a class="reference internal" href="../config.html#plugin-specific-configuration-file"><span class="std std-ref">config file</span></a>, which <a class="reference internal" href="../config.html#syntax"><span class="std std-ref">doesn't require quotes</span></a>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>twitch-api-header=Authentication=OAuth abcdefghijklmnopqrstuvwxyz0123
+</pre></div>
+</div>
+</section>
+<section id="embedded-ads">
+<h2>Embedded ads<a class="headerlink" href="#embedded-ads" title="Permalink to this headline">¶</a></h2>
+<p>In 2019, Twitch has started sporadically embedding ads directly into streams in addition to their regular advertisement program
+on their website which can only overlay ads. The embedded ads situation has been an ongoing thing since then and has been turned
+off and on several times throughout the months and years, also with variations between regions, and it has recently been pushed
+more and more aggressively with long pre-roll ads.</p>
+<p>While this may be an annoyance for end-users who are used to using ad-blocker extensions in their web-browsers for blocking
+regular overlaying ads, applications like Streamlink face another problem, namely stream discontinuities when there's a
+transition between an ad and the regular stream content or another follow-up ad.</p>
+<p>Since Streamlink does only output a single progressive stream from reading Twitch's segmented HLS stream, ads can cause issues
+in certain players, as the output is not a cohesively encoded stream of audio and video data anymore during an ad transition.
+One of the problematic players is <a class="reference internal" href="../../players.html#players"><span class="std std-ref">VLC</span></a>, which is known to crash during these stream discontinuities in
+certain cases.</p>
+<p>Unfortunately, entirely preventing embedded ads is not possible unless a loophole on Twitch gets discovered which can be
+exploited. This has been the case a couple of times now and ad-workarounds have been implemented in Streamlink (see <a class="reference external" href="https://github.com/streamlink/streamlink/issues/3210">#3210</a>) and
+various ad-blockers, but the solutions did only last for a couple of weeks or even days until Twitch patched these exploits.</p>
+<p><strong>To filter out ads and to prevent stream discontinuities in Streamlink's output</strong>, the <a class="reference internal" href="../../cli.html#cmdoption-twitch-disable-ads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-disable-ads</span></code></a> argument
+was introduced in <a class="reference internal" href="../../changelog.html#streamlink-1-1-0-2019-03-31"><span class="std std-ref">Streamlink 1.1.0 in 2019</span></a>, which filters out advertisement
+segments from Twitch's HLS streams and pauses the stream output until regular content becomes available again. The filtering
+logic has seen several iterations since then, with the latest big overhaul in
+<a class="reference internal" href="../../changelog.html#streamlink-1-7-0-2020-10-18"><span class="std std-ref">Streamlink 1.7.0 in 2020</span></a>.</p>
+<p><strong>In addition to that</strong>, special API request headers can be set via <a class="reference internal" href="../../cli.html#cmdoption-twitch-api-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-api-header</span></code></a> that can prevent ads from
+being embedded into the stream, either <a class="reference internal" href="#authentication"><span class="std std-ref">authentication data</span></a> or other data discovered
+by the community.</p>
+</section>
+<section id="low-latency-streaming">
+<h2>Low latency streaming<a class="headerlink" href="#low-latency-streaming" title="Permalink to this headline">¶</a></h2>
+<p>Low latency streaming on Twitch can be enabled by setting the <a class="reference internal" href="../../cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> argument and (optionally)
+configuring the <a class="reference internal" href="../../players.html#players"><span class="std std-ref">player</span></a> via <a class="reference internal" href="../../cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> and reducing its own buffer to a bare minimum.</p>
+<p>Setting <a class="reference internal" href="../../cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> will make Streamlink prefetch future HLS segments that are included in the HLS playlist
+and which can be requested ahead of time. As soon as content becomes available, Streamlink can download it without having to
+waste time on waiting for another HLS playlist refresh that might include new segments.</p>
+<p>In addition to that, <a class="reference internal" href="../../cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> also reduces <a class="reference internal" href="../../cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to a value of at most <code class="docutils literal notranslate"><span class="pre">2</span></code>, and it
+also sets the <a class="reference internal" href="../../cli.html#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> argument.</p>
+<p><a class="reference internal" href="../../cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> defines how many HLS segments Streamlink should stay behind the stream's live edge, so that it can
+refresh playlists and download segments in time without causing buffering. Setting the value to <code class="docutils literal notranslate"><span class="pre">1</span></code> is not advised due to how
+prefetching works.</p>
+<p><a class="reference internal" href="../../cli.html#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> lets Streamlink write the content of in-progress segment downloads to the output buffer
+instead waiting for the entire segment to complete first before data gets written. Since HLS segments on Twitch have a playback
+duration of 2 seconds for most streams, this further reduces output delay.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Low latency streams have to be enabled by the broadcasters on Twitch themselves. Regular streams can cause buffering issues
+with this option enabled due to the reduced <a class="reference internal" href="../../cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> value.</p>
+<p>Unfortunately, there is no way to check whether a channel is streaming in low-latency mode before accessing the stream.</p>
+</div>
+<section id="player-buffer-tweaks">
+<h3>Player buffer tweaks<a class="headerlink" href="#player-buffer-tweaks" title="Permalink to this headline">¶</a></h3>
+<p>Since players do have their own input buffer, depending on how much data the player wants to keep in its buffer before it starts
+playing the stream, this can cause an unnecessary delay while trying to watch low latency streams. Player buffer sizes should
+therefore be tweaked via the <a class="reference internal" href="../../cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> CLI argument or via the player's configuration options.</p>
+<p>The delay introduced by the player depends on the stream's bitrate and how much data is necessary to allow for a smooth playback
+without causing any stuttering, e.g. when running out out available data.</p>
+<p>Please refer to the player's own documentation for the available options.</p>
+</section>
+</section>
+</section>
+
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../plugins.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Plugins</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="funimationnow.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">FunimationNow</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2022, Streamlink |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Twitch</a><ul>
+<li><a class="reference internal" href="#authentication">Authentication</a></li>
+<li><a class="reference internal" href="#embedded-ads">Embedded ads</a></li>
+<li><a class="reference internal" href="#low-latency-streaming">Low latency streaming</a><ul>
+<li><a class="reference internal" href="#player-buffer-tweaks">Player buffer tweaks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/main.js"></script>
+    </body>
+</html>
