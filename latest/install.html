@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Installation - Streamlink 4.0.1+2.g133e58bd documentation</title>
+        <title>Installation - Streamlink 4.0.1+3.g3cf149f0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.0.1+2.g133e58bd documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.0.1+3.g3cf149f0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.0.1+2.g133e58bd</pre>
+  <pre class="sidebar-versions-current">4.0.1+3.g3cf149f0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -565,54 +565,75 @@ permission issues.</p>
 <section id="dependencies">
 <h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
 <p>To install Streamlink from source you will need these dependencies.</p>
-<div class="table-wrapper"><table class="table-custom-layout docutils align-default">
+<p>Since <a class="reference internal" href="changelog.html#streamlink-4-0-0-2022-05-01"><span class="std std-ref">4.0.0</span></a>,
+Streamlink defines a <a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/pyproject.toml">build system</a> according to <a class="reference external" href="https://peps.python.org/pep-0517/">PEP-517</a> / <a class="reference external" href="https://peps.python.org/pep-0518/">PEP-518</a>.</p>
+<div class="table-wrapper"><table class="table-custom-layout table-custom-layout-dependencies docutils align-default">
 <colgroup>
-<col style="width: 29%"/>
-<col style="width: 71%"/>
+<col style="width: 7%"/>
+<col style="width: 20%"/>
+<col style="width: 72%"/>
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Name</p></th>
 <th class="head"><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.python.org/">Python</a></p></td>
+<tr class="row-even"><td><p>python</p></td>
+<td><p><a class="reference external" href="https://www.python.org/">Python</a></p></td>
 <td><p>At least version <strong>3.7</strong>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://setuptools.pypa.io/en/latest/">python-setuptools</a></p></td>
-<td><p>At least version <strong>45.0.0</strong>.</p></td>
+<tr class="row-odd"><td><p>build</p></td>
+<td><p><a class="reference external" href="https://setuptools.pypa.io/en/latest/">setuptools</a></p></td>
+<td><p>At least version <strong>45.0.0</strong>. <br/> Used as build backend.</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p><strong>Automatically installed by the setup script</strong></p></td>
+<tr class="row-even"><td><p>build</p></td>
+<td><p><a class="reference external" href="https://wheel.readthedocs.io/en/stable/">wheel</a></p></td>
+<td><p>Used by the build frontend for creating Python wheels.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://pypi.org/project/isodate/">isodate</a></p></td>
+<tr class="row-odd"><td><p>build</p></td>
+<td><p><a class="reference external" href="https://versioningit.readthedocs.io/en/stable/">versioningit</a></p></td>
+<td><p>At least version <strong>1.1.1</strong>. <br/> Used for generating the version string from git
+when building, or when running in an editable install.</p></td>
+</tr>
+<tr class="row-even"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://pypi.org/project/isodate/">isodate</a></p></td>
 <td><p>Used for parsing ISO8601 strings</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://lxml.de/">lxml</a></p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://lxml.de/">lxml</a></p></td>
 <td><p>Used for processing HTML and XML data</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://pypi.org/project/pycountry/">pycountry</a></p></td>
+<tr class="row-even"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://pypi.org/project/pycountry/">pycountry</a></p></td>
 <td><p>Used for localization settings, provides country and language data</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a></p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a></p></td>
 <td><p>Used for decrypting encrypted streams</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/Anorov/PySocks">PySocks</a></p></td>
+<tr class="row-even"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://github.com/Anorov/PySocks">PySocks</a></p></td>
 <td><p>Used for SOCKS Proxies</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.python-requests.org/en/master/">requests</a></p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://docs.python-requests.org/en/master/">requests</a></p></td>
 <td><p>Used for making any kind of HTTP/HTTPS request</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://pypi.org/project/websocket-client/">websocket-client</a></p></td>
+<tr class="row-even"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://pypi.org/project/websocket-client/">websocket-client</a></p></td>
 <td><p>Used for making websocket connections</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p><strong>Optional</strong></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a></p></td>
+<tr class="row-odd"><td><p>optional</p></td>
+<td><p><a class="reference external" href="https://www.ffmpeg.org/">FFmpeg</a></p></td>
 <td><p>Required for <a class="reference external" href="https://en.wikipedia.org/wiki/Multiplexing#Video_processing">muxing</a> multiple video/audio/subtitle streams into a single output stream.</p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p>DASH streams with video and audio content always have to get remuxed.</p></li>
 <li><p>HLS streams optionally need to get remuxed depending on the stream selection.</p></li>
 </ul>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
