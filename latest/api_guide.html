@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>API Guide - Streamlink 4.0.1+29.g9e4a6577 documentation</title>
+        <title>API Guide - Streamlink 4.0.1+30.gf08bc5a8 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.0.1+29.g9e4a6577 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.0.1+30.gf08bc5a8 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.0.1+29.g9e4a6577</pre>
+  <pre class="sidebar-versions-current">4.0.1+30.gf08bc5a8</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api_guide.html" class="">Stable</a></dd>
     <dd><a href="/latest/api_guide.html" class="version-current">Latest</a></dd>
@@ -244,54 +244,53 @@
   
   <section id="api-guide">
 <h1>API Guide<a class="headerlink" href="#api-guide" title="Permalink to this headline">¶</a></h1>
-<p>This API is what powers the <a class="reference internal" href="cli.html#command-line-interface"><span class="std std-ref">cli</span></a> but is also available to developers that wish
+<p>This API is what powers the <a class="reference internal" href="cli.html#command-line-interface"><span class="std std-ref">CLI</span></a> but is also available to developers that wish
 to make use of the data Streamlink can retrieve in their own application.</p>
 <section id="extracting-streams">
 <h2>Extracting streams<a class="headerlink" href="#extracting-streams" title="Permalink to this headline">¶</a></h2>
 <p>The simplest use of the Streamlink API looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">streamlink</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">streamlink</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">"https://twitch.tv/day9tv"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">streamlink</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">"hls://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This simply attempts to find a plugin and use it to extract streams from
 the URL. This works great in simple cases but if you want more
 fine tuning you need to use a <a class="reference internal" href="#session-object">session object</a> instead.</p>
-<p>The returned value is a dict containing <code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code> objects:</p>
+<p>The returned value is a dict containing <a class="reference internal" href="api.html#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a> objects:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span>
-<span class="go">{'best': &lt;HLSStream('https://video11.fra01.hls.twitch.tv/ ...')&gt;,</span>
-<span class="go"> 'high': &lt;HLSStream('https://video11.fra01.hls.twitch.tv/ ...')&gt;,</span>
-<span class="go"> 'low': &lt;HLSStream('https://video11.fra01.hls.twitch.tv/ ...')&gt;,</span>
-<span class="go"> 'medium': &lt;HLSStream('https://video11.fra01.hls.twitch.tv/ ...')&gt;,</span>
-<span class="go"> 'mobile': &lt;HLSStream('https://video11.fra01.hls.twitch.tv/ ...')&gt;,</span>
-<span class="go"> 'source': &lt;HLSStream('https://video11.fra01.hls.twitch.tv/ ...')&gt;,</span>
-<span class="go"> 'worst': &lt;HLSStream('https://video11.fra01.hls.twitch.tv/ ...')&gt;}</span>
+<span class="go">{'41k': &lt;HLSStream ['hls', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear0/prog_index.m3u8', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8']&gt;,</span>
+<span class="go"> '230k': &lt;HLSStream ['hls', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear1/prog_index.m3u8', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8']&gt;,</span>
+<span class="go"> '650k': &lt;HLSStream ['hls', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8']&gt;,</span>
+<span class="go"> '990k': &lt;HLSStream ['hls', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear3/prog_index.m3u8', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8']&gt;,</span>
+<span class="go"> '1900k': &lt;HLSStream ['hls', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear4/prog_index.m3u8', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8']&gt;,</span>
+<span class="go"> 'worst': &lt;HLSStream ['hls', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear0/prog_index.m3u8', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8']&gt;,</span>
+<span class="go"> 'best': &lt;HLSStream ['hls', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear4/prog_index.m3u8', 'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8']&gt;}</span>
 </pre></div>
 </div>
-<p>If no plugin for the URL is found, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">NoPluginError</span></code> will be raised.
-If an error occurs while fetching streams, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">PluginError</span></code> will be raised.</p>
+<p>If no plugin for the URL is found, a <a class="reference internal" href="api.html#streamlink.NoPluginError" title="streamlink.exceptions.NoPluginError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoPluginError</span></code></a> will be raised.
+If an error occurs while fetching streams, a <a class="reference internal" href="api.html#streamlink.NoPluginError" title="streamlink.exceptions.NoPluginError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PluginError</span></code></a> will be raised.</p>
 </section>
 <section id="opening-streams-to-read-data">
 <h2>Opening streams to read data<a class="headerlink" href="#opening-streams-to-read-data" title="Permalink to this headline">¶</a></h2>
 <p>Now that you have extracted some streams we might want to read some data from
-one of them. When you call <cite>open()</cite> on a stream, a file-like object will be
-returned, which you can call <cite>.read(size)</cite> and <cite>.close()</cite> on.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stream</span> <span class="o">=</span> <span class="n">streams</span><span class="p">[</span><span class="s2">"source"</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+one of them. When you call <a class="reference internal" href="api.html#streamlink.stream.Stream.open" title="streamlink.stream.Stream.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> on a stream, a file-like object will be
+returned, which you can call <code class="docutils literal notranslate"><span class="pre">.read(size)</span></code> and <code class="docutils literal notranslate"><span class="pre">.close()</span></code> on.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">streams</span><span class="p">[</span><span class="s2">"best"</span><span class="p">]</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>If an error occurs while opening a stream, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code> will be raised.</p>
+<p>If an error occurs while opening a stream, a <a class="reference internal" href="api.html#streamlink.StreamError" title="streamlink.exceptions.StreamError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code></a> will be raised.</p>
 </section>
 <section id="inspecting-streams">
 <h2>Inspecting streams<a class="headerlink" href="#inspecting-streams" title="Permalink to this headline">¶</a></h2>
 <p>It's also possible to inspect the stream's internal parameters. Go to
 <a class="reference internal" href="api.html#module-streamlink.stream"><span class="std std-ref">Stream subclasses</span></a> to see which attributes are available
 for inspection for each stream type.</p>
-<p>For example this is a <code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code> object which
-contains a <cite>url</cite> attribute.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stream</span><span class="o">.</span><span class="n">url</span>
-<span class="go">'https://video38.ams01.hls.twitch.tv/hls11/ ...'</span>
+<p>For example, this is a <a class="reference internal" href="api.html#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> object which
+contains a <a class="reference internal" href="api.html#streamlink.stream.HTTPStream.url" title="streamlink.stream.HTTPStream.url"><code class="xref py py-attr docutils literal notranslate"><span class="pre">url</span></code></a> attribute.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span><span class="p">[</span><span class="s2">"best"</span><span class="p">]</span><span class="o">.</span><span class="n">url</span>
+<span class="go">'https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear4/prog_index.m3u8'</span>
 </pre></div>
 </div>
 </section>
@@ -299,20 +298,20 @@ contains a <cite>url</cite> attribute.</p>
 <h2>Session object<a class="headerlink" href="#session-object" title="Permalink to this headline">¶</a></h2>
 <p>The session allows you to set various options and is more efficient
 when extracting streams more than once. You start by creating a
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Streamlink</span></code> object:</p>
+<a class="reference internal" href="api.html#streamlink.Streamlink" title="streamlink.Streamlink"><code class="xref py py-class docutils literal notranslate"><span class="pre">Streamlink</span></code></a> object:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">streamlink</span> <span class="kn">import</span> <span class="n">Streamlink</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">Streamlink</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>You can then extract streams like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">"https://twitch.tv/day9tv"</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>or set options like this:</p>
+<p>You can then set options like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">"stream-timeout"</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">Streamlink.set_option()</span></code> to see which options are available.</p>
+<p>and extract streams like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">"URL"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="api.html#streamlink.Streamlink.set_option" title="streamlink.Streamlink.set_option"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.set_option</span></code></a> to see which options are available.</p>
 </section>
 </section>
 
