@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 4.0.1+56.g57640d3a documentation</title>
+        <title>Changelog - Streamlink 4.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.0.1+56.g57640d3a documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,10 +160,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.0.1+56.g57640d3a</pre>
+  <pre class="sidebar-versions-current">4.1.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -238,12 +238,25 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<section id="streamlink-4-1-0-2022-05-30">
+<h2>streamlink 4.1.0 (2022-05-30)<a class="headerlink" href="#streamlink-4-1-0-2022-05-30" title="Permalink to this headline">¶</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Improved: decryption of HLS streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4533">#4533</a>)</p></li>
+<li><p>Improved: HLS playlist parsing (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4540">#4540</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4552">#4552</a>)</p></li>
+<li><p>Improved: string representations of <code class="docutils literal notranslate"><span class="pre">Stream</span></code> implementations (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4521">#4521</a>)</p></li>
+<li><p>Fixed: new YouTube consent dialog (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4515">#4515</a>)</p></li>
+<li><p>Fixed: crunchyroll plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4510">#4510</a>)</p></li>
+<li><p>Fixed: nicolive email logins (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4553">#4553</a>)</p></li>
+<li><p>Fixed: threading issue when closing segmented streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4517">#4517</a>)</p></li>
+<li><p>Removed: suppression of <code class="docutils literal notranslate"><span class="pre">InsecureRequestWarning</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4525">#4525</a>)</p></li>
+<li><p>New plugins: blazetv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4548">#4548</a>), hiplayer (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4507">#4507</a>), useetv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4536">#4536</a>)</p></li>
+<li><p>Removed plugins: rotana (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4512">#4512</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/4.0.1...4.1.0">Full changelog</a></p>
+</section>
 <section id="streamlink-4-0-1-2022-05-01">
 <h2>streamlink 4.0.1 (2022-05-01)<a class="headerlink" href="#streamlink-4-0-1-2022-05-01" title="Permalink to this headline">¶</a></h2>
 <p>No code changes.<br/>Please see the <a class="reference external" href="https://streamlink.github.io/changelog.html#streamlink-4-0-0-2022-05-01">changelog of the <code class="docutils literal notranslate"><span class="pre">4.0.0</span></code> release</a>, as it contains breaking changes.</p>
@@ -1069,6 +1082,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-4-1-0-2022-05-30">streamlink 4.1.0 (2022-05-30)</a></li>
 <li><a class="reference internal" href="#streamlink-4-0-1-2022-05-01">streamlink 4.0.1 (2022-05-01)</a></li>
 <li><a class="reference internal" href="#streamlink-4-0-0-2022-05-01">streamlink 4.0.0 (2022-05-01)</a></li>
 <li><a class="reference internal" href="#streamlink-3-2-0-2022-03-05">streamlink 3.2.0 (2022-03-05)</a></li>
