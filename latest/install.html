@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Installation - Streamlink 4.1.0+12.g0dd52932 documentation</title>
+        <title>Installation - Streamlink 4.1.0+13.g2a5b71fa documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.1.0+12.g0dd52932 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.1.0+13.g2a5b71fa documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.1.0+12.g0dd52932</pre>
+  <pre class="sidebar-versions-current">4.1.0+13.g2a5b71fa</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -257,14 +257,14 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Installers (stable)</p></td>
-<td><p>See the <a class="reference internal" href="#windows-stable-installers">Windows stable installers</a> section below</p></td>
+<tr class="row-even"><td><p>Installers</p></td>
+<td><p>See the <a class="reference internal" href="#windows-binaries">Windows binaries</a> section below</p></td>
 </tr>
-<tr class="row-odd"><td><p>Installers (nightly)</p></td>
-<td><p>See the <a class="reference internal" href="#windows-nightly-installers">Windows nightly installers</a> section below</p></td>
+<tr class="row-odd"><td><p>Portable</p></td>
+<td><p>See the <a class="reference internal" href="#windows-binaries">Windows binaries</a> section below</p></td>
 </tr>
-<tr class="row-even"><td><p>Portable</p></td>
-<td><p>See the <a class="reference internal" href="#windows-portable-builds">Windows portable builds</a> section below</p></td>
+<tr class="row-even"><td><p>Nightly builds</p></td>
+<td><p>See the <a class="reference internal" href="#windows-nightly-builds">Windows nightly builds</a> section below</p></td>
 </tr>
 <tr class="row-odd"><td><p>Python pip</p></td>
 <td><p>See the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> section below</p></td>
@@ -642,69 +642,33 @@ when building, or when running in an editable install.</p></td>
 </section>
 <section id="windows-binaries">
 <h2>Windows binaries<a class="headerlink" href="#windows-binaries" title="Permalink to this headline">¶</a></h2>
-<p>Since late March 2022, Windows installers for Streamlink can be found at the <a class="reference external" href="https://github.com/streamlink/windows-installer">streamlink/windows-installer</a> repository
-on GitHub, with support for different architectures and different Python versions.</p>
-<p>These installers contain</p>
+<p>Windows installers and portable builds for Streamlink can be found at <a class="reference external" href="https://github.com/streamlink/windows-builds">streamlink/windows-builds</a>,
+with support for different architectures and different Python versions.</p>
+<p>These installers and portable builds contain:</p>
 <ul class="simple">
 <li><p>an embedded Python version, built at <a class="reference external" href="https://github.com/streamlink/python-windows-embed">streamlink/python-windows-embed</a></p></li>
-<li><p>FFmpeg, for muxing streams, built at <a class="reference external" href="https://github.com/streamlink/FFmpeg-Builds">streamlink/FFmpeg-Builds</a></p></li>
+<li><p>Streamlink and its dependencies</p></li>
+<li><p>FFmpeg, required for muxing streams, built at <a class="reference external" href="https://github.com/streamlink/FFmpeg-Builds">streamlink/FFmpeg-Builds</a></p></li>
 </ul>
-<p>For further information, please see the README file of the <a class="reference external" href="https://github.com/streamlink/windows-installer">streamlink/windows-installer</a> repository.</p>
-<section id="windows-stable-installers">
-<h3>Windows stable installers<a class="headerlink" href="#windows-stable-installers" title="Permalink to this headline">¶</a></h3>
-<div class="table-wrapper"><table class="table-custom-layout docutils align-default">
-<colgroup>
-<col style="width: 50%"/>
-<col style="width: 50%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Installer flavor</p></th>
-<th class="head"><p>Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/streamlink/windows-installer/releases">Python 3.10, x86_64</a></p></td>
-<td><p>for Windows 8+, 64-bit</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/windows-installer/releases">Python 3.10, x86</a></p></td>
-<td><p>for Windows 8+, 32-bit</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/streamlink/windows-installer/releases">Python 3.8, x86_64</a></p></td>
-<td><p>for Windows 7, 64-bit</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/windows-installer/releases">Python 3.8, x86</a></p></td>
-<td><p>for Windows 7, 32-bit</p></td>
-</tr>
-</tbody>
-</table></div>
+<p>and they are available in the following flavors:</p>
+<ul class="simple">
+<li><p>Python 3.10 - x86_64 (64 bit)</p></li>
+<li><p>Python 3.10 - x86 (32 bit)</p></li>
+<li><p>Python 3.8 - x86_64 (64 bit) - for Windows 7</p></li>
+<li><p>Python 3.8 - x86 (32 bit) - for Windows 7</p></li>
+</ul>
+<p>For further information, please see the README in the <a class="reference external" href="https://github.com/streamlink/windows-builds">streamlink/windows-builds</a> repository.</p>
+<section id="windows-stable-builds">
+<h3>Windows stable builds<a class="headerlink" href="#windows-stable-builds" title="Permalink to this headline">¶</a></h3>
+<p>Stable installers and stable portable builds of Streamlink's latest release can be
+<a class="reference external" href="https://github.com/streamlink/windows-installer/releases">downloaded from the releases page of the streamlink/windows-builds</a> repository.</p>
 </section>
-<section id="windows-nightly-installers">
-<h3>Windows nightly installers<a class="headerlink" href="#windows-nightly-installers" title="Permalink to this headline">¶</a></h3>
+<section id="windows-nightly-builds">
+<h3>Windows nightly builds<a class="headerlink" href="#windows-nightly-builds" title="Permalink to this headline">¶</a></h3>
 <p>Built once each day at midnight UTC from Streamlink's master branch. <br/>
 This includes the most recent changes, but is not considered "stable". <br/>
 Download from the build-artifacts of the <a class="reference external" href="https://github.com/streamlink/windows-installer/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster">scheduled nightly build runs</a> (requires a GitHub login). <br/>
 See the <a class="reference external" href="https://github.com/streamlink/streamlink/commits/master">commit log</a> of Steamlink's master branch for all the recent changes.</p>
-</section>
-<section id="windows-portable-builds">
-<h3>Windows portable builds<a class="headerlink" href="#windows-portable-builds" title="Permalink to this headline">¶</a></h3>
-<div class="table-wrapper"><table class="table-custom-layout docutils align-default">
-<colgroup>
-<col style="width: 31%"/>
-<col style="width: 69%"/>
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Maintainer</p></th>
-<th class="head"><p>Links</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Beardypig</p></td>
-<td><p><a class="reference external" href="https://github.com/beardypig/streamlink-portable/releases">Latest precompiled stable release</a> <br/>
-<a class="reference external" href="https://github.com/beardypig/streamlink-portable/archive/master.zip">Latest builder</a> <br/>
-<a class="reference external" href="https://github.com/beardypig/streamlink-portable">More info</a></p></td>
-</tr>
-</tbody>
-</table></div>
 </section>
 </section>
 <section id="appimages">
@@ -798,9 +762,8 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
 </ul>
 </li>
 <li><a class="reference internal" href="#windows-binaries">Windows binaries</a><ul>
-<li><a class="reference internal" href="#windows-stable-installers">Windows stable installers</a></li>
-<li><a class="reference internal" href="#windows-nightly-installers">Windows nightly installers</a></li>
-<li><a class="reference internal" href="#windows-portable-builds">Windows portable builds</a></li>
+<li><a class="reference internal" href="#windows-stable-builds">Windows stable builds</a></li>
+<li><a class="reference internal" href="#windows-nightly-builds">Windows nightly builds</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#appimages">AppImages</a><ul>
