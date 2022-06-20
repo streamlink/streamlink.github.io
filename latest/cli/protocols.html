@@ -1,20 +1,20 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Proxy Support" href="proxy.html" /><link rel="prev" title="Plugin sideloading" href="plugin-sideloading.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-5.0.2, furo 2022.06.04.1"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Streaming protocols - Streamlink 4.1.0+28.g67b9fca3 documentation</title>
+        <title>Streaming protocols - Streamlink 4.1.0+30.g1c1dbf4f documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
@@ -29,38 +29,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -69,14 +69,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -91,7 +91,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -99,7 +99,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 4.1.0+28.g67b9fca3 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 4.1.0+30.g1c1dbf4f documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.1.0+28.g67b9fca3</pre>
+  <pre class="sidebar-versions-current">4.1.0+30.g1c1dbf4f</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/protocols.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/protocols.html" class="version-current">Latest</a></dd>
@@ -221,8 +221,23 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/cli/protocols.rst" title="Edit this page">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -243,32 +258,29 @@
     </div>
   
   <section id="streaming-protocols">
-<h1>Streaming protocols<a class="headerlink" href="#streaming-protocols" title="Permalink to this headline">¶</a></h1>
+<h1>Streaming protocols<a class="headerlink" href="#streaming-protocols" title="Permalink to this heading">#</a></h1>
 <p>There are many types of streaming protocols used by services today and
 Streamlink supports most of them. It's possible to tell Streamlink
 to access a streaming protocol directly instead of relying on a plugin
 to extract the streams from a URL for you.</p>
 <section id="playing-built-in-streaming-protocols-directly">
-<h2>Playing built-in streaming protocols directly<a class="headerlink" href="#playing-built-in-streaming-protocols-directly" title="Permalink to this headline">¶</a></h2>
+<h2>Playing built-in streaming protocols directly<a class="headerlink" href="#playing-built-in-streaming-protocols-directly" title="Permalink to this heading">#</a></h2>
 <p>A streaming protocol can be accessed directly by specifying it in the <code class="docutils literal notranslate"><span class="pre">protocol://URL</span></code> format
 with an optional list of parameters, like so:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"protocol://https://streamingserver/path key1=value1 key2=value2"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;protocol://https://streamingserver/path key1=value1 key2=value2&quot;</span>
 </pre></div>
 </div>
 <p>Depending on the input URL, the explicit protocol scheme may be omitted.
 The following example shows HLS streams (<code class="docutils literal notranslate"><span class="pre">.m3u8</span></code>) and DASH streams (<code class="docutils literal notranslate"><span class="pre">.mpd</span></code>):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"https://streamingserver/playlist.m3u8"</span>
-<span class="gp">$ </span>streamlink <span class="s2">"https://streamingserver/manifest.mpd"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;https://streamingserver/playlist.m3u8&quot;</span>
+<span class="gp">$ </span>streamlink <span class="s2">&quot;https://streamingserver/manifest.mpd&quot;</span>
 </pre></div>
 </div>
 </section>
 <section id="supported-streaming-protocols">
-<h2>Supported streaming protocols<a class="headerlink" href="#supported-streaming-protocols" title="Permalink to this headline">¶</a></h2>
-<div class="table-wrapper"><table class="table-custom-layout docutils align-default">
-<colgroup>
-<col style="width: 38%"/>
-<col style="width: 62%"/>
-</colgroup>
+<h2>Supported streaming protocols<a class="headerlink" href="#supported-streaming-protocols" title="Permalink to this heading">#</a></h2>
+<div class="table-wrapper table-custom-layout docutils container">
+<table class="table-custom-layout docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Explicit prefix</p></th>
@@ -285,39 +297,37 @@ The following example shows HLS streams (<code class="docutils literal notransla
 <td><p><code class="docutils literal notranslate"><span class="pre">httpstream://</span></code></p></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Local files can be read by adding the <code class="docutils literal notranslate"><span class="pre">file://</span></code> scheme to the <code class="docutils literal notranslate"><span class="pre">URL</span></code> component.</p>
 </div>
 </section>
 <section id="protocol-parameters">
-<h2>Protocol parameters<a class="headerlink" href="#protocol-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Protocol parameters<a class="headerlink" href="#protocol-parameters" title="Permalink to this heading">#</a></h2>
 <p>When passing parameters to the built-in streaming protocols, the values will either be treated as plain strings
 or they will be interpreted as Python literals:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"httpstream://https://streamingserver/path method=POST params={'abc':123} json=['foo','bar','baz']"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;httpstream://https://streamingserver/path method=POST params={&#39;abc&#39;:123} json=[&#39;foo&#39;,&#39;bar&#39;,&#39;baz&#39;]&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="o">=</span><span class="s2">"POST"</span>
-<span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"key"</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
-<span class="n">json</span><span class="o">=</span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">,</span> <span class="s2">"baz"</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span>
+<span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
+<span class="n">json</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;baz&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The parameters from the example above are used to make an HTTP <code class="docutils literal notranslate"><span class="pre">POST</span></code> request with <code class="docutils literal notranslate"><span class="pre">abc=123</span></code> added
-to the query string and <code class="docutils literal notranslate"><span class="pre">["foo",</span> <span class="pre">"bar",</span> <span class="pre">"baz"]</span></code> used as the content of the HTTP request's body (the serialized JSON data).</p>
+to the query string and <code class="docutils literal notranslate"><span class="pre">[&quot;foo&quot;,</span> <span class="pre">&quot;bar&quot;,</span> <span class="pre">&quot;baz&quot;]</span></code> used as the content of the HTTP request's body (the serialized JSON data).</p>
 <p>Some parameters allow you to configure the behavior of the streaming protocol implementation directly:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">"hls://https://streamingserver/path start_offset=123 duration=321 force_restart=True"</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;hls://https://streamingserver/path start_offset=123 duration=321 force_restart=True&quot;</span>
 </pre></div>
 </div>
 </section>
 <section id="available-parameters">
-<h2>Available parameters<a class="headerlink" href="#available-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Available parameters<a class="headerlink" href="#available-parameters" title="Permalink to this heading">#</a></h2>
 <p>Parameters are passed to the following methods of their respective stream implementations:</p>
-<div class="table-wrapper"><table class="table-custom-layout docutils align-default">
-<colgroup>
-<col style="width: 24%"/>
-<col style="width: 76%"/>
-</colgroup>
+<div class="table-wrapper table-custom-layout docutils container">
+<table class="table-custom-layout docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Protocol prefix</p></th>
 <th class="head"><p>Method references</p></th>
@@ -348,7 +358,8 @@ to the query string and <code class="docutils literal notranslate"><span class="
 </td>
 </tr>
 </tbody>
-</table></div>
+</table>
+</div>
 </section>
 </section>
 
@@ -379,13 +390,21 @@ to the query string and <code class="docutils literal notranslate"><span class="
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022, Streamlink |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Streamlink
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -421,7 +440,8 @@ to the query string and <code class="docutils literal notranslate"><span class="
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/scripts/main.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
     </body>
 </html>
