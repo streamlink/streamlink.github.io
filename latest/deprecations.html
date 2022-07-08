@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Deprecations - Streamlink 4.1.0+48.g52f61ff7 documentation</title>
+        <title>Deprecations - Streamlink 4.1.0+49.g8ede143b documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.1.0+48.g52f61ff7 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.1.0+49.g8ede143b documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.1.0+48.g52f61ff7</pre>
+  <pre class="sidebar-versions-current">4.1.0+49.g8ede143b</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/deprecations.html" class="">Stable</a></dd>
     <dd><a href="/latest/deprecations.html" class="version-current">Latest</a></dd>
@@ -259,6 +259,15 @@
   
   <section id="deprecations">
 <h1>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-4-2-0">
+<h2>streamlink 4.2.0<a class="headerlink" href="#streamlink-4-2-0" title="Permalink to this heading">#</a></h2>
+<section id="deprecation-of-url-master-in-hlsstream">
+<h3>Deprecation of url_master in HLSStream<a class="headerlink" href="#deprecation-of-url-master-in-hlsstream" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">url_master</span></code> parameter and attribute of the <a class="reference internal" href="api.html#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.stream.HLSStream</span></code></a>
+and <a class="reference internal" href="api.html#streamlink.stream.MuxedHLSStream" title="streamlink.stream.MuxedHLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.stream.MuxedHLSStream</span></code></a> classes have been deprecated in favor of the <code class="docutils literal notranslate"><span class="pre">multivariant</span></code> parameter
+and attribute. <code class="docutils literal notranslate"><span class="pre">multivariant</span></code> is an <code class="xref py py-class docutils literal notranslate"><span class="pre">M3U8</span></code> reference of the parsed HLS multivariant playlist.</p>
+</section>
+</section>
 <section id="streamlink-4-0-0">
 <h2>streamlink 4.0.0<a class="headerlink" href="#streamlink-4-0-0" title="Permalink to this heading">#</a></h2>
 <section id="removal-of-streamlink-plugin-api-utils">
@@ -547,6 +556,10 @@ Old and deprecated paths will be dropped in the future.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Deprecations</a><ul>
+<li><a class="reference internal" href="#streamlink-4-2-0">streamlink 4.2.0</a><ul>
+<li><a class="reference internal" href="#deprecation-of-url-master-in-hlsstream">Deprecation of url_master in HLSStream</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#streamlink-4-0-0">streamlink 4.0.0</a><ul>
 <li><a class="reference internal" href="#removal-of-streamlink-plugin-api-utils">Removal of streamlink.plugin.api.utils</a></li>
 </ul>
