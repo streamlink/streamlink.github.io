@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 4.1.0+49.g8ede143b documentation</title>
+        <title>Changelog - Streamlink 4.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.1.0+49.g8ede143b documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,10 +160,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.1.0+49.g8ede143b</pre>
+  <pre class="sidebar-versions-current">4.2.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -253,12 +253,35 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-4-2-0-2022-07-09">
+<h2>streamlink 4.2.0 (2022-07-09)<a class="headerlink" href="#streamlink-4-2-0-2022-07-09" title="Permalink to this heading">#</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: new Windows portable builds (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4581">#4581</a>)</p></li>
+<li><p>Added: more dependency versions to debug log header (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4575">#4575</a>)</p></li>
+<li><p>Added: parsed multivariant playlist reference to <code class="docutils literal notranslate"><span class="pre">HLSStream</span></code> and <code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4568">#4568</a>)</p></li>
+<li><p>Fixed: unnecessary delay when closing <code class="docutils literal notranslate"><span class="pre">DASHStream</span></code>s (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4630">#4630</a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">FFmpegMuxer</span></code> not closing sub-streams concurrently (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4634">#4634</a>)</p></li>
+<li><p>Fixed: threading issue when closing <code class="docutils literal notranslate"><span class="pre">WebsocketClient</span></code> connections (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4608">#4608</a>)</p></li>
+<li><p>Fixed: handling of <code class="docutils literal notranslate"><span class="pre">PluginError</span></code>s when outputting JSON data via <code class="docutils literal notranslate"><span class="pre">--json</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4590">#4590</a>)</p></li>
+<li><p>Fixed: broken YouTube plugin when setting custom authentication headers (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4576">#4576</a>)</p></li>
+<li><p>Fixed: “source” Twitch VODs not being considered “best” (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4625">#4625</a>)</p></li>
+<li><p>Fixed: and rewritten FilmOn plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4573">#4573</a>)</p></li>
+<li><p>Fixed: websocket issue in Twitcasting plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4608">#4608</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4628">#4628</a>)</p></li>
+<li><p>Fixed: VK plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4613">#4613</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4638">#4638</a>)</p></li>
+<li><p>Fixed: various other plugin issues (see full changelog)</p></li>
+<li><p>New plugins: Aloula (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4572">#4572</a>)</p></li>
+<li><p>Removed plugins: Eltrecetv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4593">#4593</a>)</p></li>
+<li><p>Docs: added openSUSE (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4596">#4596</a>) and Scoop (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4600">#4600</a>) packages</p></li>
+<li><p>Docs: improved some links in CLI docs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4623">#4623</a>)</p></li>
+<li><p>Docs: upgraded <code class="docutils literal notranslate"><span class="pre">furo</span></code> theme to <code class="docutils literal notranslate"><span class="pre">2022.06.04.1</span></code>, require <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;=4</span></code>, and replace <code class="docutils literal notranslate"><span class="pre">recommonmark</span></code> with <code class="docutils literal notranslate"><span class="pre">myst-parser</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4610">#4610</a>)</p></li>
+<li><p>Build: fixed outdated <code class="docutils literal notranslate"><span class="pre">python_requires</span></code> value in <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4580">#4580</a>)</p></li>
+<li><p>Build: upgraded <code class="docutils literal notranslate"><span class="pre">versioningit</span></code> build dependency to <code class="docutils literal notranslate"><span class="pre">&gt;=2.0.0</span> <span class="pre">&lt;3</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4597">#4597</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/4.1.0...4.2.0">Full changelog</a></p>
+</section>
 <section id="streamlink-4-1-0-2022-05-30">
 <h2>streamlink 4.1.0 (2022-05-30)<a class="headerlink" href="#streamlink-4-1-0-2022-05-30" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
@@ -1115,6 +1138,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-4-2-0-2022-07-09">streamlink 4.2.0 (2022-07-09)</a></li>
 <li><a class="reference internal" href="#streamlink-4-1-0-2022-05-30">streamlink 4.1.0 (2022-05-30)</a></li>
 <li><a class="reference internal" href="#streamlink-4-0-1-2022-05-01">streamlink 4.0.1 (2022-05-01)</a></li>
 <li><a class="reference internal" href="#streamlink-4-0-0-2022-05-01">streamlink 4.0.0 (2022-05-01)</a></li>
