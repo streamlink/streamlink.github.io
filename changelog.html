@@ -1,20 +1,20 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Donating" href="donate.html" /><link rel="prev" title="API Reference" href="api.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-5.0.2, furo 2022.06.04.1"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Changelog - Streamlink 4.1.0 documentation</title>
+        <title>Changelog - Streamlink 4.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
@@ -29,38 +29,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -69,14 +69,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -91,7 +91,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -99,7 +99,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.1.0</pre>
+  <pre class="sidebar-versions-current">4.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -221,8 +221,23 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/changelog.md" title="Edit this page">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -239,9 +254,36 @@
           
   
   <section id="changelog">
-<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-4-2-0-2022-07-09">
+<h2>streamlink 4.2.0 (2022-07-09)<a class="headerlink" href="#streamlink-4-2-0-2022-07-09" title="Permalink to this heading">#</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: new Windows portable builds (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4581">#4581</a>)</p></li>
+<li><p>Added: more dependency versions to debug log header (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4575">#4575</a>)</p></li>
+<li><p>Added: parsed multivariant playlist reference to <code class="docutils literal notranslate"><span class="pre">HLSStream</span></code> and <code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4568">#4568</a>)</p></li>
+<li><p>Fixed: unnecessary delay when closing <code class="docutils literal notranslate"><span class="pre">DASHStream</span></code>s (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4630">#4630</a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">FFmpegMuxer</span></code> not closing sub-streams concurrently (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4634">#4634</a>)</p></li>
+<li><p>Fixed: threading issue when closing <code class="docutils literal notranslate"><span class="pre">WebsocketClient</span></code> connections (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4608">#4608</a>)</p></li>
+<li><p>Fixed: handling of <code class="docutils literal notranslate"><span class="pre">PluginError</span></code>s when outputting JSON data via <code class="docutils literal notranslate"><span class="pre">--json</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4590">#4590</a>)</p></li>
+<li><p>Fixed: broken YouTube plugin when setting custom authentication headers (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4576">#4576</a>)</p></li>
+<li><p>Fixed: “source” Twitch VODs not being considered “best” (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4625">#4625</a>)</p></li>
+<li><p>Fixed: and rewritten FilmOn plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4573">#4573</a>)</p></li>
+<li><p>Fixed: websocket issue in Twitcasting plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4608">#4608</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4628">#4628</a>)</p></li>
+<li><p>Fixed: VK plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4613">#4613</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4638">#4638</a>)</p></li>
+<li><p>Fixed: various other plugin issues (see full changelog)</p></li>
+<li><p>New plugins: Aloula (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4572">#4572</a>)</p></li>
+<li><p>Removed plugins: Eltrecetv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4593">#4593</a>)</p></li>
+<li><p>Docs: added openSUSE (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4596">#4596</a>) and Scoop (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4600">#4600</a>) packages</p></li>
+<li><p>Docs: improved some links in CLI docs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4623">#4623</a>)</p></li>
+<li><p>Docs: upgraded <code class="docutils literal notranslate"><span class="pre">furo</span></code> theme to <code class="docutils literal notranslate"><span class="pre">2022.06.04.1</span></code>, require <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;=4</span></code>, and replace <code class="docutils literal notranslate"><span class="pre">recommonmark</span></code> with <code class="docutils literal notranslate"><span class="pre">myst-parser</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4610">#4610</a>)</p></li>
+<li><p>Build: fixed outdated <code class="docutils literal notranslate"><span class="pre">python_requires</span></code> value in <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4580">#4580</a>)</p></li>
+<li><p>Build: upgraded <code class="docutils literal notranslate"><span class="pre">versioningit</span></code> build dependency to <code class="docutils literal notranslate"><span class="pre">&gt;=2.0.0</span> <span class="pre">&lt;3</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4597">#4597</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/4.1.0...4.2.0">Full changelog</a></p>
+</section>
 <section id="streamlink-4-1-0-2022-05-30">
-<h2>streamlink 4.1.0 (2022-05-30)<a class="headerlink" href="#streamlink-4-1-0-2022-05-30" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 4.1.0 (2022-05-30)<a class="headerlink" href="#streamlink-4-1-0-2022-05-30" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
 <li><p>Improved: decryption of HLS streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4533">#4533</a>)</p></li>
@@ -258,15 +300,16 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/4.0.1...4.1.0">Full changelog</a></p>
 </section>
 <section id="streamlink-4-0-1-2022-05-01">
-<h2>streamlink 4.0.1 (2022-05-01)<a class="headerlink" href="#streamlink-4-0-1-2022-05-01" title="Permalink to this headline">¶</a></h2>
-<p>No code changes.<br/>Please see the <a class="reference external" href="https://streamlink.github.io/changelog.html#streamlink-4-0-0-2022-05-01">changelog of the <code class="docutils literal notranslate"><span class="pre">4.0.0</span></code> release</a>, as it contains breaking changes.</p>
+<h2>streamlink 4.0.1 (2022-05-01)<a class="headerlink" href="#streamlink-4-0-1-2022-05-01" title="Permalink to this heading">#</a></h2>
+<p>No code changes.<br />
+Please see the <a class="reference external" href="https://streamlink.github.io/changelog.html#streamlink-4-0-0-2022-05-01">changelog of the <code class="docutils literal notranslate"><span class="pre">4.0.0</span></code> release</a>, as it contains breaking changes.</p>
 <ul class="simple">
 <li><p>Fixed: missing source-dist tarballs on GitHub release page (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4503">#4503</a>)</p></li>
 </ul>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/4.0.0...4.0.1">Full changelog</a></p>
 </section>
 <section id="streamlink-4-0-0-2022-05-01">
-<h2>streamlink 4.0.0 (2022-05-01)<a class="headerlink" href="#streamlink-4-0-0-2022-05-01" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 4.0.0 (2022-05-01)<a class="headerlink" href="#streamlink-4-0-0-2022-05-01" title="Permalink to this heading">#</a></h2>
 <p>Breaking changes:</p>
 <ul class="simple">
 <li><p>BREAKING: dropped support for Python 3.6 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4442">#4442</a>)</p></li>
@@ -294,7 +337,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/3.2.0...4.0.0">Full changelog</a></p>
 </section>
 <section id="streamlink-3-2-0-2022-03-05">
-<h2>streamlink 3.2.0 (2022-03-05)<a class="headerlink" href="#streamlink-3-2-0-2022-03-05" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 3.2.0 (2022-03-05)<a class="headerlink" href="#streamlink-3-2-0-2022-03-05" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
 <li><p>Added: log message for the resolved path when writing output to file (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4336">#4336</a>)</p></li>
@@ -310,7 +353,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/3.1.1...3.2.0">Full changelog</a></p>
 </section>
 <section id="streamlink-3-1-1-2022-01-25">
-<h2>streamlink 3.1.1 (2022-01-25)<a class="headerlink" href="#streamlink-3-1-1-2022-01-25" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 3.1.1 (2022-01-25)<a class="headerlink" href="#streamlink-3-1-1-2022-01-25" title="Permalink to this heading">#</a></h2>
 <p>Patch release:</p>
 <ul class="simple">
 <li><p>Fixed: broken <code class="docutils literal notranslate"><span class="pre">streamlink.exe</span></code>/<code class="docutils literal notranslate"><span class="pre">streamlinkw.exe</span></code> executables in Windows installer (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4308">#4308</a>)</p></li>
@@ -318,7 +361,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/3.1.0...3.1.1">Full changelog</a></p>
 </section>
 <section id="streamlink-3-1-0-2022-01-22">
-<h2>streamlink 3.1.0 (2022-01-22)<a class="headerlink" href="#streamlink-3-1-0-2022-01-22" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 3.1.0 (2022-01-22)<a class="headerlink" href="#streamlink-3-1-0-2022-01-22" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
 <li><p>Changed: file overwrite prompt to wait for user input before opening streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4252">#4252</a>)</p></li>
@@ -335,7 +378,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/3.0.3...3.1.0">Full changelog</a></p>
 </section>
 <section id="streamlink-3-0-3-2021-11-27">
-<h2>streamlink 3.0.3 (2021-11-27)<a class="headerlink" href="#streamlink-3-0-3-2021-11-27" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 3.0.3 (2021-11-27)<a class="headerlink" href="#streamlink-3-0-3-2021-11-27" title="Permalink to this heading">#</a></h2>
 <p>Patch release:</p>
 <ul class="simple">
 <li><p>Fixed: broken output of the <code class="docutils literal notranslate"><span class="pre">--help</span></code> CLI argument (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4213">#4213</a>)</p></li>
@@ -345,7 +388,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/3.0.2...3.0.3">Full changelog</a></p>
 </section>
 <section id="streamlink-3-0-2-2021-11-25">
-<h2>streamlink 3.0.2 (2021-11-25)<a class="headerlink" href="#streamlink-3-0-2-2021-11-25" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 3.0.2 (2021-11-25)<a class="headerlink" href="#streamlink-3-0-2-2021-11-25" title="Permalink to this heading">#</a></h2>
 <p>Patch release:</p>
 <ul class="simple">
 <li><p>Added: support for the <code class="docutils literal notranslate"><span class="pre">id</span></code> plugin metadata property (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4203">#4203</a>)</p></li>
@@ -358,7 +401,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/3.0.1...3.0.2">Full changelog</a></p>
 </section>
 <section id="streamlink-3-0-1-2021-11-17">
-<h2>streamlink 3.0.1 (2021-11-17)<a class="headerlink" href="#streamlink-3-0-1-2021-11-17" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 3.0.1 (2021-11-17)<a class="headerlink" href="#streamlink-3-0-1-2021-11-17" title="Permalink to this heading">#</a></h2>
 <p>Patch release:</p>
 <ul class="simple">
 <li><p>Fixed: broken pycountry import in Windows installer’s Python environment (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4180">#4180</a>)</p></li>
@@ -366,7 +409,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/3.0.0...3.0.1">Full changelog</a></p>
 </section>
 <section id="streamlink-3-0-0-2021-11-17">
-<h2>streamlink 3.0.0 (2021-11-17)<a class="headerlink" href="#streamlink-3-0-0-2021-11-17" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 3.0.0 (2021-11-17)<a class="headerlink" href="#streamlink-3-0-0-2021-11-17" title="Permalink to this heading">#</a></h2>
 <p>Breaking changes:</p>
 <ul class="simple">
 <li><p>BREAKING: dropped support for RTMP, HDS and AkamaiHD streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4169">#4169</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4168">#4168</a>)</p>
@@ -379,7 +422,8 @@
 </li>
 <li><p>BREAKING: removed the following CLI arguments (and respective session options): (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4169">#4169</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4168">#4168</a>)</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">--rtmp-rtmpdump</span></code>, <code class="docutils literal notranslate"><span class="pre">--rtmpdump</span></code>, <code class="docutils literal notranslate"><span class="pre">--rtmp-proxy</span></code>, <code class="docutils literal notranslate"><span class="pre">--rtmp-timeout</span></code><br/>Users of Streamlink’s Windows installer will need to update their <a class="reference external" href="https://streamlink.github.io/cli.html#configuration-file">config file</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--rtmp-rtmpdump</span></code>, <code class="docutils literal notranslate"><span class="pre">--rtmpdump</span></code>, <code class="docutils literal notranslate"><span class="pre">--rtmp-proxy</span></code>, <code class="docutils literal notranslate"><span class="pre">--rtmp-timeout</span></code><br />
+Users of Streamlink’s Windows installer will need to update their <a class="reference external" href="https://streamlink.github.io/cli.html#configuration-file">config file</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--subprocess-cmdline</span></code>, <code class="docutils literal notranslate"><span class="pre">--subprocess-errorlog</span></code>, <code class="docutils literal notranslate"><span class="pre">--subprocess-errorlog-path</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--hds-live-edge</span></code>, <code class="docutils literal notranslate"><span class="pre">--hds-segment-attempts</span></code>, <code class="docutils literal notranslate"><span class="pre">--hds-segment-threads</span></code>, <code class="docutils literal notranslate"><span class="pre">--hds-segment-timeout</span></code>, <code class="docutils literal notranslate"><span class="pre">--hds-timeout</span></code></p></li>
 </ul>
@@ -415,7 +459,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/2.4.0...3.0.0">Full changelog</a></p>
 </section>
 <section id="streamlink-2-4-0-2021-09-07">
-<h2>streamlink 2.4.0 (2021-09-07)<a class="headerlink" href="#streamlink-2-4-0-2021-09-07" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 2.4.0 (2021-09-07)<a class="headerlink" href="#streamlink-2-4-0-2021-09-07" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul>
 <li><p>Deprecated: stream-type specific stream transport options in favor of generic options (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3893">#3893</a>)</p>
@@ -428,7 +472,8 @@
 <p>See the documentation’s <a class="reference external" href="https://streamlink.github.io/latest/deprecations.html#streamlink-2-4-0">deprecations page</a> for more information.</p>
 </li>
 <li><p>Deprecated: <code class="docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code> option and made it always stream segment data (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3894">#3894</a>)</p></li>
-<li><p>Updated: Python version of the Windows installer from 3.8 to 3.9 and dropped support for Windows 7 due to Python incompatibilities (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3918">#3918</a>)<br/>See the documentation’s <a class="reference external" href="https://streamlink.github.io/install.html">install page</a> for alternative installation methods on Windows 7.</p></li>
+<li><p>Updated: Python version of the Windows installer from 3.8 to 3.9 and dropped support for Windows 7 due to Python incompatibilities (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3918">#3918</a>)<br />
+See the documentation’s <a class="reference external" href="https://streamlink.github.io/install.html">install page</a> for alternative installation methods on Windows 7.</p></li>
 <li><p>Updated: FFmpeg in the Windows Installer from 4.2 (Zeranoe) to 4.4 (<a class="reference external" href="https://github.com/streamlink/FFmpeg-Builds">streamlink/FFmpeg-Builds</a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3981">#3981</a>)</p></li>
 <li><p>Added: <code class="docutils literal notranslate"><span class="pre">{author}</span></code>, <code class="docutils literal notranslate"><span class="pre">{category}</span></code>/<code class="docutils literal notranslate"><span class="pre">{game}</span></code>, <code class="docutils literal notranslate"><span class="pre">{title}</span></code> and <code class="docutils literal notranslate"><span class="pre">{url}</span></code> variables to <code class="docutils literal notranslate"><span class="pre">--output</span></code>, <code class="docutils literal notranslate"><span class="pre">--record</span></code> and <code class="docutils literal notranslate"><span class="pre">--record-and-play</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3962">#3962</a>)</p></li>
 <li><p>Added: <code class="docutils literal notranslate"><span class="pre">{time}</span></code>/<code class="docutils literal notranslate"><span class="pre">{time:custom-format}</span></code> variable to <code class="docutils literal notranslate"><span class="pre">--title</span></code>, <code class="docutils literal notranslate"><span class="pre">--output</span></code>, <code class="docutils literal notranslate"><span class="pre">--record</span></code> and <code class="docutils literal notranslate"><span class="pre">--record-and-play</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3993">#3993</a>)</p></li>
@@ -446,10 +491,11 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/2.3.0...2.4.0">Full changelog</a></p>
 </section>
 <section id="streamlink-2-3-0-2021-07-26">
-<h2>streamlink 2.3.0 (2021-07-26)<a class="headerlink" href="#streamlink-2-3-0-2021-07-26" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 2.3.0 (2021-07-26)<a class="headerlink" href="#streamlink-2-3-0-2021-07-26" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
-<li><p>Implemented: new plugin URL matching API (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/3814">#3814</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3821">#3821</a>)<br/>Third-party plugins which use the old API will still be resolved, but those plugins will have to upgrade in the future. See the documentation’s <a class="reference external" href="https://streamlink.github.io/latest/deprecations.html#streamlink-2-3-0">deprecations page</a> for more information.</p></li>
+<li><p>Implemented: new plugin URL matching API (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/3814">#3814</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3821">#3821</a>)<br />
+Third-party plugins which use the old API will still be resolved, but those plugins will have to upgrade in the future. See the documentation’s <a class="reference external" href="https://streamlink.github.io/latest/deprecations.html#streamlink-2-3-0">deprecations page</a> for more information.</p></li>
 <li><p>Implemented: HLS media initialization section (fragmented MPEG-4 streams) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3828">#3828</a>)</p></li>
 <li><p>Upgraded: <code class="docutils literal notranslate"><span class="pre">requests</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=2.26.0,&lt;3</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">==2.25.1</span></code> on Windows (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3864">#3864</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3880">#3880</a>)</p></li>
 <li><p>Fixed: YouTube channel URLs, premiering live streams, added API fallback (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3847">#3847</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3873">#3873</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3809">#3809</a>)</p></li>
@@ -458,7 +504,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/2.2.0...2.3.0">Full changelog</a></p>
 </section>
 <section id="streamlink-2-2-0-2021-06-19">
-<h2>streamlink 2.2.0 (2021-06-19)<a class="headerlink" href="#streamlink-2-2-0-2021-06-19" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 2.2.0 (2021-06-19)<a class="headerlink" href="#streamlink-2-2-0-2021-06-19" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul>
 <li><p>Changed: default config file path on macOS and Windows (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3766">#3766</a>)</p>
@@ -494,7 +540,8 @@
 </ul>
 </li>
 </ul>
-<p>Support for these old paths will be dropped in the future.<br/>See the <a class="reference external" href="https://streamlink.github.io/cli.html">CLI documentation</a> for all the details regarding these changes.</p>
+<p>Support for these old paths will be dropped in the future.<br />
+See the <a class="reference external" href="https://streamlink.github.io/cli.html">CLI documentation</a> for all the details regarding these changes.</p>
 </li>
 <li><p>Implemented: <code class="docutils literal notranslate"><span class="pre">--logfile</span></code> CLI argument (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3753">#3753</a>)</p></li>
 <li><p>Fixed: Youtube 404 errors by dropping private API calls (plugin rewrite) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3797">#3797</a>)</p></li>
@@ -510,7 +557,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/2.1.2...2.2.0">Full changelog</a></p>
 </section>
 <section id="streamlink-2-1-2-2021-05-20">
-<h2>streamlink 2.1.2 (2021-05-20)<a class="headerlink" href="#streamlink-2-1-2-2021-05-20" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 2.1.2 (2021-05-20)<a class="headerlink" href="#streamlink-2-1-2-2021-05-20" title="Permalink to this heading">#</a></h2>
 <p>Patch release:</p>
 <ul class="simple">
 <li><p>Fixed: youtube 404 errors (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3732">#3732</a>), consent dialog (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3672">#3672</a>) and added short URLs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3677">#3677</a>)</p></li>
@@ -524,7 +571,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/2.1.1...2.1.2">Full changelog</a></p>
 </section>
 <section id="streamlink-2-1-1-2021-03-25">
-<h2>streamlink 2.1.1 (2021-03-25)<a class="headerlink" href="#streamlink-2-1-1-2021-03-25" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 2.1.1 (2021-03-25)<a class="headerlink" href="#streamlink-2-1-1-2021-03-25" title="Permalink to this heading">#</a></h2>
 <p>Patch release:</p>
 <ul class="simple">
 <li><p>Fixed: test failure due to missing removed plugins file in sdist tarball (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3644">#3644</a>).</p></li>
@@ -532,7 +579,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/2.1.0...2.1.1">Full changelog</a></p>
 </section>
 <section id="streamlink-2-1-0-2021-03-22">
-<h2>streamlink 2.1.0 (2021-03-22)<a class="headerlink" href="#streamlink-2-1-0-2021-03-22" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 2.1.0 (2021-03-22)<a class="headerlink" href="#streamlink-2-1-0-2021-03-22" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
 <li><p>Added: <code class="docutils literal notranslate"><span class="pre">--interface</span></code>, <code class="docutils literal notranslate"><span class="pre">-4</span></code> / <code class="docutils literal notranslate"><span class="pre">--ipv4</span></code> and <code class="docutils literal notranslate"><span class="pre">-6</span></code> / <code class="docutils literal notranslate"><span class="pre">--ipv6</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3483">#3483</a>)</p></li>
@@ -554,11 +601,12 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/2.0.0...2.1.0">Full changelog</a></p>
 </section>
 <section id="streamlink-2-0-0-2020-12-22">
-<h2>streamlink 2.0.0 (2020-12-22)<a class="headerlink" href="#streamlink-2-0-0-2020-12-22" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 2.0.0 (2020-12-22)<a class="headerlink" href="#streamlink-2-0-0-2020-12-22" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
 <li><p>BREAKING: dropped support for Python 2 and Python 3.5 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3232">#3232</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3269">#3269</a>)</p></li>
-<li><p>BREAKING: updated the Python version of the Windows installer to 3.8 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3330">#3330</a>)<br/>Users of Windows 7 will need their system to be fully upgraded.</p></li>
+<li><p>BREAKING: updated the Python version of the Windows installer to 3.8 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3330">#3330</a>)<br />
+Users of Windows 7 will need their system to be fully upgraded.</p></li>
 <li><p>BREAKING: removed all deprecated CLI arguments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3277">#3277</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/3349">#3349</a>)</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">--http-cookies</span></code>, <code class="docutils literal notranslate"><span class="pre">--http-headers</span></code>, <code class="docutils literal notranslate"><span class="pre">--http-query-params</span></code></p></li>
@@ -609,7 +657,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.7.0...2.0.0">Full changelog</a></p>
 </section>
 <section id="streamlink-1-7-0-2020-10-18">
-<h2>streamlink 1.7.0 (2020-10-18)<a class="headerlink" href="#streamlink-1-7-0-2020-10-18" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.7.0 (2020-10-18)<a class="headerlink" href="#streamlink-1-7-0-2020-10-18" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
 <li><p>Added: new plugins for micous.com, tv999.bg and cbsnews.com</p></li>
@@ -627,7 +675,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.6.0...1.7.0">Full changelog</a></p>
 </section>
 <section id="streamlink-1-6-0-2020-09-22">
-<h2>streamlink 1.6.0 (2020-09-22)<a class="headerlink" href="#streamlink-1-6-0-2020-09-22" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.6.0 (2020-09-22)<a class="headerlink" href="#streamlink-1-6-0-2020-09-22" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
 <li><p>Fixed: lots of broken plugins and minor plugin issues (see changelog down below)</p></li>
@@ -644,19 +692,19 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.5.0...1.6.0">Full changelog</a></p>
 </section>
 <section id="streamlink-1-5-0-2020-07-07">
-<h2>streamlink 1.5.0 (2020-07-07)<a class="headerlink" href="#streamlink-1-5-0-2020-07-07" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.5.0 (2020-07-07)<a class="headerlink" href="#streamlink-1-5-0-2020-07-07" title="Permalink to this heading">#</a></h2>
 <p>A minor release with fixes for <code class="docutils literal notranslate"><span class="pre">pycountry==20.7.3</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/3057">#3057</a>) and a few plugin additions and removals.</p>
 <p>And of course the usual plugin fixes and upgrades, which you can see in the git shortlog down below. Thank you to everyone involved!</p>
 <p>Support for Python2 has not been dropped yet (contrary to the comment in the last changelog), but will be in the near future.</p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.4.1...1.5.0">Full changelog</a></p>
 </section>
 <section id="streamlink-1-4-1-2020-04-24">
-<h2>streamlink 1.4.1 (2020-04-24)<a class="headerlink" href="#streamlink-1-4-1-2020-04-24" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.4.1 (2020-04-24)<a class="headerlink" href="#streamlink-1-4-1-2020-04-24" title="Permalink to this heading">#</a></h2>
 <p>No code changes. <a class="reference external" href="https://github.com/streamlink/streamlink/releases/tag/1.4.0">See the full <code class="docutils literal notranslate"><span class="pre">1.4.0</span></code> changelog here.</a></p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.4.0...1.4.1">Full changelog</a></p>
 </section>
 <section id="streamlink-1-4-0-2020-04-22">
-<h2>streamlink 1.4.0 (2020-04-22)<a class="headerlink" href="#streamlink-1-4-0-2020-04-22" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.4.0 (2020-04-22)<a class="headerlink" href="#streamlink-1-4-0-2020-04-22" title="Permalink to this heading">#</a></h2>
 <p>This will be the last release with support for Python 2, as it has finally reached its EOL at the beginning of this year.</p>
 <p>Streamlink 1.4.0 comes with lots of plugin fixes/improvements, as well as some new features and plugins, and also a few plugin removals.</p>
 <p>Notable changes:</p>
@@ -677,12 +725,12 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.3.1...1.4.0">Full changelog</a></p>
 </section>
 <section id="streamlink-1-3-1-2020-01-27">
-<h2>streamlink 1.3.1 (2020-01-27)<a class="headerlink" href="#streamlink-1-3-1-2020-01-27" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.3.1 (2020-01-27)<a class="headerlink" href="#streamlink-1-3-1-2020-01-27" title="Permalink to this heading">#</a></h2>
 <p>A small patch release that addresses the removal of <a class="reference external" href="https://mpv.io/manual/master/#legacy-option-syntax">MPV’s legacy option syntax</a>, also with fixes of several plugins, the addition of the <code class="docutils literal notranslate"><span class="pre">--twitch-disable-reruns</span></code> parameter and dropped support for Python 3.4.</p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.3.0...1.3.1">Full changelog</a></p>
 </section>
 <section id="streamlink-1-3-0-2019-11-22">
-<h2>streamlink 1.3.0 (2019-11-22)<a class="headerlink" href="#streamlink-1-3-0-2019-11-22" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.3.0 (2019-11-22)<a class="headerlink" href="#streamlink-1-3-0-2019-11-22" title="Permalink to this heading">#</a></h2>
 <p>A new release with plugin updates and fixes, including Twitch.tv (see <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680">#2680</a>), which had to be delayed due to back and forth API changes.</p>
 <p>The Twitch.tv workarounds mentioned in <a class="reference external" href="https://github.com/streamlink/streamlink/issues/2680">#2680</a> don’t have to be applied anymore, but authenticating via <code class="docutils literal notranslate"><span class="pre">--twitch-oauth-token</span></code> has been disabled, regardless of the origin of the OAuth token (via <code class="docutils literal notranslate"><span class="pre">--twitch-oauth-authenticate</span></code> or the Twitch website). In order to not introduce breaking changes, both parameters have been kept in this release and the user name will still be logged when using an OAuth token, but receiving item drops or accessing restricted streams is not possible anymore.</p>
 <p>Plugins for the following sites have also been added:</p>
@@ -697,7 +745,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.2.0...1.3.0">Full changelog</a></p>
 </section>
 <section id="streamlink-1-2-0-2019-08-18">
-<h2>streamlink 1.2.0 (2019-08-18)<a class="headerlink" href="#streamlink-1-2-0-2019-08-18" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.2.0 (2019-08-18)<a class="headerlink" href="#streamlink-1-2-0-2019-08-18" title="Permalink to this heading">#</a></h2>
 <p>Here are the changes for this month’s release</p>
 <ul class="simple">
 <li><p>Multiple plugin fixes</p></li>
@@ -709,13 +757,13 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.1.1...1.2.0">Full changelog</a></p>
 </section>
 <section id="streamlink-1-1-1-2019-04-02">
-<h2>streamlink 1.1.1 (2019-04-02)<a class="headerlink" href="#streamlink-1-1-1-2019-04-02" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.1.1 (2019-04-02)<a class="headerlink" href="#streamlink-1-1-1-2019-04-02" title="Permalink to this heading">#</a></h2>
 <p>This is just a small patch release which fixes a build/deploy issue with the new special wheels for Windows on PyPI. (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/2392">#2392</a>)</p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/releases/tag/1.1.0">Please see the full changelog of the <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code> release!</a></p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.1.0...1.1.1">Full changelog</a></p>
 </section>
 <section id="streamlink-1-1-0-2019-03-31">
-<h2>streamlink 1.1.0 (2019-03-31)<a class="headerlink" href="#streamlink-1-1-0-2019-03-31" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.1.0 (2019-03-31)<a class="headerlink" href="#streamlink-1-1-0-2019-03-31" title="Permalink to this heading">#</a></h2>
 <p>These are the highlights of Streamlink’s first minor release after the 1.0.0 milestone:</p>
 <ul class="simple">
 <li><p>several plugin fixes, improvements and new plugin implementations</p></li>
@@ -730,7 +778,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/1.0.0...1.1.0">Full changelog</a></p>
 </section>
 <section id="streamlink-1-0-0-2019-01-30">
-<h2>streamlink 1.0.0 (2019-01-30)<a class="headerlink" href="#streamlink-1-0-0-2019-01-30" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 1.0.0 (2019-01-30)<a class="headerlink" href="#streamlink-1-0-0-2019-01-30" title="Permalink to this heading">#</a></h2>
 <p>The celebratory release of Streamlink 1.0.0!</p>
 <p><em>A lot</em> of hard work has gone into getting Streamlink to where it is. Not only is Streamlink used across multiple applications and platforms, but companies as well.</p>
 <p>Streamlink started from the inaugural <a class="reference external" href="https://github.com/chrippa/livestreamer/issues/1427">fork of Livestreamer</a> on September 17th, 2016.</p>
@@ -774,7 +822,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.14.2...1.0.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-14-2-2018-06-28">
-<h2>streamlink 0.14.2 (2018-06-28)<a class="headerlink" href="#streamlink-0-14-2-2018-06-28" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.14.2 (2018-06-28)<a class="headerlink" href="#streamlink-0-14-2-2018-06-28" title="Permalink to this heading">#</a></h2>
 <p>Just a few small fixes in this release.</p>
 <ul class="simple">
 <li><p>Fixed Twitch OAuth request flow (https://github.com/streamlink/streamlink/pull/1856)</p></li>
@@ -786,7 +834,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.14.0...0.14.2">Full changelog</a></p>
 </section>
 <section id="streamlink-0-14-0-2018-06-26">
-<h2>streamlink 0.14.0 (2018-06-26)<a class="headerlink" href="#streamlink-0-14-0-2018-06-26" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.14.0 (2018-06-26)<a class="headerlink" href="#streamlink-0-14-0-2018-06-26" title="Permalink to this heading">#</a></h2>
 <p>Here are the changes to this months release!</p>
 <ul class="simple">
 <li><p>Multiple plugin fixes</p></li>
@@ -800,11 +848,11 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.13.0...0.14.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-13-0-2018-06-06">
-<h2>streamlink 0.13.0 (2018-06-06)<a class="headerlink" href="#streamlink-0-13-0-2018-06-06" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.13.0 (2018-06-06)<a class="headerlink" href="#streamlink-0-13-0-2018-06-06" title="Permalink to this heading">#</a></h2>
 <p>Massive release this month!</p>
 <p>Here are the changes:</p>
 <ul class="simple">
-<li><p>Initial MPEG DASH support has been added! (https://github.com/streamlink/streamlink/pull/1637) Many thanks to <a class="reference external" href="https://github.com/beardypig">@beardypig</a></p></li>
+<li><p>Initial MPEG DASH support has been added! (https://github.com/streamlink/streamlink/pull/1637) Many thanks to <a class="reference external" href="https://github.com/beardypig">&#64;beardypig</a></p></li>
 <li><p>As always, a <em>ton</em> of plugin updates</p></li>
 <li><p>Updates to our documentation (https://github.com/streamlink/streamlink/pull/1673)</p></li>
 <li><p>Updates to our logging (https://github.com/streamlink/streamlink/pull/1752) as well as log –quiet options (https://github.com/streamlink/streamlink/pull/1744) (https://github.com/streamlink/streamlink/pull/1720)</p></li>
@@ -816,13 +864,13 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.12.1...0.13.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-12-1-2018-05-07">
-<h2>streamlink 0.12.1 (2018-05-07)<a class="headerlink" href="#streamlink-0-12-1-2018-05-07" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.12.1 (2018-05-07)<a class="headerlink" href="#streamlink-0-12-1-2018-05-07" title="Permalink to this heading">#</a></h2>
 <p>Streamlink 0.12.1</p>
 <p>Small release to fix a pip / Windows.exe generation bug!</p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.12.0...0.12.1">Full changelog</a></p>
 </section>
 <section id="streamlink-0-12-0-2018-05-07">
-<h2>streamlink 0.12.0 (2018-05-07)<a class="headerlink" href="#streamlink-0-12-0-2018-05-07" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.12.0 (2018-05-07)<a class="headerlink" href="#streamlink-0-12-0-2018-05-07" title="Permalink to this heading">#</a></h2>
 <p>Streamlink 0.12.0</p>
 <p>Thanks for all the contributors to this month’s release!</p>
 <p>New updates:</p>
@@ -837,7 +885,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.11.0...0.12.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-11-0-2018-03-08">
-<h2>streamlink 0.11.0 (2018-03-08)<a class="headerlink" href="#streamlink-0-11-0-2018-03-08" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.11.0 (2018-03-08)<a class="headerlink" href="#streamlink-0-11-0-2018-03-08" title="Permalink to this heading">#</a></h2>
 <p>Streamlink 0.11.0!</p>
 <p>Here’s what’s new:</p>
 <ul class="simple">
@@ -854,7 +902,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.10.0...0.11.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-10-0-2018-01-23">
-<h2>streamlink 0.10.0 (2018-01-23)<a class="headerlink" href="#streamlink-0-10-0-2018-01-23" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.10.0 (2018-01-23)<a class="headerlink" href="#streamlink-0-10-0-2018-01-23" title="Permalink to this heading">#</a></h2>
 <p>Streamlink 0.10.0!</p>
 <p>There’s been a lot of activity since our November release.</p>
 <p>Changes:</p>
@@ -866,7 +914,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.9.0...0.10.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-9-0-2017-11-14">
-<h2>streamlink 0.9.0 (2017-11-14)<a class="headerlink" href="#streamlink-0-9-0-2017-11-14" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.9.0 (2017-11-14)<a class="headerlink" href="#streamlink-0-9-0-2017-11-14" title="Permalink to this heading">#</a></h2>
 <p>Streamlink 0.9.0 has been released!</p>
 <p>This release is mostly code refactoring as well as module inclusion.</p>
 <p>Features:</p>
@@ -878,7 +926,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.8.1...0.9.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-8-1-2017-09-12">
-<h2>streamlink 0.8.1 (2017-09-12)<a class="headerlink" href="#streamlink-0-8-1-2017-09-12" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.8.1 (2017-09-12)<a class="headerlink" href="#streamlink-0-8-1-2017-09-12" title="Permalink to this heading">#</a></h2>
 <p>0.8.1 of Streamlink!</p>
 <p>97 commits have occurred since the last release, including a large majority of plugin changes.</p>
 <p>Here’s the outline of what’s new:</p>
@@ -893,7 +941,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.7.0...0.8.1">Full changelog</a></p>
 </section>
 <section id="streamlink-0-7-0-2017-06-30">
-<h2>streamlink 0.7.0 (2017-06-30)<a class="headerlink" href="#streamlink-0-7-0-2017-06-30" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.7.0 (2017-06-30)<a class="headerlink" href="#streamlink-0-7-0-2017-06-30" title="Permalink to this heading">#</a></h2>
 <p>0.7.0 of Streamlink!</p>
 <p>Since our May release, we’ve incorporated quite a few changes!</p>
 <p>Outlined are the major features in this month’s release:</p>
@@ -909,7 +957,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.6.0...0.7.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-6-0-2017-05-11">
-<h2>streamlink 0.6.0 (2017-05-11)<a class="headerlink" href="#streamlink-0-6-0-2017-05-11" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.6.0 (2017-05-11)<a class="headerlink" href="#streamlink-0-6-0-2017-05-11" title="Permalink to this heading">#</a></h2>
 <p>Another release of Streamlink!</p>
 <p>We’ve updated more plugins, improved documentation, and moved out nightly builds to Bintray (S3 was costing <em>wayyyy</em> too much).</p>
 <p>Again, many thanks for those who’ve contributed!</p>
@@ -917,7 +965,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.5.0...0.6.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-5-0-2017-04-04">
-<h2>streamlink 0.5.0 (2017-04-04)<a class="headerlink" href="#streamlink-0-5-0-2017-04-04" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.5.0 (2017-04-04)<a class="headerlink" href="#streamlink-0-5-0-2017-04-04" title="Permalink to this heading">#</a></h2>
 <p>Streamlink 0.5.0!</p>
 <p>Lot’s of contributions since the last release. As always, lot’s of updating to plugins!</p>
 <p>One of the new features is the addition of Google Drive / Google Docs, you can now stream videos stored on Google Docs.</p>
@@ -927,7 +975,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.4.0...0.5.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-4-0-2017-03-09">
-<h2>streamlink 0.4.0 (2017-03-09)<a class="headerlink" href="#streamlink-0-4-0-2017-03-09" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.4.0 (2017-03-09)<a class="headerlink" href="#streamlink-0-4-0-2017-03-09" title="Permalink to this heading">#</a></h2>
 <p>0.4.0 of Streamlink!</p>
 <p>114 commits since the last release and <em>a lot</em> has changed.</p>
 <p>In general, we’ve added some localization as well as an assortment of new plugins.</p>
@@ -943,23 +991,23 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.3.2...0.4.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-3-2-2017-02-10">
-<h2>streamlink 0.3.2 (2017-02-10)<a class="headerlink" href="#streamlink-0-3-2-2017-02-10" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.3.2 (2017-02-10)<a class="headerlink" href="#streamlink-0-3-2-2017-02-10" title="Permalink to this heading">#</a></h2>
 <p>0.3.2 release of Streamlink!</p>
 <p>A minor bug release of 0.3.2 to fix a few issues with stream providers.</p>
 <p>Thanks to all whom have contributed to this (tiny) release!</p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.3.1...0.3.2">Full changelog</a></p>
 </section>
 <section id="streamlink-0-3-1-2017-02-03">
-<h2>streamlink 0.3.1 (2017-02-03)<a class="headerlink" href="#streamlink-0-3-1-2017-02-03" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.3.1 (2017-02-03)<a class="headerlink" href="#streamlink-0-3-1-2017-02-03" title="Permalink to this heading">#</a></h2>
 <p>0.3.1 release of Streamlink</p>
 <p>A <em>minor</em> release, we update our source code upload to <em>not</em> include the ffmpeg.exe binary as well as update a multitude of plugins.</p>
 <p>Thanks again for all the contributions as well as updates!</p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.3.0...0.3.1">Full changelog</a></p>
 </section>
 <section id="streamlink-0-3-0-2017-01-24">
-<h2>streamlink 0.3.0 (2017-01-24)<a class="headerlink" href="#streamlink-0-3-0-2017-01-24" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.3.0 (2017-01-24)<a class="headerlink" href="#streamlink-0-3-0-2017-01-24" title="Permalink to this heading">#</a></h2>
 <p>Release 0.3.0 of Streamlink!</p>
-<p>A lot of updates to each plugin (thank you <a class="reference external" href="https://github.com/beardypig">@beardypig</a> !), automated Windows releases, PEP8 formatting throughout Streamlink are some of the few updates to this release as we near a stable 1.0.0 release.</p>
+<p>A lot of updates to each plugin (thank you <a class="reference external" href="https://github.com/beardypig">&#64;beardypig</a> !), automated Windows releases, PEP8 formatting throughout Streamlink are some of the few updates to this release as we near a stable 1.0.0 release.</p>
 <p>Main features are:</p>
 <ul class="simple">
 <li><p>Lot’s of maintaining / updates to plugins</p></li>
@@ -969,7 +1017,7 @@
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.2.0...0.3.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-2-0-2016-12-16">
-<h2>streamlink 0.2.0 (2016-12-16)<a class="headerlink" href="#streamlink-0-2-0-2016-12-16" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.2.0 (2016-12-16)<a class="headerlink" href="#streamlink-0-2-0-2016-12-16" title="Permalink to this heading">#</a></h2>
 <p>Release 0.2.0 of Streamlink!</p>
 <p>We’ve done numerous changes to plugins as well as fixed quite a few
 which were originally failing. Among these changes are updated docs as
@@ -985,14 +1033,14 @@ well as general UI/UX cleaning with console output.</p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.1.0...0.2.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-1-0-2016-11-21">
-<h2>streamlink 0.1.0 (2016-11-21)<a class="headerlink" href="#streamlink-0-1-0-2016-11-21" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.1.0 (2016-11-21)<a class="headerlink" href="#streamlink-0-1-0-2016-11-21" title="Permalink to this heading">#</a></h2>
 <p>A major update to Streamlink.</p>
 <p>With this release, we include a Windows binary as well as numerous
 plugin changes and fixes.</p>
 <p>The main features are:</p>
 <ul class="simple">
 <li><p>Windows binary (and generation!) thanks to the fabulous work by
-<a class="reference external" href="https://github.com/beardypig">@beardypig</a></p></li>
+<a class="reference external" href="https://github.com/beardypig">&#64;beardypig</a></p></li>
 <li><p>Multiple plugin fixes</p></li>
 <li><p>Remove unneeded run-as-root (no more warning you when you run as
 root, we trust that you know what you’re doing)</p></li>
@@ -1001,7 +1049,7 @@ root, we trust that you know what you’re doing)</p></li>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.0.2...0.1.0">Full changelog</a></p>
 </section>
 <section id="streamlink-0-0-2-2016-10-12">
-<h2>streamlink 0.0.2 (2016-10-12)<a class="headerlink" href="#streamlink-0-0-2-2016-10-12" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.0.2 (2016-10-12)<a class="headerlink" href="#streamlink-0-0-2-2016-10-12" title="Permalink to this heading">#</a></h2>
 <p>The second ever release of Streamlink!</p>
 <p>In this release we’ve not only set the stepping stone for the further
 development of Streamlink (documentation site updated, CI builds
@@ -1017,7 +1065,7 @@ release of Streamlink (0.0.1) to now (0.0.2).</p>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/0.0.1...0.0.2">Full changelog</a></p>
 </section>
 <section id="streamlink-0-0-1-2016-09-23">
-<h2>streamlink 0.0.1 (2016-09-23)<a class="headerlink" href="#streamlink-0-0-1-2016-09-23" title="Permalink to this headline">¶</a></h2>
+<h2>streamlink 0.0.1 (2016-09-23)<a class="headerlink" href="#streamlink-0-0-1-2016-09-23" title="Permalink to this heading">#</a></h2>
 <p>The first release of Streamlink!</p>
 <p>This is the first release from the initial fork of Livestreamer. We aim
 to have a concise, fast review process and progress in terms of
@@ -1058,13 +1106,21 @@ code refactors to the existing code-base.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022, Streamlink |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Streamlink
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -1082,6 +1138,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-4-2-0-2022-07-09">streamlink 4.2.0 (2022-07-09)</a></li>
 <li><a class="reference internal" href="#streamlink-4-1-0-2022-05-30">streamlink 4.1.0 (2022-05-30)</a></li>
 <li><a class="reference internal" href="#streamlink-4-0-1-2022-05-01">streamlink 4.0.1 (2022-05-01)</a></li>
 <li><a class="reference internal" href="#streamlink-4-0-0-2022-05-01">streamlink 4.0.0 (2022-05-01)</a></li>
@@ -1144,7 +1201,8 @@ code refactors to the existing code-base.</p>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/main.js"></script>
+    <script src="_static/scripts/furo.js"></script>
     </body>
 </html>
