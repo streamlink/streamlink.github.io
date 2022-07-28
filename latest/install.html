@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-        <title>Installation - Streamlink 4.2.0+21.g349c4ca8 documentation</title>
+        <title>Installation - Streamlink 4.2.0+25.gb03b3526 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -132,7 +132,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.2.0+21.g349c4ca8 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.2.0+25.gb03b3526 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,7 +160,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.2.0+21.g349c4ca8</pre>
+  <pre class="sidebar-versions-current">4.2.0+25.gb03b3526</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -406,28 +406,14 @@ sudo make install clean
 <p><a class="reference external" href="https://search.nixos.org/packages?show=streamlink&amp;query=streamlink">NixOS channel</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://openports.se/multimedia/streamlink">OpenBSD</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>doas pkg_add streamlink
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://build.opensuse.org/package/show/multimedia:apps/streamlink">openSUSE</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://build.opensuse.org/package/show/multimedia:apps/streamlink">openSUSE</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo zypper install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://dev.getsol.us/source/streamlink/">Solus</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://dev.getsol.us/source/streamlink/">Solus</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo eopkg install streamlink
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://launchpad.net/~nilarimogard/+archive/ubuntu/webupd8/+packages?field.name_filter=streamlink&amp;field.status_filter=published&amp;field.series_filter=">Ubuntu</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo add-apt-repository ppa:nilarimogard/webupd8
-sudo apt update
-sudo apt install streamlink
 </pre></div>
 </div>
 </td>
@@ -441,8 +427,6 @@ sudo apt install streamlink
 </tbody>
 </table>
 </div>
-<p>Please see the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> or <a class="reference internal" href="#appimages">AppImages</a> sections down below
-if a package is not available for your distro or platform, or if it's out of date.</p>
 </section>
 <section id="package-maintainers">
 <h2>Package maintainers<a class="headerlink" href="#package-maintainers" title="Permalink to this heading">#</a></h2>
@@ -478,17 +462,11 @@ if a package is not available for your distro or platform, or if it's out of dat
 <tr class="row-odd"><td><p>NixOS</p></td>
 <td><p>Tuomas Tynkkynen &lt;tuomas.tynkkynen at iki.fi&gt;</p></td>
 </tr>
-<tr class="row-even"><td><p>OpenBSD</p></td>
-<td><p>Brian Callahan &lt;bcallah at openbsd.org&gt;</p></td>
-</tr>
-<tr class="row-odd"><td><p>openSUSE</p></td>
+<tr class="row-even"><td><p>openSUSE</p></td>
 <td><p>Simon Puchert &lt;simonpuchert at alice.de&gt;</p></td>
 </tr>
-<tr class="row-even"><td><p>Solus</p></td>
+<tr class="row-odd"><td><p>Solus</p></td>
 <td><p>Joey Riches &lt;josephriches at gmail.com&gt;</p></td>
-</tr>
-<tr class="row-odd"><td><p>Ubuntu</p></td>
-<td><p>Alin Andrei &lt;andrew at webupd8.org&gt;</p></td>
 </tr>
 <tr class="row-even"><td><p>Void</p></td>
 <td><p>Michal Vasilek &lt;michal at vasilek.cz&gt;</p></td>
@@ -496,9 +474,25 @@ if a package is not available for your distro or platform, or if it's out of dat
 <tr class="row-odd"><td><p>Windows binaries</p></td>
 <td><p>Sebastian Meyer &lt;mail at bastimeyer.de&gt;</p></td>
 </tr>
+<tr class="row-even"><td><p>Linux AppImages</p></td>
+<td><p>Sebastian Meyer &lt;mail at bastimeyer.de&gt;</p></td>
+</tr>
 </tbody>
 </table>
 </div>
+</section>
+<section id="package-availability">
+<h2>Package availability<a class="headerlink" href="#package-availability" title="Permalink to this heading">#</a></h2>
+<p>Packaging is not done by the Streamlink maintainers themselves except for
+the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package</a>,
+the <a class="reference internal" href="#windows-binaries">Windows installers + portable builds</a>,
+and the <a class="reference internal" href="#appimages">Linux AppImages</a>.</p>
+<p>If a packaged release of Streamlink is not available for your operating system / distro or your system's architecture,
+or if it's out of date or broken, then please contact the respective package maintainers or package-repository maintainers
+of your operating system / distro, as it's up to them to add, update, or fix those packages.</p>
+<p>Users of glibc-based Linux distros can find up-to-date Streamlink releases via the available <a class="reference internal" href="#appimages">AppImages</a>.</p>
+<p>Please open an issue or pull request on GitHub if an <strong>available</strong>, <strong>maintained</strong> and <strong>up-to-date</strong> package is missing
+from the install docs.</p>
 </section>
 <section id="pypi-package-and-source-code">
 <h2>PyPI package and source code<a class="headerlink" href="#pypi-package-and-source-code" title="Permalink to this heading">#</a></h2>
@@ -780,6 +774,7 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
 <li><a class="reference internal" href="#macos">macOS</a></li>
 <li><a class="reference internal" href="#linux-and-bsd">Linux and BSD</a></li>
 <li><a class="reference internal" href="#package-maintainers">Package maintainers</a></li>
+<li><a class="reference internal" href="#package-availability">Package availability</a></li>
 <li><a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a><ul>
 <li><a class="reference internal" href="#virtual-environment">Virtual environment</a></li>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
