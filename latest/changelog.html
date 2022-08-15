@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 4.2.0+65.g1dd07f61 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 4.3.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 4.2.0+65.g1dd07f61 documentation</title>
+        <title>Changelog - Streamlink 4.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.2.0+65.g1dd07f61 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.3.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,10 +165,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.2.0+65.g1dd07f61</pre>
+  <pre class="sidebar-versions-current">4.3.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -258,12 +258,29 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-4-3-0-2022-08-15">
+<h2>streamlink 4.3.0 (2022-08-15)<a class="headerlink" href="#streamlink-4-3-0-2022-08-15" title="Permalink to this heading">#</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Improved: CLI download progress output (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4656">#4656</a>)</p></li>
+<li><p>Fixed: consecutive FFmpeg executable lookups not being cached (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4660">#4660</a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">--ffmpeg-verbose-path</span></code> not expanding <code class="docutils literal notranslate"><span class="pre">~</span></code> to the user’s home directory (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4688">#4688</a>)</p></li>
+<li><p>Fixed: deprecated stdlib API calls in the upcoming Python 3.11 release (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4651">#4651</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4654">#4654</a>)</p></li>
+<li><p>Fixed: huya plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4685">#4685</a>)</p></li>
+<li><p>Fixed: livestream plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4679">#4679</a>)</p></li>
+<li><p>Fixed: picarto plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4729">#4729</a>)</p></li>
+<li><p>Fixed: nbcnews plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4668">#4668</a>)</p></li>
+<li><p>Fixed: deutschewelle plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4725">#4725</a>)</p></li>
+<li><p>Added plugins: atpchallenger (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4700">#4700</a>)</p></li>
+<li><p>Removed plugins: nbc + nbcsports + theplatform (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4731">#4731</a>), common_jwplayer (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4733">#4733</a>)</p></li>
+<li><p>Docs: various CLI related improvements (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4659">#4659</a>)</p></li>
+<li><p>Docs: removed OpenBSD and Ubuntu from install docs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4681">#4681</a>)</p></li>
+<li><p>Plugin API: added new validation schemas and updated validators (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4691">#4691</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4709">#4709</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4732">#4732</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/4.2.0...4.3.0">Full changelog</a></p>
+</section>
 <section id="streamlink-4-2-0-2022-07-09">
 <h2>streamlink 4.2.0 (2022-07-09)<a class="headerlink" href="#streamlink-4-2-0-2022-07-09" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
@@ -1148,6 +1165,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-4-3-0-2022-08-15">streamlink 4.3.0 (2022-08-15)</a></li>
 <li><a class="reference internal" href="#streamlink-4-2-0-2022-07-09">streamlink 4.2.0 (2022-07-09)</a></li>
 <li><a class="reference internal" href="#streamlink-4-1-0-2022-05-30">streamlink 4.1.0 (2022-05-30)</a></li>
 <li><a class="reference internal" href="#streamlink-4-0-1-2022-05-01">streamlink 4.0.1 (2022-05-01)</a></li>
