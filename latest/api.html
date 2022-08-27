@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="API Reference - Streamlink 4.3.0+19.g5c8715f9 documentation">
+  <meta property="og:title" content="API Reference - Streamlink 4.3.0+20.g5a540001 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>API Reference - Streamlink 4.3.0+19.g5c8715f9 documentation</title>
+        <title>API Reference - Streamlink 4.3.0+20.g5a540001 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.3.0+19.g5c8715f9 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 4.3.0+20.g5a540001 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.3.0+19.g5c8715f9</pre>
+  <pre class="sidebar-versions-current">4.3.0+20.g5a540001</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="">Stable</a></dd>
     <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
@@ -620,8 +620,15 @@ default: <code class="docutils literal notranslate"><span class="pre">None</span
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.matchers">
 <span class="sig-name descname"><span class="pre">matchers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Matcher</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matchers" title="Permalink to this definition">#</a></dt>
-<dd><p>The list of plugin matchers (URL pattern + priority).
-Use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.plugin.pluginmatcher()</span></code> decorator for initializing this list.</p>
+<dd><p>The list of plugin matchers (URL pattern + priority).</p>
+<p>Use the <a class="reference internal" href="#streamlink.plugin.pluginmatcher" title="streamlink.plugin.pluginmatcher"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginmatcher()</span></code></a> decorator to initialize this list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.Plugin.arguments">
+<span class="sig-name descname"><span class="pre">arguments</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#streamlink.options.Arguments" title="streamlink.options.Arguments"><span class="pre">Arguments</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.arguments" title="Permalink to this definition">#</a></dt>
+<dd><p>The plugin's <a class="reference internal" href="#streamlink.options.Arguments" title="streamlink.options.Arguments"><code class="xref py py-class docutils literal notranslate"><span class="pre">Arguments</span></code></a> collection.</p>
+<p>Use the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument()</span></code></a> decorator to initialize this collection.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -778,24 +785,114 @@ specify the <code class="docutils literal notranslate"><span class="pre">cookie_
 </dd></dl>
 
 </section>
+<section id="plugin-decorators">
+<h3>Plugin decorators<a class="headerlink" href="#plugin-decorators" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.pluginmatcher">
+<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginmatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginmatcher" title="Permalink to this definition">#</a></dt>
+<dd><p>Decorator for plugin URL matchers.</p>
+<p>A matcher consists of a compiled regular expression pattern for the plugin's input URL and a priority value.
+The priority value determines which plugin gets chosen by
+<a class="reference internal" href="#streamlink.Streamlink.resolve_url" title="streamlink.Streamlink.resolve_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url</span></code></a> if multiple plugins match the input URL.</p>
+<p>Plugins must at least have one matcher. If multiple matchers are defined, then the first matching one
+according to the order of which they have been defined (top to bottom) will be responsible for setting the
+<a class="reference internal" href="#streamlink.plugin.Plugin.matcher" title="streamlink.plugin.Plugin.matcher"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matcher</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.match" title="streamlink.plugin.Plugin.match"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.match</span></code></a> attributes on the <a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> instance.
+The <a class="reference internal" href="#streamlink.plugin.Plugin.matchers" title="streamlink.plugin.Plugin.matchers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matchers</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.matches" title="streamlink.plugin.Plugin.matches"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a> attributes are affected by all defined matchers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
+
+
+<span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;https?://example:1234/(?:foo|bar)/(?P&lt;name&gt;[^/]+)&quot;</span><span class="p">))</span>
+<span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">priority</span><span class="o">=</span><span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    https?://(?:</span>
+<span class="s2">         sitenumberone</span>
+<span class="s2">        |adifferentsite</span>
+<span class="s2">        |somethingelse</span>
+<span class="s2">    )</span>
+<span class="s2">    /.+\.m3u8</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">))</span>
+<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pattern</strong> (<em>Pattern</em>) -- </p></li>
+<li><p><strong>priority</strong> (<em>int</em>) -- </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Callable</em>[[<em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]], <em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.pluginargument">
+<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginargument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginargument" title="Permalink to this definition">#</a></dt>
+<dd><p>Decorator for plugin arguments. Takes the same arguments as <a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.options.Argument</span></code></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginargument</span>
+
+
+<span class="nd">@pluginargument</span><span class="p">(</span>
+    <span class="s2">&quot;username&quot;</span><span class="p">,</span>
+    <span class="n">requires</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">],</span>
+    <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;EMAIL&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The username for your account.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@pluginargument</span><span class="p">(</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">,</span>
+    <span class="n">sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;PASSWORD&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The password for your account.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>This will add the <code class="docutils literal notranslate"><span class="pre">--myplugin-username</span></code> and <code class="docutils literal notranslate"><span class="pre">--myplugin-password</span></code> arguments to the CLI,
+assuming the plugin's module name is <code class="docutils literal notranslate"><span class="pre">myplugin</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) -- </p></li>
+<li><p><strong>required</strong> (<em>bool</em>) -- </p></li>
+<li><p><strong>requires</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) -- </p></li>
+<li><p><strong>prompt</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- </p></li>
+<li><p><strong>sensitive</strong> (<em>bool</em>) -- </p></li>
+<li><p><strong>argument_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- </p></li>
+<li><p><strong>dest</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- </p></li>
+<li><p><strong>is_global</strong> (<em>bool</em>) -- </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Callable</em>[[<em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]], <em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 <section id="module-streamlink.options">
-<span id="pluginargument"></span><h3>PluginArgument<a class="headerlink" href="#module-streamlink.options" title="Permalink to this heading">#</a></h3>
+<span id="plugin-arguments"></span><h3>Plugin arguments<a class="headerlink" href="#module-streamlink.options" title="Permalink to this heading">#</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.options.Argument">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.options.</span></span><span class="sig-name descname"><span class="pre">Argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p><a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a> accepts most of the parameters accepted by <code class="xref py py-func docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code>,
+<p>Accepts most of the parameters accepted by <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code>,
 except that <code class="docutils literal notranslate"><span class="pre">requires</span></code> is a special case which is only enforced if the plugin is in use.
-In addition, the <code class="docutils literal notranslate"><span class="pre">argument_name</span></code> parameter is the name relative to the plugin, e.g. username, password, etc.</p>
+In addition, the <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter is the name relative to the plugin name, but can be overridden by <code class="docutils literal notranslate"><span class="pre">argument_name</span></code>.</p>
+<p>Should not be called directly, see the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument</span></code></a> decorator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) -- Argument name, without <code class="docutils literal notranslate"><span class="pre">--</span></code> or plugin name prefixes, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;password&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;mux-subtitles&quot;</span></code>, etc.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) -- Argument name, without leading <code class="docutils literal notranslate"><span class="pre">--</span></code> or plugin name prefixes, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;username&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;password&quot;</span></code>, etc.</p></li>
 <li><p><strong>required</strong> (<em>bool</em>) -- Whether the argument is required for the plugin</p></li>
 <li><p><strong>requires</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) -- List of arguments which this argument requires, eg <code class="docutils literal notranslate"><span class="pre">[&quot;password&quot;]</span></code></p></li>
 <li><p><strong>prompt</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- If the argument is required and not set, this prompt message will be shown instead</p></li>
 <li><p><strong>sensitive</strong> (<em>bool</em>) -- Whether the argument is sensitive (passwords, etc.) and should be masked</p></li>
-<li><p><strong>argument_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- Custom CLI argument name</p></li>
+<li><p><strong>argument_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- Custom CLI argument name without plugin name prefix</p></li>
 <li><p><strong>dest</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- Custom plugin option name</p></li>
 <li><p><strong>is_global</strong> (<em>bool</em>) -- Whether this plugin argument refers to a global CLI argument</p></li>
 <li><p><strong>options</strong> -- Arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code>, excluding <code class="docutils literal notranslate"><span class="pre">requires</span></code> and <code class="docutils literal notranslate"><span class="pre">dest</span></code></p></li>
@@ -808,39 +905,18 @@ In addition, the <code class="docutils literal notranslate"><span class="pre">ar
 <dt class="sig sig-object py" id="streamlink.options.Arguments">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.options.</span></span><span class="sig-name descname"><span class="pre">Arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Arguments" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a wrapper around a list of <a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a>. For example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">PluginArgument</span><span class="p">,</span> <span class="n">PluginArguments</span>
-
-
-<span class="k">class</span> <span class="nc">PluginExample</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
-    <span class="n">arguments</span> <span class="o">=</span> <span class="n">PluginArguments</span><span class="p">(</span>
-        <span class="n">PluginArgument</span><span class="p">(</span>
-            <span class="s2">&quot;username&quot;</span><span class="p">,</span>
-            <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;EMAIL&quot;</span><span class="p">,</span>
-            <span class="n">requires</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">],</span>
-            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The username for your account.&quot;</span><span class="p">,</span>
-        <span class="p">),</span>
-        <span class="n">PluginArgument</span><span class="p">(</span>
-            <span class="s2">&quot;password&quot;</span><span class="p">,</span>
-            <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;PASSWORD&quot;</span><span class="p">,</span>
-            <span class="n">sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The password for your account.&quot;</span><span class="p">,</span>
-        <span class="p">),</span>
-    <span class="p">)</span>
-</pre></div>
-</div>
-<p>This will add the <code class="docutils literal notranslate"><span class="pre">--plugin-username</span></code> and <code class="docutils literal notranslate"><span class="pre">--plugin-password</span></code> arguments to the CLI
-(assuming the plugin module is <code class="docutils literal notranslate"><span class="pre">plugin</span></code>).</p>
+<p>A collection of <a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a> instances for <a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> classes.</p>
+<p>Should not be called directly, see the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument</span></code></a> decorator.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="streamlink.options.Arguments.requires">
 <span class="sig-name descname"><span class="pre">requires</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Arguments.requires" title="Permalink to this definition">#</a></dt>
-<dd><p>Find all the arguments required by name</p>
+<dd><p>Find all <a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a> instances required by name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> -- name of the argument the find the dependencies</p>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) -- </p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of dependant arguments</p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Iterator</em>[<a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><em>Argument</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1160,7 +1236,8 @@ with this exception.</p>
 <li><a class="reference internal" href="#session">Session</a></li>
 <li><a class="reference internal" href="#plugins">Plugins</a><ul>
 <li><a class="reference internal" href="#module-streamlink.plugin">Plugin</a></li>
-<li><a class="reference internal" href="#module-streamlink.options">PluginArgument</a></li>
+<li><a class="reference internal" href="#plugin-decorators">Plugin decorators</a></li>
+<li><a class="reference internal" href="#module-streamlink.options">Plugin arguments</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-streamlink.stream">Streams</a><ul>
