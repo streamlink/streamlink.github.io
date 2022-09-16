@@ -10,11 +10,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content=" - Streamlink 4.3.0 documentation">
+  <meta property="og:title" content=" - Streamlink 5.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630"><title>Index - Streamlink 4.3.0 documentation</title>
+  <meta property="og:image:height" content="630"><title>Index - Streamlink 5.0.0 documentation</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -135,7 +135,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.3.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -163,7 +163,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.3.0</pre>
+  <pre class="sidebar-versions-current">5.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/genindex.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/genindex.html" class="">Latest</a></dd>
@@ -796,6 +796,13 @@
 </li>
         </ul></li>
         <li>
+    --player-external-http-continuous
+
+        <ul>
+          <li><a href="_man.html#cmdoption-player-external-http-continuous">command line option</a>, <a href="cli.html#cmdoption-player-external-http-continuous">[1]</a>
+</li>
+        </ul></li>
+        <li>
     --player-external-http-port
 
         <ul>
@@ -1031,13 +1038,6 @@
 
         <ul>
           <li><a href="_man.html#cmdoption-twitch-disable-ads">command line option</a>, <a href="cli.html#cmdoption-twitch-disable-ads">[1]</a>
-</li>
-        </ul></li>
-        <li>
-    --twitch-disable-hosting
-
-        <ul>
-          <li><a href="_man.html#cmdoption-twitch-disable-hosting">command line option</a>, <a href="cli.html#cmdoption-twitch-disable-hosting">[1]</a>
 </li>
         </ul></li>
         <li>
@@ -1311,6 +1311,8 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api.html#streamlink.options.Arguments">Arguments (class in streamlink.options)</a>
 </li>
+        <li><a href="api.html#streamlink.plugin.Plugin.arguments">arguments (streamlink.plugin.Plugin attribute)</a>
+</li>
         <li><a href="api.html#streamlink.plugin.Plugin.author">author (streamlink.plugin.Plugin attribute)</a>
 </li>
     </ul></td>
@@ -1483,6 +1485,8 @@
 </li>
           <li><a href="_man.html#cmdoption-player-external-http">--player-external-http</a>, <a href="cli.html#cmdoption-player-external-http">[1]</a>
 </li>
+          <li><a href="_man.html#cmdoption-player-external-http-continuous">--player-external-http-continuous</a>, <a href="cli.html#cmdoption-player-external-http-continuous">[1]</a>
+</li>
           <li><a href="_man.html#cmdoption-player-external-http-port">--player-external-http-port</a>, <a href="cli.html#cmdoption-player-external-http-port">[1]</a>
 </li>
           <li><a href="_man.html#cmdoption-player-fifo">--player-fifo</a>, <a href="cli.html#cmdoption-player-fifo">[1]</a>
@@ -1550,8 +1554,6 @@
           <li><a href="_man.html#cmdoption-twitch-api-header">--twitch-api-header</a>, <a href="cli.html#cmdoption-twitch-api-header">[1]</a>
 </li>
           <li><a href="_man.html#cmdoption-twitch-disable-ads">--twitch-disable-ads</a>, <a href="cli.html#cmdoption-twitch-disable-ads">[1]</a>
-</li>
-          <li><a href="_man.html#cmdoption-twitch-disable-hosting">--twitch-disable-hosting</a>, <a href="cli.html#cmdoption-twitch-disable-hosting">[1]</a>
 </li>
           <li><a href="_man.html#cmdoption-twitch-disable-reruns">--twitch-disable-reruns</a>, <a href="cli.html#cmdoption-twitch-disable-reruns">[1]</a>
 </li>
@@ -1759,11 +1761,15 @@
 </li>
         <li><a href="api.html#streamlink.stream.HLSStream.parse_variant_playlist">parse_variant_playlist() (streamlink.stream.HLSStream class method)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api.html#streamlink.plugin.Plugin">Plugin (class in streamlink.plugin)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api.html#streamlink.plugin.pluginargument">pluginargument() (in module streamlink.plugin)</a>
+</li>
         <li><a href="api.html#streamlink.PluginError">PluginError</a>
+</li>
+        <li><a href="api.html#streamlink.plugin.pluginmatcher">pluginmatcher() (in module streamlink.plugin)</a>
 </li>
     </ul></td>
   </tr></table>

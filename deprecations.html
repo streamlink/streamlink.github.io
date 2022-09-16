@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Deprecations - Streamlink 4.3.0 documentation">
+  <meta property="og:title" content="Deprecations - Streamlink 5.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Deprecations - Streamlink 4.3.0 documentation</title>
+        <title>Deprecations - Streamlink 5.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.3.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.3.0</pre>
+  <pre class="sidebar-versions-current">5.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/deprecations.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/deprecations.html" class="">Latest</a></dd>
@@ -260,6 +260,28 @@
   
   <section id="deprecations">
 <h1>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-5-0-0">
+<h2>streamlink 5.0.0<a class="headerlink" href="#streamlink-5-0-0" title="Permalink to this heading">#</a></h2>
+<section id="deprecation-of-plugin-init-self-url">
+<h3>Deprecation of Plugin.__init__(self, url)<a class="headerlink" href="#deprecation-of-plugin-init-self-url" title="Permalink to this heading">#</a></h3>
+<p>With the removal of the <code class="docutils literal notranslate"><span class="pre">Plugin.bind()</span></code> class method which was used for setting up the
+<a class="reference internal" href="api.html#streamlink.Streamlink" title="streamlink.session.Streamlink"><code class="xref py py-class docutils literal notranslate"><span class="pre">Streamlink</span></code></a> session instance and module name in each plugin class,
+the <a class="reference internal" href="api.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> constructor's signature was changed and it now requires
+the <code class="docutils literal notranslate"><span class="pre">session</span></code> and <code class="docutils literal notranslate"><span class="pre">url</span></code> arguments. Implementors of custom plugins should define variable positional arguments and keyword
+arguments when subclassing and adding a custom constructor (<code class="docutils literal notranslate"><span class="pre">*args,</span> <span class="pre">**kwargs</span></code>), and the <code class="docutils literal notranslate"><span class="pre">url</span></code> should be accessed via
+<code class="docutils literal notranslate"><span class="pre">self.url</span></code> after calling the constructor of the super class.</p>
+<p>Compatibility wrappers were added for old custom plugin implementations, and a deprecation message will be shown until
+the compatibility wrappers will get removed in a future release.</p>
+</section>
+<section id="session-resolve-url-return-type-changes">
+<h3>Session.resolve_url() return type changes<a class="headerlink" href="#session-resolve-url-return-type-changes" title="Permalink to this heading">#</a></h3>
+<p>Due to the changes of the <a class="reference internal" href="api.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> class mentioned above, the return value of
+<a class="reference internal" href="api.html#streamlink.Streamlink.resolve_url" title="streamlink.Streamlink.resolve_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url</span></code></a> and
+<a class="reference internal" href="api.html#streamlink.Streamlink.resolve_url_no_redirect" title="streamlink.Streamlink.resolve_url_no_redirect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect</span></code></a> had to be changed
+from <code class="docutils literal notranslate"><span class="pre">tuple[type[Plugin],</span> <span class="pre">str]</span></code> to <code class="docutils literal notranslate"><span class="pre">tuple[str,</span> <span class="pre">type[Plugin],</span> <span class="pre">str]</span></code>, and both methods now return the resolved plugin name
+as the first item, in addition to the plugin class and resolved URL.</p>
+</section>
+</section>
 <section id="streamlink-4-2-0">
 <h2>streamlink 4.2.0<a class="headerlink" href="#streamlink-4-2-0" title="Permalink to this heading">#</a></h2>
 <section id="deprecation-of-url-master-in-hlsstream">
@@ -557,6 +579,11 @@ Old and deprecated paths will be dropped in the future.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Deprecations</a><ul>
+<li><a class="reference internal" href="#streamlink-5-0-0">streamlink 5.0.0</a><ul>
+<li><a class="reference internal" href="#deprecation-of-plugin-init-self-url">Deprecation of Plugin.__init__(self, url)</a></li>
+<li><a class="reference internal" href="#session-resolve-url-return-type-changes">Session.resolve_url() return type changes</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#streamlink-4-2-0">streamlink 4.2.0</a><ul>
 <li><a class="reference internal" href="#deprecation-of-url-master-in-hlsstream">Deprecation of url_master in HLSStream</a></li>
 </ul>

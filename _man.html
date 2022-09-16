@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Streamlink - Streamlink 4.3.0 documentation">
+  <meta property="og:title" content="Streamlink - Streamlink 5.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Streamlink - Streamlink 4.3.0 documentation</title>
+        <title>Streamlink - Streamlink 5.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.3.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.3.0</pre>
+  <pre class="sidebar-versions-current">5.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/_man.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/_man.html" class="">Latest</a></dd>
@@ -559,11 +559,23 @@ setting your player to a &quot;repeat mode&quot;.</p>
 <dd><p>Serve stream data through HTTP without running any player. This is
 useful to allow external devices like smartphones or streaming boxes to
 watch streams they wouldn't be able to otherwise.</p>
-<p>Behavior will be similar to the continuous HTTP option, but no player
-program will be started, and the server will listen on all available
+<p>The default behavior is similar to the <a class="reference internal" href="cli.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-continuous-http</span></code></a> option,
+but no player program will be started, and the server will listen on all available
 connections instead of just in the local (loopback) interface.</p>
+<p>Optionally, the <a class="reference internal" href="cli.html#cmdoption-player-external-http-continuous"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-external-http-continuous</span></code></a> option allows for disabling
+the continuous run-mode, so that Streamlink will stop when the stream ends.</p>
 <p>The URLs that can be used to access the stream will be printed to the
 console, and the server can be interrupted using CTRL-C.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-player-external-http-continuous">
+<span class="sig-name descname"><span class="pre">--player-external-http-continuous</span></span><span class="sig-prename descclassname"> <span class="pre">{yes,true,1,on,no,false,0,off}</span></span><a class="headerlink" href="#cmdoption-player-external-http-continuous" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the run-mode of <a class="reference internal" href="cli.html#cmdoption-player-external-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-external-http</span></code></a> to continuous or non-continuous.</p>
+<p>In the continuous run-mode, Streamlink will keep running after the stream has ended
+and will wait for the next HTTP request being made unless it gets shut down via CTRL-C.</p>
+<p>If set to non-continuous, Streamlink will stop once the stream has ended.</p>
+<p>Default is: <strong>true</strong>.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1142,8 +1154,7 @@ other options.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-afreeca-purge-credentials">
 <span class="sig-name descname"><span class="pre">--afreeca-purge-credentials</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-afreeca-purge-credentials" title="Permalink to this definition">#</a></dt>
-<dd><p>Purge cached AfreecaTV credentials to initiate a new session
-and reauthenticate.</p>
+<dd><p>Purge cached AfreecaTV credentials to initiate a new session and reauthenticate.</p>
 </dd></dl>
 
 </section>
@@ -1164,8 +1175,7 @@ and reauthenticate.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-bbciplayer-hd">
 <span class="sig-name descname"><span class="pre">--bbciplayer-hd</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-bbciplayer-hd" title="Permalink to this definition">#</a></dt>
-<dd><p>Prefer HD streams over local SD streams, some live programmes may
-not be broadcast in HD.</p>
+<dd><p>Prefer HD streams over local SD streams, some live programmes may not be broadcast in HD.</p>
 </dd></dl>
 
 </section>
@@ -1202,8 +1212,7 @@ not be broadcast in HD.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-crunchyroll-purge-credentials">
 <span class="sig-name descname"><span class="pre">--crunchyroll-purge-credentials</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-crunchyroll-purge-credentials" title="Permalink to this definition">#</a></dt>
-<dd><p>Purge cached Crunchyroll credentials to initiate a new session
-and reauthenticate.</p>
+<dd><p>Purge cached Crunchyroll credentials to initiate a new session and reauthenticate.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1260,8 +1269,8 @@ and the session ID does not match the account.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-niconico-user-session">
 <span class="sig-name descname"><span class="pre">--niconico-user-session</span></span><span class="sig-prename descclassname"> <span class="pre">VALUE</span></span><a class="headerlink" href="#cmdoption-niconico-user-session" title="Permalink to this definition">#</a></dt>
-<dd><p>Value of the user-session token 
-(can be used in case you do not want to put your password here)</p>
+<dd><p>Value of the user-session token.</p>
+<p>Can be used as an alternative to providing a password.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1283,8 +1292,7 @@ and the session ID does not match the account.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-openrectv-email">
 <span class="sig-name descname"><span class="pre">--openrectv-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-openrectv-email" title="Permalink to this definition">#</a></dt>
-<dd><p>The email associated with your openrectv account,
-required to access any openrectv stream.</p>
+<dd><p>The email associated with your openrectv account, required to access any openrectv stream.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1299,22 +1307,19 @@ required to access any openrectv stream.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-pixiv-sessionid">
 <span class="sig-name descname"><span class="pre">--pixiv-sessionid</span></span><span class="sig-prename descclassname"> <span class="pre">SESSIONID</span></span><a class="headerlink" href="#cmdoption-pixiv-sessionid" title="Permalink to this definition">#</a></dt>
-<dd><p>The pixiv.net sessionid that's used in pixivs PHPSESSID cookie.
-can be used instead of the username/password login process.</p>
+<dd><p>The pixiv.net sessionid that's used in pixiv's PHPSESSID cookie.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-pixiv-devicetoken">
 <span class="sig-name descname"><span class="pre">--pixiv-devicetoken</span></span><span class="sig-prename descclassname"> <span class="pre">DEVICETOKEN</span></span><a class="headerlink" href="#cmdoption-pixiv-devicetoken" title="Permalink to this definition">#</a></dt>
-<dd><p>The pixiv.net device token that's used in pixivs device_token cookie.
-can be used instead of the username/password login process.</p>
+<dd><p>The pixiv.net device token that's used in pixiv's device_token cookie.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-pixiv-purge-credentials">
 <span class="sig-name descname"><span class="pre">--pixiv-purge-credentials</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pixiv-purge-credentials" title="Permalink to this definition">#</a></dt>
-<dd><p>Purge cached Pixiv credentials to initiate a new session
-and reauthenticate.</p>
+<dd><p>Purge cached Pixiv credentials to initiate a new session and reauthenticate.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1342,8 +1347,7 @@ and reauthenticate.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-schoolism-email">
 <span class="sig-name descname"><span class="pre">--schoolism-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-schoolism-email" title="Permalink to this definition">#</a></dt>
-<dd><p>The email associated with your Schoolism account,
-required to access any Schoolism stream.</p>
+<dd><p>The email associated with your Schoolism account, required to access any Schoolism stream.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1380,8 +1384,7 @@ required to access any Schoolism stream.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-streann-url">
 <span class="sig-name descname"><span class="pre">--streann-url</span></span><span class="sig-prename descclassname"> <span class="pre">URL</span></span><a class="headerlink" href="#cmdoption-streann-url" title="Permalink to this definition">#</a></dt>
-<dd><p>Source URL where the iframe is located,
-only required for direct URLs of <code class="code docutils literal notranslate"><span class="pre">ott.streann.com</span></code></p>
+<dd><p>Source URL where the iframe is located, only required for direct URLs of ott.streann.com</p>
 </dd></dl>
 
 </section>
@@ -1397,16 +1400,10 @@ only required for direct URLs of <code class="code docutils literal notranslate"
 <section id="twitch">
 <h3>Twitch<a class="headerlink" href="#twitch" title="Permalink to this heading">#</a></h3>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-twitch-disable-hosting">
-<span class="sig-name descname"><span class="pre">--twitch-disable-hosting</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-twitch-disable-hosting" title="Permalink to this definition">#</a></dt>
-<dd><p>Do not open the stream if the target channel is hosting another channel.</p>
-</dd></dl>
-
-<dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-twitch-disable-ads">
 <span class="sig-name descname"><span class="pre">--twitch-disable-ads</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-twitch-disable-ads" title="Permalink to this definition">#</a></dt>
 <dd><p>Skip embedded advertisement segments at the beginning or during a stream.
-Will cause these segments to be missing from the stream.</p>
+Will cause these segments to be missing from the output.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1469,8 +1466,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-wwenetwork-email">
 <span class="sig-name descname"><span class="pre">--wwenetwork-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-wwenetwork-email" title="Permalink to this definition">#</a></dt>
-<dd><p>The email associated with your WWE Network account,
-required to access any WWE Network stream.</p>
+<dd><p>The email associated with your WWE Network account, required to access any WWE Network stream.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1485,22 +1481,19 @@ required to access any WWE Network stream.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-yupptv-boxid">
 <span class="sig-name descname"><span class="pre">--yupptv-boxid</span></span><span class="sig-prename descclassname"> <span class="pre">BOXID</span></span><a class="headerlink" href="#cmdoption-yupptv-boxid" title="Permalink to this definition">#</a></dt>
-<dd><p>The yupptv.com boxid that's used in the BoxId cookie.
-Can be used instead of the username/password login process.</p>
+<dd><p>The yupptv.com boxid that's used in the BoxId cookie.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-yupptv-yuppflixtoken">
 <span class="sig-name descname"><span class="pre">--yupptv-yuppflixtoken</span></span><span class="sig-prename descclassname"> <span class="pre">YUPPFLIXTOKEN</span></span><a class="headerlink" href="#cmdoption-yupptv-yuppflixtoken" title="Permalink to this definition">#</a></dt>
-<dd><p>The yupptv.com yuppflixtoken that's used in the YuppflixToken cookie.
-Can be used instead of the username/password login process.</p>
+<dd><p>The yupptv.com yuppflixtoken that's used in the YuppflixToken cookie.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-yupptv-purge-credentials">
 <span class="sig-name descname"><span class="pre">--yupptv-purge-credentials</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-yupptv-purge-credentials" title="Permalink to this definition">#</a></dt>
-<dd><p>Purge cached YuppTV credentials to initiate a new session
-and reauthenticate.</p>
+<dd><p>Purge cached YuppTV credentials to initiate a new session and reauthenticate.</p>
 </dd></dl>
 
 </section>
@@ -1509,8 +1502,7 @@ and reauthenticate.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-zattoo-email">
 <span class="sig-name descname"><span class="pre">--zattoo-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-zattoo-email" title="Permalink to this definition">#</a></dt>
-<dd><p>The email associated with your zattoo account,
-required to access any zattoo stream.</p>
+<dd><p>The email associated with your zattoo account, required to access any zattoo stream.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1522,19 +1514,14 @@ required to access any zattoo stream.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-zattoo-purge-credentials">
 <span class="sig-name descname"><span class="pre">--zattoo-purge-credentials</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-zattoo-purge-credentials" title="Permalink to this definition">#</a></dt>
-<dd><p>Purge cached zattoo credentials to initiate a new session
-and reauthenticate.</p>
+<dd><p>Purge cached zattoo credentials to initiate a new session and reauthenticate.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-zattoo-stream-types">
 <span class="sig-name descname"><span class="pre">--zattoo-stream-types</span></span><span class="sig-prename descclassname"> <span class="pre">TYPES</span></span><a class="headerlink" href="#cmdoption-zattoo-stream-types" title="Permalink to this definition">#</a></dt>
-<dd><p>A comma-delimited list of stream types which should be used,
-the following types are allowed:</p>
-<ul class="simple">
-<li><p>dash</p></li>
-<li><p>hls7</p></li>
-</ul>
+<dd><p>A comma-delimited list of stream types which should be used.</p>
+<p>The following types are allowed: dash,hls7</p>
 <p>Default is: <strong>&quot;dash&quot;</strong>.</p>
 </dd></dl>
 
