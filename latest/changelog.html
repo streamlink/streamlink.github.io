@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 4.3.0+64.gee03db24 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 5.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 4.3.0+64.gee03db24 documentation</title>
+        <title>Changelog - Streamlink 5.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 4.3.0+64.gee03db24 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,10 +165,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">4.3.0+64.gee03db24</pre>
+  <pre class="sidebar-versions-current">5.0.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -258,12 +258,43 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-5-0-0-2022-09-16">
+<h2>streamlink 5.0.0 (2022-09-16)<a class="headerlink" href="#streamlink-5-0-0-2022-09-16" title="Permalink to this heading">#</a></h2>
+<p>Breaking changes:</p>
+<ul class="simple">
+<li><p>BREAKING: removed <code class="docutils literal notranslate"><span class="pre">avconv</span></code> (libav) from FFmpeg fallback list (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4826">#4826</a>)</p></li>
+<li><p>BREAKING/API: removed <code class="docutils literal notranslate"><span class="pre">Plugin.bind()</span></code> and changed the signature of the <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> class constructor (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4768">#4768</a>)<br />
+A compatibility wrapper for these interface changes has temporarily been added in order to keep third-party plugin implementations working.<br />
+<a class="reference external" href="https://streamlink.github.io/deprecations.html#deprecation-of-plugin-init-self-url">Please see the deprecation docs for more details.</a></p></li>
+<li><p>BREAKING/API: changed the return value of <code class="docutils literal notranslate"><span class="pre">Session.resolve_url()</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4768">#4768</a>)<br />
+<a class="reference external" href="https://streamlink.github.io/deprecations.html#session-resolve-url-return-type-changes">Please see the deprecation docs for more details.</a></p></li>
+<li><p>BREAKING/API: removed <code class="docutils literal notranslate"><span class="pre">HTTPSession.parse_*()</span></code> methods (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4803">#4803</a>)</p></li>
+</ul>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: official support for Python 3.11 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4806">#4806</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--player-external-http-continuous</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4739">#4739</a>)</p></li>
+<li><p>Added: file path to progress output (<code class="docutils literal notranslate"><span class="pre">--output</span></code>, <code class="docutils literal notranslate"><span class="pre">--record</span></code>, etc.) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4764">#4764</a>)</p></li>
+<li><p>Added: warning message when FFmpeg is not available and muxing is unsupported (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4781">#4781</a>)</p></li>
+<li><p>Changed: logging channel of deprecation messages to “warning”  (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4785">#4785</a>)</p></li>
+<li><p>Disabled: <code class="docutils literal notranslate"><span class="pre">--twitch-disable-hosting</span></code> and removed its logic (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4805">#4805</a>)</p></li>
+<li><p>Fixed: memory leak when initializing the <code class="docutils literal notranslate"><span class="pre">Streamlink</span></code> session (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4768">#4768</a>)</p></li>
+<li><p>Fixed: cbsnews plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4743">#4743</a>)</p></li>
+<li><p>Fixed: steam plugin authentication (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4745">#4745</a>)</p></li>
+<li><p>Fixed: ustreamtv plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4761">#4761</a>)</p></li>
+<li><p>Fixed: huya plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4763">#4763</a>)</p></li>
+<li><p>Fixed: atresplayer, mitele and rtve plugins (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4759">#4759</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4760">#4760</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4766">#4766</a>)</p></li>
+<li><p>Fixed: albavision, hiplayer and htv plugins (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4770">#4770</a>)</p></li>
+<li><p>Fixed: OKru plugin with support for the mobile page (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4780">#4780</a>)</p></li>
+<li><p>Fixed: trovo plugin VODs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4812">#4812</a>)</p></li>
+<li><p>API: added <code class="docutils literal notranslate"><span class="pre">Streamlink</span></code> and <code class="docutils literal notranslate"><span class="pre">HTTPSession</span></code> typing informations to <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> and <code class="docutils literal notranslate"><span class="pre">Stream</span></code> (including its various subclasses) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4802">#4802</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4814">#4814</a>)</p></li>
+<li><p>API: added <code class="docutils literal notranslate"><span class="pre">pluginargument</span></code> decorator (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4747">#4747</a>)</p></li>
+<li><p>Docs: updated <code class="docutils literal notranslate"><span class="pre">pluginmatcher</span></code> and <code class="docutils literal notranslate"><span class="pre">pluginargument</span></code> documentation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4771">#4771</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/4.3.0...5.0.0">Full changelog</a></p>
+</section>
 <section id="streamlink-4-3-0-2022-08-15">
 <h2>streamlink 4.3.0 (2022-08-15)<a class="headerlink" href="#streamlink-4-3-0-2022-08-15" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
@@ -1169,6 +1200,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-5-0-0-2022-09-16">streamlink 5.0.0 (2022-09-16)</a></li>
 <li><a class="reference internal" href="#streamlink-4-3-0-2022-08-15">streamlink 4.3.0 (2022-08-15)</a></li>
 <li><a class="reference internal" href="#streamlink-4-2-0-2022-07-09">streamlink 4.2.0 (2022-07-09)</a></li>
 <li><a class="reference internal" href="#streamlink-4-1-0-2022-05-30">streamlink 4.1.0 (2022-05-30)</a></li>
