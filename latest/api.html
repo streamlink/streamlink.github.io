@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="API Guide" href="api_guide.html" />
 
-    <meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/>
+    <meta name="generator" content="sphinx-5.2.0.post0, furo 2022.09.15"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="API Reference - Streamlink 5.0.1+2.gfacf1934 documentation">
+  <meta property="og:title" content="API Reference - Streamlink 5.0.1+3.gee230e47 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>API Reference - Streamlink 5.0.1+2.gfacf1934 documentation</title>
+        <title>API Reference - Streamlink 5.0.1+3.gee230e47 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.0.1+2.gfacf1934 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.0.1+3.gee230e47 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.0.1+2.gfacf1934</pre>
+  <pre class="sidebar-versions-current">5.0.1+3.gee230e47</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="">Stable</a></dd>
     <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
@@ -1235,24 +1235,114 @@ with this exception.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">API Reference</a><ul>
-<li><a class="reference internal" href="#streamlink">Streamlink</a></li>
-<li><a class="reference internal" href="#session">Session</a></li>
+<li><a class="reference internal" href="#streamlink">Streamlink</a><ul>
+<li><a class="reference internal" href="#streamlink.streams"><code class="docutils literal notranslate"><span class="pre">streams()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#session">Session</a><ul>
+<li><a class="reference internal" href="#streamlink.Streamlink"><code class="docutils literal notranslate"><span class="pre">Streamlink</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.Streamlink.http"><code class="docutils literal notranslate"><span class="pre">Streamlink.http</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.Streamlink.set_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.set_option()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.Streamlink.get_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_option()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.Streamlink.set_plugin_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.set_plugin_option()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.Streamlink.get_plugin_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_plugin_option()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.Streamlink.resolve_url"><code class="docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.Streamlink.resolve_url_no_redirect"><code class="docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.Streamlink.streams"><code class="docutils literal notranslate"><span class="pre">Streamlink.streams()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.Streamlink.get_plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_plugins()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.Streamlink.load_plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.load_plugins()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#plugins">Plugins</a><ul>
-<li><a class="reference internal" href="#module-streamlink.plugin">Plugin</a></li>
-<li><a class="reference internal" href="#plugin-decorators">Plugin decorators</a></li>
-<li><a class="reference internal" href="#module-streamlink.options">Plugin arguments</a></li>
+<li><a class="reference internal" href="#module-streamlink.plugin">Plugin</a><ul>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin"><code class="docutils literal notranslate"><span class="pre">Plugin</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.matchers"><code class="docutils literal notranslate"><span class="pre">Plugin.matchers</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.arguments"><code class="docutils literal notranslate"><span class="pre">Plugin.arguments</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.matches"><code class="docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.matcher"><code class="docutils literal notranslate"><span class="pre">Plugin.matcher</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.match"><code class="docutils literal notranslate"><span class="pre">Plugin.match</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.id"><code class="docutils literal notranslate"><span class="pre">Plugin.id</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.title"><code class="docutils literal notranslate"><span class="pre">Plugin.title</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.author"><code class="docutils literal notranslate"><span class="pre">Plugin.author</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.category"><code class="docutils literal notranslate"><span class="pre">Plugin.category</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.url"><code class="docutils literal notranslate"><span class="pre">Plugin.url</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.streams"><code class="docutils literal notranslate"><span class="pre">Plugin.streams()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin._get_streams"><code class="docutils literal notranslate"><span class="pre">Plugin._get_streams()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.save_cookies"><code class="docutils literal notranslate"><span class="pre">Plugin.save_cookies()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.load_cookies"><code class="docutils literal notranslate"><span class="pre">Plugin.load_cookies()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.clear_cookies"><code class="docutils literal notranslate"><span class="pre">Plugin.clear_cookies()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plugin-decorators">Plugin decorators</a><ul>
+<li><a class="reference internal" href="#streamlink.plugin.pluginmatcher"><code class="docutils literal notranslate"><span class="pre">pluginmatcher()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.pluginargument"><code class="docutils literal notranslate"><span class="pre">pluginargument()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-streamlink.options">Plugin arguments</a><ul>
+<li><a class="reference internal" href="#streamlink.options.Argument"><code class="docutils literal notranslate"><span class="pre">Argument</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.options.Arguments"><code class="docutils literal notranslate"><span class="pre">Arguments</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.options.Arguments.requires"><code class="docutils literal notranslate"><span class="pre">Arguments.requires()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-streamlink.stream">Streams</a><ul>
-<li><a class="reference internal" href="#stream">Stream</a></li>
-<li><a class="reference internal" href="#muxedstream">MuxedStream</a></li>
-<li><a class="reference internal" href="#httpstream">HTTPStream</a></li>
-<li><a class="reference internal" href="#hlsstream">HLSStream</a></li>
-<li><a class="reference internal" href="#muxedhlsstream">MuxedHLSStream</a></li>
-<li><a class="reference internal" href="#dashstream">DASHStream</a></li>
+<li><a class="reference internal" href="#stream">Stream</a><ul>
+<li><a class="reference internal" href="#streamlink.stream.Stream"><code class="docutils literal notranslate"><span class="pre">Stream</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.stream.Stream.open"><code class="docutils literal notranslate"><span class="pre">Stream.open()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#muxedstream">MuxedStream</a><ul>
+<li><a class="reference internal" href="#streamlink.stream.MuxedStream"><code class="docutils literal notranslate"><span class="pre">MuxedStream</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#httpstream">HTTPStream</a><ul>
+<li><a class="reference internal" href="#streamlink.stream.HTTPStream"><code class="docutils literal notranslate"><span class="pre">HTTPStream</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.stream.HTTPStream.args"><code class="docutils literal notranslate"><span class="pre">HTTPStream.args</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.stream.HTTPStream.url"><code class="docutils literal notranslate"><span class="pre">HTTPStream.url</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hlsstream">HLSStream</a><ul>
+<li><a class="reference internal" href="#streamlink.stream.HLSStream"><code class="docutils literal notranslate"><span class="pre">HLSStream</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.stream.HLSStream.parse_variant_playlist"><code class="docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.stream.HLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">HLSStream.url_master</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#muxedhlsstream">MuxedHLSStream</a><ul>
+<li><a class="reference internal" href="#streamlink.stream.MuxedHLSStream"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.stream.MuxedHLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream.url_master</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dashstream">DASHStream</a><ul>
+<li><a class="reference internal" href="#streamlink.stream.DASHStream"><code class="docutils literal notranslate"><span class="pre">DASHStream</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.stream.DASHStream.parse_manifest"><code class="docutils literal notranslate"><span class="pre">DASHStream.parse_manifest()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li><a class="reference internal" href="#streamlink.StreamlinkError"><code class="docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.PluginError"><code class="docutils literal notranslate"><span class="pre">PluginError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.NoPluginError"><code class="docutils literal notranslate"><span class="pre">NoPluginError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.StreamError"><code class="docutils literal notranslate"><span class="pre">StreamError</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1269,6 +1359,7 @@ with this exception.</p>
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>
 </html>
