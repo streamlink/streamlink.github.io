@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Plugins" href="../../plugins.html" /><link rel="prev" title="FunimationNow" href="funimationnow.html" />
 
-    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.15"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.15"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Twitch - Streamlink 5.0.1+19.ge4166bcc documentation">
+  <meta property="og:title" content="Twitch - Streamlink 5.0.1+20.g55649ecc documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Twitch - Streamlink 5.0.1+19.ge4166bcc documentation</title>
+        <title>Twitch - Streamlink 5.0.1+20.g55649ecc documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Streamlink 5.0.1+19.ge4166bcc documentation</div></a>
+      <a href="../../index.html"><div class="brand">Streamlink 5.0.1+20.g55649ecc documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.0.1+19.ge4166bcc</pre>
+  <pre class="sidebar-versions-current">5.0.1+20.g55649ecc</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins/twitch.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/plugins/twitch.html" class="version-current">Latest</a></dd>
@@ -287,7 +287,7 @@ the <code class="docutils literal notranslate"><span class="pre">auth-token</spa
 </div>
 <p>Copy the resulting string consisting of 30 alphanumerical characters without any quotations.</p>
 <p>The final <code class="docutils literal notranslate"><span class="pre">Authentication</span></code> header which will identify your account while requesting a streaming access token can then be set
-via Streamlink's <a class="reference internal" href="../../cli.html#cmdoption-http-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-header</span></code></a> or <a class="reference internal" href="../../cli.html#cmdoption-twitch-api-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-api-header</span></code></a> CLI arguments. The former will set the header on any
+via Streamlink's <a class="reference internal" href="../../_man.html#cmdoption-http-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-header</span></code></a> or <a class="reference internal" href="../../_man.html#cmdoption-twitch-api-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-api-header</span></code></a> CLI arguments. The former will set the header on any
 HTTP request made by Streamlink, even HLS Streams, while the latter will only do that on Twitch API requests, which is what
 should be done when authenticating and which is the reason why this CLI argument was added.</p>
 <p>The value of the <code class="docutils literal notranslate"><span class="pre">Authentication</span></code> header must be in the format of <code class="docutils literal notranslate"><span class="pre">OAuth</span> <span class="pre">YOUR_TOKEN</span></code>. Notice the space character in the
@@ -317,41 +317,41 @@ certain cases.</p>
 <p>Unfortunately, entirely preventing embedded ads is not possible unless a loophole on Twitch gets discovered which can be
 exploited. This has been the case a couple of times now and ad-workarounds have been implemented in Streamlink (see <a class="reference external" href="https://github.com/streamlink/streamlink/issues/3210">#3210</a>) and
 various ad-blockers, but the solutions did only last for a couple of weeks or even days until Twitch patched these exploits.</p>
-<p><strong>To filter out ads and to prevent stream discontinuities in Streamlink's output</strong>, the <a class="reference internal" href="../../cli.html#cmdoption-twitch-disable-ads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-disable-ads</span></code></a> argument
+<p><strong>To filter out ads and to prevent stream discontinuities in Streamlink's output</strong>, the <a class="reference internal" href="../../_man.html#cmdoption-twitch-disable-ads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-disable-ads</span></code></a> argument
 was introduced in <a class="reference internal" href="../../changelog.html#streamlink-1-1-0-2019-03-31"><span class="std std-ref">Streamlink 1.1.0 in 2019</span></a>, which filters out advertisement
 segments from Twitch's HLS streams and pauses the stream output until regular content becomes available again. The filtering
 logic has seen several iterations since then, with the latest big overhaul in
 <a class="reference internal" href="../../changelog.html#streamlink-1-7-0-2020-10-18"><span class="std std-ref">Streamlink 1.7.0 in 2020</span></a>.</p>
-<p><strong>In addition to that</strong>, special API request headers can be set via <a class="reference internal" href="../../cli.html#cmdoption-twitch-api-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-api-header</span></code></a> that can prevent ads from
+<p><strong>In addition to that</strong>, special API request headers can be set via <a class="reference internal" href="../../_man.html#cmdoption-twitch-api-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-api-header</span></code></a> that can prevent ads from
 being embedded into the stream, either <a class="reference internal" href="#authentication"><span class="std std-ref">authentication data</span></a> or other data discovered
 by the community.</p>
 </section>
 <section id="low-latency-streaming">
 <h2>Low latency streaming<a class="headerlink" href="#low-latency-streaming" title="Permalink to this heading">#</a></h2>
-<p>Low latency streaming on Twitch can be enabled by setting the <a class="reference internal" href="../../cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> argument and (optionally)
-configuring the <a class="reference internal" href="../../players.html#players"><span class="std std-ref">player</span></a> via <a class="reference internal" href="../../cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> and reducing its own buffer to a bare minimum.</p>
-<p>Setting <a class="reference internal" href="../../cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> will make Streamlink prefetch future HLS segments that are included in the HLS playlist
+<p>Low latency streaming on Twitch can be enabled by setting the <a class="reference internal" href="../../_man.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> argument and (optionally)
+configuring the <a class="reference internal" href="../../players.html#players"><span class="std std-ref">player</span></a> via <a class="reference internal" href="../../_man.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> and reducing its own buffer to a bare minimum.</p>
+<p>Setting <a class="reference internal" href="../../_man.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> will make Streamlink prefetch future HLS segments that are included in the HLS playlist
 and which can be requested ahead of time. As soon as content becomes available, Streamlink can download it without having to
 waste time on waiting for another HLS playlist refresh that might include new segments.</p>
-<p>In addition to that, <a class="reference internal" href="../../cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> also reduces <a class="reference internal" href="../../cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to a value of at most <code class="docutils literal notranslate"><span class="pre">2</span></code>, and it
-also sets the <a class="reference internal" href="../../cli.html#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> argument.</p>
-<p><a class="reference internal" href="../../cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> defines how many HLS segments Streamlink should stay behind the stream's live edge, so that it can
+<p>In addition to that, <a class="reference internal" href="../../_man.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> also reduces <a class="reference internal" href="../../_man.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to a value of at most <code class="docutils literal notranslate"><span class="pre">2</span></code>, and it
+also sets the <a class="reference internal" href="../../_man.html#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> argument.</p>
+<p><a class="reference internal" href="../../_man.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> defines how many HLS segments Streamlink should stay behind the stream's live edge, so that it can
 refresh playlists and download segments in time without causing buffering. Setting the value to <code class="docutils literal notranslate"><span class="pre">1</span></code> is not advised due to how
 prefetching works.</p>
-<p><a class="reference internal" href="../../cli.html#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> lets Streamlink write the content of in-progress segment downloads to the output buffer
+<p><a class="reference internal" href="../../_man.html#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> lets Streamlink write the content of in-progress segment downloads to the output buffer
 instead waiting for the entire segment to complete first before data gets written. Since HLS segments on Twitch have a playback
 duration of 2 seconds for most streams, this further reduces output delay.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Low latency streams have to be enabled by the broadcasters on Twitch themselves. Regular streams can cause buffering issues
-with this option enabled due to the reduced <a class="reference internal" href="../../cli.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> value.</p>
+with this option enabled due to the reduced <a class="reference internal" href="../../_man.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> value.</p>
 <p>Unfortunately, there is no way to check whether a channel is streaming in low-latency mode before accessing the stream.</p>
 </div>
 <section id="player-buffer-tweaks">
 <h3>Player buffer tweaks<a class="headerlink" href="#player-buffer-tweaks" title="Permalink to this heading">#</a></h3>
 <p>Since players do have their own input buffer, depending on how much data the player wants to keep in its buffer before it starts
 playing the stream, this can cause an unnecessary delay while trying to watch low latency streams. Player buffer sizes should
-therefore be tweaked via the <a class="reference internal" href="../../cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> CLI argument or via the player's configuration options.</p>
+therefore be tweaked via the <a class="reference internal" href="../../_man.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> CLI argument or via the player's configuration options.</p>
 <p>The delay introduced by the player depends on the stream's bitrate and how much data is necessary to allow for a smooth playback
 without causing any stuttering, e.g. when running out out available data.</p>
 <p>Please refer to the player's own documentation for the available options.</p>
