@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Twitch - Streamlink 5.0.1+31.g7ef96a03 documentation">
+  <meta property="og:title" content="Twitch - Streamlink 5.0.1+32.gaa4865a0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Twitch - Streamlink 5.0.1+31.g7ef96a03 documentation</title>
+        <title>Twitch - Streamlink 5.0.1+32.gaa4865a0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Streamlink 5.0.1+31.g7ef96a03 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Streamlink 5.0.1+32.gaa4865a0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.0.1+31.g7ef96a03</pre>
+  <pre class="sidebar-versions-current">5.0.1+32.gaa4865a0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins/twitch.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/plugins/twitch.html" class="version-current">Latest</a></dd>
@@ -286,18 +286,18 @@ the <code class="docutils literal notranslate"><span class="pre">auth-token</spa
 </pre></div>
 </div>
 <p>Copy the resulting string consisting of 30 alphanumerical characters without any quotations.</p>
-<p>The final <code class="docutils literal notranslate"><span class="pre">Authentication</span></code> header which will identify your account while requesting a streaming access token can then be set
+<p>The final <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> header which will identify your account while requesting a streaming access token can then be set
 via Streamlink's <a class="reference internal" href="../../_man.html#cmdoption-http-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-header</span></code></a> or <a class="reference internal" href="../../_man.html#cmdoption-twitch-api-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-api-header</span></code></a> CLI arguments. The former will set the header on any
 HTTP request made by Streamlink, even HLS Streams, while the latter will only do that on Twitch API requests, which is what
 should be done when authenticating and which is the reason why this CLI argument was added.</p>
-<p>The value of the <code class="docutils literal notranslate"><span class="pre">Authentication</span></code> header must be in the format of <code class="docutils literal notranslate"><span class="pre">OAuth</span> <span class="pre">YOUR_TOKEN</span></code>. Notice the space character in the
+<p>The value of the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> header must be in the format of <code class="docutils literal notranslate"><span class="pre">OAuth</span> <span class="pre">YOUR_TOKEN</span></code>. Notice the space character in the
 argument value, which requires quotation on command line shells:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;--twitch-api-header=Authentication=OAuth abcdefghijklmnopqrstuvwxyz0123&quot;</span> twitch.tv/CHANNEL best
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;--twitch-api-header=Authorization=OAuth abcdefghijklmnopqrstuvwxyz0123&quot;</span> twitch.tv/CHANNEL best
 </pre></div>
 </div>
 <p>The entire argument can optionally be added to Streamlink's (Twitch plugin specific)
 <a class="reference internal" href="../config.html#plugin-specific-configuration-file"><span class="std std-ref">config file</span></a>, which <a class="reference internal" href="../config.html#syntax"><span class="std std-ref">doesn't require quotes</span></a>:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>twitch-api-header=Authentication=OAuth abcdefghijklmnopqrstuvwxyz0123
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>twitch-api-header=Authorization=OAuth abcdefghijklmnopqrstuvwxyz0123
 </pre></div>
 </div>
 </section>
