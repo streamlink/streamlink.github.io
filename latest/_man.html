@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Streamlink - Streamlink 5.0.1+43.g8105bfcf documentation">
+  <meta property="og:title" content="Streamlink - Streamlink 5.0.1+44.g61794c1d documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Streamlink - Streamlink 5.0.1+43.g8105bfcf documentation</title>
+        <title>Streamlink - Streamlink 5.0.1+44.g61794c1d documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.0.1+43.g8105bfcf documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.0.1+44.g61794c1d documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.0.1+43.g8105bfcf</pre>
+  <pre class="sidebar-versions-current">5.0.1+44.g61794c1d</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/_man.html" class="">Stable</a></dd>
     <dd><a href="/latest/_man.html" class="version-current">Latest</a></dd>
@@ -267,23 +267,26 @@
 <section id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">#</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">streamlink [OPTIONS] &lt;URL&gt; [STREAM]</span>
-
-<span class="go">streamlink --loglevel debug youtu.be/VIDEO-ID best</span>
+</pre></div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">streamlink --loglevel debug youtu.be/VIDEO-ID best</span>
 <span class="go">streamlink --player mpv --player-args &#39;--no-border --no-keepaspect-window&#39; twitch.tv/CHANNEL 1080p60</span>
 <span class="go">streamlink --player-external-http --player-external-http-port 8888 URL STREAM</span>
 <span class="go">streamlink --output /path/to/file --http-timeout 60 URL STREAM</span>
 <span class="go">streamlink --stdout URL STREAM | ffmpeg -i pipe:0 ...</span>
 <span class="go">streamlink --http-header &#39;Authorization=OAuth TOKEN&#39; --http-header &#39;Referer=URL&#39; URL STREAM</span>
 <span class="go">streamlink --hls-live-edge 5 --stream-segment-threads 5 &#39;hls://https://host/playlist.m3u8&#39; best</span>
-<span class="go">streamlink --twitch-low-latency -p mpv -a &#39;--cache=yes --demuxer-max-bytes=750k&#39; twitch.tv/CHANNEL best</span>
+<span class="go">streamlink --twitch-low-latency -p mpv -a &#39;--cache=yes --demuxer-max-back-bytes=2G&#39; twitch.tv/CHANNEL best</span>
 </pre></div>
 </div>
 </section>
-</section>
 <section id="options">
-<h1>Options<a class="headerlink" href="#options" title="Permalink to this heading">#</a></h1>
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">#</a></h2>
 <section id="positional-arguments">
-<h2>Positional arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this heading">#</a></h2>
+<h3>Positional arguments<a class="headerlink" href="#positional-arguments" title="Permalink to this heading">#</a></h3>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-arg-URL">
 <span id="cmdoption-arg-url"></span><span class="sig-name descname"><span class="pre">URL</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-URL" title="Permalink to this definition">#</a></dt>
@@ -309,7 +312,7 @@ of available streams will be printed.</p>
 
 </section>
 <section id="general-options">
-<h2>General options<a class="headerlink" href="#general-options" title="Permalink to this heading">#</a></h2>
+<h3>General options<a class="headerlink" href="#general-options" title="Permalink to this heading">#</a></h3>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-h">
 <span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-h" title="Permalink to this definition">#</a></dt>
@@ -457,7 +460,7 @@ audio language.</p>
 
 </section>
 <section id="player-options">
-<h2>Player options<a class="headerlink" href="#player-options" title="Permalink to this heading">#</a></h2>
+<h3>Player options<a class="headerlink" href="#player-options" title="Permalink to this heading">#</a></h3>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-p">
 <span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"> <span class="pre">COMMAND</span></span><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">#</a></dt>
@@ -638,7 +641,7 @@ the string <code class="code docutils literal notranslate"><span class="pre">\$A
 
 </section>
 <section id="file-output-options">
-<h2>File output options<a class="headerlink" href="#file-output-options" title="Permalink to this heading">#</a></h2>
+<h3>File output options<a class="headerlink" href="#file-output-options" title="Permalink to this heading">#</a></h3>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-o">
 <span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"> <span class="pre">FILENAME</span></span><a class="headerlink" href="#cmdoption-o" title="Permalink to this definition">#</a></dt>
@@ -730,7 +733,7 @@ shares that are enforcing Windows filename limitations, etc.</p>
 
 </section>
 <section id="stream-options">
-<h2>Stream options<a class="headerlink" href="#stream-options" title="Permalink to this heading">#</a></h2>
+<h3>Stream options<a class="headerlink" href="#stream-options" title="Permalink to this heading">#</a></h3>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-url">
 <span class="sig-name descname"><span class="pre">--url</span></span><span class="sig-prename descclassname"> <span class="pre">URL</span></span><a class="headerlink" href="#cmdoption-url" title="Permalink to this definition">#</a></dt>
@@ -826,7 +829,7 @@ equality is tested.</p>
 
 </section>
 <section id="stream-transport-options">
-<h2>Stream transport options<a class="headerlink" href="#stream-transport-options" title="Permalink to this heading">#</a></h2>
+<h3>Stream transport options<a class="headerlink" href="#stream-transport-options" title="Permalink to this heading">#</a></h3>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-ringbuffer-size">
 <span class="sig-name descname"><span class="pre">--ringbuffer-size</span></span><span class="sig-prename descclassname"> <span class="pre">SIZE</span></span><a class="headerlink" href="#cmdoption-ringbuffer-size" title="Permalink to this definition">#</a></dt>
@@ -887,7 +890,7 @@ some extra processing to avoid unnecessary background processing.</p>
 </dd></dl>
 
 <section id="hls-options">
-<h3>HLS options<a class="headerlink" href="#hls-options" title="Permalink to this heading">#</a></h3>
+<h4>HLS options<a class="headerlink" href="#hls-options" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-hls-live-edge">
 <span class="sig-name descname"><span class="pre">--hls-live-edge</span></span><span class="sig-prename descclassname"> <span class="pre">SEGMENTS</span></span><a class="headerlink" href="#cmdoption-hls-live-edge" title="Permalink to this definition">#</a></dt>
@@ -1004,7 +1007,7 @@ nearest HLS segment.</p>
 
 </section>
 <section id="ffmpeg-options">
-<h3>FFmpeg options<a class="headerlink" href="#ffmpeg-options" title="Permalink to this heading">#</a></h3>
+<h4>FFmpeg options<a class="headerlink" href="#ffmpeg-options" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-ffmpeg-ffmpeg">
 <span class="sig-name descname"><span class="pre">--ffmpeg-ffmpeg</span></span><span class="sig-prename descclassname"> <span class="pre">FILENAME</span></span><a class="headerlink" href="#cmdoption-ffmpeg-ffmpeg" title="Permalink to this definition">#</a></dt>
@@ -1072,7 +1075,7 @@ the initial start time offset value.</p>
 </section>
 </section>
 <section id="http-options">
-<h2>HTTP options<a class="headerlink" href="#http-options" title="Permalink to this heading">#</a></h2>
+<h3>HTTP options<a class="headerlink" href="#http-options" title="Permalink to this heading">#</a></h3>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-http-proxy">
 <span class="sig-name descname"><span class="pre">--http-proxy</span></span><span class="sig-prename descclassname"> <span class="pre">HTTP_PROXY</span></span><a class="headerlink" href="#cmdoption-http-proxy" title="Permalink to this definition">#</a></dt>
@@ -1146,9 +1149,9 @@ other options.</p>
 
 </section>
 <section id="plugin-options">
-<h2>Plugin options<a class="headerlink" href="#plugin-options" title="Permalink to this heading">#</a></h2>
+<h3>Plugin options<a class="headerlink" href="#plugin-options" title="Permalink to this heading">#</a></h3>
 <section id="afreeca">
-<h3>Afreeca<a class="headerlink" href="#afreeca" title="Permalink to this heading">#</a></h3>
+<h4>Afreeca<a class="headerlink" href="#afreeca" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-afreeca-username">
 <span class="sig-name descname"><span class="pre">--afreeca-username</span></span><span class="sig-prename descclassname"> <span class="pre">USERNAME</span></span><a class="headerlink" href="#cmdoption-afreeca-username" title="Permalink to this definition">#</a></dt>
@@ -1169,7 +1172,7 @@ other options.</p>
 
 </section>
 <section id="bbciplayer">
-<h3>Bbciplayer<a class="headerlink" href="#bbciplayer" title="Permalink to this heading">#</a></h3>
+<h4>Bbciplayer<a class="headerlink" href="#bbciplayer" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-bbciplayer-username">
 <span class="sig-name descname"><span class="pre">--bbciplayer-username</span></span><span class="sig-prename descclassname"> <span class="pre">USERNAME</span></span><a class="headerlink" href="#cmdoption-bbciplayer-username" title="Permalink to this definition">#</a></dt>
@@ -1190,7 +1193,7 @@ other options.</p>
 
 </section>
 <section id="clubbingtv">
-<h3>Clubbingtv<a class="headerlink" href="#clubbingtv" title="Permalink to this heading">#</a></h3>
+<h4>Clubbingtv<a class="headerlink" href="#clubbingtv" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-clubbingtv-username">
 <span class="sig-name descname"><span class="pre">--clubbingtv-username</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-clubbingtv-username" title="Permalink to this definition">#</a></dt>
@@ -1205,7 +1208,7 @@ other options.</p>
 
 </section>
 <section id="crunchyroll">
-<h3>Crunchyroll<a class="headerlink" href="#crunchyroll" title="Permalink to this heading">#</a></h3>
+<h4>Crunchyroll<a class="headerlink" href="#crunchyroll" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-crunchyroll-username">
 <span class="sig-name descname"><span class="pre">--crunchyroll-username</span></span><span class="sig-prename descclassname"> <span class="pre">USERNAME</span></span><a class="headerlink" href="#cmdoption-crunchyroll-username" title="Permalink to this definition">#</a></dt>
@@ -1241,7 +1244,7 @@ and the session ID does not match the account.</p>
 
 </section>
 <section id="funimationnow">
-<h3>Funimationnow<a class="headerlink" href="#funimationnow" title="Permalink to this heading">#</a></h3>
+<h4>Funimationnow<a class="headerlink" href="#funimationnow" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-funimation-email">
 <span class="sig-name descname"><span class="pre">--funimation-email</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-funimation-email" title="Permalink to this definition">#</a></dt>
@@ -1263,7 +1266,7 @@ and the session ID does not match the account.</p>
 
 </section>
 <section id="nicolive">
-<h3>Nicolive<a class="headerlink" href="#nicolive" title="Permalink to this heading">#</a></h3>
+<h4>Nicolive<a class="headerlink" href="#nicolive" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-niconico-email">
 <span class="sig-name descname"><span class="pre">--niconico-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-niconico-email" title="Permalink to this definition">#</a></dt>
@@ -1298,7 +1301,7 @@ and the session ID does not match the account.</p>
 
 </section>
 <section id="openrectv">
-<h3>Openrectv<a class="headerlink" href="#openrectv" title="Permalink to this heading">#</a></h3>
+<h4>Openrectv<a class="headerlink" href="#openrectv" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-openrectv-email">
 <span class="sig-name descname"><span class="pre">--openrectv-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-openrectv-email" title="Permalink to this definition">#</a></dt>
@@ -1313,7 +1316,7 @@ and the session ID does not match the account.</p>
 
 </section>
 <section id="pixiv">
-<h3>Pixiv<a class="headerlink" href="#pixiv" title="Permalink to this heading">#</a></h3>
+<h4>Pixiv<a class="headerlink" href="#pixiv" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-pixiv-sessionid">
 <span class="sig-name descname"><span class="pre">--pixiv-sessionid</span></span><span class="sig-prename descclassname"> <span class="pre">SESSIONID</span></span><a class="headerlink" href="#cmdoption-pixiv-sessionid" title="Permalink to this definition">#</a></dt>
@@ -1340,10 +1343,10 @@ and the session ID does not match the account.</p>
 
 </section>
 <section id="sbscokr">
-<h3>Sbscokr<a class="headerlink" href="#sbscokr" title="Permalink to this heading">#</a></h3>
+<h4>Sbscokr<a class="headerlink" href="#sbscokr" title="Permalink to this heading">#</a></h4>
 </section>
 <section id="schoolism">
-<h3>Schoolism<a class="headerlink" href="#schoolism" title="Permalink to this heading">#</a></h3>
+<h4>Schoolism<a class="headerlink" href="#schoolism" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-schoolism-email">
 <span class="sig-name descname"><span class="pre">--schoolism-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-schoolism-email" title="Permalink to this definition">#</a></dt>
@@ -1365,7 +1368,7 @@ and the session ID does not match the account.</p>
 
 </section>
 <section id="steam">
-<h3>Steam<a class="headerlink" href="#steam" title="Permalink to this heading">#</a></h3>
+<h4>Steam<a class="headerlink" href="#steam" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-steam-email">
 <span class="sig-name descname"><span class="pre">--steam-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-steam-email" title="Permalink to this definition">#</a></dt>
@@ -1380,7 +1383,7 @@ and the session ID does not match the account.</p>
 
 </section>
 <section id="streann">
-<h3>Streann<a class="headerlink" href="#streann" title="Permalink to this heading">#</a></h3>
+<h4>Streann<a class="headerlink" href="#streann" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-streann-url">
 <span class="sig-name descname"><span class="pre">--streann-url</span></span><span class="sig-prename descclassname"> <span class="pre">URL</span></span><a class="headerlink" href="#cmdoption-streann-url" title="Permalink to this definition">#</a></dt>
@@ -1389,7 +1392,7 @@ and the session ID does not match the account.</p>
 
 </section>
 <section id="twitcasting">
-<h3>Twitcasting<a class="headerlink" href="#twitcasting" title="Permalink to this heading">#</a></h3>
+<h4>Twitcasting<a class="headerlink" href="#twitcasting" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-twitcasting-password">
 <span class="sig-name descname"><span class="pre">--twitcasting-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-twitcasting-password" title="Permalink to this definition">#</a></dt>
@@ -1398,7 +1401,7 @@ and the session ID does not match the account.</p>
 
 </section>
 <section id="twitch">
-<h3>Twitch<a class="headerlink" href="#twitch" title="Permalink to this heading">#</a></h3>
+<h4>Twitch<a class="headerlink" href="#twitch" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-twitch-disable-ads">
 <span class="sig-name descname"><span class="pre">--twitch-disable-ads</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-twitch-disable-ads" title="Permalink to this definition">#</a></dt>
@@ -1446,7 +1449,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 
 </section>
 <section id="ustreamtv">
-<h3>Ustreamtv<a class="headerlink" href="#ustreamtv" title="Permalink to this heading">#</a></h3>
+<h4>Ustreamtv<a class="headerlink" href="#ustreamtv" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-ustream-password">
 <span class="sig-name descname"><span class="pre">--ustream-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-ustream-password" title="Permalink to this definition">#</a></dt>
@@ -1455,7 +1458,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 
 </section>
 <section id="ustvnow">
-<h3>Ustvnow<a class="headerlink" href="#ustvnow" title="Permalink to this heading">#</a></h3>
+<h4>Ustvnow<a class="headerlink" href="#ustvnow" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-ustvnow-username">
 <span class="sig-name descname"><span class="pre">--ustvnow-username</span></span><span class="sig-prename descclassname"> <span class="pre">USERNAME</span></span><a class="headerlink" href="#cmdoption-ustvnow-username" title="Permalink to this definition">#</a></dt>
@@ -1470,7 +1473,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 
 </section>
 <section id="wwenetwork">
-<h3>Wwenetwork<a class="headerlink" href="#wwenetwork" title="Permalink to this heading">#</a></h3>
+<h4>Wwenetwork<a class="headerlink" href="#wwenetwork" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-wwenetwork-email">
 <span class="sig-name descname"><span class="pre">--wwenetwork-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-wwenetwork-email" title="Permalink to this definition">#</a></dt>
@@ -1485,7 +1488,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 
 </section>
 <section id="yupptv">
-<h3>Yupptv<a class="headerlink" href="#yupptv" title="Permalink to this heading">#</a></h3>
+<h4>Yupptv<a class="headerlink" href="#yupptv" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-yupptv-boxid">
 <span class="sig-name descname"><span class="pre">--yupptv-boxid</span></span><span class="sig-prename descclassname"> <span class="pre">BOXID</span></span><a class="headerlink" href="#cmdoption-yupptv-boxid" title="Permalink to this definition">#</a></dt>
@@ -1506,7 +1509,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 
 </section>
 <section id="zattoo">
-<h3>Zattoo<a class="headerlink" href="#zattoo" title="Permalink to this heading">#</a></h3>
+<h4>Zattoo<a class="headerlink" href="#zattoo" title="Permalink to this heading">#</a></h4>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-zattoo-email">
 <span class="sig-name descname"><span class="pre">--zattoo-email</span></span><span class="sig-prename descclassname"> <span class="pre">EMAIL</span></span><a class="headerlink" href="#cmdoption-zattoo-email" title="Permalink to this definition">#</a></dt>
@@ -1534,6 +1537,20 @@ Regular streams can cause buffering issues with this option enabled due to the r
 </dd></dl>
 
 </section>
+</section>
+</section>
+<section id="bugs">
+<h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this heading">#</a></h2>
+<p>Please open a new issue on Streamlink's issue tracker on GitHub and use the appropriate issue forms:</p>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/issues">https://github.com/streamlink/streamlink/issues</a></p>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this heading">#</a></h2>
+<p>For more detailed information about config files, plugin sideloading, streaming protocols, proxy support, metadata,
+or plugin specific stuff, please see Streamlink's online CLI documentation here:</p>
+<p><a class="reference external" href="https://streamlink.github.io/cli.html">https://streamlink.github.io/cli.html</a></p>
+<p>The list of available plugins and their descriptions can be found here:</p>
+<p><a class="reference external" href="https://streamlink.github.io/plugins.html">https://streamlink.github.io/plugins.html</a></p>
 </section>
 </section>
 
@@ -1579,8 +1596,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
             <ul>
 <li><a class="reference internal" href="#">Streamlink</a><ul>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
 <li><a class="reference internal" href="#options">Options</a><ul>
 <li><a class="reference internal" href="#positional-arguments">Positional arguments</a></li>
 <li><a class="reference internal" href="#general-options">General options</a></li>
@@ -1615,6 +1631,10 @@ Regular streams can cause buffering issues with this option enabled due to the r
 <li><a class="reference internal" href="#zattoo">Zattoo</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bugs">Bugs</a></li>
+<li><a class="reference internal" href="#see-also">See also</a></li>
 </ul>
 </li>
 </ul>
