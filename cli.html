@@ -2,21 +2,21 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Tutorial" href="cli/tutorial.html" /><link rel="prev" title="Installation" href="install.html" />
 
-    <meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.15"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Command-Line Interface - Streamlink 5.0.1 documentation">
+  <meta property="og:title" content="Command-Line Interface - Streamlink 5.1.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Command-Line Interface - Streamlink 5.0.1 documentation</title>
+        <title>Command-Line Interface - Streamlink 5.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.0.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.0.1</pre>
+  <pre class="sidebar-versions-current">5.1.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="">Latest</a></dd>
@@ -324,7 +324,7 @@
 <dd><p>A URL to attempt to extract streams from.</p>
 <p>Usually, the protocol of http(s) URLs can be omitted (<code class="code docutils literal notranslate"><span class="pre">https://</span></code>),
 depending on the implementation of the plugin being used.</p>
-<p>Alternatively, the URL can also be specified by using the <a class="reference internal" href="#cmdoption-url"><code class="xref std std-option docutils literal notranslate"><span class="pre">--url</span></code></a> option.</p>
+<p>Alternatively, the URL can also be specified by using the <a class="reference internal" href="_man.html#cmdoption-url"><code class="xref std std-option docutils literal notranslate"><span class="pre">--url</span></code></a> option.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -337,7 +337,7 @@ quality.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;720p,480p,best&quot;</span>
 </pre></div>
 </div>
-<p>If no stream is specified and <a class="reference internal" href="#cmdoption-default-stream"><code class="xref std std-option docutils literal notranslate"><span class="pre">--default-stream</span></code></a> is not used, then a list
+<p>If no stream is specified and <a class="reference internal" href="_man.html#cmdoption-default-stream"><code class="xref std std-option docutils literal notranslate"><span class="pre">--default-stream</span></code></a> is not used, then a list
 of available streams will be printed.</p>
 </dd></dl>
 
@@ -384,7 +384,7 @@ of available streams will be printed.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-can-handle-url-no-redirect">
 <span class="sig-name descname"><span class="pre">--can-handle-url-no-redirect</span></span><span class="sig-prename descclassname"> <span class="pre">URL</span></span><a class="headerlink" href="#cmdoption-can-handle-url-no-redirect" title="Permalink to this definition">#</a></dt>
-<dd><p>Same as <a class="reference internal" href="#cmdoption-can-handle-url"><code class="xref std std-option docutils literal notranslate"><span class="pre">--can-handle-url</span></code></a> but without following redirects when looking up
+<dd><p>Same as <a class="reference internal" href="_man.html#cmdoption-can-handle-url"><code class="xref std std-option docutils literal notranslate"><span class="pre">--can-handle-url</span></code></a> but without following redirects when looking up
 the URL.</p>
 </dd></dl>
 
@@ -402,7 +402,7 @@ merged on top of each other where the last config has highest priority.</p>
 <dt class="sig sig-object std" id="cmdoption-loglevel">
 <span class="sig-name descname"><span class="pre">--loglevel</span></span><span class="sig-prename descclassname"> <span class="pre">LEVEL</span></span><a class="headerlink" href="#cmdoption-loglevel" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the log message threshold.</p>
-<p>Valid levels are: <code class="code docutils literal notranslate"><span class="pre">none</span></code>, <code class="code docutils literal notranslate"><span class="pre">error</span></code>, <code class="code docutils literal notranslate"><span class="pre">warning</span></code>, <code class="code docutils literal notranslate"><span class="pre">info</span></code>, <code class="code docutils literal notranslate"><span class="pre">debug</span></code>, <code class="code docutils literal notranslate"><span class="pre">trace</span></code></p>
+<p>Valid levels are: <code class="code docutils literal notranslate"><span class="pre">none</span></code>, <code class="code docutils literal notranslate"><span class="pre">error</span></code>, <code class="code docutils literal notranslate"><span class="pre">warning</span></code>, <code class="code docutils literal notranslate"><span class="pre">info</span></code>, <code class="code docutils literal notranslate"><span class="pre">debug</span></code>, <code class="code docutils literal notranslate"><span class="pre">trace</span></code>, <code class="code docutils literal notranslate"><span class="pre">all</span></code></p>
 </dd></dl>
 
 <dl class="std option">
@@ -478,7 +478,7 @@ audio language.</p>
 <span class="sig-name descname"><span class="pre">-4</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-4" title="Permalink to this definition">#</a></dt>
 <dt class="sig sig-object std" id="cmdoption-ipv4">
 <span class="sig-name descname"><span class="pre">--ipv4</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ipv4" title="Permalink to this definition">#</a></dt>
-<dd><p>Resolve address names to IPv4 only. This option overrides <a class="reference internal" href="#cmdoption-ipv6"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ipv6</span></code></a>.</p>
+<dd><p>Resolve address names to IPv4 only. This option overrides <a class="reference internal" href="_man.html#cmdoption-ipv6"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ipv6</span></code></a>.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -486,7 +486,7 @@ audio language.</p>
 <span class="sig-name descname"><span class="pre">-6</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-6" title="Permalink to this definition">#</a></dt>
 <dt class="sig sig-object std" id="cmdoption-ipv6">
 <span class="sig-name descname"><span class="pre">--ipv6</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ipv6" title="Permalink to this definition">#</a></dt>
-<dd><p>Resolve address names to IPv6 only. This option overrides <a class="reference internal" href="#cmdoption-ipv4"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ipv4</span></code></a>.</p>
+<dd><p>Resolve address names to IPv6 only. This option overrides <a class="reference internal" href="_man.html#cmdoption-ipv4"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ipv4</span></code></a>.</p>
 </dd></dl>
 
 </section>
@@ -519,7 +519,7 @@ parameter or its value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span> <span class="s2">&quot;vlc --file-caching=5000&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>As an alternative to this, see the <a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> parameter, which does
+<p>As an alternative to this, see the <a class="reference internal" href="_man.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> parameter, which does
 not log any custom player arguments.</p>
 </dd></dl>
 
@@ -529,8 +529,8 @@ not log any custom player arguments.</p>
 <dt class="sig sig-object std" id="cmdoption-player-args">
 <span class="sig-name descname"><span class="pre">--player-args</span></span><span class="sig-prename descclassname"> <span class="pre">ARGUMENTS</span></span><a class="headerlink" href="#cmdoption-player-args" title="Permalink to this definition">#</a></dt>
 <dd><p>This option allows you to customize the default arguments which are put
-together with the value of <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> to create a command to execute.</p>
-<p>It's usually enough to only use <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> instead of this unless you need
+together with the value of <a class="reference internal" href="_man.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> to create a command to execute.</p>
+<p>It's usually enough to only use <a class="reference internal" href="_man.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> instead of this unless you need
 to add arguments after the player's input argument or if you don't want
 any of the player arguments to be logged.</p>
 <p>The value can contain formatting variables surrounded by curly braces,
@@ -584,7 +584,7 @@ stdin pipe.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-player-continuous-http">
 <span class="sig-name descname"><span class="pre">--player-continuous-http</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-player-continuous-http" title="Permalink to this definition">#</a></dt>
-<dd><p>Make the player read the stream through HTTP, but unlike <a class="reference internal" href="#cmdoption-player-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-http</span></code></a>
+<dd><p>Make the player read the stream through HTTP, but unlike <a class="reference internal" href="_man.html#cmdoption-player-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-http</span></code></a>
 it will continuously try to open the stream if the player requests it.</p>
 <p>This makes it possible to handle stream disconnects if your player is
 capable of reconnecting to a HTTP stream. This is usually done by
@@ -597,10 +597,10 @@ setting your player to a &quot;repeat mode&quot;.</p>
 <dd><p>Serve stream data through HTTP without running any player. This is
 useful to allow external devices like smartphones or streaming boxes to
 watch streams they wouldn't be able to otherwise.</p>
-<p>The default behavior is similar to the <a class="reference internal" href="#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-continuous-http</span></code></a> option,
+<p>The default behavior is similar to the <a class="reference internal" href="_man.html#cmdoption-player-continuous-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-continuous-http</span></code></a> option,
 but no player program will be started, and the server will listen on all available
 connections instead of just in the local (loopback) interface.</p>
-<p>Optionally, the <a class="reference internal" href="#cmdoption-player-external-http-continuous"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-external-http-continuous</span></code></a> option allows for disabling
+<p>Optionally, the <a class="reference internal" href="_man.html#cmdoption-player-external-http-continuous"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-external-http-continuous</span></code></a> option allows for disabling
 the continuous run-mode, so that Streamlink will stop when the stream ends.</p>
 <p>The URLs that can be used to access the stream will be printed to the
 console, and the server can be interrupted using CTRL-C.</p>
@@ -609,7 +609,7 @@ console, and the server can be interrupted using CTRL-C.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-player-external-http-continuous">
 <span class="sig-name descname"><span class="pre">--player-external-http-continuous</span></span><span class="sig-prename descclassname"> <span class="pre">{yes,true,1,on,no,false,0,off}</span></span><a class="headerlink" href="#cmdoption-player-external-http-continuous" title="Permalink to this definition">#</a></dt>
-<dd><p>Set the run-mode of <a class="reference internal" href="#cmdoption-player-external-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-external-http</span></code></a> to continuous or non-continuous.</p>
+<dd><p>Set the run-mode of <a class="reference internal" href="_man.html#cmdoption-player-external-http"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-external-http</span></code></a> to continuous or non-continuous.</p>
 <p>In the continuous run-mode, Streamlink will keep running after the stream has ended
 and will wait for the next HTTP request being made unless it gets shut down via CTRL-C.</p>
 <p>If set to non-continuous, Streamlink will stop once the stream has ended.</p>
@@ -658,10 +658,10 @@ player before it has played back all of its cached data.</p>
 <dl>
 <dt>VLC specific information:</dt><dd><p>VLC does support special formatting variables on its own:
 <a class="reference external" href="https://wiki.videolan.org/Documentation:Format_String/">https://wiki.videolan.org/Documentation:Format_String/</a></p>
-<p>These variables are accessible in the <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> option by adding a backslash
+<p>These variables are accessible in the <a class="reference internal" href="_man.html#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> option by adding a backslash
 in front of the dollar sign which VLC uses as its formatting character.</p>
 <p>For example, to put the current date in your VLC window title,
-the string <code class="code docutils literal notranslate"><span class="pre">\$A</span></code> could be inserted inside the <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> string.</p>
+the string <code class="code docutils literal notranslate"><span class="pre">\$A</span></code> could be inserted inside the <a class="reference internal" href="_man.html#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> string.</p>
 </dd>
 </dl>
 <p>Example:</p>
@@ -679,7 +679,7 @@ the string <code class="code docutils literal notranslate"><span class="pre">\$A
 <dt class="sig sig-object std" id="cmdoption-output">
 <span class="sig-name descname"><span class="pre">--output</span></span><span class="sig-prename descclassname"> <span class="pre">FILENAME</span></span><a class="headerlink" href="#cmdoption-output" title="Permalink to this definition">#</a></dt>
 <dd><p>Write stream data to <code class="code docutils literal notranslate"><span class="pre">FILENAME</span></code> instead of playing it. If <code class="code docutils literal notranslate"><span class="pre">FILENAME</span></code> is set to <code class="code docutils literal notranslate"><span class="pre">-</span></code> (dash), then the stream data will be
-written to stdout, similar to the <a class="reference internal" href="#cmdoption-stdout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stdout</span></code></a> argument.</p>
+written to stdout, similar to the <a class="reference internal" href="_man.html#cmdoption-stdout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stdout</span></code></a> argument.</p>
 <p>Non-existent directories and subdirectories will be created if they do not exist, if filesystem permissions allow.</p>
 <p>You will be prompted if the file already exists.</p>
 <p>Please see the &quot;<a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">Metadata variables</span></a>&quot; section of Streamlink's CLI documentation for all available metadata variables.</p>
@@ -695,13 +695,13 @@ written to stdout, similar to the <a class="reference internal" href="#cmdoption
 <span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-f" title="Permalink to this definition">#</a></dt>
 <dt class="sig sig-object std" id="cmdoption-force">
 <span class="sig-name descname"><span class="pre">--force</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-force" title="Permalink to this definition">#</a></dt>
-<dd><p>When using <a class="reference internal" href="#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>, always write to file even if it already exists (overwrite).</p>
+<dd><p>When using <a class="reference internal" href="_man.html#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="_man.html#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>, always write to file even if it already exists (overwrite).</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-force-progress">
 <span class="sig-name descname"><span class="pre">--force-progress</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-force-progress" title="Permalink to this definition">#</a></dt>
-<dd><p>When using <a class="reference internal" href="#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>,
+<dd><p>When using <a class="reference internal" href="_man.html#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="_man.html#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>,
 show the download progress bar even if there is no terminal.</p>
 </dd></dl>
 
@@ -719,7 +719,7 @@ show the download progress bar even if there is no terminal.</p>
 <dt class="sig sig-object std" id="cmdoption-record">
 <span class="sig-name descname"><span class="pre">--record</span></span><span class="sig-prename descclassname"> <span class="pre">FILENAME</span></span><a class="headerlink" href="#cmdoption-record" title="Permalink to this definition">#</a></dt>
 <dd><p>Open the stream in the player, while at the same time writing it to <code class="code docutils literal notranslate"><span class="pre">FILENAME</span></code>. If <code class="code docutils literal notranslate"><span class="pre">FILENAME</span></code> is set to <code class="code docutils literal notranslate"><span class="pre">-</span></code> (dash),
-then the stream data will be written to stdout, similar to the <a class="reference internal" href="#cmdoption-stdout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stdout</span></code></a> argument, while still opening the player.</p>
+then the stream data will be written to stdout, similar to the <a class="reference internal" href="_man.html#cmdoption-stdout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stdout</span></code></a> argument, while still opening the player.</p>
 <p>Non-existent directories and subdirectories will be created if they do not exist, if filesystem permissions allow.</p>
 <p>You will be prompted if the file already exists.</p>
 <p>Please see the &quot;<a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">Metadata variables</span></a>&quot; section of Streamlink's CLI documentation for all available metadata variables.</p>
@@ -801,15 +801,15 @@ and can be useful if set in a config file.</p>
 <dd><p>Retry fetching the list of available streams until streams are found
 while waiting <code class="code docutils literal notranslate"><span class="pre">DELAY</span></code> second(s) between each attempt. If unset, only one
 attempt will be made to fetch the list of streams available.</p>
-<p>The number of fetch retry attempts can be capped with <a class="reference internal" href="#cmdoption-retry-max"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-max</span></code></a>.</p>
+<p>The number of fetch retry attempts can be capped with <a class="reference internal" href="_man.html#cmdoption-retry-max"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-max</span></code></a>.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-retry-max">
 <span class="sig-name descname"><span class="pre">--retry-max</span></span><span class="sig-prename descclassname"> <span class="pre">COUNT</span></span><a class="headerlink" href="#cmdoption-retry-max" title="Permalink to this definition">#</a></dt>
-<dd><p>When using <a class="reference internal" href="#cmdoption-retry-streams"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-streams</span></code></a>, stop retrying the fetch after <code class="code docutils literal notranslate"><span class="pre">COUNT</span></code> retry
+<dd><p>When using <a class="reference internal" href="_man.html#cmdoption-retry-streams"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-streams</span></code></a>, stop retrying the fetch after <code class="code docutils literal notranslate"><span class="pre">COUNT</span></code> retry
 attempt(s). Fetch will retry infinitely if <code class="code docutils literal notranslate"><span class="pre">COUNT</span></code> is zero or unset.</p>
-<p>If <a class="reference internal" href="#cmdoption-retry-max"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-max</span></code></a> is set without setting <a class="reference internal" href="#cmdoption-retry-streams"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-streams</span></code></a>, the delay between
+<p>If <a class="reference internal" href="_man.html#cmdoption-retry-max"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-max</span></code></a> is set without setting <a class="reference internal" href="_man.html#cmdoption-retry-streams"><code class="xref std std-option docutils literal notranslate"><span class="pre">--retry-streams</span></code></a>, the delay between
 retries will default to 1 second.</p>
 </dd></dl>
 
@@ -929,14 +929,14 @@ some extra processing to avoid unnecessary background processing.</p>
 The size or length of each segment is determined by the streaming provider.</p>
 <p>Lower values will decrease the latency, but will also increase the chance of buffering, as there is less time for
 Streamlink to download segments and write their data to the output buffer. The number of parallel segment downloads
-can be set with <a class="reference internal" href="#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code></a> and the HLS playlist reload time to fetch and queue new segments can be
-overridden with <a class="reference internal" href="#cmdoption-hls-playlist-reload-time"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-playlist-reload-time</span></code></a>.</p>
+can be set with <a class="reference internal" href="_man.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code></a> and the HLS playlist reload time to fetch and queue new segments can be
+overridden with <a class="reference internal" href="_man.html#cmdoption-hls-playlist-reload-time"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-playlist-reload-time</span></code></a>.</p>
 <p>Default is: <strong>3</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>During live playback, the caching/buffering settings of the used player will add additional latency. To adjust
 this, please refer to the player's own documentation for the required configuration. Player parameters can be set via
-<a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a>.</p>
+<a class="reference internal" href="_man.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a>.</p>
 </div>
 </dd></dl>
 
@@ -1049,6 +1049,12 @@ can specify the location of the ffmpeg executable if it is not in your
 </dd></dl>
 
 <dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ffmpeg-no-validation">
+<span class="sig-name descname"><span class="pre">--ffmpeg-no-validation</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ffmpeg-no-validation" title="Permalink to this definition">#</a></dt>
+<dd><p>Disable FFmpeg validation and version logging.</p>
+</dd></dl>
+
+<dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-ffmpeg-verbose">
 <span class="sig-name descname"><span class="pre">--ffmpeg-verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ffmpeg-verbose" title="Permalink to this definition">#</a></dt>
 <dd><p>Write the console output from ffmpeg to the console.</p>
@@ -1094,7 +1100,7 @@ the initial start time offset value.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-ffmpeg-start-at-zero">
 <span class="sig-name descname"><span class="pre">--ffmpeg-start-at-zero</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ffmpeg-start-at-zero" title="Permalink to this definition">#</a></dt>
-<dd><p>Enable the <code class="code docutils literal notranslate"><span class="pre">-start_at_zero</span></code> ffmpeg option when using <a class="reference internal" href="#cmdoption-ffmpeg-copyts"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ffmpeg-copyts</span></code></a>.</p>
+<dd><p>Enable the <code class="code docutils literal notranslate"><span class="pre">-start_at_zero</span></code> ffmpeg option when using <a class="reference internal" href="_man.html#cmdoption-ffmpeg-copyts"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ffmpeg-copyts</span></code></a>.</p>
 </dd></dl>
 
 </section>
@@ -1186,7 +1192,7 @@ other options.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-afreeca-password">
 <span class="sig-name descname"><span class="pre">--afreeca-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-afreeca-password" title="Permalink to this definition">#</a></dt>
-<dd><p>A afreecatv.com account password to use with <a class="reference internal" href="#cmdoption-afreeca-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--afreeca-username</span></code></a>.</p>
+<dd><p>A afreecatv.com account password to use with <a class="reference internal" href="_man.html#cmdoption-afreeca-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--afreeca-username</span></code></a>.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1207,7 +1213,7 @@ other options.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-bbciplayer-password">
 <span class="sig-name descname"><span class="pre">--bbciplayer-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-bbciplayer-password" title="Permalink to this definition">#</a></dt>
-<dd><p>A bbc.co.uk account password to use with <a class="reference internal" href="#cmdoption-bbciplayer-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--bbciplayer-username</span></code></a>.</p>
+<dd><p>A bbc.co.uk account password to use with <a class="reference internal" href="_man.html#cmdoption-bbciplayer-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--bbciplayer-username</span></code></a>.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1228,7 +1234,7 @@ other options.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-clubbingtv-password">
 <span class="sig-name descname"><span class="pre">--clubbingtv-password</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-clubbingtv-password" title="Permalink to this definition">#</a></dt>
-<dd><p>A Clubbing TV account password to use with <a class="reference internal" href="#cmdoption-clubbingtv-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--clubbingtv-username</span></code></a>.</p>
+<dd><p>A Clubbing TV account password to use with <a class="reference internal" href="_man.html#cmdoption-clubbingtv-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--clubbingtv-username</span></code></a>.</p>
 </dd></dl>
 
 </section>
@@ -1243,7 +1249,7 @@ other options.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-crunchyroll-password">
 <span class="sig-name descname"><span class="pre">--crunchyroll-password</span></span><span class="sig-prename descclassname"> <span class="pre">[PASSWORD]</span></span><a class="headerlink" href="#cmdoption-crunchyroll-password" title="Permalink to this definition">#</a></dt>
-<dd><p>A Crunchyroll password for use with <a class="reference internal" href="#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a>.</p>
+<dd><p>A Crunchyroll password for use with <a class="reference internal" href="_man.html#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a>.</p>
 <p>If left blank you will be prompted.</p>
 </dd></dl>
 
@@ -1336,7 +1342,7 @@ and the session ID does not match the account.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-openrectv-password">
 <span class="sig-name descname"><span class="pre">--openrectv-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-openrectv-password" title="Permalink to this definition">#</a></dt>
-<dd><p>An openrectv account password to use with <a class="reference internal" href="#cmdoption-openrectv-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--openrectv-email</span></code></a>.</p>
+<dd><p>An openrectv account password to use with <a class="reference internal" href="_man.html#cmdoption-openrectv-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--openrectv-email</span></code></a>.</p>
 </dd></dl>
 
 </section>
@@ -1369,16 +1375,6 @@ and the session ID does not match the account.</p>
 </section>
 <section id="sbscokr">
 <h4>Sbscokr<a class="headerlink" href="#sbscokr" title="Permalink to this heading">#</a></h4>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sbscokr-id">
-<span class="sig-name descname"><span class="pre">--sbscokr-id</span></span><span class="sig-prename descclassname"> <span class="pre">CHANNELID</span></span><a class="headerlink" href="#cmdoption-sbscokr-id" title="Permalink to this definition">#</a></dt>
-<dd><p>Channel ID to play.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">play</span><span class="o">.</span><span class="n">sbs</span><span class="o">.</span><span class="n">co</span><span class="o">.</span><span class="n">kr</span><span class="o">/</span><span class="n">onair</span><span class="o">/</span><span class="n">pc</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span> <span class="n">best</span> <span class="o">--</span><span class="n">sbscokr</span><span class="o">-</span><span class="nb">id</span> <span class="n">S01</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </section>
 <section id="schoolism">
 <h4>Schoolism<a class="headerlink" href="#schoolism" title="Permalink to this heading">#</a></h4>
@@ -1391,7 +1387,7 @@ and the session ID does not match the account.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-schoolism-password">
 <span class="sig-name descname"><span class="pre">--schoolism-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-schoolism-password" title="Permalink to this definition">#</a></dt>
-<dd><p>A Schoolism account password to use with <a class="reference internal" href="#cmdoption-schoolism-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--schoolism-email</span></code></a>.</p>
+<dd><p>A Schoolism account password to use with <a class="reference internal" href="_man.html#cmdoption-schoolism-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--schoolism-email</span></code></a>.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1413,7 +1409,7 @@ and the session ID does not match the account.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-steam-password">
 <span class="sig-name descname"><span class="pre">--steam-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-steam-password" title="Permalink to this definition">#</a></dt>
-<dd><p>A Steam account password to use with <a class="reference internal" href="#cmdoption-steam-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--steam-email</span></code></a>.</p>
+<dd><p>A Steam account password to use with <a class="reference internal" href="_man.html#cmdoption-steam-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--steam-email</span></code></a>.</p>
 </dd></dl>
 
 </section>
@@ -1454,16 +1450,16 @@ Will cause these segments to be missing from the output.</p>
 <dt class="sig sig-object std" id="cmdoption-twitch-low-latency">
 <span class="sig-name descname"><span class="pre">--twitch-low-latency</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-twitch-low-latency" title="Permalink to this definition">#</a></dt>
 <dd><p>Enables low latency streaming by prefetching HLS segments.
-Sets <a class="reference internal" href="#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> to true and <a class="reference internal" href="#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to <code class="code docutils literal notranslate"><span class="pre">2</span></code>, if it is higher.
-Reducing <a class="reference internal" href="#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to <code class="code docutils literal notranslate"><span class="pre">1</span></code> will result in the lowest latency possible, but will most likely cause buffering.</p>
+Sets <a class="reference internal" href="_man.html#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> to true and <a class="reference internal" href="_man.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to <code class="code docutils literal notranslate"><span class="pre">2</span></code>, if it is higher.
+Reducing <a class="reference internal" href="_man.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to <code class="code docutils literal notranslate"><span class="pre">1</span></code> will result in the lowest latency possible, but will most likely cause buffering.</p>
 <p>In order to achieve true low latency streaming during playback, the player's caching/buffering settings will
 need to be adjusted and reduced to a value as low as possible, but still high enough to not cause any buffering.
 This depends on the stream's bitrate and the quality of the connection to Twitch's servers. Please refer to the
-player's own documentation for the required configuration. Player parameters can be set via <a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a>.</p>
+player's own documentation for the required configuration. Player parameters can be set via <a class="reference internal" href="_man.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Low latency streams have to be enabled by the broadcasters on Twitch themselves.
-Regular streams can cause buffering issues with this option enabled due to the reduced <a class="reference internal" href="#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> value.</p>
+Regular streams can cause buffering issues with this option enabled due to the reduced <a class="reference internal" href="_man.html#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> value.</p>
 </div>
 </dd></dl>
 
@@ -1472,6 +1468,14 @@ Regular streams can cause buffering issues with this option enabled due to the r
 <span class="sig-name descname"><span class="pre">--twitch-api-header</span></span><span class="sig-prename descclassname"> <span class="pre">KEY=VALUE</span></span><a class="headerlink" href="#cmdoption-twitch-api-header" title="Permalink to this definition">#</a></dt>
 <dd><p>A header to add to each Twitch API HTTP request.</p>
 <p>Can be repeated to add multiple headers.</p>
+<p>Useful for adding authentication data that can prevent ads. See the plugin-specific documentation for more information.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-twitch-access-token-param">
+<span class="sig-name descname"><span class="pre">--twitch-access-token-param</span></span><span class="sig-prename descclassname"> <span class="pre">KEY=VALUE</span></span><a class="headerlink" href="#cmdoption-twitch-access-token-param" title="Permalink to this definition">#</a></dt>
+<dd><p>A parameter to add to the API request for acquiring the streaming access token.</p>
+<p>Can be repeated to add multiple parameters.</p>
 </dd></dl>
 
 </section>
@@ -1510,7 +1514,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-wwenetwork-password">
 <span class="sig-name descname"><span class="pre">--wwenetwork-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-wwenetwork-password" title="Permalink to this definition">#</a></dt>
-<dd><p>A WWE Network account password to use with <a class="reference internal" href="#cmdoption-wwenetwork-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--wwenetwork-email</span></code></a>.</p>
+<dd><p>A WWE Network account password to use with <a class="reference internal" href="_man.html#cmdoption-wwenetwork-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--wwenetwork-email</span></code></a>.</p>
 </dd></dl>
 
 </section>
@@ -1546,7 +1550,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-zattoo-password">
 <span class="sig-name descname"><span class="pre">--zattoo-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-zattoo-password" title="Permalink to this definition">#</a></dt>
-<dd><p>A zattoo account password to use with <a class="reference internal" href="#cmdoption-zattoo-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--zattoo-email</span></code></a>.</p>
+<dd><p>A zattoo account password to use with <a class="reference internal" href="_man.html#cmdoption-zattoo-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--zattoo-email</span></code></a>.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1679,6 +1683,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>
 </html>

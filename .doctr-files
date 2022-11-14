@@ -50,6 +50,7 @@
 ./_static/searchtools.js
 ./_static/site.webmanifest
 ./_static/skeleton.css
+./_static/sphinx_highlight.js
 ./_static/styles/custom.css
 ./_static/styles/furo-extensions.css
 ./_static/styles/furo-extensions.css.map
