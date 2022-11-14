@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 5.0.1+46.g3ccdb957 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 5.1.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 5.0.1+46.g3ccdb957 documentation</title>
+        <title>Changelog - Streamlink 5.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.0.1+46.g3ccdb957 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,10 +165,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.0.1+46.g3ccdb957</pre>
+  <pre class="sidebar-versions-current">5.1.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -258,12 +258,31 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-5-1-0-2022-11-14">
+<h2>streamlink 5.1.0 (2022-11-14)<a class="headerlink" href="#streamlink-5-1-0-2022-11-14" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Added: debug log messages of the FFmpeg version in use (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4861">#4861</a>)<br />
+Checking the FFmpeg version can be disabled via <code class="docutils literal notranslate"><span class="pre">--ffmpeg-no-validation</span></code></p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--twitch-access-token-param</span></code> for changing access token API request params (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4952">#4952</a>)</p></li>
+<li><p>Added: new log level <code class="docutils literal notranslate"><span class="pre">all</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4941">#4941</a>)</p></li>
+<li><p>Updated: sbscokr plugin and removed the <code class="docutils literal notranslate"><span class="pre">--sbscokr-id</span></code> parameter (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4865">#4865</a>)</p></li>
+<li><p>Updated: Twitch authentication docs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4940">#4940</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/4956">#4956</a>)</p></li>
+<li><p>Fixed: broken <code class="docutils literal notranslate"><span class="pre">--twitch-disable-ads</span></code> mid-roll ad filering (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4942">#4942</a>)</p></li>
+<li><p>Fixed: incorrect module name for trace logs on Python 3.11 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4863">#4863</a>)</p></li>
+<li><p>Fixed: bloomberg plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4919">#4919</a>)</p></li>
+<li><p>Fixed: dailymotion plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4910">#4910</a>)</p></li>
+<li><p>Fixed: raiplay plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4851">#4851</a>)</p></li>
+<li><p>Fixed: tvp plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4905">#4905</a>)</p></li>
+<li><p>Fixed: vinhlongtv plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4850">#4850</a>)</p></li>
+<li><p>Fixed: various other plugin issues (see full changelog)</p></li>
+<li><p>Removed plugins: egame (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4866">#4866</a>)</p></li>
+<li><p>Build: added <code class="docutils literal notranslate"><span class="pre">urllib3</span></code> as a direct dependency and set it to <code class="docutils literal notranslate"><span class="pre">&gt;=1.26.0</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4950">#4950</a>)</p></li>
+<li><p>Build: added <code class="docutils literal notranslate"><span class="pre">pytest-asyncio</span></code> to dev-requirements (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/4861">#4861</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/5.0.1...5.1.0">Full changelog</a></p>
+</section>
 <section id="streamlink-5-0-1-2022-09-22">
 <h2>streamlink 5.0.1 (2022-09-22)<a class="headerlink" href="#streamlink-5-0-1-2022-09-22" title="Permalink to this heading">#</a></h2>
 <p>Patch release:</p>
@@ -1214,6 +1233,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-5-1-0-2022-11-14">streamlink 5.1.0 (2022-11-14)</a></li>
 <li><a class="reference internal" href="#streamlink-5-0-1-2022-09-22">streamlink 5.0.1 (2022-09-22)</a></li>
 <li><a class="reference internal" href="#streamlink-5-0-0-2022-09-16">streamlink 5.0.0 (2022-09-16)</a></li>
 <li><a class="reference internal" href="#streamlink-4-3-0-2022-08-15">streamlink 4.3.0 (2022-08-15)</a></li>
