@@ -252,10 +252,13 @@ Version                              Installing
 .. _Specific tag/branch or commit: https://pip.pypa.io/en/stable/reference/pip_install/#git
 
 Virtual environment
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 Another method of installing Streamlink in a non-system-wide way is
 using `virtualenv`_, which creates a user owned Python environment instead.
+
+Install with ``virtualenv`` and ``pip`` commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -265,8 +268,11 @@ using `virtualenv`_, which creates a user owned Python environment instead.
     # Activate the environment
     source ~/myenv/bin/activate
 
-    # Install Streamlink in the environment
+    # *Either* install the latest Streamlink release from PyPI in the virtual environment
     pip install --upgrade streamlink
+
+    # *Or*, install the most up-to-date development version from master on GitHub
+    pip install --upgrade git+https://github.com/streamlink/streamlink.git
 
     # Use Streamlink in the environment
     streamlink ...
@@ -277,12 +283,25 @@ using `virtualenv`_, which creates a user owned Python environment instead.
     # Use Streamlink without activating the environment
     ~/myenv/bin/streamlink ...
 
-.. note::
+Install with ``pipx`` command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    This may also be required on some macOS versions that seem to have weird
-    permission issues.
+The `pipx`_ command combines the functionality of the ``virtualenv`` and ``pip`` commands. It may be necessary to
+install it first, either with a system package manager, or using ``pip``, as detailed in the `documentation <pipx_>`_.
+
+.. code-block:: bash
+
+    # *Either* install the latest Streamlink release from PyPI in a virtual environment
+    pipx install streamlink
+
+    # *Or*, install the most up-to-date development version from master on GitHub
+    pipx install git+https://github.com/streamlink/streamlink.git
+
+    # Use Streamlink
+    streamlink ...
 
 .. _virtualenv: https://virtualenv.readthedocs.io/en/latest/
+.. _pipx: https://pypa.github.io/pipx/
 
 Dependencies
 ^^^^^^^^^^^^
@@ -304,12 +323,14 @@ build     `wheel`_                  Used by the build frontend for creating Pyth
 build     `versioningit`_           At least version **2.0.0**. |br| Used for generating the version string from git
                                     when building, or when running in an editable install.
 
+runtime   `certifi`_                Used for loading the CA bundle extracted from the Mozilla Included CA Certificate List
 runtime   `isodate`_                Used for parsing ISO8601 strings
 runtime   `lxml`_                   Used for processing HTML and XML data
 runtime   `pycountry`_              Used for localization settings, provides country and language data
 runtime   `pycryptodome`_           Used for decrypting encrypted streams
 runtime   `PySocks`_                Used for SOCKS Proxies
 runtime   `requests`_               Used for making any kind of HTTP/HTTPS request
+runtime   `urllib3`_                Used internally by `requests`_, defined as direct dependency
 runtime   `websocket-client`_       Used for making websocket connections
 
 optional  `FFmpeg`_                 Required for `muxing`_ multiple video/audio/subtitle streams into a single output stream.
@@ -327,12 +348,14 @@ optional  `FFmpeg`_                 Required for `muxing`_ multiple video/audio/
 .. _wheel: https://wheel.readthedocs.io/en/stable/
 .. _versioningit: https://versioningit.readthedocs.io/en/stable/
 
+.. _certifi: https://certifiio.readthedocs.io/en/latest/
 .. _isodate: https://pypi.org/project/isodate/
 .. _lxml: https://lxml.de/
 .. _pycountry: https://pypi.org/project/pycountry/
 .. _pycryptodome: https://pycryptodome.readthedocs.io/en/latest/
 .. _PySocks: https://github.com/Anorov/PySocks
-.. _requests: https://docs.python-requests.org/en/master/
+.. _requests: https://requests.readthedocs.io/en/latest/
+.. _urllib3: https://urllib3.readthedocs.io/en/stable/
 .. _websocket-client: https://pypi.org/project/websocket-client/
 
 .. _FFmpeg: https://www.ffmpeg.org/

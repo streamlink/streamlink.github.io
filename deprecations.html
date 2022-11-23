@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developing" href="developing.html" /><link rel="prev" title="Common issues" href="issues.html" />
 
-    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.15"/>
+    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.15"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Deprecations - Streamlink 5.1.0 documentation">
+  <meta property="og:title" content="Deprecations - Streamlink 5.1.1 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Deprecations - Streamlink 5.1.0 documentation</title>
+        <title>Deprecations - Streamlink 5.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.1.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.0</pre>
+  <pre class="sidebar-versions-current">5.1.1</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/deprecations.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/deprecations.html" class="">Latest</a></dd>
@@ -306,7 +306,7 @@ applying XPath queries to the parsed result via the available methods provided b
 <section id="removal-of-separate-https-proxy-option">
 <h3>Removal of separate https-proxy option<a class="headerlink" href="#removal-of-separate-https-proxy-option" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="cli.html#http-options"><span class="std std-ref">HTTPS proxy CLI option</span></a> and the respective <a class="reference internal" href="api.html#session"><span class="std std-ref">Session options</span></a>
-have been deprecated in favor of a single <a class="reference internal" href="_man.html#cmdoption-http-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-proxy</span></code></a> that sets the proxy for all HTTP and
+have been deprecated in favor of a single <a class="reference internal" href="cli.html#cmdoption-http-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-proxy</span></code></a> that sets the proxy for all HTTP and
 HTTPS requests, including WebSocket connections.</p>
 </section>
 </section>
@@ -317,10 +317,10 @@ HTTPS requests, including WebSocket connections.</p>
 <p><a class="reference internal" href="cli.html#stream-transport-options"><span class="std std-ref">Stream-type related CLI arguments</span></a> and the respective <a class="reference internal" href="api.html#session"><span class="std std-ref">Session options</span></a>
 have been deprecated in favor of existing generic arguments/options, to avoid redundancy and potential confusion.</p>
 <ul class="simple">
-<li><p>use <a class="reference internal" href="_man.html#cmdoption-stream-segment-attempts"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-attempts</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-attempts</span></code></p></li>
-<li><p>use <a class="reference internal" href="_man.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-threads</span></code></p></li>
-<li><p>use <a class="reference internal" href="_man.html#cmdoption-stream-segment-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-timeout</span></code></p></li>
-<li><p>use <a class="reference internal" href="_man.html#cmdoption-stream-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls,rtmp,http-stream}-timeout</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-attempts"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-attempts</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-attempts</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-threads</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls}-segment-timeout</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hds,hls,rtmp,http-stream}-timeout</span></code></p></li>
 </ul>
 </section>
 </section>

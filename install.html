@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Command-Line Interface" href="cli.html" /><link rel="prev" title="Streamlink" href="index.html" />
 
-    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.15"/>
+    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.15"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Installation - Streamlink 5.1.0 documentation">
+  <meta property="og:title" content="Installation - Streamlink 5.1.1 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Installation - Streamlink 5.1.0 documentation</title>
+        <title>Installation - Streamlink 5.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.1.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.0</pre>
+  <pre class="sidebar-versions-current">5.1.1</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/install.html" class="">Latest</a></dd>
@@ -547,18 +547,24 @@ to <code class="docutils literal notranslate"><span class="pre">~/.profile</span
 </tbody>
 </table>
 </div>
+</section>
 <section id="virtual-environment">
-<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this heading">#</a></h3>
+<h2>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this heading">#</a></h2>
 <p>Another method of installing Streamlink in a non-system-wide way is
 using <a class="reference external" href="https://virtualenv.readthedocs.io/en/latest/">virtualenv</a>, which creates a user owned Python environment instead.</p>
+<section id="install-with-virtualenv-and-pip-commands">
+<h3>Install with <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands<a class="headerlink" href="#install-with-virtualenv-and-pip-commands" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new environment</span>
 virtualenv ~/myenv
 
 <span class="c1"># Activate the environment</span>
 <span class="nb">source</span> ~/myenv/bin/activate
 
-<span class="c1"># Install Streamlink in the environment</span>
+<span class="c1"># *Either* install the latest Streamlink release from PyPI in the virtual environment</span>
 pip install --upgrade streamlink
+
+<span class="c1"># *Or*, install the most up-to-date development version from master on GitHub</span>
+pip install --upgrade git+https://github.com/streamlink/streamlink.git
 
 <span class="c1"># Use Streamlink in the environment</span>
 streamlink ...
@@ -570,10 +576,20 @@ deactivate
 ~/myenv/bin/streamlink ...
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This may also be required on some macOS versions that seem to have weird
-permission issues.</p>
+</section>
+<section id="install-with-pipx-command">
+<h3>Install with <code class="docutils literal notranslate"><span class="pre">pipx</span></code> command<a class="headerlink" href="#install-with-pipx-command" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://pypa.github.io/pipx/">pipx</a> command combines the functionality of the <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands. It may be necessary to
+install it first, either with a system package manager, or using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, as detailed in the <a class="reference external" href="https://pypa.github.io/pipx/">documentation</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># *Either* install the latest Streamlink release from PyPI in a virtual environment</span>
+pipx install streamlink
+
+<span class="c1"># *Or*, install the most up-to-date development version from master on GitHub</span>
+pipx install git+https://github.com/streamlink/streamlink.git
+
+<span class="c1"># Use Streamlink</span>
+streamlink ...
+</pre></div>
 </div>
 </section>
 <section id="dependencies">
@@ -608,28 +624,36 @@ Streamlink defines a <a class="reference external" href="https://github.com/stre
 when building, or when running in an editable install.</p></td>
 </tr>
 <tr class="row-even"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://certifiio.readthedocs.io/en/latest/">certifi</a></p></td>
+<td><p>Used for loading the CA bundle extracted from the Mozilla Included CA Certificate List</p></td>
+</tr>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pypi.org/project/isodate/">isodate</a></p></td>
 <td><p>Used for parsing ISO8601 strings</p></td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://lxml.de/">lxml</a></p></td>
 <td><p>Used for processing HTML and XML data</p></td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pypi.org/project/pycountry/">pycountry</a></p></td>
 <td><p>Used for localization settings, provides country and language data</p></td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a></p></td>
 <td><p>Used for decrypting encrypted streams</p></td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://github.com/Anorov/PySocks">PySocks</a></p></td>
 <td><p>Used for SOCKS Proxies</p></td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
-<td><p><a class="reference external" href="https://docs.python-requests.org/en/master/">requests</a></p></td>
+<tr class="row-even"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://requests.readthedocs.io/en/latest/">requests</a></p></td>
 <td><p>Used for making any kind of HTTP/HTTPS request</p></td>
+</tr>
+<tr class="row-odd"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://urllib3.readthedocs.io/en/stable/">urllib3</a></p></td>
+<td><p>Used internally by <a class="reference external" href="https://requests.readthedocs.io/en/latest/">requests</a>, defined as direct dependency</p></td>
 </tr>
 <tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pypi.org/project/websocket-client/">websocket-client</a></p></td>
@@ -776,8 +800,10 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
 <li><a class="reference internal" href="#linux-and-bsd">Linux and BSD</a></li>
 <li><a class="reference internal" href="#package-maintainers">Package maintainers</a></li>
 <li><a class="reference internal" href="#package-availability">Package availability</a></li>
-<li><a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a><ul>
-<li><a class="reference internal" href="#virtual-environment">Virtual environment</a></li>
+<li><a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a></li>
+<li><a class="reference internal" href="#virtual-environment">Virtual environment</a><ul>
+<li><a class="reference internal" href="#install-with-virtualenv-and-pip-commands">Install with <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands</a></li>
+<li><a class="reference internal" href="#install-with-pipx-command">Install with <code class="docutils literal notranslate"><span class="pre">pipx</span></code> command</a></li>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 </ul>
 </li>
