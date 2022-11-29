@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Installation - Streamlink 5.1.1+5.g55b58528 documentation">
+  <meta property="og:title" content="Installation - Streamlink 5.1.1+8.g177f878d documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Installation - Streamlink 5.1.1+5.g55b58528 documentation</title>
+        <title>Installation - Streamlink 5.1.1+8.g177f878d documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.1.1+5.g55b58528 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.1.1+8.g177f878d documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.1+5.g55b58528</pre>
+  <pre class="sidebar-versions-current">5.1.1+8.g177f878d</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -349,16 +349,19 @@
 <tr class="row-even"><td><p>AppImage</p></td>
 <td><p>See the <a class="reference internal" href="#appimages">AppImages</a> section below</p></td>
 </tr>
-<tr class="row-odd"><td><p>Python pip</p></td>
+<tr class="row-odd"><td><p>AppImage nightly builds</p></td>
+<td><p>See the <a class="reference internal" href="#appimage-nightly-builds">AppImage nightly builds</a> section below</p></td>
+</tr>
+<tr class="row-even"><td><p>Python pip</p></td>
 <td><p>See the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> section below</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.archlinux.org/packages/community/any/streamlink/">Arch Linux</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.archlinux.org/packages/community/any/streamlink/">Arch Linux</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo pacman -S streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (aur, git)</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (aur, git)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://aur.archlinux.org/streamlink-git.git
 <span class="nb">cd</span> streamlink-git
 makepkg -si
@@ -367,14 +370,14 @@ makepkg -si
 <p><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">Installing AUR packages</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (sid, testing)</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (sid, testing)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
 sudo apt install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (stable)</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (stable)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you don&#39;t have Debian backports already (see link below):</span>
 <span class="nb">echo</span> <span class="s2">&quot;deb http://deb.debian.org/debian bullseye-backports main&quot;</span> <span class="p">|</span> sudo tee <span class="s2">&quot;/etc/apt/sources.list.d/streamlink.list&quot;</span>
 
@@ -385,45 +388,45 @@ sudo apt -t bullseye-backports install streamlink
 <p><a class="reference external" href="https://wiki.debian.org/Backports#Using_the_command_line">Installing Debian backported packages</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://src.fedoraproject.org/rpms/python-streamlink">Fedora</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://src.fedoraproject.org/rpms/python-streamlink">Fedora</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://packages.gentoo.org/package/net-misc/streamlink">Gentoo Linux</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://packages.gentoo.org/package/net-misc/streamlink">Gentoo Linux</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo emerge net-misc/streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://pkgsrc.se/multimedia/streamlink">NetBSD (pkgsrc)</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://pkgsrc.se/multimedia/streamlink">NetBSD (pkgsrc)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /usr/pkgsrc/multimedia/streamlink
 sudo make install clean
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink">NixOS</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink">NixOS</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nix-env -iA nixos.streamlink
 </pre></div>
 </div>
 <p><a class="reference external" href="https://search.nixos.org/packages?show=streamlink&amp;query=streamlink">NixOS channel</a></p>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://build.opensuse.org/package/show/multimedia:apps/streamlink">openSUSE</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://build.opensuse.org/package/show/multimedia:apps/streamlink">openSUSE</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo zypper install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://dev.getsol.us/source/streamlink/">Solus</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://dev.getsol.us/source/streamlink/">Solus</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo eopkg install streamlink
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink">Void</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink">Void</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo xbps-install streamlink
 </pre></div>
 </div>
@@ -505,12 +508,6 @@ from the install docs.</p>
 Streamlink can be installed via <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>, the Python package manager.</p>
 <p>Before running <strong class="command">pip</strong>, make sure that it's the Python 3 version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> (to check, run <strong class="command">pip --version</strong>).
 On some systems, this isn't the case by default and an alternative, like <strong class="command">pip3</strong> for example, needs to be run instead.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On some Linux distributions, the Python headers package needs to be installed before installing Streamlink
-(<code class="docutils literal notranslate"><span class="pre">python-devel</span></code> on RedHat, Fedora, etc.).</p>
-<p>Ensure that you are using an up-to-date version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>. At least version <strong>6</strong> is required.</p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>On Linux, when not using a virtual environment, it is recommended to <strong>install custom python packages like this
@@ -681,9 +678,9 @@ when building, or when running in an editable install.</p></td>
 </section>
 <section id="windows-binaries">
 <h2>Windows binaries<a class="headerlink" href="#windows-binaries" title="Permalink to this heading">#</a></h2>
-<p>Windows installers and portable builds for Streamlink can be found at <a class="reference external" href="https://github.com/streamlink/windows-builds">streamlink/windows-builds</a>,
+<p>Windows installers and portable archives for Streamlink are built at <a class="reference external" href="https://github.com/streamlink/windows-builds">streamlink/windows-builds</a>,
 with support for different architectures and different Python versions.</p>
-<p>These installers and portable builds contain:</p>
+<p>These installers and portable archives contain:</p>
 <ul class="simple">
 <li><p>an embedded Python version, built at <a class="reference external" href="https://github.com/streamlink/python-windows-embed">streamlink/python-windows-embed</a></p></li>
 <li><p>Streamlink and its dependencies</p></li>
@@ -691,45 +688,80 @@ with support for different architectures and different Python versions.</p>
 </ul>
 <p>and they are available in the following flavors:</p>
 <ul class="simple">
-<li><p>Python 3.10 - x86_64 (64 bit)</p></li>
-<li><p>Python 3.10 - x86 (32 bit)</p></li>
+<li><p>Latest Python - x86_64 (64 bit) - recommended</p></li>
+<li><p>Latest Python - x86 (32 bit)</p></li>
 <li><p>Python 3.8 - x86_64 (64 bit) - for Windows 7</p></li>
 <li><p>Python 3.8 - x86 (32 bit) - for Windows 7</p></li>
 </ul>
-<p>For further information, please see the README in the <a class="reference external" href="https://github.com/streamlink/windows-builds">streamlink/windows-builds</a> repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The installers automatically create a <a class="reference internal" href="cli/config.html#configuration-file"><span class="std std-ref">config file</span></a> if it doesn't exist yet and set the
+value of the <a class="reference internal" href="cli.html#cmdoption-ffmpeg-ffmpeg"><code class="xref std std-option docutils literal notranslate"><span class="pre">--ffmpeg-ffmpeg</span></code></a> CLI parameter to the path of the included FFmpeg binary. The portable archives
+can't do that, and users need to do that themselves.</p>
+<p>Please see the README of the <a class="reference external" href="https://github.com/streamlink/windows-builds">streamlink/windows-builds</a> repository for further information.</p>
+</div>
 <section id="windows-stable-builds">
 <h3>Windows stable builds<a class="headerlink" href="#windows-stable-builds" title="Permalink to this heading">#</a></h3>
-<p>Stable installers and stable portable builds of Streamlink's latest release can be
-<a class="reference external" href="https://github.com/streamlink/windows-builds/releases">downloaded from the releases page of the streamlink/windows-builds</a> repository.</p>
+<p><i class="fa fa-download"></i> <a class="reference external" href="https://github.com/streamlink/windows-builds/releases">streamlink/windows-builds releases page</a></p>
 </section>
 <section id="windows-nightly-builds">
 <h3>Windows nightly builds<a class="headerlink" href="#windows-nightly-builds" title="Permalink to this heading">#</a></h3>
-<p>Built once each day at midnight UTC from Streamlink's master branch. <br />
+<p><i class="fa fa-download"></i> <a class="reference external" href="https://github.com/streamlink/windows-builds/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster">streamlink/windows-builds nightly builds artifacts</a></p>
+<p>Built once each day at midnight UTC from Streamlink's <a class="reference external" href="https://github.com/streamlink/streamlink/commits/master">master branch</a>. <br />
 This includes the most recent changes, but is not considered &quot;stable&quot;. <br />
-Download from the build-artifacts of the <a class="reference external" href="https://github.com/streamlink/windows-builds/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster">scheduled nightly build runs</a> (requires a GitHub login). <br />
-See the <a class="reference external" href="https://github.com/streamlink/streamlink/commits/master">commit log</a> of Steamlink's master branch for all the recent changes.</p>
+A GitHub account is required in order to access build artifacts.</p>
 </section>
 </section>
 <section id="appimages">
 <h2>AppImages<a class="headerlink" href="#appimages" title="Permalink to this heading">#</a></h2>
-<section id="download-setup">
-<h3>Download &amp; Setup<a class="headerlink" href="#download-setup" title="Permalink to this heading">#</a></h3>
-<p>First, download the latest <a class="reference external" href="https://github.com/streamlink/streamlink-appimage">Streamlink AppImage</a> which matches your system's
-architecture from the <a class="reference external" href="https://github.com/streamlink/streamlink-appimage/releases">Streamlink AppImage releases page</a>. Then simply set the
-executable flag and run the app.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the executable flag. Note that all AppImage release file names include</span>
-<span class="c1"># the release version, Python version, platform name and CPU architecture</span>
+<p>Linux AppImages for Streamlink are built at <a class="reference external" href="https://github.com/streamlink/streamlink-appimage">streamlink/streamlink-appimage</a>.</p>
+<p>These AppImages contain:</p>
+<ul class="simple">
+<li><p>a Python environment</p></li>
+<li><p>Streamlink and its dependencies</p></li>
+</ul>
+<p>and they are available for the following CPU architectures:</p>
+<ul class="simple">
+<li><p>x86_64</p></li>
+<li><p>i686</p></li>
+<li><p>aarch64</p></li>
+</ul>
+<ol class="arabic">
+<li><p><strong>Download the latest Streamlink AppImage matching your CPU architecture</strong></p>
+<p>If unsure, run <strong class="command">uname -m</strong> to check the CPU's architecture.</p>
+</li>
+<li><p><strong>Set the executable flag</strong></p>
+<p>This can either be done in a regular file browser, or a command line shell via <strong class="command">chmod +x filename</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># AppImage file names include the release version, Python version, platform name and CPU architecture</span>
 chmod +x streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage
-
-<span class="c1"># Run the Streamlink AppImage with any parameter supported by Streamlink</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Run the AppImage</strong></p>
+<p>Set any command-line parameters supported by Streamlink, e.g. <a class="reference internal" href="cli.html#cmdoption-version"><code class="xref std std-option docutils literal notranslate"><span class="pre">--version</span></code></a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the Streamlink AppImage with any parameter supported by Streamlink</span>
 ./streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage --version
 </pre></div>
 </div>
+</li>
+</ol>
+<section id="appimage-stable-builds">
+<h3>AppImage stable builds<a class="headerlink" href="#appimage-stable-builds" title="Permalink to this heading">#</a></h3>
+<p><i class="fa fa-download"></i> <a class="reference external" href="https://github.com/streamlink/streamlink-appimage/releases">streamlink/streamlink-appimage releases page</a></p>
+</section>
+<section id="appimage-nightly-builds">
+<h3>AppImage nightly builds<a class="headerlink" href="#appimage-nightly-builds" title="Permalink to this heading">#</a></h3>
+<p><i class="fa fa-download"></i> <a class="reference external" href="https://github.com/streamlink/streamlink-appimage/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster">streamlink/streamlink-appimage nightly builds artifacts</a></p>
+<p>Built once each day at midnight UTC from Streamlink's <a class="reference external" href="https://github.com/streamlink/streamlink/commits/master">master branch</a>. <br />
+This includes the most recent changes, but is not considered &quot;stable&quot;. <br />
+A GitHub account is required in order to access build artifacts.</p>
 </section>
 <section id="what-are-appimages">
 <h3>What are AppImages?<a class="headerlink" href="#what-are-appimages" title="Permalink to this heading">#</a></h3>
-<p>AppImages are portable apps for Linux which are independent of the distro and
-package management.</p>
+<p>AppImages are portable applications which are independent of the Linux distribution in use and its package management.
+Just set the executable flag on the AppImage file and run it.</p>
+<p>The only requirement is having <a class="reference external" href="https://docs.appimage.org/user-guide/troubleshooting/fuse.html">FUSE</a> installed for being able to mount the contents of the AppImage's SquashFS,
+which is done automatically. Also, only glibc-based systems are currently supported.</p>
 <p>Note: Check out <a class="reference external" href="https://github.com/TheAssassin/AppImageLauncher">AppImageLauncher</a>, which automates the setup and system
 integration of AppImages. AppImageLauncher may also be available via your
 distro's package management.</p>
@@ -817,7 +849,8 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
 </ul>
 </li>
 <li><a class="reference internal" href="#appimages">AppImages</a><ul>
-<li><a class="reference internal" href="#download-setup">Download &amp; Setup</a></li>
+<li><a class="reference internal" href="#appimage-stable-builds">AppImage stable builds</a></li>
+<li><a class="reference internal" href="#appimage-nightly-builds">AppImage nightly builds</a></li>
 <li><a class="reference internal" href="#what-are-appimages">What are AppImages?</a></li>
 </ul>
 </li>
