@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Developing - Streamlink 5.1.2+16.ge2c8e460 documentation">
+  <meta property="og:title" content="Developing - Streamlink 5.1.2+18.gb1c6d8bf documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Developing - Streamlink 5.1.2+16.ge2c8e460 documentation</title>
+        <title>Developing - Streamlink 5.1.2+18.gb1c6d8bf documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.1.2+16.ge2c8e460 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.1.2+18.gb1c6d8bf documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.2+16.ge2c8e460</pre>
+  <pre class="sidebar-versions-current">5.1.2+18.gb1c6d8bf</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="version-current">Latest</a></dd>
@@ -270,21 +270,21 @@
 <h3>Setting up the repository<a class="headerlink" href="#setting-up-the-repository" title="Permalink to this heading">#</a></h3>
 <p>In order to start working on Streamlink, you must first install the latest stable version of <code class="docutils literal notranslate"><span class="pre">git</span></code>, optionally fork the
 repository on Github onto your account if you want to submit changes in a pull request, and then locally clone the repository.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir streamlink
-<span class="nb">cd</span> streamlink
-git clone --origin<span class="o">=</span>upstream <span class="s1">&#39;https://github.com/streamlink/streamlink.git&#39;</span> .
-git remote add fork <span class="s1">&#39;git@github.com:&lt;YOUR-USERNAME&gt;/streamlink.git&#39;</span>
-git remote -v
-git fetch --all
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>streamlink
+<span class="nb">cd</span><span class="w"> </span>streamlink
+git<span class="w"> </span>clone<span class="w"> </span>--origin<span class="o">=</span>upstream<span class="w"> </span><span class="s1">&#39;https://github.com/streamlink/streamlink.git&#39;</span><span class="w"> </span>.
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>fork<span class="w"> </span><span class="s1">&#39;git@github.com:&lt;YOUR-USERNAME&gt;/streamlink.git&#39;</span>
+git<span class="w"> </span>remote<span class="w"> </span>-v
+git<span class="w"> </span>fetch<span class="w"> </span>--all
 </pre></div>
 </div>
 <p>When submitting a pull request, commit and push your changes onto a different branch.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout master
-git pull upstream master
-git checkout -b new/feature/or/bugfix/branch
-git add ./foo
-git commit
-git push fork new/feature/or/bugfix/branch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>master
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>new/feature/or/bugfix/branch
+git<span class="w"> </span>add<span class="w"> </span>./foo
+git<span class="w"> </span>commit
+git<span class="w"> </span>push<span class="w"> </span>fork<span class="w"> </span>new/feature/or/bugfix/branch
 </pre></div>
 </div>
 </section>
@@ -294,28 +294,28 @@ git push fork new/feature/or/bugfix/branch
 the Python environment of the host system. This ensures that development can be done in a clean space which is free of version
 conflicts and other unrelated packages.</p>
 <p>First, make sure that you have the latest stable versions of Python and pip installed.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python --version
-pip --version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+pip<span class="w"> </span>--version
 </pre></div>
 </div>
 <p>As the second preparation step, install the latest version of <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code>, either via your system's package manager or pip,
 and create a new virtual environment. These environments can be created separately for different Python versions. Please refer
 to the <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv documentation</a> for all available parameters. There are also several wrappers around virtualenv available.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --upgrade --user virtualenv
-virtualenv --version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--user<span class="w"> </span>virtualenv
+virtualenv<span class="w"> </span>--version
 
 <span class="c1"># replace ~/venvs/streamlink with your path of choice and give it a proper name</span>
-virtualenv --download --verbose ~/venvs/streamlink
+virtualenv<span class="w"> </span>--download<span class="w"> </span>--verbose<span class="w"> </span>~/venvs/streamlink
 </pre></div>
 </div>
 <p>Now activate the virtual environment by sourcing the activation shell script.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/venvs/streamlink/bin/activate
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/venvs/streamlink/bin/activate
 
 <span class="c1"># non-POSIX shells have their own activation script, eg. FISH</span>
-<span class="nb">source</span> ~/venvs/streamlink/bin/activate.fish
+<span class="nb">source</span><span class="w"> </span>~/venvs/streamlink/bin/activate.fish
 
 <span class="c1"># on Windows, activation scripts are located in the Scripts/ subdirectory instead of bin/</span>
-<span class="nb">source</span> ~/venvs/streamlink/Scripts/activate
+<span class="nb">source</span><span class="w"> </span>~/venvs/streamlink/Scripts/activate
 </pre></div>
 </div>
 </section>
@@ -325,16 +325,16 @@ virtualenv --download --verbose ~/venvs/streamlink
 Regular development dependencies and documentation related dependencies are listed in the text files shown below and need to
 be installed separately.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install additional dependencies</span>
-pip install -r dev-requirements.txt
-pip install -r docs-requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>dev-requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>docs-requirements.txt
 
 <span class="c1"># install Streamlink from source</span>
 <span class="c1"># check setup.py for optional dependencies and install those manually if you need to</span>
-pip install -e .
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 
 <span class="c1"># validate that Streamlink is working</span>
-which streamlink
-streamlink --version
+which<span class="w"> </span>streamlink
+streamlink<span class="w"> </span>--version
 </pre></div>
 </div>
 </section>
@@ -345,9 +345,9 @@ streamlink --version
 your changes contain any mistakes or errors. This will be done automatically for each pull request on each change, but
 performing these checks locally avoids unnecessary build failures.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># run automated tests</span>
-python -m pytest -ra
+python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>-ra
 <span class="c1"># or just run a subset of all tests</span>
-python -m pytest -ra path/to/test-file.py::TestClassName::test_method_name ...
+python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>-ra<span class="w"> </span>path/to/test-file.py::TestClassName::test_method_name<span class="w"> </span>...
 
 <span class="c1"># check code for linting errors</span>
 flake8
@@ -355,8 +355,8 @@ flake8
 mypy
 
 <span class="c1"># build the documentation</span>
-make --directory<span class="o">=</span>docs clean html
-<span class="nv">$BROWSER</span> ./docs/_build/html/index.html
+make<span class="w"> </span>--directory<span class="o">=</span>docs<span class="w"> </span>clean<span class="w"> </span>html
+<span class="nv">$BROWSER</span><span class="w"> </span>./docs/_build/html/index.html
 </pre></div>
 </div>
 </section>
