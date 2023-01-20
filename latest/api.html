@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="API Reference - Streamlink 5.1.2+40.gfe6f51aa documentation">
+  <meta property="og:title" content="API Reference - Streamlink 5.1.2+41.g0c8375be documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>API Reference - Streamlink 5.1.2+40.gfe6f51aa documentation</title>
+        <title>API Reference - Streamlink 5.1.2+41.g0c8375be documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.1.2+40.gfe6f51aa documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.1.2+41.g0c8375be documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.2+40.gfe6f51aa</pre>
+  <pre class="sidebar-versions-current">5.1.2+41.g0c8375be</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="">Stable</a></dd>
     <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
@@ -632,33 +632,28 @@ default: <code class="docutils literal notranslate"><span class="pre">None</span
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.matchers">
-<span class="sig-name descname"><span class="pre">matchers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Matcher</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matchers" title="Permalink to this definition">#</a></dt>
-<dd><p>The list of plugin matchers (URL pattern + priority).</p>
-<p>Use the <a class="reference internal" href="#streamlink.plugin.pluginmatcher" title="streamlink.plugin.pluginmatcher"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginmatcher()</span></code></a> decorator to initialize this list.</p>
+<span class="sig-name descname"><span class="pre">matchers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Matchers</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matchers" title="Permalink to this definition">#</a></dt>
+<dd><p>The list of plugin matchers (URL pattern + priority + optional name).
+This list supports matcher lookups both by matcher index, as well as matcher name, if defined.</p>
+<p>Use the <a class="reference internal" href="#streamlink.plugin.pluginmatcher" title="streamlink.plugin.pluginmatcher"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginmatcher()</span></code></a> decorator to initialize plugin matchers.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.arguments">
 <span class="sig-name descname"><span class="pre">arguments</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#streamlink.options.Arguments" title="streamlink.options.Arguments"><span class="pre">Arguments</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.arguments" title="Permalink to this definition">#</a></dt>
 <dd><p>The plugin's <a class="reference internal" href="#streamlink.options.Arguments" title="streamlink.options.Arguments"><code class="xref py py-class docutils literal notranslate"><span class="pre">Arguments</span></code></a> collection.</p>
-<p>Use the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument()</span></code></a> decorator to initialize this collection.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.matches">
-<span class="sig-name descname"><span class="pre">matches</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Match</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matches" title="Permalink to this definition">#</a></dt>
-<dd><p>A tuple of <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Match</span></code> results of all defined matchers</p>
+<p>Use the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument()</span></code></a> decorator to initialize plugin arguments.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.matcher">
-<span class="sig-name descname"><span class="pre">matcher</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Pattern</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matcher" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">matcher</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Pattern</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matcher" title="Permalink to this definition">#</a></dt>
 <dd><p>A reference to the compiled <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Pattern</span></code> of the first matching matcher</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.match">
-<span class="sig-name descname"><span class="pre">match</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Match</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#streamlink.plugin.Plugin.match" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">match</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Match</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.match" title="Permalink to this definition">#</a></dt>
 <dd><p>A reference to the <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Match</span></code> result of the first matching matcher</p>
 </dd></dl>
 
@@ -684,6 +679,13 @@ default: <code class="docutils literal notranslate"><span class="pre">None</span
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.category">
 <span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.category" title="Permalink to this definition">#</a></dt>
 <dd><p>Metadata 'category' attribute: name of a game being played, a music genre, etc.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.Plugin.matches">
+<span class="sig-name descname"><span class="pre">matches</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Matches</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matches" title="Permalink to this definition">#</a></dt>
+<dd><p>A list of optional <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Match</span></code> results of all defined matchers.
+This list supports match lookups both by the respective matcher index, as well as matcher name, if defined.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -802,15 +804,18 @@ specify the <code class="docutils literal notranslate"><span class="pre">cookie_
 <h3>Plugin decorators<a class="headerlink" href="#plugin-decorators" title="Permalink to this heading">#</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="streamlink.plugin.pluginmatcher">
-<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginmatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginmatcher" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginmatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginmatcher" title="Permalink to this definition">#</a></dt>
 <dd><p>Decorator for plugin URL matchers.</p>
-<p>A matcher consists of a compiled regular expression pattern for the plugin's input URL and a priority value.
+<p>A matcher consists of a compiled regular expression pattern for the plugin's input URL,
+a priority value and an optional name.
 The priority value determines which plugin gets chosen by
-<a class="reference internal" href="#streamlink.Streamlink.resolve_url" title="streamlink.Streamlink.resolve_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url</span></code></a> if multiple plugins match the input URL.</p>
+<a class="reference internal" href="#streamlink.Streamlink.resolve_url" title="streamlink.Streamlink.resolve_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url</span></code></a> if multiple plugins match the input URL.
+The matcher name can be used for accessing it and its matching result when multiple matchers are defined.</p>
 <p>Plugins must at least have one matcher. If multiple matchers are defined, then the first matching one
 according to the order of which they have been defined (top to bottom) will be responsible for setting the
 <a class="reference internal" href="#streamlink.plugin.Plugin.matcher" title="streamlink.plugin.Plugin.matcher"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matcher</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.match" title="streamlink.plugin.Plugin.match"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.match</span></code></a> attributes on the <a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> instance.
-The <a class="reference internal" href="#streamlink.plugin.Plugin.matchers" title="streamlink.plugin.Plugin.matchers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matchers</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.matches" title="streamlink.plugin.Plugin.matches"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a> attributes are affected by all defined matchers.</p>
+The <a class="reference internal" href="#streamlink.plugin.Plugin.matchers" title="streamlink.plugin.Plugin.matchers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matchers</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.matches" title="streamlink.plugin.Plugin.matches"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a> attributes are affected by all defined matchers,
+and both support referencing matchers and matches by matcher index and name.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 
 <span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
@@ -834,6 +839,7 @@ The <a class="reference internal" href="#streamlink.plugin.Plugin.matchers" titl
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pattern</strong> (<em>Pattern</em>) -- </p></li>
 <li><p><strong>priority</strong> (<em>int</em>) -- </p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- </p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -1289,13 +1295,13 @@ when returning <code class="docutils literal notranslate"><span class="pre">None
 <li><a class="reference internal" href="#streamlink.plugin.Plugin"><code class="docutils literal notranslate"><span class="pre">Plugin</span></code></a><ul>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.matchers"><code class="docutils literal notranslate"><span class="pre">Plugin.matchers</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.arguments"><code class="docutils literal notranslate"><span class="pre">Plugin.arguments</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.matches"><code class="docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.matcher"><code class="docutils literal notranslate"><span class="pre">Plugin.matcher</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.match"><code class="docutils literal notranslate"><span class="pre">Plugin.match</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.id"><code class="docutils literal notranslate"><span class="pre">Plugin.id</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.title"><code class="docutils literal notranslate"><span class="pre">Plugin.title</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.author"><code class="docutils literal notranslate"><span class="pre">Plugin.author</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.category"><code class="docutils literal notranslate"><span class="pre">Plugin.category</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.matches"><code class="docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.url"><code class="docutils literal notranslate"><span class="pre">Plugin.url</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.streams"><code class="docutils literal notranslate"><span class="pre">Plugin.streams()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin._get_streams"><code class="docutils literal notranslate"><span class="pre">Plugin._get_streams()</span></code></a></li>

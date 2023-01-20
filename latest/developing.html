@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Developing - Streamlink 5.1.2+40.gfe6f51aa documentation">
+  <meta property="og:title" content="Developing - Streamlink 5.1.2+41.g0c8375be documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Developing - Streamlink 5.1.2+40.gfe6f51aa documentation</title>
+        <title>Developing - Streamlink 5.1.2+41.g0c8375be documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.1.2+40.gfe6f51aa documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.1.2+41.g0c8375be documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.2+40.gfe6f51aa</pre>
+  <pre class="sidebar-versions-current">5.1.2+41.g0c8375be</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="version-current">Latest</a></dd>
@@ -404,7 +404,8 @@ structure should be compliant-ready for <a class="reference internal" href="#val
 <li><p>Implement the plugin in <code class="docutils literal notranslate"><span class="pre">src/streamlink/plugins/pluginname.py</span></code>, similar to already existing plugins.</p>
 <p>Check the git log for recently added or modified plugins to help you get an overview of what's needed to properly implement
 a plugin. A complete guide is currently not available.</p>
-<p>Each plugin class requires at least one <code class="docutils literal notranslate"><span class="pre">pluginmatcher</span></code> decorator which defines the URL regex and matching priority.</p>
+<p>Each plugin class requires at least one <code class="docutils literal notranslate"><span class="pre">pluginmatcher</span></code> decorator which defines the URL regex, matching priority
+and an optional name.</p>
 <p>Plugins need to implement the <code class="docutils literal notranslate"><span class="pre">_get_streams()</span></code> method which either returns a list of <code class="docutils literal notranslate"><span class="pre">Stream</span></code> instances or which yields
 <code class="docutils literal notranslate"><span class="pre">Stream</span></code> instances. <code class="docutils literal notranslate"><span class="pre">Stream</span></code> is the base class of <code class="docutils literal notranslate"><span class="pre">HTTPStream</span></code>, <code class="docutils literal notranslate"><span class="pre">HLSStream</span></code> and <code class="docutils literal notranslate"><span class="pre">DASHStream</span></code>.</p>
 <p>Plugins also require metadata which will be read when building the documentation. This metadata contains information about
