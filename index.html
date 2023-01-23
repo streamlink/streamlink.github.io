@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Streamlink 5.1.2 documentation">
+  <meta property="og:title" content="Streamlink 5.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Streamlink 5.1.2 documentation</title>
+        <title>Streamlink 5.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Streamlink 5.1.2 documentation</div></a>
+      <a href="#"><div class="brand">Streamlink 5.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.2</pre>
+  <pre class="sidebar-versions-current">5.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/index.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/index.html" class="">Latest</a></dd>
@@ -270,7 +270,7 @@ There is also an <a class="reference internal" href="api_guide.html#api-guide"><
 to the stream data.</p>
 <p>This project was forked from Livestreamer, which is no longer maintained.</p>
 <dl class="simple">
-<dt>Latest release (5.1.2)</dt><dd><p><a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">https://github.com/streamlink/streamlink/releases/latest</a></p>
+<dt>Latest release (5.2.0)</dt><dd><p><a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">https://github.com/streamlink/streamlink/releases/latest</a></p>
 </dd>
 <dt>GitHub</dt><dd><p><a class="reference external" href="https://github.com/streamlink/streamlink">https://github.com/streamlink/streamlink</a></p>
 </dd>
@@ -298,7 +298,7 @@ on the <a class="reference internal" href="plugins.html#plugins"><span class="st
 <section id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h2>
 <p>The default behavior of Streamlink is to play back streams in the <a class="reference external" href="https://www.videolan.org/">VLC</a> player.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink twitch.tv/day9tv best
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>twitch.tv/day9tv<span class="w"> </span>best
 <span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
 <span class="go">[cli][info] Available streams: audio_only, 160p (worst), 360p, 480p, 720p, 720p60, 1080p60 (best)</span>
 <span class="go">[cli][info] Opening stream: 1080p60 (hls)</span>
@@ -413,6 +413,7 @@ See their respective sections for more information on how to use them.</p>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#mediavitrina">mediavitrina</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#mildom">mildom</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#mitele">mitele</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html#mixcloud">mixcloud</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#mjunoon">mjunoon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#mrtmk">mrtmk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#n13tv">n13tv</a></li>
@@ -429,7 +430,6 @@ See their respective sections for more information on how to use them.</p>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#oneplusone">oneplusone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#onetv">onetv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#openrectv">openrectv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugins.html#orf-tvthek">orf_tvthek</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#pandalive">pandalive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#picarto">picarto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#piczel">piczel</a></li>
@@ -485,6 +485,7 @@ See their respective sections for more information on how to use them.</p>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#vimeo">vimeo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#vinhlongtv">vinhlongtv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#vk">vk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html#vkplay">vkplay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#vlive">vlive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#vtvgo">vtvgo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#wasd">wasd</a></li>
@@ -511,6 +512,7 @@ See their respective sections for more information on how to use them.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#streamlink-5-2-0">streamlink 5.2.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deprecations.html#streamlink-5-0-0">streamlink 5.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deprecations.html#streamlink-4-2-0">streamlink 4.2.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deprecations.html#streamlink-4-0-0">streamlink 4.0.0</a></li>
@@ -543,6 +545,7 @@ See their respective sections for more information on how to use them.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-5-2-0-2023-01-23">streamlink 5.2.0 (2023-01-23)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-5-1-2-2022-12-03">streamlink 5.1.2 (2022-12-03)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-5-1-1-2022-11-23">streamlink 5.1.1 (2022-11-23)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-5-1-0-2022-11-14">streamlink 5.1.0 (2022-11-14)</a></li>
@@ -641,7 +644,7 @@ See their respective sections for more information on how to use them.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, Streamlink
+                Copyright &#169; 2023, Streamlink
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

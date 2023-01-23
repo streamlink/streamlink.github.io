@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Streaming protocols - Streamlink 5.1.2 documentation">
+  <meta property="og:title" content="Streaming protocols - Streamlink 5.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Streaming protocols - Streamlink 5.1.2 documentation</title>
+        <title>Streaming protocols - Streamlink 5.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 5.1.2 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 5.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.2</pre>
+  <pre class="sidebar-versions-current">5.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/protocols.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli/protocols.html" class="">Latest</a></dd>
@@ -268,13 +268,13 @@ to extract the streams from a URL for you.</p>
 <h2>Playing built-in streaming protocols directly<a class="headerlink" href="#playing-built-in-streaming-protocols-directly" title="Permalink to this heading">#</a></h2>
 <p>A streaming protocol can be accessed directly by specifying it in the <code class="docutils literal notranslate"><span class="pre">protocol://URL</span></code> format
 with an optional list of parameters, like so:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;protocol://https://streamingserver/path key1=value1 key2=value2&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;protocol://https://streamingserver/path key1=value1 key2=value2&quot;</span>
 </pre></div>
 </div>
 <p>Depending on the input URL, the explicit protocol scheme may be omitted.
 The following example shows HLS streams (<code class="docutils literal notranslate"><span class="pre">.m3u8</span></code>) and DASH streams (<code class="docutils literal notranslate"><span class="pre">.mpd</span></code>):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;https://streamingserver/playlist.m3u8&quot;</span>
-<span class="gp">$ </span>streamlink <span class="s2">&quot;https://streamingserver/manifest.mpd&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;https://streamingserver/playlist.m3u8&quot;</span>
+<span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;https://streamingserver/manifest.mpd&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -309,7 +309,7 @@ The following example shows HLS streams (<code class="docutils literal notransla
 <h2>Protocol parameters<a class="headerlink" href="#protocol-parameters" title="Permalink to this heading">#</a></h2>
 <p>When passing parameters to the built-in streaming protocols, the values will either be treated as plain strings
 or they will be interpreted as Python literals:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;httpstream://https://streamingserver/path method=POST params={&#39;abc&#39;:123} json=[&#39;foo&#39;,&#39;bar&#39;,&#39;baz&#39;]&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;httpstream://https://streamingserver/path method=POST params={&#39;abc&#39;:123} json=[&#39;foo&#39;,&#39;bar&#39;,&#39;baz&#39;]&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span>
@@ -320,7 +320,7 @@ or they will be interpreted as Python literals:</p>
 <p>The parameters from the example above are used to make an HTTP <code class="docutils literal notranslate"><span class="pre">POST</span></code> request with <code class="docutils literal notranslate"><span class="pre">abc=123</span></code> added
 to the query string and <code class="docutils literal notranslate"><span class="pre">[&quot;foo&quot;,</span> <span class="pre">&quot;bar&quot;,</span> <span class="pre">&quot;baz&quot;]</span></code> used as the content of the HTTP request's body (the serialized JSON data).</p>
 <p>Some parameters allow you to configure the behavior of the streaming protocol implementation directly:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;hls://https://streamingserver/path start_offset=123 duration=321 force_restart=True&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;hls://https://streamingserver/path start_offset=123 duration=321 force_restart=True&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -338,7 +338,7 @@ to the query string and <code class="docutils literal notranslate"><span class="
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">httpstream://</span></code></p></td>
 <td><ul class="simple">
 <li><p><a class="reference internal" href="../api.html#streamlink.stream.HTTPStream" title="streamlink.stream.HTTPStream"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.HTTPStream()</span></code></a></p></li>
-<li><p><a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </td>
 </tr>
@@ -347,14 +347,14 @@ to the query string and <code class="docutils literal notranslate"><span class="
 <li><p><a class="reference internal" href="../api.html#streamlink.stream.HLSStream.parse_variant_playlist" title="streamlink.stream.HLSStream.parse_variant_playlist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.HLSStream.parse_variant_playlist()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api.html#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.HLSStream()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api.html#streamlink.stream.MuxedHLSStream" title="streamlink.stream.MuxedHLSStream"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.MuxedHLSStream()</span></code></a></p></li>
-<li><p><a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dash://</span></code></p></td>
 <td><ul class="simple">
 <li><p><a class="reference internal" href="../api.html#streamlink.stream.DASHStream.parse_manifest" title="streamlink.stream.DASHStream.parse_manifest"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.DASHStream.parse_manifest()</span></code></a></p></li>
-<li><p><a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </td>
 </tr>
@@ -394,7 +394,7 @@ to the query string and <code class="docutils literal notranslate"><span class="
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, Streamlink
+                Copyright &#169; 2023, Streamlink
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

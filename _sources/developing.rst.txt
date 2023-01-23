@@ -187,7 +187,8 @@ Adding plugins
    Check the git log for recently added or modified plugins to help you get an overview of what's needed to properly implement
    a plugin. A complete guide is currently not available.
 
-   Each plugin class requires at least one ``pluginmatcher`` decorator which defines the URL regex and matching priority.
+   Each plugin class requires at least one ``pluginmatcher`` decorator which defines the URL regex, matching priority
+   and an optional name.
 
    Plugins need to implement the ``_get_streams()`` method which either returns a list of ``Stream`` instances or which yields
    ``Stream`` instances. ``Stream`` is the base class of ``HTTPStream``, ``HLSStream`` and ``DASHStream``.
@@ -222,6 +223,11 @@ Adding plugins
    capture group names and values (excluding ``None`` values), or a tuple of unnamed capture group values. URLs from the
    ``should_match_groups`` list automatically get added to ``should_match`` and don't need to be added twice.
 
+   If the plugin defines named matchers, then URLs in the test fixtures must be tuples of the matcher name and the URL itself.
+   Unnamed matchers must not match named URL test fixtures and vice versa.
+
+   Every plugin matcher must have at least one URL test fixture that matches.
+
    .. code-block:: python
 
       from streamlink.plugins.pluginfile import MyPluginClassName
@@ -233,14 +239,15 @@ Adding plugins
 
           should_match = [
               "https://host/path/one",
-              "https://host/path/two",
+              ("specific-path-matcher", "https://host/path/two"),
           ]
 
           should_match_groups = [
               ("https://host/stream/123", {"stream": "123"}),
-              ("https://host/user/one", {"user": "one"}),
-              ("https://host/stream/456", ("456", None)),
-              ("https://host/user/two", (None, "two")),
+              ("https://host/stream/456/foo", ("456", "foo")),
+              (("user-matcher", "https://host/user/one"), {"user": "one"}),
+              (("user-matcher", "https://host/user/two"), ("two", None)),
+              (("user-matcher", "https://host/user/two/foo"), ("two", "foo")),
           ]
 
           should_not_match = [

@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Twitch - Streamlink 5.1.2 documentation">
+  <meta property="og:title" content="Twitch - Streamlink 5.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Twitch - Streamlink 5.1.2 documentation</title>
+        <title>Twitch - Streamlink 5.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Streamlink 5.1.2 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Streamlink 5.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.2</pre>
+  <pre class="sidebar-versions-current">5.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins/twitch.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli/plugins/twitch.html" class="">Latest</a></dd>
@@ -278,7 +278,7 @@ easily by applications like Streamlink, so a new authentication feature was neve
 browser and after a successful login, open the developer tools by pressing <kbd class="kbd docutils literal notranslate">F12</kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">SHIFT</kbd>+<kbd class="kbd docutils literal notranslate">I</kbd></kbd>. Then navigate to
 the &quot;Console&quot; tab or its equivalent of your web browser and execute the following JavaScript snippet, which reads the value of
 the <code class="docutils literal notranslate"><span class="pre">auth-token</span></code> cookie, if it exists:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;; &quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="nx">item</span><span class="p">=&gt;</span><span class="nx">item</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;auth-token=&quot;</span><span class="p">))</span><span class="o">?</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="mf">1</span><span class="p">]</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;; &quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="nx">item</span><span class="p">=&gt;</span><span class="nx">item</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;auth-token=&quot;</span><span class="p">))</span><span class="o">?</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="mf">1</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Copy the resulting string consisting of 30 alphanumerical characters without any quotations.</p>
@@ -288,7 +288,7 @@ HTTP request made by Streamlink, even HLS Streams, while the latter will only do
 should be done when authenticating and which is the reason why this CLI argument was added.</p>
 <p>The value of the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> header must be in the format of <code class="docutils literal notranslate"><span class="pre">OAuth</span> <span class="pre">YOUR_TOKEN</span></code>. Notice the space character in the
 argument value, which requires quotation on command line shells:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink <span class="s2">&quot;--twitch-api-header=Authorization=OAuth abcdefghijklmnopqrstuvwxyz0123&quot;</span> twitch.tv/CHANNEL best
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;--twitch-api-header=Authorization=OAuth abcdefghijklmnopqrstuvwxyz0123&quot;</span><span class="w"> </span>twitch.tv/CHANNEL<span class="w"> </span>best
 </pre></div>
 </div>
 <p>The entire argument can optionally be added to Streamlink's (Twitch plugin specific)
@@ -385,7 +385,7 @@ without causing any stuttering, e.g. when running out out available data.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, Streamlink
+                Copyright &#169; 2023, Streamlink
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

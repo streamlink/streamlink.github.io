@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Tutorial - Streamlink 5.1.2 documentation">
+  <meta property="og:title" content="Tutorial - Streamlink 5.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Tutorial - Streamlink 5.1.2 documentation</title>
+        <title>Tutorial - Streamlink 5.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 5.1.2 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 5.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.2</pre>
+  <pre class="sidebar-versions-current">5.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/tutorial.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli/tutorial.html" class="">Latest</a></dd>
@@ -272,7 +272,7 @@ may be compatible too, see the <a class="reference internal" href="../players.ht
 stream located on twitch.tv/day9tv, you start off by telling Streamlink
 where to attempt to extract streams from. This is done by giving the URL to the
 command <strong class="command">streamlink</strong> as the first argument:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink twitch.tv/day9tv
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>twitch.tv/day9tv
 <span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
 <span class="go">Available streams: audio, high, low, medium, mobile (worst), source (best)</span>
 </pre></div>
@@ -289,14 +289,14 @@ from.</p>
 using the <code class="docutils literal notranslate"><span class="pre">file://</span></code> protocol, for example a local HLS playlist can be played.
 Relative file paths and absolute paths are supported. All path separators are <code class="docutils literal notranslate"><span class="pre">/</span></code>,
 even on Windows.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink hls://file://C:/hls/playlist.m3u8
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>hls://file://C:/hls/playlist.m3u8
 <span class="go">[cli][info] Found matching plugin stream for URL hls://file://C:/hls/playlist.m3u8</span>
 <span class="go">Available streams: 180p (worst), 272p, 408p, 554p, 818p, 1744p (best)</span>
 </pre></div>
 </div>
 <p>To select a stream and start playback, simply add the stream name as a second
 argument to the <strong class="command">streamlink</strong> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink twitch.tv/day9tv 1080p60
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>twitch.tv/day9tv<span class="w"> </span>1080p60
 <span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
 <span class="go">[cli][info] Opening stream: 1080p60 (hls)</span>
 <span class="go">[cli][info] Starting player: vlc</span>
@@ -347,7 +347,7 @@ before playing the stream to help avoiding buffering issues</p></li>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, Streamlink
+                Copyright &#169; 2023, Streamlink
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

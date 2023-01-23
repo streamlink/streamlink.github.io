@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Installation - Streamlink 5.1.2 documentation">
+  <meta property="og:title" content="Installation - Streamlink 5.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Installation - Streamlink 5.1.2 documentation</title>
+        <title>Installation - Streamlink 5.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -137,7 +137,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.1.2 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.1.2</pre>
+  <pre class="sidebar-versions-current">5.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/install.html" class="">Latest</a></dd>
@@ -322,7 +322,7 @@
 <td><p>See the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> section below</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://formulae.brew.sh/formula/streamlink">Homebrew</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>streamlink
 </pre></div>
 </div>
 <p><a class="reference external" href="https://brew.sh">Installing Homebrew packages</a></p>
@@ -352,78 +352,78 @@
 <td><p>See the <a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a> section below</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://www.archlinux.org/packages/community/any/streamlink/">Arch Linux</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo pacman -S streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (aur, git)</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://aur.archlinux.org/streamlink-git.git
-<span class="nb">cd</span> streamlink-git
-makepkg -si
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/streamlink-git.git
+<span class="nb">cd</span><span class="w"> </span>streamlink-git
+makepkg<span class="w"> </span>-si
 </pre></div>
 </div>
 <p><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">Installing AUR packages</a></p>
 </td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (sid, testing)</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
-sudo apt install streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://packages.debian.org/unstable/streamlink">Debian (stable)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you don&#39;t have Debian backports already (see link below):</span>
-<span class="nb">echo</span> <span class="s2">&quot;deb http://deb.debian.org/debian bullseye-backports main&quot;</span> <span class="p">|</span> sudo tee <span class="s2">&quot;/etc/apt/sources.list.d/streamlink.list&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb http://deb.debian.org/debian bullseye-backports main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span><span class="s2">&quot;/etc/apt/sources.list.d/streamlink.list&quot;</span>
 
-sudo apt update
-sudo apt -t bullseye-backports install streamlink
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>-t<span class="w"> </span>bullseye-backports<span class="w"> </span>install<span class="w"> </span>streamlink
 </pre></div>
 </div>
 <p><a class="reference external" href="https://wiki.debian.org/Backports#Using_the_command_line">Installing Debian backported packages</a></p>
 </td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://src.fedoraproject.org/rpms/python-streamlink">Fedora</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://packages.gentoo.org/package/net-misc/streamlink">Gentoo Linux</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo emerge net-misc/streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>emerge<span class="w"> </span>net-misc/streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://pkgsrc.se/multimedia/streamlink">NetBSD (pkgsrc)</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /usr/pkgsrc/multimedia/streamlink
-sudo make install clean
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/usr/pkgsrc/multimedia/streamlink
+sudo<span class="w"> </span>make<span class="w"> </span>install<span class="w"> </span>clean
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink">NixOS</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nix-env -iA nixos.streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nix-env<span class="w"> </span>-iA<span class="w"> </span>nixos.streamlink
 </pre></div>
 </div>
 <p><a class="reference external" href="https://search.nixos.org/packages?show=streamlink&amp;query=streamlink">NixOS channel</a></p>
 </td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://build.opensuse.org/package/show/multimedia:apps/streamlink">openSUSE</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo zypper install streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"> </span>streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://dev.getsol.us/source/streamlink/">Solus</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo eopkg install streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>eopkg<span class="w"> </span>install<span class="w"> </span>streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink">Void</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo xbps-install streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>xbps-install<span class="w"> </span>streamlink
 </pre></div>
 </div>
 </td>
@@ -524,19 +524,19 @@ to <code class="docutils literal notranslate"><span class="pre">~/.profile</span
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://pypi.python.org/pypi/streamlink">Latest release</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user --upgrade streamlink
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--upgrade<span class="w"> </span>streamlink
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/streamlink/streamlink/commits/master">Master branch</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user --upgrade git+https://github.com/streamlink/streamlink.git
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--upgrade<span class="w"> </span>git+https://github.com/streamlink/streamlink.git
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://pip.pypa.io/en/stable/reference/pip_install/#git">Specific tag/branch or commit</a></p></td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user --upgrade git+https://github.com/USERNAME/streamlink.git@BRANCH-OR-COMMIT
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--upgrade<span class="w"> </span>git+https://github.com/USERNAME/streamlink.git@BRANCH-OR-COMMIT
 </pre></div>
 </div>
 </td>
@@ -552,25 +552,25 @@ using <a class="reference external" href="https://virtualenv.readthedocs.io/en/l
 <section id="install-with-virtualenv-and-pip-commands">
 <h3>Install with <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands<a class="headerlink" href="#install-with-virtualenv-and-pip-commands" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new environment</span>
-virtualenv ~/myenv
+virtualenv<span class="w"> </span>~/myenv
 
 <span class="c1"># Activate the environment</span>
-<span class="nb">source</span> ~/myenv/bin/activate
+<span class="nb">source</span><span class="w"> </span>~/myenv/bin/activate
 
 <span class="c1"># *Either* install the latest Streamlink release from PyPI in the virtual environment</span>
-pip install --upgrade streamlink
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>streamlink
 
 <span class="c1"># *Or*, install the most up-to-date development version from master on GitHub</span>
-pip install --upgrade git+https://github.com/streamlink/streamlink.git
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>git+https://github.com/streamlink/streamlink.git
 
 <span class="c1"># Use Streamlink in the environment</span>
-streamlink ...
+streamlink<span class="w"> </span>...
 
 <span class="c1"># Deactivate the environment</span>
 deactivate
 
 <span class="c1"># Use Streamlink without activating the environment</span>
-~/myenv/bin/streamlink ...
+~/myenv/bin/streamlink<span class="w"> </span>...
 </pre></div>
 </div>
 </section>
@@ -579,13 +579,13 @@ deactivate
 <p>The <a class="reference external" href="https://pypa.github.io/pipx/">pipx</a> command combines the functionality of the <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands. It may be necessary to
 install it first, either with a system package manager, or using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, as detailed in the <a class="reference external" href="https://pypa.github.io/pipx/">documentation</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># *Either* install the latest Streamlink release from PyPI in a virtual environment</span>
-pipx install streamlink
+pipx<span class="w"> </span>install<span class="w"> </span>streamlink
 
 <span class="c1"># *Or*, install the most up-to-date development version from master on GitHub</span>
-pipx install git+https://github.com/streamlink/streamlink.git
+pipx<span class="w"> </span>install<span class="w"> </span>git+https://github.com/streamlink/streamlink.git
 
 <span class="c1"># Use Streamlink</span>
-streamlink ...
+streamlink<span class="w"> </span>...
 </pre></div>
 </div>
 </section>
@@ -729,14 +729,14 @@ A GitHub account is required in order to access build artifacts.</p>
 <li><p><strong>Set the executable flag</strong></p>
 <p>This can either be done in a regular file browser, or a command line shell via <strong class="command">chmod +x filename</strong>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># AppImage file names include the release version, Python version, platform name and CPU architecture</span>
-chmod +x streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage
+chmod<span class="w"> </span>+x<span class="w"> </span>streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage
 </pre></div>
 </div>
 </li>
 <li><p><strong>Run the AppImage</strong></p>
 <p>Set any command-line parameters supported by Streamlink, e.g. <a class="reference internal" href="cli.html#cmdoption-version"><code class="xref std std-option docutils literal notranslate"><span class="pre">--version</span></code></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the Streamlink AppImage with any parameter supported by Streamlink</span>
-./streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage --version
+./streamlink-2.0.0-1-cp39-cp39-manylinux2014_x86_64.AppImage<span class="w"> </span>--version
 </pre></div>
 </div>
 </li>
@@ -798,7 +798,7 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, Streamlink
+                Copyright &#169; 2023, Streamlink
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
