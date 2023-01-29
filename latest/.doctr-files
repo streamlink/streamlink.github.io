@@ -9,7 +9,6 @@ latest/_sources/cli/metadata.rst.txt
 latest/_sources/cli/plugin-sideloading.rst.txt
 latest/_sources/cli/plugins.rst.txt
 latest/_sources/cli/plugins/crunchyroll.rst.txt
-latest/_sources/cli/plugins/funimationnow.rst.txt
 latest/_sources/cli/plugins/twitch.rst.txt
 latest/_sources/cli/protocols.rst.txt
 latest/_sources/cli/proxy.rst.txt
@@ -66,7 +65,6 @@ latest/cli/metadata.html
 latest/cli/plugin-sideloading.html
 latest/cli/plugins.html
 latest/cli/plugins/crunchyroll.html
-latest/cli/plugins/funimationnow.html
 latest/cli/plugins/twitch.html
 latest/cli/protocols.html
 latest/cli/proxy.html
