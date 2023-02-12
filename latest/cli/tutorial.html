@@ -11,14 +11,15 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Tutorial - Streamlink 5.2.1+25.ga0a5af60 documentation">
+  <meta property="og:title" content="Tutorial - Streamlink 5.2.1+26.g94816008 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Tutorial - Streamlink 5.2.1+25.ga0a5af60 documentation</title>
+        <title>Tutorial - Streamlink 5.2.1+26.g94816008 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
@@ -137,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 5.2.1+25.ga0a5af60 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 5.2.1+26.g94816008 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +149,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -165,7 +166,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.2.1+25.ga0a5af60</pre>
+  <pre class="sidebar-versions-current">5.2.1+26.g94816008</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/tutorial.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/tutorial.html" class="version-current">Latest</a></dd>
@@ -249,7 +250,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -263,34 +264,45 @@
   
   <section id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>Streamlink is a command-line application, which means that the commands described
-here should be typed into a terminal. On Windows, you have to open either the
-<a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">Command Prompt</a>, <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a> or <a class="reference external" href="https://docs.microsoft.com/en-us/windows/terminal/get-started">Windows Terminal</a>, on macOS open the <a class="reference external" href="macOS-Terminal">Terminal</a> app,
-and if you're on Linux or BSD you probably already know the drill.</p>
+here should be typed into a terminal, or to be more precise, into a command-line shell.</p>
+<p>On Windows, you have to open either the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/terminal/get-started">Windows Terminal</a> (recommended), <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a> or <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">Command Prompt</a> (discouraged).
+On macOS, open the <a class="reference external" href="https://support.apple.com/guide/terminal/welcome/mac">Terminal</a> app, and if you're on Linux or BSD,
+the terminal emulator depends on your desktop environment and its configuration.</p>
 <p>The way Streamlink works is that it's only a means to extract and transport
 the streams, and the playback is done by an external video player. Streamlink
 works best with <a class="reference external" href="https://videolan.org/">VLC</a> or <a class="reference external" href="https://mpv.io/">mpv</a>, which are also cross-platform, but other players
 may be compatible too, see the <a class="reference internal" href="../players.html#players"><span class="std std-ref">Players</span></a> page for a complete overview.</p>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
 <p>Now to get into actually using Streamlink, let's say you want to watch the
-stream located on twitch.tv/day9tv, you start off by telling Streamlink
-where to attempt to extract streams from. This is done by giving the URL to the
-command <strong class="command">streamlink</strong> as the first argument:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>twitch.tv/day9tv
-<span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
-<span class="go">Available streams: audio, high, low, medium, mobile (worst), source (best)</span>
+stream located on <code class="docutils literal notranslate"><span class="pre">https://www.twitch.tv/nasa</span></code>, you start off by telling Streamlink
+where to attempt to extract streams from. This is done by setting the URL as the
+first argument on the <strong class="command">streamlink</strong> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>twitch.tv/nasa
+<span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/nasa</span>
+<span class="go">Available streams: audio_only, 160p (worst), 360p, 480p, 720p60, 1080p60 (best)</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You don't need to include the protocol when dealing with HTTP(s) URLs,
-e.g. just <code class="docutils literal notranslate"><span class="pre">twitch.tv/day9tv</span></code> is enough and quicker to type.</p>
+e.g. just <code class="docutils literal notranslate"><span class="pre">twitch.tv/nasa</span></code> is enough and quicker to type.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Depending on the command-line shell in use, any kind of command argument like the input URL for example
+may need to get quoted or escaped. See the <a class="reference internal" href="#shell-syntax">Shell syntax</a> section down below.</p>
 </div>
 <p>This command will tell Streamlink to attempt to extract streams from the URL
-specified, and if it's successful, print out a list of available streams to choose
-from.</p>
-<p>In some cases (see <a class="reference internal" href="protocols.html#supported-streaming-protocols"><span class="std std-ref">Supported streaming protocols</span></a>), local files are supported
-using the <code class="docutils literal notranslate"><span class="pre">file://</span></code> protocol, for example a local HLS playlist can be played.
-Relative file paths and absolute paths are supported. All path separators are <code class="docutils literal notranslate"><span class="pre">/</span></code>,
+specified via its <a class="reference internal" href="../plugins.html#plugins"><span class="std std-ref">plugins system</span></a> which is responsible for resolving streams from specific
+streaming services. If it's successful, Streamlink will print out a list of available streams to choose from.</p>
+<p>In addition to Streamlink's plugins system, direct stream URLs can be played via the
+<a class="reference internal" href="protocols.html#streaming-protocols"><span class="std std-ref">supported streaming protocols</span></a>, which also support playback of local files
+using the <code class="docutils literal notranslate"><span class="pre">file://</span></code> protocol. Relative file paths and absolute paths are supported. All path separators are <code class="docutils literal notranslate"><span class="pre">/</span></code>,
 even on Windows.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>hls://file://C:/hls/playlist.m3u8
 <span class="go">[cli][info] Found matching plugin stream for URL hls://file://C:/hls/playlist.m3u8</span>
@@ -299,8 +311,8 @@ even on Windows.</p>
 </div>
 <p>To select a stream and start playback, simply add the stream name as a second
 argument to the <strong class="command">streamlink</strong> command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>twitch.tv/day9tv<span class="w"> </span>1080p60
-<span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>twitch.tv/nasa<span class="w"> </span>1080p60
+<span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/nasa</span>
 <span class="go">[cli][info] Opening stream: 1080p60 (hls)</span>
 <span class="go">[cli][info] Starting player: vlc</span>
 </pre></div>
@@ -318,6 +330,75 @@ want to use</p></li>
 <li><p>Setting up your player to <a class="reference internal" href="../issues.html#streams-are-buffering-lagging"><span class="std std-ref">cache some data</span></a>
 before playing the stream to help avoiding buffering issues</p></li>
 </ul>
+</section>
+<section id="shell-syntax">
+<h2>Shell syntax<a class="headerlink" href="#shell-syntax" title="Permalink to this heading">#</a></h2>
+<p>Depending on your used command-line shell and how you've entered the command,
+input strings like the URL or other command arguments may need to get <a class="reference external" href="https://en.wikipedia.org/wiki/Escape_character">escaped</a> or quoted,
+because command-line shells interpret and treat certain characters as special symbols which can alter the shell's behavior,
+like characters for substituting/expanding strings, delimiting commands, path/file globbing, etc.</p>
+<p>The most relevant characters (among others) for input URLs that can cause unexpected results are</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">;</span></code> (command delimiting)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code> (variable substitution)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> (path globbing)</p></li>
+</ul>
+<p>The quoting and escaping behavior varies wildly between each shell and its configuration,
+so please take a look at your shell's documentation about all the details, if you're unsure.</p>
+<p><strong>Quoting and character escaping examples:</strong></p>
+<p>URL: <code class="docutils literal notranslate"><span class="pre">https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;</span></code></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+POSIX compliant</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.gnu.org/software/bash/manual/bash.html">BASH manual</a></p></li>
+<li><p><a class="reference external" href="https://zsh.sourceforge.io/Doc/Release/zsh_toc.html">ZSH manual</a></p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>streamlink<span class="w"> </span><span class="s1">&#39;https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;&#39;</span>
+streamlink<span class="w"> </span><span class="s2">&quot;https://example/path?a=\$one&amp;b=%two%&amp;c=*three*;&amp;&quot;</span>
+streamlink<span class="w"> </span>https://example/path?a<span class="o">=</span><span class="se">\$</span>one<span class="se">\&amp;</span><span class="nv">b</span><span class="o">=</span>%two%<span class="se">\&amp;</span><span class="nv">c</span><span class="o">=</span>*three*<span class="se">\;\&amp;</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+FISH</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><a class="reference external" href="https://fishshell.com/docs/current/language.html">FISH language documentation</a></p></li>
+</ul>
+<div class="highlight-fish notranslate"><div class="highlight"><pre><span></span>streamlink <span class="s1">&#39;https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;&#39;</span>
+streamlink <span class="s2">&quot;https://example/path?a=\$one&amp;b=%two%&amp;c=*three*;&amp;&quot;</span>
+streamlink https://example/path<span class="se">\?</span><span class="nv">a</span><span class="o">=</span><span class="se">\$</span>one<span class="o">&amp;</span><span class="nv">b</span><span class="o">=</span>%two%<span class="o">&amp;</span><span class="nv">c</span><span class="o">=</span><span class="se">\*</span>three<span class="se">\*\;\&amp;</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+PowerShell</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-02">PowerShell language specification</a></p></li>
+</ul>
+<div class="highlight-pwsh notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="s1">&#39;https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;&#39;</span>
+<span class="n">streamlink</span> <span class="s2">&quot;https://example/path?a=</span><span class="se">`$</span><span class="s2">one&amp;b=%two%&amp;c=*three*;&amp;&quot;</span>
+<span class="n">streamlink</span> <span class="n">https</span><span class="p">://</span><span class="n">example</span><span class="p">/</span><span class="n">path</span><span class="k">?</span><span class="n">a</span><span class="p">=`$</span><span class="n">one</span><span class="p">`&amp;</span><span class="n">b</span><span class="p">=</span><span class="k">%</span><span class="n">two</span><span class="p">%`&amp;</span><span class="n">c</span><span class="p">=*</span><span class="n">three</span><span class="p">*`;`&amp;</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Windows Batch</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><a class="reference external" href="https://ss64.com/nt/syntax-esc.html">Escape characters, delimiters and quotes</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/a/31420292">Percent sign escaping</a></p></li>
+</ul>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>streamlink <span class="s2">&quot;https://example/path?a=$one&amp;b=&quot;</span><span class="nv">%&quot;two&quot;%</span><span class="s2">&quot;&amp;c=*three*;&amp;&quot;</span>
+streamlink https://example/path?a=$one<span class="se">^&amp;</span>b=<span class="se">^%</span>two<span class="se">^%^&amp;</span>c=*three*<span class="se">^;^&amp;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
 
@@ -366,8 +447,29 @@ before playing the stream to help avoiding buffering issues</p></li>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Tutorial</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li><a class="reference internal" href="#shell-syntax">Shell syntax</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -379,5 +481,6 @@ before playing the stream to help avoiding buffering issues</p></li>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     </body>
 </html>
