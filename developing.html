@@ -11,19 +11,20 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Developing - Streamlink 5.2.1 documentation">
+  <meta property="og:title" content="Developing - Streamlink 5.3.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Developing - Streamlink 5.2.1 documentation</title>
+        <title>Developing - Streamlink 5.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
     
     
 
@@ -137,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.2.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.3.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +166,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.2.1</pre>
+  <pre class="sidebar-versions-current">5.3.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="">Latest</a></dd>
@@ -189,7 +190,6 @@
 <li class="toctree-l2"><a class="reference internal" href="cli/metadata.html">Metadata</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="cli/plugins/crunchyroll.html">Crunchyroll</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cli/plugins/funimationnow.html">FunimationNow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli/plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
@@ -346,9 +346,11 @@ python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> <
 python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>-ra<span class="w"> </span>path/to/test-file.py::TestClassName::test_method_name<span class="w"> </span>...
 
 <span class="c1"># check code for linting errors</span>
-flake8
+ruff<span class="w"> </span>.
 <span class="c1"># check code for typing errors</span>
 mypy
+<span class="c1"># optionally check for typing errors if changes were made to the docs extensions</span>
+mypy<span class="w"> </span>docs
 
 <span class="c1"># build the documentation</span>
 make<span class="w"> </span>--directory<span class="o">=</span>docs<span class="w"> </span>clean<span class="w"> </span>html
@@ -358,30 +360,34 @@ make<span class="w"> </span>--directory<span class="o">=</span>docs<span class="
 </section>
 <section id="code-style">
 <h2>Code style<a class="headerlink" href="#code-style" title="Permalink to this heading">#</a></h2>
-<p>Streamlink aims to use best practices, as detailed in <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8</a> and implemented in tools such as <a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html">Black</a>.</p>
+<p>Streamlink uses <a class="reference external" href="https://github.com/charliermarsh/ruff#readme">Ruff</a> as primary code linting tool and the project aims to use best practices for achieving great
+code readability with minimal git diffs, as detailed in <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0008/"><strong>PEP 8</strong></a> and implemented in related linting tools, such as <a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html">Black</a>.</p>
 <p>These are the best practices most likely to be relevant to plugin authors:</p>
 <ol class="arabic">
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#imports">Imports</a> (linted by flake8).</p></li>
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#indentation">Indentation</a> (linted by flake8; 4 spaces per indentation level).</p></li>
-<li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#strings">Quotes</a> (double quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>).</p></li>
-<li><p>Maximum line length (defined in the <code class="docutils literal notranslate"><span class="pre">flake8</span></code> section of <a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/setup.cfg">setup.cfg</a> via <code class="docutils literal notranslate"><span class="pre">max-line-length</span></code>).</p></li>
-<li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#how-black-wraps-lines">Horizontal vs vertical whitespace</a> (balance line length, readability and vertical whitespace).</p></li>
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#blank-lines">Blank lines</a> (linted by flake8 for imports, class and method definitions).</p></li>
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#comments">Comments</a> (linted by flake8; use sparingly and where strictly useful).</p></li>
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#should-a-line-break-before-or-after-a-binary-operator">Line breaks &amp; binary operators</a> (break before binary operators).</p></li>
-<li><p>Don't use multiple parameters on the same line where line breaks are in use.</p>
+<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#imports">Import order according to PEP8</a></p></li>
+<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#indentation">Indentation of 4 spaces per level</a></p></li>
+<li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#strings">Double quotes for all string literals</a></p></li>
+<li><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/pyproject.toml">Line length of at most 128 characters</a></p></li>
+<li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#how-black-wraps-lines">Balanced line wrapping for readability</a></p></li>
+<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#blank-lines">Blank lines</a></p></li>
+<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#comments">Comments</a></p></li>
+<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#should-a-line-break-before-or-after-a-binary-operator">Line breaks and binary operators</a></p></li>
+<li><p>New indented line for each bracket item (args, lists, etc.) in multi-line definitions, with trailing comma</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># incorrect:</span>
 <span class="n">schema</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
     <span class="n">validate</span><span class="o">.</span><span class="n">parse_json</span><span class="p">(),</span> <span class="p">[{</span>
-        <span class="o">...</span>
-    <span class="p">}],</span>
+        <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;bar&quot;</span><span class="p">:</span> <span class="n">validate</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="s2">&quot;https&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.m3u8&quot;</span><span class="p">))},</span> <span class="s2">&quot;baz&quot;</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="p">}]</span>
 <span class="p">)</span>
 
 <span class="c1"># correct:</span>
 <span class="n">schema</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
     <span class="n">validate</span><span class="o">.</span><span class="n">parse_json</span><span class="p">(),</span>
     <span class="p">[{</span>
-        <span class="o">...</span>
+        <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;bar&quot;</span><span class="p">:</span> <span class="n">validate</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="s2">&quot;https&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.m3u8&quot;</span><span class="p">)),</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;baz&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">}],</span>
 <span class="p">)</span>
 </pre></div>
@@ -559,5 +565,6 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script src="_static/design-tabs.js"></script>
     </body>
 </html>

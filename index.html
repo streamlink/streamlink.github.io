@@ -11,19 +11,20 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Streamlink 5.2.1 documentation">
+  <meta property="og:title" content="Streamlink 5.3.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Streamlink 5.2.1 documentation</title>
+        <title>Streamlink 5.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
     
     
 
@@ -137,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Streamlink 5.2.1 documentation</div></a>
+      <a href="#"><div class="brand">Streamlink 5.3.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +166,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.2.1</pre>
+  <pre class="sidebar-versions-current">5.3.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/index.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/index.html" class="">Latest</a></dd>
@@ -189,7 +190,6 @@
 <li class="toctree-l2"><a class="reference internal" href="cli/metadata.html">Metadata</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="cli/plugins/crunchyroll.html">Crunchyroll</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cli/plugins/funimationnow.html">FunimationNow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli/plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
@@ -270,7 +270,7 @@ There is also an <a class="reference internal" href="api_guide.html#api-guide"><
 to the stream data.</p>
 <p>This project was forked from Livestreamer, which is no longer maintained.</p>
 <dl class="simple">
-<dt>Latest release (5.2.1)</dt><dd><p><a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">https://github.com/streamlink/streamlink/releases/latest</a></p>
+<dt>Latest release (5.3.0)</dt><dd><p><a class="reference external" href="https://github.com/streamlink/streamlink/releases/latest">https://github.com/streamlink/streamlink/releases/latest</a></p>
 </dd>
 <dt>GitHub</dt><dd><p><a class="reference external" href="https://github.com/streamlink/streamlink">https://github.com/streamlink/streamlink</a></p>
 </dd>
@@ -333,8 +333,9 @@ See their respective sections for more information on how to use them.</p>
 <li class="toctree-l2"><a class="reference internal" href="install.html#package-availability">Package availability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#pypi-package-and-source-code">PyPI package and source code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#virtual-environment">Virtual environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#windows-binaries">Windows binaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#appimages">AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#linux-appimages">Linux AppImages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command-Line Interface</a><ul>
@@ -390,7 +391,6 @@ See their respective sections for more information on how to use them.</p>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#facebook">facebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#filmon">filmon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#foxtr">foxtr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugins.html#funimationnow">funimationnow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#galatasaraytv">galatasaraytv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#goltelevision">goltelevision</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#goodgame">goodgame</a></li>
@@ -448,7 +448,6 @@ See their respective sections for more information on how to use them.</p>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#rtvs">rtvs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#ruv">ruv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#sbscokr">sbscokr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugins.html#schoolism">schoolism</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#showroom">showroom</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#sportal">sportal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugins.html#sportschau">sportschau</a></li>
@@ -512,6 +511,7 @@ See their respective sections for more information on how to use them.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#streamlink-5-3-0">streamlink 5.3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deprecations.html#streamlink-5-2-0">streamlink 5.2.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deprecations.html#streamlink-5-0-0">streamlink 5.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deprecations.html#streamlink-4-2-0">streamlink 4.2.0</a></li>
@@ -545,6 +545,7 @@ See their respective sections for more information on how to use them.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-5-3-0-2023-02-18">streamlink 5.3.0 (2023-02-18)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-5-2-1-2023-01-23">streamlink 5.2.1 (2023-01-23)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-5-2-0-2023-01-23">streamlink 5.2.0 (2023-01-23)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#streamlink-5-1-2-2022-12-03">streamlink 5.1.2 (2022-12-03)</a></li>
@@ -605,9 +606,8 @@ See their respective sections for more information on how to use them.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#bastimeyer">Bastimeyer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#beardypig">Beardypig</a></li>
-<li class="toctree-l2"><a class="reference internal" href="donate.html#gravyboat">Gravyboat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#team-members">Team members</a></li>
+<li class="toctree-l2"><a class="reference internal" href="donate.html#useful-links">Useful links</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a><ul>
@@ -698,5 +698,6 @@ See their respective sections for more information on how to use them.</p>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script src="_static/design-tabs.js"></script>
     </body>
 </html>

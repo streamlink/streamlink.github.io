@@ -1,4 +1,7 @@
 ./.buildinfo
+./_images/icon-ffmpeg.svg
+./_images/icon-python.svg
+./_images/icon.svg
 ./_sources/api.rst.txt
 ./_sources/api_guide.rst.txt
 ./_sources/applications.rst.txt
@@ -9,7 +12,6 @@
 ./_sources/cli/plugin-sideloading.rst.txt
 ./_sources/cli/plugins.rst.txt
 ./_sources/cli/plugins/crunchyroll.rst.txt
-./_sources/cli/plugins/funimationnow.rst.txt
 ./_sources/cli/plugins/twitch.rst.txt
 ./_sources/cli/protocols.rst.txt
 ./_sources/cli/proxy.rst.txt
@@ -23,16 +25,22 @@
 ./_sources/players.rst.txt
 ./_sources/plugins.rst.txt
 ./_sources/thirdparty.rst.txt
+./_sphinx_design_static/design-style.4045f2051d55cab465a707391d5b2007.min.css
+./_sphinx_design_static/design-tabs.js
 ./_static/_sphinx_javascript_frameworks_compat.js
 ./_static/apple-touch-icon.png
 ./_static/basic.css
 ./_static/debug.css
+./_static/design-style.4045f2051d55cab465a707391d5b2007.min.css
+./_static/design-tabs.js
 ./_static/doctools.js
 ./_static/documentation_options.js
 ./_static/favicon-16x16.png
 ./_static/favicon-32x32.png
 ./_static/favicon.ico
 ./_static/file.png
+./_static/icon-ffmpeg.svg
+./_static/icon-python.svg
 ./_static/icon.svg
 ./_static/jquery-3.6.0.js
 ./_static/jquery.js
@@ -66,7 +74,6 @@
 ./cli/plugin-sideloading.html
 ./cli/plugins.html
 ./cli/plugins/crunchyroll.html
-./cli/plugins/funimationnow.html
 ./cli/plugins/twitch.html
 ./cli/protocols.html
 ./cli/proxy.html
