@@ -1,4 +1,7 @@
 latest/.buildinfo
+latest/_images/icon-ffmpeg.svg
+latest/_images/icon-python.svg
+latest/_images/icon.svg
 latest/_sources/api.rst.txt
 latest/_sources/api_guide.rst.txt
 latest/_sources/applications.rst.txt
@@ -36,6 +39,8 @@ latest/_static/favicon-16x16.png
 latest/_static/favicon-32x32.png
 latest/_static/favicon.ico
 latest/_static/file.png
+latest/_static/icon-ffmpeg.svg
+latest/_static/icon-python.svg
 latest/_static/icon.svg
 latest/_static/jquery-3.6.0.js
 latest/_static/jquery.js
