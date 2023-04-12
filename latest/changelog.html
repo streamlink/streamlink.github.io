@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 5.3.1+65.g5df965f5 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 5.4.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 5.3.1+65.g5df965f5 documentation</title>
+        <title>Changelog - Streamlink 5.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.3.1+65.g5df965f5 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -166,10 +166,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.3.1+65.g5df965f5</pre>
+  <pre class="sidebar-versions-current">5.4.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -258,12 +258,37 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-5-4-0-2023-04-12">
+<h2>streamlink 5.4.0 (2023-04-12)<a class="headerlink" href="#streamlink-5-4-0-2023-04-12" title="Permalink to this heading">#</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--progress</span></code> CLI argument and <a class="reference external" href="https://streamlink.github.io/deprecations.html#deprecation-of-force-progress">deprecated <code class="docutils literal notranslate"><span class="pre">--force-progress</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5268">#5268</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--dash-manifest-reload-attempts</span></code> and respective session option (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5208">#5208</a>)</p></li>
+<li><p>Improved: DASH segment availability/download logging (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5214">#5214</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5235">#5235</a>)</p></li>
+<li><p>Refactored: DASH parser + stream implementation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5221">#5221</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5224">#5224</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5225">#5225</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5244">#5244</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5248">#5248</a>)</p></li>
+<li><p>Fixed: DASH segment template numbers and availability times (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5213">#5213</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5217">#5217</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5233">#5233</a>)</p></li>
+<li><p>Fixed: DASH manifest mediaPresentationDuration and period duration (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5226">#5226</a>)</p></li>
+<li><p>Fixed: DASH manifest suggestedPresentationDelay (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5215">#5215</a>)</p></li>
+<li><p>Fixed: various DASH manifest parsing bugs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5247">#5247</a>)</p></li>
+<li><p>Fixed: DASH timeline IDs not being unique (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5199">#5199</a>)</p></li>
+<li><p>Fixed: DASH substreams not having synced timelines (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5262">#5262</a>)</p></li>
+<li><p>Fixed: queued DASH segments being downloaded after closing the stream (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5236">#5236</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5237">#5237</a>)</p></li>
+<li><p>Fixed: incorrect min/max values of certain numeric CLI arguments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5239">#5239</a>)</p></li>
+<li><p>Fixed: all naive datetime objects and made them timezone-aware (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5210">#5210</a>)</p></li>
+<li><p>Fixed: TV5monde plugin with new implementation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5206">#5206</a>)</p></li>
+<li><p>Fixed: Steam plugin missing CDN auth data in stream URLs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5222">#5222</a>)</p></li>
+<li><p>Fixed: Vimeo plugin’s playerConfig regex (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5227">#5227</a>)</p></li>
+<li><p>Fixed: VKplay plugin’s validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5251">#5251</a>)</p></li>
+<li><p>Fixed: Twitcasting plugin with new implementation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5255">#5255</a>)</p></li>
+<li><p>Tests: fixed setuptools/pkg_resources DeprecationWarnings (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5167">#5167</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5230">#5230</a>)</p></li>
+<li><p>Tests: fixed ResourceWarnings due to stale file handles (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5242">#5242</a>)</p></li>
+<li><p>Added plugins: indihometv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5266">#5266</a>), telemadrid (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5212">#5212</a>)</p></li>
+<li><p>Removed plugins: nbcnews (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5279">#5279</a>), useetv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5266">#5266</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/5.3.1...5.4.0">Full changelog</a></p>
+</section>
 <section id="streamlink-5-3-1-2023-02-25">
 <h2>streamlink 5.3.1 (2023-02-25)<a class="headerlink" href="#streamlink-5-3-1-2023-02-25" title="Permalink to this heading">#</a></h2>
 <p>Patch release:</p>
@@ -1322,6 +1347,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-5-4-0-2023-04-12">streamlink 5.4.0 (2023-04-12)</a></li>
 <li><a class="reference internal" href="#streamlink-5-3-1-2023-02-25">streamlink 5.3.1 (2023-02-25)</a></li>
 <li><a class="reference internal" href="#streamlink-5-3-0-2023-02-18">streamlink 5.3.0 (2023-02-18)</a></li>
 <li><a class="reference internal" href="#streamlink-5-2-1-2023-01-23">streamlink 5.2.1 (2023-01-23)</a></li>
