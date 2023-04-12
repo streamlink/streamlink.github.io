@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Command-Line Interface - Streamlink 5.3.1 documentation">
+  <meta property="og:title" content="Command-Line Interface - Streamlink 5.4.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Command-Line Interface - Streamlink 5.3.1 documentation</title>
+        <title>Command-Line Interface - Streamlink 5.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.3.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -166,7 +166,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.3.1</pre>
+  <pre class="sidebar-versions-current">5.4.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="">Latest</a></dd>
@@ -694,21 +694,6 @@ written to stdout, similar to the <a class="reference internal" href="#cmdoption
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-f">
-<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-f" title="Permalink to this definition">#</a></dt>
-<dt class="sig sig-object std" id="cmdoption-force">
-<span class="sig-name descname"><span class="pre">--force</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-force" title="Permalink to this definition">#</a></dt>
-<dd><p>When using <a class="reference internal" href="#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>, always write to file even if it already exists (overwrite).</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-force-progress">
-<span class="sig-name descname"><span class="pre">--force-progress</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-force-progress" title="Permalink to this definition">#</a></dt>
-<dd><p>When using <a class="reference internal" href="#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>,
-show the download progress bar even if there is no terminal.</p>
-</dd></dl>
-
-<dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-O">
 <span class="sig-name descname"><span class="pre">-O</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-O" title="Permalink to this definition">#</a></dt>
 <dt class="sig sig-object std" id="cmdoption-stdout">
@@ -763,6 +748,27 @@ shares that are enforcing Windows filename limitations, etc.</p>
 <li><p>POSIX: <code class="code docutils literal notranslate"><span class="pre">\x00-\x1F</span> <span class="pre">/</span></code></p></li>
 <li><p>Windows: <code class="code docutils literal notranslate"><span class="pre">\x00-\x1F</span> <span class="pre">\x7F</span> <span class="pre">&quot;</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">:</span> <span class="pre">&lt;</span> <span class="pre">&gt;</span> <span class="pre">?</span> <span class="pre">\</span> <span class="pre">|</span></code></p></li>
 </ul>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-f" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-force">
+<span class="sig-name descname"><span class="pre">--force</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-force" title="Permalink to this definition">#</a></dt>
+<dd><p>When using <a class="reference internal" href="#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>, always write to file even if it already exists (overwrite).</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-progress">
+<span class="sig-name descname"><span class="pre">--progress</span></span><span class="sig-prename descclassname"> <span class="pre">{yes,force,no}</span></span><a class="headerlink" href="#cmdoption-progress" title="Permalink to this definition">#</a></dt>
+<dd><p>When using <a class="reference internal" href="#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>, show or hide the download progress bar, or force it if there's no terminal.</p>
+<p>Default is: <strong>yes</strong>.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-force-progress">
+<span class="sig-name descname"><span class="pre">--force-progress</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-force-progress" title="Permalink to this definition">#</a></dt>
+<dd><p>Deprecated in favor of <a class="reference internal" href="#cmdoption-progress"><code class="xref std std-option docutils literal notranslate"><span class="pre">--progress=force</span></code></a>.</p>
 </dd></dl>
 
 </section>
@@ -951,7 +957,7 @@ this, please refer to the player's own documentation for the required configurat
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-hls-playlist-reload-attempts">
 <span class="sig-name descname"><span class="pre">--hls-playlist-reload-attempts</span></span><span class="sig-prename descclassname"> <span class="pre">ATTEMPTS</span></span><a class="headerlink" href="#cmdoption-hls-playlist-reload-attempts" title="Permalink to this definition">#</a></dt>
-<dd><p>How many attempts should be done to reload the HLS playlist before giving up.</p>
+<dd><p>Max number of attempts when reloading the HLS playlist before giving up.</p>
 <p>Default is: <strong>3</strong>.</p>
 </dd></dl>
 
@@ -1036,6 +1042,16 @@ nearest HLS segment.</p>
 <dt class="sig sig-object std" id="cmdoption-hls-live-restart">
 <span class="sig-name descname"><span class="pre">--hls-live-restart</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-hls-live-restart" title="Permalink to this definition">#</a></dt>
 <dd><p>Skip to the beginning of a live stream, or as far back as possible.</p>
+</dd></dl>
+
+</section>
+<section id="dash-options">
+<h4>DASH options<a class="headerlink" href="#dash-options" title="Permalink to this heading">#</a></h4>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-dash-manifest-reload-attempts">
+<span class="sig-name descname"><span class="pre">--dash-manifest-reload-attempts</span></span><span class="sig-prename descclassname"> <span class="pre">ATTEMPTS</span></span><a class="headerlink" href="#cmdoption-dash-manifest-reload-attempts" title="Permalink to this definition">#</a></dt>
+<dd><p>Max number of attempts when reloading the DASH manifest before giving up.</p>
+<p>Default is: <strong>3</strong>.</p>
 </dd></dl>
 
 </section>
@@ -1597,6 +1613,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 <li><a class="reference internal" href="#stream-options">Stream options</a></li>
 <li><a class="reference internal" href="#stream-transport-options">Stream transport options</a><ul>
 <li><a class="reference internal" href="#hls-options">HLS options</a></li>
+<li><a class="reference internal" href="#dash-options">DASH options</a></li>
 <li><a class="reference internal" href="#ffmpeg-options">FFmpeg options</a></li>
 </ul>
 </li>

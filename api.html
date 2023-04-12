@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="API Reference - Streamlink 5.3.1 documentation">
+  <meta property="og:title" content="API Reference - Streamlink 5.4.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>API Reference - Streamlink 5.3.1 documentation</title>
+        <title>API Reference - Streamlink 5.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.3.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -166,7 +166,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.3.1</pre>
+  <pre class="sidebar-versions-current">5.4.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api.html" class="">Latest</a></dd>
@@ -463,7 +463,7 @@ interpreted as a negative offset for livestreams</p></td>
 <tr class="row-odd"><td><p>hls-playlist-reload-attempts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>Number of HLS playlist reload attempts before giving up</p></td>
+<td><p>Max number of HLS playlist reload attempts before giving up</p></td>
 </tr>
 <tr class="row-even"><td><p>hls-playlist-reload-time</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">float</span></code></p></td>
@@ -499,93 +499,98 @@ with support for the following string template variables:
 <td><p>Select a specific audio source or sources when multiple audio sources are available,
 by language code or name, or <code class="docutils literal notranslate"><span class="pre">&quot;*&quot;</span></code> (asterisk)</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-segment-attempts <em>(deprecated)</em></p></td>
+<tr class="row-odd"><td><p>dash-manifest-reload-attempts</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+<td><p>Max number of DASH manifest reload attempts before giving up</p></td>
+</tr>
+<tr class="row-even"><td><p>hls-segment-attempts <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>hls-segment-threads <em>(deprecated)</em></p></td>
+<tr class="row-odd"><td><p>hls-segment-threads <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-threads</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-segment-timeout <em>(deprecated)</em></p></td>
+<tr class="row-even"><td><p>hls-segment-timeout <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">10.00</span></code></p></td>
 <td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-timeout</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>hls-timeout <em>(deprecated)</em></p></td>
+<tr class="row-odd"><td><p>hls-timeout <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
 <td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>dash-segment-attempts <em>(deprecated)</em></p></td>
+<tr class="row-even"><td><p>dash-segment-attempts <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>dash-segment-threads <em>(deprecated)</em></p></td>
+<tr class="row-odd"><td><p>dash-segment-threads <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-threads</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>dash-segment-timeout <em>(deprecated)</em></p></td>
+<tr class="row-even"><td><p>dash-segment-timeout <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">10.00</span></code></p></td>
 <td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-timeout</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>dash-timeout <em>(deprecated)</em></p></td>
+<tr class="row-odd"><td><p>dash-timeout <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
 <td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>http-stream-timeout <em>(deprecated)</em></p></td>
+<tr class="row-even"><td><p>http-stream-timeout <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
 <td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-ffmpeg</p></td>
+<tr class="row-odd"><td><p>ffmpeg-ffmpeg</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Override for the <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>/<code class="docutils literal notranslate"><span class="pre">ffmpeg.exe</span></code> binary path,
 which by default gets looked up via the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> env var</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-no-validation</p></td>
+<tr class="row-even"><td><p>ffmpeg-no-validation</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Disable FFmpeg validation and version logging</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-verbose</p></td>
+<tr class="row-odd"><td><p>ffmpeg-verbose</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Append FFmpeg's stderr stream to the Python's stderr stream</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-verbose-path</p></td>
+<tr class="row-even"><td><p>ffmpeg-verbose-path</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Write FFmpeg's stderr stream to the filesystem at the specified path</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-fout</p></td>
+<tr class="row-odd"><td><p>ffmpeg-fout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Set the output format of muxed streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;matroska&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-video-transcode</p></td>
+<tr class="row-even"><td><p>ffmpeg-video-transcode</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;h264&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-audio-transcode</p></td>
+<tr class="row-odd"><td><p>ffmpeg-audio-transcode</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;aac&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-copyts</p></td>
+<tr class="row-even"><td><p>ffmpeg-copyts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Don't shift input stream timestamps when muxing streams</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-start-at-zero</p></td>
+<tr class="row-odd"><td><p>ffmpeg-start-at-zero</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>When <code class="docutils literal notranslate"><span class="pre">ffmpeg-copyts</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, shift timestamps to zero</p></td>
@@ -1100,13 +1105,13 @@ Returns a file-like object that can be used to read the stream data.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.stream.MuxedStream">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">MuxedStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">substreams</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.MuxedStream" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">TSubstreams</span></code>]</p>
 <p>Muxes multiple streams into one output stream.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
-<li><p><strong>substreams</strong> (<a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.stream.Stream"><em>Stream</em></a>) -- Video and/or audio streams</p></li>
+<li><p><strong>substreams</strong> (<em>TSubstreams</em>) -- Video and/or audio streams</p></li>
 <li><p><strong>options</strong> -- Additional keyword arguments passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">ffmpegmux.FFMPEGMuxer</span></code>.
 Subtitle streams need to be set via the <code class="docutils literal notranslate"><span class="pre">subtitles</span></code> keyword.</p></li>
 </ul>
@@ -1208,7 +1213,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.stream.MuxedHLSStream">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">MuxedHLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffmpeg_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.MuxedHLSStream" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.stream.MuxedStream" title="streamlink.stream.ffmpegmux.MuxedStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedStream</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.stream.MuxedStream" title="streamlink.stream.ffmpegmux.MuxedStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedStream</span></code></a>[<a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a>]</p>
 <p>Muxes multiple HLS video and audio streams into one output stream.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1237,30 +1242,30 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <h3>DASHStream<a class="headerlink" href="#dashstream" title="Permalink to this heading">#</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.stream.DASHStream">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">DASHStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">DASHStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a></p>
 <p>Implementation of the &quot;Dynamic Adaptive Streaming over HTTP&quot; protocol (MPEG-DASH)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
+<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>mpd</strong> (<em>MPD</em>) -- Parsed MPD manifest</p></li>
 <li><p><strong>video_representation</strong> (<em>Optional</em><em>[</em><em>Representation</em><em>]</em>) -- Video representation</p></li>
 <li><p><strong>audio_representation</strong> (<em>Optional</em><em>[</em><em>Representation</em><em>]</em>) -- Audio representation</p></li>
-<li><p><strong>period</strong> (<em>float</em>) -- Update period</p></li>
 <li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="streamlink.stream.DASHStream.parse_manifest">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_manifest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_or_manifest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream.parse_manifest" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_manifest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_or_manifest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream.parse_manifest" title="Permalink to this definition">#</a></dt>
 <dd><p>Parse a DASH manifest file and return its streams.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
+<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>url_or_manifest</strong> (<em>str</em>) -- URL of the manifest file or an XML manifest string</p></li>
+<li><p><strong>period</strong> (<em>int</em>) -- Which MPD period to use (index number) for finding representations</p></li>
 <li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
