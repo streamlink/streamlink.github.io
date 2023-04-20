@@ -27,7 +27,6 @@ latest/_sources/plugins.rst.txt
 latest/_sources/thirdparty.rst.txt
 latest/_sphinx_design_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css
 latest/_sphinx_design_static/design-tabs.js
-latest/_static/_sphinx_javascript_frameworks_compat.js
 latest/_static/apple-touch-icon.png
 latest/_static/basic.css
 latest/_static/debug.css
@@ -42,8 +41,6 @@ latest/_static/file.png
 latest/_static/icon-ffmpeg.svg
 latest/_static/icon-python.svg
 latest/_static/icon.svg
-latest/_static/jquery-3.6.0.js
-latest/_static/jquery.js
 latest/_static/language_data.js
 latest/_static/minus.png
 latest/_static/opengraph-image.png
@@ -62,8 +59,6 @@ latest/_static/styles/furo-extensions.css
 latest/_static/styles/furo-extensions.css.map
 latest/_static/styles/furo.css
 latest/_static/styles/furo.css.map
-latest/_static/underscore-1.13.1.js
-latest/_static/underscore.js
 latest/api.html
 latest/api_guide.html
 latest/applications.html
