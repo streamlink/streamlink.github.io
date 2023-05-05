@@ -5,21 +5,21 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="API Guide" href="api_guide.html" />
 
-    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.15"/>
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="API Reference - Streamlink 5.4.0 documentation">
+  <meta property="og:title" content="API Reference - Streamlink 5.5.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>API Reference - Streamlink 5.4.0 documentation</title>
+        <title>API Reference - Streamlink 5.5.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.4.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.5.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,19 +160,20 @@
       
       <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand centered" href="index.html">
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="_static/icon.svg" alt="Streamlink"/>
+    <img class="sidebar-logo only-light" src="_static/icon.svg" alt="Streamlink"/>
+    <img class="sidebar-logo only-dark" src="_static/icon.svg" alt="Streamlink"/>
   </div>
   <p class="sidebar-brand-text">Streamlink</p>
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.4.0</pre>
+  <pre class="sidebar-versions-current">5.5.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -293,13 +294,13 @@
 <p>The Streamlink session is used to load and resolve plugins, and to store options used by plugins and stream implementations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>options</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) -- Custom options</p>
+<dd class="field-odd"><p><strong>options</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Custom options</p>
 </dd>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.Streamlink.http">
 <span class="sig-name descname"><span class="pre">http</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">HTTPSession</span></em><a class="headerlink" href="#streamlink.Streamlink.http" title="Permalink to this definition">#</a></dt>
-<dd><p>An instance of Streamlink's <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session" title="(in Requests v2.28.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">requests.Session</span></code></a> subclass.
+<dd><p>An instance of Streamlink's <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session" title="(in Requests v2.30.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">requests.Session</span></code></a> subclass.
 Used for any kind of HTTP request made by plugin and stream implementations.</p>
 </dd></dl>
 
@@ -644,7 +645,7 @@ which by default gets looked up via the <code class="docutils literal notranslat
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Optional</em>[<em>Any</em>]</p>
+<dd class="field-even"><p><em>Any</em> | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -754,7 +755,7 @@ which by default gets looked up via the <code class="docutils literal notranslat
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.matchers">
-<span class="sig-name descname"><span class="pre">matchers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Matchers</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matchers" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">matchers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Matchers</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matchers" title="Permalink to this definition">#</a></dt>
 <dd><p>The list of plugin matchers (URL pattern + priority + optional name).
 This list supports matcher lookups both by matcher index, as well as matcher name, if defined.</p>
 <p>Use the <a class="reference internal" href="#streamlink.plugin.pluginmatcher" title="streamlink.plugin.pluginmatcher"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginmatcher()</span></code></a> decorator to initialize plugin matchers.</p>
@@ -762,44 +763,44 @@ This list supports matcher lookups both by matcher index, as well as matcher nam
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.arguments">
-<span class="sig-name descname"><span class="pre">arguments</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#streamlink.options.Arguments" title="streamlink.options.Arguments"><span class="pre">Arguments</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.arguments" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">arguments</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#streamlink.options.Arguments" title="streamlink.options.Arguments"><span class="pre">Arguments</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.arguments" title="Permalink to this definition">#</a></dt>
 <dd><p>The plugin's <a class="reference internal" href="#streamlink.options.Arguments" title="streamlink.options.Arguments"><code class="xref py py-class docutils literal notranslate"><span class="pre">Arguments</span></code></a> collection.</p>
 <p>Use the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument()</span></code></a> decorator to initialize plugin arguments.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.matcher">
-<span class="sig-name descname"><span class="pre">matcher</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Pattern</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matcher" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">matcher</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Pattern</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matcher" title="Permalink to this definition">#</a></dt>
 <dd><p>A reference to the compiled <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Pattern</span></code> of the first matching matcher</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.match">
-<span class="sig-name descname"><span class="pre">match</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Match</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.match" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">match</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Match</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.match" title="Permalink to this definition">#</a></dt>
 <dd><p>A reference to the <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Match</span></code> result of the first matching matcher</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.id">
-<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.id" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.id" title="Permalink to this definition">#</a></dt>
 <dd><p>Metadata 'id' attribute: unique stream ID, etc.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.title">
-<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.title" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.title" title="Permalink to this definition">#</a></dt>
 <dd><p>Metadata 'title' attribute: the stream's short descriptive title</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.author">
-<span class="sig-name descname"><span class="pre">author</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.author" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">author</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.author" title="Permalink to this definition">#</a></dt>
 <dd><p>Metadata 'author' attribute: the channel or broadcaster name, etc.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.category">
-<span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.category" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.category" title="Permalink to this definition">#</a></dt>
 <dd><p>Metadata 'category' attribute: name of a game being played, a music genre, etc.</p>
 </dd></dl>
 
@@ -874,7 +875,7 @@ cookie then the <code class="docutils literal notranslate"><span class="pre">def
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cookie_filter</strong> (<em>Optional</em><em>[</em><em>Callable</em><em>[</em><em>[</em><em>Cookie</em><em>]</em><em>, </em><em>bool</em><em>]</em><em>]</em>) -- a function to filter the cookies</p></li>
+<li><p><strong>cookie_filter</strong> (<em>Callable</em><em>[</em><em>[</em><em>Cookie</em><em>]</em><em>, </em><em>bool</em><em>] </em><em>| </em><em>None</em>) -- a function to filter the cookies</p></li>
 <li><p><strong>default_expires</strong> (<em>int</em>) -- time (in seconds) until cookies with no expiry will expire</p></li>
 </ul>
 </dd>
@@ -961,7 +962,7 @@ and both support referencing matchers and matches by matcher index and name.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pattern</strong> (<em>Pattern</em>) -- </p></li>
 <li><p><strong>priority</strong> (<em>int</em>) -- </p></li>
-<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- </p></li>
+<li><p><strong>name</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -1000,11 +1001,11 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) -- </p></li>
 <li><p><strong>required</strong> (<em>bool</em>) -- </p></li>
-<li><p><strong>requires</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) -- </p></li>
-<li><p><strong>prompt</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- </p></li>
+<li><p><strong>requires</strong> (<em>str</em><em> | </em><em>Sequence</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) -- </p></li>
+<li><p><strong>prompt</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
 <li><p><strong>sensitive</strong> (<em>bool</em>) -- </p></li>
-<li><p><strong>argument_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- </p></li>
-<li><p><strong>dest</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- </p></li>
+<li><p><strong>argument_name</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
+<li><p><strong>dest</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
 <li><p><strong>is_global</strong> (<em>bool</em>) -- </p></li>
 </ul>
 </dd>
@@ -1030,11 +1031,11 @@ In addition, the <code class="docutils literal notranslate"><span class="pre">na
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) -- Argument name, without leading <code class="docutils literal notranslate"><span class="pre">--</span></code> or plugin name prefixes, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;username&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;password&quot;</span></code>, etc.</p></li>
 <li><p><strong>required</strong> (<em>bool</em>) -- Whether the argument is required for the plugin</p></li>
-<li><p><strong>requires</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) -- List of arguments which this argument requires, eg <code class="docutils literal notranslate"><span class="pre">[&quot;password&quot;]</span></code></p></li>
-<li><p><strong>prompt</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- If the argument is required and not set, this prompt message will be shown instead</p></li>
+<li><p><strong>requires</strong> (<em>str</em><em> | </em><em>Sequence</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) -- List of arguments which this argument requires, eg <code class="docutils literal notranslate"><span class="pre">[&quot;password&quot;]</span></code></p></li>
+<li><p><strong>prompt</strong> (<em>str</em><em> | </em><em>None</em>) -- If the argument is required and not set, this prompt message will be shown instead</p></li>
 <li><p><strong>sensitive</strong> (<em>bool</em>) -- Whether the argument is sensitive (passwords, etc.) and should be masked</p></li>
-<li><p><strong>argument_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- Custom CLI argument name without plugin name prefix</p></li>
-<li><p><strong>dest</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- Custom plugin option name</p></li>
+<li><p><strong>argument_name</strong> (<em>str</em><em> | </em><em>None</em>) -- Custom CLI argument name without plugin name prefix</p></li>
+<li><p><strong>dest</strong> (<em>str</em><em> | </em><em>None</em>) -- Custom plugin option name</p></li>
 <li><p><strong>is_global</strong> (<em>bool</em>) -- Whether this plugin argument refers to a global CLI argument (deprecated)</p></li>
 <li><p><strong>options</strong> -- Arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code>, excluding <code class="docutils literal notranslate"><span class="pre">requires</span></code> and <code class="docutils literal notranslate"><span class="pre">dest</span></code></p></li>
 </ul>
@@ -1126,27 +1127,27 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 <dt class="sig sig-object py" id="streamlink.stream.HTTPStream">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">HTTPStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HTTPStream" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a></p>
-<p>An HTTP stream using the <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#module-requests" title="(in Requests v2.28.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code></a> library.</p>
+<p>An HTTP stream using the <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#module-requests" title="(in Requests v2.30.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code></a> library.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>url</strong> (<em>str</em>) -- The URL of the HTTP stream</p></li>
 <li><p><strong>buffered</strong> (<em>bool</em>) -- Wrap stream output in an additional reader-thread</p></li>
-<li><p><strong>args</strong> (<em>Dict</em>) -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+<li><p><strong>args</strong> (<em>Dict</em>) -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.stream.HTTPStream.args">
 <span class="sig-name descname"><span class="pre">args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#streamlink.stream.HTTPStream.args" title="Permalink to this definition">#</a></dt>
-<dd><p>A dict of keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a>, such as method, headers, cookies, etc.</p>
+<dd><p>A dict of keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a>, such as method, headers, cookies, etc.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="streamlink.stream.HTTPStream.url">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#streamlink.stream.HTTPStream.url" title="Permalink to this definition">#</a></dt>
-<dd><p>The URL to the stream, prepared by <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#module-requests" title="(in Requests v2.28.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code></a> with parameters read from <a class="reference internal" href="#streamlink.stream.HTTPStream.args" title="streamlink.stream.HTTPStream.args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">args</span></code></a>.</p>
+<dd><p>The URL to the stream, prepared by <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#module-requests" title="(in Requests v2.30.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code></a> with parameters read from <a class="reference internal" href="#streamlink.stream.HTTPStream.args" title="streamlink.stream.HTTPStream.args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">args</span></code></a>.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1164,12 +1165,12 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>url</strong> (<em>str</em>) -- The URL of the HLS playlist</p></li>
-<li><p><strong>url_master</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
-<li><p><strong>multivariant</strong> (<em>Optional</em><em>[</em><em>M3U8</em><em>]</em>) -- The parsed multivariant playlist</p></li>
+<li><p><strong>url_master</strong> (<em>str</em><em> | </em><em>None</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
+<li><p><strong>multivariant</strong> (<em>M3U8</em><em> | </em><em>None</em>) -- The parsed multivariant playlist</p></li>
 <li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
 <li><p><strong>start_offset</strong> (<em>float</em>) -- Number of seconds to be skipped from the beginning</p></li>
-<li><p><strong>duration</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) -- Number of seconds until ending the stream</p></li>
-<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+<li><p><strong>duration</strong> (<em>float</em><em> | </em><em>None</em>) -- Number of seconds until ending the stream</p></li>
+<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -1186,15 +1187,15 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 <li><p><strong>name_prefix</strong> (<em>str</em>) -- Add this prefix to the stream names</p></li>
 <li><p><strong>check_streams</strong> (<em>bool</em>) -- Only allow streams that are accessible</p></li>
 <li><p><strong>force_restart</strong> (<em>bool</em>) -- Start at the first segment even for a live stream</p></li>
-<li><p><strong>name_fmt</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- A format string for the name, allowed format keys are: name, pixels, bitrate</p></li>
+<li><p><strong>name_fmt</strong> (<em>str</em><em> | </em><em>None</em>) -- A format string for the name, allowed format keys are: name, pixels, bitrate</p></li>
 <li><p><strong>start_offset</strong> (<em>float</em>) -- Number of seconds to be skipped from the beginning</p></li>
-<li><p><strong>duration</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) -- Number of second until ending the stream</p></li>
+<li><p><strong>duration</strong> (<em>float</em><em> | </em><em>None</em>) -- Number of second until ending the stream</p></li>
 <li><p><strong>request_params</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a>, <a class="reference internal" href="#streamlink.stream.MuxedHLSStream" title="streamlink.stream.MuxedHLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a>,
-or <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+or <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Dict</em>[str, <em>Union</em>[<a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.hls.HLSStream"><em>HLSStream</em></a>, <a class="reference internal" href="#streamlink.stream.MuxedHLSStream" title="streamlink.stream.hls.MuxedHLSStream"><em>MuxedHLSStream</em></a>]]</p>
+<dd class="field-even"><p><em>Dict</em>[str, <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.hls.HLSStream"><em>HLSStream</em></a> | <a class="reference internal" href="#streamlink.stream.MuxedHLSStream" title="streamlink.stream.hls.MuxedHLSStream"><em>MuxedHLSStream</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1220,11 +1221,11 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>video</strong> (<em>str</em>) -- Video stream URL</p></li>
-<li><p><strong>audio</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) -- Audio stream URL or list of URLs</p></li>
-<li><p><strong>url_master</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
-<li><p><strong>multivariant</strong> (<em>Optional</em><em>[</em><em>M3U8</em><em>]</em>) -- The parsed multivariant playlist</p></li>
+<li><p><strong>audio</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>]</em>) -- Audio stream URL or list of URLs</p></li>
+<li><p><strong>url_master</strong> (<em>str</em><em> | </em><em>None</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
+<li><p><strong>multivariant</strong> (<em>M3U8</em><em> | </em><em>None</em>) -- The parsed multivariant playlist</p></li>
 <li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
-<li><p><strong>ffmpeg_options</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) -- Additional keyword arguments passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">ffmpegmux.FFMPEGMuxer</span></code></p></li>
+<li><p><strong>ffmpeg_options</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Additional keyword arguments passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">ffmpegmux.FFMPEGMuxer</span></code></p></li>
 <li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a></p></li>
 </ul>
 </dd>
@@ -1250,9 +1251,9 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>mpd</strong> (<em>MPD</em>) -- Parsed MPD manifest</p></li>
-<li><p><strong>video_representation</strong> (<em>Optional</em><em>[</em><em>Representation</em><em>]</em>) -- Video representation</p></li>
-<li><p><strong>audio_representation</strong> (<em>Optional</em><em>[</em><em>Representation</em><em>]</em>) -- Audio representation</p></li>
-<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+<li><p><strong>video_representation</strong> (<em>Representation</em><em> | </em><em>None</em>) -- Video representation</p></li>
+<li><p><strong>audio_representation</strong> (<em>Representation</em><em> | </em><em>None</em>) -- Audio representation</p></li>
+<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -1266,7 +1267,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>url_or_manifest</strong> (<em>str</em>) -- URL of the manifest file or an XML manifest string</p></li>
 <li><p><strong>period</strong> (<em>int</em>) -- Which MPD period to use (index number) for finding representations</p></li>
-<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.28.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -1371,9 +1372,7 @@ when returning <code class="docutils literal notranslate"><span class="pre">None
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -1514,9 +1513,6 @@ when returning <code class="docutils literal notranslate"><span class="pre">None
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>

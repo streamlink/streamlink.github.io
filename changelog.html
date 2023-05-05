@@ -5,21 +5,21 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Donating" href="donate.html" /><link rel="prev" title="API Reference" href="api.html" />
 
-    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.15"/>
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 5.4.0 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 5.5.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 5.4.0 documentation</title>
+        <title>Changelog - Streamlink 5.5.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/custom.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.4.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.5.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -160,19 +160,20 @@
       
       <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand centered" href="index.html">
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="_static/icon.svg" alt="Streamlink"/>
+    <img class="sidebar-logo only-light" src="_static/icon.svg" alt="Streamlink"/>
+    <img class="sidebar-logo only-dark" src="_static/icon.svg" alt="Streamlink"/>
   </div>
   <p class="sidebar-brand-text">Streamlink</p>
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.4.0</pre>
+  <pre class="sidebar-versions-current">5.5.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -260,6 +261,20 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-5-5-0-2023-05-05">
+<h2>streamlink 5.5.0 (2023-05-05)<a class="headerlink" href="#streamlink-5-5-0-2023-05-05" title="Permalink to this heading">#</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--no-config</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5314">#5314</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--player-external-http-interface</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5295">#5295</a>)</p></li>
+<li><p>Fixed: M3U8 attribute parsing issue (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5307">#5307</a>)</p></li>
+<li><p>Fixed: various minor plugin issues (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5291">#5291</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5299">#5299</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5306">#5306</a>)</p></li>
+<li><p>Build: bumped urllib3 to <code class="docutils literal notranslate"><span class="pre">&gt;=1.26.0,&lt;3</span></code> and fixed compatibility issues with <code class="docutils literal notranslate"><span class="pre">urllib3</span> <span class="pre">&gt;=2.0.0</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5326">#5326</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5325">#5325</a>)</p></li>
+<li><p>Docs: bumped furo theme to <code class="docutils literal notranslate"><span class="pre">2023.03.27</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5301">#5301</a>)</p></li>
+<li><p>Docs: bumped build dependencies <code class="docutils literal notranslate"><span class="pre">sphinx</span> <span class="pre">&gt;=5.0.0,&lt;7</span></code>, <code class="docutils literal notranslate"><span class="pre">myst-parser</span> <span class="pre">&gt;=1.0.0,&lt;2</span></code> and <code class="docutils literal notranslate"><span class="pre">sphinx-design</span> <span class="pre">&gt;=0.4.1,&lt;1</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5301">#5301</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/5.4.0...5.5.0">Full changelog</a></p>
+</section>
 <section id="streamlink-5-4-0-2023-04-12">
 <h2>streamlink 5.4.0 (2023-04-12)<a class="headerlink" href="#streamlink-5-4-0-2023-04-12" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
@@ -1326,9 +1341,7 @@ code refactors to the existing code-base.</p>
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -1347,6 +1360,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-5-5-0-2023-05-05">streamlink 5.5.0 (2023-05-05)</a></li>
 <li><a class="reference internal" href="#streamlink-5-4-0-2023-04-12">streamlink 5.4.0 (2023-04-12)</a></li>
 <li><a class="reference internal" href="#streamlink-5-3-1-2023-02-25">streamlink 5.3.1 (2023-02-25)</a></li>
 <li><a class="reference internal" href="#streamlink-5-3-0-2023-02-18">streamlink 5.3.0 (2023-02-18)</a></li>
@@ -1419,9 +1433,6 @@ code refactors to the existing code-base.</p>
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>

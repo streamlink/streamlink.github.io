@@ -25,13 +25,12 @@
 ./_sources/players.rst.txt
 ./_sources/plugins.rst.txt
 ./_sources/thirdparty.rst.txt
-./_sphinx_design_static/design-style.4045f2051d55cab465a707391d5b2007.min.css
+./_sphinx_design_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css
 ./_sphinx_design_static/design-tabs.js
-./_static/_sphinx_javascript_frameworks_compat.js
 ./_static/apple-touch-icon.png
 ./_static/basic.css
 ./_static/debug.css
-./_static/design-style.4045f2051d55cab465a707391d5b2007.min.css
+./_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css
 ./_static/design-tabs.js
 ./_static/doctools.js
 ./_static/documentation_options.js
@@ -42,8 +41,6 @@
 ./_static/icon-ffmpeg.svg
 ./_static/icon-python.svg
 ./_static/icon.svg
-./_static/jquery-3.6.0.js
-./_static/jquery.js
 ./_static/language_data.js
 ./_static/minus.png
 ./_static/opengraph-image.png
@@ -62,8 +59,6 @@
 ./_static/styles/furo-extensions.css.map
 ./_static/styles/furo.css
 ./_static/styles/furo.css.map
-./_static/underscore-1.13.1.js
-./_static/underscore.js
 ./api.html
 ./api_guide.html
 ./applications.html
