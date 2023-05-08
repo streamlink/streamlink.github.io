@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 5.5.0 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 5.5.1 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 5.5.0 documentation</title>
+        <title>Changelog - Streamlink 5.5.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.5.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.5.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.0</pre>
+  <pre class="sidebar-versions-current">5.5.1</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -261,6 +261,16 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-5-5-1-2023-05-08">
+<h2>streamlink 5.5.1 (2023-05-08)<a class="headerlink" href="#streamlink-5-5-1-2023-05-08" title="Permalink to this heading">#</a></h2>
+<p>Patch release:</p>
+<ul class="simple">
+<li><p>Fixed: shifting time offset when reloading HLS playlists (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5321">#5321</a>)</p></li>
+<li><p>Fixed: import of <code class="docutils literal notranslate"><span class="pre">create_urllib3_context</span></code> on <code class="docutils literal notranslate"><span class="pre">urllib3</span> <span class="pre">&lt;2.0.0</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5333">#5333</a>)</p></li>
+<li><p>Fixed: Vimeo plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5331">#5331</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/5.5.0...5.5.1">Full changelog</a></p>
+</section>
 <section id="streamlink-5-5-0-2023-05-05">
 <h2>streamlink 5.5.0 (2023-05-05)<a class="headerlink" href="#streamlink-5-5-0-2023-05-05" title="Permalink to this heading">#</a></h2>
 <p>Release highlights:</p>
@@ -1360,6 +1370,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-5-5-1-2023-05-08">streamlink 5.5.1 (2023-05-08)</a></li>
 <li><a class="reference internal" href="#streamlink-5-5-0-2023-05-05">streamlink 5.5.0 (2023-05-05)</a></li>
 <li><a class="reference internal" href="#streamlink-5-4-0-2023-04-12">streamlink 5.4.0 (2023-04-12)</a></li>
 <li><a class="reference internal" href="#streamlink-5-3-1-2023-02-25">streamlink 5.3.1 (2023-02-25)</a></li>
