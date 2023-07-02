@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugin - Streamlink 5.5.1+73.ga50fb70e documentation">
+  <meta property="og:title" content="Plugin - Streamlink 5.5.1+76.g7f2ea447 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugin - Streamlink 5.5.1+73.ga50fb70e documentation</title>
+        <title>Plugin - Streamlink 5.5.1+76.g7f2ea447 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 5.5.1+73.ga50fb70e documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 5.5.1+76.g7f2ea447 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1+73.ga50fb70e</pre>
+  <pre class="sidebar-versions-current">5.5.1+76.g7f2ea447</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/plugin.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/plugin.html" class="version-current">Latest</a></dd>
@@ -282,6 +282,7 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>session</strong> -- The Streamlink session instance</p></li>
 <li><p><strong>url</strong> -- The input URL used for finding and resolving streams</p></li>
+<li><p><strong>options</strong> -- An optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code> instance</p></li>
 </ul>
 </dd>
 </dl>
@@ -505,7 +506,7 @@ and both support referencing matchers and matches by matcher index and name.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="streamlink.plugin.pluginargument">
-<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginargument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginargument" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginargument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginargument" title="Permalink to this definition">#</a></dt>
 <dd><p>Decorator for plugin arguments. Takes the same arguments as <a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginargument</span>
 
@@ -538,7 +539,6 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
 <li><p><strong>sensitive</strong> (<em>bool</em>) -- </p></li>
 <li><p><strong>argument_name</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
 <li><p><strong>dest</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
-<li><p><strong>is_global</strong> (<em>bool</em>) -- </p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -552,7 +552,7 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
 <span id="plugin-arguments"></span><h2>Plugin arguments<a class="headerlink" href="#module-streamlink.options" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.options.Argument">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.options.</span></span><span class="sig-name descname"><span class="pre">Argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.options.</span></span><span class="sig-name descname"><span class="pre">Argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Accepts most of the parameters accepted by <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code>,
 except that <code class="docutils literal notranslate"><span class="pre">requires</span></code> is a special case which is only enforced if the plugin is in use.
@@ -568,7 +568,6 @@ In addition, the <code class="docutils literal notranslate"><span class="pre">na
 <li><p><strong>sensitive</strong> (<em>bool</em>) -- Whether the argument is sensitive (passwords, etc.) and should be masked</p></li>
 <li><p><strong>argument_name</strong> (<em>str</em><em> | </em><em>None</em>) -- Custom CLI argument name without plugin name prefix</p></li>
 <li><p><strong>dest</strong> (<em>str</em><em> | </em><em>None</em>) -- Custom plugin option name</p></li>
-<li><p><strong>is_global</strong> (<em>bool</em>) -- Whether this plugin argument refers to a global CLI argument (deprecated)</p></li>
 <li><p><strong>options</strong> -- Arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code>, excluding <code class="docutils literal notranslate"><span class="pre">requires</span></code> and <code class="docutils literal notranslate"><span class="pre">dest</span></code></p></li>
 </ul>
 </dd>
