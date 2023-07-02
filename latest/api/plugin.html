@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugin - Streamlink 5.5.1+76.g7f2ea447 documentation">
+  <meta property="og:title" content="Plugin - Streamlink 5.5.1+77.gb0982df2 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugin - Streamlink 5.5.1+76.g7f2ea447 documentation</title>
+        <title>Plugin - Streamlink 5.5.1+77.gb0982df2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 5.5.1+76.g7f2ea447 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 5.5.1+77.gb0982df2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1+76.g7f2ea447</pre>
+  <pre class="sidebar-versions-current">5.5.1+77.gb0982df2</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/plugin.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/plugin.html" class="version-current">Latest</a></dd>
@@ -274,15 +274,15 @@
 <span id="plugin"></span><h1>Plugin<a class="headerlink" href="#module-streamlink.plugin" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">Plugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">Plugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Plugin base class for retrieving streams and metadata from the URL specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> -- The Streamlink session instance</p></li>
-<li><p><strong>url</strong> -- The input URL used for finding and resolving streams</p></li>
-<li><p><strong>options</strong> -- An optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code> instance</p></li>
+<li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- The Streamlink session instance</p></li>
+<li><p><strong>url</strong> (<em>str</em>) -- The input URL used for finding and resolving streams</p></li>
+<li><p><strong>options</strong> (<em>Options</em><em> | </em><em>None</em>) -- An optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code> instance</p></li>
 </ul>
 </dd>
 </dl>
