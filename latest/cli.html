@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Command-Line Interface - Streamlink 5.5.1+66.ge91b9654 documentation">
+  <meta property="og:title" content="Command-Line Interface - Streamlink 5.5.1+72.g4a7df180 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Command-Line Interface - Streamlink 5.5.1+66.ge91b9654 documentation</title>
+        <title>Command-Line Interface - Streamlink 5.5.1+72.g4a7df180 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.5.1+66.ge91b9654 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.5.1+72.g4a7df180 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1+66.ge91b9654</pre>
+  <pre class="sidebar-versions-current">5.5.1+72.g4a7df180</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -515,33 +515,19 @@ audio language.</p>
 <h3>Player options<a class="headerlink" href="#player-options" title="Permalink to this heading">#</a></h3>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-p">
-<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"> <span class="pre">COMMAND</span></span><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"> <span class="pre">PATH</span></span><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">#</a></dt>
 <dt class="sig sig-object std" id="cmdoption-player">
-<span class="sig-name descname"><span class="pre">--player</span></span><span class="sig-prename descclassname"> <span class="pre">COMMAND</span></span><a class="headerlink" href="#cmdoption-player" title="Permalink to this definition">#</a></dt>
-<dd><p>Player to feed stream data to. By default, VLC will be used if it can be
-found in its default location.</p>
-<p>This is a shell-like syntax to support using a specific player:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span><span class="o">=</span><span class="n">vlc</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
-</pre></div>
+<span class="sig-name descname"><span class="pre">--player</span></span><span class="sig-prename descclassname"> <span class="pre">PATH</span></span><a class="headerlink" href="#cmdoption-player" title="Permalink to this definition">#</a></dt>
+<dd><p>The player executable that will be launched (unless a different output method was chosen).</p>
+<p>Either set an absolute or relative path to the player executable, or just set the executable's name
+if it can be resolved from the paths of the system's <code class="code docutils literal notranslate"><span class="pre">PATH</span></code> environment variable.</p>
+<p>In addition to setting the player executable path, custom player arguments can be set via <a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the past, <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> allowed defining additional player arguments, which as a consequence required wrapping
+player paths that contained spaces in quotation marks. This is unsupported since release <code class="code docutils literal notranslate"><span class="pre">6.0.0</span></code>.</p>
 </div>
-<p>Absolute or relative paths can also be passed via this option in the
-event the player's executable can not be resolved:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">vlc</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
-<span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span><span class="o">=./</span><span class="n">vlc</span><span class="o">-</span><span class="n">player</span><span class="o">/</span><span class="n">vlc</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>To use a player that is located in a path with spaces you must quote the
-parameter or its value:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="s2">&quot;--player=/path/with spaces/vlc&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
-<span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span> <span class="s2">&quot;C:\path\with spaces\mpc-hc64.exe&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Options may also be passed to the player. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">player</span> <span class="s2">&quot;vlc --file-caching=5000&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>As an alternative to this, see the <a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> parameter, which does
-not log any custom player arguments.</p>
+<p>Default is: <strong>VLC player, if available</strong>.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -549,32 +535,24 @@ not log any custom player arguments.</p>
 <span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"> <span class="pre">ARGUMENTS</span></span><a class="headerlink" href="#cmdoption-a" title="Permalink to this definition">#</a></dt>
 <dt class="sig sig-object std" id="cmdoption-player-args">
 <span class="sig-name descname"><span class="pre">--player-args</span></span><span class="sig-prename descclassname"> <span class="pre">ARGUMENTS</span></span><a class="headerlink" href="#cmdoption-player-args" title="Permalink to this definition">#</a></dt>
-<dd><p>This option allows you to customize the default arguments which are put
-together with the value of <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> to create a command to execute.</p>
-<p>It's usually enough to only use <a class="reference internal" href="#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> instead of this unless you need
-to add arguments after the player's input argument or if you don't want
-any of the player arguments to be logged.</p>
-<p>The value can contain formatting variables surrounded by curly braces,
-<code class="code docutils literal notranslate"><span class="pre">{</span></code> and <code class="code docutils literal notranslate"><span class="pre">}</span></code>. If you need to include a brace character, it can be escaped
-by doubling, e.g. <code class="code docutils literal notranslate"><span class="pre">{{</span></code> and <code class="code docutils literal notranslate"><span class="pre">}}</span></code>.</p>
-<p>Formatting variables available:</p>
+<dd><p>This option allows the arguments which are used to launch the player process to be customized.</p>
+<p>The value can contain formatting variables surrounded by curly braces, <code class="code docutils literal notranslate"><span class="pre">{</span></code> and <code class="code docutils literal notranslate"><span class="pre">}</span></code>.
+Curly brace characters can be escaped by doubling, e.g. <code class="code docutils literal notranslate"><span class="pre">{{</span></code> and <code class="code docutils literal notranslate"><span class="pre">}}</span></code>.</p>
+<p>Available formatting variables:</p>
 <dl class="simple">
-<dt>{playerinput}</dt><dd><p>This is the input that the player will use. For standard input (stdin),
-it is <code class="code docutils literal notranslate"><span class="pre">-</span></code> (dash), but it can also be a URL, depending on the options used.</p>
+<dt><code class="code docutils literal notranslate"><span class="pre">{playerinput}</span></code></dt><dd><p>This is the input argument that the player will receive. For standard input (stdin),
+it is <code class="code docutils literal notranslate"><span class="pre">-</span></code> (dash), but it can also be a file path or URL, depending on the options used.
+If unset, then the player input argument will be appended to the parsed player arguments list.</p>
 </dd>
-<dt>{filename}</dt><dd><p>The old fallback variable name with the same functionality.</p>
+<dt><code class="code docutils literal notranslate"><span class="pre">{playertitleargs}</span></code></dt><dd><p>The automatically generated player title arguments, if a supported player was found. See <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> for more.
+If unset, automatically generated player title arguments will be prepended to the parsed player arguments list.</p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">vlc</span> <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;--play-and-exit </span><span class="si">{playerinput}</span><span class="s2">&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">vlc</span> <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;--play-and-exit --no-one-instance&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When neither of the variables are found, <code class="code docutils literal notranslate"><span class="pre">{playerinput}</span></code>
-will be appended to the whole parameter value, to ensure that the player
-always receives an input argument.</p>
-</div>
+<p>Default is: <strong>&quot;&quot;</strong>.</p>
 </dd></dl>
 
 <dl class="std option">
