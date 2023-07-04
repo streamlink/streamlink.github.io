@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Webbrowser - Streamlink 5.5.1+91.g60459461 documentation">
+  <meta property="og:title" content="Webbrowser - Streamlink 5.5.1+92.g48cb9340 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Webbrowser - Streamlink 5.5.1+91.g60459461 documentation</title>
+        <title>Webbrowser - Streamlink 5.5.1+92.g48cb9340 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 5.5.1+91.g60459461 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 5.5.1+92.g48cb9340 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1+91.g60459461</pre>
+  <pre class="sidebar-versions-current">5.5.1+92.g48cb9340</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/webbrowser.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/webbrowser.html" class="version-current">Latest</a></dd>
@@ -384,7 +384,7 @@ and for evaluating async JavaScript expressions.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>cdp_client</strong> (<a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClient" title="streamlink.webbrowser.cdp.client.CDPClient"><em>CDPClient</em></a>) -- </p></li>
-<li><p><strong>cdp_session</strong> (<em>CDPSession</em>) -- </p></li>
+<li><p><strong>cdp_session</strong> (<a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPSession" title="streamlink.webbrowser.cdp.connection.CDPSession"><em>CDPSession</em></a>) -- </p></li>
 <li><p><strong>fail_unhandled_requests</strong> (<em>bool</em>) -- </p></li>
 </ul>
 </dd>
@@ -562,6 +562,130 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.connection.</span></span><span class="sig-name descname"><span class="pre">CDPBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">websocket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPBase" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Low-level base class for Chrome Devtools Protocol connection &amp; session management.</p>
+<p>It provides methods for sending CDP commands and receiving their responses, as well as for listening to CDP events.</p>
+<p>Both CDP commands and events can be sent and received in a global context and in a session context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>websocket</strong> (<em>WebSocketConnection</em>) -- </p></li>
+<li><p><strong>target_id</strong> (<em>Optional</em><em>[</em><em>TargetID</em><em>]</em>) -- </p></li>
+<li><p><strong>session_id</strong> (<em>Optional</em><em>[</em><em>SessionID</em><em>]</em>) -- </p></li>
+<li><p><strong>cmd_timeout</strong> (<em>float</em>) -- </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPBase.listen">
+<span class="sig-name descname"><span class="pre">listen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPBase.listen" title="Permalink to this definition">#</a></dt>
+<dd><p>Listen to a CDP event and return a new <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPEventListener" title="streamlink.webbrowser.cdp.connection.CDPEventListener"><code class="xref py py-class docutils literal notranslate"><span class="pre">CDPEventListener</span></code></a> instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> (<em>Type</em><em>[</em><em>TEvent</em><em>]</em>) -- See the <code class="docutils literal notranslate"><span class="pre">streamlink.webbrowser.cdp.devtools</span></code> package for the available events.
+For events to be sent over the CDP connection, a specific domain needs to be enabled first.</p></li>
+<li><p><strong>max_buffer_size</strong> (<em>int</em>) -- The buffer size of the <code class="docutils literal notranslate"><span class="pre">trio</span></code> memory channel.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPEventListener" title="streamlink.webbrowser.cdp.connection.CDPEventListener"><em>CDPEventListener</em></a>[<em>TEvent</em>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPBase.send">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPBase.send" title="Permalink to this definition">#</a></dt>
+<dd><p>Send a specific CDP command and await its response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cmd</strong> (<em>Generator</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>, </em><em>TCmdResponse</em><em>]</em>) -- See the <code class="docutils literal notranslate"><span class="pre">streamlink.webbrowser.cdp.devtools</span></code> package for the available commands.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em><em> | </em><em>None</em>) -- Override of the max amount of time a response can take. Uses the class's default value otherwise.
+This override is mostly only relevant for awaiting JS code evaluations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The return value depends on the used command.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>TCmdResponse</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPConnection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.connection.</span></span><span class="sig-name descname"><span class="pre">CDPConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">websocket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd_timeout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPConnection" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase" title="streamlink.webbrowser.cdp.connection.CDPBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">CDPBase</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncResource</span></code></p>
+<p>Don't instantiate this class yourself, see its <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection.create" title="streamlink.webbrowser.cdp.connection.CDPConnection.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create()</span></code></a> classmethod.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>websocket</strong> (<em>WebSocketConnection</em>) -- </p></li>
+<li><p><strong>cmd_timeout</strong> (<em>float</em>) -- </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPConnection.aclose">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aclose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPConnection.aclose" title="Permalink to this definition">#</a></dt>
+<dd><p>Close the websocket connection, close all memory channels and clean up all opened sessions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPConnection.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPConnection.create" title="Permalink to this definition">#</a></dt>
+<dd><p>Establish a new CDP connection to the Chromium-based web browser's remote debugging interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) -- The websocket address</p></li>
+<li><p><strong>timeout</strong> (<em>float</em><em> | </em><em>None</em>) -- The max amount of time a single CDP command response can take.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>AsyncGenerator</em>[<em>Self</em>, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPConnection.new_target">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPConnection.new_target" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a new target (browser tab) and return a new <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPSession" title="streamlink.webbrowser.cdp.connection.CDPSession"><code class="xref py py-class docutils literal notranslate"><span class="pre">CDPSession</span></code></a> instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) -- Optional URL. Leave empty for a blank target (preferred for proper navigation handling).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPSession" title="streamlink.webbrowser.cdp.connection.CDPSession"><em>CDPSession</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPSession">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.connection.</span></span><span class="sig-name descname"><span class="pre">CDPSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">websocket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPSession" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase" title="streamlink.webbrowser.cdp.connection.CDPBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">CDPBase</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -575,17 +699,43 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPConnection">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.connection.</span></span><span class="sig-name descname"><span class="pre">CDPConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">websocket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd_timeout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPConnection" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase" title="streamlink.webbrowser.cdp.connection.CDPBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">CDPBase</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncResource</span></code></p>
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPEventListener">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.connection.</span></span><span class="sig-name descname"><span class="pre">CDPEventListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPEventListener" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">TEvent</span></code>]</p>
+<p>Instances of this class are returned by <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase.listen" title="streamlink.webbrowser.cdp.connection.CDPBase.listen"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CDPBase.listen()</span></code></a>.</p>
+<p>The return types of each of its methods depend on the event type.</p>
+<p>Can be used as an async for-loop which indefinitely waits for events to be emitted,
+or can be used as an async context manager which yields the event and closes the listener when leaving the context manager.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">listen</span><span class="p">(</span><span class="n">cdp_session</span><span class="p">:</span> <span class="n">CDPSession</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">cdp_session</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">devtools</span><span class="o">.</span><span class="n">fetch</span><span class="o">.</span><span class="n">RequestPaused</span><span class="p">):</span>
+        <span class="o">...</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">listen_once</span><span class="p">(</span><span class="n">cdp_session</span><span class="p">:</span> <span class="n">CDPSession</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">cdp_session</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">devtools</span><span class="o">.</span><span class="n">fetch</span><span class="o">.</span><span class="n">RequestPaused</span><span class="p">)</span> <span class="k">as</span> <span class="n">request</span><span class="p">:</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>websocket</strong> (<em>WebSocketConnection</em>) -- </p></li>
-<li><p><strong>cmd_timeout</strong> (<em>float</em>) -- </p></li>
+<li><p><strong>event_channels</strong> (<em>TEventChannels</em>) -- </p></li>
+<li><p><strong>event</strong> (<em>Type</em><em>[</em><em>TEvent</em><em>]</em>) -- </p></li>
+<li><p><strong>max_buffer_size</strong> (<em>int</em>) -- </p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPEventListener.receive">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPEventListener.receive" title="Permalink to this definition">#</a></dt>
+<dd><p>Await a single event without closing the listener's memory channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>TEvent</em></p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -690,8 +840,22 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 </ul>
 </li>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CMRequestProxy"><code class="docutils literal notranslate"><span class="pre">CMRequestProxy</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase"><code class="docutils literal notranslate"><span class="pre">CDPBase</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection"><code class="docutils literal notranslate"><span class="pre">CDPConnection</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase"><code class="docutils literal notranslate"><span class="pre">CDPBase</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase.listen"><code class="docutils literal notranslate"><span class="pre">CDPBase.listen()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase.send"><code class="docutils literal notranslate"><span class="pre">CDPBase.send()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection"><code class="docutils literal notranslate"><span class="pre">CDPConnection</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection.aclose"><code class="docutils literal notranslate"><span class="pre">CDPConnection.aclose()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection.create"><code class="docutils literal notranslate"><span class="pre">CDPConnection.create()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection.new_target"><code class="docutils literal notranslate"><span class="pre">CDPConnection.new_target()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPSession"><code class="docutils literal notranslate"><span class="pre">CDPSession</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPEventListener"><code class="docutils literal notranslate"><span class="pre">CDPEventListener</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPEventListener.receive"><code class="docutils literal notranslate"><span class="pre">CDPEventListener.receive()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#streamlink.webbrowser.webbrowser.Webbrowser"><code class="docutils literal notranslate"><span class="pre">Webbrowser</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.webbrowser.chromium.ChromiumWebbrowser"><code class="docutils literal notranslate"><span class="pre">ChromiumWebbrowser</span></code></a></li>
 </ul>
