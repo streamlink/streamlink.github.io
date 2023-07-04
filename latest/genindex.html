@@ -10,11 +10,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content=" - Streamlink 5.5.1+90.g20c8b6be documentation">
+  <meta property="og:title" content=" - Streamlink 5.5.1+91.g60459461 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630"><title>Index - Streamlink 5.5.1+90.g20c8b6be documentation</title>
+  <meta property="og:image:height" content="630"><title>Index - Streamlink 5.5.1+91.g60459461 documentation</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -136,7 +136,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.5.1+90.g20c8b6be documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.5.1+91.g60459461 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -165,7 +165,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1+90.g20c8b6be</pre>
+  <pre class="sidebar-versions-current">5.5.1+91.g60459461</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/genindex.html" class="">Stable</a></dd>
     <dd><a href="/latest/genindex.html" class="version-current">Latest</a></dd>
@@ -205,6 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/session.html">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/plugin.html">Plugin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/stream.html">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html">Webbrowser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/exceptions.html">Exceptions</a></li>
 </ul>
 </li>
@@ -256,7 +257,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#Symbols"><strong>Symbols</strong></a> | <a href="#_"><strong>_</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#Symbols"><strong>Symbols</strong></a> | <a href="#_"><strong>_</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#W"><strong>W</strong></a></div>
 </section>
 <section id="Symbols" class="genindex-section">
   <h2>Symbols</h2>
@@ -773,8 +774,6 @@
           <li><a href="cli.html#cmdoption-pixiv-sessionid">command line option</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li>
     --player
 
@@ -803,6 +802,8 @@
           <li><a href="cli.html#cmdoption-player-external-http">command line option</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li>
     --player-external-http-continuous
 
@@ -1105,6 +1106,55 @@
 </li>
         </ul></li>
         <li>
+    --webbrowser
+
+        <ul>
+          <li><a href="cli.html#cmdoption-webbrowser">command line option</a>
+</li>
+        </ul></li>
+        <li>
+    --webbrowser-cdp-host
+
+        <ul>
+          <li><a href="cli.html#cmdoption-webbrowser-cdp-host">command line option</a>
+</li>
+        </ul></li>
+        <li>
+    --webbrowser-cdp-port
+
+        <ul>
+          <li><a href="cli.html#cmdoption-webbrowser-cdp-port">command line option</a>
+</li>
+        </ul></li>
+        <li>
+    --webbrowser-cdp-timeout
+
+        <ul>
+          <li><a href="cli.html#cmdoption-webbrowser-cdp-timeout">command line option</a>
+</li>
+        </ul></li>
+        <li>
+    --webbrowser-executable
+
+        <ul>
+          <li><a href="cli.html#cmdoption-webbrowser-executable">command line option</a>
+</li>
+        </ul></li>
+        <li>
+    --webbrowser-headless
+
+        <ul>
+          <li><a href="cli.html#cmdoption-webbrowser-headless">command line option</a>
+</li>
+        </ul></li>
+        <li>
+    --webbrowser-timeout
+
+        <ul>
+          <li><a href="cli.html#cmdoption-webbrowser-timeout">command line option</a>
+</li>
+        </ul></li>
+        <li>
     --wwenetwork-email
 
         <ul>
@@ -1304,12 +1354,16 @@
   <h2>A</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api/stream.html#streamlink.stream.HTTPStream.args">args (streamlink.stream.HTTPStream attribute)</a>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.add_request_handler">add_request_handler() (streamlink.webbrowser.cdp.client.CDPClientSession method)</a>
 </li>
-        <li><a href="api/plugin.html#streamlink.options.Argument">Argument (class in streamlink.options)</a>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.alter_request">alter_request() (streamlink.webbrowser.cdp.client.CDPClientSession method)</a>
+</li>
+        <li><a href="api/stream.html#streamlink.stream.HTTPStream.args">args (streamlink.stream.HTTPStream attribute)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/plugin.html#streamlink.options.Argument">Argument (class in streamlink.options)</a>
+</li>
         <li><a href="api/plugin.html#streamlink.options.Arguments">Arguments (class in streamlink.options)</a>
 </li>
         <li><a href="api/plugin.html#streamlink.plugin.Plugin.arguments">arguments (streamlink.plugin.Plugin attribute)</a>
@@ -1326,7 +1380,21 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/plugin.html#streamlink.plugin.Plugin.category">category (streamlink.plugin.Plugin attribute)</a>
 </li>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPBase">CDPBase (class in streamlink.webbrowser.cdp.connection)</a>
+</li>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClient">CDPClient (class in streamlink.webbrowser.cdp.client)</a>
+</li>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession">CDPClientSession (class in streamlink.webbrowser.cdp.client)</a>
+</li>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPConnection">CDPConnection (class in streamlink.webbrowser.cdp.connection)</a>
+</li>
+        <li><a href="api/exceptions.html#streamlink.webbrowser.cdp.exceptions.CDPError">CDPError</a>
+</li>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.chromium.ChromiumWebbrowser">ChromiumWebbrowser (class in streamlink.webbrowser.chromium)</a>
+</li>
         <li><a href="api/plugin.html#streamlink.plugin.Plugin.clear_cookies">clear_cookies() (streamlink.plugin.Plugin method)</a>
+</li>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CMRequestProxy">CMRequestProxy (class in streamlink.webbrowser.cdp.client)</a>
 </li>
         <li>
     command line option
@@ -1572,6 +1640,20 @@
 </li>
           <li><a href="cli.html#cmdoption-version-check">--version-check</a>
 </li>
+          <li><a href="cli.html#cmdoption-webbrowser">--webbrowser</a>
+</li>
+          <li><a href="cli.html#cmdoption-webbrowser-cdp-host">--webbrowser-cdp-host</a>
+</li>
+          <li><a href="cli.html#cmdoption-webbrowser-cdp-port">--webbrowser-cdp-port</a>
+</li>
+          <li><a href="cli.html#cmdoption-webbrowser-cdp-timeout">--webbrowser-cdp-timeout</a>
+</li>
+          <li><a href="cli.html#cmdoption-webbrowser-executable">--webbrowser-executable</a>
+</li>
+          <li><a href="cli.html#cmdoption-webbrowser-headless">--webbrowser-headless</a>
+</li>
+          <li><a href="cli.html#cmdoption-webbrowser-timeout">--webbrowser-timeout</a>
+</li>
           <li><a href="cli.html#cmdoption-wwenetwork-email">--wwenetwork-email</a>
 </li>
           <li><a href="cli.html#cmdoption-wwenetwork-password">--wwenetwork-password</a>
@@ -1630,6 +1712,10 @@
 </li>
         </ul></li>
     </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.continue_request">continue_request() (streamlink.webbrowser.cdp.client.CDPClientSession method)</a>
+</li>
+    </ul></td>
   </tr></table>
 </section>
 
@@ -1643,11 +1729,27 @@
   </tr></table>
 </section>
 
+<section id="E" class="genindex-section">
+  <h2>E</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.evaluate">evaluate() (streamlink.webbrowser.cdp.client.CDPClientSession method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
 <section id="F" class="genindex-section">
   <h2>F</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.fail_request">fail_request() (streamlink.webbrowser.cdp.client.CDPClientSession method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/exceptions.html#streamlink.exceptions.FatalPluginError">FatalPluginError</a>
+</li>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.fulfill_request">fulfill_request() (streamlink.webbrowser.cdp.client.CDPClientSession method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1697,11 +1799,15 @@
   <h2>L</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClient.launch">launch() (streamlink.webbrowser.cdp.client.CDPClient class method)</a>
+</li>
         <li><a href="api/plugin.html#streamlink.plugin.Plugin.load_cookies">load_cookies() (streamlink.plugin.Plugin method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/session.html#streamlink.session.Streamlink.load_plugins">load_plugins() (streamlink.session.Streamlink method)</a>
+</li>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.loaded">loaded() (streamlink.webbrowser.cdp.client.CDPClientSession method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1729,6 +1835,8 @@
 </li>
           <li><a href="api/stream.html#module-streamlink.stream">streamlink.stream</a>
 </li>
+          <li><a href="api/webbrowser.html#module-streamlink.webbrowser">streamlink.webbrowser</a>
+</li>
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
@@ -1744,10 +1852,12 @@
   <h2>N</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api/exceptions.html#streamlink.exceptions.NoPluginError">NoPluginError</a>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.navigate">navigate() (streamlink.webbrowser.cdp.client.CDPClientSession method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/exceptions.html#streamlink.exceptions.NoPluginError">NoPluginError</a>
+</li>
         <li><a href="api/exceptions.html#streamlink.exceptions.NoStreamsError">NoStreamsError</a>
 </li>
     </ul></td>
@@ -1815,6 +1925,8 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/plugin.html#streamlink.plugin.Plugin.save_cookies">save_cookies() (streamlink.plugin.Plugin method)</a>
 </li>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClient.session">session() (streamlink.webbrowser.cdp.client.CDPClient method)</a>
+</li>
         <li><a href="api/session.html#streamlink.session.Streamlink.set_option">set_option() (streamlink.session.Streamlink method)</a>
 </li>
         <li>
@@ -1851,6 +1963,13 @@
 
         <ul>
           <li><a href="api/stream.html#module-streamlink.stream">module</a>
+</li>
+        </ul></li>
+        <li>
+    streamlink.webbrowser
+
+        <ul>
+          <li><a href="api/webbrowser.html#module-streamlink.webbrowser">module</a>
 </li>
         </ul></li>
         <li><a href="api/exceptions.html#streamlink.exceptions.StreamlinkError">StreamlinkError</a>
@@ -1902,6 +2021,20 @@
           <li><a href="api/stream.html#streamlink.stream.MuxedHLSStream.url_master">(streamlink.stream.MuxedHLSStream property)</a>
 </li>
         </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="W" class="genindex-section">
+  <h2>W</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/webbrowser.html#streamlink.webbrowser.webbrowser.Webbrowser">Webbrowser (class in streamlink.webbrowser.webbrowser)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/exceptions.html#streamlink.webbrowser.exceptions.WebbrowserError">WebbrowserError</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
