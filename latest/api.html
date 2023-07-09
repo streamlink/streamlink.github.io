@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="API Reference - Streamlink 5.5.1+99.g14c8ca5c documentation">
+  <meta property="og:title" content="API Reference - Streamlink 5.5.1+100.g0c73b1c8 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>API Reference - Streamlink 5.5.1+99.g14c8ca5c documentation</title>
+        <title>API Reference - Streamlink 5.5.1+100.g0c73b1c8 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.5.1+99.g14c8ca5c documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.5.1+100.g0c73b1c8 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1+99.g14c8ca5c</pre>
+  <pre class="sidebar-versions-current">5.5.1+100.g0c73b1c8</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="">Stable</a></dd>
     <dd><a href="/latest/api.html" class="version-current">Latest</a></dd>
@@ -206,7 +206,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/streamlink.html">Streamlink</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/session.html">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/plugin.html">Plugin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/stream.html">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html">Stream</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html">Webbrowser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/exceptions.html">Exceptions</a></li>
 </ul>
@@ -328,46 +328,28 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api/stream.html">Streams</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/stream.html#stream">Stream</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.Stream"><code class="docutils literal notranslate"><span class="pre">Stream</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/stream.html#streamlink.stream.Stream.open"><code class="docutils literal notranslate"><span class="pre">Stream.open()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/stream.html">Stream</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.Stream"><code class="docutils literal notranslate"><span class="pre">Stream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.Stream.open"><code class="docutils literal notranslate"><span class="pre">Stream.open()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.MuxedStream"><code class="docutils literal notranslate"><span class="pre">MuxedStream</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream"><code class="docutils literal notranslate"><span class="pre">HTTPStream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream.args"><code class="docutils literal notranslate"><span class="pre">HTTPStream.args</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream.url"><code class="docutils literal notranslate"><span class="pre">HTTPStream.url</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api/stream.html#muxedstream">MuxedStream</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.MuxedStream"><code class="docutils literal notranslate"><span class="pre">MuxedStream</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream"><code class="docutils literal notranslate"><span class="pre">HLSStream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream.parse_variant_playlist"><code class="docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">HLSStream.url_master</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api/stream.html#httpstream">HTTPStream</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream"><code class="docutils literal notranslate"><span class="pre">HTTPStream</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream.args"><code class="docutils literal notranslate"><span class="pre">HTTPStream.args</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream.url"><code class="docutils literal notranslate"><span class="pre">HTTPStream.url</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.MuxedHLSStream"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.MuxedHLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream.url_master</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="api/stream.html#hlsstream">HLSStream</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream"><code class="docutils literal notranslate"><span class="pre">HLSStream</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream.parse_variant_playlist"><code class="docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">HLSStream.url_master</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="api/stream.html#muxedhlsstream">MuxedHLSStream</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.MuxedHLSStream"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/stream.html#streamlink.stream.MuxedHLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream.url_master</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="api/stream.html#dashstream">DASHStream</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.DASHStream"><code class="docutils literal notranslate"><span class="pre">DASHStream</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/stream.html#streamlink.stream.DASHStream.parse_manifest"><code class="docutils literal notranslate"><span class="pre">DASHStream.parse_manifest()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.DASHStream"><code class="docutils literal notranslate"><span class="pre">DASHStream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.DASHStream.parse_manifest"><code class="docutils literal notranslate"><span class="pre">DASHStream.parse_manifest()</span></code></a></li>
 </ul>
 </li>
 </ul>
