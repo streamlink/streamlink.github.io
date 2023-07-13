@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developing" href="developing.html" /><link rel="prev" title="Common issues" href="issues.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Migrations" href="migrations.html" /><link rel="prev" title="Common issues" href="issues.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Deprecations - Streamlink 5.5.1+106.g15c95025 documentation">
+  <meta property="og:title" content="Deprecations - Streamlink 5.5.1+107.g33781b70 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Deprecations - Streamlink 5.5.1+106.g15c95025 documentation</title>
+        <title>Deprecations - Streamlink 5.5.1+107.g33781b70 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.5.1+106.g15c95025 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.5.1+107.g33781b70 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1+106.g15c95025</pre>
+  <pre class="sidebar-versions-current">5.5.1+107.g33781b70</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/deprecations.html" class="">Stable</a></dd>
     <dd><a href="/latest/deprecations.html" class="version-current">Latest</a></dd>
@@ -200,6 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Deprecations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrations.html">Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -275,32 +276,34 @@
 <h1>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this heading">#</a></h1>
 <section id="streamlink-5-4-0">
 <h2>streamlink 5.4.0<a class="headerlink" href="#streamlink-5-4-0" title="Permalink to this heading">#</a></h2>
-<section id="deprecation-of-force-progress">
-<h3>Deprecation of --force-progress<a class="headerlink" href="#deprecation-of-force-progress" title="Permalink to this heading">#</a></h3>
+<section id="force-progress">
+<h3>--force-progress<a class="headerlink" href="#force-progress" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">--force-progress</span></code> CLI argument has been deprecated in favor of <a class="reference internal" href="cli.html#cmdoption-progress"><code class="xref std std-option docutils literal notranslate"><span class="pre">--progress=force</span></code></a>.</p>
 </section>
 </section>
 <section id="streamlink-5-3-0">
 <h2>streamlink 5.3.0<a class="headerlink" href="#streamlink-5-3-0" title="Permalink to this heading">#</a></h2>
-<section id="deprecation-of-global-plugin-arguments">
-<h3>Deprecation of global plugin arguments<a class="headerlink" href="#deprecation-of-global-plugin-arguments" title="Permalink to this heading">#</a></h3>
+<section id="global-plugin-arguments">
+<h3>Global plugin arguments<a class="headerlink" href="#global-plugin-arguments" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">is_global=True</span></code> <a class="reference internal" href="api/plugin.html#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">plugin</span> <span class="pre">argument</span></code></a> parameter has been deprecated.
 Instead of defining a global plugin argument to set a key-value pair on the plugin's options, use the respective option on
 the plugin's Streamlink session instance instead.</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference internal" href="migrations.html#global-plugin-arguments"><span class="std std-ref">Removed in 6.0.0</span></a></p>
 </section>
 </section>
 <section id="streamlink-5-2-0">
 <h2>streamlink 5.2.0<a class="headerlink" href="#streamlink-5-2-0" title="Permalink to this heading">#</a></h2>
-<section id="deprecation-of-plugin-api-validate-text">
-<h3>Deprecation of plugin.api.validate.text<a class="headerlink" href="#deprecation-of-plugin-api-validate-text" title="Permalink to this heading">#</a></h3>
+<section id="plugin-api-validate-text">
+<h3>plugin.api.validate.text<a class="headerlink" href="#plugin-api-validate-text" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">plugin.api.validate.text</span></code> alias for <code class="docutils literal notranslate"><span class="pre">str</span></code> has been marked as deprecated, as it is a remnant of the py2 implementation.
 Simply replace <code class="docutils literal notranslate"><span class="pre">validate.text</span></code> with <code class="docutils literal notranslate"><span class="pre">str</span></code> in each validation schema.</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference internal" href="migrations.html#plugin-api-validate-text"><span class="std std-ref">Removed in 6.0.0</span></a></p>
 </section>
 </section>
 <section id="streamlink-5-0-0">
 <h2>streamlink 5.0.0<a class="headerlink" href="#streamlink-5-0-0" title="Permalink to this heading">#</a></h2>
-<section id="deprecation-of-plugin-init-self-url">
-<h3>Deprecation of Plugin.__init__(self, url)<a class="headerlink" href="#deprecation-of-plugin-init-self-url" title="Permalink to this heading">#</a></h3>
+<section id="plugin-init-self-url-compatibility-wrapper">
+<h3>Plugin.__init__(self, url) compatibility wrapper<a class="headerlink" href="#plugin-init-self-url-compatibility-wrapper" title="Permalink to this heading">#</a></h3>
 <p>With the removal of the <code class="docutils literal notranslate"><span class="pre">Plugin.bind()</span></code> class method which was used for setting up the
 <a class="reference internal" href="api/session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><code class="xref py py-class docutils literal notranslate"><span class="pre">Streamlink</span></code></a> session instance and module name in each plugin class,
 the <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> constructor's signature was changed and it now requires
@@ -309,40 +312,23 @@ arguments when subclassing and adding a custom constructor (<code class="docutil
 <code class="docutils literal notranslate"><span class="pre">self.url</span></code> after calling the constructor of the super class.</p>
 <p>Compatibility wrappers were added for old custom plugin implementations, and a deprecation message will be shown until
 the compatibility wrappers will get removed in a future release.</p>
-</section>
-<section id="session-resolve-url-return-type-changes">
-<h3>Session.resolve_url() return type changes<a class="headerlink" href="#session-resolve-url-return-type-changes" title="Permalink to this heading">#</a></h3>
-<p>Due to the changes of the <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> class mentioned above, the return value of
-<a class="reference internal" href="api/session.html#streamlink.session.Streamlink.resolve_url" title="streamlink.session.Streamlink.resolve_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code></a> and
-<a class="reference internal" href="api/session.html#streamlink.session.Streamlink.resolve_url_no_redirect" title="streamlink.session.Streamlink.resolve_url_no_redirect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code></a> had to be changed
-from <code class="docutils literal notranslate"><span class="pre">tuple[type[Plugin],</span> <span class="pre">str]</span></code> to <code class="docutils literal notranslate"><span class="pre">tuple[str,</span> <span class="pre">type[Plugin],</span> <span class="pre">str]</span></code>, and both methods now return the resolved plugin name
-as the first item, in addition to the plugin class and resolved URL.</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference internal" href="migrations.html#plugin-init-self-url-compatibility-wrapper"><span class="std std-ref">Removed in 6.0.0</span></a></p>
 </section>
 </section>
 <section id="streamlink-4-2-0">
 <h2>streamlink 4.2.0<a class="headerlink" href="#streamlink-4-2-0" title="Permalink to this heading">#</a></h2>
-<section id="deprecation-of-url-master-in-hlsstream">
-<h3>Deprecation of url_master in HLSStream<a class="headerlink" href="#deprecation-of-url-master-in-hlsstream" title="Permalink to this heading">#</a></h3>
+<section id="url-master-in-hlsstream">
+<h3>url_master in HLSStream<a class="headerlink" href="#url-master-in-hlsstream" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">url_master</span></code> parameter and attribute of the <a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a>
 and <a class="reference internal" href="api/stream.html#streamlink.stream.MuxedHLSStream" title="streamlink.stream.MuxedHLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a> classes have been deprecated in favor of
 the <code class="docutils literal notranslate"><span class="pre">multivariant</span></code> parameter and attribute. <code class="docutils literal notranslate"><span class="pre">multivariant</span></code> is an <code class="xref py py-class docutils literal notranslate"><span class="pre">M3U8</span></code> reference of the parsed
 HLS multivariant playlist.</p>
 </section>
 </section>
-<section id="streamlink-4-0-0">
-<h2>streamlink 4.0.0<a class="headerlink" href="#streamlink-4-0-0" title="Permalink to this heading">#</a></h2>
-<section id="removal-of-streamlink-plugin-api-utils">
-<h3>Removal of streamlink.plugin.api.utils<a class="headerlink" href="#removal-of-streamlink-plugin-api-utils" title="Permalink to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">streamlink.plugin.api.utils</span></code> module including the <code class="docutils literal notranslate"><span class="pre">itertags</span></code> function and export aliases for <code class="docutils literal notranslate"><span class="pre">streamlink.utils.parse</span></code>
-has been removed. Import the parse functions directly and find data in XML/HTML by parsing it via <code class="docutils literal notranslate"><span class="pre">parse_{xml,html}</span></code> and
-applying XPath queries to the parsed result via the available methods provided by the <code class="docutils literal notranslate"><span class="pre">lxml.etree</span></code> API. The
-<code class="docutils literal notranslate"><span class="pre">streamlink.plugin.api.validate</span></code> module also has the necessary validation schema functions for this.</p>
-</section>
-</section>
 <section id="streamlink-3-0-0">
 <h2>streamlink 3.0.0<a class="headerlink" href="#streamlink-3-0-0" title="Permalink to this heading">#</a></h2>
-<section id="removal-of-separate-https-proxy-option">
-<h3>Removal of separate https-proxy option<a class="headerlink" href="#removal-of-separate-https-proxy-option" title="Permalink to this heading">#</a></h3>
+<section id="https-proxy-option">
+<h3>https-proxy option<a class="headerlink" href="#https-proxy-option" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="cli.html#http-options"><span class="std std-ref">HTTPS proxy CLI option</span></a> and the respective <a class="reference internal" href="api/session.html#session"><span class="std std-ref">Session options</span></a>
 have been deprecated in favor of a single <a class="reference internal" href="cli.html#cmdoption-http-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-proxy</span></code></a> that sets the proxy for all HTTP and
 HTTPS requests, including WebSocket connections.</p>
@@ -437,6 +423,7 @@ message will be written to the info log output for the first plugin that gets re
 multiple <code class="docutils literal notranslate"><span class="pre">&#64;pluginmatcher</span></code> decorators and/or an improved <code class="docutils literal notranslate"><span class="pre">_get_streams()</span></code> method which returns <code class="docutils literal notranslate"><span class="pre">None</span></code> or raises a
 <code class="docutils literal notranslate"><span class="pre">NoStreamsError</span></code> when there are no streams to be found on that particular URL.</p>
 </div>
+<p><a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference internal" href="migrations.html#plugin-can-handle-url-and-plugin-priority"><span class="std std-ref">Removed in 6.0.0</span></a></p>
 </section>
 </section>
 <section id="streamlink-2-2-0">
@@ -565,12 +552,12 @@ Old and deprecated paths will be dropped in the future.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="developing.html">
+          <a class="next-page" href="migrations.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Developing</div>
+                <div class="title">Migrations</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -617,32 +604,27 @@ Old and deprecated paths will be dropped in the future.</p>
             <ul>
 <li><a class="reference internal" href="#">Deprecations</a><ul>
 <li><a class="reference internal" href="#streamlink-5-4-0">streamlink 5.4.0</a><ul>
-<li><a class="reference internal" href="#deprecation-of-force-progress">Deprecation of --force-progress</a></li>
+<li><a class="reference internal" href="#force-progress">--force-progress</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#streamlink-5-3-0">streamlink 5.3.0</a><ul>
-<li><a class="reference internal" href="#deprecation-of-global-plugin-arguments">Deprecation of global plugin arguments</a></li>
+<li><a class="reference internal" href="#global-plugin-arguments">Global plugin arguments</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#streamlink-5-2-0">streamlink 5.2.0</a><ul>
-<li><a class="reference internal" href="#deprecation-of-plugin-api-validate-text">Deprecation of plugin.api.validate.text</a></li>
+<li><a class="reference internal" href="#plugin-api-validate-text">plugin.api.validate.text</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#streamlink-5-0-0">streamlink 5.0.0</a><ul>
-<li><a class="reference internal" href="#deprecation-of-plugin-init-self-url">Deprecation of Plugin.__init__(self, url)</a></li>
-<li><a class="reference internal" href="#session-resolve-url-return-type-changes">Session.resolve_url() return type changes</a></li>
+<li><a class="reference internal" href="#plugin-init-self-url-compatibility-wrapper">Plugin.__init__(self, url) compatibility wrapper</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#streamlink-4-2-0">streamlink 4.2.0</a><ul>
-<li><a class="reference internal" href="#deprecation-of-url-master-in-hlsstream">Deprecation of url_master in HLSStream</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#streamlink-4-0-0">streamlink 4.0.0</a><ul>
-<li><a class="reference internal" href="#removal-of-streamlink-plugin-api-utils">Removal of streamlink.plugin.api.utils</a></li>
+<li><a class="reference internal" href="#url-master-in-hlsstream">url_master in HLSStream</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#streamlink-3-0-0">streamlink 3.0.0</a><ul>
-<li><a class="reference internal" href="#removal-of-separate-https-proxy-option">Removal of separate https-proxy option</a></li>
+<li><a class="reference internal" href="#https-proxy-option">https-proxy option</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#streamlink-2-4-0">streamlink 2.4.0</a><ul>
