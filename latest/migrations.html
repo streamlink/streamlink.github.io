@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Migrations - Streamlink 5.5.1+114.gad1b54b8 documentation">
+  <meta property="og:title" content="Migrations - Streamlink 5.5.1+115.gd1759665 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Migrations - Streamlink 5.5.1+114.gad1b54b8 documentation</title>
+        <title>Migrations - Streamlink 5.5.1+115.gd1759665 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.5.1+114.gad1b54b8 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 5.5.1+115.gd1759665 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1+114.gad1b54b8</pre>
+  <pre class="sidebar-versions-current">5.5.1+115.gd1759665</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/migrations.html" class="">Stable</a></dd>
     <dd><a href="/latest/migrations.html" class="version-current">Latest</a></dd>
@@ -205,6 +205,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/streamlink.html">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/options.html">Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/session.html">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/plugin.html">Plugin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/stream.html">Stream</a></li>
@@ -362,7 +363,7 @@ garbage collector to not be able to let go of any loaded built-in plugins when i
 <h3>Global plugin arguments<a class="headerlink" href="#global-plugin-arguments" title="Permalink to this heading">#</a></h3>
 <p>Streamlink 5.3.0 <a class="reference internal" href="deprecations.html#global-plugin-arguments"><span class="std std-ref">deprecated</span></a> the <code class="docutils literal notranslate"><span class="pre">is_global=True</span></code> argument
 of the <a class="reference internal" href="api/plugin.html#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pluginargument</span></code></a> decorator (as well as the
-<a class="reference internal" href="api/plugin.html#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a> class), as global plugin arguments were deemed unnecessary.
+<a class="reference internal" href="api/options.html#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a> class), as global plugin arguments were deemed unnecessary.
 The <code class="docutils literal notranslate"><span class="pre">is_global</span></code> argument has thus been removed now.</p>
 <div class="line-block">
 <div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-x-circle" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M3.404 12.596a6.5 6.5 0 119.192-9.192 6.5 6.5 0 01-9.192 9.192zM2.344 2.343a8 8 0 1011.313 11.314A8 8 0 002.343 2.343zM6.03 4.97a.75.75 0 00-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 101.06 1.06L8 9.06l1.97 1.97a.75.75 0 101.06-1.06L9.06 8l1.97-1.97a.75.75 0 10-1.06-1.06L8 6.94 6.03 4.97z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/5140">#5140</a></div>
@@ -372,7 +373,7 @@ The <code class="docutils literal notranslate"><span class="pre">is_global</span
 <p class="admonition-title">Migration</p>
 <ol class="arabic simple">
 <li><p>Get the value of the global argument using <a class="reference internal" href="api/session.html#streamlink.session.Streamlink.get_option" title="streamlink.session.Streamlink.get_option"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.get_option()</span></code></a>
-instead of getting it from <code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.options</span></code></p></li>
+instead of getting it from <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.options" title="streamlink.plugin.Plugin.options"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.options</span></code></a></p></li>
 </ol>
 </div>
 </section>
