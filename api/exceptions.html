@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Metadata" href="metadata.html" /><link rel="prev" title="Streaming protocols" href="protocols.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Changelog" href="../changelog.html" /><link rel="prev" title="Webbrowser" href="webbrowser.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Proxy Support - Streamlink 6.0.0 documentation">
+  <meta property="og:title" content="Exceptions - Streamlink 6.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Proxy Support - Streamlink 6.0.0 documentation</title>
+        <title>Exceptions - Streamlink 6.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -149,7 +149,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -169,8 +169,8 @@
 <div class="sidebar-versions centered" role="note" aria-label="versions">
   <pre class="sidebar-versions-current">6.0.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/cli/proxy.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/cli/proxy.html" class="">Latest</a></dd>
+    <dd><a href="/api/exceptions.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/api/exceptions.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,17 +181,17 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../cli.html">Command-Line Interface</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cli.html">Command-Line Interface</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cli.html">Command-line usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugin-sideloading.html">Plugin sideloading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="protocols.html">Streaming protocols</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Proxy support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="plugins/crunchyroll.html">Crunchyroll</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plugins/twitch.html">Twitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/tutorial.html">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/config.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/plugin-sideloading.html">Plugin sideloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/protocols.html">Streaming protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/proxy.html">Proxy support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/metadata.html">Metadata</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cli/plugins/crunchyroll.html">Crunchyroll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli/plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
 </ul>
@@ -203,14 +203,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../migrations.html">Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developing.html">Developing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_guide.html">API Guide</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/streamlink.html">Streamlink</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/options.html">Options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/session.html">Session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/plugin.html">Plugin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/stream.html">Stream</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/webbrowser.html">Webbrowser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/exceptions.html">Exceptions</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../api.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="streamlink.html">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session.html">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugin.html">Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream.html">Stream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webbrowser.html">Webbrowser</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -245,7 +245,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/cli/proxy.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/api/exceptions.rst" title="Edit this page">
     <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
@@ -261,7 +261,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -269,26 +269,68 @@
         <article role="main">
           
   
-  <section id="proxy-support">
-<h1>Proxy Support<a class="headerlink" href="#proxy-support" title="Permalink to this heading">#</a></h1>
-<p>You can use the <a class="reference internal" href="../cli.html#cmdoption-http-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-proxy</span></code></a> option to change the proxy server
-that Streamlink will use for HTTP and HTTPS requests. <a class="reference internal" href="../cli.html#cmdoption-http-proxy"><code class="xref std std-option docutils literal notranslate"><span class="pre">--http-proxy</span></code></a> sets
-the proxy for all HTTP and HTTPS requests, including WebSocket connections.</p>
-<p>If separate proxies for each protocol are required, they can be set using
-environment variables - see the <a class="reference external" href="https://requests.readthedocs.io/en/latest/user/advanced/#proxies">Requests Proxies Documentation</a>.</p>
-<p>Both HTTP and SOCKS proxies are supported, as well as authentication in each of them.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When using a SOCKS proxy, the <code class="docutils literal notranslate"><span class="pre">socks4</span></code> and <code class="docutils literal notranslate"><span class="pre">socks5</span></code> schemes mean that DNS lookups are done
-locally, rather than on the proxy server. To have the proxy server perform the DNS lookups, the
-<code class="docutils literal notranslate"><span class="pre">socks4a</span></code> and <code class="docutils literal notranslate"><span class="pre">socks5h</span></code> schemes should be used instead.</p>
-</div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>--http-proxy<span class="w"> </span><span class="s2">&quot;http://address:port&quot;</span>
-<span class="gp">$ </span>streamlink<span class="w"> </span>--http-proxy<span class="w"> </span><span class="s2">&quot;https://address:port&quot;</span>
-<span class="gp">$ </span>streamlink<span class="w"> </span>--http-proxy<span class="w"> </span><span class="s2">&quot;socks4a://address:port&quot;</span>
-<span class="gp">$ </span>streamlink<span class="w"> </span>--http-proxy<span class="w"> </span><span class="s2">&quot;socks5h://address:port&quot;</span>
-</pre></div>
-</div>
+  <section id="exceptions">
+<h1>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading">#</a></h1>
+<dl class="py exception">
+<dt class="sig sig-object py" id="streamlink.exceptions.StreamlinkError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamlinkError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamlinkError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Any error caused by Streamlink will be caught with this exception.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="streamlink.exceptions.PluginError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">PluginError</span></span><a class="headerlink" href="#streamlink.exceptions.PluginError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
+<p>Plugin related error.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="streamlink.exceptions.FatalPluginError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">FatalPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.FatalPluginError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.PluginError" title="streamlink.exceptions.PluginError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginError</span></code></a></p>
+<p>Plugin related error that cannot be recovered from.</p>
+<p>Plugins should use this <code class="docutils literal notranslate"><span class="pre">Exception</span></code> when errors that can
+never be recovered from are encountered. For example, when
+a user's input is required and none can be given.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="streamlink.exceptions.NoPluginError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.NoPluginError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
+<p>Error raised by <code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code>
+and <code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code>
+when no plugin could be found for the given input URL.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="streamlink.exceptions.NoStreamsError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoStreamsError</span></span><a class="headerlink" href="#streamlink.exceptions.NoStreamsError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
+<p>Plugins should use this <code class="docutils literal notranslate"><span class="pre">Exception</span></code> in <a class="reference internal" href="plugin.html#streamlink.plugin.Plugin._get_streams" title="streamlink.plugin.Plugin._get_streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Plugin._get_streams()</span></code></a>
+when returning <code class="docutils literal notranslate"><span class="pre">None</span></code> or an empty <code class="docutils literal notranslate"><span class="pre">dict</span></code> is not possible, e.g. in nested function calls.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="streamlink.exceptions.StreamError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
+<p>Stream related error.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="streamlink.webbrowser.exceptions.WebbrowserError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.exceptions.</span></span><span class="sig-name descname"><span class="pre">WebbrowserError</span></span><a class="headerlink" href="#streamlink.webbrowser.exceptions.WebbrowserError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.exceptions.CDPError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.exceptions.</span></span><span class="sig-name descname"><span class="pre">CDPError</span></span><a class="headerlink" href="#streamlink.webbrowser.cdp.exceptions.CDPError" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.webbrowser.exceptions.WebbrowserError" title="streamlink.webbrowser.exceptions.WebbrowserError"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebbrowserError</span></code></a></p>
+</dd></dl>
+
 </section>
 
 
@@ -297,23 +339,23 @@ locally, rather than on the proxy server. To have the proxy server perform the D
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="metadata.html">
+          <a class="next-page" href="../changelog.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Metadata</div>
+                <div class="title">Changelog</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="protocols.html">
+          <a class="prev-page" href="webbrowser.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Streaming protocols</div>
+                <div class="title">Webbrowser</div>
                 
               </div>
             </a>
@@ -335,8 +377,34 @@ locally, rather than on the proxy server. To have the proxy server perform the D
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Exceptions</a><ul>
+<li><a class="reference internal" href="#streamlink.exceptions.StreamlinkError"><code class="docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.exceptions.PluginError"><code class="docutils literal notranslate"><span class="pre">PluginError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.exceptions.FatalPluginError"><code class="docutils literal notranslate"><span class="pre">FatalPluginError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.exceptions.NoPluginError"><code class="docutils literal notranslate"><span class="pre">NoPluginError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.exceptions.NoStreamsError"><code class="docutils literal notranslate"><span class="pre">NoStreamsError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.exceptions.StreamError"><code class="docutils literal notranslate"><span class="pre">StreamError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.webbrowser.exceptions.WebbrowserError"><code class="docutils literal notranslate"><span class="pre">WebbrowserError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.exceptions.CDPError"><code class="docutils literal notranslate"><span class="pre">CDPError</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

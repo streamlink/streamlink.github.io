@@ -192,7 +192,7 @@ Python pip                           See the `PyPI package and source code`_ sec
                                         sudo xbps-install streamlink
 ==================================== ===========================================
 
-.. _Arch Linux: https://www.archlinux.org/packages/community/any/streamlink/
+.. _Arch Linux: https://archlinux.org/packages/extra/any/streamlink/
 .. _Arch Linux (aur, git): https://aur.archlinux.org/packages/streamlink-git/
 .. _Debian (sid, testing): https://packages.debian.org/unstable/streamlink
 .. _Debian (stable): https://packages.debian.org/unstable/streamlink
@@ -363,9 +363,9 @@ Streamlink defines a `build system <pyproject.toml_>`__ according to `PEP-517`_ 
 ========= ========================= ===========================================
 Type      Name                       Notes
 ========= ========================= ===========================================
-python    `Python`_                 At least version **3.7**.
+python    `Python`_                 At least version **3.8**.
 
-build     `setuptools`_             At least version **45.0.0**. |br| Used as build backend.
+build     `setuptools`_             At least version **64.0.0**. |br| Used as build backend.
 build     `wheel`_                  Used by the build frontend for creating Python wheels.
 build     `versioningit`_           At least version **2.0.0**. |br| Used for generating the version string from git
                                     when building, or when running in an editable install.
@@ -377,6 +377,9 @@ runtime   `pycountry`_              Used for localization settings, provides cou
 runtime   `pycryptodome`_           Used for decrypting encrypted streams
 runtime   `PySocks`_                Used for SOCKS Proxies
 runtime   `requests`_               Used for making any kind of HTTP/HTTPS request
+runtime   `trio`_                   Used for async concurrency and I/O in some parts of Streamlink
+runtime   `trio-websocket`_         Used for WebSocket connections on top of the async trio framework
+runtime   `typing-extensions`_      Used for backporting runtime support of certain type hints on older Python versions
 runtime   `urllib3`_                Used internally by `requests`_, defined as direct dependency
 runtime   `websocket-client`_       Used for making websocket connections
 
@@ -402,6 +405,9 @@ optional  `FFmpeg`_                 Required for `muxing`_ multiple video/audio/
 .. _pycryptodome: https://pycryptodome.readthedocs.io/en/latest/
 .. _PySocks: https://github.com/Anorov/PySocks
 .. _requests: https://requests.readthedocs.io/en/latest/
+.. _trio: https://trio.readthedocs.io/en/stable/
+.. _trio-websocket: https://trio-websocket.readthedocs.io/en/stable/
+.. _typing-extensions: https://typing-extensions.readthedocs.io/en/stable/
 .. _urllib3: https://urllib3.readthedocs.io/en/stable/
 .. _websocket-client: https://pypi.org/project/websocket-client/
 

@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Twitch - Streamlink 5.5.1 documentation">
+  <meta property="og:title" content="Twitch - Streamlink 6.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Twitch - Streamlink 5.5.1 documentation</title>
+        <title>Twitch - Streamlink 6.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Streamlink 5.5.1 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Streamlink 6.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1</pre>
+  <pre class="sidebar-versions-current">6.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins/twitch.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli/plugins/twitch.html" class="">Latest</a></dd>
@@ -200,9 +200,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../issues.html">Common issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deprecations.html">Deprecations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrations.html">Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developing.html">Developing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api_guide.html">API Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/streamlink.html">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/session.html">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/plugin.html">Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/stream.html">Stream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/webbrowser.html">Webbrowser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../donate.html">Donating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../applications.html">Streamlink Applications</a></li>
@@ -323,6 +333,27 @@ logic has seen several iterations since then, with the latest big overhaul in
 parameters can be set via <a class="reference internal" href="../../cli.html#cmdoption-twitch-access-token-param"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-access-token-param</span></code></a> that can prevent ads from being embedded into the stream,
 either <a class="reference internal" href="#authentication"><span class="std std-ref">authentication data</span></a> or other data discovered by the community.</p>
 </section>
+<section id="client-integrity-token">
+<h2>Client-integrity token<a class="headerlink" href="#client-integrity-token" title="Permalink to this heading">#</a></h2>
+<p>In 2022, Twitch added client-integrity tokens to their web player when getting streaming access tokens. These client-integrity
+tokens are calculated using sophisticated JavaScript code which is infeasible to re-implement, as it not only involves
+obfuscated code that's much harder to reverse engineer and to extract data from, but also a custom JavaScript virtual machine
+implementation where bytecode gets interpreted which is encoded prior to that using randomization patterns. The interpreted
+bytecode performs various checks of the user's web browser and its features, and then determines whether the client is legit
+or not. The goal is to prevent bots and third party applications from accessing streams.</p>
+<p>Client-integrity tokens were treated as an optional request parameter when getting streaming access tokens.
+This changed on 2023-05-31 when Twitch made them a requirement, and it broke Streamlink's Twitch plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/issues/5370">#5370</a>).</p>
+<p>Since the only sensible solution for Streamlink to calculate client-integrity tokens was using a web browser, a new
+implementation was needed which could automate that. So in <code class="docutils literal notranslate"><span class="pre">6.0.0</span></code> the
+<a class="reference internal" href="../../api/webbrowser.html#webbrowser"><span class="std std-ref">streamlink.webbrowser</span></a> API was implemented, which requires a Chromium-based web browser being
+installed on the user's system. See the <a class="reference internal" href="../../cli.html#cmdoption-webbrowser"><code class="xref std std-option docutils literal notranslate"><span class="pre">--webbrowser</span></code></a> and related CLI arguments for more details.</p>
+<p>However, a couple of days after Twitch made these changes, they reverted the requirement again, but in order for Streamlink
+to be prepared for such requirements to be turned on again, the webbrowser API was added nevertheless. The decision was made
+to only use the webbrowser API when getting an access token fails, so launching a web browser unnecessarily could be avoided,
+even though it would run invisibly in &quot;headless mode&quot;. Should client-integrity tokens be made a requirement again, then
+Streamlink will cache the generated token in the plugin cache after launching the web browser once. This cache can be cleared
+using the <a class="reference internal" href="../../cli.html#cmdoption-twitch-purge-client-integrity"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-purge-client-integrity</span></code></a> option.</p>
+</section>
 <section id="low-latency-streaming">
 <h2>Low latency streaming<a class="headerlink" href="#low-latency-streaming" title="Permalink to this heading">#</a></h2>
 <p>Low latency streaming on Twitch can be enabled by setting the <a class="reference internal" href="../../cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> argument and (optionally)
@@ -415,6 +446,7 @@ without causing any stuttering, e.g. when running out out available data.</p>
 <li><a class="reference internal" href="#">Twitch</a><ul>
 <li><a class="reference internal" href="#authentication">Authentication</a></li>
 <li><a class="reference internal" href="#embedded-ads">Embedded ads</a></li>
+<li><a class="reference internal" href="#client-integrity-token">Client-integrity token</a></li>
 <li><a class="reference internal" href="#low-latency-streaming">Low latency streaming</a><ul>
 <li><a class="reference internal" href="#player-buffer-tweaks">Player buffer tweaks</a></li>
 </ul>

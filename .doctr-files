@@ -3,6 +3,13 @@
 ./_images/icon-python.svg
 ./_images/icon.svg
 ./_sources/api.rst.txt
+./_sources/api/exceptions.rst.txt
+./_sources/api/options.rst.txt
+./_sources/api/plugin.rst.txt
+./_sources/api/session.rst.txt
+./_sources/api/stream.rst.txt
+./_sources/api/streamlink.rst.txt
+./_sources/api/webbrowser.rst.txt
 ./_sources/api_guide.rst.txt
 ./_sources/applications.rst.txt
 ./_sources/changelog.md.txt
@@ -22,6 +29,7 @@
 ./_sources/index.rst.txt
 ./_sources/install.rst.txt
 ./_sources/issues.rst.txt
+./_sources/migrations.rst.txt
 ./_sources/players.rst.txt
 ./_sources/plugins.rst.txt
 ./_sources/thirdparty.rst.txt
@@ -60,6 +68,13 @@
 ./_static/styles/furo.css
 ./_static/styles/furo.css.map
 ./api.html
+./api/exceptions.html
+./api/options.html
+./api/plugin.html
+./api/session.html
+./api/stream.html
+./api/streamlink.html
+./api/webbrowser.html
 ./api_guide.html
 ./applications.html
 ./changelog.html
@@ -80,6 +95,7 @@
 ./index.html
 ./install.html
 ./issues.html
+./migrations.html
 ./objects.inv
 ./players.html
 ./plugins.html

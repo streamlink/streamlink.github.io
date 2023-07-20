@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Installation - Streamlink 5.5.1 documentation">
+  <meta property="og:title" content="Installation - Streamlink 6.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Installation - Streamlink 5.5.1 documentation</title>
+        <title>Installation - Streamlink 6.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.5.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1</pre>
+  <pre class="sidebar-versions-current">6.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/install.html" class="">Latest</a></dd>
@@ -200,9 +200,19 @@
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrations.html">Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/streamlink.html">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/session.html">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/plugin.html">Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html">Stream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html">Webbrowser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a></li>
@@ -384,7 +394,7 @@
 <tr class="row-even"><td><p>Python pip</p></td>
 <td><p>See the <a class="reference internal" href="#id4">PyPI package and source code</a> section below</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.archlinux.org/packages/community/any/streamlink/">Arch Linux</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://archlinux.org/packages/extra/any/streamlink/">Arch Linux</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>streamlink
 </pre></div>
 </div>
@@ -639,11 +649,11 @@ Streamlink defines a <a class="reference external" href="https://github.com/stre
 <tbody>
 <tr class="row-even"><td><p>python</p></td>
 <td><p><a class="reference external" href="https://www.python.org/">Python</a></p></td>
-<td><p>At least version <strong>3.7</strong>.</p></td>
+<td><p>At least version <strong>3.8</strong>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>build</p></td>
 <td><p><a class="reference external" href="https://setuptools.pypa.io/en/latest/">setuptools</a></p></td>
-<td><p>At least version <strong>45.0.0</strong>. <br /> Used as build backend.</p></td>
+<td><p>At least version <strong>64.0.0</strong>. <br /> Used as build backend.</p></td>
 </tr>
 <tr class="row-even"><td><p>build</p></td>
 <td><p><a class="reference external" href="https://wheel.readthedocs.io/en/stable/">wheel</a></p></td>
@@ -683,14 +693,26 @@ when building, or when running in an editable install.</p></td>
 <td><p>Used for making any kind of HTTP/HTTPS request</p></td>
 </tr>
 <tr class="row-odd"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://trio.readthedocs.io/en/stable/">trio</a></p></td>
+<td><p>Used for async concurrency and I/O in some parts of Streamlink</p></td>
+</tr>
+<tr class="row-even"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://trio-websocket.readthedocs.io/en/stable/">trio-websocket</a></p></td>
+<td><p>Used for WebSocket connections on top of the async trio framework</p></td>
+</tr>
+<tr class="row-odd"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://typing-extensions.readthedocs.io/en/stable/">typing-extensions</a></p></td>
+<td><p>Used for backporting runtime support of certain type hints on older Python versions</p></td>
+</tr>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://urllib3.readthedocs.io/en/stable/">urllib3</a></p></td>
 <td><p>Used internally by <a class="reference external" href="https://requests.readthedocs.io/en/latest/">requests</a>, defined as direct dependency</p></td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pypi.org/project/websocket-client/">websocket-client</a></p></td>
 <td><p>Used for making websocket connections</p></td>
 </tr>
-<tr class="row-odd"><td><p>optional</p></td>
+<tr class="row-even"><td><p>optional</p></td>
 <td><p><a class="reference external" href="https://www.ffmpeg.org/">FFmpeg</a></p></td>
 <td><p>Required for <a class="reference external" href="https://en.wikipedia.org/wiki/Multiplexing#Video_processing">muxing</a> multiple video/audio/subtitle streams into a single output stream.</p>
 <blockquote>

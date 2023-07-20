@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="API Guide" href="api_guide.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Streamlink" href="api/streamlink.html" /><link rel="prev" title="API Guide" href="api_guide.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="API Reference - Streamlink 5.5.1 documentation">
+  <meta property="og:title" content="API Reference - Streamlink 6.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>API Reference - Streamlink 5.5.1 documentation</title>
+        <title>API Reference - Streamlink 6.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 5.5.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">5.5.1</pre>
+  <pre class="sidebar-versions-current">6.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api.html" class="">Latest</a></dd>
@@ -200,9 +200,19 @@
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Common issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrations.html">Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_guide.html">API Guide</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Reference</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/streamlink.html">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/session.html">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/plugin.html">Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html">Stream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html">Webbrowser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a></li>
@@ -251,7 +261,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -261,1077 +271,151 @@
   
   <section id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">#</a></h1>
-<p>This is a reference of all the available API methods in Streamlink.</p>
-<section id="streamlink">
-<h2>Streamlink<a class="headerlink" href="#streamlink" title="Permalink to this heading">#</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.streams">
-<span class="sig-prename descclassname"><span class="pre">streamlink.</span></span><span class="sig-name descname"><span class="pre">streams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.streams" title="Permalink to this definition">#</a></dt>
-<dd><p>Initializes an empty Streamlink session, attempts to find a plugin and extracts streams from the URL if a plugin was found.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p></li>
-<li><p><strong>params</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.Streamlink.streams" title="streamlink.Streamlink.streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.Streamlink.streams()</span></code></a></p></li>
+<p>This is an incomplete reference of the relevant Streamlink APIs.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/streamlink.html">Streamlink</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/streamlink.html#streamlink.streams"><code class="docutils literal notranslate"><span class="pre">streams()</span></code></a></li>
 </ul>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> of stream names and <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.stream.Stream</span></code></a> instances</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="session">
-<h2>Session<a class="headerlink" href="#session" title="Permalink to this heading">#</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.Streamlink">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.</span></span><span class="sig-name descname"><span class="pre">Streamlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>The Streamlink session is used to load and resolve plugins, and to store options used by plugins and stream implementations.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>options</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Custom options</p>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.Streamlink.http">
-<span class="sig-name descname"><span class="pre">http</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">HTTPSession</span></em><a class="headerlink" href="#streamlink.Streamlink.http" title="Permalink to this definition">#</a></dt>
-<dd><p>An instance of Streamlink's <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session" title="(in Requests v2.30.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">requests.Session</span></code></a> subclass.
-Used for any kind of HTTP request made by plugin and stream implementations.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.Streamlink.set_option">
-<span class="sig-name descname"><span class="pre">set_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.set_option" title="Permalink to this definition">#</a></dt>
-<dd><p>Sets general options used by plugins and streams originating from this session object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>key</strong> (<em>str</em>) -- key of the option</p></li>
-<li><p><strong>value</strong> (<em>Any</em>) -- value to set the option to</p></li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/options.html">Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/options.html#streamlink.options.Options"><code class="docutils literal notranslate"><span class="pre">Options</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/options.html#streamlink.options.Options.clear"><code class="docutils literal notranslate"><span class="pre">Options.clear()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/options.html#streamlink.options.Options.get"><code class="docutils literal notranslate"><span class="pre">Options.get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/options.html#streamlink.options.Options.get_explicit"><code class="docutils literal notranslate"><span class="pre">Options.get_explicit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/options.html#streamlink.options.Options.set"><code class="docutils literal notranslate"><span class="pre">Options.set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/options.html#streamlink.options.Options.set_explicit"><code class="docutils literal notranslate"><span class="pre">Options.set_explicit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/options.html#streamlink.options.Options.update"><code class="docutils literal notranslate"><span class="pre">Options.update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/options.html#streamlink.options.Options._MAP_GETTERS"><code class="docutils literal notranslate"><span class="pre">Options._MAP_GETTERS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/options.html#streamlink.options.Options._MAP_SETTERS"><code class="docutils literal notranslate"><span class="pre">Options._MAP_SETTERS</span></code></a></li>
 </ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-<p><strong>Available options</strong>:</p>
-<div class="table-wrapper docutils container">
-<table class="docutils align-default" style="width: 100%">
-<thead>
-<tr class="row-odd"><th class="head"><p>key</p></th>
-<th class="head"><p>type</p></th>
-<th class="head"><p>default</p></th>
-<th class="head"><p>description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>user-input-requester</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">UserInputRequester</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Instance of <code class="docutils literal notranslate"><span class="pre">UserInputRequester</span></code> to collect input from the user at runtime</p></td>
-</tr>
-<tr class="row-odd"><td><p>locale</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
-<td><p><em>system locale</em></p></td>
-<td><p>Locale setting, in the RFC 1766 format,
-e.g. <code class="docutils literal notranslate"><span class="pre">en_US</span></code> or <code class="docutils literal notranslate"><span class="pre">es_ES</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>interface</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Network interface address</p></td>
-</tr>
-<tr class="row-odd"><td><p>ipv4</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>Resolve address names to IPv4 only, overrides <code class="docutils literal notranslate"><span class="pre">ipv6</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>ipv6</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>Resolve address names to IPv6 only, overrides <code class="docutils literal notranslate"><span class="pre">ipv4</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>http-proxy</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Proxy address for all HTTP/HTTPS requests</p></td>
-</tr>
-<tr class="row-even"><td><p>https-proxy <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Proxy address for all HTTP/HTTPS requests</p></td>
-</tr>
-<tr class="row-odd"><td><p>http-cookies</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">str]</span> <span class="pre">|</span> <span class="pre">str</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
-<td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> or a semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> delimited <code class="docutils literal notranslate"><span class="pre">str</span></code> of cookies to add to each HTTP/HTTPS request,
-e.g. <code class="docutils literal notranslate"><span class="pre">foo=bar;baz=qux</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>http-headers</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">str]</span> <span class="pre">|</span> <span class="pre">str</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
-<td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> or a semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> delimited <code class="docutils literal notranslate"><span class="pre">str</span></code> of headers to add to each HTTP/HTTPS request,
-e.g. <code class="docutils literal notranslate"><span class="pre">foo=bar;baz=qux</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>http-query-params</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">str]</span> <span class="pre">|</span> <span class="pre">str</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
-<td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> or an ampersand <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> delimited <code class="docutils literal notranslate"><span class="pre">str</span></code> of query string parameters to add to each HTTP/HTTPS request,
-e.g. <code class="docutils literal notranslate"><span class="pre">foo=bar&amp;baz=qux</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>http-trust-env</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
-<td><p>Trust HTTP settings set in the environment,
-such as environment variables (<code class="docutils literal notranslate"><span class="pre">HTTP_PROXY</span></code>, etc.) and <code class="docutils literal notranslate"><span class="pre">~/.netrc</span></code> authentication</p></td>
-</tr>
-<tr class="row-odd"><td><p>http-ssl-verify</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
-<td><p>Verify TLS/SSL certificates</p></td>
-</tr>
-<tr class="row-even"><td><p>http-disable-dh</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>Disable TLS/SSL Diffie-Hellman key exchange</p></td>
-</tr>
-<tr class="row-odd"><td><p>http-ssl-cert</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">tuple</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>TLS/SSL certificate to use, can be either a .pem file (<code class="docutils literal notranslate"><span class="pre">str</span></code>) or a .crt/.key pair (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</p></td>
-</tr>
-<tr class="row-even"><td><p>http-timeout</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
-<td><p>General timeout used by all HTTP/HTTPS requests, except the ones covered by other options</p></td>
-</tr>
-<tr class="row-odd"><td><p>ringbuffer-size</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">16777216</span></code> (16 MiB)</p></td>
-<td><p>The size of the internal ring buffer used by most stream types</p></td>
-</tr>
-<tr class="row-even"><td><p>mux-subtitles</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>Make supported plugins mux available subtitles into the output stream</p></td>
-</tr>
-<tr class="row-odd"><td><p>stream-segment-attempts</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>Number of segment download attempts in segmented streams</p></td>
-</tr>
-<tr class="row-even"><td><p>stream-segment-threads</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-<td><p>The size of the thread pool used to download segments in parallel</p></td>
-</tr>
-<tr class="row-odd"><td><p>stream-segment-timeout</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
-<td><p>Segment connect and read timeout</p></td>
-</tr>
-<tr class="row-even"><td><p>stream-timeout</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.0</span></code></p></td>
-<td><p>Timeout for reading data from stream</p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-live-edge</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>Number of segments from the live position of the HLS stream to start reading</p></td>
-</tr>
-<tr class="row-even"><td><p>hls-live-restart</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>Skip to the beginning of a live HLS stream, or as far back as possible</p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-start-offset</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
-<td><p>Number of seconds to skip from the beginning of the HLS stream,
-interpreted as a negative offset for livestreams</p></td>
-</tr>
-<tr class="row-even"><td><p>hls-duration</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Limit the HLS stream playback duration, rounded to the nearest HLS segment</p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-playlist-reload-attempts</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>Max number of HLS playlist reload attempts before giving up</p></td>
-</tr>
-<tr class="row-even"><td><p>hls-playlist-reload-time</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code></p></td>
-<td><p>Override the HLS playlist reload time, either in seconds (<code class="docutils literal notranslate"><span class="pre">float</span></code>) or as a <code class="docutils literal notranslate"><span class="pre">str</span></code> keyword:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">segment</span></code>: duration of the last segment</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">live-edge</span></code>: sum of segment durations of the <code class="docutils literal notranslate"><span class="pre">hls-live-edge</span></code> value minus one</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code>: the playlist's target duration</p></li>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/options.html#streamlink.options.Argument"><code class="docutils literal notranslate"><span class="pre">Argument</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/options.html#streamlink.options.Arguments"><code class="docutils literal notranslate"><span class="pre">Arguments</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/options.html#streamlink.options.Arguments.requires"><code class="docutils literal notranslate"><span class="pre">Arguments.requires()</span></code></a></li>
 </ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>hls-segment-stream-data</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>Stream data of HLS segment downloads to the output instead of waiting for the full response</p></td>
-</tr>
-<tr class="row-even"><td><p>hls-segment-ignore-names</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">List[str]</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
-<td><p>List of HLS segment names without file endings which should get filtered out</p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-segment-key-uri</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Override the address of the encrypted HLS stream's key,
-with support for the following string template variables:
-<code class="docutils literal notranslate"><span class="pre">{url}</span></code>, <code class="docutils literal notranslate"><span class="pre">{scheme}</span></code>, <code class="docutils literal notranslate"><span class="pre">{netloc}</span></code>, <code class="docutils literal notranslate"><span class="pre">{path}</span></code>, <code class="docutils literal notranslate"><span class="pre">{query}</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>hls-audio-select</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">List[str]</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
-<td><p>Select a specific audio source or sources when multiple audio sources are available,
-by language code or name, or <code class="docutils literal notranslate"><span class="pre">&quot;*&quot;</span></code> (asterisk)</p></td>
-</tr>
-<tr class="row-odd"><td><p>dash-manifest-reload-attempts</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>Max number of DASH manifest reload attempts before giving up</p></td>
-</tr>
-<tr class="row-even"><td><p>hls-segment-attempts <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-segment-threads <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-threads</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>hls-segment-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-timeout</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>dash-segment-attempts <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>dash-segment-threads <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-threads</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>dash-segment-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-timeout</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>dash-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>http-stream-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>ffmpeg-ffmpeg</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Override for the <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>/<code class="docutils literal notranslate"><span class="pre">ffmpeg.exe</span></code> binary path,
-which by default gets looked up via the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> env var</p></td>
-</tr>
-<tr class="row-even"><td><p>ffmpeg-no-validation</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>Disable FFmpeg validation and version logging</p></td>
-</tr>
-<tr class="row-odd"><td><p>ffmpeg-verbose</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>Append FFmpeg's stderr stream to the Python's stderr stream</p></td>
-</tr>
-<tr class="row-even"><td><p>ffmpeg-verbose-path</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Write FFmpeg's stderr stream to the filesystem at the specified path</p></td>
-</tr>
-<tr class="row-odd"><td><p>ffmpeg-fout</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Set the output format of muxed streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;matroska&quot;</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>ffmpeg-video-transcode</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;h264&quot;</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>ffmpeg-audio-transcode</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;aac&quot;</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>ffmpeg-copyts</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>Don't shift input stream timestamps when muxing streams</p></td>
-</tr>
-<tr class="row-odd"><td><p>ffmpeg-start-at-zero</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
-<td><p>When <code class="docutils literal notranslate"><span class="pre">ffmpeg-copyts</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, shift timestamps to zero</p></td>
-</tr>
-</tbody>
-</table>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/session.html">Session</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink"><code class="docutils literal notranslate"><span class="pre">Streamlink</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink.http"><code class="docutils literal notranslate"><span class="pre">Streamlink.http</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink.options"><code class="docutils literal notranslate"><span class="pre">Streamlink.options</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink.set_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.set_option()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink.get_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_option()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink.resolve_url"><code class="docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink.resolve_url_no_redirect"><code class="docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink.streams"><code class="docutils literal notranslate"><span class="pre">Streamlink.streams()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink.get_plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_plugins()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/session.html#streamlink.session.Streamlink.load_plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.load_plugins()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/plugin.html">Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin"><code class="docutils literal notranslate"><span class="pre">Plugin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.matchers"><code class="docutils literal notranslate"><span class="pre">Plugin.matchers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.arguments"><code class="docutils literal notranslate"><span class="pre">Plugin.arguments</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.matcher"><code class="docutils literal notranslate"><span class="pre">Plugin.matcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.match"><code class="docutils literal notranslate"><span class="pre">Plugin.match</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.id"><code class="docutils literal notranslate"><span class="pre">Plugin.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.title"><code class="docutils literal notranslate"><span class="pre">Plugin.title</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.author"><code class="docutils literal notranslate"><span class="pre">Plugin.author</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.category"><code class="docutils literal notranslate"><span class="pre">Plugin.category</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.options"><code class="docutils literal notranslate"><span class="pre">Plugin.options</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.matches"><code class="docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.url"><code class="docutils literal notranslate"><span class="pre">Plugin.url</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.streams"><code class="docutils literal notranslate"><span class="pre">Plugin.streams()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin._get_streams"><code class="docutils literal notranslate"><span class="pre">Plugin._get_streams()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.save_cookies"><code class="docutils literal notranslate"><span class="pre">Plugin.save_cookies()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.load_cookies"><code class="docutils literal notranslate"><span class="pre">Plugin.load_cookies()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.clear_cookies"><code class="docutils literal notranslate"><span class="pre">Plugin.clear_cookies()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/plugin.html#plugin-decorators">Plugin decorators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.pluginmatcher"><code class="docutils literal notranslate"><span class="pre">pluginmatcher()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.pluginargument"><code class="docutils literal notranslate"><span class="pre">pluginargument()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/stream.html">Stream</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.Stream"><code class="docutils literal notranslate"><span class="pre">Stream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.Stream.open"><code class="docutils literal notranslate"><span class="pre">Stream.open()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.MuxedStream"><code class="docutils literal notranslate"><span class="pre">MuxedStream</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream"><code class="docutils literal notranslate"><span class="pre">HTTPStream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream.args"><code class="docutils literal notranslate"><span class="pre">HTTPStream.args</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream.url"><code class="docutils literal notranslate"><span class="pre">HTTPStream.url</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream"><code class="docutils literal notranslate"><span class="pre">HLSStream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream.parse_variant_playlist"><code class="docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">HLSStream.url_master</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.MuxedHLSStream"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.MuxedHLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream.url_master</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html#streamlink.stream.DASHStream"><code class="docutils literal notranslate"><span class="pre">DASHStream</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/stream.html#streamlink.stream.DASHStream.parse_manifest"><code class="docutils literal notranslate"><span class="pre">DASHStream.parse_manifest()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/webbrowser.html">Webbrowser</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClient"><code class="docutils literal notranslate"><span class="pre">CDPClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClient.launch"><code class="docutils literal notranslate"><span class="pre">CDPClient.launch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClient.session"><code class="docutils literal notranslate"><span class="pre">CDPClient.session()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession"><code class="docutils literal notranslate"><span class="pre">CDPClientSession</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.add_request_handler"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.add_request_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.alter_request"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.alter_request()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.continue_request"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.continue_request()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.evaluate"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.evaluate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.fail_request"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.fail_request()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.fulfill_request"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.fulfill_request()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.loaded"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.loaded()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.navigate"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.navigate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CMRequestProxy"><code class="docutils literal notranslate"><span class="pre">CMRequestProxy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPBase"><code class="docutils literal notranslate"><span class="pre">CDPBase</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPBase.listen"><code class="docutils literal notranslate"><span class="pre">CDPBase.listen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPBase.send"><code class="docutils literal notranslate"><span class="pre">CDPBase.send()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPConnection"><code class="docutils literal notranslate"><span class="pre">CDPConnection</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPConnection.aclose"><code class="docutils literal notranslate"><span class="pre">CDPConnection.aclose()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPConnection.create"><code class="docutils literal notranslate"><span class="pre">CDPConnection.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPConnection.new_target"><code class="docutils literal notranslate"><span class="pre">CDPConnection.new_target()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPSession"><code class="docutils literal notranslate"><span class="pre">CDPSession</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPEventListener"><code class="docutils literal notranslate"><span class="pre">CDPEventListener</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.cdp.connection.CDPEventListener.receive"><code class="docutils literal notranslate"><span class="pre">CDPEventListener.receive()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.webbrowser.Webbrowser"><code class="docutils literal notranslate"><span class="pre">Webbrowser</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html#streamlink.webbrowser.chromium.ChromiumWebbrowser"><code class="docutils literal notranslate"><span class="pre">ChromiumWebbrowser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/exceptions.html">Exceptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html#streamlink.exceptions.StreamlinkError"><code class="docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html#streamlink.exceptions.PluginError"><code class="docutils literal notranslate"><span class="pre">PluginError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html#streamlink.exceptions.FatalPluginError"><code class="docutils literal notranslate"><span class="pre">FatalPluginError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html#streamlink.exceptions.NoPluginError"><code class="docutils literal notranslate"><span class="pre">NoPluginError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html#streamlink.exceptions.NoStreamsError"><code class="docutils literal notranslate"><span class="pre">NoStreamsError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html#streamlink.exceptions.StreamError"><code class="docutils literal notranslate"><span class="pre">StreamError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html#streamlink.webbrowser.exceptions.WebbrowserError"><code class="docutils literal notranslate"><span class="pre">WebbrowserError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/exceptions.html#streamlink.webbrowser.cdp.exceptions.CDPError"><code class="docutils literal notranslate"><span class="pre">CDPError</span></code></a></li>
+</ul>
+</li>
+</ul>
 </div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.Streamlink.get_option">
-<span class="sig-name descname"><span class="pre">get_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.get_option" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the current value of the specified option.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) -- key of the option</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Any</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.Streamlink.set_plugin_option">
-<span class="sig-name descname"><span class="pre">set_plugin_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.set_plugin_option" title="Permalink to this definition">#</a></dt>
-<dd><p>Sets plugin specific options used by plugins originating from this session object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>plugin</strong> (<em>str</em>) -- name of the plugin</p></li>
-<li><p><strong>key</strong> (<em>str</em>) -- key of the option</p></li>
-<li><p><strong>value</strong> (<em>Any</em>) -- value to set the option to</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.Streamlink.get_plugin_option">
-<span class="sig-name descname"><span class="pre">get_plugin_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.get_plugin_option" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the current value of the plugin specific option.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>plugin</strong> (<em>str</em>) -- name of the plugin</p></li>
-<li><p><strong>key</strong> (<em>str</em>) -- key of the option</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Any</em> | None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.Streamlink.resolve_url">
-<span class="sig-name descname"><span class="pre">resolve_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">follow_redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url" title="Permalink to this definition">#</a></dt>
-<dd><p>Attempts to find a plugin that can use this URL.</p>
-<p>The default protocol (https) will be prefixed to the URL if not specified.</p>
-<p>Return values of this method are cached via <code class="xref py py-meth docutils literal notranslate"><span class="pre">functools.lru_cache()</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p></li>
-<li><p><strong>follow_redirect</strong> (<em>bool</em>) -- follow redirects</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.Streamlink.resolve_url_no_redirect">
-<span class="sig-name descname"><span class="pre">resolve_url_no_redirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.resolve_url_no_redirect" title="Permalink to this definition">#</a></dt>
-<dd><p>Attempts to find a plugin that can use this URL.</p>
-<p>The default protocol (https) will be prefixed to the URL if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.Streamlink.streams">
-<span class="sig-name descname"><span class="pre">streams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.streams" title="Permalink to this definition">#</a></dt>
-<dd><p>Attempts to find a plugin and extracts streams from the <em>url</em> if a plugin was found.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p></li>
-<li><p><strong>params</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.plugin.Plugin.streams" title="streamlink.plugin.Plugin.streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.plugin.Plugin.streams()</span></code></a></p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> of stream names and <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.stream.Stream</span></code></a> instances</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.Streamlink.get_plugins">
-<span class="sig-name descname"><span class="pre">get_plugins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.get_plugins" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the loaded plugins for the session.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.Streamlink.load_plugins">
-<span class="sig-name descname"><span class="pre">load_plugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.Streamlink.load_plugins" title="Permalink to this definition">#</a></dt>
-<dd><p>Attempt to load plugins from the path specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) -- full path to a directory where to look for plugins</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>success</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="plugins">
-<h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this heading">#</a></h2>
-<section id="module-streamlink.plugin">
-<span id="plugin"></span><h3>Plugin<a class="headerlink" href="#module-streamlink.plugin" title="Permalink to this heading">#</a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">Plugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Plugin base class for retrieving streams and metadata from the URL specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> -- The Streamlink session instance</p></li>
-<li><p><strong>url</strong> -- The input URL used for finding and resolving streams</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.matchers">
-<span class="sig-name descname"><span class="pre">matchers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Matchers</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matchers" title="Permalink to this definition">#</a></dt>
-<dd><p>The list of plugin matchers (URL pattern + priority + optional name).
-This list supports matcher lookups both by matcher index, as well as matcher name, if defined.</p>
-<p>Use the <a class="reference internal" href="#streamlink.plugin.pluginmatcher" title="streamlink.plugin.pluginmatcher"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginmatcher()</span></code></a> decorator to initialize plugin matchers.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.arguments">
-<span class="sig-name descname"><span class="pre">arguments</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#streamlink.options.Arguments" title="streamlink.options.Arguments"><span class="pre">Arguments</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.arguments" title="Permalink to this definition">#</a></dt>
-<dd><p>The plugin's <a class="reference internal" href="#streamlink.options.Arguments" title="streamlink.options.Arguments"><code class="xref py py-class docutils literal notranslate"><span class="pre">Arguments</span></code></a> collection.</p>
-<p>Use the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument()</span></code></a> decorator to initialize plugin arguments.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.matcher">
-<span class="sig-name descname"><span class="pre">matcher</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Pattern</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matcher" title="Permalink to this definition">#</a></dt>
-<dd><p>A reference to the compiled <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Pattern</span></code> of the first matching matcher</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.match">
-<span class="sig-name descname"><span class="pre">match</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Match</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.match" title="Permalink to this definition">#</a></dt>
-<dd><p>A reference to the <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Match</span></code> result of the first matching matcher</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.id">
-<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.id" title="Permalink to this definition">#</a></dt>
-<dd><p>Metadata 'id' attribute: unique stream ID, etc.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.title">
-<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.title" title="Permalink to this definition">#</a></dt>
-<dd><p>Metadata 'title' attribute: the stream's short descriptive title</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.author">
-<span class="sig-name descname"><span class="pre">author</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.author" title="Permalink to this definition">#</a></dt>
-<dd><p>Metadata 'author' attribute: the channel or broadcaster name, etc.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.category">
-<span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.category" title="Permalink to this definition">#</a></dt>
-<dd><p>Metadata 'category' attribute: name of a game being played, a music genre, etc.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.matches">
-<span class="sig-name descname"><span class="pre">matches</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Matches</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matches" title="Permalink to this definition">#</a></dt>
-<dd><p>A list of optional <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Match</span></code> results of all defined matchers.
-This list supports match lookups both by the respective matcher index, as well as matcher name, if defined.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.url">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.url" title="Permalink to this definition">#</a></dt>
-<dd><p>The plugin's input URL.
-Setting a new value will automatically update the <a class="reference internal" href="#streamlink.plugin.Plugin.matches" title="streamlink.plugin.Plugin.matches"><code class="xref py py-attr docutils literal notranslate"><span class="pre">matches</span></code></a>, <a class="reference internal" href="#streamlink.plugin.Plugin.matcher" title="streamlink.plugin.Plugin.matcher"><code class="xref py py-attr docutils literal notranslate"><span class="pre">matcher</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.match" title="streamlink.plugin.Plugin.match"><code class="xref py py-attr docutils literal notranslate"><span class="pre">match</span></code></a> data.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.streams">
-<span class="sig-name descname"><span class="pre">streams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorting_excludes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.streams" title="Permalink to this definition">#</a></dt>
-<dd><p>Attempts to extract available streams.</p>
-<p>Returns a <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> containing the streams, where the key is
-the name of the stream (most commonly the quality name), with the value
-being a <code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code> instance.</p>
-<p>The result can contain the synonyms <strong>best</strong> and <strong>worst</strong> which
-point to the streams which are likely to be of highest and
-lowest quality respectively.</p>
-<p>If multiple streams with the same name are found, the order of
-streams specified in <em>stream_types</em> will determine which stream
-gets to keep the name while the rest will be renamed to
-&quot;&lt;name&gt;_&lt;stream type&gt;&quot;.</p>
-<p>The synonyms can be fine-tuned with the <em>sorting_excludes</em>
-parameter, which can be one of these types:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>A list of filter expressions in the format
-<code class="docutils literal notranslate"><span class="pre">[operator]&lt;value&gt;</span></code>. For example the filter &quot;&gt;480p&quot; will
-exclude streams ranked higher than &quot;480p&quot; from the list
-used in the synonyms ranking. Valid operators are <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>
-and <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>. If no operator is specified then equality will be tested.</p></li>
-<li><p>A function that is passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">filter()</span></code> with a list of
-stream names as input.</p></li>
-</ul>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>stream_types</strong> -- A list of stream types to return</p></li>
-<li><p><strong>sorting_excludes</strong> -- Specify which streams to exclude from the best/worst synonyms</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> of stream names and <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.stream.Stream</span></code></a> instances</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin._get_streams">
-<span class="sig-name descname"><span class="pre">_get_streams</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin._get_streams" title="Permalink to this definition">#</a></dt>
-<dd><p>Implement the stream and metadata retrieval here.</p>
-<p>Needs to return either a dict of <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.stream.Stream</span></code></a> instances mapped by stream name, or needs to act
-as a generator which yields tuples of stream names and <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.stream.Stream</span></code></a> instances.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.save_cookies">
-<span class="sig-name descname"><span class="pre">save_cookies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookie_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_expires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">604800</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.save_cookies" title="Permalink to this definition">#</a></dt>
-<dd><p>Store the cookies from <code class="xref py py-attr docutils literal notranslate"><span class="pre">session.http</span></code> in the plugin cache until they expire. The cookies can be filtered
-by supplying a filter method. e.g. <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">c:</span> <span class="pre">&quot;auth&quot;</span> <span class="pre">in</span> <span class="pre">c.name</span></code>. If no expiry date is given in the
-cookie then the <code class="docutils literal notranslate"><span class="pre">default_expires</span></code> value will be used.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cookie_filter</strong> (<em>Callable</em><em>[</em><em>[</em><em>Cookie</em><em>]</em><em>, </em><em>bool</em><em>] </em><em>| </em><em>None</em>) -- a function to filter the cookies</p></li>
-<li><p><strong>default_expires</strong> (<em>int</em>) -- time (in seconds) until cookies with no expiry will expire</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of the saved cookie names</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>List</em>[str]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.load_cookies">
-<span class="sig-name descname"><span class="pre">load_cookies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.load_cookies" title="Permalink to this definition">#</a></dt>
-<dd><p>Load any stored cookies for the plugin that have not expired.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list of the restored cookie names</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>List</em>[str]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.plugin.Plugin.clear_cookies">
-<span class="sig-name descname"><span class="pre">clear_cookies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookie_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.Plugin.clear_cookies" title="Permalink to this definition">#</a></dt>
-<dd><p>Removes all saved cookies for this plugin. To filter the cookies that are deleted
-specify the <code class="docutils literal notranslate"><span class="pre">cookie_filter</span></code> argument (see <a class="reference internal" href="#streamlink.plugin.Plugin.save_cookies" title="streamlink.plugin.Plugin.save_cookies"><code class="xref py py-func docutils literal notranslate"><span class="pre">save_cookies()</span></code></a>).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>cookie_filter</strong> (<em>function</em>) -- a function to filter the cookies</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of the removed cookie names</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>List</em>[str]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="plugin-decorators">
-<h3>Plugin decorators<a class="headerlink" href="#plugin-decorators" title="Permalink to this heading">#</a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.pluginmatcher">
-<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginmatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginmatcher" title="Permalink to this definition">#</a></dt>
-<dd><p>Decorator for plugin URL matchers.</p>
-<p>A matcher consists of a compiled regular expression pattern for the plugin's input URL,
-a priority value and an optional name.
-The priority value determines which plugin gets chosen by
-<a class="reference internal" href="#streamlink.Streamlink.resolve_url" title="streamlink.Streamlink.resolve_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url</span></code></a> if multiple plugins match the input URL.
-The matcher name can be used for accessing it and its matching result when multiple matchers are defined.</p>
-<p>Plugins must at least have one matcher. If multiple matchers are defined, then the first matching one
-according to the order of which they have been defined (top to bottom) will be responsible for setting the
-<a class="reference internal" href="#streamlink.plugin.Plugin.matcher" title="streamlink.plugin.Plugin.matcher"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matcher</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.match" title="streamlink.plugin.Plugin.match"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.match</span></code></a> attributes on the <a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> instance.
-The <a class="reference internal" href="#streamlink.plugin.Plugin.matchers" title="streamlink.plugin.Plugin.matchers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matchers</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.matches" title="streamlink.plugin.Plugin.matches"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a> attributes are affected by all defined matchers,
-and both support referencing matchers and matches by matcher index and name.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-
-<span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
-
-
-<span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;https?://example:1234/(?:foo|bar)/(?P&lt;name&gt;[^/]+)&quot;</span><span class="p">))</span>
-<span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">priority</span><span class="o">=</span><span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    https?://(?:</span>
-<span class="s2">         sitenumberone</span>
-<span class="s2">        |adifferentsite</span>
-<span class="s2">        |somethingelse</span>
-<span class="s2">    )</span>
-<span class="s2">    /.+\.m3u8</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">))</span>
-<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
-    <span class="o">...</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>pattern</strong> (<em>Pattern</em>) -- </p></li>
-<li><p><strong>priority</strong> (<em>int</em>) -- </p></li>
-<li><p><strong>name</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Callable</em>[[<em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]], <em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.pluginargument">
-<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginargument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginargument" title="Permalink to this definition">#</a></dt>
-<dd><p>Decorator for plugin arguments. Takes the same arguments as <a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">streamlink.options.Argument</span></code></a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginargument</span>
-
-
-<span class="nd">@pluginargument</span><span class="p">(</span>
-    <span class="s2">&quot;username&quot;</span><span class="p">,</span>
-    <span class="n">requires</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">],</span>
-    <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;EMAIL&quot;</span><span class="p">,</span>
-    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The username for your account.&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="nd">@pluginargument</span><span class="p">(</span>
-    <span class="s2">&quot;password&quot;</span><span class="p">,</span>
-    <span class="n">sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;PASSWORD&quot;</span><span class="p">,</span>
-    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The password for your account.&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
-    <span class="o">...</span>
-</pre></div>
-</div>
-<p>This will add the <code class="docutils literal notranslate"><span class="pre">--myplugin-username</span></code> and <code class="docutils literal notranslate"><span class="pre">--myplugin-password</span></code> arguments to the CLI,
-assuming the plugin's module name is <code class="docutils literal notranslate"><span class="pre">myplugin</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) -- </p></li>
-<li><p><strong>required</strong> (<em>bool</em>) -- </p></li>
-<li><p><strong>requires</strong> (<em>str</em><em> | </em><em>Sequence</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) -- </p></li>
-<li><p><strong>prompt</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
-<li><p><strong>sensitive</strong> (<em>bool</em>) -- </p></li>
-<li><p><strong>argument_name</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
-<li><p><strong>dest</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
-<li><p><strong>is_global</strong> (<em>bool</em>) -- </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Callable</em>[[<em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]], <em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="module-streamlink.options">
-<span id="plugin-arguments"></span><h3>Plugin arguments<a class="headerlink" href="#module-streamlink.options" title="Permalink to this heading">#</a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.options.Argument">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.options.</span></span><span class="sig-name descname"><span class="pre">Argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Argument" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Accepts most of the parameters accepted by <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code>,
-except that <code class="docutils literal notranslate"><span class="pre">requires</span></code> is a special case which is only enforced if the plugin is in use.
-In addition, the <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter is the name relative to the plugin name, but can be overridden by <code class="docutils literal notranslate"><span class="pre">argument_name</span></code>.</p>
-<p>Should not be called directly, see the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument</span></code></a> decorator.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) -- Argument name, without leading <code class="docutils literal notranslate"><span class="pre">--</span></code> or plugin name prefixes, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;username&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;password&quot;</span></code>, etc.</p></li>
-<li><p><strong>required</strong> (<em>bool</em>) -- Whether the argument is required for the plugin</p></li>
-<li><p><strong>requires</strong> (<em>str</em><em> | </em><em>Sequence</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em>) -- List of arguments which this argument requires, eg <code class="docutils literal notranslate"><span class="pre">[&quot;password&quot;]</span></code></p></li>
-<li><p><strong>prompt</strong> (<em>str</em><em> | </em><em>None</em>) -- If the argument is required and not set, this prompt message will be shown instead</p></li>
-<li><p><strong>sensitive</strong> (<em>bool</em>) -- Whether the argument is sensitive (passwords, etc.) and should be masked</p></li>
-<li><p><strong>argument_name</strong> (<em>str</em><em> | </em><em>None</em>) -- Custom CLI argument name without plugin name prefix</p></li>
-<li><p><strong>dest</strong> (<em>str</em><em> | </em><em>None</em>) -- Custom plugin option name</p></li>
-<li><p><strong>is_global</strong> (<em>bool</em>) -- Whether this plugin argument refers to a global CLI argument (deprecated)</p></li>
-<li><p><strong>options</strong> -- Arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code>, excluding <code class="docutils literal notranslate"><span class="pre">requires</span></code> and <code class="docutils literal notranslate"><span class="pre">dest</span></code></p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.options.Arguments">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.options.</span></span><span class="sig-name descname"><span class="pre">Arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Arguments" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A collection of <a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a> instances for <a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> classes.</p>
-<p>Should not be called directly, see the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument</span></code></a> decorator.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.options.Arguments.requires">
-<span class="sig-name descname"><span class="pre">requires</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.options.Arguments.requires" title="Permalink to this definition">#</a></dt>
-<dd><p>Find all <a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a> instances required by name</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) -- </p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Iterator</em>[<a class="reference internal" href="#streamlink.options.Argument" title="streamlink.options.Argument"><em>Argument</em></a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-</section>
-<section id="module-streamlink.stream">
-<span id="streams"></span><h2>Streams<a class="headerlink" href="#module-streamlink.stream" title="Permalink to this heading">#</a></h2>
-<p>All streams inherit from the <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a> class.</p>
-<section id="stream">
-<h3>Stream<a class="headerlink" href="#stream" title="Permalink to this heading">#</a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.stream.Stream">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">Stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.Stream" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This is a base class that should be inherited when implementing
-different stream types. Should only be created by plugins.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.stream.Stream.open">
-<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.Stream.open" title="Permalink to this definition">#</a></dt>
-<dd><p>Attempts to open a connection to the stream.
-Returns a file-like object that can be used to read the stream data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.exceptions.StreamError" title="streamlink.exceptions.StreamError"><strong>StreamError</strong></a> -- on failure</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>StreamIO</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="muxedstream">
-<h3>MuxedStream<a class="headerlink" href="#muxedstream" title="Permalink to this heading">#</a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.stream.MuxedStream">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">MuxedStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">substreams</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.MuxedStream" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">TSubstreams</span></code>]</p>
-<p>Muxes multiple streams into one output stream.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
-<li><p><strong>substreams</strong> (<em>TSubstreams</em>) -- Video and/or audio streams</p></li>
-<li><p><strong>options</strong> -- Additional keyword arguments passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">ffmpegmux.FFMPEGMuxer</span></code>.
-Subtitle streams need to be set via the <code class="docutils literal notranslate"><span class="pre">subtitles</span></code> keyword.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="httpstream">
-<h3>HTTPStream<a class="headerlink" href="#httpstream" title="Permalink to this heading">#</a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.stream.HTTPStream">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">HTTPStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HTTPStream" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a></p>
-<p>An HTTP stream using the <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#module-requests" title="(in Requests v2.30.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code></a> library.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
-<li><p><strong>url</strong> (<em>str</em>) -- The URL of the HTTP stream</p></li>
-<li><p><strong>buffered</strong> (<em>bool</em>) -- Wrap stream output in an additional reader-thread</p></li>
-<li><p><strong>args</strong> (<em>Dict</em>) -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.stream.HTTPStream.args">
-<span class="sig-name descname"><span class="pre">args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#streamlink.stream.HTTPStream.args" title="Permalink to this definition">#</a></dt>
-<dd><p>A dict of keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a>, such as method, headers, cookies, etc.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="streamlink.stream.HTTPStream.url">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#streamlink.stream.HTTPStream.url" title="Permalink to this definition">#</a></dt>
-<dd><p>The URL to the stream, prepared by <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#module-requests" title="(in Requests v2.30.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">requests</span></code></a> with parameters read from <a class="reference internal" href="#streamlink.stream.HTTPStream.args" title="streamlink.stream.HTTPStream.args"><code class="xref py py-attr docutils literal notranslate"><span class="pre">args</span></code></a>.</p>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="hlsstream">
-<h3>HLSStream<a class="headerlink" href="#hlsstream" title="Permalink to this heading">#</a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.stream.HLSStream">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">HLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.stream.HTTPStream" title="streamlink.stream.http.HTTPStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPStream</span></code></a></p>
-<p>Implementation of the Apple HTTP Live Streaming protocol.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
-<li><p><strong>url</strong> (<em>str</em>) -- The URL of the HLS playlist</p></li>
-<li><p><strong>url_master</strong> (<em>str</em><em> | </em><em>None</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
-<li><p><strong>multivariant</strong> (<em>M3U8</em><em> | </em><em>None</em>) -- The parsed multivariant playlist</p></li>
-<li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
-<li><p><strong>start_offset</strong> (<em>float</em>) -- Number of seconds to be skipped from the beginning</p></li>
-<li><p><strong>duration</strong> (<em>float</em><em> | </em><em>None</em>) -- Number of seconds until ending the stream</p></li>
-<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.stream.HLSStream.parse_variant_playlist">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_variant_playlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'name'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_streams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">request_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream.parse_variant_playlist" title="Permalink to this definition">#</a></dt>
-<dd><p>Parse a variant playlist and return its streams.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
-<li><p><strong>url</strong> (<em>str</em>) -- The URL of the variant playlist</p></li>
-<li><p><strong>name_key</strong> (<em>str</em>) -- Prefer to use this key as stream name, valid keys are: name, pixels, bitrate</p></li>
-<li><p><strong>name_prefix</strong> (<em>str</em>) -- Add this prefix to the stream names</p></li>
-<li><p><strong>check_streams</strong> (<em>bool</em>) -- Only allow streams that are accessible</p></li>
-<li><p><strong>force_restart</strong> (<em>bool</em>) -- Start at the first segment even for a live stream</p></li>
-<li><p><strong>name_fmt</strong> (<em>str</em><em> | </em><em>None</em>) -- A format string for the name, allowed format keys are: name, pixels, bitrate</p></li>
-<li><p><strong>start_offset</strong> (<em>float</em>) -- Number of seconds to be skipped from the beginning</p></li>
-<li><p><strong>duration</strong> (<em>float</em><em> | </em><em>None</em>) -- Number of second until ending the stream</p></li>
-<li><p><strong>request_params</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a>, <a class="reference internal" href="#streamlink.stream.MuxedHLSStream" title="streamlink.stream.MuxedHLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a>,
-or <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Dict</em>[str, <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.hls.HLSStream"><em>HLSStream</em></a> | <a class="reference internal" href="#streamlink.stream.MuxedHLSStream" title="streamlink.stream.hls.MuxedHLSStream"><em>MuxedHLSStream</em></a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="streamlink.stream.HLSStream.url_master">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url_master</span></span><a class="headerlink" href="#streamlink.stream.HLSStream.url_master" title="Permalink to this definition">#</a></dt>
-<dd><p>Deprecated</p>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="muxedhlsstream">
-<h3>MuxedHLSStream<a class="headerlink" href="#muxedhlsstream" title="Permalink to this heading">#</a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.stream.MuxedHLSStream">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">MuxedHLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffmpeg_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.MuxedHLSStream" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.stream.MuxedStream" title="streamlink.stream.ffmpegmux.MuxedStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedStream</span></code></a>[<a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a>]</p>
-<p>Muxes multiple HLS video and audio streams into one output stream.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.Streamlink"><em>streamlink.Streamlink</em></a>) -- Streamlink session instance</p></li>
-<li><p><strong>video</strong> (<em>str</em>) -- Video stream URL</p></li>
-<li><p><strong>audio</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>]</em>) -- Audio stream URL or list of URLs</p></li>
-<li><p><strong>url_master</strong> (<em>str</em><em> | </em><em>None</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
-<li><p><strong>multivariant</strong> (<em>M3U8</em><em> | </em><em>None</em>) -- The parsed multivariant playlist</p></li>
-<li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
-<li><p><strong>ffmpeg_options</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Additional keyword arguments passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">ffmpegmux.FFMPEGMuxer</span></code></p></li>
-<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a></p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py property">
-<dt class="sig sig-object py" id="streamlink.stream.MuxedHLSStream.url_master">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url_master</span></span><a class="headerlink" href="#streamlink.stream.MuxedHLSStream.url_master" title="Permalink to this definition">#</a></dt>
-<dd><p>Deprecated</p>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="dashstream">
-<h3>DASHStream<a class="headerlink" href="#dashstream" title="Permalink to this heading">#</a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="streamlink.stream.DASHStream">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">DASHStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_representation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.stream.Stream" title="streamlink.stream.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a></p>
-<p>Implementation of the &quot;Dynamic Adaptive Streaming over HTTP&quot; protocol (MPEG-DASH)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
-<li><p><strong>mpd</strong> (<em>MPD</em>) -- Parsed MPD manifest</p></li>
-<li><p><strong>video_representation</strong> (<em>Representation</em><em> | </em><em>None</em>) -- Video representation</p></li>
-<li><p><strong>audio_representation</strong> (<em>Representation</em><em> | </em><em>None</em>) -- Audio representation</p></li>
-<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.stream.DASHStream.parse_manifest">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_manifest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_or_manifest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.DASHStream.parse_manifest" title="Permalink to this definition">#</a></dt>
-<dd><p>Parse a DASH manifest file and return its streams.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
-<li><p><strong>url_or_manifest</strong> (<em>str</em>) -- URL of the manifest file or an XML manifest string</p></li>
-<li><p><strong>period</strong> (<em>int</em>) -- Which MPD period to use (index number) for finding representations</p></li>
-<li><p><strong>args</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.30.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Dict</em>[str, <a class="reference internal" href="#streamlink.stream.DASHStream" title="streamlink.stream.dash.DASHStream"><em>DASHStream</em></a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-</section>
-<section id="exceptions">
-<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading">#</a></h2>
-<p>Streamlink has multiple types of exceptions:</p>
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.StreamlinkError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamlinkError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamlinkError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Any error caused by Streamlink will be caught with this exception.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.PluginError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">PluginError</span></span><a class="headerlink" href="#streamlink.exceptions.PluginError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
-<p>Plugin related error.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.FatalPluginError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">FatalPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.FatalPluginError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.PluginError" title="streamlink.exceptions.PluginError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginError</span></code></a></p>
-<p>Plugin related error that cannot be recovered from.</p>
-<p>Plugins should use this <code class="docutils literal notranslate"><span class="pre">Exception</span></code> when errors that can
-never be recovered from are encountered. For example, when
-a user's input is required and none can be given.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.NoPluginError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.NoPluginError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
-<p>Error raised by <a class="reference internal" href="#streamlink.Streamlink.resolve_url" title="streamlink.Streamlink.resolve_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code></a>
-and <a class="reference internal" href="#streamlink.Streamlink.resolve_url_no_redirect" title="streamlink.Streamlink.resolve_url_no_redirect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code></a>
-when no plugin could be found for the given input URL.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.NoStreamsError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoStreamsError</span></span><a class="headerlink" href="#streamlink.exceptions.NoStreamsError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
-<p>Plugins should use this <code class="docutils literal notranslate"><span class="pre">Exception</span></code> in <a class="reference internal" href="#streamlink.plugin.Plugin._get_streams" title="streamlink.plugin.Plugin._get_streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Plugin._get_streams()</span></code></a>
-when returning <code class="docutils literal notranslate"><span class="pre">None</span></code> or an empty <code class="docutils literal notranslate"><span class="pre">dict</span></code> is not possible, e.g. in nested function calls.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.StreamError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamError" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
-<p>Stream related error.</p>
-</dd></dl>
-
-</section>
 </section>
 
 
@@ -1340,12 +424,12 @@ when returning <code class="docutils literal notranslate"><span class="pre">None
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="changelog.html">
+          <a class="next-page" href="api/streamlink.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Changelog</div>
+                <div class="title">Streamlink</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -1378,136 +462,8 @@ when returning <code class="docutils literal notranslate"><span class="pre">None
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">API Reference</a><ul>
-<li><a class="reference internal" href="#streamlink">Streamlink</a><ul>
-<li><a class="reference internal" href="#streamlink.streams"><code class="docutils literal notranslate"><span class="pre">streams()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#session">Session</a><ul>
-<li><a class="reference internal" href="#streamlink.Streamlink"><code class="docutils literal notranslate"><span class="pre">Streamlink</span></code></a><ul>
-<li><a class="reference internal" href="#streamlink.Streamlink.http"><code class="docutils literal notranslate"><span class="pre">Streamlink.http</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.Streamlink.set_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.set_option()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.Streamlink.get_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_option()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.Streamlink.set_plugin_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.set_plugin_option()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.Streamlink.get_plugin_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_plugin_option()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.Streamlink.resolve_url"><code class="docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.Streamlink.resolve_url_no_redirect"><code class="docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.Streamlink.streams"><code class="docutils literal notranslate"><span class="pre">Streamlink.streams()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.Streamlink.get_plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_plugins()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.Streamlink.load_plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.load_plugins()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#plugins">Plugins</a><ul>
-<li><a class="reference internal" href="#module-streamlink.plugin">Plugin</a><ul>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin"><code class="docutils literal notranslate"><span class="pre">Plugin</span></code></a><ul>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.matchers"><code class="docutils literal notranslate"><span class="pre">Plugin.matchers</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.arguments"><code class="docutils literal notranslate"><span class="pre">Plugin.arguments</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.matcher"><code class="docutils literal notranslate"><span class="pre">Plugin.matcher</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.match"><code class="docutils literal notranslate"><span class="pre">Plugin.match</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.id"><code class="docutils literal notranslate"><span class="pre">Plugin.id</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.title"><code class="docutils literal notranslate"><span class="pre">Plugin.title</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.author"><code class="docutils literal notranslate"><span class="pre">Plugin.author</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.category"><code class="docutils literal notranslate"><span class="pre">Plugin.category</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.matches"><code class="docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.url"><code class="docutils literal notranslate"><span class="pre">Plugin.url</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.streams"><code class="docutils literal notranslate"><span class="pre">Plugin.streams()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin._get_streams"><code class="docutils literal notranslate"><span class="pre">Plugin._get_streams()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.save_cookies"><code class="docutils literal notranslate"><span class="pre">Plugin.save_cookies()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.load_cookies"><code class="docutils literal notranslate"><span class="pre">Plugin.load_cookies()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.Plugin.clear_cookies"><code class="docutils literal notranslate"><span class="pre">Plugin.clear_cookies()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#plugin-decorators">Plugin decorators</a><ul>
-<li><a class="reference internal" href="#streamlink.plugin.pluginmatcher"><code class="docutils literal notranslate"><span class="pre">pluginmatcher()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.pluginargument"><code class="docutils literal notranslate"><span class="pre">pluginargument()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-streamlink.options">Plugin arguments</a><ul>
-<li><a class="reference internal" href="#streamlink.options.Argument"><code class="docutils literal notranslate"><span class="pre">Argument</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.options.Arguments"><code class="docutils literal notranslate"><span class="pre">Arguments</span></code></a><ul>
-<li><a class="reference internal" href="#streamlink.options.Arguments.requires"><code class="docutils literal notranslate"><span class="pre">Arguments.requires()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-streamlink.stream">Streams</a><ul>
-<li><a class="reference internal" href="#stream">Stream</a><ul>
-<li><a class="reference internal" href="#streamlink.stream.Stream"><code class="docutils literal notranslate"><span class="pre">Stream</span></code></a><ul>
-<li><a class="reference internal" href="#streamlink.stream.Stream.open"><code class="docutils literal notranslate"><span class="pre">Stream.open()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#muxedstream">MuxedStream</a><ul>
-<li><a class="reference internal" href="#streamlink.stream.MuxedStream"><code class="docutils literal notranslate"><span class="pre">MuxedStream</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#httpstream">HTTPStream</a><ul>
-<li><a class="reference internal" href="#streamlink.stream.HTTPStream"><code class="docutils literal notranslate"><span class="pre">HTTPStream</span></code></a><ul>
-<li><a class="reference internal" href="#streamlink.stream.HTTPStream.args"><code class="docutils literal notranslate"><span class="pre">HTTPStream.args</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.stream.HTTPStream.url"><code class="docutils literal notranslate"><span class="pre">HTTPStream.url</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#hlsstream">HLSStream</a><ul>
-<li><a class="reference internal" href="#streamlink.stream.HLSStream"><code class="docutils literal notranslate"><span class="pre">HLSStream</span></code></a><ul>
-<li><a class="reference internal" href="#streamlink.stream.HLSStream.parse_variant_playlist"><code class="docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.stream.HLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">HLSStream.url_master</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#muxedhlsstream">MuxedHLSStream</a><ul>
-<li><a class="reference internal" href="#streamlink.stream.MuxedHLSStream"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a><ul>
-<li><a class="reference internal" href="#streamlink.stream.MuxedHLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream.url_master</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#dashstream">DASHStream</a><ul>
-<li><a class="reference internal" href="#streamlink.stream.DASHStream"><code class="docutils literal notranslate"><span class="pre">DASHStream</span></code></a><ul>
-<li><a class="reference internal" href="#streamlink.stream.DASHStream.parse_manifest"><code class="docutils literal notranslate"><span class="pre">DASHStream.parse_manifest()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#exceptions">Exceptions</a><ul>
-<li><a class="reference internal" href="#streamlink.exceptions.StreamlinkError"><code class="docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.PluginError"><code class="docutils literal notranslate"><span class="pre">PluginError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.FatalPluginError"><code class="docutils literal notranslate"><span class="pre">FatalPluginError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.NoPluginError"><code class="docutils literal notranslate"><span class="pre">NoPluginError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.NoStreamsError"><code class="docutils literal notranslate"><span class="pre">NoStreamsError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.StreamError"><code class="docutils literal notranslate"><span class="pre">StreamError</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
