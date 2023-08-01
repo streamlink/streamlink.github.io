@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.0.0+6.gb554c0fc documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.0.0+8.g71a35732 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.0.0+6.gb554c0fc documentation</title>
+        <title>Changelog - Streamlink 6.0.0+8.g71a35732 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.0.0+6.gb554c0fc documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.0.0+8.g71a35732 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.0.0+6.gb554c0fc</pre>
+  <pre class="sidebar-versions-current">6.0.0+8.g71a35732</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -285,6 +285,7 @@ Its value won’t be interpreted as a command line string anymore, so paths with
 <li><p>BREAKING: <a class="reference external" href="https://streamlink.github.io/migrations.html#filename-variable-in-player-args">removed deprecated <code class="docutils literal notranslate"><span class="pre">{filename}</span></code> variable from <code class="docutils literal notranslate"><span class="pre">--player-args</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5310">#5310</a>)</p></li>
 <li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#plugin-can-handle-url-and-plugin-priority">removed support for the deprecated <code class="docutils literal notranslate"><span class="pre">Plugin.can_handle_url()</span></code> / <code class="docutils literal notranslate"><span class="pre">Plugin.priority()</span></code> classmethods</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5403">#5403</a>)</p></li>
 <li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#plugin-init-self-url-compatibility-wrapper">removed deprecated compatibility wrapper for the <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> constructor</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5402">#5402</a>)</p></li>
+<li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#streamlink-g-s-et-plugin-option">removed <code class="docutils literal notranslate"><span class="pre">Streamlink.{g,s}et_plugin_option()</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5033">#5033</a>)</p></li>
 <li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#global-plugin-arguments">removed deprecated global plugin arguments</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5033">#5033</a>)</p></li>
 <li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#plugin-api-validate-text">removed deprecated <code class="docutils literal notranslate"><span class="pre">streamlink.plugin.api.validate.text</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5404">#5404</a>)</p></li>
 <li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#httpstream-and-hlsstream-signature-changes">fixed/changed signatures of <code class="docutils literal notranslate"><span class="pre">HTTPStream</span></code>, <code class="docutils literal notranslate"><span class="pre">HLSStream</span></code> and <code class="docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist()</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5429">#5429</a>)</p></li>
@@ -1490,7 +1491,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=16b4bc30"></script>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=d49e3b28"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
