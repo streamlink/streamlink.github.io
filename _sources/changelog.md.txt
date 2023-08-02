@@ -1,5 +1,17 @@
 # Changelog
 
+## streamlink 6.0.1 (2023-08-02)
+
+Patch release:
+
+- Added: missing `options` argument to `Streamlink.streams()` ([#5469](https://github.com/streamlink/streamlink/pull/5469))
+- Fixed: migration docs and the [`6.0.0` changelog](https://streamlink.github.io/changelog.html#streamlink-6-0-0-2023-07-20) of the [`Streamlink.{g,s}et_plugin_option()` removal](https://streamlink.github.io/migrations.html#streamlink-g-s-et-plugin-option) ([#5471](https://github.com/streamlink/streamlink/pull/5471))
+- Fixed plugins: huya ([#5467](https://github.com/streamlink/streamlink/pull/5467))
+- Docs: updated build-dependencies and the furo theme ([#5464](https://github.com/streamlink/streamlink/pull/5464), [#5465](https://github.com/streamlink/streamlink/pull/5465))
+
+[Full changelog](https://github.com/streamlink/streamlink/compare/6.0.0...6.0.1)
+
+
 ## streamlink 6.0.0 (2023-07-20)
 
 Breaking changes:
@@ -10,6 +22,7 @@ Breaking changes:
 - BREAKING: [removed deprecated `{filename}` variable from `--player-args`](https://streamlink.github.io/migrations.html#filename-variable-in-player-args) ([#5310](https://github.com/streamlink/streamlink/pull/5310))
 - BREAKING/API: [removed support for the deprecated `Plugin.can_handle_url()` / `Plugin.priority()` classmethods](https://streamlink.github.io/migrations.html#plugin-can-handle-url-and-plugin-priority) ([#5403](https://github.com/streamlink/streamlink/pull/5403))
 - BREAKING/API: [removed deprecated compatibility wrapper for the `Plugin` constructor](https://streamlink.github.io/migrations.html#plugin-init-self-url-compatibility-wrapper) ([#5402](https://github.com/streamlink/streamlink/pull/5402))
+- BREAKING/API: [removed `Streamlink.{g,s}et_plugin_option()`](https://streamlink.github.io/migrations.html#streamlink-g-s-et-plugin-option) ([#5033](https://github.com/streamlink/streamlink/pull/5033))
 - BREAKING/API: [removed deprecated global plugin arguments](https://streamlink.github.io/migrations.html#global-plugin-arguments) ([#5033](https://github.com/streamlink/streamlink/pull/5033))
 - BREAKING/API: [removed deprecated `streamlink.plugin.api.validate.text`](https://streamlink.github.io/migrations.html#plugin-api-validate-text) ([#5404](https://github.com/streamlink/streamlink/pull/5404))
 - BREAKING/API: [fixed/changed signatures of `HTTPStream`, `HLSStream` and `HLSStream.parse_variant_playlist()`](https://streamlink.github.io/migrations.html#httpstream-and-hlsstream-signature-changes) ([#5429](https://github.com/streamlink/streamlink/pull/5429))
