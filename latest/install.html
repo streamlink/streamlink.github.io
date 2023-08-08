@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Installation - Streamlink 6.0.1+8.g2af18840 documentation">
+  <meta property="og:title" content="Installation - Streamlink 6.0.1+9.gbb906ab4 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Installation - Streamlink 6.0.1+8.g2af18840 documentation</title>
+        <title>Installation - Streamlink 6.0.1+9.gbb906ab4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.0.1+8.g2af18840 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.0.1+9.gbb906ab4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.0.1+8.g2af18840</pre>
+  <pre class="sidebar-versions-current">6.0.1+9.gbb906ab4</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -384,7 +384,7 @@
 <div class="table-wrapper table-custom-layout docutils container">
 <table class="table-custom-layout docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>Distribution</p></th>
+<tr class="row-odd"><th class="head"><p>Method / Distribution</p></th>
 <th class="head"><p>Installing</p></th>
 </tr>
 </thead>
@@ -484,7 +484,7 @@ sudo<span class="w"> </span>make<span class="w"> </span>install<span class="w"> 
 <div class="table-wrapper table-custom-layout docutils container">
 <table class="table-custom-layout docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>Distribution/Platform</p></th>
+<tr class="row-odd"><th class="head"><p>Distribution / Platform</p></th>
 <th class="head"><p>Maintainer</p></th>
 </tr>
 </thead>
@@ -653,20 +653,21 @@ Streamlink defines a <a class="reference external" href="https://github.com/stre
 <tbody>
 <tr class="row-even"><td><p>python</p></td>
 <td><p><a class="reference external" href="https://www.python.org/">Python</a></p></td>
-<td><p>At least version <strong>3.8</strong>.</p></td>
+<td><p>At least version <strong>3.8</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>build</p></td>
 <td><p><a class="reference external" href="https://setuptools.pypa.io/en/latest/">setuptools</a></p></td>
-<td><p>At least version <strong>64.0.0</strong>. <br /> Used as build backend.</p></td>
+<td><p>At least version <strong>64.0.0</strong> <br />
+Used as build backend</p></td>
 </tr>
 <tr class="row-even"><td><p>build</p></td>
 <td><p><a class="reference external" href="https://wheel.readthedocs.io/en/stable/">wheel</a></p></td>
-<td><p>Used by the build frontend for creating Python wheels.</p></td>
+<td><p>Used by the build frontend for creating Python wheels</p></td>
 </tr>
 <tr class="row-odd"><td><p>build</p></td>
 <td><p><a class="reference external" href="https://versioningit.readthedocs.io/en/stable/">versioningit</a></p></td>
-<td><p>At least version <strong>2.0.0</strong>. <br /> Used for generating the version string from git
-when building, or when running in an editable install.</p></td>
+<td><p>At least version <strong>2.0.0</strong> <br />
+Used for generating the version string from git when building, or when running in an editable install</p></td>
 </tr>
 <tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://certifiio.readthedocs.io/en/latest/">certifi</a></p></td>
@@ -719,12 +720,10 @@ when building, or when running in an editable install.</p></td>
 <tr class="row-even"><td><p>optional</p></td>
 <td><p><a class="reference external" href="https://www.ffmpeg.org/">FFmpeg</a></p></td>
 <td><p>Required for <a class="reference external" href="https://en.wikipedia.org/wiki/Multiplexing#Video_processing">muxing</a> multiple video/audio/subtitle streams into a single output stream.</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>DASH streams with video and audio content always have to get remuxed.</p></li>
 <li><p>HLS streams optionally need to get remuxed depending on the stream selection.</p></li>
 </ul>
-</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -1016,7 +1015,7 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=dbd837c0"></script>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=a9beb5b2"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
