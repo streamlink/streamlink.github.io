@@ -11,17 +11,17 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.0.1 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.1.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+        <title>Changelog - Streamlink 6.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=a7f33bc2" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=a0477dd2" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.0.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.0.1</pre>
+  <pre class="sidebar-versions-current">6.1.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -271,6 +271,19 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="streamlink-6-1-0-2023-08-16">
+<h2>streamlink 6.1.0 (2023-08-16)<a class="headerlink" href="#streamlink-6-1-0-2023-08-16" title="Permalink to this heading">#</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--hls-segment-queue-threshold</span></code> for being able to configure when to stop HLS streams early on missing segments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5478">#5478</a>)</p></li>
+<li><p>Fixed: config file parsing issues and made parsing argument values more strict (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5484">#5484</a>)</p></li>
+<li><p>Fixed: race condition when reading and validating the FFmpeg version string (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5480">#5480</a>)</p></li>
+<li><p>Fixed plugins: atresplayer (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5477">#5477</a>)</p></li>
+<li><p>Docs: added code examples for the <a class="reference external" href="https://streamlink.github.io/migrations.html#streamlink-g-s-et-plugin-option">removal of <code class="docutils literal notranslate"><span class="pre">Streamlink.{g,s}et_plugin_option</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5497">#5497</a>)</p></li>
+<li><p>Build: fixed entry-points config issues with setuptools <code class="docutils literal notranslate"><span class="pre">68.1.0</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5500">#5500</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.0.1...6.1.0">Full changelog</a></p>
+</section>
 <section id="streamlink-6-0-1-2023-08-02">
 <h2>streamlink 6.0.1 (2023-08-02)<a class="headerlink" href="#streamlink-6-0-1-2023-08-02" title="Permalink to this heading">#</a></h2>
 <p>Patch release:</p>
@@ -1424,6 +1437,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-1-0-2023-08-16">streamlink 6.1.0 (2023-08-16)</a></li>
 <li><a class="reference internal" href="#streamlink-6-0-1-2023-08-02">streamlink 6.0.1 (2023-08-02)</a></li>
 <li><a class="reference internal" href="#streamlink-6-0-0-2023-07-20">streamlink 6.0.0 (2023-07-20)</a></li>
 <li><a class="reference internal" href="#streamlink-5-5-1-2023-05-08">streamlink 5.5.1 (2023-05-08)</a></li>
@@ -1499,7 +1513,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=9497d378"></script>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=413a1d38"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
