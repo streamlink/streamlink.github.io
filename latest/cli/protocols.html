@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Proxy Support" href="proxy.html" /><link rel="prev" title="Plugin sideloading" href="plugin-sideloading.html" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 7.2.2 and Furo 2023.07.26 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Streaming protocols - Streamlink 6.1.0 documentation">
+  <meta property="og:title" content="Streaming protocols - Streamlink 6.1.0+1.g13023828 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Streaming protocols - Streamlink 6.1.0 documentation</title>
+        <title>Streaming protocols - Streamlink 6.1.0+1.g13023828 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.1.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.1.0+1.g13023828 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,10 +167,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.1.0</pre>
+  <pre class="sidebar-versions-current">6.1.0+1.g13023828</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/cli/protocols.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/cli/protocols.html" class="">Latest</a></dd>
+    <dd><a href="/cli/protocols.html" class="">Stable</a></dd>
+    <dd><a href="/latest/cli/protocols.html" class="version-current">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -269,14 +269,18 @@
         <article role="main">
           
   
+    <div class="admonition important version-warning">
+      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+    </div>
+  
   <section id="streaming-protocols">
-<h1>Streaming protocols<a class="headerlink" href="#streaming-protocols" title="Permalink to this heading">#</a></h1>
+<h1>Streaming protocols<a class="headerlink" href="#streaming-protocols" title="Link to this heading">#</a></h1>
 <p>There are many types of streaming protocols used by services today and
 Streamlink supports most of them. It's possible to tell Streamlink
 to access a streaming protocol directly instead of relying on a plugin
 to extract the streams from a URL for you.</p>
 <section id="playing-built-in-streaming-protocols-directly">
-<h2>Playing built-in streaming protocols directly<a class="headerlink" href="#playing-built-in-streaming-protocols-directly" title="Permalink to this heading">#</a></h2>
+<h2>Playing built-in streaming protocols directly<a class="headerlink" href="#playing-built-in-streaming-protocols-directly" title="Link to this heading">#</a></h2>
 <p>A streaming protocol can be accessed directly by specifying it in the <code class="docutils literal notranslate"><span class="pre">protocol://URL</span></code> format
 with an optional list of parameters, like so:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;protocol://https://streamingserver/path key1=value1 key2=value2&quot;</span>
@@ -290,7 +294,7 @@ The following example shows HLS streams (<code class="docutils literal notransla
 </div>
 </section>
 <section id="supported-streaming-protocols">
-<h2>Supported streaming protocols<a class="headerlink" href="#supported-streaming-protocols" title="Permalink to this heading">#</a></h2>
+<h2>Supported streaming protocols<a class="headerlink" href="#supported-streaming-protocols" title="Link to this heading">#</a></h2>
 <div class="table-wrapper table-custom-layout docutils container">
 <table class="table-custom-layout docutils align-default">
 <thead>
@@ -317,7 +321,7 @@ The following example shows HLS streams (<code class="docutils literal notransla
 </div>
 </section>
 <section id="protocol-parameters">
-<h2>Protocol parameters<a class="headerlink" href="#protocol-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Protocol parameters<a class="headerlink" href="#protocol-parameters" title="Link to this heading">#</a></h2>
 <p>When passing parameters to the built-in streaming protocols, the values will either be treated as plain strings
 or they will be interpreted as Python literals:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;httpstream://https://streamingserver/path method=POST params={&#39;abc&#39;:123} json=[&#39;foo&#39;,&#39;bar&#39;,&#39;baz&#39;]&quot;</span>
@@ -336,7 +340,7 @@ to the query string and <code class="docutils literal notranslate"><span class="
 </div>
 </section>
 <section id="available-parameters">
-<h2>Available parameters<a class="headerlink" href="#available-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Available parameters<a class="headerlink" href="#available-parameters" title="Link to this heading">#</a></h2>
 <p>Parameters are passed to the following methods of their respective stream implementations:</p>
 <div class="table-wrapper table-custom-layout docutils container">
 <table class="table-custom-layout docutils align-default">
@@ -447,9 +451,9 @@ to the query string and <code class="docutils literal notranslate"><span class="
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=413a1d38"></script>
+</div><script src="../_static/documentation_options.js?v=19a463e9"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     </body>

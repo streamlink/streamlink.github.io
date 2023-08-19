@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Installation" href="install.html" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 7.2.2 and Furo 2023.07.26 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Streamlink 6.1.0 documentation">
+  <meta property="og:title" content="Streamlink 6.1.0+1.g13023828 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Streamlink 6.1.0 documentation</title>
+        <title>Streamlink 6.1.0+1.g13023828 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Streamlink 6.1.0 documentation</div></a>
+      <a href="#"><div class="brand">Streamlink 6.1.0+1.g13023828 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,10 +167,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.1.0</pre>
+  <pre class="sidebar-versions-current">6.1.0+1.g13023828</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/index.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/index.html" class="">Latest</a></dd>
+    <dd><a href="/index.html" class="">Stable</a></dd>
+    <dd><a href="/latest/index.html" class="version-current">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -269,10 +269,14 @@
         <article role="main">
           
   
+    <div class="admonition important version-warning">
+      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+    </div>
+  
   <section id="streamlink">
-<h1>Streamlink<a class="headerlink" href="#streamlink" title="Permalink to this heading">#</a></h1>
+<h1>Streamlink<a class="headerlink" href="#streamlink" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>Streamlink is a <a class="reference internal" href="cli.html#command-line-interface"><span class="std std-ref">command-line utility</span></a> which pipes video streams
 from various services into a video player, such as <a class="reference external" href="https://www.videolan.org/">VLC</a>.
 The main purpose of Streamlink is to avoid resource-heavy and unoptimized websites,
@@ -298,7 +302,7 @@ to the stream data.</p>
 </dl>
 </section>
 <section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h2>
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h2>
 <p>Streamlink is built upon a plugin system which allows support for new services
 to be easily added. Most of the big streaming services are supported, such as:</p>
 <ul class="simple">
@@ -311,7 +315,7 @@ to be easily added. Most of the big streaming services are supported, such as:</
 on the <a class="reference internal" href="plugins.html#plugins"><span class="std std-ref">Plugins</span></a> page.</p>
 </section>
 <section id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h2>
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h2>
 <p>The default behavior of Streamlink is to play back streams in the <a class="reference external" href="https://www.videolan.org/">VLC</a> player.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span>twitch.tv/day9tv<span class="w"> </span>best
 <span class="go">[cli][info] Found matching plugin twitch for URL twitch.tv/day9tv</span>
@@ -323,12 +327,12 @@ on the <a class="reference internal" href="plugins.html#plugins"><span class="st
 <p>For more in-depth usage and install instructions, please refer to the <a class="reference internal" href="#user-guide">User guide</a>.</p>
 </section>
 <section id="user-guide">
-<h2>User guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">#</a></h2>
+<h2>User guide<a class="headerlink" href="#user-guide" title="Link to this heading">#</a></h2>
 <p>Streamlink is made up of two parts, a <a class="reference internal" href="cli.html#command-line-interface"><span class="std std-ref">cli</span></a> and a library <a class="reference internal" href="api.html#api-reference"><span class="std std-ref">API</span></a>.
 See their respective sections for more information on how to use them.</p>
 </section>
 <section id="thank-you">
-<h2>Thank you<a class="headerlink" href="#thank-you" title="Permalink to this heading">#</a></h2>
+<h2>Thank you<a class="headerlink" href="#thank-you" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/">Github</a>, for hosting the git repo, docs, release assets and providing CI tools</p></li>
 <li><p><a class="reference external" href="https://netlify.com/">Netlify</a>, for hosting docs preview builds</p></li>
@@ -336,7 +340,7 @@ See their respective sections for more information on how to use them.</p>
 </ul>
 </section>
 <section id="table-of-contents">
-<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
@@ -720,9 +724,9 @@ See their respective sections for more information on how to use them.</p>
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=413a1d38"></script>
+</div><script src="_static/documentation_options.js?v=19a463e9"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/design-tabs.js?v=36754332"></script>
     </body>

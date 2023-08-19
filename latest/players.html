@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Common issues" href="issues.html" /><link rel="prev" title="Plugins" href="plugins.html" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 7.2.2 and Furo 2023.07.26 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Players - Streamlink 6.1.0 documentation">
+  <meta property="og:title" content="Players - Streamlink 6.1.0+1.g13023828 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Players - Streamlink 6.1.0 documentation</title>
+        <title>Players - Streamlink 6.1.0+1.g13023828 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.1.0+1.g13023828 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,10 +167,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.1.0</pre>
+  <pre class="sidebar-versions-current">6.1.0+1.g13023828</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/players.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/players.html" class="">Latest</a></dd>
+    <dd><a href="/players.html" class="">Stable</a></dd>
+    <dd><a href="/latest/players.html" class="version-current">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -269,10 +269,14 @@
         <article role="main">
           
   
+    <div class="admonition important version-warning">
+      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
+    </div>
+  
   <section id="players">
-<h1>Players<a class="headerlink" href="#players" title="Permalink to this heading">#</a></h1>
+<h1>Players<a class="headerlink" href="#players" title="Link to this heading">#</a></h1>
 <section id="transport-modes">
-<h2>Transport modes<a class="headerlink" href="#transport-modes" title="Permalink to this heading">#</a></h2>
+<h2>Transport modes<a class="headerlink" href="#transport-modes" title="Link to this heading">#</a></h2>
 <p>There are three different modes of transporting the stream to the player.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -296,7 +300,7 @@
 </div>
 </section>
 <section id="player-compatibility">
-<h2>Player compatibility<a class="headerlink" href="#player-compatibility" title="Permalink to this heading">#</a></h2>
+<h2>Player compatibility<a class="headerlink" href="#player-compatibility" title="Link to this heading">#</a></h2>
 <p>This is a list of video players and their compatibility with the transport
 modes.</p>
 <div class="table-wrapper docutils container">
@@ -379,14 +383,14 @@ Other stream types may not work as expected, it is recommended that
 </aside>
 </section>
 <section id="known-issues-and-workarounds">
-<h2>Known issues and workarounds<a class="headerlink" href="#known-issues-and-workarounds" title="Permalink to this heading">#</a></h2>
+<h2>Known issues and workarounds<a class="headerlink" href="#known-issues-and-workarounds" title="Link to this heading">#</a></h2>
 <section id="mpc-hc-reports-file-not-found">
-<h3>MPC-HC reports &quot;File not found&quot;<a class="headerlink" href="#mpc-hc-reports-file-not-found" title="Permalink to this heading">#</a></h3>
+<h3>MPC-HC reports &quot;File not found&quot;<a class="headerlink" href="#mpc-hc-reports-file-not-found" title="Link to this heading">#</a></h3>
 <p>Upgrading to version 1.7 or newer will solve this issue since reading data
 from standard input is not supported in version 1.6.x of MPC-HC.</p>
 </section>
 <section id="mpc-hc-only-plays-sound-on-twitch-streams">
-<h3>MPC-HC only plays sound on Twitch streams<a class="headerlink" href="#mpc-hc-only-plays-sound-on-twitch-streams" title="Permalink to this heading">#</a></h3>
+<h3>MPC-HC only plays sound on Twitch streams<a class="headerlink" href="#mpc-hc-only-plays-sound-on-twitch-streams" title="Link to this heading">#</a></h3>
 <p>Twitch sometimes returns badly muxed streams which may confuse players. The
 following workaround was contributed by MPC-HC developer <a class="reference external" href="https://github.com/kasper93">&#64;kasper93</a>:</p>
 <blockquote>
@@ -398,17 +402,17 @@ properly detect all streams.</em></p>
 reported to work.</p>
 </section>
 <section id="mplayer-tries-to-play-twitch-streams-at-the-wrong-fps">
-<h3>MPlayer tries to play Twitch streams at the wrong FPS<a class="headerlink" href="#mplayer-tries-to-play-twitch-streams-at-the-wrong-fps" title="Permalink to this heading">#</a></h3>
+<h3>MPlayer tries to play Twitch streams at the wrong FPS<a class="headerlink" href="#mplayer-tries-to-play-twitch-streams-at-the-wrong-fps" title="Link to this heading">#</a></h3>
 <p>This is a bug in MPlayer, using the MPlayer fork <a class="reference external" href="https://mpv.io">mpv</a> instead
 is recommended.</p>
 </section>
 <section id="youtube-live-does-not-work-with-vlc">
-<h3>Youtube Live does not work with VLC<a class="headerlink" href="#youtube-live-does-not-work-with-vlc" title="Permalink to this heading">#</a></h3>
+<h3>Youtube Live does not work with VLC<a class="headerlink" href="#youtube-live-does-not-work-with-vlc" title="Link to this heading">#</a></h3>
 <p>VLC versions below 3 cannot play Youtube Live streams. Please update your
 player. You can also try using a different player.</p>
 </section>
 <section id="youtube-live-does-not-work-with-mplayer">
-<h3>Youtube Live does not work with Mplayer<a class="headerlink" href="#youtube-live-does-not-work-with-mplayer" title="Permalink to this heading">#</a></h3>
+<h3>Youtube Live does not work with Mplayer<a class="headerlink" href="#youtube-live-does-not-work-with-mplayer" title="Link to this heading">#</a></h3>
 <p>Some versions of Mplayer cannot play Youtube Live streams. And errors like:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Cannot seek backward in linear streams!</span>
 <span class="go">Seek failed</span>
@@ -417,7 +421,7 @@ player. You can also try using a different player.</p>
 <p>Switching to a recent fork such as mpv resolves the issue.</p>
 </section>
 <section id="when-using-omxplayer-the-stream-stops-unexpectedly">
-<h3>When using OMXPlayer the stream stops unexpectedly<a class="headerlink" href="#when-using-omxplayer-the-stream-stops-unexpectedly" title="Permalink to this heading">#</a></h3>
+<h3>When using OMXPlayer the stream stops unexpectedly<a class="headerlink" href="#when-using-omxplayer-the-stream-stops-unexpectedly" title="Link to this heading">#</a></h3>
 <p>When reading from a fifo pipe OMXPlayer will quit when there is no data, to fix
 this you can supply the timeout option to OMXPlayer using <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span> <span class="pre">&quot;omxplayer</span> <span class="pre">--timeout</span> <span class="pre">20&quot;</span></code></a>.
 For live streams it might be beneficial to also add the omxplayer parameter <code class="docutils literal notranslate"><span class="pre">--live</span></code>.</p>
@@ -504,9 +508,9 @@ For live streams it might be beneficial to also add the omxplayer parameter <cod
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=413a1d38"></script>
+</div><script src="_static/documentation_options.js?v=19a463e9"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/design-tabs.js?v=36754332"></script>
     </body>
