@@ -1,22 +1,22 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Guide" href="api_guide.html" /><link rel="prev" title="Migrations" href="migrations.html" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Developing - Streamlink 6.1.0 documentation">
+  <meta property="og:title" content="Developing - Streamlink 6.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Developing - Streamlink 6.1.0 documentation</title>
+        <title>Developing - Streamlink 6.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.1.0</pre>
+  <pre class="sidebar-versions-current">6.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="">Latest</a></dd>
@@ -270,11 +270,11 @@
           
   
   <section id="developing">
-<h1>Developing<a class="headerlink" href="#developing" title="Permalink to this heading">#</a></h1>
+<h1>Developing<a class="headerlink" href="#developing" title="Link to this heading">#</a></h1>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <section id="setting-up-the-repository">
-<h3>Setting up the repository<a class="headerlink" href="#setting-up-the-repository" title="Permalink to this heading">#</a></h3>
+<h3>Setting up the repository<a class="headerlink" href="#setting-up-the-repository" title="Link to this heading">#</a></h3>
 <p>In order to start working on Streamlink, you must first install the latest stable version of <code class="docutils literal notranslate"><span class="pre">git</span></code>, optionally fork the
 repository on Github onto your account if you want to submit changes in a pull request, and then locally clone the repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>streamlink
@@ -296,7 +296,7 @@ git<span class="w"> </span>push<span class="w"> </span>fork<span class="w"> </sp
 </div>
 </section>
 <section id="setting-up-a-new-environment">
-<h3>Setting up a new environment<a class="headerlink" href="#setting-up-a-new-environment" title="Permalink to this heading">#</a></h3>
+<h3>Setting up a new environment<a class="headerlink" href="#setting-up-a-new-environment" title="Link to this heading">#</a></h3>
 <p>While working on any kind of python-based project, it is usually best to do this in a virtual environment which is isolated from
 the Python environment of the host system. This ensures that development can be done in a clean space which is free of version
 conflicts and other unrelated packages.</p>
@@ -327,7 +327,7 @@ virtualenv<span class="w"> </span>--download<span class="w"> </span>--verbose<sp
 </div>
 </section>
 <section id="installing-streamlink">
-<h3>Installing Streamlink<a class="headerlink" href="#installing-streamlink" title="Permalink to this heading">#</a></h3>
+<h3>Installing Streamlink<a class="headerlink" href="#installing-streamlink" title="Link to this heading">#</a></h3>
 <p>After activating the new virtual environment, Streamlink's build dependencies and Streamlink itself need to be installed.
 Regular development dependencies and documentation related dependencies are listed in the text files shown below and need to
 be installed separately.</p>
@@ -347,7 +347,7 @@ streamlink<span class="w"> </span>--version
 </section>
 </section>
 <section id="validating-changes">
-<h2>Validating changes<a class="headerlink" href="#validating-changes" title="Permalink to this heading">#</a></h2>
+<h2>Validating changes<a class="headerlink" href="#validating-changes" title="Link to this heading">#</a></h2>
 <p>Before submitting a pull request, run tests, perform code linting and build the documentation on your system first, to see if
 your changes contain any mistakes or errors. This will be done automatically for each pull request on each change, but
 performing these checks locally avoids unnecessary build failures.</p>
@@ -370,7 +370,7 @@ make<span class="w"> </span>--directory<span class="o">=</span>docs<span class="
 </div>
 </section>
 <section id="code-style">
-<h2>Code style<a class="headerlink" href="#code-style" title="Permalink to this heading">#</a></h2>
+<h2>Code style<a class="headerlink" href="#code-style" title="Link to this heading">#</a></h2>
 <p>Streamlink uses <a class="reference external" href="https://github.com/charliermarsh/ruff#readme">Ruff</a> as primary code linting tool and the project aims to use best practices for achieving great
 code readability with minimal git diffs, as detailed in <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0008/"><strong>PEP 8</strong></a> and implemented in related linting tools, such as <a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html">Black</a>.</p>
 <p>These are the best practices most likely to be relevant to plugin authors:</p>
@@ -410,9 +410,9 @@ template from which to work. If care is taken to preserve existing blank lines d
 structure should be compliant-ready for <a class="reference internal" href="#validating-changes">linting</a>.</p>
 </section>
 <section id="plugins">
-<h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this heading">#</a></h2>
+<h2>Plugins<a class="headerlink" href="#plugins" title="Link to this heading">#</a></h2>
 <section id="adding-plugins">
-<h3>Adding plugins<a class="headerlink" href="#adding-plugins" title="Permalink to this heading">#</a></h3>
+<h3>Adding plugins<a class="headerlink" href="#adding-plugins" title="Link to this heading">#</a></h3>
 <ol class="arabic">
 <li><p>Implement the plugin in <code class="docutils literal notranslate"><span class="pre">src/streamlink/plugins/pluginname.py</span></code>, similar to already existing plugins.</p>
 <p>Check the git log for recently added or modified plugins to help you get an overview of what's needed to properly implement
@@ -478,7 +478,7 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
 </ol>
 </section>
 <section id="removing-plugins">
-<h3>Removing plugins<a class="headerlink" href="#removing-plugins" title="Permalink to this heading">#</a></h3>
+<h3>Removing plugins<a class="headerlink" href="#removing-plugins" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Remove the plugin file from <code class="docutils literal notranslate"><span class="pre">src/streamlink/plugins/</span></code> and the test file from <code class="docutils literal notranslate"><span class="pre">tests/plugins/</span></code></p></li>
 </ol>
@@ -567,9 +567,9 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=413a1d38"></script>
+</div><script src="_static/documentation_options.js?v=f13f159b"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/design-tabs.js?v=36754332"></script>
     </body>

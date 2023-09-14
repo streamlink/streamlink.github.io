@@ -1,22 +1,22 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Deprecations" href="deprecations.html" /><link rel="prev" title="Players" href="players.html" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Common issues - Streamlink 6.1.0 documentation">
+  <meta property="og:title" content="Common issues - Streamlink 6.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Common issues - Streamlink 6.1.0 documentation</title>
+        <title>Common issues - Streamlink 6.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.1.0</pre>
+  <pre class="sidebar-versions-current">6.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/issues.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/issues.html" class="">Latest</a></dd>
@@ -270,11 +270,11 @@
           
   
   <section id="common-issues">
-<h1>Common issues<a class="headerlink" href="#common-issues" title="Permalink to this heading">#</a></h1>
+<h1>Common issues<a class="headerlink" href="#common-issues" title="Link to this heading">#</a></h1>
 <section id="streams-are-buffering-lagging">
-<h2>Streams are buffering/lagging<a class="headerlink" href="#streams-are-buffering-lagging" title="Permalink to this heading">#</a></h2>
+<h2>Streams are buffering/lagging<a class="headerlink" href="#streams-are-buffering-lagging" title="Link to this heading">#</a></h2>
 <section id="enable-caching-in-your-player">
-<h3>Enable caching in your player<a class="headerlink" href="#enable-caching-in-your-player" title="Permalink to this heading">#</a></h3>
+<h3>Enable caching in your player<a class="headerlink" href="#enable-caching-in-your-player" title="Link to this heading">#</a></h3>
 <p>By default most players do not cache the data they receive from Streamlink.
 Caching can reduce the amount of buffering you run into because the player will
 have some breathing room between receiving the data and playing it.</p>
@@ -309,7 +309,7 @@ have some breathing room between receiving the data and playing it.</p>
 <p>Use the <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> option to pass these options to your player.</p>
 </section>
 <section id="multi-threaded-streaming">
-<h3>Multi-threaded streaming<a class="headerlink" href="#multi-threaded-streaming" title="Permalink to this heading">#</a></h3>
+<h3>Multi-threaded streaming<a class="headerlink" href="#multi-threaded-streaming" title="Link to this heading">#</a></h3>
 <p>On segmented streaming protocols (such as HLS and DASH) it's possible to use
 multiple threads for downloading multiple segments at the same time to
 potentially increase the throughput. This can be done via Streamlink's
@@ -396,9 +396,9 @@ any more will likely not show much effect.</p>
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=413a1d38"></script>
+</div><script src="_static/documentation_options.js?v=f13f159b"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/design-tabs.js?v=36754332"></script>
     </body>

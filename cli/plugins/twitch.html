@@ -1,22 +1,22 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Plugins" href="../../plugins.html" /><link rel="prev" title="Crunchyroll" href="crunchyroll.html" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Twitch - Streamlink 6.1.0 documentation">
+  <meta property="og:title" content="Twitch - Streamlink 6.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Twitch - Streamlink 6.1.0 documentation</title>
+        <title>Twitch - Streamlink 6.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Streamlink 6.1.0 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Streamlink 6.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.1.0</pre>
+  <pre class="sidebar-versions-current">6.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins/twitch.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli/plugins/twitch.html" class="">Latest</a></dd>
@@ -270,9 +270,9 @@
           
   
   <section id="twitch">
-<h1>Twitch<a class="headerlink" href="#twitch" title="Permalink to this heading">#</a></h1>
+<h1>Twitch<a class="headerlink" href="#twitch" title="Link to this heading">#</a></h1>
 <section id="authentication">
-<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading">#</a></h2>
+<h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading">#</a></h2>
 <p>Official authentication support for Twitch via the <code class="docutils literal notranslate"><span class="pre">--twitch-oauth-token</span></code> and <code class="docutils literal notranslate"><span class="pre">--twitch-oauth-authenticate</span></code> CLI arguments
 had to be disabled in Streamlink's <a class="reference internal" href="../../changelog.html#streamlink-1-3-0-2019-11-22"><span class="std std-ref">1.3.0 release in November 2019</span></a> and both
 arguments were finally removed in the <a class="reference internal" href="../../changelog.html#streamlink-2-0-0-2020-12-22"><span class="std std-ref">2.0.0 release in December 2020</span></a> due to
@@ -309,7 +309,7 @@ argument value, which requires quotation on command line shells:</p>
 </div>
 </section>
 <section id="embedded-ads">
-<h2>Embedded ads<a class="headerlink" href="#embedded-ads" title="Permalink to this heading">#</a></h2>
+<h2>Embedded ads<a class="headerlink" href="#embedded-ads" title="Link to this heading">#</a></h2>
 <p>In 2019, Twitch has started sporadically embedding ads directly into streams in addition to their regular advertisement program
 on their website which can only overlay ads. The embedded ads situation has been an ongoing thing since then and has been turned
 off and on several times throughout the months and years, also with variations between regions, and it has recently been pushed
@@ -334,7 +334,7 @@ parameters can be set via <a class="reference internal" href="../../cli.html#cmd
 either <a class="reference internal" href="#authentication"><span class="std std-ref">authentication data</span></a> or other data discovered by the community.</p>
 </section>
 <section id="client-integrity-token">
-<h2>Client-integrity token<a class="headerlink" href="#client-integrity-token" title="Permalink to this heading">#</a></h2>
+<h2>Client-integrity token<a class="headerlink" href="#client-integrity-token" title="Link to this heading">#</a></h2>
 <p>In 2022, Twitch added client-integrity tokens to their web player when getting streaming access tokens. These client-integrity
 tokens are calculated using sophisticated JavaScript code which is infeasible to re-implement, as it not only involves
 obfuscated code that's much harder to reverse engineer and to extract data from, but also a custom JavaScript virtual machine
@@ -355,7 +355,7 @@ Streamlink will cache the generated token in the plugin cache after launching th
 using the <a class="reference internal" href="../../cli.html#cmdoption-twitch-purge-client-integrity"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-purge-client-integrity</span></code></a> option.</p>
 </section>
 <section id="low-latency-streaming">
-<h2>Low latency streaming<a class="headerlink" href="#low-latency-streaming" title="Permalink to this heading">#</a></h2>
+<h2>Low latency streaming<a class="headerlink" href="#low-latency-streaming" title="Link to this heading">#</a></h2>
 <p>Low latency streaming on Twitch can be enabled by setting the <a class="reference internal" href="../../cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> argument and (optionally)
 configuring the <a class="reference internal" href="../../players.html#players"><span class="std std-ref">player</span></a> via <a class="reference internal" href="../../cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> and reducing its own buffer to a bare minimum.</p>
 <p>Setting <a class="reference internal" href="../../cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a> will make Streamlink prefetch future HLS segments that are included in the HLS playlist
@@ -376,7 +376,7 @@ with this option enabled due to the reduced <a class="reference internal" href="
 <p>Unfortunately, there is no way to check whether a channel is streaming in low-latency mode before accessing the stream.</p>
 </div>
 <section id="player-buffer-tweaks">
-<h3>Player buffer tweaks<a class="headerlink" href="#player-buffer-tweaks" title="Permalink to this heading">#</a></h3>
+<h3>Player buffer tweaks<a class="headerlink" href="#player-buffer-tweaks" title="Link to this heading">#</a></h3>
 <p>Since players do have their own input buffer, depending on how much data the player wants to keep in its buffer before it starts
 playing the stream, this can cause an unnecessary delay while trying to watch low latency streams. Player buffer sizes should
 therefore be tweaked via the <a class="reference internal" href="../../cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a> CLI argument or via the player's configuration options.</p>
@@ -462,9 +462,9 @@ without causing any stuttering, e.g. when running out out available data.</p>
       
     </aside>
   </div>
-</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=413a1d38"></script>
+</div><script src="../../_static/documentation_options.js?v=f13f159b"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     </body>

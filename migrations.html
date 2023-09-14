@@ -1,22 +1,22 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Developing" href="developing.html" /><link rel="prev" title="Deprecations" href="deprecations.html" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Migrations - Streamlink 6.1.0 documentation">
+  <meta property="og:title" content="Migrations - Streamlink 6.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Migrations - Streamlink 6.1.0 documentation</title>
+        <title>Migrations - Streamlink 6.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.1.0</pre>
+  <pre class="sidebar-versions-current">6.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/migrations.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/migrations.html" class="">Latest</a></dd>
@@ -270,11 +270,11 @@
           
   
   <section id="migrations">
-<h1>Migrations<a class="headerlink" href="#migrations" title="Permalink to this heading">#</a></h1>
+<h1>Migrations<a class="headerlink" href="#migrations" title="Link to this heading">#</a></h1>
 <section id="streamlink-6-0-0">
-<h2>streamlink 6.0.0<a class="headerlink" href="#streamlink-6-0-0" title="Permalink to this heading">#</a></h2>
+<h2>streamlink 6.0.0<a class="headerlink" href="#streamlink-6-0-0" title="Link to this heading">#</a></h2>
 <section id="player-path-only-player-cli-argument">
-<h3>Player-path-only --player CLI argument<a class="headerlink" href="#player-path-only-player-cli-argument" title="Permalink to this heading">#</a></h3>
+<h3>Player-path-only --player CLI argument<a class="headerlink" href="#player-path-only-player-cli-argument" title="Link to this heading">#</a></h3>
 <p>Despite having the dedicated CLI argument for setting custom player arguments <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a>,
 Streamlink used to support setting custom player arguments using the <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> CLI argument.</p>
 <p>This meant that the <a class="reference internal" href="cli.html#cmdoption-player"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player</span></code></a> value had to be treated as a command line string rather than a player path.
@@ -301,7 +301,7 @@ config file from previous installs. The default behavior remains the same with e
 </div>
 </section>
 <section id="filename-variable-in-player-args">
-<h3>{filename} variable in --player-args<a class="headerlink" href="#filename-variable-in-player-args" title="Permalink to this heading">#</a></h3>
+<h3>{filename} variable in --player-args<a class="headerlink" href="#filename-variable-in-player-args" title="Link to this heading">#</a></h3>
 <p>The <a class="reference internal" href="cli.html#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a>'s <code class="docutils literal notranslate"><span class="pre">{filename}</span></code> variable has been removed. This was kept as a fallback when
 the <code class="docutils literal notranslate"><span class="pre">{playerinput}</span></code> variable as added to prevent confusion around the player's input argument
 for various different stream transport methods, like stdin, named pipes, passthrough, etc.</p>
@@ -317,7 +317,7 @@ for various different stream transport methods, like stdin, named pipes, passthr
 </div>
 </section>
 <section id="plugin-can-handle-url-and-plugin-priority">
-<h3>Plugin.can_handle_url() and Plugin.priority()<a class="headerlink" href="#plugin-can-handle-url-and-plugin-priority" title="Permalink to this heading">#</a></h3>
+<h3>Plugin.can_handle_url() and Plugin.priority()<a class="headerlink" href="#plugin-can-handle-url-and-plugin-priority" title="Link to this heading">#</a></h3>
 <p>Streamlink 2.3.0 <a class="reference internal" href="deprecations.html#plugin-can-handle-url-and-plugin-priority"><span class="std std-ref">deprecated</span></a>
 the <code class="docutils literal notranslate"><span class="pre">can_handle_url()</span></code> and <code class="docutils literal notranslate"><span class="pre">priority()</span></code> classmethods of <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> in favor of
 the plugin matcher API. These deprecated classmethods have now been removed.</p>
@@ -336,7 +336,7 @@ of the <a class="reference internal" href="api/plugin.html#streamlink.plugin.plu
 </div>
 </section>
 <section id="plugin-init-self-url-compatibility-wrapper">
-<h3>Plugin.__init__(self, url) compatibility wrapper<a class="headerlink" href="#plugin-init-self-url-compatibility-wrapper" title="Permalink to this heading">#</a></h3>
+<h3>Plugin.__init__(self, url) compatibility wrapper<a class="headerlink" href="#plugin-init-self-url-compatibility-wrapper" title="Link to this heading">#</a></h3>
 <p>Streamlink 5.0.0 <a class="reference internal" href="deprecations.html#plugin-init-self-url-compatibility-wrapper"><span class="std std-ref">deprecated</span></a> the usage of the old
 <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> constructor without the <a class="reference internal" href="api/session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><code class="xref py py-class docutils literal notranslate"><span class="pre">Streamlink</span></code></a>
 <code class="docutils literal notranslate"><span class="pre">session</span></code> argument. <code class="docutils literal notranslate"><span class="pre">session</span></code> was added because the old <code class="docutils literal notranslate"><span class="pre">Plugin.bind()</span></code> classmethod got removed, which previously
@@ -356,7 +356,7 @@ garbage collector to not be able to let go of any loaded built-in plugins when i
 </div>
 </section>
 <section id="streamlink-g-s-et-plugin-option">
-<h3>Streamlink.{g,s}et_plugin_option()<a class="headerlink" href="#streamlink-g-s-et-plugin-option" title="Permalink to this heading">#</a></h3>
+<h3>Streamlink.{g,s}et_plugin_option()<a class="headerlink" href="#streamlink-g-s-et-plugin-option" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Streamlink.get_plugin_option()</span></code> and <code class="docutils literal notranslate"><span class="pre">Streamlink.set_plugin_option()</span></code> methods were removed as a result of moving
 plugin options from the <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> classes to individual <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> instances.</p>
 <p>Plugin options now must be get/set referencing the <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.options" title="streamlink.plugin.Plugin.options"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.options</span></code></a> instance and its
@@ -427,7 +427,7 @@ Alternative</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="global-plugin-arguments">
-<h3>Global plugin arguments<a class="headerlink" href="#global-plugin-arguments" title="Permalink to this heading">#</a></h3>
+<h3>Global plugin arguments<a class="headerlink" href="#global-plugin-arguments" title="Link to this heading">#</a></h3>
 <p>Streamlink 5.3.0 <a class="reference internal" href="deprecations.html#global-plugin-arguments"><span class="std std-ref">deprecated</span></a> the <code class="docutils literal notranslate"><span class="pre">is_global=True</span></code> argument
 of the <a class="reference internal" href="api/plugin.html#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pluginargument</span></code></a> decorator (as well as the
 <a class="reference internal" href="api/options.html#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a> class), as global plugin arguments were deemed unnecessary.
@@ -445,7 +445,7 @@ instead of getting it from <a class="reference internal" href="api/plugin.html#s
 </div>
 </section>
 <section id="plugin-api-validate-text">
-<h3>plugin.api.validate.text<a class="headerlink" href="#plugin-api-validate-text" title="Permalink to this heading">#</a></h3>
+<h3>plugin.api.validate.text<a class="headerlink" href="#plugin-api-validate-text" title="Link to this heading">#</a></h3>
 <p>Streamlink 5.2.0 <a class="reference internal" href="deprecations.html#plugin-api-validate-text"><span class="std std-ref">deprecated</span></a> the <code class="docutils literal notranslate"><span class="pre">plugin.api.validate.text</span></code> alias for <code class="docutils literal notranslate"><span class="pre">str</span></code>.
 This was a remnant of the Python 2 era and has been removed.</p>
 <div class="line-block">
@@ -460,7 +460,7 @@ This was a remnant of the Python 2 era and has been removed.</p>
 </div>
 </section>
 <section id="httpstream-and-hlsstream-signature-changes">
-<h3>HTTPStream and HLSStream signature changes<a class="headerlink" href="#httpstream-and-hlsstream-signature-changes" title="Permalink to this heading">#</a></h3>
+<h3>HTTPStream and HLSStream signature changes<a class="headerlink" href="#httpstream-and-hlsstream-signature-changes" title="Link to this heading">#</a></h3>
 <p>The signatures of the constructors of <a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream" title="streamlink.stream.HTTPStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPStream</span></code></a>
 and <a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a>, as well as
 the <a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream.parse_variant_playlist" title="streamlink.stream.HLSStream.parse_variant_playlist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist()</span></code></a> classmethod
@@ -478,9 +478,9 @@ or replace the <code class="docutils literal notranslate"><span class="pre">sess
 </section>
 </section>
 <section id="streamlink-5-0-0">
-<h2>streamlink 5.0.0<a class="headerlink" href="#streamlink-5-0-0" title="Permalink to this heading">#</a></h2>
+<h2>streamlink 5.0.0<a class="headerlink" href="#streamlink-5-0-0" title="Link to this heading">#</a></h2>
 <section id="session-resolve-url-return-type-changes">
-<h3>Session.resolve_url() return type changes<a class="headerlink" href="#session-resolve-url-return-type-changes" title="Permalink to this heading">#</a></h3>
+<h3>Session.resolve_url() return type changes<a class="headerlink" href="#session-resolve-url-return-type-changes" title="Link to this heading">#</a></h3>
 <p>With the removal of the <code class="docutils literal notranslate"><span class="pre">Plugin.bind()</span></code> classmethod, the return value of
 <a class="reference internal" href="api/session.html#streamlink.session.Streamlink.resolve_url" title="streamlink.session.Streamlink.resolve_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code></a>
 and <a class="reference internal" href="api/session.html#streamlink.session.Streamlink.resolve_url_no_redirect" title="streamlink.session.Streamlink.resolve_url_no_redirect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code></a>
@@ -497,9 +497,9 @@ were changed. Both methods now return a three-element tuple of the resolved plug
 </section>
 </section>
 <section id="streamlink-4-0-0">
-<h2>streamlink 4.0.0<a class="headerlink" href="#streamlink-4-0-0" title="Permalink to this heading">#</a></h2>
+<h2>streamlink 4.0.0<a class="headerlink" href="#streamlink-4-0-0" title="Link to this heading">#</a></h2>
 <section id="streamlink-plugin-api-utils">
-<h3>streamlink.plugin.api.utils<a class="headerlink" href="#streamlink-plugin-api-utils" title="Permalink to this heading">#</a></h3>
+<h3>streamlink.plugin.api.utils<a class="headerlink" href="#streamlink-plugin-api-utils" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">streamlink.plugin.api.utils</span></code> module has been removed, including the <code class="docutils literal notranslate"><span class="pre">itertags</span></code> function and the export aliases
 for <code class="docutils literal notranslate"><span class="pre">streamlink.utils.parse</span></code>.</p>
 <div class="line-block">
@@ -517,9 +517,9 @@ Parsed HTML/XML documents enable data extraction with XPath queries.</p></li>
 </section>
 </section>
 <section id="streamlink-3-0-0">
-<h2>streamlink 3.0.0<a class="headerlink" href="#streamlink-3-0-0" title="Permalink to this heading">#</a></h2>
+<h2>streamlink 3.0.0<a class="headerlink" href="#streamlink-3-0-0" title="Link to this heading">#</a></h2>
 <section id="plugin-class-returned-by-session-resolve-url">
-<h3>Plugin class returned by Session.resolve_url()<a class="headerlink" href="#plugin-class-returned-by-session-resolve-url" title="Permalink to this heading">#</a></h3>
+<h3>Plugin class returned by Session.resolve_url()<a class="headerlink" href="#plugin-class-returned-by-session-resolve-url" title="Link to this heading">#</a></h3>
 <p>In order to enable <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> constructors to have access to plugin options derived from
 the resolved plugin arguments, <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> instantiation moved from
 <a class="reference internal" href="api/session.html#streamlink.session.Streamlink.resolve_url" title="streamlink.session.Streamlink.resolve_url"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code></a> to <code class="docutils literal notranslate"><span class="pre">streamlink_cli</span></code>,
@@ -629,9 +629,9 @@ and <a class="reference internal" href="api/session.html#streamlink.session.Stre
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=413a1d38"></script>
+</div><script src="_static/documentation_options.js?v=f13f159b"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/design-tabs.js?v=36754332"></script>
     </body>
