@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Donating" href="donate.html" /><link rel="prev" title="Exceptions" href="api/exceptions.html" />
 
-    <!-- Generated with Sphinx 7.2.5 and Furo 2023.09.10 -->
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.1.0+30.g230f1022 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.1.0+30.g230f1022 documentation</title>
+        <title>Changelog - Streamlink 6.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.1.0+30.g230f1022 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,10 +167,10 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.1.0+30.g230f1022</pre>
+  <pre class="sidebar-versions-current">6.2.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/changelog.html" class="">Stable</a></dd>
-    <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
+    <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -269,12 +269,24 @@
         <article role="main">
           
   
-    <div class="admonition important version-warning">
-      <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
-    </div>
-  
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<section id="streamlink-6-2-0-2023-09-14">
+<h2>streamlink 6.2.0 (2023-09-14)<a class="headerlink" href="#streamlink-6-2-0-2023-09-14" title="Link to this heading">#</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--player-env</span></code> CLI argument (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5535">#5535</a>)</p></li>
+<li><p>Added: OpenSSL version to debug log output (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5506">#5506</a>)</p></li>
+<li><p>Updated: segmented stream internals and typing (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5504">#5504</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5507">#5507</a>)</p></li>
+<li><p>Updated: internal HLS tag parsing setup and parser state (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5513">#5513</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5521">#5521</a>)</p></li>
+<li><p>Fixed: HLS streams not ending on playlist reload with endlist tag and no new segments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5538">#5538</a>)</p></li>
+<li><p>Fixed: missing file encoding when writing a log file (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5532">#5532</a>)</p></li>
+<li><p>Added plugins: piaulizaportal (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5508">#5508</a>)</p></li>
+<li><p>Fixed plugins: hiplayer (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5534">#5534</a>), nicolive (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5529">#5529</a>), pluto (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5551">#5551</a>)</p></li>
+<li><p>Docs: added list of supported metadata variables for each plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5517">#5517</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5519">#5519</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.1.0...6.2.0">Full changelog</a></p>
+</section>
 <section id="streamlink-6-1-0-2023-08-16">
 <h2>streamlink 6.1.0 (2023-08-16)<a class="headerlink" href="#streamlink-6-1-0-2023-08-16" title="Link to this heading">#</a></h2>
 <p>Release highlights:</p>
@@ -1441,6 +1453,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-2-0-2023-09-14">streamlink 6.2.0 (2023-09-14)</a></li>
 <li><a class="reference internal" href="#streamlink-6-1-0-2023-08-16">streamlink 6.1.0 (2023-08-16)</a></li>
 <li><a class="reference internal" href="#streamlink-6-0-1-2023-08-02">streamlink 6.0.1 (2023-08-02)</a></li>
 <li><a class="reference internal" href="#streamlink-6-0-0-2023-07-20">streamlink 6.0.0 (2023-07-20)</a></li>
@@ -1517,7 +1530,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=0f08f3aa"></script>
+</div><script src="_static/documentation_options.js?v=f13f159b"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
