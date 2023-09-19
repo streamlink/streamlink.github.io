@@ -167,6 +167,16 @@ Linux and BSD
       - .. code-block:: bash
 
             sudo dnf install streamlink
+    * - :octicon:`package-dependents` `FreeBSD (pkg)`_
+      - .. code-block:: bash
+
+            pkg install multimedia/streamlink
+
+    * - :octicon:`package-dependents` `FreeBSD (ports)`_
+      - .. code-block:: bash
+
+            cd /usr/ports/multimedia/streamlink
+            make config install clean
     * - :octicon:`package-dependents` `Gentoo Linux`_
       - .. code-block:: bash
 
@@ -197,9 +207,11 @@ Linux and BSD
 
 .. _Arch Linux: https://archlinux.org/packages/extra/any/streamlink/
 .. _Arch Linux (aur, git): https://aur.archlinux.org/packages/streamlink-git/
-.. _Debian (sid, testing): https://packages.debian.org/unstable/streamlink
-.. _Debian (stable): https://packages.debian.org/unstable/streamlink
+.. _Debian (sid, testing): https://packages.debian.org/sid/streamlink
+.. _Debian (stable): https://packages.debian.org/bullseye-backports/streamlink
 .. _Fedora: https://src.fedoraproject.org/rpms/python-streamlink
+.. _FreeBSD (pkg): https://ports.freebsd.org/cgi/ports.cgi?query=streamlink&stype=name
+.. _FreeBSD (ports): https://www.freshports.org/multimedia/streamlink
 .. _Gentoo Linux: https://packages.gentoo.org/package/net-misc/streamlink
 .. _NetBSD (pkgsrc): https://pkgsrc.se/multimedia/streamlink
 .. _NixOS: https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink
@@ -207,8 +219,8 @@ Linux and BSD
 .. _Solus: https://github.com/getsolus/packages/tree/main/packages/s/streamlink
 .. _Void: https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink
 
-.. _Installing AUR packages: https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages
-.. _Installing Debian backported packages: https://wiki.debian.org/Backports#Using_the_command_line
+.. _Installing AUR packages: https://wiki.archlinux.org/index.php/Arch_User_Repository
+.. _Installing Debian backported packages: https://wiki.debian.org/Backports
 .. _NixOS channel: https://search.nixos.org/packages?show=streamlink&query=streamlink
 
 
@@ -231,6 +243,8 @@ Package maintainers
       - Alexis Murzeau <amubtdx at gmail.com>
     * - Fedora
       - Mohamed El Morabity <melmorabity at fedoraproject.org>
+    * - FreeBSD
+      - Takefu <takefu at airport.fm>
     * - Gentoo
       - soredake <fdsfgs at krutt.org>
     * - NetBSD
