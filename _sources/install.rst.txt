@@ -136,6 +136,12 @@ Linux and BSD
       - See the `Linux AppImages`_ section below
     * - :octicon:`verified` Python pip
       - See the `PyPI package and source code`_ section below
+    * - :octicon:`package-dependents` `Alpine Linux (edge, testing)`_
+      - .. code-block:: bash
+
+            sudo apk add streamlink
+
+        `Enabling the edge/testing repository`_
     * - :octicon:`package-dependents` `Arch Linux`_
       - .. code-block:: bash
 
@@ -167,6 +173,16 @@ Linux and BSD
       - .. code-block:: bash
 
             sudo dnf install streamlink
+    * - :octicon:`package-dependents` `FreeBSD (pkg)`_
+      - .. code-block:: bash
+
+            pkg install multimedia/streamlink
+
+    * - :octicon:`package-dependents` `FreeBSD (ports)`_
+      - .. code-block:: bash
+
+            cd /usr/ports/multimedia/streamlink
+            make config install clean
     * - :octicon:`package-dependents` `Gentoo Linux`_
       - .. code-block:: bash
 
@@ -195,20 +211,24 @@ Linux and BSD
 
             sudo xbps-install streamlink
 
+.. _Alpine Linux (edge, testing): https://pkgs.alpinelinux.org/packages?name=streamlink
 .. _Arch Linux: https://archlinux.org/packages/extra/any/streamlink/
 .. _Arch Linux (aur, git): https://aur.archlinux.org/packages/streamlink-git/
-.. _Debian (sid, testing): https://packages.debian.org/unstable/streamlink
-.. _Debian (stable): https://packages.debian.org/unstable/streamlink
+.. _Debian (sid, testing): https://packages.debian.org/sid/streamlink
+.. _Debian (stable): https://packages.debian.org/bullseye-backports/streamlink
 .. _Fedora: https://src.fedoraproject.org/rpms/python-streamlink
+.. _FreeBSD (pkg): https://ports.freebsd.org/cgi/ports.cgi?query=streamlink&stype=name
+.. _FreeBSD (ports): https://www.freshports.org/multimedia/streamlink
 .. _Gentoo Linux: https://packages.gentoo.org/package/net-misc/streamlink
 .. _NetBSD (pkgsrc): https://pkgsrc.se/multimedia/streamlink
 .. _NixOS: https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink
 .. _openSUSE: https://build.opensuse.org/package/show/multimedia:apps/streamlink
-.. _Solus: https://github.com/solus-packages/streamlink
+.. _Solus: https://github.com/getsolus/packages/tree/main/packages/s/streamlink
 .. _Void: https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink
 
-.. _Installing AUR packages: https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages
-.. _Installing Debian backported packages: https://wiki.debian.org/Backports#Using_the_command_line
+.. _Enabling the edge/testing repository: https://wiki.alpinelinux.org/wiki/Repositories#Edge
+.. _Installing AUR packages: https://wiki.archlinux.org/index.php/Arch_User_Repository
+.. _Installing Debian backported packages: https://wiki.debian.org/Backports
 .. _NixOS channel: https://search.nixos.org/packages?show=streamlink&query=streamlink
 
 
@@ -221,6 +241,8 @@ Package maintainers
 
     * - Distribution / Platform
       - Maintainer
+    * - Alpine Linux
+      - Robert Sacks <robert at sacks.email>
     * - Arch
       - Giancarlo Razzolini <grazzolini at archlinux.org>
     * - Arch (aur, git)
@@ -231,6 +253,8 @@ Package maintainers
       - Alexis Murzeau <amubtdx at gmail.com>
     * - Fedora
       - Mohamed El Morabity <melmorabity at fedoraproject.org>
+    * - FreeBSD
+      - Takefu <takefu at airport.fm>
     * - Gentoo
       - soredake <fdsfgs at krutt.org>
     * - NetBSD
