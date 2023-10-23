@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Installation - Streamlink 6.2.1+41.g13762836 documentation">
+  <meta property="og:title" content="Installation - Streamlink 6.2.1+43.gc398096e documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Installation - Streamlink 6.2.1+41.g13762836 documentation</title>
+        <title>Installation - Streamlink 6.2.1+43.gc398096e documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.2.1+41.g13762836 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.2.1+43.gc398096e documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.2.1+41.g13762836</pre>
+  <pre class="sidebar-versions-current">6.2.1+43.gc398096e</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -620,14 +620,19 @@ to <code class="docutils literal notranslate"><span class="pre">~/.profile</span
 </section>
 <section id="virtual-environment">
 <h2>Virtual environment<a class="headerlink" href="#virtual-environment" title="Link to this heading">#</a></h2>
-<p>Another method of installing Streamlink in a non-system-wide way is
-using <a class="reference external" href="https://virtualenv.readthedocs.io/en/latest/">virtualenv</a>, which creates a user owned Python environment instead.</p>
-<section id="install-with-virtualenv-and-pip-commands">
-<h3>Install with <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands<a class="headerlink" href="#install-with-virtualenv-and-pip-commands" title="Link to this heading">#</a></h3>
+<p>Another way of installing Streamlink in a non-system-wide way is using the <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a> or <a class="reference external" href="https://virtualenv.pypa.io/en/stable/">virtualenv</a> Python packages,
+which both create a user-owned Python environment which is isolated from the system's main Python package environment.</p>
+<p>While <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a> is part of Python's standard library since <code class="docutils literal notranslate"><span class="pre">3.3</span></code>, <a class="reference external" href="https://virtualenv.pypa.io/en/stable/">virtualenv</a> is the project which <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a> was built from,
+but it first needs to be installed, either via <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> or from the system's package manager. It also implements more features,
+so depending on your needs, you may want to use <a class="reference external" href="https://virtualenv.pypa.io/en/stable/">virtualenv</a> instead of <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>.</p>
+<section id="install-using-venv-and-pip">
+<h3>Install using <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#install-using-venv-and-pip" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new environment</span>
-virtualenv<span class="w"> </span>~/myenv
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/myenv
 
 <span class="c1"># Activate the environment</span>
+<span class="c1"># note: non-POSIX compliant shells like FISH or PowerShell have different activation script file names</span>
+<span class="c1"># note: on Windows, the `bin` subdirectory is called `Scripts`</span>
 <span class="nb">source</span><span class="w"> </span>~/myenv/bin/activate
 
 <span class="c1"># *Either* install the latest Streamlink release from PyPI in the virtual environment</span>
@@ -647,9 +652,9 @@ deactivate
 </pre></div>
 </div>
 </section>
-<section id="install-with-pipx-command">
-<h3>Install with <code class="docutils literal notranslate"><span class="pre">pipx</span></code> command<a class="headerlink" href="#install-with-pipx-command" title="Link to this heading">#</a></h3>
-<p>The <a class="reference external" href="https://pypa.github.io/pipx/">pipx</a> command combines the functionality of the <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands. It may be necessary to
+<section id="install-using-pipx">
+<h3>Install using <code class="docutils literal notranslate"><span class="pre">pipx</span></code><a class="headerlink" href="#install-using-pipx" title="Link to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://pypa.github.io/pipx/">pipx</a> project combines the functionality of both <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code>. It may be necessary to
 install it first, either with a system package manager, or using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, as detailed in the <a class="reference external" href="https://pypa.github.io/pipx/">documentation</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># *Either* install the latest Streamlink release from PyPI in a virtual environment</span>
 pipx<span class="w"> </span>install<span class="w"> </span>streamlink
@@ -663,18 +668,27 @@ streamlink<span class="w"> </span>...
 </div>
 </section>
 </section>
-<section id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h2>
-<p>To install Streamlink from source you will need these dependencies.</p>
-<p>Since <a class="reference internal" href="changelog.html#streamlink-4-0-0-2022-05-01"><span class="std std-ref">4.0.0</span></a>,
-Streamlink defines a <a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/pyproject.toml">build system</a> according to <a class="reference external" href="https://peps.python.org/pep-0517/">PEP-517</a> / <a class="reference external" href="https://peps.python.org/pep-0518/">PEP-518</a>.</p>
+<section id="source-distribution">
+<h2>Source distribution<a class="headerlink" href="#source-distribution" title="Link to this heading">#</a></h2>
+<p>In addition to the pre-built wheels uploaded to PyPI, Streamlink's source distribution tarballs get uploaded
+to both PyPI and GitHub releases. These tarballs are meant for packagers and are signed using the following PGP key:</p>
+<p><a class="sd-sphinx-override sd-badge sd-outline-primary sd-text-primary reference external" href="https://keyserver.ubuntu.com/pks/lookup?search=44448A298D5C3618&amp;fingerprint=on&amp;op=index"><span>44448A298D5C3618</span></a></p>
+<p>Please be aware that PyPI has dropped support for uploading new release file signatures in May 2023, so those can only be found
+on <a class="reference external" href="https://github.com/streamlink/streamlink/releases">GitHub releases</a> now.</p>
+<p>See the <a class="reference internal" href="#dependencies">Dependencies</a> section down below for the required build- and runtime-requirements.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not build Streamlink from tarballs generated by GitHub from (tagged) git commits,
-as they are lacking the release version string.</p>
-<p>Instead, install from Streamlink's signed source-distribution tarballs which are uploaded to PyPI and GitHub releases,
+<p>Please avoid building Streamlink from tarballs generated by GitHub from (tagged) git commits,
+as they are lacking the built-in release version string. The <code class="docutils literal notranslate"><span class="pre">versioningit</span></code> build-requirement also won't be able
+to find the correct version, as the content is not part of a git repository.</p>
+<p>Instead, build from Streamlink's signed source-distribution tarballs which are uploaded to PyPI and GitHub releases,
 or from the cloned git repository.</p>
 </div>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h3>
+<p>To install Streamlink from source, you will need these dependencies.</p>
+<p>Since <a class="reference internal" href="changelog.html#streamlink-4-0-0-2022-05-01"><span class="std std-ref">4.0.0</span></a>,
+Streamlink defines a <a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/pyproject.toml">build system</a> according to <a class="reference external" href="https://peps.python.org/pep-0517/">PEP-517</a> / <a class="reference external" href="https://peps.python.org/pep-0518/">PEP-518</a>.</p>
 <div class="table-wrapper table-custom-layout table-custom-layout-dependencies docutils container">
 <table class="table-custom-layout table-custom-layout-dependencies docutils align-default">
 <thead>
@@ -763,6 +777,7 @@ Not needed when building wheels and installing from the source distribution.</p>
 </tbody>
 </table>
 </div>
+</section>
 </section>
 <section id="windows-binaries">
 <h2>Windows binaries<a class="headerlink" href="#windows-binaries" title="Link to this heading">#</a></h2>
@@ -1028,11 +1043,14 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
 <li><a class="reference internal" href="#package-availability">Package availability</a></li>
 <li><a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a></li>
 <li><a class="reference internal" href="#virtual-environment">Virtual environment</a><ul>
-<li><a class="reference internal" href="#install-with-virtualenv-and-pip-commands">Install with <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands</a></li>
-<li><a class="reference internal" href="#install-with-pipx-command">Install with <code class="docutils literal notranslate"><span class="pre">pipx</span></code> command</a></li>
+<li><a class="reference internal" href="#install-using-venv-and-pip">Install using <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li><a class="reference internal" href="#install-using-pipx">Install using <code class="docutils literal notranslate"><span class="pre">pipx</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#source-distribution">Source distribution</a><ul>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#windows-binaries">Windows binaries</a></li>
 <li><a class="reference internal" href="#linux-appimages">Linux AppImages</a><ul>
 <li><a class="reference internal" href="#what-are-appimages">What are AppImages?</a></li>
@@ -1049,7 +1067,7 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=c39ac86c"></script>
+</div><script src="_static/documentation_options.js?v=d5449639"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
