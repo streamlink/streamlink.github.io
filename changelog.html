@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.2.1 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.3.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.2.1 documentation</title>
+        <title>Changelog - Streamlink 6.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.2.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.3.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.2.1</pre>
+  <pre class="sidebar-versions-current">6.3.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -271,6 +271,42 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<section id="streamlink-6-3-0-2023-10-25">
+<h2>streamlink 6.3.0 (2023-10-25)<a class="headerlink" href="#streamlink-6-3-0-2023-10-25" title="Link to this heading">#</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: warning log message when skipping HLS segments between playlist reloads (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5607">#5607</a>)</p></li>
+<li><p>Refactored: internals of segmented stream implementations (base classes, HLS, DASH)</p>
+<ul>
+<li><p>Added: base <code class="docutils literal notranslate"><span class="pre">Segment</span></code> dataclass and made segmented streams inherit from it (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5594">#5594</a>)</p></li>
+<li><p>Moved: modules into sub-packages (import paths of public APIs remain the same) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5593">#5593</a>)</p></li>
+<li><p>Renamed: various non-public HLS class methods/attributes and functions (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5526">#5526</a>)</p></li>
+<li><p>Removed: <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> segment wrapper from HLS implementation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5526">#5526</a>)</p></li>
+</ul>
+</li>
+<li><p>Fixed: DASH manifest not respecting the <code class="docutils literal notranslate"><span class="pre">minBufferTime</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5610">#5610</a>)</p></li>
+<li><p>Fixed: URL matchers of HLS/DASH protocol plugins (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5616">#5616</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5617">#5617</a>)</p></li>
+<li><p>Fixed: bandwidth parsing issue in HLS multivariant playlists (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5619">#5619</a>)</p></li>
+<li><p>Fixed plugins:</p>
+<ul>
+<li><p>dlive: fixed live streams and fixed VODs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5622">#5622</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5623">#5623</a>)</p></li>
+<li><p>goodgame: rewritten plugin using goodgame API v4 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5586">#5586</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5597">#5597</a>)</p></li>
+<li><p>mitele: updated gbx API calls from v2 to v3 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5624">#5624</a>)</p></li>
+<li><p>twitch: fixed error handling of geo-restricted or inaccessible streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5591">#5591</a>)</p></li>
+</ul>
+</li>
+<li><p>Removed plugins:</p>
+<ul>
+<li><p>ntv: static stream URLs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5604">#5604</a>)</p></li>
+<li><p>vlive: offline (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5599">#5599</a>)</p></li>
+</ul>
+</li>
+<li><p>Build: dropped <code class="docutils literal notranslate"><span class="pre">versioningit</span></code> build-requirement when building from sdist tarball (version string has always been built-in while <code class="docutils literal notranslate"><span class="pre">versioningit</span></code> performed a no-op) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5632">#5632</a>)</p></li>
+<li><p>Packaging: added missing shell completions build-script to sdist (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5625">#5625</a>)</p></li>
+<li><p>Docs: clarified section about building from source (sdist/git vs. GitHub tarballs) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5633">#5633</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.2.1...6.3.0">Full changelog</a></p>
+</section>
 <section id="streamlink-6-2-1-2023-10-03">
 <h2>streamlink 6.2.1 (2023-10-03)<a class="headerlink" href="#streamlink-6-2-1-2023-10-03" title="Link to this heading">#</a></h2>
 <p>Patch release:</p>
@@ -1463,6 +1499,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-3-0-2023-10-25">streamlink 6.3.0 (2023-10-25)</a></li>
 <li><a class="reference internal" href="#streamlink-6-2-1-2023-10-03">streamlink 6.2.1 (2023-10-03)</a></li>
 <li><a class="reference internal" href="#streamlink-6-2-0-2023-09-14">streamlink 6.2.0 (2023-09-14)</a></li>
 <li><a class="reference internal" href="#streamlink-6-1-0-2023-08-16">streamlink 6.1.0 (2023-08-16)</a></li>
@@ -1541,7 +1578,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=55479182"></script>
+</div><script src="_static/documentation_options.js?v=80ea5fc2"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
