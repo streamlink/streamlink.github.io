@@ -13,6 +13,7 @@ latest/_sources/api/validate.rst.txt
 latest/_sources/api/webbrowser.rst.txt
 latest/_sources/api_guide.rst.txt
 latest/_sources/api_guide/quickstart.rst.txt
+latest/_sources/api_guide/validate.rst.txt
 latest/_sources/applications.rst.txt
 latest/_sources/changelog.md.txt
 latest/_sources/cli.rst.txt
@@ -80,6 +81,7 @@ latest/api/validate.html
 latest/api/webbrowser.html
 latest/api_guide.html
 latest/api_guide/quickstart.html
+latest/api_guide/validate.html
 latest/applications.html
 latest/changelog.html
 latest/cli.html
