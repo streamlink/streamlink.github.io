@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Validation schemas - Streamlink 6.3.1+17.ga755cace documentation">
+  <meta property="og:title" content="Validation schemas - Streamlink 6.3.1+18.gd04ae24c documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Validation schemas - Streamlink 6.3.1+17.ga755cace documentation</title>
+        <title>Validation schemas - Streamlink 6.3.1+18.gd04ae24c documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.3.1+17.ga755cace documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.3.1+18.gd04ae24c documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.3.1+17.ga755cace</pre>
+  <pre class="sidebar-versions-current">6.3.1+18.gd04ae24c</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/validate.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/validate.html" class="version-current">Latest</a></dd>
@@ -708,21 +708,32 @@ then all key-value pairs of <code class="docutils literal notranslate"><span cla
 
 <dl class="py function">
 <dt class="sig sig-object py" id="streamlink.plugin.api.validate.length">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.length" title="Link to this definition">#</a></dt>
-<dd><p>Utility function for checking whether the input has a minimum length, by using <code class="xref py py-func docutils literal notranslate"><span class="pre">len()</span></code>.</p>
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ge'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.length" title="Link to this definition">#</a></dt>
+<dd><p>Utility function for checking whether the input has a certain length, by using <code class="xref py py-func docutils literal notranslate"><span class="pre">len()</span></code>.
+Checks the minimum length by default (<code class="docutils literal notranslate"><span class="pre">op=&quot;ge&quot;</span></code>).</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
     <span class="n">validate</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
 <span class="p">)</span>
 <span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;abc&quot;</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
 <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># raises ValidationError</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s2">&quot;lt&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;ab&quot;</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># raises ValidationError</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>number</strong> (<em>int</em>) -- </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number</strong> (<em>int</em>) -- </p></li>
+<li><p><strong>op</strong> (<em>Literal</em><em>[</em><em>'lt'</em><em>, </em><em>'le'</em><em>, </em><em>'eq'</em><em>, </em><em>'ge'</em><em>, </em><em>'gt'</em><em>]</em>) -- </p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>Callable</em>[[str], bool]</p>
@@ -1662,7 +1673,7 @@ with optionally validated <code class="docutils literal notranslate"><span class
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=6c1dedce"></script>
+</div><script src="../_static/documentation_options.js?v=6da00b97"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
