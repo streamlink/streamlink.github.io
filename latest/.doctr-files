@@ -31,7 +31,6 @@ latest/_sources/developing.rst.txt
 latest/_sources/donate.rst.txt
 latest/_sources/index.rst.txt
 latest/_sources/install.rst.txt
-latest/_sources/issues.rst.txt
 latest/_sources/migrations.rst.txt
 latest/_sources/players.rst.txt
 latest/_sources/plugins.rst.txt
@@ -100,7 +99,6 @@ latest/donate.html
 latest/genindex.html
 latest/index.html
 latest/install.html
-latest/issues.html
 latest/migrations.html
 latest/objects.inv
 latest/players.html
