@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.3.1+29.ga541921a documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.3.1+30.g0048c677 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.3.1+29.ga541921a documentation</title>
+        <title>Changelog - Streamlink 6.3.1+30.g0048c677 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.3.1+29.ga541921a documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.3.1+30.g0048c677 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.3.1+29.ga541921a</pre>
+  <pre class="sidebar-versions-current">6.3.1+30.g0048c677</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -279,6 +279,25 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<section id="streamlink-6-4-0-2023-11-21">
+<h2>streamlink 6.4.0 (2023-11-21)<a class="headerlink" href="#streamlink-6-4-0-2023-11-21" title="Link to this heading">#</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: missing support for dynamic DASH manifests with <code class="docutils literal notranslate"><span class="pre">SegmentList</span></code>s (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5654">#5654</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5657">#5657</a>)</p></li>
+<li><p>Added: warning log message when skipping DASH segments between manifest reloads (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5659">#5659</a>)</p></li>
+<li><p>Added plugins: nasaplus (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5664">#5664</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>raiplay: added VOD support with authentication <code class="docutils literal notranslate"><span class="pre">--raiplay-email</span></code> / <code class="docutils literal notranslate"><span class="pre">--raiplay-password</span></code> / <code class="docutils literal notranslate"><span class="pre">--raiplay-purge-credentials</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5662">#5662</a>)</p></li>
+<li><p>telemadrid: fixed XPath query (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5653">#5653</a>)</p></li>
+<li><p>tvp: fixed tvp.info (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5645">#5645</a>)</p></li>
+<li><p>youtube: fixed video ID retrieval (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5673">#5673</a>)</p></li>
+</ul>
+</li>
+<li><p>Docs: added validation schema API docs and API guide (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5652">#5652</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5655">#5655</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.3.1...6.4.0">Full changelog</a></p>
+</section>
 <section id="streamlink-6-3-1-2023-10-26">
 <h2>streamlink 6.3.1 (2023-10-26)<a class="headerlink" href="#streamlink-6-3-1-2023-10-26" title="Link to this heading">#</a></h2>
 <p>Patch release:</p>
@@ -1520,6 +1539,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-4-0-2023-11-21">streamlink 6.4.0 (2023-11-21)</a></li>
 <li><a class="reference internal" href="#streamlink-6-3-1-2023-10-26">streamlink 6.3.1 (2023-10-26)</a></li>
 <li><a class="reference internal" href="#streamlink-6-3-0-2023-10-25">streamlink 6.3.0 (2023-10-25)</a></li>
 <li><a class="reference internal" href="#streamlink-6-2-1-2023-10-03">streamlink 6.2.1 (2023-10-03)</a></li>
@@ -1600,7 +1620,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=6437ad0e"></script>
+</div><script src="_static/documentation_options.js?v=ec637ed0"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
