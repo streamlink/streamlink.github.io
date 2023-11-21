@@ -9,8 +9,11 @@
 ./_sources/api/session.rst.txt
 ./_sources/api/stream.rst.txt
 ./_sources/api/streamlink.rst.txt
+./_sources/api/validate.rst.txt
 ./_sources/api/webbrowser.rst.txt
 ./_sources/api_guide.rst.txt
+./_sources/api_guide/quickstart.rst.txt
+./_sources/api_guide/validate.rst.txt
 ./_sources/applications.rst.txt
 ./_sources/changelog.md.txt
 ./_sources/cli.rst.txt
@@ -28,7 +31,6 @@
 ./_sources/donate.rst.txt
 ./_sources/index.rst.txt
 ./_sources/install.rst.txt
-./_sources/issues.rst.txt
 ./_sources/migrations.rst.txt
 ./_sources/players.rst.txt
 ./_sources/plugins.rst.txt
@@ -74,8 +76,11 @@
 ./api/session.html
 ./api/stream.html
 ./api/streamlink.html
+./api/validate.html
 ./api/webbrowser.html
 ./api_guide.html
+./api_guide/quickstart.html
+./api_guide/validate.html
 ./applications.html
 ./changelog.html
 ./cli.html
@@ -94,7 +99,6 @@
 ./genindex.html
 ./index.html
 ./install.html
-./issues.html
 ./migrations.html
 ./objects.inv
 ./players.html

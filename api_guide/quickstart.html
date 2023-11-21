@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Crunchyroll" href="plugins/crunchyroll.html" /><link rel="prev" title="Metadata" href="metadata.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Validation schemas" href="validate.html" /><link rel="prev" title="API Guide" href="../api_guide.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugin specific usage - Streamlink 6.4.0 documentation">
+  <meta property="og:title" content="Quickstart - Streamlink 6.4.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugin specific usage - Streamlink 6.4.0 documentation</title>
+        <title>Quickstart - Streamlink 6.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -149,7 +149,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -169,8 +169,8 @@
 <div class="sidebar-versions centered" role="note" aria-label="versions">
   <pre class="sidebar-versions-current">6.4.0</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/cli/plugins.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/cli/plugins.html" class="">Latest</a></dd>
+    <dd><a href="/api_guide/quickstart.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/api_guide/quickstart.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,17 +181,17 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../cli.html">Command-Line Interface</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Command-Line Interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cli.html">Command-Line Interface</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Command-Line Interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cli.html">Command-line usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugin-sideloading.html">Plugin sideloading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="protocols.html">Streaming protocols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="proxy.html">Proxy support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
-<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Plugin specific usage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Plugin specific usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="plugins/crunchyroll.html">Crunchyroll</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plugins/twitch.html">Twitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/tutorial.html">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/config.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/plugin-sideloading.html">Plugin sideloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/protocols.html">Streaming protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/proxy.html">Proxy support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/metadata.html">Metadata</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Plugin specific usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cli/plugins/crunchyroll.html">Crunchyroll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli/plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
 </ul>
@@ -201,9 +201,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../deprecations.html">Deprecations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../migrations.html">Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developing.html">Developing</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../api_guide.html">API Guide</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api_guide/quickstart.html">Quickstart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api_guide/validate.html">Validation schemas</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../api_guide.html">API Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate.html">Validation schemas</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -249,7 +249,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/cli/plugins.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/api_guide/quickstart.rst" title="Edit this page">
     <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
@@ -265,7 +265,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -273,27 +273,77 @@
         <article role="main">
           
   
-  <section id="plugin-specific-usage">
-<h1>Plugin specific usage<a class="headerlink" href="#plugin-specific-usage" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="plugins/crunchyroll.html">Crunchyroll</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="plugins/crunchyroll.html#authentication">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugins/crunchyroll.html#http-proxy">HTTP proxy</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="plugins/twitch.html">Twitch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="plugins/twitch.html#authentication">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugins/twitch.html#embedded-ads">Embedded ads</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugins/twitch.html#client-integrity-token">Client-integrity token</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugins/twitch.html#low-latency-streaming">Low latency streaming</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="plugins/twitch.html#player-buffer-tweaks">Player buffer tweaks</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+  <section id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h1>
+<p>This API is what powers the <a class="reference internal" href="../cli.html#command-line-interface"><span class="std std-ref">CLI</span></a>, but it's also available to developers that wish
+to make use of the data Streamlink can retrieve in their own application.</p>
+<section id="extracting-streams">
+<h2>Extracting streams<a class="headerlink" href="#extracting-streams" title="Link to this heading">#</a></h2>
+<p>The simplest use of the Streamlink API looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">streamlink</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">streamlink</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">&quot;hls://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
+<p>This simply attempts to find a plugin and use it to extract streams from
+the URL. This works great in simple cases but if you want more
+fine tuning you need to use a <a class="reference internal" href="#session-object">session object</a> instead.</p>
+<p>The returned value is a dict containing <a class="reference internal" href="../api/stream.html#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a> objects:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span>
+<span class="go">{&#39;41k&#39;: &lt;HLSStream [&#39;hls&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear0/prog_index.m3u8&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&#39;]&gt;,</span>
+<span class="go"> &#39;230k&#39;: &lt;HLSStream [&#39;hls&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear1/prog_index.m3u8&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&#39;]&gt;,</span>
+<span class="go"> &#39;650k&#39;: &lt;HLSStream [&#39;hls&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&#39;]&gt;,</span>
+<span class="go"> &#39;990k&#39;: &lt;HLSStream [&#39;hls&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear3/prog_index.m3u8&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&#39;]&gt;,</span>
+<span class="go"> &#39;1900k&#39;: &lt;HLSStream [&#39;hls&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear4/prog_index.m3u8&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&#39;]&gt;,</span>
+<span class="go"> &#39;worst&#39;: &lt;HLSStream [&#39;hls&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear0/prog_index.m3u8&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&#39;]&gt;,</span>
+<span class="go"> &#39;best&#39;: &lt;HLSStream [&#39;hls&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear4/prog_index.m3u8&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&#39;]&gt;}</span>
+</pre></div>
+</div>
+<p>If no plugin for the URL is found, a <a class="reference internal" href="../api/exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoPluginError</span></code></a> will be raised.
+If an error occurs while fetching streams, a <a class="reference internal" href="../api/exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PluginError</span></code></a> will be raised.</p>
+</section>
+<section id="opening-streams-to-read-data">
+<h2>Opening streams to read data<a class="headerlink" href="#opening-streams-to-read-data" title="Link to this heading">#</a></h2>
+<p>Now that you have extracted some streams we might want to read some data from
+one of them. When you call <a class="reference internal" href="../api/stream.html#streamlink.stream.Stream.open" title="streamlink.stream.Stream.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> on a stream, a file-like object will be
+returned, which you can call <code class="docutils literal notranslate"><span class="pre">.read(size)</span></code> and <code class="docutils literal notranslate"><span class="pre">.close()</span></code> on.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">streams</span><span class="p">[</span><span class="s2">&quot;best&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If an error occurs while opening a stream, a <a class="reference internal" href="../api/exceptions.html#streamlink.exceptions.StreamError" title="streamlink.exceptions.StreamError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StreamError</span></code></a> will be raised.</p>
+</section>
+<section id="inspecting-streams">
+<h2>Inspecting streams<a class="headerlink" href="#inspecting-streams" title="Link to this heading">#</a></h2>
+<p>It's also possible to inspect the stream's internal parameters. Go to
+<a class="reference internal" href="../api/stream.html#module-streamlink.stream"><span class="std std-ref">Stream subclasses</span></a> to see which attributes are available
+for inspection for each stream type.</p>
+<p>For example, this is an <a class="reference internal" href="../api/stream.html#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> object which
+contains a <a class="reference internal" href="../api/stream.html#streamlink.stream.HTTPStream.url" title="streamlink.stream.HTTPStream.url"><code class="xref py py-attr docutils literal notranslate"><span class="pre">url</span></code></a> attribute.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span><span class="p">[</span><span class="s2">&quot;best&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">url</span>
+<span class="go">&#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear4/prog_index.m3u8&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="session-object">
+<h2>Session object<a class="headerlink" href="#session-object" title="Link to this heading">#</a></h2>
+<p>The session allows you to set various options and is more efficient
+when extracting streams more than once. You start by creating a
+<a class="reference internal" href="../api/session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><code class="xref py py-class docutils literal notranslate"><span class="pre">Streamlink</span></code></a> object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">streamlink</span> <span class="kn">import</span> <span class="n">Streamlink</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">Streamlink</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can then set options like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;stream-timeout&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and extract streams like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">streams</span><span class="p">(</span><span class="s2">&quot;URL&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="../api/session.html#streamlink.session.Streamlink.set_option" title="streamlink.session.Streamlink.set_option"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.set_option()</span></code></a> to see which options are available.</p>
+</section>
 </section>
 
 
@@ -302,23 +352,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="plugins/crunchyroll.html">
+          <a class="next-page" href="validate.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Crunchyroll</div>
+                <div class="title">Validation schemas</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="metadata.html">
+          <a class="prev-page" href="../api_guide.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Metadata</div>
+                <div class="title">API Guide</div>
                 
               </div>
             </a>
@@ -340,8 +390,30 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#extracting-streams">Extracting streams</a></li>
+<li><a class="reference internal" href="#opening-streams-to-read-data">Opening streams to read data</a></li>
+<li><a class="reference internal" href="#inspecting-streams">Inspecting streams</a></li>
+<li><a class="reference internal" href="#session-object">Session object</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
