@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Developing - Streamlink 6.4.1+1.g6d848ab4 documentation">
+  <meta property="og:title" content="Developing - Streamlink 6.4.1+3.ge9788f80 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Developing - Streamlink 6.4.1+1.g6d848ab4 documentation</title>
+        <title>Developing - Streamlink 6.4.1+3.ge9788f80 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.4.1+1.g6d848ab4 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.4.1+3.ge9788f80 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.4.1+1.g6d848ab4</pre>
+  <pre class="sidebar-versions-current">6.4.1+3.ge9788f80</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="version-current">Latest</a></dd>
@@ -308,48 +308,42 @@ git<span class="w"> </span>push<span class="w"> </span>fork<span class="w"> </sp
 <p>While working on any kind of python-based project, it is usually best to do this in a virtual environment which is isolated from
 the Python environment of the host system. This ensures that development can be done in a clean space which is free of version
 conflicts and other unrelated packages.</p>
-<p>First, make sure that you have the latest stable versions of Python and pip installed.</p>
+<p>First, make sure that you have the latest stable versions of Python and <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> installed:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
 pip<span class="w"> </span>--version
 </pre></div>
 </div>
-<p>As the second preparation step, install the latest version of <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code>, either via your system's package manager or pip,
-and create a new virtual environment. These environments can be created separately for different Python versions. Please refer
-to the <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv documentation</a> for all available parameters. There are also several wrappers around virtualenv available.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--user<span class="w"> </span>virtualenv
-virtualenv<span class="w"> </span>--version
-
-<span class="c1"># replace ~/venvs/streamlink with your path of choice and give it a proper name</span>
-virtualenv<span class="w"> </span>--download<span class="w"> </span>--verbose<span class="w"> </span>~/venvs/streamlink
+<p>Then set up a new virtual environment using <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a> of the Python standard library:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace ~/venvs/streamlink with your path of choice and give it a proper name</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/venvs/streamlink
 </pre></div>
 </div>
-<p>Now activate the virtual environment by sourcing the activation shell script.</p>
+<p>Now activate the virtual environment by sourcing the activation shell script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/venvs/streamlink/bin/activate
 
-<span class="c1"># non-POSIX shells have their own activation script, eg. FISH</span>
+<span class="c1"># non-POSIX shells have their own activation script, e.g. FISH</span>
 <span class="nb">source</span><span class="w"> </span>~/venvs/streamlink/bin/activate.fish
-
-<span class="c1"># on Windows, activation scripts are located in the Scripts/ subdirectory instead of bin/</span>
-<span class="nb">source</span><span class="w"> </span>~/venvs/streamlink/Scripts/activate
+</pre></div>
+</div>
+<div class="highlight-pwsh notranslate"><div class="highlight"><pre><span></span><span class="c"># on Windows, activation scripts are located in the Scripts/ subdirectory instead of bin/</span>
+<span class="p">~\</span><span class="n">venvs</span><span class="p">\</span><span class="n">streamlink</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
 </pre></div>
 </div>
 </section>
 <section id="installing-streamlink">
 <h3>Installing Streamlink<a class="headerlink" href="#installing-streamlink" title="Link to this heading">#</a></h3>
-<p>After activating the new virtual environment, Streamlink's build dependencies and Streamlink itself need to be installed.
+<p>After activating the new virtual environment, Streamlink's development dependencies and Streamlink itself need to be installed.
 Regular development dependencies and documentation related dependencies are listed in the text files shown below and need to
 be installed separately.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install additional dependencies</span>
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>dev-requirements.txt
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>docs-requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>-r<span class="w"> </span>dev-requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>-r<span class="w"> </span>docs-requirements.txt
 
-<span class="c1"># install Streamlink from source</span>
-<span class="c1"># check setup.py for optional dependencies and install those manually if you need to</span>
+<span class="c1"># install Streamlink in &quot;editable&quot; mode</span>
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 
 <span class="c1"># validate that Streamlink is working</span>
-which<span class="w"> </span>streamlink
-streamlink<span class="w"> </span>--version
+streamlink<span class="w"> </span>--loglevel<span class="o">=</span>debug
 </pre></div>
 </div>
 </section>
@@ -360,16 +354,14 @@ streamlink<span class="w"> </span>--version
 your changes contain any mistakes or errors. This will be done automatically for each pull request on each change, but
 performing these checks locally avoids unnecessary build failures.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># run automated tests</span>
-python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>-ra
+pytest
 <span class="c1"># or just run a subset of all tests</span>
-python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>-ra<span class="w"> </span>path/to/test-file.py::TestClassName::test_method_name<span class="w"> </span>...
+pytest<span class="w"> </span>path/to/test-file.py::TestClassName::test_method_name<span class="w"> </span>...
 
 <span class="c1"># check code for linting errors</span>
 ruff<span class="w"> </span>.
 <span class="c1"># check code for typing errors</span>
 mypy
-<span class="c1"># optionally check for typing errors if changes were made to the docs extensions</span>
-mypy<span class="w"> </span>docs
 
 <span class="c1"># build the documentation</span>
 make<span class="w"> </span>--directory<span class="o">=</span>docs<span class="w"> </span>clean<span class="w"> </span>html
@@ -427,10 +419,12 @@ structure should be compliant-ready for <a class="reference internal" href="#val
 a plugin. A complete guide is currently not available.</p>
 <p>Each plugin class requires at least one <code class="docutils literal notranslate"><span class="pre">pluginmatcher</span></code> decorator which defines the URL regex, matching priority
 and an optional name.</p>
-<p>Plugins need to implement the <code class="docutils literal notranslate"><span class="pre">_get_streams()</span></code> method which either returns a list of <code class="docutils literal notranslate"><span class="pre">Stream</span></code> instances or which yields
-<code class="docutils literal notranslate"><span class="pre">Stream</span></code> instances. <code class="docutils literal notranslate"><span class="pre">Stream</span></code> is the base class of <code class="docutils literal notranslate"><span class="pre">HTTPStream</span></code>, <code class="docutils literal notranslate"><span class="pre">HLSStream</span></code> and <code class="docutils literal notranslate"><span class="pre">DASHStream</span></code>.</p>
+<p>Plugins need to implement the <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin._get_streams" title="streamlink.plugin.Plugin._get_streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_get_streams()</span></code></a> method which must return
+<code class="docutils literal notranslate"><span class="pre">Mapping[str,Stream]</span> <span class="pre">|</span> <span class="pre">Iterable[Tuple[str,Stream]]</span> <span class="pre">|</span> <span class="pre">Iterator[Tuple[str,Stream]]</span> <span class="pre">|</span> <span class="pre">None</span></code>.
+<code class="docutils literal notranslate"><span class="pre">Stream</span></code> is the base class of <a class="reference internal" href="api/stream.html#streamlink.stream.HTTPStream" title="streamlink.stream.HTTPStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPStream</span></code></a>,
+<a class="reference internal" href="api/stream.html#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> and <a class="reference internal" href="api/stream.html#streamlink.stream.DASHStream" title="streamlink.stream.DASHStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">DASHStream</span></code></a>.</p>
 <p>Plugins also require metadata which will be read when building the documentation. This metadata contains information about
-the plugin, eg. which URLs it accepts, which kind of streams it returns, whether content is region-locked, or if any kind of
+the plugin, e.g. which URLs it accepts, which kind of streams it returns, whether content is region-locked, or if any kind of
 account or subscription is needed for watching the content, etc. This metadata needs to be set as a header comment at
 the beginning of the plugin file, in the following format (order of items is important):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -575,7 +569,7 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=30b1543d"></script>
+</div><script src="_static/documentation_options.js?v=630f9474"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
