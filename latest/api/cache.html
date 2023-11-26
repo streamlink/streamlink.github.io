@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Proxy Support" href="proxy.html" /><link rel="prev" title="Plugin sideloading" href="plugin-sideloading.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Validation schemas" href="validate.html" /><link rel="prev" title="Options" href="options.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Streaming protocols - Streamlink 6.4.1+4.ge88a84e2 documentation">
+  <meta property="og:title" content="Cache - Streamlink 6.4.1+4.ge88a84e2 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Streaming protocols - Streamlink 6.4.1+4.ge88a84e2 documentation</title>
+        <title>Cache - Streamlink 6.4.1+4.ge88a84e2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -169,8 +169,8 @@
 <div class="sidebar-versions centered" role="note" aria-label="versions">
   <pre class="sidebar-versions-current">6.4.1+4.ge88a84e2</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/cli/protocols.html" class="">Stable</a></dd>
-    <dd><a href="/latest/cli/protocols.html" class="version-current">Latest</a></dd>
+    <dd><a href="/api/cache.html" class="">Stable</a></dd>
+    <dd><a href="/latest/api/cache.html" class="version-current">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,17 +181,17 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../cli.html">Command-Line Interface</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Command-Line Interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cli.html">Command-Line Interface</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Command-Line Interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cli.html">Command-line usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plugin-sideloading.html">Plugin sideloading</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Streaming protocols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="proxy.html">Proxy support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Plugin specific usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="plugins/crunchyroll.html">Crunchyroll</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plugins/twitch.html">Twitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/tutorial.html">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/config.html">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/plugin-sideloading.html">Plugin sideloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/protocols.html">Streaming protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/proxy.html">Proxy support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/metadata.html">Metadata</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Plugin specific usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cli/plugins/crunchyroll.html">Crunchyroll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cli/plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
 </ul>
@@ -206,16 +206,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../api_guide/validate.html">Validation schemas</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/streamlink.html">Streamlink</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/session.html">Session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/plugin.html">Plugin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/options.html">Options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/cache.html">Cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/validate.html">Validation schemas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/stream.html">Stream</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/webbrowser.html">Webbrowser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/exceptions.html">Exceptions</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../api.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="streamlink.html">Streamlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session.html">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugin.html">Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate.html">Validation schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream.html">Stream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webbrowser.html">Webbrowser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -250,7 +250,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/cli/protocols.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/api/cache.rst" title="Edit this page">
     <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
@@ -278,110 +278,79 @@
       <p class="admonition-title">You are reading the documentation for the in-development version of Streamlink.</p>
     </div>
   
-  <section id="streaming-protocols">
-<h1>Streaming protocols<a class="headerlink" href="#streaming-protocols" title="Link to this heading">#</a></h1>
-<p>There are many types of streaming protocols used by services today and
-Streamlink supports most of them. It's possible to tell Streamlink
-to access a streaming protocol directly instead of relying on a plugin
-to extract the streams from a URL for you.</p>
-<section id="playing-built-in-streaming-protocols-directly">
-<h2>Playing built-in streaming protocols directly<a class="headerlink" href="#playing-built-in-streaming-protocols-directly" title="Link to this heading">#</a></h2>
-<p>A streaming protocol can be accessed directly by specifying it in the <code class="docutils literal notranslate"><span class="pre">protocol://URL</span></code> format
-with an optional list of parameters, like so:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;protocol://https://streamingserver/path key1=value1 key2=value2&quot;</span>
-</pre></div>
-</div>
-<p>Depending on the input URL, the explicit protocol scheme may be omitted.
-The following example shows HLS streams (<code class="docutils literal notranslate"><span class="pre">.m3u8</span></code>) and DASH streams (<code class="docutils literal notranslate"><span class="pre">.mpd</span></code>):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;https://streamingserver/playlist.m3u8&quot;</span>
-<span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;https://streamingserver/manifest.mpd&quot;</span>
-</pre></div>
-</div>
-</section>
-<section id="supported-streaming-protocols">
-<h2>Supported streaming protocols<a class="headerlink" href="#supported-streaming-protocols" title="Link to this heading">#</a></h2>
-<div class="table-wrapper table-custom-layout docutils container">
-<table class="table-custom-layout docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Explicit prefix</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Apple HTTP Live Streaming</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">hls://</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>MPEG-DASH</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dash://</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>Progressive HTTP/HTTPS</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">httpstream://</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Local files can be read by adding the <code class="docutils literal notranslate"><span class="pre">file://</span></code> scheme to the <code class="docutils literal notranslate"><span class="pre">URL</span></code> component.</p>
-</div>
-</section>
-<section id="protocol-parameters">
-<h2>Protocol parameters<a class="headerlink" href="#protocol-parameters" title="Link to this heading">#</a></h2>
-<p>When passing parameters to the built-in streaming protocols, the values will either be treated as plain strings
-or they will be interpreted as Python literals:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;httpstream://https://streamingserver/path method=POST params={&#39;abc&#39;:123} json=[&#39;foo&#39;,&#39;bar&#39;,&#39;baz&#39;]&quot;</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span>
-<span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
-<span class="n">json</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;baz&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>The parameters from the example above are used to make an HTTP <code class="docutils literal notranslate"><span class="pre">POST</span></code> request with <code class="docutils literal notranslate"><span class="pre">abc=123</span></code> added
-to the query string and <code class="docutils literal notranslate"><span class="pre">[&quot;foo&quot;,</span> <span class="pre">&quot;bar&quot;,</span> <span class="pre">&quot;baz&quot;]</span></code> used as the content of the HTTP request's body (the serialized JSON data).</p>
-<p>Some parameters allow you to configure the behavior of the streaming protocol implementation directly:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>streamlink<span class="w"> </span><span class="s2">&quot;hls://https://streamingserver/path start_offset=123 duration=321 force_restart=True&quot;</span>
-</pre></div>
-</div>
-</section>
-<section id="available-parameters">
-<h2>Available parameters<a class="headerlink" href="#available-parameters" title="Link to this heading">#</a></h2>
-<p>Parameters are passed to the following methods of their respective stream implementations:</p>
-<div class="table-wrapper table-custom-layout docutils container">
-<table class="table-custom-layout docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Protocol prefix</p></th>
-<th class="head"><p>Method references</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">httpstream://</span></code></p></td>
-<td><ul class="simple">
-<li><p><a class="reference internal" href="../api/stream.html#streamlink.stream.HTTPStream" title="streamlink.stream.HTTPStream"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.HTTPStream()</span></code></a></p></li>
-<li><p><a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.31.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+  <section id="module-streamlink.cache">
+<span id="cache"></span><h1>Cache<a class="headerlink" href="#module-streamlink.cache" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="streamlink.cache.Cache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.cache.</span></span><span class="sig-name descname"><span class="pre">Cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.cache.Cache" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Caches Python values as JSON and prunes expired entries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em><em> | </em><em>Path</em>) -- A file name or <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object, relative to the cache directory</p></li>
+<li><p><strong>key_prefix</strong> (<em>str</em>) -- Optional prefix for each key to be retrieved from or stored in the cache</p></li>
 </ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hls://</span></code></p></td>
-<td><ul class="simple">
-<li><p><a class="reference internal" href="../api/stream.html#streamlink.stream.HLSStream.parse_variant_playlist" title="streamlink.stream.HLSStream.parse_variant_playlist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.HLSStream.parse_variant_playlist()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../api/stream.html#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.HLSStream()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../api/stream.html#streamlink.stream.MuxedHLSStream" title="streamlink.stream.MuxedHLSStream"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.MuxedHLSStream()</span></code></a></p></li>
-<li><p><a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.31.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.cache.Cache.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.cache.Cache.get" title="Link to this definition">#</a></dt>
+<dd><p>Attempt to retrieve the given key from the cache.</p>
+<p>Prunes the cache of all expired key-value pairs before retrieving the key's value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) -- A specific key name</p></li>
+<li><p><strong>default</strong> (<em>Any</em><em> | </em><em>None</em>) -- An optional default value if no key was stored, or if it has expired</p></li>
 </ul>
-</td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dash://</span></code></p></td>
-<td><ul class="simple">
-<li><p><a class="reference internal" href="../api/stream.html#streamlink.stream.DASHStream.parse_manifest" title="streamlink.stream.DASHStream.parse_manifest"><code class="xref py py-meth docutils literal notranslate"><span class="pre">streamlink.stream.DASHStream.parse_manifest()</span></code></a></p></li>
-<li><p><a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.31.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The retrieved value or optional default value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Any</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.cache.Cache.get_all">
+<span class="sig-name descname"><span class="pre">get_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.cache.Cache.get_all" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve all cached key-value pairs.</p>
+<p>Prunes the cache of all expired key-value pairs first.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of all cached key-value pairs.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Dict</em>[str, <em>Any</em>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.cache.Cache.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">604800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expires_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.cache.Cache.set" title="Link to this definition">#</a></dt>
+<dd><p>Store the given value using the key name and expiration time.</p>
+<p>Prunes the cache of all expired key-value pairs before setting the new key-value pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) -- A specific key name</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) -- Any kind of value that can be JSON-serialized</p></li>
+<li><p><strong>expires</strong> (<em>float</em>) -- Expiration time in seconds, with the default being one week</p></li>
+<li><p><strong>expires_at</strong> (<em>datetime</em><em> | </em><em>None</em>) -- Optional expiration date, which overrides the expiration time</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -390,23 +359,23 @@ to the query string and <code class="docutils literal notranslate"><span class="
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="proxy.html">
+          <a class="next-page" href="validate.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Proxy Support</div>
+                <div class="title">Validation schemas</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="plugin-sideloading.html">
+          <a class="prev-page" href="options.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Plugin sideloading</div>
+                <div class="title">Options</div>
                 
               </div>
             </a>
@@ -440,11 +409,13 @@ to the query string and <code class="docutils literal notranslate"><span class="
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Streaming protocols</a><ul>
-<li><a class="reference internal" href="#playing-built-in-streaming-protocols-directly">Playing built-in streaming protocols directly</a></li>
-<li><a class="reference internal" href="#supported-streaming-protocols">Supported streaming protocols</a></li>
-<li><a class="reference internal" href="#protocol-parameters">Protocol parameters</a></li>
-<li><a class="reference internal" href="#available-parameters">Available parameters</a></li>
+<li><a class="reference internal" href="#">Cache</a><ul>
+<li><a class="reference internal" href="#streamlink.cache.Cache"><code class="docutils literal notranslate"><span class="pre">Cache</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.cache.Cache.get"><code class="docutils literal notranslate"><span class="pre">Cache.get()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.cache.Cache.get_all"><code class="docutils literal notranslate"><span class="pre">Cache.get_all()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.cache.Cache.set"><code class="docutils literal notranslate"><span class="pre">Cache.set()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

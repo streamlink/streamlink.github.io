@@ -3,6 +3,7 @@ latest/_images/icon-ffmpeg.svg
 latest/_images/icon-python.svg
 latest/_images/icon.svg
 latest/_sources/api.rst.txt
+latest/_sources/api/cache.rst.txt
 latest/_sources/api/exceptions.rst.txt
 latest/_sources/api/options.rst.txt
 latest/_sources/api/plugin.rst.txt
@@ -70,6 +71,7 @@ latest/_static/styles/furo-extensions.css.map
 latest/_static/styles/furo.css
 latest/_static/styles/furo.css.map
 latest/api.html
+latest/api/cache.html
 latest/api/exceptions.html
 latest/api/options.html
 latest/api/plugin.html
