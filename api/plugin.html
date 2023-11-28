@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Validation schemas" href="validate.html" /><link rel="prev" title="Session" href="session.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Options" href="options.html" /><link rel="prev" title="Session" href="session.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugin - Streamlink 6.4.1 documentation">
+  <meta property="og:title" content="Plugin - Streamlink 6.4.2 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugin - Streamlink 6.4.1 documentation</title>
+        <title>Plugin - Streamlink 6.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.4.1 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.4.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.4.1</pre>
+  <pre class="sidebar-versions-current">6.4.2</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/plugin.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api/plugin.html" class="">Latest</a></dd>
@@ -208,9 +208,10 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../api.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="streamlink.html">Streamlink</a></li>
-<li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="session.html">Session</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html">Cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="validate.html">Validation schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stream.html">Stream</a></li>
 <li class="toctree-l2"><a class="reference internal" href="webbrowser.html">Webbrowser</a></li>
@@ -344,6 +345,12 @@ This list supports matcher lookups both by matcher index, as well as matcher nam
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.options">
 <span class="sig-name descname"><span class="pre">options</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="options.html#streamlink.options.Options" title="streamlink.options.Options"><span class="pre">Options</span></a></em><a class="headerlink" href="#streamlink.plugin.Plugin.options" title="Link to this definition">#</a></dt>
 <dd><p>Plugin options, initialized with the user-set values of the plugin's arguments</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.Plugin.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="cache.html#streamlink.cache.Cache" title="streamlink.cache.Cache"><span class="pre">Cache</span></a></em><a class="headerlink" href="#streamlink.plugin.Plugin.cache" title="Link to this definition">#</a></dt>
+<dd><p>Plugin cache object, used to store plugin-specific data other than HTTP session cookies</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -565,12 +572,12 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="validate.html">
+          <a class="next-page" href="options.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Validation schemas</div>
+                <div class="title">Options</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -626,6 +633,7 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.author"><code class="docutils literal notranslate"><span class="pre">Plugin.author</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.category"><code class="docutils literal notranslate"><span class="pre">Plugin.category</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.options"><code class="docutils literal notranslate"><span class="pre">Plugin.options</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.Plugin.cache"><code class="docutils literal notranslate"><span class="pre">Plugin.cache</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.matches"><code class="docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.url"><code class="docutils literal notranslate"><span class="pre">Plugin.url</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.Plugin.streams"><code class="docutils literal notranslate"><span class="pre">Plugin.streams()</span></code></a></li>
@@ -651,7 +659,7 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=aac92a15"></script>
+</div><script src="../_static/documentation_options.js?v=9d31a07f"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

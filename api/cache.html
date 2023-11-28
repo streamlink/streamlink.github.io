@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Changelog" href="../changelog.html" /><link rel="prev" title="Webbrowser" href="webbrowser.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Validation schemas" href="validate.html" /><link rel="prev" title="Options" href="options.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Exceptions - Streamlink 6.4.2 documentation">
+  <meta property="og:title" content="Cache - Streamlink 6.4.2 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Exceptions - Streamlink 6.4.2 documentation</title>
+        <title>Cache - Streamlink 6.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -169,8 +169,8 @@
 <div class="sidebar-versions centered" role="note" aria-label="versions">
   <pre class="sidebar-versions-current">6.4.2</pre>
   <dl class="sidebar-versions-others">
-    <dd><a href="/api/exceptions.html" class="version-current">Stable</a></dd>
-    <dd><a href="/latest/api/exceptions.html" class="">Latest</a></dd>
+    <dd><a href="/api/cache.html" class="version-current">Stable</a></dd>
+    <dd><a href="/latest/api/cache.html" class="">Latest</a></dd>
   </dl>
 </div><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -211,11 +211,11 @@
 <li class="toctree-l2"><a class="reference internal" href="session.html">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugin.html">Plugin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="options.html">Options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cache.html">Cache</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="validate.html">Validation schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stream.html">Stream</a></li>
 <li class="toctree-l2"><a class="reference internal" href="webbrowser.html">Webbrowser</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -250,7 +250,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/api/exceptions.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/api/cache.rst" title="Edit this page">
     <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
@@ -274,66 +274,77 @@
         <article role="main">
           
   
-  <section id="exceptions">
-<h1>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">#</a></h1>
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.StreamlinkError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamlinkError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamlinkError" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Any error caused by Streamlink will be caught with this exception.</p>
+  <section id="module-streamlink.cache">
+<span id="cache"></span><h1>Cache<a class="headerlink" href="#module-streamlink.cache" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="streamlink.cache.Cache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.cache.</span></span><span class="sig-name descname"><span class="pre">Cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.cache.Cache" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Caches Python values as JSON and prunes expired entries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em><em> | </em><em>Path</em>) -- A file name or <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code> object, relative to the cache directory</p></li>
+<li><p><strong>key_prefix</strong> (<em>str</em>) -- Optional prefix for each key to be retrieved from or stored in the cache</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.cache.Cache.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.cache.Cache.get" title="Link to this definition">#</a></dt>
+<dd><p>Attempt to retrieve the given key from the cache.</p>
+<p>Prunes the cache of all expired key-value pairs before retrieving the key's value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) -- A specific key name</p></li>
+<li><p><strong>default</strong> (<em>Any</em><em> | </em><em>None</em>) -- An optional default value if no key was stored, or if it has expired</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The retrieved value or optional default value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Any</em></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.PluginError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">PluginError</span></span><a class="headerlink" href="#streamlink.exceptions.PluginError" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
-<p>Plugin related error.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.cache.Cache.get_all">
+<span class="sig-name descname"><span class="pre">get_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.cache.Cache.get_all" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve all cached key-value pairs.</p>
+<p>Prunes the cache of all expired key-value pairs first.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of all cached key-value pairs.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Dict</em>[str, <em>Any</em>]</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.FatalPluginError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">FatalPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.FatalPluginError" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.PluginError" title="streamlink.exceptions.PluginError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginError</span></code></a></p>
-<p>Plugin related error that cannot be recovered from.</p>
-<p>Plugins should use this <code class="docutils literal notranslate"><span class="pre">Exception</span></code> when errors that can
-never be recovered from are encountered. For example, when
-a user's input is required and none can be given.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.cache.Cache.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">604800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expires_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.cache.Cache.set" title="Link to this definition">#</a></dt>
+<dd><p>Store the given value using the key name and expiration time.</p>
+<p>Prunes the cache of all expired key-value pairs before setting the new key-value pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) -- A specific key name</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) -- Any kind of value that can be JSON-serialized</p></li>
+<li><p><strong>expires</strong> (<em>float</em>) -- Expiration time in seconds, with the default being one week</p></li>
+<li><p><strong>expires_at</strong> (<em>datetime</em><em> | </em><em>None</em>) -- Optional expiration date, which overrides the expiration time</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.NoPluginError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.NoPluginError" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
-<p>Error raised by <code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code>
-and <code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code>
-when no plugin could be found for the given input URL.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.NoStreamsError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoStreamsError</span></span><a class="headerlink" href="#streamlink.exceptions.NoStreamsError" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
-<p>Plugins should use this <code class="docutils literal notranslate"><span class="pre">Exception</span></code> in <a class="reference internal" href="plugin.html#streamlink.plugin.Plugin._get_streams" title="streamlink.plugin.Plugin._get_streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Plugin._get_streams()</span></code></a>
-when returning <code class="docutils literal notranslate"><span class="pre">None</span></code> or an empty <code class="docutils literal notranslate"><span class="pre">dict</span></code> is not possible, e.g. in nested function calls.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.exceptions.StreamError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamError" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
-<p>Stream related error.</p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.webbrowser.exceptions.WebbrowserError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.exceptions.</span></span><span class="sig-name descname"><span class="pre">WebbrowserError</span></span><a class="headerlink" href="#streamlink.webbrowser.exceptions.WebbrowserError" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.exceptions.CDPError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.exceptions.</span></span><span class="sig-name descname"><span class="pre">CDPError</span></span><a class="headerlink" href="#streamlink.webbrowser.cdp.exceptions.CDPError" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.webbrowser.exceptions.WebbrowserError" title="streamlink.webbrowser.exceptions.WebbrowserError"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebbrowserError</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -344,23 +355,23 @@ when returning <code class="docutils literal notranslate"><span class="pre">None
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../changelog.html">
+          <a class="next-page" href="validate.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Changelog</div>
+                <div class="title">Validation schemas</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="webbrowser.html">
+          <a class="prev-page" href="options.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Webbrowser</div>
+                <div class="title">Options</div>
                 
               </div>
             </a>
@@ -394,15 +405,13 @@ when returning <code class="docutils literal notranslate"><span class="pre">None
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Exceptions</a><ul>
-<li><a class="reference internal" href="#streamlink.exceptions.StreamlinkError"><code class="docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.PluginError"><code class="docutils literal notranslate"><span class="pre">PluginError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.FatalPluginError"><code class="docutils literal notranslate"><span class="pre">FatalPluginError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.NoPluginError"><code class="docutils literal notranslate"><span class="pre">NoPluginError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.NoStreamsError"><code class="docutils literal notranslate"><span class="pre">NoStreamsError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.exceptions.StreamError"><code class="docutils literal notranslate"><span class="pre">StreamError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.webbrowser.exceptions.WebbrowserError"><code class="docutils literal notranslate"><span class="pre">WebbrowserError</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.webbrowser.cdp.exceptions.CDPError"><code class="docutils literal notranslate"><span class="pre">CDPError</span></code></a></li>
+<li><a class="reference internal" href="#">Cache</a><ul>
+<li><a class="reference internal" href="#streamlink.cache.Cache"><code class="docutils literal notranslate"><span class="pre">Cache</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.cache.Cache.get"><code class="docutils literal notranslate"><span class="pre">Cache.get()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.cache.Cache.get_all"><code class="docutils literal notranslate"><span class="pre">Cache.get_all()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.cache.Cache.set"><code class="docutils literal notranslate"><span class="pre">Cache.set()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

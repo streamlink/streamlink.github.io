@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Third Party Applications - Streamlink 6.4.1 documentation">
+  <meta property="og:title" content="Third Party Applications - Streamlink 6.4.2 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Third Party Applications - Streamlink 6.4.1 documentation</title>
+        <title>Third Party Applications - Streamlink 6.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.4.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.4.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.4.1</pre>
+  <pre class="sidebar-versions-current">6.4.2</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/thirdparty.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/thirdparty.html" class="">Latest</a></dd>
@@ -208,9 +208,10 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/streamlink.html">Streamlink</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/options.html">Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/session.html">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/plugin.html">Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/cache.html">Cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html">Validation schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/stream.html">Stream</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html">Webbrowser</a></li>
@@ -273,23 +274,17 @@
         <article role="main">
           
   
-  <style>
-    .rst-content table.field-list td {
-        padding-top: 8px;
-    }
-    i.fab.fa-fw {
-        font-size: 1.333em;
-    }
-</style><section id="third-party-applications">
+  <section id="third-party-applications">
 <h1>Third Party Applications<a class="headerlink" href="#third-party-applications" title="Link to this heading">#</a></h1>
+<p>Help us extend this list by sending us a pull request on GitHub. Thanks!</p>
 <section id="liveproxy">
 <h2>LiveProxy<a class="headerlink" href="#liveproxy" title="Link to this heading">#</a></h2>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Description<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Local proxy server between Streamlink and an URL</p>
 </dd>
 <dt class="field-even">OS<span class="colon">:</span></dt>
-<dd class="field-even"><p><i class="fab fa-fw fa-windows"></i> <i class="fab fa-fw fa-apple"></i> <i class="fab fa-fw fa-linux"></i></p>
+<dd class="field-even"><p><span class="fab fa-windows fa-xl"></span> <span class="fab fa-apple fa-xl"></span> <span class="fab fa-linux fa-xl"></span></p>
 </dd>
 <dt class="field-odd">Author<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://github.com/back-to">back-to</a></p>
@@ -301,9 +296,9 @@
 <dd class="field-odd"><p><a class="reference external" href="https://github.com/back-to/liveproxy">https://github.com/back-to/liveproxy</a></p>
 </dd>
 <dt class="field-even">Info<span class="colon">:</span></dt>
-<dd class="field-even"><p>LiveProxy allows Streamlink to be easy accessible from <strong>m3u</strong> playlists, <br />
-it is also available for <strong>Kodi Leia</strong> and <strong>Enigma2</strong> devices. <br />
-A detailed guide can be found on the website.</p>
+<dd class="field-even"><p>LiveProxy allows Streamlink to be easy accessible from <strong>m3u</strong> playlists,
+it is also available for <strong>Kodi Leia</strong> and <strong>Enigma2</strong> devices.</p>
+<p>A detailed guide can be found on the website.</p>
 </dd>
 </dl>
 </section>
@@ -318,7 +313,7 @@ A detailed guide can be found on the website.</p>
 <dd class="field-even"><p>TUI (terminal user interface)</p>
 </dd>
 <dt class="field-odd">OS<span class="colon">:</span></dt>
-<dd class="field-odd"><p><i class="fab fa-fw fa-linux"></i> <i class="fab fa-fw fa-apple"></i></p>
+<dd class="field-odd"><p><span class="fab fa-apple fa-xl"></span> <span class="fab fa-linux fa-xl"></span></p>
 </dd>
 <dt class="field-even">Author<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://krathalan.net">Hunter Peavey</a></p>
@@ -327,9 +322,9 @@ A detailed guide can be found on the website.</p>
 <dd class="field-odd"><p><a class="reference external" href="https://git.sr.ht/~krathalan/wtwitch">https://git.sr.ht/~krathalan/wtwitch</a></p>
 </dd>
 <dt class="field-even">Info<span class="colon">:</span></dt>
-<dd class="field-even"><p>wtwitch is a Bash program that lets you browse the top games on Twitch, the <br />
-top streamers for a given game, and lets you check the status of streamers you <br />
-subscribe to. Open streams easily with settings that save your preferred quality <br />
+<dd class="field-even"><p>wtwitch is a Bash program that lets you browse the top games on Twitch, the
+top streamers for a given game, and lets you check the status of streamers you
+subscribe to. Open streams easily with settings that save your preferred quality
 and player. A man page comes with the AUR package or can be compiled manually.</p>
 </dd>
 </dl>
@@ -344,7 +339,7 @@ and player. A man page comes with the AUR package or can be compiled manually.</
 <dd class="field-even"><p>OBS Plugin</p>
 </dd>
 <dt class="field-odd">OS<span class="colon">:</span></dt>
-<dd class="field-odd"><p><i class="fab fa-fw fa-windows"></i></p>
+<dd class="field-odd"><p><span class="fab fa-windows fa-xl"></span></p>
 </dd>
 <dt class="field-even">Author<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://github.com/dd-center">DD Center</a></p>
@@ -358,7 +353,6 @@ embedding streams directly as a scene source. This is useful for broadcasters of
 multi-platform live streams and for live commentators.</p>
 </dd>
 </dl>
-<p>Help us extend this list by sending us a pull request on Github. Thanks!</p>
 </section>
 </section>
 
@@ -425,7 +419,7 @@ multi-platform live streams and for live commentators.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=aac92a15"></script>
+</div><script src="_static/documentation_options.js?v=9d31a07f"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>

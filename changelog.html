@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.4.1 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.4.2 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.4.1 documentation</title>
+        <title>Changelog - Streamlink 6.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.4.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.4.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.4.1</pre>
+  <pre class="sidebar-versions-current">6.4.2</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -208,9 +208,10 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/streamlink.html">Streamlink</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/options.html">Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/session.html">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/plugin.html">Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/cache.html">Cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html">Validation schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/stream.html">Stream</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/webbrowser.html">Webbrowser</a></li>
@@ -275,6 +276,22 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<section id="streamlink-6-4-2-2023-11-28">
+<h2>streamlink 6.4.2 (2023-11-28)<a class="headerlink" href="#streamlink-6-4-2-2023-11-28" title="Link to this heading">#</a></h2>
+<p>Patch release:</p>
+<ul class="simple">
+<li><p>Fixed: HLS segment maps being written to the output multiple times (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5689">#5689</a>)</p></li>
+<li><p>Fixed plugins:</p>
+<ul>
+<li><p>bilibili: rewritten plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5693">#5693</a>)</p></li>
+<li><p>piczel: updated HLS URLs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5690">#5690</a>)</p></li>
+<li><p>ssh101: fixed stream URL retrieval (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5686">#5686</a>)</p></li>
+</ul>
+</li>
+<li><p>Docs: added missing <code class="docutils literal notranslate"><span class="pre">Cache</span></code> API docs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5688">#5688</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.4.1...6.4.2">Full changelog</a></p>
+</section>
 <section id="streamlink-6-4-1-2023-11-22">
 <h2>streamlink 6.4.1 (2023-11-22)<a class="headerlink" href="#streamlink-6-4-1-2023-11-22" title="Link to this heading">#</a></h2>
 <p>Patch release:</p>
@@ -1543,6 +1560,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-4-2-2023-11-28">streamlink 6.4.2 (2023-11-28)</a></li>
 <li><a class="reference internal" href="#streamlink-6-4-1-2023-11-22">streamlink 6.4.1 (2023-11-22)</a></li>
 <li><a class="reference internal" href="#streamlink-6-4-0-2023-11-21">streamlink 6.4.0 (2023-11-21)</a></li>
 <li><a class="reference internal" href="#streamlink-6-3-1-2023-10-26">streamlink 6.3.1 (2023-10-26)</a></li>
@@ -1625,7 +1643,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=aac92a15"></script>
+</div><script src="_static/documentation_options.js?v=9d31a07f"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
