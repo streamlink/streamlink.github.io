@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.5.0+21.g4e58141c documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.5.0+22.gf868f969 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.5.0+21.g4e58141c documentation</title>
+        <title>Changelog - Streamlink 6.5.0+22.gf868f969 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.5.0+21.g4e58141c documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.5.0+22.gf868f969 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.5.0+21.g4e58141c</pre>
+  <pre class="sidebar-versions-current">6.5.0+22.gf868f969</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -280,6 +280,27 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<section id="streamlink-6-5-1-2024-01-16">
+<h2>streamlink 6.5.1 (2024-01-16)<a class="headerlink" href="#streamlink-6-5-1-2024-01-16" title="Link to this heading">#</a></h2>
+<p>Patch release:</p>
+<ul class="simple">
+<li><p>Fixed: file output path log message on py38/py39 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5728">#5728</a>)</p></li>
+<li><p>Improved: warning message when using quoted player paths (in config files) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5757">#5757</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>artetv: updated API response validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5774">#5774</a>)</p></li>
+<li><p>atresplayer: updated API response validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5742">#5742</a>)</p></li>
+<li><p>bigo: reimplemented plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5754">#5754</a>)</p></li>
+<li><p>bilibili: fixed stream resolving issues on channels with custom layouts (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5771">#5771</a>)</p></li>
+<li><p>huya: added stream CDN availability check (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5745">#5745</a>)</p></li>
+<li><p>twitch: disabled Chromium headless mode on client-integrity token acquirement (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5758">#5758</a>)</p></li>
+<li><p>vidio: fixed missing API request cookies (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5762">#5762</a>)</p></li>
+<li><p>zattoo: fixed audio/video sync issues (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5739">#5739</a>)</p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.5.0...6.5.1">Full changelog</a></p>
+</section>
 <section id="streamlink-6-5-0-2023-12-16">
 <h2>streamlink 6.5.0 (2023-12-16)<a class="headerlink" href="#streamlink-6-5-0-2023-12-16" title="Link to this heading">#</a></h2>
 <p>Release highlights:</p>
@@ -1584,6 +1605,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-5-1-2024-01-16">streamlink 6.5.1 (2024-01-16)</a></li>
 <li><a class="reference internal" href="#streamlink-6-5-0-2023-12-16">streamlink 6.5.0 (2023-12-16)</a></li>
 <li><a class="reference internal" href="#streamlink-6-4-2-2023-11-28">streamlink 6.4.2 (2023-11-28)</a></li>
 <li><a class="reference internal" href="#streamlink-6-4-1-2023-11-22">streamlink 6.4.1 (2023-11-22)</a></li>
@@ -1668,7 +1690,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=d64301ab"></script>
+</div><script src="_static/documentation_options.js?v=ce9e0186"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
