@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugin - Streamlink 6.5.1+5.ge56adac4 documentation">
+  <meta property="og:title" content="Plugin - Streamlink 6.5.1+7.gc1a72a88 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugin - Streamlink 6.5.1+5.ge56adac4 documentation</title>
+        <title>Plugin - Streamlink 6.5.1+7.gc1a72a88 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.5.1+5.ge56adac4 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.5.1+7.gc1a72a88 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.5.1+5.ge56adac4</pre>
+  <pre class="sidebar-versions-current">6.5.1+7.gc1a72a88</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/plugin.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/plugin.html" class="version-current">Latest</a></dd>
@@ -526,8 +526,13 @@ and both support referencing matchers and matches by matcher index and name.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="streamlink.plugin.pluginargument">
-<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginargument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">const</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">choices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">help</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metavar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginargument" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">&#64;</span></span><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.</span></span><span class="sig-name descname"><span class="pre">pluginargument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">const</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">choices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">help</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metavar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.pluginargument" title="Link to this definition">#</a></dt>
 <dd><p>Decorator for plugin arguments. Takes the same arguments as <a class="reference internal" href="options.html#streamlink.options.Argument" title="streamlink.options.Argument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Argument</span></code></a>.</p>
+<p>One exception is the <code class="docutils literal notranslate"><span class="pre">type</span></code> argument, which also accepts a <code class="docutils literal notranslate"><span class="pre">str</span></code> value:</p>
+<p>Plugins built into Streamlink <strong>must</strong> reference the used argument-type function by name, so the pluginargument data
+can be JSON-serialized. <code class="docutils literal notranslate"><span class="pre">type_args</span></code> and <code class="docutils literal notranslate"><span class="pre">type_kwargs</span></code> can be used to parametrize the type-argument function,
+but their values <strong>must</strong> only consist of literal objects.</p>
+<p>The available functions are defined in the <a class="reference internal" href="#streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY" title="streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY"><code class="xref py py-data docutils literal notranslate"><span class="pre">_PLUGINARGUMENT_TYPE_REGISTRY</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginargument</span>
 
 
@@ -557,7 +562,9 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
 <li><p><strong>nargs</strong> (<em>int</em><em> | </em><em>Literal</em><em>[</em><em>'?'</em><em>, </em><em>'*'</em><em>, </em><em>'+'</em><em>] </em><em>| </em><em>None</em>) -- </p></li>
 <li><p><strong>const</strong> (<em>Any</em>) -- </p></li>
 <li><p><strong>default</strong> (<em>Any</em>) -- </p></li>
-<li><p><strong>type</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>_T</em><em>] </em><em>| </em><em>None</em>) -- </p></li>
+<li><p><strong>type</strong> (<em>str</em><em> | </em><em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>_T</em><em>] </em><em>| </em><em>None</em>) -- </p></li>
+<li><p><strong>type_args</strong> (<em>Sequence</em><em>[</em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- </p></li>
+<li><p><strong>type_kwargs</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- </p></li>
 <li><p><strong>choices</strong> (<em>Iterable</em><em>[</em><em>_T</em><em>] </em><em>| </em><em>None</em>) -- </p></li>
 <li><p><strong>required</strong> (<em>bool</em>) -- </p></li>
 <li><p><strong>help</strong> (<em>str</em><em> | </em><em>None</em>) -- </p></li>
@@ -573,6 +580,12 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
 <dd class="field-even"><p><em>Callable</em>[[<em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]], <em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.plugin.</span></span><span class="sig-name descname"><span class="pre">_PLUGINARGUMENT_TYPE_REGISTRY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'boolean':</span> <span class="pre">&lt;function</span> <span class="pre">boolean&gt;,</span> <span class="pre">'comma_list':</span> <span class="pre">&lt;function</span> <span class="pre">comma_list&gt;,</span> <span class="pre">'comma_list_filter':</span> <span class="pre">&lt;function</span> <span class="pre">comma_list_filter&gt;,</span> <span class="pre">'filesize':</span> <span class="pre">&lt;function</span> <span class="pre">filesize&gt;,</span> <span class="pre">'hours_minutes_seconds':</span> <span class="pre">&lt;function</span> <span class="pre">_hours_minutes_seconds.&lt;locals&gt;.inner&gt;,</span> <span class="pre">'hours_minutes_seconds_float':</span> <span class="pre">&lt;function</span> <span class="pre">_hours_minutes_seconds.&lt;locals&gt;.inner&gt;,</span> <span class="pre">'keyvalue':</span> <span class="pre">&lt;function</span> <span class="pre">keyvalue&gt;,</span> <span class="pre">'num':</span> <span class="pre">&lt;function</span> <span class="pre">num&gt;}</span></em><a class="headerlink" href="#streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY" title="Link to this definition">#</a></dt>
+<dd><p>See the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument()</span></code></a> decorator</p>
 </dd></dl>
 
 </section>
@@ -658,6 +671,7 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
 <li><a class="reference internal" href="#plugin-decorators">Plugin decorators</a><ul>
 <li><a class="reference internal" href="#streamlink.plugin.pluginmatcher"><code class="docutils literal notranslate"><span class="pre">pluginmatcher()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.pluginargument"><code class="docutils literal notranslate"><span class="pre">pluginargument()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY"><code class="docutils literal notranslate"><span class="pre">_PLUGINARGUMENT_TYPE_REGISTRY</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -671,7 +685,7 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=f27439eb"></script>
+</div><script src="../_static/documentation_options.js?v=2878976d"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
