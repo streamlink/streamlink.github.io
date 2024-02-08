@@ -1,6 +1,39 @@
 Deprecations
 ============
 
+streamlink 6.6.0
+----------------
+
+HTTPSession and HTTPAdapters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The module structure of the :class:`Streamlink <streamlink.session.Streamlink>` session implementation and related classes
+like the ``HTTPSession`` has been re-organized.
+
+Importing ``HTTPSession`` from either ``streamlink.plugin.api`` or ``streamlink.plugin.api.http_session`` is now deprecated.
+It was never intended to import this class directly. Plugin implementors should always reference the session's ``HTTPSession``
+instance via the :attr:`Streamlink.http <streamlink.session.Streamlink.http>` attribute.
+
+In addition, importing ``TLSNoDHAdapter`` or ``TLSSecLevel1Adapter`` from ``streamlink.plugin.api.http_session`` is now also
+deprecated. Import from the ``streamlink.session.http`` module instead, if actually necessary.
+
+Streamlink.{get,load}_plugins()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As a result of the code refactoring mentioned above, the following plugins-related methods
+on the :class:`Streamlink <streamlink.session.Streamlink>` session class have been deprecated:
+
+``Streamlink.get_plugins()`` has been deprecated in favor of
+:meth:`Streamlink.plugins.get_loaded() <streamlink.session.plugins.StreamlinkPlugins.get_loaded>`.
+
+``Streamlink.load_plugins(path)`` has been deprecated in favor of
+:meth:`Streamlink.plugins.load_path(path) <streamlink.session.plugins.StreamlinkPlugins.load_path>`.
+
+``Streamlink.load_builtin_plugins()`` has been deprecated in favor of using
+the :class:`plugins_builtin <streamlink.session.Streamlink>` Streamlink session keyword argument.
+The old method was never publicly documented and was only used internally upon initialization.
+
+
 streamlink 5.4.0
 ----------------
 
