@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Session - Streamlink 6.5.1+46.gebb49d39 documentation">
+  <meta property="og:title" content="Session - Streamlink 6.5.1+47.g6a551f6b documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Session - Streamlink 6.5.1+46.gebb49d39 documentation</title>
+        <title>Session - Streamlink 6.5.1+47.g6a551f6b documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.5.1+46.gebb49d39 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.5.1+47.g6a551f6b documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.5.1+46.gebb49d39</pre>
+  <pre class="sidebar-versions-current">6.5.1+47.g6a551f6b</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/session.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/session.html" class="version-current">Latest</a></dd>
@@ -282,7 +282,7 @@
 <h1>Session<a class="headerlink" href="#session" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.session.Streamlink">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.session.</span></span><span class="sig-name descname"><span class="pre">Streamlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugins_builtin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.session.</span></span><span class="sig-name descname"><span class="pre">Streamlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugins_builtin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugins_lazy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The Streamlink session is used to load and resolve plugins, and to store options used by plugins and stream implementations.</p>
 <dl class="field-list simple">
@@ -290,6 +290,8 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>options</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Custom options</p></li>
 <li><p><strong>plugins_builtin</strong> (<em>bool</em>) -- Whether to load built-in plugins or not</p></li>
+<li><p><strong>plugins_lazy</strong> (<em>bool</em>) -- Load built-in plugins lazily. This option falls back to loading all built-in plugins
+if the pre-built plugin JSON metadata is not available (e.g. in editable installs) or is invalid.</p></li>
 </ul>
 </dd>
 </dl>
@@ -811,13 +813,22 @@ which by default gets looked up via the <code class="docutils literal notranslat
 
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.session.plugins.</span></span><span class="sig-name descname"><span class="pre">StreamlinkPlugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builtin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.session.plugins.</span></span><span class="sig-name descname"><span class="pre">StreamlinkPlugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builtin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lazy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Streamlink's session-plugins implementation. This class is responsible for loading plugins and resolving them from URLs.</p>
 <p>See the <a class="reference internal" href="#streamlink.session.Streamlink.plugins" title="streamlink.session.Streamlink.plugins"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Streamlink.plugins</span></code></a> attribute.</p>
+<p>Unless disabled by the user, Streamlink will try to load built-in plugins lazily, when accessing them for the first time
+while resolving input URLs. This is done by reading and interpreting serialized data of each plugin's
+<a class="reference internal" href="plugin.html#streamlink.plugin.pluginmatcher" title="streamlink.plugin.pluginmatcher"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginmatcher</span></code></a> and <a class="reference internal" href="plugin.html#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument</span></code></a>
+data from a pre-built plugins JSON file which is included in Streamlink's wheel packages.</p>
+<p>Plugins which are sideloaded, either from specific user directories or custom input directories,
+always have a higher priority than built-in plugins.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>builtin</strong> (<em>bool</em>) -- </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>builtin</strong> (<em>bool</em>) -- </p></li>
+<li><p><strong>lazy</strong> (<em>bool</em>) -- </p></li>
+</ul>
 </dd>
 </dl>
 <dl class="py method">
@@ -882,7 +893,7 @@ which by default gets looked up via the <code class="docutils literal notranslat
 <dl class="py method">
 <dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.get_names">
 <span class="sig-name descname"><span class="pre">get_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.get_names" title="Link to this definition">#</a></dt>
-<dd><p>Get a list of the names of all loaded plugins</p>
+<dd><p>Get a list of the names of all available plugins</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><em>List</em>[str]</p>
@@ -968,7 +979,7 @@ which by default gets looked up via the <code class="docutils literal notranslat
 <dl class="py method">
 <dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.match_url">
 <span class="sig-name descname"><span class="pre">match_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.match_url" title="Link to this definition">#</a></dt>
-<dd><p>Find a matching plugin by URL</p>
+<dd><p>Find a matching plugin by URL and load plugins which haven't been loaded yet</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>url</strong> (<em>str</em>) -- </p>
@@ -1086,7 +1097,7 @@ which by default gets looked up via the <code class="docutils literal notranslat
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=c2d403e2"></script>
+</div><script src="../_static/documentation_options.js?v=d9dbdf95"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
