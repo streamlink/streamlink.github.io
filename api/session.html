@@ -11,17 +11,17 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Session - Streamlink 6.5.1 documentation">
+  <meta property="og:title" content="Session - Streamlink 6.6.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Session - Streamlink 6.5.1 documentation</title>
+        <title>Session - Streamlink 6.6.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=a0477dd2" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=152736fe" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.5.1 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.6.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.5.1</pre>
+  <pre class="sidebar-versions-current">6.6.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/session.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api/session.html" class="">Latest</a></dd>
@@ -278,12 +278,17 @@
 <h1>Session<a class="headerlink" href="#session" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.session.Streamlink">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.session.</span></span><span class="sig-name descname"><span class="pre">Streamlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.session.</span></span><span class="sig-name descname"><span class="pre">Streamlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugins_builtin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugins_lazy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The Streamlink session is used to load and resolve plugins, and to store options used by plugins and stream implementations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>options</strong> (<a class="reference internal" href="options.html#streamlink.options.Options" title="streamlink.options.Options"><em>Options</em></a>) -- Custom options</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>options</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Custom options</p></li>
+<li><p><strong>plugins_builtin</strong> (<em>bool</em>) -- Whether to load built-in plugins or not</p></li>
+<li><p><strong>plugins_lazy</strong> (<em>bool</em>) -- Load built-in plugins lazily. This option falls back to loading all built-in plugins
+if the pre-built plugin JSON metadata is not available (e.g. in editable installs) or is invalid.</p></li>
+</ul>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -295,15 +300,24 @@ Used for any kind of HTTP request made by plugin and stream implementations.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.session.Streamlink.options">
-<span class="sig-name descname"><span class="pre">options</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="options.html#streamlink.options.Options" title="streamlink.options.Options"><span class="pre">Options</span></a></em><a class="headerlink" href="#streamlink.session.Streamlink.options" title="Link to this definition">#</a></dt>
-<dd><p>Session options, which is a subclass of <a class="reference internal" href="options.html#streamlink.options.Options" title="streamlink.options.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code></a>
-with additional getter/setter mappings for special options.</p>
+<span class="sig-name descname"><span class="pre">options</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#streamlink.session.options.StreamlinkOptions" title="streamlink.session.options.StreamlinkOptions"><span class="pre">StreamlinkOptions</span></a></em><a class="headerlink" href="#streamlink.session.Streamlink.options" title="Link to this definition">#</a></dt>
+<dd><p>Options of this session instance.
+<a class="reference internal" href="#streamlink.session.options.StreamlinkOptions" title="streamlink.session.options.StreamlinkOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkOptions</span></code></a> is a subclass
+of <a class="reference internal" href="options.html#streamlink.options.Options" title="streamlink.options.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code></a> with special getter/setter mappings.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.session.Streamlink.plugins">
+<span class="sig-name descname"><span class="pre">plugins</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins" title="streamlink.session.plugins.StreamlinkPlugins"><span class="pre">StreamlinkPlugins</span></a></em><a class="headerlink" href="#streamlink.session.Streamlink.plugins" title="Link to this definition">#</a></dt>
+<dd><p>Plugins of this session instance.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="streamlink.session.Streamlink.set_option">
 <span class="sig-name descname"><span class="pre">set_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.set_option" title="Link to this definition">#</a></dt>
 <dd><p>Sets general options used by plugins and streams originating from this session object.</p>
+<p>This is a convenience wrapper for <a class="reference internal" href="#streamlink.session.options.StreamlinkOptions.set" title="streamlink.session.options.StreamlinkOptions.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">self.options.set()</span></code></a>.</p>
+<p>Please see <a class="reference internal" href="#streamlink.session.options.StreamlinkOptions" title="streamlink.session.options.StreamlinkOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkOptions</span></code></a> for the available options.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -315,7 +329,124 @@ with additional getter/setter mappings for special options.</p>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
-<p><strong>Available options</strong>:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.Streamlink.get_option">
+<span class="sig-name descname"><span class="pre">get_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.get_option" title="Link to this definition">#</a></dt>
+<dd><p>Returns the current value of the specified option.</p>
+<p>This is a convenience wrapper for <a class="reference internal" href="#streamlink.session.options.StreamlinkOptions.get" title="streamlink.session.options.StreamlinkOptions.get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">self.options.get()</span></code></a>.</p>
+<p>Please see <a class="reference internal" href="#streamlink.session.options.StreamlinkOptions" title="streamlink.session.options.StreamlinkOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkOptions</span></code></a> for the available options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) -- key of the option</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Any</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.Streamlink.resolve_url">
+<span class="sig-name descname"><span class="pre">resolve_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">follow_redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.resolve_url" title="Link to this definition">#</a></dt>
+<dd><p>Attempts to find a plugin that can use this URL.</p>
+<p>The default protocol (https) will be prefixed to the URL if not specified.</p>
+<p>Return values of this method are cached via <code class="xref py py-meth docutils literal notranslate"><span class="pre">functools.lru_cache()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p></li>
+<li><p><strong>follow_redirect</strong> (<em>bool</em>) -- follow redirects</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.Streamlink.resolve_url_no_redirect">
+<span class="sig-name descname"><span class="pre">resolve_url_no_redirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.resolve_url_no_redirect" title="Link to this definition">#</a></dt>
+<dd><p>Attempts to find a plugin that can use this URL.</p>
+<p>The default protocol (https) will be prefixed to the URL if not specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.Streamlink.streams">
+<span class="sig-name descname"><span class="pre">streams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.streams" title="Link to this definition">#</a></dt>
+<dd><p>Attempts to find a plugin and extracts streams from the <em>url</em> if a plugin was found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p></li>
+<li><p><strong>options</strong> (<a class="reference internal" href="options.html#streamlink.options.Options" title="streamlink.options.Options"><em>Options</em></a><em> | </em><em>None</em>) -- Optional options instance passed to the resolved plugin</p></li>
+<li><p><strong>params</strong> -- Additional keyword arguments passed to <a class="reference internal" href="plugin.html#streamlink.plugin.Plugin.streams" title="streamlink.plugin.Plugin.streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Plugin.streams()</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> of stream names and <a class="reference internal" href="stream.html#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a> instances</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.Streamlink.get_plugins">
+<span class="sig-name descname"><span class="pre">get_plugins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.get_plugins" title="Link to this definition">#</a></dt>
+<dd><p>Returns the loaded plugins of this session.</p>
+<p>Deprecated in favor of <a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.get_loaded" title="streamlink.session.plugins.StreamlinkPlugins.get_loaded"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plugins.get_loaded()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.Streamlink.load_builtin_plugins">
+<span class="sig-name descname"><span class="pre">load_builtin_plugins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.load_builtin_plugins" title="Link to this definition">#</a></dt>
+<dd><p>Loads Streamlink's built-in plugins.</p>
+<p>Deprecated in favor of using the <a class="reference internal" href="#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><code class="xref py py-class docutils literal notranslate"><span class="pre">plugins_builtin</span></code></a> keyword argument.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.Streamlink.load_plugins">
+<span class="sig-name descname"><span class="pre">load_plugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.load_plugins" title="Link to this definition">#</a></dt>
+<dd><p>Loads plugins from a specific path.</p>
+<p>Deprecated in favor of <a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.load_path" title="streamlink.session.plugins.StreamlinkPlugins.load_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plugins.load_path()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) -- </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="streamlink.session.options.StreamlinkOptions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.session.options.</span></span><span class="sig-name descname"><span class="pre">StreamlinkOptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defaults</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.options.StreamlinkOptions" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="options.html#streamlink.options.Options" title="streamlink.options.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code></a></p>
+<p>Streamlink's session options.</p>
+<p>The following options can be accessed using the <a class="reference internal" href="#streamlink.session.Streamlink.get_option" title="streamlink.session.Streamlink.get_option"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.get_option()</span></code></a>
+and <a class="reference internal" href="#streamlink.session.Streamlink.set_option" title="streamlink.session.Streamlink.set_option"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.set_option()</span></code></a> methods, as well as the regular
+<a class="reference internal" href="#streamlink.session.options.StreamlinkOptions.get" title="streamlink.session.options.StreamlinkOptions.get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get()</span></code></a> and <a class="reference internal" href="#streamlink.session.options.StreamlinkOptions.set" title="streamlink.session.options.StreamlinkOptions.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set()</span></code></a> methods of this <a class="reference internal" href="options.html#streamlink.options.Options" title="streamlink.options.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code></a> subclass.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default" style="width: 100%">
 <thead>
@@ -635,15 +766,21 @@ which by default gets looked up via the <code class="docutils literal notranslat
 </tbody>
 </table>
 </div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.session.Streamlink.get_option">
-<span class="sig-name descname"><span class="pre">get_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.get_option" title="Link to this definition">#</a></dt>
-<dd><p>Returns the current value of the specified option.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) -- key of the option</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<a class="reference internal" href="#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- </p></li>
+<li><p><strong>defaults</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.options.StreamlinkOptions.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.options.StreamlinkOptions.get" title="Link to this definition">#</a></dt>
+<dd><p>Get the stored value of a specific key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) -- </p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>Any</em></p>
@@ -652,85 +789,199 @@ which by default gets looked up via the <code class="docutils literal notranslat
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="streamlink.session.Streamlink.resolve_url">
-<span class="sig-name descname"><span class="pre">resolve_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">follow_redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.resolve_url" title="Link to this definition">#</a></dt>
-<dd><p>Attempts to find a plugin that can use this URL.</p>
-<p>The default protocol (https) will be prefixed to the URL if not specified.</p>
-<p>Return values of this method are cached via <code class="xref py py-meth docutils literal notranslate"><span class="pre">functools.lru_cache()</span></code>.</p>
+<dt class="sig sig-object py" id="streamlink.session.options.StreamlinkOptions.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.options.StreamlinkOptions.set" title="Link to this definition">#</a></dt>
+<dd><p>Set the value for a specific key</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p></li>
-<li><p><strong>follow_redirect</strong> (<em>bool</em>) -- follow redirects</p></li>
+<li><p><strong>key</strong> (<em>str</em>) -- </p></li>
+<li><p><strong>value</strong> (<em>Any</em>) -- </p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.session.Streamlink.resolve_url_no_redirect">
-<span class="sig-name descname"><span class="pre">resolve_url_no_redirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.resolve_url_no_redirect" title="Link to this definition">#</a></dt>
-<dd><p>Attempts to find a plugin that can use this URL.</p>
-<p>The default protocol (https) will be prefixed to the URL if not specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="streamlink.session.Streamlink.streams">
-<span class="sig-name descname"><span class="pre">streams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.streams" title="Link to this definition">#</a></dt>
-<dd><p>Attempts to find a plugin and extracts streams from the <em>url</em> if a plugin was found.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.session.plugins.</span></span><span class="sig-name descname"><span class="pre">StreamlinkPlugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builtin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lazy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Streamlink's session-plugins implementation. This class is responsible for loading plugins and resolving them from URLs.</p>
+<p>See the <a class="reference internal" href="#streamlink.session.Streamlink.plugins" title="streamlink.session.Streamlink.plugins"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Streamlink.plugins</span></code></a> attribute.</p>
+<p>Unless disabled by the user, Streamlink will try to load built-in plugins lazily, when accessing them for the first time
+while resolving input URLs. This is done by reading and interpreting serialized data of each plugin's
+<a class="reference internal" href="plugin.html#streamlink.plugin.pluginmatcher" title="streamlink.plugin.pluginmatcher"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginmatcher</span></code></a> and <a class="reference internal" href="plugin.html#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument</span></code></a>
+data from a pre-built plugins JSON file which is included in Streamlink's wheel packages.</p>
+<p>Plugins which are sideloaded, either from specific user directories or custom input directories,
+always have a higher priority than built-in plugins.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>url</strong> (<em>str</em>) -- a URL to match against loaded plugins</p></li>
-<li><p><strong>options</strong> (<a class="reference internal" href="options.html#streamlink.options.Options" title="streamlink.options.Options"><em>Options</em></a><em> | </em><em>None</em>) -- Optional options instance passed to the resolved plugin</p></li>
-<li><p><strong>params</strong> -- Additional keyword arguments passed to <a class="reference internal" href="plugin.html#streamlink.plugin.Plugin.streams" title="streamlink.plugin.Plugin.streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Plugin.streams()</span></code></a></p></li>
+<li><p><strong>builtin</strong> (<em>bool</em>) -- </p></li>
+<li><p><strong>lazy</strong> (<em>bool</em>) -- </p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.__getitem__" title="Link to this definition">#</a></dt>
+<dd><p>Access a loaded plugin class by name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>item</strong> (<em>str</em>) -- </p>
 </dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> of stream names and <a class="reference internal" href="stream.html#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a> instances</p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="streamlink.session.Streamlink.get_plugins">
-<span class="sig-name descname"><span class="pre">get_plugins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.get_plugins" title="Link to this definition">#</a></dt>
-<dd><p>Returns the loaded plugins for the session.</p>
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.__setitem__" title="Link to this definition">#</a></dt>
+<dd><p>Add/override a plugin class by name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) -- </p></li>
+<li><p><strong>value</strong> (<em>Type</em><em>[</em><a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a><em>]</em>) -- </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="streamlink.session.Streamlink.load_plugins">
-<span class="sig-name descname"><span class="pre">load_plugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.Streamlink.load_plugins" title="Link to this definition">#</a></dt>
-<dd><p>Attempt to load plugins from the path specified.</p>
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.__delitem__">
+<span class="sig-name descname"><span class="pre">__delitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.__delitem__" title="Link to this definition">#</a></dt>
+<dd><p>Remove a loaded plugin by name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) -- full path to a directory where to look for plugins</p>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) -- </p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>success</p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.__contains__">
+<span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.__contains__" title="Link to this definition">#</a></dt>
+<dd><p>Check if a plugin is loaded</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>item</strong> (<em>str</em>) -- </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.get_names">
+<span class="sig-name descname"><span class="pre">get_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.get_names" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of the names of all available plugins</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.get_loaded">
+<span class="sig-name descname"><span class="pre">get_loaded</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.get_loaded" title="Link to this definition">#</a></dt>
+<dd><p>Get a mapping of all loaded plugins</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Dict</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.load_builtin">
+<span class="sig-name descname"><span class="pre">load_builtin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.load_builtin" title="Link to this definition">#</a></dt>
+<dd><p>Load Streamlink's built-in plugins</p>
+<dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.load_path">
+<span class="sig-name descname"><span class="pre">load_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.load_path" title="Link to this definition">#</a></dt>
+<dd><p>Load plugins from a custom directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>Path</em><em> | </em><em>str</em>) -- </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugins</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.update" title="Link to this definition">#</a></dt>
+<dd><p>Add/override loaded plugins</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plugins</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Type</em><em>[</em><a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a><em>]</em><em>]</em>) -- </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.clear" title="Link to this definition">#</a></dt>
+<dd><p>Remove all loaded plugins from the session</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.iter_arguments">
+<span class="sig-name descname"><span class="pre">iter_arguments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.iter_arguments" title="Link to this definition">#</a></dt>
+<dd><p>Iterate through all plugins and their <a class="reference internal" href="options.html#streamlink.options.Arguments" title="streamlink.options.Arguments"><code class="xref py py-class docutils literal notranslate"><span class="pre">Arguments</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Iterator</em>[<em>Tuple</em>[str, <a class="reference internal" href="options.html#streamlink.options.Arguments" title="streamlink.options.Arguments"><em>Arguments</em></a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.iter_matchers">
+<span class="sig-name descname"><span class="pre">iter_matchers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.iter_matchers" title="Link to this definition">#</a></dt>
+<dd><p>Iterate through all plugins and their <code class="xref py py-class docutils literal notranslate"><span class="pre">Matchers</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Iterator</em>[<em>Tuple</em>[str, <em>Matchers</em>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.session.plugins.StreamlinkPlugins.match_url">
+<span class="sig-name descname"><span class="pre">match_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.session.plugins.StreamlinkPlugins.match_url" title="Link to this definition">#</a></dt>
+<dd><p>Find a matching plugin by URL and load plugins which haven't been loaded yet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) -- </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]] | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -799,13 +1050,36 @@ which by default gets looked up via the <code class="docutils literal notranslat
 <li><a class="reference internal" href="#streamlink.session.Streamlink"><code class="docutils literal notranslate"><span class="pre">Streamlink</span></code></a><ul>
 <li><a class="reference internal" href="#streamlink.session.Streamlink.http"><code class="docutils literal notranslate"><span class="pre">Streamlink.http</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.session.Streamlink.options"><code class="docutils literal notranslate"><span class="pre">Streamlink.options</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.Streamlink.plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.plugins</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.session.Streamlink.set_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.set_option()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.session.Streamlink.get_option"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_option()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.session.Streamlink.resolve_url"><code class="docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.session.Streamlink.resolve_url_no_redirect"><code class="docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.session.Streamlink.streams"><code class="docutils literal notranslate"><span class="pre">Streamlink.streams()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.session.Streamlink.get_plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.get_plugins()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.Streamlink.load_builtin_plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.load_builtin_plugins()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.session.Streamlink.load_plugins"><code class="docutils literal notranslate"><span class="pre">Streamlink.load_plugins()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#streamlink.session.options.StreamlinkOptions"><code class="docutils literal notranslate"><span class="pre">StreamlinkOptions</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.session.options.StreamlinkOptions.get"><code class="docutils literal notranslate"><span class="pre">StreamlinkOptions.get()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.options.StreamlinkOptions.set"><code class="docutils literal notranslate"><span class="pre">StreamlinkOptions.set()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins</span></code></a><ul>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.__getitem__"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.__getitem__()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.__setitem__"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.__setitem__()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.__delitem__"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.__delitem__()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.__contains__"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.__contains__()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.get_names"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.get_names()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.get_loaded"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.get_loaded()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.load_builtin"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.load_builtin()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.load_path"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.load_path()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.update"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.update()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.clear"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.clear()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.iter_arguments"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.iter_arguments()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.iter_matchers"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.iter_matchers()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.session.plugins.StreamlinkPlugins.match_url"><code class="docutils literal notranslate"><span class="pre">StreamlinkPlugins.match_url()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -819,7 +1093,7 @@ which by default gets looked up via the <code class="docutils literal notranslat
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=db1c604c"></script>
+</div><script src="../_static/documentation_options.js?v=ed1b3abe"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
