@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Stream - Streamlink 6.5.1+51.gfddc2bbd documentation">
+  <meta property="og:title" content="Stream - Streamlink 6.5.1+52.ga3a9b768 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Stream - Streamlink 6.5.1+51.gfddc2bbd documentation</title>
+        <title>Stream - Streamlink 6.5.1+52.ga3a9b768 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.5.1+51.gfddc2bbd documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.5.1+52.ga3a9b768 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.5.1+51.gfddc2bbd</pre>
+  <pre class="sidebar-versions-current">6.5.1+52.ga3a9b768</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/stream.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/stream.html" class="version-current">Latest</a></dd>
@@ -410,7 +410,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.stream.MuxedHLSStream">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">MuxedHLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffmpeg_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.MuxedHLSStream" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">MuxedHLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hlsstream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffmpeg_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.MuxedHLSStream" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.stream.MuxedStream" title="streamlink.stream.ffmpegmux.MuxedStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedStream</span></code></a>[<a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a>]</p>
 <p>Muxes multiple HLS video and audio streams into one output stream.</p>
 <dl class="field-list simple">
@@ -419,6 +419,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>video</strong> (<em>str</em>) -- Video stream URL</p></li>
 <li><p><strong>audio</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>]</em>) -- Audio stream URL or list of URLs</p></li>
+<li><p><strong>hlsstream</strong> (<em>Type</em><em>[</em><a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><em>HLSStream</em></a><em>] </em><em>| </em><em>None</em>) -- The <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> class of each sub-stream</p></li>
 <li><p><strong>url_master</strong> (<em>str</em><em> | </em><em>None</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
 <li><p><strong>multivariant</strong> (<em>M3U8</em><em> | </em><em>None</em>) -- The parsed multivariant playlist</p></li>
 <li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
@@ -567,7 +568,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=8c35cb1e"></script>
+</div><script src="../_static/documentation_options.js?v=0cbb9be0"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
