@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.6.1+6.g881eedc1 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.6.1+7.g57dacf7b documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.6.1+6.g881eedc1 documentation</title>
+        <title>Changelog - Streamlink 6.6.1+7.g57dacf7b documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.6.1+6.g881eedc1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.6.1+7.g57dacf7b documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.6.1+6.g881eedc1</pre>
+  <pre class="sidebar-versions-current">6.6.1+7.g57dacf7b</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -280,6 +280,22 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<section id="streamlink-6-6-2-2024-02-20">
+<h2>streamlink 6.6.2 (2024-02-20)<a class="headerlink" href="#streamlink-6-6-2-2024-02-20" title="Link to this heading">#</a></h2>
+<p>Patch release:</p>
+<ul class="simple">
+<li><p>Fixed: missing plugin override log message in non-editable installs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5844">#5844</a>)</p></li>
+<li><p>Fixed: incorrect <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> min. version in build requirements (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5842">#5842</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>afreeca: fixed broadcast number regex (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5847">#5847</a>)</p></li>
+<li><p>afreeca: added support for stream metadata (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5849">#5849</a>)</p></li>
+<li><p>hiplayer: removed media.gov.kw matcher (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5848">#5848</a>)</p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.6.1...6.6.2">Full changelog</a></p>
+</section>
 <section id="streamlink-6-6-1-2024-02-17">
 <h2>streamlink 6.6.1 (2024-02-17)<a class="headerlink" href="#streamlink-6-6-1-2024-02-17" title="Link to this heading">#</a></h2>
 <p>Patch release:</p>
@@ -1645,6 +1661,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-6-2-2024-02-20">streamlink 6.6.2 (2024-02-20)</a></li>
 <li><a class="reference internal" href="#streamlink-6-6-1-2024-02-17">streamlink 6.6.1 (2024-02-17)</a></li>
 <li><a class="reference internal" href="#streamlink-6-6-0-2024-02-16">streamlink 6.6.0 (2024-02-16)</a></li>
 <li><a class="reference internal" href="#streamlink-6-5-1-2024-01-16">streamlink 6.5.1 (2024-01-16)</a></li>
@@ -1732,7 +1749,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=906b8939"></script>
+</div><script src="_static/documentation_options.js?v=c076bc85"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
