@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.7.0 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.7.1 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.7.0 documentation</title>
+        <title>Changelog - Streamlink 6.7.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -138,7 +138,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.7.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.7.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +167,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.7.0</pre>
+  <pre class="sidebar-versions-current">6.7.1</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -276,12 +276,30 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<section id="streamlink-6-7-1-2024-03-19">
+<h2>streamlink 6.7.1 (2024-03-19)<a class="headerlink" href="#streamlink-6-7-1-2024-03-19" title="Link to this heading">#</a></h2>
+<p>Patch release:</p>
+<ul class="simple">
+<li><p>Fixed: CLI download progress missing the last data chunk (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5887">#5887</a>)</p></li>
+<li><p>Fixed: compatibility with <code class="docutils literal notranslate"><span class="pre">trio&gt;=0.25</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5895">#5895</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>tv3cat: fixed plugin and added VODs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5890">#5890</a>)</p></li>
+<li><p>vimeo: fixed event streams and embedded player URLs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5892">#5892</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5899">#5899</a>)</p></li>
+</ul>
+</li>
+<li><p>Build: bumped <code class="docutils literal notranslate"><span class="pre">trio</span></code> dependency version requirement to <code class="docutils literal notranslate"><span class="pre">&gt;=0.25,&lt;1</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5895">#5895</a>)</p></li>
+<li><p>Build: added <code class="docutils literal notranslate"><span class="pre">exceptiongroup</span></code> dependency (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5895">#5895</a>)</p></li>
+<li><p>Tests: fixed root logger level not being reset (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5888">#5888</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/5897">#5897</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.7.0...6.7.1">Full changelog</a></p>
+</section>
 <section id="streamlink-6-7-0-2024-03-09">
 <h2>streamlink 6.7.0 (2024-03-09)<a class="headerlink" href="#streamlink-6-7-0-2024-03-09" title="Link to this heading">#</a></h2>
 <p>Release highlights:</p>
 <ul class="simple">
-<li><p>Added: repeatable <code class="docutils literal notranslate"><span class="pre">--plugin-dir</span></code> CLI argument (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5866">5866</a>)</p></li>
-<li><p>Deprecated: <code class="docutils literal notranslate"><span class="pre">--plugin-dirs</span></code> CLI argument with comma separated paths (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5866">5866</a>)</p></li>
+<li><p>Added: repeatable <code class="docutils literal notranslate"><span class="pre">--plugin-dir</span></code> CLI argument (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5866">#5866</a>)</p></li>
+<li><p>Deprecated: <code class="docutils literal notranslate"><span class="pre">--plugin-dirs</span></code> CLI argument with comma separated paths (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5866">#5866</a>)</p></li>
 <li><p>Fixed: independent encryption status of HLS initialization sections (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5861">#5861</a>)</p></li>
 <li><p>Fixed: objects of default session options being shared between sessions (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5875">#5875</a>)</p></li>
 <li><p>Updated plugins:</p>
@@ -1677,6 +1695,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-7-1-2024-03-19">streamlink 6.7.1 (2024-03-19)</a></li>
 <li><a class="reference internal" href="#streamlink-6-7-0-2024-03-09">streamlink 6.7.0 (2024-03-09)</a></li>
 <li><a class="reference internal" href="#streamlink-6-6-2-2024-02-20">streamlink 6.6.2 (2024-02-20)</a></li>
 <li><a class="reference internal" href="#streamlink-6-6-1-2024-02-17">streamlink 6.6.1 (2024-02-17)</a></li>
@@ -1766,7 +1785,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=9cce70e7"></script>
+</div><script src="_static/documentation_options.js?v=38b6f4fe"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
