@@ -136,12 +136,10 @@ Linux and BSD
       - See the `Linux AppImages`_ section below
     * - :octicon:`verified` Python pip
       - See the `PyPI package and source code`_ section below
-    * - :octicon:`package-dependents` `Alpine Linux (edge, testing)`_
+    * - :octicon:`package-dependents` `ALT Linux (Sisyphus)`_
       - .. code-block:: bash
 
-            sudo apk add streamlink
-
-        `Enabling the edge/testing repository`_
+            sudo apt-get install streamlink
     * - :octicon:`package-dependents` `Arch Linux`_
       - .. code-block:: bash
 
@@ -201,8 +199,12 @@ Linux and BSD
       - .. code-block:: bash
 
             sudo eopkg install streamlink
+    * - :octicon:`package-dependents` `Void`_
+      - .. code-block:: bash
 
-.. _Alpine Linux (edge, testing): https://pkgs.alpinelinux.org/packages?name=streamlink
+            sudo xbps-install streamlink
+
+.. _ALT Linux (Sisyphus): https://packages.altlinux.org/en/sisyphus/srpms/streamlink/
 .. _Arch Linux: https://archlinux.org/packages/extra/any/streamlink/
 .. _Arch Linux (aur, git): https://aur.archlinux.org/packages/streamlink-git/
 .. _Debian (sid, testing): https://packages.debian.org/sid/streamlink
@@ -214,8 +216,8 @@ Linux and BSD
 .. _NixOS: https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink
 .. _openSUSE: https://build.opensuse.org/package/show/multimedia:apps/streamlink
 .. _Solus: https://github.com/getsolus/packages/tree/main/packages/s/streamlink
+.. _Void: https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink
 
-.. _Enabling the edge/testing repository: https://wiki.alpinelinux.org/wiki/Repositories#Edge
 .. _Installing AUR packages: https://wiki.archlinux.org/index.php/Arch_User_Repository
 .. _Installing Debian backported packages: https://wiki.debian.org/Backports
 .. _NixOS channel: https://search.nixos.org/packages?show=streamlink&query=streamlink
@@ -230,8 +232,8 @@ Package maintainers
 
     * - Distribution / Platform
       - Maintainer
-    * - Alpine Linux
-      - Robert Sacks <robert at sacks.email>
+    * - ALT Linux
+      - Vitaly Lipatov <lav at altlinux.ru>
     * - Arch
       - Giancarlo Razzolini <grazzolini at archlinux.org>
     * - Arch (aur, git)
@@ -252,6 +254,8 @@ Package maintainers
       - Simon Puchert <simonpuchert at alice.de>
     * - Solus
       - Joey Riches <josephriches at gmail.com>
+    * - Void
+      - Tom Strausbaugh <tstrausbaugh at straustech.net>
     * - Windows binaries
       - Sebastian Meyer <mail at bastimeyer.de>
     * - Linux AppImages
