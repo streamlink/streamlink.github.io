@@ -5,23 +5,23 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="API Reference" href="../api.html" /><link rel="prev" title="Quickstart" href="quickstart.html" />
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.04.27 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Validation schemas - Streamlink 6.7.3 documentation">
+  <meta property="og:title" content="Validation schemas - Streamlink 6.7.4 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Validation schemas - Streamlink 6.7.3 documentation</title>
+        <title>Validation schemas - Streamlink 6.7.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=437aa6ec" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=152736fe" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=4504cacd" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -127,6 +127,8 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
 
 
 <div class="page">
@@ -138,7 +140,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.7.3 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.7.4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +169,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.7.3</pre>
+  <pre class="sidebar-versions-current">6.7.4</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api_guide/validate.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api_guide/validate.html" class="">Latest</a></dd>
@@ -271,13 +273,13 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           
   
   <section id="validation-schemas">
-<h1>Validation schemas<a class="headerlink" href="#validation-schemas" title="Link to this heading">#</a></h1>
+<h1>Validation schemas<a class="headerlink" href="#validation-schemas" title="Link to this heading">¶</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="../api/validate.html#validation-schemas"><span class="std std-ref">streamlink.plugin.api.validate</span></a> module provides an API for defining declarative
 validation schemas which are used to verify and extract data from various inputs, for example HTTP responses.</p>
 <p>Validation schemas are a powerful tool for <a class="reference internal" href="../api/plugin.html#module-streamlink.plugin"><span class="std std-ref">plugin</span></a> implementors to find and extract data like
@@ -287,9 +289,9 @@ declarative validation schemas allow defining comprehensive validation and extra
 and which raise errors with meaningful messages upon extraction failure.</p>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <section id="simple-schemas">
-<h3>Simple schemas<a class="headerlink" href="#simple-schemas" title="Link to this heading">#</a></h3>
+<h3>Simple schemas<a class="headerlink" href="#simple-schemas" title="Link to this heading">¶</a></h3>
 <p>Let's begin with a few simple validation schemas which are not particularly useful yet.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">streamlink.plugin.api</span> <span class="kn">import</span> <span class="n">validate</span>
 
@@ -346,7 +348,7 @@ the type <code class="docutils literal notranslate"><span class="pre">int</span>
 a <code class="docutils literal notranslate"><span class="pre">123.0</span></code> <code class="docutils literal notranslate"><span class="pre">float</span></code> input when comparing equality, a <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a> is raised.</p>
 </section>
 <section id="extracting-json-data">
-<h3>Extracting JSON data<a class="headerlink" href="#extracting-json-data" title="Link to this heading">#</a></h3>
+<h3>Extracting JSON data<a class="headerlink" href="#extracting-json-data" title="Link to this heading">¶</a></h3>
 <p>The next example shows how to read an optional integer value from JSON data.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">streamlink.plugin.api</span> <span class="kn">import</span> <span class="n">validate</span>
 
@@ -405,7 +407,7 @@ The <a class="reference internal" href="../api/validate.html#module-streamlink.p
 the <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.union" title="streamlink.plugin.api.validate.union"><code class="xref py py-class docutils literal notranslate"><span class="pre">validate.union</span></code></a> or <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.union_get" title="streamlink.plugin.api.validate.union_get"><code class="xref py py-class docutils literal notranslate"><span class="pre">validate.union_get</span></code></a> schemas, but this isn't relevant here.</p>
 </section>
 <section id="finding-stream-urls-in-html">
-<h3>Finding stream URLs in HTML<a class="headerlink" href="#finding-stream-urls-in-html" title="Link to this heading">#</a></h3>
+<h3>Finding stream URLs in HTML<a class="headerlink" href="#finding-stream-urls-in-html" title="Link to this heading">¶</a></h3>
 <p>Let's imagine a simple website where a stream URL is embedded as JSON data in a <code class="docutils literal notranslate"><span class="pre">data-player</span></code> attribute of an unknown
 HTML element where the web player of that website reads from.</p>
 <p>Extracting this data could be done by using regular expressions, but then we'd have to take HTML syntax into account,
@@ -522,13 +524,13 @@ or if its path does not end with <code class="docutils literal notranslate"><spa
 which is what we want. The <code class="docutils literal notranslate"><span class="pre">None</span></code> return value should then be checked accordingly by the plugin implementation.</p>
 </section>
 <section id="validating-http-responses">
-<h3>Validating HTTP responses<a class="headerlink" href="#validating-http-responses" title="Link to this heading">#</a></h3>
+<h3>Validating HTTP responses<a class="headerlink" href="#validating-http-responses" title="Link to this heading">¶</a></h3>
 <p>In order to validate HTTP responses directly, Streamlink's <a class="reference internal" href="../api/session.html#streamlink.session.Streamlink.http" title="streamlink.session.Streamlink.http"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPSession</span></code></a> allows
 setting the <code class="docutils literal notranslate"><span class="pre">schema</span></code> keyword in <code class="xref py py-meth docutils literal notranslate"><span class="pre">HTTPSession.request()</span></code>,
 as well as in each HTTP-verb method like <code class="docutils literal notranslate"><span class="pre">get()</span></code>, <code class="docutils literal notranslate"><span class="pre">post()</span></code>, etc.</p>
 <p>Here's a simple plugin implementation with the same schema from the <a class="reference internal" href="#finding-stream-urls-in-html">Finding stream URLs in HTML</a> example above.</p>
 <div class="literal-block-wrapper docutils container" id="example-plugin">
-<div class="code-block-caption"><span class="caption-text">example-plugin.py</span><a class="headerlink" href="#example-plugin" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">example-plugin.py</span><a class="headerlink" href="#example-plugin" title="Link to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 
 <span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
@@ -643,10 +645,10 @@ as well as in each HTTP-verb method like <code class="docutils literal notransla
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=ab36fa8d"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+</div><script src="../_static/documentation_options.js?v=60bf6a40"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     </body>
 </html>

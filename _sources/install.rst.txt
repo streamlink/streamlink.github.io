@@ -136,12 +136,10 @@ Linux and BSD
       - See the `Linux AppImages`_ section below
     * - :octicon:`verified` Python pip
       - See the `PyPI package and source code`_ section below
-    * - :octicon:`package-dependents` `Alpine Linux (edge, testing)`_
+    * - :octicon:`package-dependents` `ALT Linux (Sisyphus)`_
       - .. code-block:: bash
 
-            sudo apk add streamlink
-
-        `Enabling the edge/testing repository`_
+            sudo apt-get install streamlink
     * - :octicon:`package-dependents` `Arch Linux`_
       - .. code-block:: bash
 
@@ -201,8 +199,12 @@ Linux and BSD
       - .. code-block:: bash
 
             sudo eopkg install streamlink
+    * - :octicon:`package-dependents` `Void`_
+      - .. code-block:: bash
 
-.. _Alpine Linux (edge, testing): https://pkgs.alpinelinux.org/packages?name=streamlink
+            sudo xbps-install streamlink
+
+.. _ALT Linux (Sisyphus): https://packages.altlinux.org/en/sisyphus/srpms/streamlink/
 .. _Arch Linux: https://archlinux.org/packages/extra/any/streamlink/
 .. _Arch Linux (aur, git): https://aur.archlinux.org/packages/streamlink-git/
 .. _Debian (sid, testing): https://packages.debian.org/sid/streamlink
@@ -214,8 +216,8 @@ Linux and BSD
 .. _NixOS: https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink
 .. _openSUSE: https://build.opensuse.org/package/show/multimedia:apps/streamlink
 .. _Solus: https://github.com/getsolus/packages/tree/main/packages/s/streamlink
+.. _Void: https://github.com/void-linux/void-packages/tree/master/srcpkgs/streamlink
 
-.. _Enabling the edge/testing repository: https://wiki.alpinelinux.org/wiki/Repositories#Edge
 .. _Installing AUR packages: https://wiki.archlinux.org/index.php/Arch_User_Repository
 .. _Installing Debian backported packages: https://wiki.debian.org/Backports
 .. _NixOS channel: https://search.nixos.org/packages?show=streamlink&query=streamlink
@@ -230,8 +232,8 @@ Package maintainers
 
     * - Distribution / Platform
       - Maintainer
-    * - Alpine Linux
-      - Robert Sacks <robert at sacks.email>
+    * - ALT Linux
+      - Vitaly Lipatov <lav at altlinux.ru>
     * - Arch
       - Giancarlo Razzolini <grazzolini at archlinux.org>
     * - Arch (aur, git)
@@ -252,6 +254,8 @@ Package maintainers
       - Simon Puchert <simonpuchert at alice.de>
     * - Solus
       - Joey Riches <josephriches at gmail.com>
+    * - Void
+      - Tom Strausbaugh <tstrausbaugh at straustech.net>
     * - Windows binaries
       - Sebastian Meyer <mail at bastimeyer.de>
     * - Linux AppImages
@@ -444,7 +448,8 @@ Streamlink defines a `build system <pyproject.toml_>`__ according to `PEP-517`_ 
       - Used for loading the CA bundle extracted from the Mozilla Included CA Certificate List
     * - runtime
       - `exceptiongroup`_
-      - Used for ``ExceptionGroup`` handling, to allow writing compatible code on all supported Python versions
+      - Only required when ``python_version<"3.11"`` |br|
+        Used for ``ExceptionGroup`` handling
     * - runtime
       - `isodate`_
       - Used for parsing ISO8601 strings
@@ -545,31 +550,83 @@ Windows binaries
 
 **Flavors**
 
-.. list-table::
-    :header-rows: 2
-    :stub-columns: 1
-    :width: 100%
+.. grid:: 2
+    :padding: 0
+    :class-container: grid-with-icons
 
-    * -
-      - Installer
-      -
-      - Portable
-      -
-    * -
-      - 64 bit
-      - 32 bit
-      - 64 bit
-      - 32 bit
-    * - Latest Python
-      - :bdg-link-success-line:`Windows 10+ <https://github.com/streamlink/windows-builds/releases>`
-      - :bdg-link-primary-line:`Windows 10+ <https://github.com/streamlink/windows-builds/releases>`
-      - :bdg-link-success-line:`Windows 10+ <https://github.com/streamlink/windows-builds/releases>`
-      - :bdg-link-primary-line:`Windows 10+ <https://github.com/streamlink/windows-builds/releases>`
-    * - Python 3.8
-      - :bdg-link-secondary-line:`Windows 7 <https://github.com/streamlink/windows-builds/releases>`
-      - :bdg-link-secondary-line:`Windows 7 <https://github.com/streamlink/windows-builds/releases>`
-      - :bdg-link-secondary-line:`Windows 7 <https://github.com/streamlink/windows-builds/releases>`
-      - :bdg-link-secondary-line:`Windows 7 <https://github.com/streamlink/windows-builds/releases>`
+    .. grid-item-card::
+        :padding: 3
+        :class-header: sd-text-center
+        :class-footer: sd-text-center sd-bg-transparent sd-border-0
+
+        :fas:`gears` **Installer**
+        ^^^
+
+        - Adds itself to the system's ``PATH`` env var
+        - Automatically creates a :ref:`config file <cli/config:Configuration file>`
+        - Sets :option:`--ffmpeg-ffmpeg` in config file
+
+        +++
+        .. grid:: 2
+            :gutter: 1
+            :padding: 0
+
+            .. grid-item::
+                :class: sd-text-right
+
+                Windows 10+
+
+            .. grid-item::
+
+                :bdg-link-success-line:`x86_64 <https://github.com/streamlink/windows-builds/releases>`
+                :bdg-link-primary-line:`x86 <https://github.com/streamlink/windows-builds/releases>`
+
+            .. grid-item::
+                :class: sd-text-right
+
+                Windows 7 (py38)
+
+            .. grid-item::
+
+                :bdg-link-secondary-line:`x86_64 <https://github.com/streamlink/windows-builds/releases>`
+                :bdg-link-secondary-line:`x86 <https://github.com/streamlink/windows-builds/releases>`
+
+    .. grid-item-card::
+        :padding: 3
+        :class-header: sd-text-center
+        :class-footer: sd-text-center sd-bg-transparent sd-border-0
+
+        :fas:`file-zipper` **Portable archive**
+        ^^^
+
+        - No :ref:`config file <cli/config:Configuration file>` created automatically
+        - :option:`--ffmpeg-ffmpeg` must be set manually
+        - No pre-compiled Python bytecode
+
+        +++
+        .. grid:: 2
+            :gutter: 1
+            :padding: 0
+
+            .. grid-item::
+                :class: sd-text-right
+
+                Windows 10+
+
+            .. grid-item::
+
+                :bdg-link-success-line:`x86_64 <https://github.com/streamlink/windows-builds/releases>`
+                :bdg-link-primary-line:`x86 <https://github.com/streamlink/windows-builds/releases>`
+
+            .. grid-item::
+                :class: sd-text-right
+
+                Windows 7 (py38)
+
+            .. grid-item::
+
+                :bdg-link-secondary-line:`x86_64 <https://github.com/streamlink/windows-builds/releases>`
+                :bdg-link-secondary-line:`x86 <https://github.com/streamlink/windows-builds/releases>`
 
 **Contents**
 
@@ -609,17 +666,6 @@ Windows binaries
             :alt: FFmpeg
 
         FFmpeg |br| :sub:`for muxing streams`
-
-.. note::
-
-   The installers automatically create a :ref:`config file <cli/config:Configuration file>` if it doesn't exist yet and set the
-   value of the :option:`--ffmpeg-ffmpeg` CLI parameter to the path of the included FFmpeg binary. The portable archives
-   can't do that, and users need to create or update the config file themselves.
-
-   :fas:`triangle-exclamation` Please see the README of the `streamlink/windows-builds`_ repository for more information
-   about the differences between the installers and portable archives.
-
-.. _streamlink/windows-builds: https://github.com/streamlink/windows-builds
 
 
 Linux AppImages

@@ -5,23 +5,23 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Configuration file" href="config.html" /><link rel="prev" title="Command-Line Interface" href="../cli.html" />
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.04.27 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Tutorial - Streamlink 6.7.3 documentation">
+  <meta property="og:title" content="Tutorial - Streamlink 6.7.4 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Tutorial - Streamlink 6.7.3 documentation</title>
+        <title>Tutorial - Streamlink 6.7.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=437aa6ec" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=152736fe" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=4504cacd" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -127,6 +127,8 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
 
 
 <div class="page">
@@ -138,7 +140,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.7.3 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.7.4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -167,7 +169,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.7.3</pre>
+  <pre class="sidebar-versions-current">6.7.4</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/tutorial.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli/tutorial.html" class="">Latest</a></dd>
@@ -271,13 +273,13 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           
   
   <section id="tutorial">
-<h1>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h1>
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading">¶</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>Streamlink is a command-line application, which means that the commands described
 here should be typed into a terminal, or to be more precise, into a command-line shell.</p>
 <p>On Windows, you have to open either the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/terminal/get-started">Windows Terminal</a> (recommended), <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a> or <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">Command Prompt</a> (discouraged).
@@ -289,7 +291,7 @@ works best with <a class="reference external" href="https://videolan.org/">VLC</
 may be compatible too, see the <a class="reference internal" href="../players.html#players"><span class="std std-ref">Players</span></a> page for a complete overview.</p>
 </section>
 <section id="getting-started">
-<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
 <p>Now to get into actually using Streamlink, let's say you want to watch the
 stream located on <code class="docutils literal notranslate"><span class="pre">https://www.twitch.tv/nasa</span></code>, you start off by telling Streamlink
 where to attempt to extract streams from. This is done by setting the URL as the
@@ -343,7 +345,7 @@ or reducing its default buffering values for being able to watch low-latency str
 </ul>
 </section>
 <section id="shell-syntax">
-<h2>Shell syntax<a class="headerlink" href="#shell-syntax" title="Link to this heading">#</a></h2>
+<h2>Shell syntax<a class="headerlink" href="#shell-syntax" title="Link to this heading">¶</a></h2>
 <p>Depending on your used command-line shell and how you've entered the command,
 input strings like the URL or other command arguments may need to get <a class="reference external" href="https://en.wikipedia.org/wiki/Escape_character">escaped</a> or quoted,
 because command-line shells interpret and treat certain characters as special symbols which can alter the shell's behavior,
@@ -483,10 +485,10 @@ streamlink https://example/path?a=$one<span class="se">^&amp;</span>b=<span clas
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=ab36fa8d"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+</div><script src="../_static/documentation_options.js?v=60bf6a40"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     </body>
 </html>
