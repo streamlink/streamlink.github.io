@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.7.4 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.8.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.7.4 documentation</title>
+        <title>Changelog - Streamlink 6.8.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=437aa6ec" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -140,7 +140,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.7.4 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.8.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -169,7 +169,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.7.4</pre>
+  <pre class="sidebar-versions-current">6.8.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -278,6 +278,27 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-6-8-0-2024-06-17">
+<h2>streamlink 6.8.0 (2024-06-17)<a class="headerlink" href="#streamlink-6-8-0-2024-06-17" title="Link to this heading">¶</a></h2>
+<p>Release highlights:</p>
+<ul class="simple">
+<li><p>Added: sha256 checksum to log message when side-loading plugins (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6023">#6023</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">SSLContextAdapter</span></code> to <code class="docutils literal notranslate"><span class="pre">streamlink.session.http</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6024">#6024</a>)</p></li>
+<li><p>Deprecated: <a class="reference external" href="https://streamlink.github.io/deprecations.html#streamlink-plugins-re-exports">old re-exports in <code class="docutils literal notranslate"><span class="pre">streamlink.plugins</span></code> package</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6005">#6005</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>bilibili: fixed validation schema for offline channels (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6032">#6032</a>)</p></li>
+<li><p>chzzk: fixed channels without content (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6002">#6002</a>)</p></li>
+<li><p>cnbce: new plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6029">#6029</a>)</p></li>
+<li><p>kick: new plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6012">#6012</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6021">#6021</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6024">#6024</a>)</p></li>
+<li><p>tf1: added authentication via <code class="docutils literal notranslate"><span class="pre">--tf1-email</span></code> and <code class="docutils literal notranslate"><span class="pre">--tf1-password</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5983">#5983</a>)</p></li>
+<li><p>tvp: fixed live streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6037">#6037</a>)</p></li>
+<li><p>welt: fixed live streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6011">#6011</a>)</p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.7.4...6.8.0">Full changelog</a></p>
+</section>
 <section id="streamlink-6-7-4-2024-05-12">
 <h2>streamlink 6.7.4 (2024-05-12)<a class="headerlink" href="#streamlink-6-7-4-2024-05-12" title="Link to this heading">¶</a></h2>
 <p>Patch release:</p>
@@ -1746,6 +1767,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-8-0-2024-06-17">streamlink 6.8.0 (2024-06-17)</a></li>
 <li><a class="reference internal" href="#streamlink-6-7-4-2024-05-12">streamlink 6.7.4 (2024-05-12)</a></li>
 <li><a class="reference internal" href="#streamlink-6-7-3-2024-04-14">streamlink 6.7.3 (2024-04-14)</a></li>
 <li><a class="reference internal" href="#streamlink-6-7-2-2024-03-23">streamlink 6.7.2 (2024-03-23)</a></li>
@@ -1839,7 +1861,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=60bf6a40"></script>
+</div><script src="_static/documentation_options.js?v=2adddf63"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
