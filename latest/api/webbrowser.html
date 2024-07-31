@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Webbrowser - Streamlink 6.8.3+12.gf68f04b0 documentation">
+  <meta property="og:title" content="Webbrowser - Streamlink 6.8.3+13.g3d3d72e3 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Webbrowser - Streamlink 6.8.3+12.gf68f04b0 documentation</title>
+        <title>Webbrowser - Streamlink 6.8.3+13.g3d3d72e3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=437aa6ec" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -140,7 +140,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.8.3+12.gf68f04b0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.8.3+13.g3d3d72e3 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -169,7 +169,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.8.3+12.gf68f04b0</pre>
+  <pre class="sidebar-versions-current">6.8.3+13.g3d3d72e3</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/webbrowser.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/webbrowser.html" class="version-current">Latest</a></dd>
@@ -368,11 +368,14 @@ If unset, falls back to the <code class="docutils literal notranslate"><span cla
 
 <dl class="py method">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.client.CDPClient.session">
-<span class="sig-name descname"><span class="pre">session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fail_unhandled_requests</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClient.session" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fail_unhandled_requests</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClient.session" title="Link to this definition">¶</a></dt>
 <dd><p>Create a new CDP session on an empty target (browser tab).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>fail_unhandled_requests</strong> (<em>bool</em>) -- Whether network requests which are not matched by any request handlers should fail.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fail_unhandled_requests</strong> (<em>bool</em>) -- Whether network requests which are not matched by any request handlers should fail.</p></li>
+<li><p><strong>max_buffer_size</strong> (<em>int</em><em> | </em><em>None</em>) -- Optional size of the send/receive memory channel for paused HTTP requests/responses.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>AsyncGenerator</em>[<a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession" title="streamlink.webbrowser.cdp.client.CDPClientSession"><em>CDPClientSession</em></a>, None]</p>
@@ -384,7 +387,7 @@ If unset, falls back to the <code class="docutils literal notranslate"><span cla
 
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.client.CDPClientSession">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.client.</span></span><span class="sig-name descname"><span class="pre">CDPClientSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cdp_client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cdp_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_unhandled_requests</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClientSession" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.client.</span></span><span class="sig-name descname"><span class="pre">CDPClientSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cdp_client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cdp_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_unhandled_requests</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClientSession" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>High-level API for navigating websites, intercepting network requests/responses,
 and for evaluating async JavaScript expressions.</p>
@@ -395,6 +398,7 @@ and for evaluating async JavaScript expressions.</p>
 <li><p><strong>cdp_client</strong> (<a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClient" title="streamlink.webbrowser.cdp.client.CDPClient"><em>CDPClient</em></a>)</p></li>
 <li><p><strong>cdp_session</strong> (<a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPSession" title="streamlink.webbrowser.cdp.connection.CDPSession"><em>CDPSession</em></a>)</p></li>
 <li><p><strong>fail_unhandled_requests</strong> (<em>bool</em>)</p></li>
+<li><p><strong>max_buffer_size</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -587,14 +591,14 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPBase.listen">
-<span class="sig-name descname"><span class="pre">listen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPBase.listen" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">listen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPBase.listen" title="Link to this definition">¶</a></dt>
 <dd><p>Listen to a CDP event and return a new <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPEventListener" title="streamlink.webbrowser.cdp.connection.CDPEventListener"><code class="xref py py-class docutils literal notranslate"><span class="pre">CDPEventListener</span></code></a> instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>event</strong> (<em>Type</em><em>[</em><em>TEvent</em><em>]</em>) -- See the <code class="docutils literal notranslate"><span class="pre">streamlink.webbrowser.cdp.devtools</span></code> package for the available events.
 For events to be sent over the CDP connection, a specific domain needs to be enabled first.</p></li>
-<li><p><strong>max_buffer_size</strong> (<em>int</em>) -- The buffer size of the <code class="docutils literal notranslate"><span class="pre">trio</span></code> memory channel.</p></li>
+<li><p><strong>max_buffer_size</strong> (<em>int</em><em> | </em><em>None</em>) -- The buffer size of the <code class="docutils literal notranslate"><span class="pre">trio</span></code> memory channel.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -710,7 +714,7 @@ This override is mostly only relevant for awaiting JS code evaluations.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPEventListener">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.connection.</span></span><span class="sig-name descname"><span class="pre">CDPEventListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPEventListener" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.connection.</span></span><span class="sig-name descname"><span class="pre">CDPEventListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPEventListener" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">TEvent</span></code>]</p>
 <p>Instances of this class are returned by <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase.listen" title="streamlink.webbrowser.cdp.connection.CDPBase.listen"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CDPBase.listen()</span></code></a>.</p>
 <p>The return types of each of its methods depend on the event type.</p>
@@ -731,7 +735,7 @@ or can be used as an async context manager which yields the event and closes the
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>event_channels</strong> (<em>TEventChannels</em>)</p></li>
 <li><p><strong>event</strong> (<em>Type</em><em>[</em><em>TEvent</em><em>]</em>)</p></li>
-<li><p><strong>max_buffer_size</strong> (<em>int</em>)</p></li>
+<li><p><strong>max_buffer_size</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -879,7 +883,7 @@ or can be used as an async context manager which yields the event and closes the
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=b01f3c1e"></script>
+</div><script src="../_static/documentation_options.js?v=9e8bdd5b"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
