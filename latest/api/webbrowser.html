@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Webbrowser - Streamlink 6.8.3+24.g6114f8d6 documentation">
+  <meta property="og:title" content="Webbrowser - Streamlink 6.8.3+25.g88f17150 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Webbrowser - Streamlink 6.8.3+24.g6114f8d6 documentation</title>
+        <title>Webbrowser - Streamlink 6.8.3+25.g88f17150 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=437aa6ec" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -140,7 +140,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.8.3+24.g6114f8d6 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.8.3+25.g88f17150 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -169,7 +169,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.8.3+24.g6114f8d6</pre>
+  <pre class="sidebar-versions-current">6.8.3+25.g88f17150</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/webbrowser.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/webbrowser.html" class="version-current">Latest</a></dd>
@@ -288,7 +288,7 @@
 </div>
 <dl class="py class" id="module-streamlink.webbrowser">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.client.CDPClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.client.</span></span><span class="sig-name descname"><span class="pre">CDPClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cdp_connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nursery</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClient" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.client.</span></span><span class="sig-name descname"><span class="pre">CDPClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cdp_connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nursery</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headless</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClient" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The public interface around <a class="reference internal" href="#streamlink.webbrowser.chromium.ChromiumWebbrowser" title="streamlink.webbrowser.chromium.ChromiumWebbrowser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChromiumWebbrowser</span></code></a>
 and <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection" title="streamlink.webbrowser.cdp.connection.CDPConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">CDPConnection</span></code></a>.</p>
@@ -305,6 +305,7 @@ as well as evaluating JavaScript expressions and retrieving async results.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>cdp_connection</strong> (<a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection" title="streamlink.webbrowser.cdp.connection.CDPConnection"><em>CDPConnection</em></a>)</p></li>
 <li><p><strong>nursery</strong> (<em>Nursery</em>)</p></li>
+<li><p><strong>headless</strong> (<em>bool</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -883,7 +884,7 @@ or can be used as an async context manager which yields the event and closes the
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=1981dd40"></script>
+</div><script src="../_static/documentation_options.js?v=0a4b8476"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
