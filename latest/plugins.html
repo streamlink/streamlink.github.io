@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugins - Streamlink 6.8.3+25.g88f17150 documentation">
+  <meta property="og:title" content="Plugins - Streamlink 6.8.3+27.g56f47d31 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugins - Streamlink 6.8.3+25.g88f17150 documentation</title>
+        <title>Plugins - Streamlink 6.8.3+27.g56f47d31 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=437aa6ec" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -140,7 +140,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.8.3+25.g88f17150 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.8.3+27.g56f47d31 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -169,7 +169,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.8.3+25.g88f17150</pre>
+  <pre class="sidebar-versions-current">6.8.3+27.g56f47d31</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/plugins.html" class="">Stable</a></dd>
     <dd><a href="/latest/plugins.html" class="version-current">Latest</a></dd>
@@ -3489,24 +3489,28 @@ directly, like for example HLS and DASH.</p>
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>live, vod</p>
 </dd>
-<dt class="field-even">Metadata<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-even">Web browser<span class="colon">:</span></dt>
+<dd class="field-even"><p>Required for getting a new <a class="reference internal" href="cli/plugins/twitch.html#client-integrity-token"><span class="std std-ref">client-integrity token</span></a>.
+[<a class="reference internal" href="cli.html#web-browser-options"><span class="std std-ref">?</span></a>]</p>
+</dd>
+<dt class="field-odd">Metadata<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
 <li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">id</span></a></p></li>
 <li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">author</span></a></p></li>
 <li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">category</span></a></p></li>
 <li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">title</span></a></p></li>
 </ul>
 </dd>
-<dt class="field-odd">Notes<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
 <li><p>See the <a class="reference internal" href="cli/plugins/twitch.html#authentication"><span class="std std-ref">Authentication</span></a> docs on how to prevent ads.</p></li>
 <li><p>Read more about <a class="reference internal" href="cli/plugins/twitch.html#embedded-ads"><span class="std std-ref">embedded ads</span></a> here.</p></li>
 <li><p><a class="reference internal" href="cli/plugins/twitch.html#low-latency-streaming"><span class="std std-ref">Low latency streaming</span></a> is supported.</p></li>
 <li><p>Acquires a <a class="reference internal" href="cli/plugins/twitch.html#client-integrity-token"><span class="std std-ref">client-integrity token</span></a> on streaming access token failure.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Arguments<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
 <li><p><a class="reference internal" href="cli.html#cmdoption-twitch-disable-ads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-disable-ads</span></code></a></p></li>
 <li><p><a class="reference internal" href="cli.html#cmdoption-twitch-low-latency"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-low-latency</span></code></a></p></li>
 <li><p><a class="reference internal" href="cli.html#cmdoption-twitch-api-header"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-api-header</span></code></a></p></li>
@@ -3515,8 +3519,8 @@ directly, like for example HLS and DASH.</p>
 <li><p><a class="reference internal" href="cli.html#cmdoption-twitch-purge-client-integrity"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-purge-client-integrity</span></code></a></p></li>
 </ul>
 </dd>
-<dt class="field-odd">GitHub<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/twitch.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.twitch">Issues</a></p>
+<dt class="field-even">GitHub<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/twitch.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.twitch">Issues</a></p>
 </dd>
 </dl>
 </section>
@@ -3725,8 +3729,12 @@ directly, like for example HLS and DASH.</p>
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>live</p>
 </dd>
-<dt class="field-even">GitHub<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vtvgo.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vtvgo">Issues</a></p>
+<dt class="field-even">Web browser<span class="colon">:</span></dt>
+<dd class="field-even"><p>Required for circumventing the AWS Web Application Firewall bot-detection.
+[<a class="reference internal" href="cli.html#web-browser-options"><span class="std std-ref">?</span></a>]</p>
+</dd>
+<dt class="field-odd">GitHub<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vtvgo.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vtvgo">Issues</a></p>
 </dd>
 </dl>
 </section>
@@ -4208,7 +4216,7 @@ directly, like for example HLS and DASH.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=0a4b8476"></script>
+</div><script src="_static/documentation_options.js?v=2afa023d"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
