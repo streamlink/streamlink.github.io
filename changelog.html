@@ -322,6 +322,37 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-6-9-0-2024-08-12">
+<h2>streamlink 6.9.0 (2024-08-12)<a class="headerlink" href="#streamlink-6-9-0-2024-08-12" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">streamlink.plugin.api.webbrowser</span></code> subpackage with the <code class="docutils literal notranslate"><span class="pre">aws_waf</span></code> module (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6102">#6102</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6118">#6118</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">max_buffer_size</span></code> kwarg to <code class="docutils literal notranslate"><span class="pre">CDPClient.session()</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6101">#6101</a>)</p></li>
+<li><p>Added: webbrowser <code class="docutils literal notranslate"><span class="pre">User-Agent</span></code> header override in headless mode (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6114">#6114</a>)</p></li>
+<li><p>Changed: default value of <code class="docutils literal notranslate"><span class="pre">--webbrowser-headless</span></code> from <code class="docutils literal notranslate"><span class="pre">True</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6116">#6116</a>)</p></li>
+<li><p>Changed: unicode characters to be unescaped in JSON output, if possible (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6080">#6080</a>)</p></li>
+<li><p>Fixed: potential character encoding issues in Streamlink’s logger (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6081">#6081</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>nicolive: updated plugin matcher (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6127">#6127</a>)</p></li>
+<li><p>okru: fixed validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6085">#6085</a>)</p></li>
+<li><p>radionet: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6091">#6091</a>)</p></li>
+<li><p>sportschau: fixed plugin (HLS streams with packed audio streams remain unsupported) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6104">#6104</a>)</p></li>
+<li><p>tiktok: fixed room ID validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6106">#6106</a>)</p></li>
+<li><p>tvp: added support for sport.tvp.pl (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6097">#6097</a>)</p></li>
+<li><p>twitch: added <code class="docutils literal notranslate"><span class="pre">--twitch-force-client-integrity</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6113">#6113</a>)</p></li>
+<li><p>twitch: fixed broken client-integrity token decoding+parsing (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6113">#6113</a>)</p></li>
+<li><p>twitch: removed the <code class="docutils literal notranslate"><span class="pre">headless=False</span></code> override (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6117">#6117</a>)</p></li>
+<li><p>vimeo: removed error messages for unsupported DASH streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6128">#6128</a>)</p></li>
+<li><p>vk: fixed validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6096">#6096</a>)</p></li>
+<li><p>vtvgo: resolved AWS Web Application Firewall bot detection (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6102">#6102</a>)</p></li>
+<li><p>yupptv: fixed plugin, added ad filtering (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6093">#6093</a>)</p></li>
+</ul>
+</li>
+<li><p>Docs: added webbrowser API metadata to plugin descriptions (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6115">#6115</a>)</p></li>
+<li><p>Docs: updated build-dependencies and the furo theme (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6126">#6126</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.8.3...6.9.0">Full changelog</a></p>
+</section>
 <section id="streamlink-6-8-3-2024-07-11">
 <h2>streamlink 6.8.3 (2024-07-11)<a class="headerlink" href="#streamlink-6-8-3-2024-07-11" title="Link to this heading">¶</a></h2>
 <p>Patch release:</p>
@@ -1850,6 +1881,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-9-0-2024-08-12">streamlink 6.9.0 (2024-08-12)</a></li>
 <li><a class="reference internal" href="#streamlink-6-8-3-2024-07-11">streamlink 6.8.3 (2024-07-11)</a></li>
 <li><a class="reference internal" href="#streamlink-6-8-2-2024-07-04">streamlink 6.8.2 (2024-07-04)</a></li>
 <li><a class="reference internal" href="#streamlink-6-8-1-2024-06-18">streamlink 6.8.1 (2024-06-18)</a></li>
