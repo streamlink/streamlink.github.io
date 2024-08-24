@@ -36,12 +36,11 @@ latest/_sources/migrations.rst.txt
 latest/_sources/players.rst.txt
 latest/_sources/plugins.rst.txt
 latest/_sources/thirdparty.rst.txt
-latest/_sphinx_design_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css
 latest/_sphinx_design_static/design-tabs.js
+latest/_sphinx_design_static/sphinx-design.min.css
 latest/_static/apple-touch-icon.png
 latest/_static/basic.css
 latest/_static/debug.css
-latest/_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css
 latest/_static/design-tabs.js
 latest/_static/doctools.js
 latest/_static/documentation_options.js
@@ -64,6 +63,7 @@ latest/_static/scripts/furo.js.map
 latest/_static/searchtools.js
 latest/_static/site.webmanifest
 latest/_static/skeleton.css
+latest/_static/sphinx-design.min.css
 latest/_static/sphinx_highlight.js
 latest/_static/styles/custom.css
 latest/_static/styles/furo-extensions.css
