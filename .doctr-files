@@ -36,12 +36,11 @@
 ./_sources/players.rst.txt
 ./_sources/plugins.rst.txt
 ./_sources/thirdparty.rst.txt
-./_sphinx_design_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css
 ./_sphinx_design_static/design-tabs.js
+./_sphinx_design_static/sphinx-design.min.css
 ./_static/apple-touch-icon.png
 ./_static/basic.css
 ./_static/debug.css
-./_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css
 ./_static/design-tabs.js
 ./_static/doctools.js
 ./_static/documentation_options.js
@@ -64,6 +63,7 @@
 ./_static/searchtools.js
 ./_static/site.webmanifest
 ./_static/skeleton.css
+./_static/sphinx-design.min.css
 ./_static/sphinx_highlight.js
 ./_static/styles/custom.css
 ./_static/styles/furo-extensions.css
