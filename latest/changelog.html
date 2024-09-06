@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.9.0+29.g039fb5c7 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 6.9.0+30.gb044e735 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.9.0+29.g039fb5c7 documentation</title>
+        <title>Changelog - Streamlink 6.9.0+30.gb044e735 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.9.0+29.g039fb5c7 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.9.0+30.gb044e735 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.9.0+29.g039fb5c7</pre>
+  <pre class="sidebar-versions-current">6.9.0+30.gb044e735</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -326,6 +326,31 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-6-10-0-2024-09-06">
+<h2>streamlink 6.10.0 (2024-09-06)<a class="headerlink" href="#streamlink-6-10-0-2024-09-06" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Added: official support for Python 3.13 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6133">#6133</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--logformat</span></code> and <code class="docutils literal notranslate"><span class="pre">--logdateformat</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6138">#6138</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6144">#6144</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--ffmpeg-loglevel</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6161">#6161</a>)</p></li>
+<li><p>Fixed: continuous logging errors when stdout stream was closed on the reading end (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6142">#6142</a>)</p></li>
+<li><p>Fixed: HTTP proxy config being used when getting webbrowser API’s websocket IPC address (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6130">#6130</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>booyah: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6162">#6162</a>)</p></li>
+<li><p>douyin: fixed validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6140">#6140</a>)</p></li>
+<li><p>galatasaraytv: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6163">#6163</a>)</p></li>
+<li><p>idf1: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6164">#6164</a>)</p></li>
+<li><p>linelive: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6165">#6165</a>)</p></li>
+<li><p>pandalive: fixed missing HTTP headers (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6148">#6148</a>)</p></li>
+<li><p>tiktok: fixed schema of inaccessible streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6160">#6160</a>)</p></li>
+<li><p>youtube: disabled VODs, as they are currently non-functional (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6135">#6135</a>)</p></li>
+</ul>
+</li>
+<li><p>Docs: bumped <code class="docutils literal notranslate"><span class="pre">sphinx-design</span> <span class="pre">&gt;=0.5.0,&lt;=0.6.1</span></code>, enabling <code class="docutils literal notranslate"><span class="pre">sphinx</span> <span class="pre">&gt;=8.0.0</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6137">#6137</a>)</p></li>
+<li><p>Tests: fixed <code class="docutils literal notranslate"><span class="pre">pytest-asyncio</span></code> warnings (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6143">#6143</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.9.0...6.10.0">Full changelog</a></p>
+</section>
 <section id="streamlink-6-9-0-2024-08-12">
 <h2>streamlink 6.9.0 (2024-08-12)<a class="headerlink" href="#streamlink-6-9-0-2024-08-12" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -1885,6 +1910,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-6-10-0-2024-09-06">streamlink 6.10.0 (2024-09-06)</a></li>
 <li><a class="reference internal" href="#streamlink-6-9-0-2024-08-12">streamlink 6.9.0 (2024-08-12)</a></li>
 <li><a class="reference internal" href="#streamlink-6-8-3-2024-07-11">streamlink 6.8.3 (2024-07-11)</a></li>
 <li><a class="reference internal" href="#streamlink-6-8-2-2024-07-04">streamlink 6.8.2 (2024-07-04)</a></li>
@@ -1983,7 +2009,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=990d6d63"></script>
+</div><script src="_static/documentation_options.js?v=ca12fb47"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
