@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Command-Line Interface - Streamlink 6.10.0+5.gadbeccb8 documentation">
+  <meta property="og:title" content="Command-Line Interface - Streamlink 6.10.0+6.gab1a0992 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Command-Line Interface - Streamlink 6.10.0+5.gadbeccb8 documentation</title>
+        <title>Command-Line Interface - Streamlink 6.10.0+6.gab1a0992 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.10.0+5.gadbeccb8 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.10.0+6.gab1a0992 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.10.0+5.gadbeccb8</pre>
+  <pre class="sidebar-versions-current">6.10.0+6.gab1a0992</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -234,7 +234,6 @@
 <li class="toctree-l2"><a class="reference internal" href="cli/proxy.html">Proxy support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/metadata.html">Metadata</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Plugin specific usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="cli/plugins/crunchyroll.html">Crunchyroll</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli/plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
@@ -360,11 +359,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cli/plugins.html">Plugin specific usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli/plugins/crunchyroll.html">Crunchyroll</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cli/plugins/crunchyroll.html#authentication">Authentication</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cli/plugins/crunchyroll.html#http-proxy">HTTP proxy</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="cli/plugins/twitch.html">Twitch</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="cli/plugins/twitch.html#authentication">Authentication</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli/plugins/twitch.html#embedded-ads">Embedded ads</a></li>
@@ -1432,42 +1426,6 @@ When enabled, it stays completely hidden and doesn't require a desktop environme
 </dd></dl>
 
 </section>
-<section id="crunchyroll">
-<h4>Crunchyroll<a class="headerlink" href="#crunchyroll" title="Link to this heading">¶</a></h4>
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-crunchyroll-username">
-<span class="sig-name descname"><span class="pre">--crunchyroll-username</span></span><span class="sig-prename descclassname"> <span class="pre">USERNAME</span></span><a class="headerlink" href="#cmdoption-crunchyroll-username" title="Link to this definition">¶</a></dt>
-<dd><p>A Crunchyroll username to allow access to restricted streams.</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-crunchyroll-password">
-<span class="sig-name descname"><span class="pre">--crunchyroll-password</span></span><span class="sig-prename descclassname"> <span class="pre">[PASSWORD]</span></span><a class="headerlink" href="#cmdoption-crunchyroll-password" title="Link to this definition">¶</a></dt>
-<dd><p>A Crunchyroll password for use with <a class="reference internal" href="#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a>.</p>
-<p>If left blank you will be prompted.</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-crunchyroll-purge-credentials">
-<span class="sig-name descname"><span class="pre">--crunchyroll-purge-credentials</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-crunchyroll-purge-credentials" title="Link to this definition">¶</a></dt>
-<dd><p>Purge cached Crunchyroll credentials to initiate a new session and reauthenticate.</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-crunchyroll-session-id">
-<span class="sig-name descname"><span class="pre">--crunchyroll-session-id</span></span><span class="sig-prename descclassname"> <span class="pre">SESSION_ID</span></span><a class="headerlink" href="#cmdoption-crunchyroll-session-id" title="Link to this definition">¶</a></dt>
-<dd><p>Set a specific session ID for crunchyroll, can be used to bypass
-region restrictions. If using an authenticated session ID, it is
-recommended that the authentication parameters be omitted as the
-session ID is account specific.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The session ID will be overwritten if authentication is used
-and the session ID does not match the account.</p>
-</div>
-</dd></dl>
-
-</section>
 <section id="nicolive">
 <h4>Nicolive<a class="headerlink" href="#nicolive" title="Link to this heading">¶</a></h4>
 <dl class="std option">
@@ -1842,7 +1800,6 @@ Regular streams can cause buffering issues with this option enabled due to the r
 <li><a class="reference internal" href="#afreeca">Afreeca</a></li>
 <li><a class="reference internal" href="#bbciplayer">Bbciplayer</a></li>
 <li><a class="reference internal" href="#clubbingtv">Clubbingtv</a></li>
-<li><a class="reference internal" href="#crunchyroll">Crunchyroll</a></li>
 <li><a class="reference internal" href="#nicolive">Nicolive</a></li>
 <li><a class="reference internal" href="#openrectv">Openrectv</a></li>
 <li><a class="reference internal" href="#pixiv">Pixiv</a></li>
@@ -1872,7 +1829,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=482affbc"></script>
+</div><script src="_static/documentation_options.js?v=c4b0e94e"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
