@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugins - Streamlink 6.10.0 documentation">
+  <meta property="og:title" content="Plugins - Streamlink 6.11.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugins - Streamlink 6.10.0 documentation</title>
+        <title>Plugins - Streamlink 6.11.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.10.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.11.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.10.0</pre>
+  <pre class="sidebar-versions-current">6.11.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/plugins.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/plugins.html" class="">Latest</a></dd>
@@ -234,7 +234,6 @@
 <li class="toctree-l2"><a class="reference internal" href="cli/proxy.html">Proxy support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/metadata.html">Metadata</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Plugin specific usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="cli/plugins/crunchyroll.html">Crunchyroll</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cli/plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
@@ -1039,41 +1038,6 @@ directly, like for example HLS and DASH.</p>
 </dd>
 </dl>
 </section>
-<section id="crunchyroll">
-<h2>crunchyroll<a class="headerlink" href="#crunchyroll" title="Link to this heading">¶</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">Description<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Video streaming service focused on anime, manga, and dorama.</p>
-</dd>
-<dt class="field-even">URL(s)<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p>crunchyroll.com</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>vod</p>
-</dd>
-<dt class="field-even">Metadata<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">id</span></a></p></li>
-<li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">author</span></a></p></li>
-<li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">category</span></a></p></li>
-<li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">title</span></a></p></li>
-</ul>
-</dd>
-<dt class="field-odd">Arguments<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="cli.html#cmdoption-crunchyroll-username"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-username</span></code></a></p></li>
-<li><p><a class="reference internal" href="cli.html#cmdoption-crunchyroll-password"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-password</span></code></a></p></li>
-<li><p><a class="reference internal" href="cli.html#cmdoption-crunchyroll-purge-credentials"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-purge-credentials</span></code></a></p></li>
-<li><p><a class="reference internal" href="cli.html#cmdoption-crunchyroll-session-id"><code class="xref std std-option docutils literal notranslate"><span class="pre">--crunchyroll-session-id</span></code></a></p></li>
-</ul>
-</dd>
-<dt class="field-even">GitHub<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/crunchyroll.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.crunchyroll">Issues</a></p>
-</dd>
-</dl>
-</section>
 <section id="dailymotion">
 <h2>dailymotion<a class="headerlink" href="#dailymotion" title="Link to this heading">¶</a></h2>
 <dl class="field-list simple">
@@ -1314,30 +1278,6 @@ directly, like for example HLS and DASH.</p>
 </dd>
 <dt class="field-even">GitHub<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/euronews.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.euronews">Issues</a></p>
-</dd>
-</dl>
-</section>
-<section id="facebook">
-<h2>facebook<a class="headerlink" href="#facebook" title="Link to this heading">¶</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">Description<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Global live-streaming and video hosting social platform.</p>
-</dd>
-<dt class="field-even">URL(s)<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p>facebook.com</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>live, vod</p>
-</dd>
-<dt class="field-even">Metadata<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">title</span></a></p></li>
-</ul>
-</dd>
-<dt class="field-odd">GitHub<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/facebook.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.facebook">Issues</a></p>
 </dd>
 </dl>
 </section>
@@ -1825,25 +1765,6 @@ directly, like for example HLS and DASH.</p>
 </dd>
 <dt class="field-odd">GitHub<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/mediavitrina.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.mediavitrina">Issues</a></p>
-</dd>
-</dl>
-</section>
-<section id="mildom">
-<h2>mildom<a class="headerlink" href="#mildom" title="Link to this heading">¶</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">Description<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Japanese live streaming and video hosting platform for live video game broadcasts and individual live streams.</p>
-</dd>
-<dt class="field-even">URL(s)<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p>mildom.com</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>live, vod</p>
-</dd>
-<dt class="field-even">GitHub<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/mildom.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.mildom">Issues</a></p>
 </dd>
 </dl>
 </section>
@@ -3334,50 +3255,6 @@ directly, like for example HLS and DASH.</p>
 </dd>
 </dl>
 </section>
-<section id="tvrby">
-<h2>tvrby<a class="headerlink" href="#tvrby" title="Link to this heading">¶</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">Description<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Live TV channels from BTRC, a Belarusian public, state-owned broadcaster.</p>
-</dd>
-<dt class="field-even">URL(s)<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p>tvr.by</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>live</p>
-</dd>
-<dt class="field-even">Region<span class="colon">:</span></dt>
-<dd class="field-even"><p>Belarus</p>
-</dd>
-<dt class="field-odd">GitHub<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tvrby.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tvrby">Issues</a></p>
-</dd>
-</dl>
-</section>
-<section id="tvrplus">
-<h2>tvrplus<a class="headerlink" href="#tvrplus" title="Link to this heading">¶</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">Description<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Live TV channels from TVR, a Romanian public, state-owned broadcaster.</p>
-</dd>
-<dt class="field-even">URL(s)<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p>tvrplus.ro</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>live</p>
-</dd>
-<dt class="field-even">Region<span class="colon">:</span></dt>
-<dd class="field-even"><p>Romania</p>
-</dd>
-<dt class="field-odd">GitHub<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/tvrplus.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.tvrplus">Issues</a></p>
-</dd>
-</dl>
-</section>
 <section id="tvtoya">
 <h2>tvtoya<a class="headerlink" href="#tvtoya" title="Link to this heading">¶</a></h2>
 <dl class="field-list simple">
@@ -3689,25 +3566,6 @@ directly, like for example HLS and DASH.</p>
 </dd>
 </dl>
 </section>
-<section id="webtv">
-<h2>webtv<a class="headerlink" href="#webtv" title="Link to this heading">¶</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">Description<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Turkish web conferencing platform.</p>
-</dd>
-<dt class="field-even">URL(s)<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p>web.tv</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>live</p>
-</dd>
-<dt class="field-even">GitHub<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/webtv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.webtv">Issues</a></p>
-</dd>
-</dl>
-</section>
 <section id="welt">
 <h2>welt<a class="headerlink" href="#welt" title="Link to this heading">¶</a></h2>
 <dl class="field-list simple">
@@ -3911,44 +3769,6 @@ directly, like for example HLS and DASH.</p>
 </dd>
 </dl>
 </section>
-<section id="zengatv">
-<h2>zengatv<a class="headerlink" href="#zengatv" title="Link to this heading">¶</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">Description<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Indian live TV channels. OTT service from Zenga TV.</p>
-</dd>
-<dt class="field-even">URL(s)<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p>zengatv.com</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>live</p>
-</dd>
-<dt class="field-even">GitHub<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/zengatv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.zengatv">Issues</a></p>
-</dd>
-</dl>
-</section>
-<section id="zhanqi">
-<h2>zhanqi<a class="headerlink" href="#zhanqi" title="Link to this heading">¶</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">Description<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Chinese live streaming platform for live video game broadcasts.</p>
-</dd>
-<dt class="field-even">URL(s)<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p>zhanqi.tv</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>live</p>
-</dd>
-<dt class="field-even">GitHub<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/zhanqi.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.zhanqi">Issues</a></p>
-</dd>
-</dl>
-</section>
 </section>
 
 
@@ -4036,7 +3856,6 @@ directly, like for example HLS and DASH.</p>
 <li><a class="reference internal" href="#cmmedia">cmmedia</a></li>
 <li><a class="reference internal" href="#cnbce">cnbce</a></li>
 <li><a class="reference internal" href="#cnews">cnews</a></li>
-<li><a class="reference internal" href="#crunchyroll">crunchyroll</a></li>
 <li><a class="reference internal" href="#dailymotion">dailymotion</a></li>
 <li><a class="reference internal" href="#delfi">delfi</a></li>
 <li><a class="reference internal" href="#deutschewelle">deutschewelle</a></li>
@@ -4047,7 +3866,6 @@ directly, like for example HLS and DASH.</p>
 <li><a class="reference internal" href="#drdk">drdk</a></li>
 <li><a class="reference internal" href="#earthcam">earthcam</a></li>
 <li><a class="reference internal" href="#euronews">euronews</a></li>
-<li><a class="reference internal" href="#facebook">facebook</a></li>
 <li><a class="reference internal" href="#filmon">filmon</a></li>
 <li><a class="reference internal" href="#goltelevision">goltelevision</a></li>
 <li><a class="reference internal" href="#goodgame">goodgame</a></li>
@@ -4069,7 +3887,6 @@ directly, like for example HLS and DASH.</p>
 <li><a class="reference internal" href="#mdstrm">mdstrm</a></li>
 <li><a class="reference internal" href="#mediaklikk">mediaklikk</a></li>
 <li><a class="reference internal" href="#mediavitrina">mediavitrina</a></li>
-<li><a class="reference internal" href="#mildom">mildom</a></li>
 <li><a class="reference internal" href="#mitele">mitele</a></li>
 <li><a class="reference internal" href="#mixcloud">mixcloud</a></li>
 <li><a class="reference internal" href="#mjunoon">mjunoon</a></li>
@@ -4129,8 +3946,6 @@ directly, like for example HLS and DASH.</p>
 <li><a class="reference internal" href="#tvibo">tvibo</a></li>
 <li><a class="reference internal" href="#tviplayer">tviplayer</a></li>
 <li><a class="reference internal" href="#tvp">tvp</a></li>
-<li><a class="reference internal" href="#tvrby">tvrby</a></li>
-<li><a class="reference internal" href="#tvrplus">tvrplus</a></li>
 <li><a class="reference internal" href="#tvtoya">tvtoya</a></li>
 <li><a class="reference internal" href="#twitcasting">twitcasting</a></li>
 <li><a class="reference internal" href="#twitch">twitch</a></li>
@@ -4142,7 +3957,6 @@ directly, like for example HLS and DASH.</p>
 <li><a class="reference internal" href="#vk">vk</a></li>
 <li><a class="reference internal" href="#vkplay">vkplay</a></li>
 <li><a class="reference internal" href="#vtvgo">vtvgo</a></li>
-<li><a class="reference internal" href="#webtv">webtv</a></li>
 <li><a class="reference internal" href="#welt">welt</a></li>
 <li><a class="reference internal" href="#wwenetwork">wwenetwork</a></li>
 <li><a class="reference internal" href="#youtube">youtube</a></li>
@@ -4150,8 +3964,6 @@ directly, like for example HLS and DASH.</p>
 <li><a class="reference internal" href="#zattoo">zattoo</a></li>
 <li><a class="reference internal" href="#zdf-mediathek">zdf_mediathek</a></li>
 <li><a class="reference internal" href="#zeenews">zeenews</a></li>
-<li><a class="reference internal" href="#zengatv">zengatv</a></li>
-<li><a class="reference internal" href="#zhanqi">zhanqi</a></li>
 </ul>
 </li>
 </ul>
@@ -4163,7 +3975,7 @@ directly, like for example HLS and DASH.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=770b529d"></script>
+</div><script src="_static/documentation_options.js?v=06de18c4"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>

@@ -22,7 +22,6 @@
 ./_sources/cli/metadata.rst.txt
 ./_sources/cli/plugin-sideloading.rst.txt
 ./_sources/cli/plugins.rst.txt
-./_sources/cli/plugins/crunchyroll.rst.txt
 ./_sources/cli/plugins/twitch.rst.txt
 ./_sources/cli/protocols.rst.txt
 ./_sources/cli/proxy.rst.txt
@@ -90,7 +89,6 @@
 ./cli/metadata.html
 ./cli/plugin-sideloading.html
 ./cli/plugins.html
-./cli/plugins/crunchyroll.html
 ./cli/plugins/twitch.html
 ./cli/protocols.html
 ./cli/proxy.html
