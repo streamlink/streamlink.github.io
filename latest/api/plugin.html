@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugin - Streamlink 6.11.0+1.g956c75d2 documentation">
+  <meta property="og:title" content="Plugin - Streamlink 6.11.0+4.g045166b5 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugin - Streamlink 6.11.0+1.g956c75d2 documentation</title>
+        <title>Plugin - Streamlink 6.11.0+4.g045166b5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0+1.g956c75d2 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.11.0+4.g045166b5 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0+1.g956c75d2</pre>
+  <pre class="sidebar-versions-current">6.11.0+4.g045166b5</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/plugin.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/plugin.html" class="version-current">Latest</a></dd>
@@ -356,13 +356,13 @@ This list supports matcher lookups both by matcher index, as well as matcher nam
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.matcher">
-<span class="sig-name descname"><span class="pre">matcher</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Pattern</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matcher" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">matcher</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">re.Pattern</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.matcher" title="Link to this definition">¶</a></dt>
 <dd><p>A reference to the compiled <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Pattern</span></code> of the first matching matcher</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.Plugin.match">
-<span class="sig-name descname"><span class="pre">match</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Match</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.match" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">match</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">re.Match</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#streamlink.plugin.Plugin.match" title="Link to this definition">¶</a></dt>
 <dd><p>A reference to the <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Match</span></code> result of the first matching matcher</p>
 </dd></dl>
 
@@ -482,7 +482,7 @@ cookie then the <code class="docutils literal notranslate"><span class="pre">def
 <dd class="field-even"><p>list of the saved cookie names</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>List</em>[str]</p>
+<dd class="field-odd"><p>list[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -496,7 +496,7 @@ cookie then the <code class="docutils literal notranslate"><span class="pre">def
 <dd class="field-odd"><p>list of the restored cookie names</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>List</em>[str]</p>
+<dd class="field-even"><p>list[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -514,7 +514,7 @@ specify the <code class="docutils literal notranslate"><span class="pre">cookie_
 <dd class="field-even"><p>list of the removed cookie names</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>List</em>[str]</p>
+<dd class="field-odd"><p>list[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -564,7 +564,7 @@ and both support referencing matchers and matches by matcher index and name.</p>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Callable</em>[[<em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]], <em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
+<dd class="field-even"><p><em>Callable</em>[[type[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]], type[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -609,27 +609,27 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
 <li><p><strong>default</strong> (<em>Any</em>)</p></li>
 <li><p><strong>type</strong> (<em>str</em><em> | </em><em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>_TChoices</em><em> | </em><em>Any</em><em>] </em><em>| </em><em>None</em>)</p></li>
 <li><p><strong>type_args</strong> (<em>list</em><em> | </em><em>tuple</em><em> | </em><em>None</em>)</p></li>
-<li><p><strong>type_kwargs</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>type_kwargs</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>)</p></li>
 <li><p><strong>choices</strong> (<em>_TChoices</em><em> | </em><em>None</em>)</p></li>
 <li><p><strong>required</strong> (<em>bool</em>)</p></li>
 <li><p><strong>help</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
-<li><p><strong>metavar</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>...</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>metavar</strong> (<em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>] </em><em>| </em><em>tuple</em><em>[</em><em>str</em><em>, </em><em>...</em><em>] </em><em>| </em><em>None</em>)</p></li>
 <li><p><strong>dest</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
-<li><p><strong>requires</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>...</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>requires</strong> (<em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>] </em><em>| </em><em>tuple</em><em>[</em><em>str</em><em>, </em><em>...</em><em>] </em><em>| </em><em>None</em>)</p></li>
 <li><p><strong>prompt</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
 <li><p><strong>sensitive</strong> (<em>bool</em>)</p></li>
 <li><p><strong>argument_name</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Callable</em>[[<em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]], <em>Type</em>[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
+<dd class="field-even"><p><em>Callable</em>[[type[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]], type[<a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.plugin.</span></span><span class="sig-name descname"><span class="pre">_PLUGINARGUMENT_TYPE_REGISTRY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'bool':</span> <span class="pre">&lt;function</span> <span class="pre">boolean&gt;,</span> <span class="pre">'comma_list':</span> <span class="pre">&lt;function</span> <span class="pre">comma_list&gt;,</span> <span class="pre">'comma_list_filter':</span> <span class="pre">&lt;class</span> <span class="pre">'streamlink.utils.args.comma_list_filter'&gt;,</span> <span class="pre">'filesize':</span> <span class="pre">&lt;function</span> <span class="pre">filesize&gt;,</span> <span class="pre">'float':</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;,</span> <span class="pre">'hours_minutes_seconds':</span> <span class="pre">&lt;streamlink.utils.times._HoursMinutesSeconds</span> <span class="pre">object&gt;,</span> <span class="pre">'hours_minutes_seconds_float':</span> <span class="pre">&lt;streamlink.utils.times._HoursMinutesSeconds</span> <span class="pre">object&gt;,</span> <span class="pre">'int':</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">'keyvalue':</span> <span class="pre">&lt;function</span> <span class="pre">keyvalue&gt;,</span> <span class="pre">'num':</span> <span class="pre">&lt;class</span> <span class="pre">'streamlink.utils.args.num'&gt;}</span></em><a class="headerlink" href="#streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.plugin.</span></span><span class="sig-name descname"><span class="pre">_PLUGINARGUMENT_TYPE_REGISTRY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'bool':</span> <span class="pre">&lt;function</span> <span class="pre">boolean&gt;,</span> <span class="pre">'comma_list':</span> <span class="pre">&lt;function</span> <span class="pre">comma_list&gt;,</span> <span class="pre">'comma_list_filter':</span> <span class="pre">&lt;class</span> <span class="pre">'streamlink.utils.args.comma_list_filter'&gt;,</span> <span class="pre">'filesize':</span> <span class="pre">&lt;function</span> <span class="pre">filesize&gt;,</span> <span class="pre">'float':</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;,</span> <span class="pre">'hours_minutes_seconds':</span> <span class="pre">&lt;streamlink.utils.times._HoursMinutesSeconds</span> <span class="pre">object&gt;,</span> <span class="pre">'hours_minutes_seconds_float':</span> <span class="pre">&lt;streamlink.utils.times._HoursMinutesSeconds</span> <span class="pre">object&gt;,</span> <span class="pre">'int':</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">'keyvalue':</span> <span class="pre">&lt;function</span> <span class="pre">keyvalue&gt;,</span> <span class="pre">'num':</span> <span class="pre">&lt;class</span> <span class="pre">'streamlink.utils.args.num'&gt;}</span></em><a class="headerlink" href="#streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY" title="Link to this definition">¶</a></dt>
 <dd><p>See the <a class="reference internal" href="#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument()</span></code></a> decorator</p>
 </dd></dl>
 
@@ -730,7 +730,7 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=bc79d7d8"></script>
+</div><script src="../_static/documentation_options.js?v=b25f1976"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>

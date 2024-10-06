@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Validation schemas - Streamlink 6.11.0+1.g956c75d2 documentation">
+  <meta property="og:title" content="Validation schemas - Streamlink 6.11.0+4.g045166b5 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Validation schemas - Streamlink 6.11.0+1.g956c75d2 documentation</title>
+        <title>Validation schemas - Streamlink 6.11.0+4.g045166b5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0+1.g956c75d2 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.11.0+4.g045166b5 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0+1.g956c75d2</pre>
+  <pre class="sidebar-versions-current">6.11.0+4.g045166b5</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/validate.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/validate.html" class="version-current">Latest</a></dd>
@@ -342,7 +342,7 @@ which by default raises <a class="reference internal" href="exceptions.html#stre
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<em>Any</em>)</p></li>
 <li><p><strong>name</strong> (<em>str</em>)</p></li>
-<li><p><strong>exception</strong> (<em>Type</em><em>[</em><em>Exception</em><em>]</em>)</p></li>
+<li><p><strong>exception</strong> (<em>type</em><em>[</em><em>Exception</em><em>]</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -1047,7 +1047,7 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>path</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -1081,7 +1081,7 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>path</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -1115,7 +1115,7 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>path</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -1149,8 +1149,8 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>xpath</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
-<li><p><strong>extensions</strong> (<em>Dict</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em> | </em><em>None</em><em>, </em><em>str</em><em>]</em><em>, </em><em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>Any</em><em>]</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>extensions</strong> (<em>Mapping</em><em>[</em><em>tuple</em><em>[</em><em>str</em><em> | </em><em>None</em><em>, </em><em>str</em><em>]</em><em>, </em><em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>Any</em><em>]</em><em>] </em><em>| </em><em>None</em>)</p></li>
 <li><p><strong>smart_strings</strong> (<em>bool</em>)</p></li>
 </ul>
 </dd>
@@ -1186,8 +1186,8 @@ If the result is an empty set, this function instead returns <code class="docuti
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>xpath</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
-<li><p><strong>extensions</strong> (<em>Dict</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em> | </em><em>None</em><em>, </em><em>str</em><em>]</em><em>, </em><em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>Any</em><em>]</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>extensions</strong> (<em>Mapping</em><em>[</em><em>tuple</em><em>[</em><em>str</em><em> | </em><em>None</em><em>, </em><em>str</em><em>]</em><em>, </em><em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>Any</em><em>]</em><em>] </em><em>| </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -1416,7 +1416,7 @@ In this case, the <code class="docutils literal notranslate"><span class="pre">d
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>item</strong> (<em>Any</em><em> | </em><em>Tuple</em><em>[</em><em>Any</em><em>]</em>) -- The lookup key, or a <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> of recursive lookup keys</p></li>
+<li><p><strong>item</strong> (<em>Any</em><em> | </em><em>tuple</em>) -- The lookup key, or a <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> of recursive lookup keys</p></li>
 <li><p><strong>default</strong> (<em>Any</em>) -- Optional custom default value</p></li>
 <li><p><strong>strict</strong> (<em>bool</em>) -- If <code class="docutils literal notranslate"><span class="pre">True</span></code>, don't perform recursive lookups with the <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> item</p></li>
 </ul>
@@ -1488,7 +1488,7 @@ or <code class="xref py py-class docutils literal notranslate"><span class="pre"
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>*getters</strong> -- Inputs for each <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.GetItemSchema" title="streamlink.plugin.api.validate._schemas.GetItemSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a></p></li>
-<li><p><strong>seq</strong> (<em>Type</em><em>[</em><em>Tuple</em><em> | </em><em>List</em><em> | </em><em>Set</em><em> | </em><em>FrozenSet</em><em>]</em>)</p></li>
+<li><p><strong>seq</strong> (<em>type</em><em>[</em><em>tuple</em><em> | </em><em>list</em><em> | </em><em>set</em><em> | </em><em>frozenset</em><em>]</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1564,10 +1564,10 @@ and the <code class="xref py py-func docutils literal notranslate"><span class="
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>tag</strong> (<em>Any</em><em> | </em><em>None</em>) -- Optional element tag validation</p></li>
-<li><p><strong>text</strong> (<em>Any</em><em> | </em><em>None</em>) -- Optional element text validation</p></li>
-<li><p><strong>attrib</strong> (<em>Any</em><em> | </em><em>None</em>) -- Optional element attributes validation</p></li>
-<li><p><strong>tail</strong> (<em>Any</em><em> | </em><em>None</em>) -- Optional element tail validation</p></li>
+<li><p><strong>tag</strong> (<em>Any</em>) -- Optional element tag validation</p></li>
+<li><p><strong>text</strong> (<em>Any</em>) -- Optional element text validation</p></li>
+<li><p><strong>attrib</strong> (<em>Any</em>) -- Optional element attributes validation</p></li>
+<li><p><strong>tail</strong> (<em>Any</em>) -- Optional element tail validation</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
@@ -1718,7 +1718,7 @@ with optionally validated <code class="docutils literal notranslate"><span class
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=bc79d7d8"></script>
+</div><script src="../_static/documentation_options.js?v=b25f1976"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>

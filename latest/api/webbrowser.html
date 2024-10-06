@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Webbrowser - Streamlink 6.11.0+1.g956c75d2 documentation">
+  <meta property="og:title" content="Webbrowser - Streamlink 6.11.0+4.g045166b5 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Webbrowser - Streamlink 6.11.0+1.g956c75d2 documentation</title>
+        <title>Webbrowser - Streamlink 6.11.0+4.g045166b5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0+1.g956c75d2 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.11.0+4.g045166b5 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0+1.g956c75d2</pre>
+  <pre class="sidebar-versions-current">6.11.0+4.g045166b5</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/webbrowser.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/webbrowser.html" class="version-current">Latest</a></dd>
@@ -347,7 +347,7 @@ as well as evaluating JavaScript expressions and retrieving async results.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>cdp_connection</strong> (<a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection" title="streamlink.webbrowser.cdp.connection.CDPConnection"><em>CDPConnection</em></a>)</p></li>
-<li><p><strong>nursery</strong> (<em>Nursery</em>)</p></li>
+<li><p><strong>nursery</strong> (<em>trio.Nursery</em>)</p></li>
 <li><p><strong>headless</strong> (<em>bool</em>)</p></li>
 </ul>
 </dd>
@@ -602,7 +602,7 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.client.CMRequestProxy">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.client.</span></span><span class="sig-name descname"><span class="pre">CMRequestProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_headers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CMRequestProxy" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.client.</span></span><span class="sig-name descname"><span class="pre">CMRequestProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'str'</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'int'</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_headers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Mapping[str,</span> <span class="pre">str]</span> <span class="pre">|</span> <span class="pre">None'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CMRequestProxy" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -627,8 +627,8 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>websocket</strong> (<em>WebSocketConnection</em>)</p></li>
-<li><p><strong>target_id</strong> (<em>Optional</em><em>[</em><em>TargetID</em><em>]</em>)</p></li>
-<li><p><strong>session_id</strong> (<em>Optional</em><em>[</em><em>SessionID</em><em>]</em>)</p></li>
+<li><p><strong>target_id</strong> (<em>TargetID</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>session_id</strong> (<em>SessionID</em><em> | </em><em>None</em>)</p></li>
 <li><p><strong>cmd_timeout</strong> (<em>float</em>)</p></li>
 </ul>
 </dd>
@@ -640,7 +640,7 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event</strong> (<em>Type</em><em>[</em><em>TEvent</em><em>]</em>) -- See the <code class="docutils literal notranslate"><span class="pre">streamlink.webbrowser.cdp.devtools</span></code> package for the available events.
+<li><p><strong>event</strong> (<em>type</em><em>[</em><em>TEvent</em><em>]</em>) -- See the <code class="docutils literal notranslate"><span class="pre">streamlink.webbrowser.cdp.devtools</span></code> package for the available events.
 For events to be sent over the CDP connection, a specific domain needs to be enabled first.</p></li>
 <li><p><strong>max_buffer_size</strong> (<em>int</em><em> | </em><em>None</em>) -- The buffer size of the <code class="docutils literal notranslate"><span class="pre">trio</span></code> memory channel.</p></li>
 </ul>
@@ -661,7 +661,7 @@ For events to be sent over the CDP connection, a specific domain needs to be ena
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cmd</strong> (<em>Generator</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>, </em><em>TCmdResponse</em><em>]</em>) -- See the <code class="docutils literal notranslate"><span class="pre">streamlink.webbrowser.cdp.devtools</span></code> package for the available commands.</p></li>
+<li><p><strong>cmd</strong> (<em>Generator</em><em>[</em><em>T_JSON_DICT</em><em>, </em><em>T_JSON_DICT</em><em>, </em><em>TCmdResponse</em><em>]</em>) -- See the <code class="docutils literal notranslate"><span class="pre">streamlink.webbrowser.cdp.devtools</span></code> package for the available commands.</p></li>
 <li><p><strong>timeout</strong> (<em>float</em><em> | </em><em>None</em>) -- Override of the max amount of time a response can take. Uses the class's default value otherwise.
 This override is mostly only relevant for awaiting JS code evaluations.</p></li>
 </ul>
@@ -670,7 +670,7 @@ This override is mostly only relevant for awaiting JS code evaluations.</p></li>
 <dd class="field-even"><p>The return value depends on the used command.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>TCmdResponse</em></p>
+<dd class="field-odd"><p>TCmdResponse</p>
 </dd>
 </dl>
 </dd></dl>
@@ -748,8 +748,8 @@ This override is mostly only relevant for awaiting JS code evaluations.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>websocket</strong> (<em>WebSocketConnection</em>)</p></li>
-<li><p><strong>target_id</strong> (<em>Optional</em><em>[</em><em>TargetID</em><em>]</em>)</p></li>
-<li><p><strong>session_id</strong> (<em>Optional</em><em>[</em><em>SessionID</em><em>]</em>)</p></li>
+<li><p><strong>target_id</strong> (<em>TargetID</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>session_id</strong> (<em>SessionID</em><em> | </em><em>None</em>)</p></li>
 <li><p><strong>cmd_timeout</strong> (<em>float</em>)</p></li>
 </ul>
 </dd>
@@ -778,8 +778,8 @@ or can be used as an async context manager which yields the event and closes the
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>event_channels</strong> (<em>TEventChannels</em>)</p></li>
-<li><p><strong>event</strong> (<em>Type</em><em>[</em><em>TEvent</em><em>]</em>)</p></li>
-<li><p><strong>max_buffer_size</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>)</p></li>
+<li><p><strong>event</strong> (<em>type</em><em>[</em><em>TEvent</em><em>]</em>)</p></li>
+<li><p><strong>max_buffer_size</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -926,7 +926,7 @@ or can be used as an async context manager which yields the event and closes the
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=bc79d7d8"></script>
+</div><script src="../_static/documentation_options.js?v=b25f1976"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
