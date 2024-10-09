@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Session - Streamlink 6.11.0+14.g68ab7f57 documentation">
+  <meta property="og:title" content="Session - Streamlink 6.11.0+16.g32ae52c9 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Session - Streamlink 6.11.0+14.g68ab7f57 documentation</title>
+        <title>Session - Streamlink 6.11.0+16.g32ae52c9 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0+14.g68ab7f57 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.11.0+16.g32ae52c9 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0+14.g68ab7f57</pre>
+  <pre class="sidebar-versions-current">6.11.0+16.g32ae52c9</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/session.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/session.html" class="version-current">Latest</a></dd>
@@ -686,133 +686,88 @@ by language code or name, or <code class="docutils literal notranslate"><span cl
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Max number of DASH manifest reload attempts before giving up</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-segment-attempts <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>hls-segment-threads <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-threads</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-segment-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-timeout</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>hls-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>dash-segment-attempts <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>dash-segment-threads <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-threads</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>dash-segment-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-timeout</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>dash-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>http-stream-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>ffmpeg-ffmpeg</p></td>
+<tr class="row-odd"><td><p>ffmpeg-ffmpeg</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Override for the <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>/<code class="docutils literal notranslate"><span class="pre">ffmpeg.exe</span></code> binary path,
 which by default gets looked up via the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> env var</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-no-validation</p></td>
+<tr class="row-even"><td><p>ffmpeg-no-validation</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Disable FFmpeg validation and version logging</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-verbose</p></td>
+<tr class="row-odd"><td><p>ffmpeg-verbose</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Append FFmpeg's stderr stream to the Python's stderr stream</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-verbose-path</p></td>
+<tr class="row-even"><td><p>ffmpeg-verbose-path</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Write FFmpeg's stderr stream to the filesystem at the specified path</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-loglevel</p></td>
+<tr class="row-odd"><td><p>ffmpeg-loglevel</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Set FFmpeg's <code class="docutils literal notranslate"><span class="pre">-loglevel</span></code> value</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-fout</p></td>
+<tr class="row-even"><td><p>ffmpeg-fout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Set the output format of muxed streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;matroska&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-video-transcode</p></td>
+<tr class="row-odd"><td><p>ffmpeg-video-transcode</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;h264&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-audio-transcode</p></td>
+<tr class="row-even"><td><p>ffmpeg-audio-transcode</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;aac&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-copyts</p></td>
+<tr class="row-odd"><td><p>ffmpeg-copyts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Don't shift input stream timestamps when muxing streams</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-start-at-zero</p></td>
+<tr class="row-even"><td><p>ffmpeg-start-at-zero</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>When <code class="docutils literal notranslate"><span class="pre">ffmpeg-copyts</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, shift timestamps to zero</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser</p></td>
+<tr class="row-odd"><td><p>webbrowser</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 <td><p>Enable or disable support for Streamlink's webbrowser API</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser-executable</p></td>
+<tr class="row-even"><td><p>webbrowser-executable</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Path to the web browser's executable</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser-timeout</p></td>
+<tr class="row-odd"><td><p>webbrowser-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
 <td><p>The maximum amount of time which the webbrowser can take to launch and execute</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser-cdp-host</p></td>
+<tr class="row-even"><td><p>webbrowser-cdp-host</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Custom host for the Chrome Devtools Protocol (CDP) interface</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser-cdp-port</p></td>
+<tr class="row-odd"><td><p>webbrowser-cdp-port</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Custom port for the Chrome Devtools Protocol (CDP) interface</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser-cdp-timeout</p></td>
+<tr class="row-even"><td><p>webbrowser-cdp-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
 <td><p>The maximum amount of time for waiting on a single CDP command response</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser-headless</p></td>
+<tr class="row-odd"><td><p>webbrowser-headless</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Whether to launch the webbrowser in headless mode or not</p></td>
@@ -1144,7 +1099,7 @@ always have a higher priority than built-in plugins.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=63d876e9"></script>
+</div><script src="../_static/documentation_options.js?v=6aa2d991"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
