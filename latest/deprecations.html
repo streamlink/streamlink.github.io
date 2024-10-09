@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Deprecations - Streamlink 6.11.0+22.g61ae931c documentation">
+  <meta property="og:title" content="Deprecations - Streamlink 6.11.0+26.gcca4dafb documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Deprecations - Streamlink 6.11.0+22.g61ae931c documentation</title>
+        <title>Deprecations - Streamlink 6.11.0+26.gcca4dafb documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.11.0+22.g61ae931c documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.11.0+26.gcca4dafb documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0+22.g61ae931c</pre>
+  <pre class="sidebar-versions-current">6.11.0+26.gcca4dafb</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/deprecations.html" class="">Stable</a></dd>
     <dd><a href="/latest/deprecations.html" class="version-current">Latest</a></dd>
@@ -393,6 +393,7 @@ The old method was never publicly documented and was only used internally upon i
 <h2>streamlink 5.4.0<a class="headerlink" href="#streamlink-5-4-0" title="Link to this heading">¶</a></h2>
 <section id="force-progress">
 <h3>--force-progress<a class="headerlink" href="#force-progress" title="Link to this heading">¶</a></h3>
+<p><a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference internal" href="migrations.html#force-progress"><span class="std std-ref">Removed in 7.0.0</span></a></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">--force-progress</span></code> CLI argument has been deprecated in favor of <a class="reference internal" href="cli.html#cmdoption-progress"><code class="xref std std-option docutils literal notranslate"><span class="pre">--progress=force</span></code></a>.</p>
 </section>
 </section>
@@ -453,6 +454,7 @@ HTTPS requests, including WebSocket connections.</p>
 <h2>streamlink 2.4.0<a class="headerlink" href="#streamlink-2-4-0" title="Link to this heading">¶</a></h2>
 <section id="stream-type-related-cli-arguments">
 <h3>Stream-type related CLI arguments<a class="headerlink" href="#stream-type-related-cli-arguments" title="Link to this heading">¶</a></h3>
+<p><a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference internal" href="migrations.html#stream-type-related-cli-arguments"><span class="std std-ref">Removed in 7.0.0</span></a></p>
 <p><a class="reference internal" href="cli.html#stream-transport-options"><span class="std std-ref">Stream-type related CLI arguments</span></a> and the respective
 <a class="reference internal" href="api/session.html#session"><span class="std std-ref">Session options</span></a> have been deprecated in favor of existing generic arguments/options,
 to avoid redundancy and potential confusion.</p>
@@ -545,6 +547,7 @@ multiple <code class="docutils literal notranslate"><span class="pre">&#64;plugi
 <h2>streamlink 2.2.0<a class="headerlink" href="#streamlink-2-2-0" title="Link to this heading">¶</a></h2>
 <section id="config-file-paths">
 <h3>Config file paths<a class="headerlink" href="#config-file-paths" title="Link to this heading">¶</a></h3>
+<p><a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference internal" href="migrations.html#config-file-paths"><span class="std std-ref">Removed in 7.0.0</span></a></p>
 <p>Streamlink's default config file paths got updated and corrected on Linux/BSD, macOS and Windows.
 Old and deprecated paths will be dropped in the future.</p>
 <p>Only the first existing config file will be loaded. If a config file gets loaded from a deprecated path,
@@ -619,6 +622,7 @@ users are required to update this by themselves.</p>
 </section>
 <section id="custom-plugins-sideloading-paths">
 <h3>Custom plugins sideloading paths<a class="headerlink" href="#custom-plugins-sideloading-paths" title="Link to this heading">¶</a></h3>
+<p><a class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger reference internal" href="migrations.html#custom-plugins-sideloading-paths"><span class="std std-ref">Removed in 7.0.0</span></a></p>
 <p>Streamlink's default custom plugins directory path got updated and corrected on Linux/BSD and macOS.
 Old and deprecated paths will be dropped in the future.</p>
 <p><strong>Deprecated paths</strong></p>
@@ -788,7 +792,7 @@ Old and deprecated paths will be dropped in the future.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=aee2a6e6"></script>
+</div><script src="_static/documentation_options.js?v=c9760600"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>

@@ -1,6 +1,52 @@
 Migrations
 ==========
 
+streamlink 7.0.0
+----------------
+
+Config file paths
+^^^^^^^^^^^^^^^^^
+
+Support for the old and deprecated config file paths, including plugin-specific config file paths, has been removed.
+Please switch to the config file paths listed in the :ref:`Configuration file <cli/config:Configuration file>`
+section of the CLI docs, or use the :option:`--config` CLI argument to set custom config file paths.
+
+| :octicon:`x-circle` #3766
+| :octicon:`git-pull-request` #6149
+
+Custom plugins sideloading paths
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Support for the old and deprecated custom plugins sideloading paths has been removed.
+Please see the plugins directory paths listed in the :ref:`Plugin sideloading <cli/plugin-sideloading:Plugin sideloading>`
+section of the CLI docs, or use the :option:`--plugin-dir` CLI argument to set the path to another location.
+
+| :octicon:`x-circle` #3766
+| :octicon:`git-pull-request` #6150
+
+Stream-type related CLI arguments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The deprecated :ref:`stream-type related CLI arguments <cli:Stream transport options>` and their respective
+:ref:`Session options <api/session:Session>` have been removed.
+
+- use :option:`--stream-segment-attempts` instead of ``--{dash,hls}-segment-attempts``
+- use :option:`--stream-segment-threads` instead of ``--{dash,hls}-segment-threads``
+- use :option:`--stream-segment-timeout` instead of ``--{dash,hls}-segment-timeout``
+- use :option:`--stream-timeout` instead of ``--{dash,hls,http-stream}-timeout``
+
+| :octicon:`x-circle` #3893
+| :octicon:`git-pull-request` #6232
+
+--force-progress
+^^^^^^^^^^^^^^^^
+
+The ``--force-progress`` CLI argument has been removed in favor of :option:`--progress=force`.
+
+| :octicon:`x-circle` #5268
+| :octicon:`git-pull-request` #6196
+
+
 streamlink 6.0.0
 ----------------
 
