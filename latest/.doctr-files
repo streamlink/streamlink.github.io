@@ -28,12 +28,12 @@ latest/_sources/cli/proxy.rst.txt
 latest/_sources/cli/tutorial.rst.txt
 latest/_sources/deprecations.rst.txt
 latest/_sources/developing.rst.txt
-latest/_sources/donate.rst.txt
 latest/_sources/index.rst.txt
 latest/_sources/install.rst.txt
 latest/_sources/migrations.rst.txt
 latest/_sources/players.rst.txt
 latest/_sources/plugins.rst.txt
+latest/_sources/support.rst.txt
 latest/_sources/thirdparty.rst.txt
 latest/_sphinx_design_static/design-tabs.js
 latest/_sphinx_design_static/sphinx-design.min.css
@@ -95,7 +95,6 @@ latest/cli/proxy.html
 latest/cli/tutorial.html
 latest/deprecations.html
 latest/developing.html
-latest/donate.html
 latest/genindex.html
 latest/index.html
 latest/install.html
@@ -105,4 +104,5 @@ latest/players.html
 latest/plugins.html
 latest/search.html
 latest/searchindex.js
+latest/support.html
 latest/thirdparty.html
