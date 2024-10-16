@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Migrations - Streamlink 6.11.0+39.g516d6efe documentation">
+  <meta property="og:title" content="Migrations - Streamlink 6.11.0+40.gf5f61ab7 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Migrations - Streamlink 6.11.0+39.g516d6efe documentation</title>
+        <title>Migrations - Streamlink 6.11.0+40.gf5f61ab7 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.11.0+39.g516d6efe documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.11.0+40.gf5f61ab7 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0+39.g516d6efe</pre>
+  <pre class="sidebar-versions-current">6.11.0+40.gf5f61ab7</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/migrations.html" class="">Stable</a></dd>
     <dd><a href="/latest/migrations.html" class="version-current">Latest</a></dd>
@@ -329,45 +329,83 @@
 <h2>streamlink 7.0.0<a class="headerlink" href="#streamlink-7-0-0" title="Link to this heading">¶</a></h2>
 <section id="config-file-paths">
 <h3>Config file paths<a class="headerlink" href="#config-file-paths" title="Link to this heading">¶</a></h3>
-<p>Support for the old and deprecated config file paths, including plugin-specific config file paths, has been removed.
-Please switch to the config file paths listed in the <a class="reference internal" href="cli/config.html#configuration-file"><span class="std std-ref">Configuration file</span></a>
-section of the CLI docs, or use the <a class="reference internal" href="cli.html#cmdoption-config"><code class="xref std std-option docutils literal notranslate"><span class="pre">--config</span></code></a> CLI argument to set custom config file paths.</p>
+<p>Support for the old and <a class="reference internal" href="deprecations.html#config-file-paths"><span class="std std-ref">deprecated</span></a> config file paths,
+including plugin-specific config file paths, has been removed.</p>
 <div class="line-block">
 <div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-x-circle" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/3766">#3766</a></div>
 <div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-git-pull-request" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/6149">#6149</a></div>
 </div>
+<div class="hint admonition">
+<p class="admonition-title">Migration</p>
+<p>Please switch to the config file paths listed in the <a class="reference internal" href="cli/config.html#configuration-file"><span class="std std-ref">Configuration file</span></a>
+section of the CLI docs, or use the <a class="reference internal" href="cli.html#cmdoption-config"><code class="xref std std-option docutils literal notranslate"><span class="pre">--config</span></code></a> CLI argument to set custom config file paths.</p>
+</div>
 </section>
 <section id="custom-plugins-sideloading-paths">
 <h3>Custom plugins sideloading paths<a class="headerlink" href="#custom-plugins-sideloading-paths" title="Link to this heading">¶</a></h3>
-<p>Support for the old and deprecated custom plugins sideloading paths has been removed.
-Please see the plugins directory paths listed in the <a class="reference internal" href="cli/plugin-sideloading.html#plugin-sideloading"><span class="std std-ref">Plugin sideloading</span></a>
-section of the CLI docs, or use the <a class="reference internal" href="cli.html#cmdoption-plugin-dir"><code class="xref std std-option docutils literal notranslate"><span class="pre">--plugin-dir</span></code></a> CLI argument to set the path to another location.</p>
+<p>Support for the old and <a class="reference internal" href="deprecations.html#custom-plugins-sideloading-paths"><span class="std std-ref">deprecated</span></a> custom plugins sideloading paths
+has been removed.</p>
 <div class="line-block">
 <div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-x-circle" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/3766">#3766</a></div>
 <div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-git-pull-request" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/6150">#6150</a></div>
 </div>
+<div class="hint admonition">
+<p class="admonition-title">Migration</p>
+<p>Please see the plugins directory paths listed in the <a class="reference internal" href="cli/plugin-sideloading.html#plugin-sideloading"><span class="std std-ref">Plugin sideloading</span></a>
+section of the CLI docs, or use the <a class="reference internal" href="cli.html#cmdoption-plugin-dir"><code class="xref std std-option docutils literal notranslate"><span class="pre">--plugin-dir</span></code></a> CLI argument to set the path to another location.</p>
+</div>
 </section>
 <section id="stream-type-related-cli-arguments">
 <h3>Stream-type related CLI arguments<a class="headerlink" href="#stream-type-related-cli-arguments" title="Link to this heading">¶</a></h3>
-<p>The deprecated <a class="reference internal" href="cli.html#stream-transport-options"><span class="std std-ref">stream-type related CLI arguments</span></a> and their respective
-<a class="reference internal" href="api/session.html#session"><span class="std std-ref">Session options</span></a> have been removed.</p>
-<ul class="simple">
-<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-attempts"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-attempts</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hls}-segment-attempts</span></code></p></li>
-<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hls}-segment-threads</span></code></p></li>
-<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hls}-segment-timeout</span></code></p></li>
-<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{dash,hls,http-stream}-timeout</span></code></p></li>
-</ul>
+<p>The <a class="reference internal" href="deprecations.html#stream-type-related-cli-arguments"><span class="std std-ref">deprecated</span></a>
+<code class="docutils literal notranslate"><span class="pre">--hls-segment-{attempts,threads,timeout}</span></code> and <code class="docutils literal notranslate"><span class="pre">--{hls,http-stream}-timeout</span></code> CLI arguments,
+as well as their <a class="reference internal" href="deprecations.html#stream-type-related-cli-arguments"><span class="std std-ref">deprecated</span></a>
+<code class="docutils literal notranslate"><span class="pre">{dash,hls}-segment-{attempts,threads,timeout}</span></code> and <code class="docutils literal notranslate"><span class="pre">{dash,hls,http-stream}-timeout</span></code>
+session option counterparts have been removed.</p>
 <div class="line-block">
 <div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-x-circle" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/3893">#3893</a></div>
 <div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-git-pull-request" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/6232">#6232</a></div>
 </div>
+<div class="hint admonition">
+<p class="admonition-title">Migration</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+CLI arguments</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-attempts"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-attempts</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--hls-segment-attempts</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--hls-segment-threads</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--hls-segment-timeout</span></code></p></li>
+<li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-timeout</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--{hls,http-stream}-timeout</span></code></p></li>
+</ul>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Session options</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>use <a class="reference internal" href="api/session.html#streamlink.session.options.StreamlinkOptions" title="streamlink.session.options.StreamlinkOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></a>
+instead of <code class="docutils literal notranslate"><span class="pre">{dash,hls}-segment-attempts</span></code></p></li>
+<li><p>use <a class="reference internal" href="api/session.html#streamlink.session.options.StreamlinkOptions" title="streamlink.session.options.StreamlinkOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">stream-segment-threads</span></code></a>
+instead of <code class="docutils literal notranslate"><span class="pre">{dash,hls}-segment-threads</span></code></p></li>
+<li><p>use <a class="reference internal" href="api/session.html#streamlink.session.options.StreamlinkOptions" title="streamlink.session.options.StreamlinkOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">stream-segment-timeout</span></code></a>
+instead of <code class="docutils literal notranslate"><span class="pre">{dash,hls}-segment-timeout</span></code></p></li>
+<li><p>use <a class="reference internal" href="api/session.html#streamlink.session.options.StreamlinkOptions" title="streamlink.session.options.StreamlinkOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">stream-timeout</span></code></a>
+instead of <code class="docutils literal notranslate"><span class="pre">{dash,hls,http-stream}-timeout</span></code></p></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="force-progress">
 <h3>--force-progress<a class="headerlink" href="#force-progress" title="Link to this heading">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">--force-progress</span></code> CLI argument has been removed in favor of <a class="reference internal" href="cli.html#cmdoption-progress"><code class="xref std std-option docutils literal notranslate"><span class="pre">--progress=force</span></code></a>.</p>
+<p>The <a class="reference internal" href="deprecations.html#force-progress"><span class="std std-ref">deprecated</span></a> <code class="docutils literal notranslate"><span class="pre">--force-progress</span></code> CLI argument has been removed.</p>
 <div class="line-block">
 <div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-x-circle" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/5268">#5268</a></div>
 <div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-git-pull-request" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/6196">#6196</a></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Migration</p>
+<p>Use <a class="reference internal" href="cli.html#cmdoption-progress"><code class="xref std std-option docutils literal notranslate"><span class="pre">--progress=force</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--force-progress</span></code>.</p>
 </div>
 </section>
 </section>
@@ -484,8 +522,8 @@ custom <code class="docutils literal notranslate"><span class="pre">Plugin</span
 beforehand, since the <a class="reference internal" href="api/session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><code class="xref py py-class docutils literal notranslate"><span class="pre">Streamlink</span></code></a> session can't be used for that anymore.</p></li>
 </ol>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
 Before</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">streamlink.session</span> <span class="kn">import</span> <span class="n">Streamlink</span>
 
@@ -495,8 +533,8 @@ Before</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
 After</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">streamlink.options</span> <span class="kn">import</span> <span class="n">Options</span>
 <span class="kn">from</span> <span class="nn">streamlink.session</span> <span class="kn">import</span> <span class="n">Streamlink</span>
@@ -508,8 +546,8 @@ After</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
 Alternative</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">streamlink.options</span> <span class="kn">import</span> <span class="n">Options</span>
 <span class="kn">from</span> <span class="nn">streamlink.session</span> <span class="kn">import</span> <span class="n">Streamlink</span>
@@ -736,7 +774,7 @@ and <a class="reference internal" href="api/session.html#streamlink.session.Stre
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=ed72f23a"></script>
+</div><script src="_static/documentation_options.js?v=061357d6"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
