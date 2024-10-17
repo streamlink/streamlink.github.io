@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Command-Line Interface - Streamlink 6.11.0+41.g14eb46a0 documentation">
+  <meta property="og:title" content="Command-Line Interface - Streamlink 6.11.0+42.ge38efbb9 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Command-Line Interface - Streamlink 6.11.0+41.g14eb46a0 documentation</title>
+        <title>Command-Line Interface - Streamlink 6.11.0+42.ge38efbb9 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.11.0+41.g14eb46a0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.11.0+42.ge38efbb9 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0+41.g14eb46a0</pre>
+  <pre class="sidebar-versions-current">6.11.0+42.ge38efbb9</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -756,15 +756,6 @@ player before it has played back all of its cached data.</p>
 <p>Please see the &quot;<a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">Metadata variables</span></a>&quot; section of Streamlink's CLI documentation for all available metadata variables,
 as well as the &quot;<a class="reference internal" href="plugins.html#plugins"><span class="std std-ref">Plugins</span></a>&quot; section for the list of metadata variables defined in each plugin.</p>
 <p>This option is only supported for the following players: mpv, potplayer, vlc</p>
-<dl>
-<dt>VLC specific information:</dt><dd><p>VLC does support special formatting variables on its own:
-<a class="reference external" href="https://wiki.videolan.org/Documentation:Format_String/">https://wiki.videolan.org/Documentation:Format_String/</a></p>
-<p>These variables are accessible in the <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> option by adding a backslash
-in front of the dollar sign which VLC uses as its formatting character.</p>
-<p>For example, to put the current date in your VLC window title,
-the string <code class="code docutils literal notranslate"><span class="pre">\$A</span></code> could be inserted inside the <a class="reference internal" href="#cmdoption-title"><code class="xref std std-option docutils literal notranslate"><span class="pre">--title</span></code></a> string.</p>
-</dd>
-</dl>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">mpv</span> <span class="o">--</span><span class="n">title</span> <span class="s2">&quot;</span><span class="si">{author}</span><span class="s2"> - </span><span class="si">{category}</span><span class="s2"> - </span><span class="si">{title}</span><span class="s2">&quot;</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">STREAM</span><span class="p">]</span>
 </pre></div>
@@ -1830,7 +1821,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=002cd568"></script>
+</div><script src="_static/documentation_options.js?v=23470c51"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
