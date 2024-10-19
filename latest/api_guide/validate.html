@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Validation schemas - Streamlink 6.11.0+42.ge38efbb9 documentation">
+  <meta property="og:title" content="Validation schemas - Streamlink 6.11.0+43.g2fc51b7e documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Validation schemas - Streamlink 6.11.0+42.ge38efbb9 documentation</title>
+        <title>Validation schemas - Streamlink 6.11.0+43.g2fc51b7e documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0+42.ge38efbb9 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 6.11.0+43.g2fc51b7e documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0+42.ge38efbb9</pre>
+  <pre class="sidebar-versions-current">6.11.0+43.g2fc51b7e</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api_guide/validate.html" class="">Stable</a></dd>
     <dd><a href="/latest/api_guide/validate.html" class="version-current">Latest</a></dd>
@@ -334,6 +334,12 @@ stream URLs, stream metadata and more from websites and web APIs.</p>
 <p>Instead of verifying and extracting data programatically and having to perform error handling manually,
 declarative validation schemas allow defining comprehensive validation and extraction rules which are easy to understand
 and which raise errors with meaningful messages upon extraction failure.</p>
+<div class="caution admonition">
+<p class="admonition-title">Public interface</p>
+<p>While the internals are implemented in the <code class="docutils literal notranslate"><span class="pre">streamlink.validate</span></code> package,
+<a class="reference internal" href="../api/validate.html#validation-schemas"><span class="std std-ref">streamlink.plugin.api.validate</span></a> provides the main public interface
+for plugin implementors.</p>
+</div>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
@@ -387,12 +393,13 @@ the validation succeeds and returns its input value again, causing the return va
 </pre></div>
 </div>
 <p>The first <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.Schema.validate" title="streamlink.plugin.api.validate.Schema.validate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Schema.validate()</span></code></a> call passes <code class="docutils literal notranslate"><span class="pre">123</span></code> to <code class="docutils literal notranslate"><span class="pre">schema_one</span></code>. <code class="docutils literal notranslate"><span class="pre">schema_one</span></code> however expects <code class="docutils literal notranslate"><span class="pre">&quot;123&quot;</span></code>, so
-a <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a> is raised because the input value is not equal to the schema.
-<a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.Schema.validate" title="streamlink.plugin.api.validate.Schema.validate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Schema.validate()</span></code></a> catches the error and wraps it in a <a class="reference internal" href="../api/exceptions.html#streamlink.exceptions.PluginError" title="streamlink.exceptions.PluginError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginError</span></code></a>
-with a specific validation message.</p>
+a <a class="reference internal" href="../api/validate.html#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a> is raised because the input value is not equal to
+the schema. <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.Schema.validate" title="streamlink.plugin.api.validate.Schema.validate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Schema.validate()</span></code></a> catches the error and wraps it in
+a <a class="reference internal" href="../api/exceptions.html#streamlink.exceptions.PluginError" title="streamlink.exceptions.PluginError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginError</span></code></a> with a specific validation message.</p>
 <p>The second validation also fails, but here, it's because of the input type. The first sub-schema explicitly checks for
 the type <code class="docutils literal notranslate"><span class="pre">int</span></code>, and despite the following schema being <code class="docutils literal notranslate"><span class="pre">123.0</span></code>, which is a <code class="docutils literal notranslate"><span class="pre">float</span></code> object that would obviously validate
-a <code class="docutils literal notranslate"><span class="pre">123.0</span></code> <code class="docutils literal notranslate"><span class="pre">float</span></code> input when comparing equality, a <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a> is raised.</p>
+a <code class="docutils literal notranslate"><span class="pre">123.0</span></code> <code class="docutils literal notranslate"><span class="pre">float</span></code> input when comparing equality, a <a class="reference internal" href="../api/validate.html#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a>
+is raised.</p>
 </section>
 <section id="extracting-json-data">
 <h3>Extracting JSON data<a class="headerlink" href="#extracting-json-data" title="Link to this heading">¶</a></h3>
@@ -446,7 +453,7 @@ Each sub-schema receives the same input, and the output of the overall schema co
 that's valid. For our example, this means that the value of the <code class="docutils literal notranslate"><span class="pre">status</span></code> key in the JSON data must either be
 <code class="docutils literal notranslate"><span class="pre">None</span></code> (<code class="docutils literal notranslate"><span class="pre">null</span></code>) or an <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 <p>If any of the schemas in a nested schema definition like that fails, then a validation error stack will be generated
-by <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a>, as shown above.</p>
+by <a class="reference internal" href="../api/validate.html#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a>, as shown above.</p>
 <p>The last of the four schemas in the outer <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.all" title="streamlink.plugin.api.validate.all"><code class="xref py py-class docutils literal notranslate"><span class="pre">validate.all</span></code></a> schema collection is a <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.get" title="streamlink.plugin.api.validate.get"><code class="xref py py-class docutils literal notranslate"><span class="pre">validate.get</span></code></a> schema.
 This schema works on any kind of input which implements <code class="xref py py-func docutils literal notranslate"><span class="pre">__getitem__()</span></code>, for example <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> objects.
 And as expected, it attempts to get and return the <code class="docutils literal notranslate"><span class="pre">&quot;status&quot;</span></code> key of the output of the previous <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> validation.
@@ -552,7 +559,8 @@ turns this into a single string return value, or <code class="docutils literal n
 <p>Since we now have two different paths for our overall validation schema, either no player data or still unvalidated player data,
 our next schema is a <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.none_or_all" title="streamlink.plugin.api.validate.none_or_all"><code class="xref py py-class docutils literal notranslate"><span class="pre">validate.none_or_all</span></code></a> schema. This works similar to <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.all" title="streamlink.plugin.api.validate.all"><code class="xref py py-class docutils literal notranslate"><span class="pre">validate.all</span></code></a>,
 except that <code class="docutils literal notranslate"><span class="pre">None</span></code> inputs are skipped and get returned immediately without validating any sub-schemas. This lets us handle
-cases where no player was found on the website, without raising a <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a>.</p>
+cases where no player was found on the website, without raising
+a <a class="reference internal" href="../api/validate.html#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a>.</p>
 <p>In the <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.none_or_all" title="streamlink.plugin.api.validate.none_or_all"><code class="xref py py-class docutils literal notranslate"><span class="pre">validate.none_or_all</span></code></a> schema, we now attempt to parse JSON data, which was already shown
 previously, except for the fact that we don't need to validate the <code class="docutils literal notranslate"><span class="pre">str</span></code> input here, as the XPath query must have already
 returned a string value.</p>
@@ -567,8 +575,8 @@ an HLS stream, so we can pass the URL to Streamlink's <a class="reference intern
 <p>Lastly, we simply get the <code class="docutils literal notranslate"><span class="pre">url</span></code> key using <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.get" title="streamlink.plugin.api.validate.get"><code class="xref py py-class docutils literal notranslate"><span class="pre">validate.get</span></code></a>. The return value must either be <code class="docutils literal notranslate"><span class="pre">None</span></code> if no <code class="docutils literal notranslate"><span class="pre">url</span></code>
 key was included in the JSON data, or a <code class="docutils literal notranslate"><span class="pre">str</span></code> with a URL where its path ends with <code class="docutils literal notranslate"><span class="pre">&quot;.m3u8&quot;</span></code>.</p>
 <p>This means that the overall schema can only return <code class="docutils literal notranslate"><span class="pre">None</span></code> or said kind of URL string. If the <code class="docutils literal notranslate"><span class="pre">url</span></code> key is not a URL,
-or if its path does not end with <code class="docutils literal notranslate"><span class="pre">&quot;.m3u8&quot;</span></code>, then a <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a> is raised,
-which is what we want. The <code class="docutils literal notranslate"><span class="pre">None</span></code> return value should then be checked accordingly by the plugin implementation.</p>
+or if its path does not end with <code class="docutils literal notranslate"><span class="pre">&quot;.m3u8&quot;</span></code>, then a <a class="reference internal" href="../api/validate.html#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationError</span></code></a>
+is raised, which is what we want. The <code class="docutils literal notranslate"><span class="pre">None</span></code> return value should then be checked accordingly by the plugin implementation.</p>
 </section>
 <section id="validating-http-responses">
 <h3>Validating HTTP responses<a class="headerlink" href="#validating-http-responses" title="Link to this heading">¶</a></h3>
@@ -692,7 +700,7 @@ as well as in each HTTP-verb method like <code class="docutils literal notransla
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=23470c51"></script>
+</div><script src="../_static/documentation_options.js?v=6c86a771"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
