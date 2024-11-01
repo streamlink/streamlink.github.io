@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Migrations - Streamlink 6.11.0+64.ge4fe1ed documentation">
+  <meta property="og:title" content="Migrations - Streamlink 6.11.0+66.g7b61a59 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Migrations - Streamlink 6.11.0+64.ge4fe1ed documentation</title>
+        <title>Migrations - Streamlink 6.11.0+66.g7b61a59 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.11.0+64.ge4fe1ed documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 6.11.0+66.g7b61a59 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0+64.ge4fe1ed</pre>
+  <pre class="sidebar-versions-current">6.11.0+66.g7b61a59</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/migrations.html" class="">Stable</a></dd>
     <dd><a href="/latest/migrations.html" class="version-current">Latest</a></dd>
@@ -394,6 +394,38 @@ instead of <code class="docutils literal notranslate"><span class="pre">{dash,hl
 </ul>
 </div>
 </div>
+</div>
+</section>
+<section id="httpsession-and-httpadapters">
+<h3>HTTPSession and HTTPAdapters<a class="headerlink" href="#httpsession-and-httpadapters" title="Link to this heading">¶</a></h3>
+<p>The <a class="reference internal" href="deprecations.html#httpsession-and-httpadapters"><span class="std std-ref">deprecated</span></a> import paths for the <code class="docutils literal notranslate"><span class="pre">HTTPSession</span></code> class
+and custom <code class="docutils literal notranslate"><span class="pre">HTTPAdapter</span></code> classes have been removed.</p>
+<div class="line-block">
+<div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-x-circle" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/5807">#5807</a></div>
+<div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-git-pull-request" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/6274">#6274</a></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Migration</p>
+<p>Plugin implementors were never supposed to import the <code class="docutils literal notranslate"><span class="pre">HTTPSession</span></code> class directly, and instead should always reference
+the <a class="reference internal" href="api/session.html#streamlink.session.Streamlink.http" title="streamlink.session.Streamlink.http"><code class="xref py py-attr docutils literal notranslate"><span class="pre">http</span></code></a> attribute of Streamlink's
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">session</span></code> attribute in instances of <code class="docutils literal notranslate"><span class="pre">Plugin</span></code>.</p>
+<p>Import Streamlink's custom <code class="docutils literal notranslate"><span class="pre">HTTPAdapter</span></code> classes from <code class="docutils literal notranslate"><span class="pre">streamlink.session.http</span></code>.</p>
+</div>
+</section>
+<section id="streamlink-plugins-re-exports">
+<h3>streamlink.plugins re-exports<a class="headerlink" href="#streamlink-plugins-re-exports" title="Link to this heading">¶</a></h3>
+<p>The <a class="reference internal" href="deprecations.html#streamlink-plugins-re-exports"><span class="std std-ref">deprecated</span></a> import paths for
+the <a class="reference internal" href="api/exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><code class="xref py py-class docutils literal notranslate"><span class="pre">NoPluginError</span></code></a>,
+<a class="reference internal" href="api/exceptions.html#streamlink.exceptions.NoStreamsError" title="streamlink.exceptions.NoStreamsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">NoStreamsError</span></code></a>, <a class="reference internal" href="api/exceptions.html#streamlink.exceptions.PluginError" title="streamlink.exceptions.PluginError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginError</span></code></a>,
+and <a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> classes have been removed.</p>
+<div class="line-block">
+<div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-x-circle" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/6005">#6005</a></div>
+<div class="line"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-git-pull-request" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> <a class="reference external" href="https://github.com/streamlink/streamlink/issues/6274">#6274</a></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Migration</p>
+<p>Import error classes from <code class="docutils literal notranslate"><span class="pre">streamlink.exceptions</span></code> or <code class="docutils literal notranslate"><span class="pre">streamlink.plugin</span></code>.</p>
+<p>Import the <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> class from <code class="docutils literal notranslate"><span class="pre">streamlink.plugin</span></code>.</p>
 </div>
 </section>
 <section id="force-progress">
@@ -737,6 +769,8 @@ and <a class="reference internal" href="api/session.html#streamlink.session.Stre
 <li><a class="reference internal" href="#config-file-paths">Config file paths</a></li>
 <li><a class="reference internal" href="#custom-plugins-sideloading-paths">Custom plugins sideloading paths</a></li>
 <li><a class="reference internal" href="#stream-type-related-cli-arguments">Stream-type related CLI arguments</a></li>
+<li><a class="reference internal" href="#httpsession-and-httpadapters">HTTPSession and HTTPAdapters</a></li>
+<li><a class="reference internal" href="#streamlink-plugins-re-exports">streamlink.plugins re-exports</a></li>
 <li><a class="reference internal" href="#force-progress">--force-progress</a></li>
 </ul>
 </li>
@@ -774,7 +808,7 @@ and <a class="reference internal" href="api/session.html#streamlink.session.Stre
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=fd37a9f2"></script>
+</div><script src="_static/documentation_options.js?v=bd760077"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>

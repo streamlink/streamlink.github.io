@@ -31,6 +31,8 @@ streamlink 6.8.0
 streamlink.plugins re-exports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+:bdg-ref-danger:`Removed in 7.0.0 <migrations:streamlink.plugins re-exports>`
+
 Importing :class:`NoPluginError <streamlink.exceptions.NoPluginError>`,
 :class:`NoStreamsError <streamlink.exceptions.NoStreamsError>`, :class:`PluginError <streamlink.exceptions.PluginError>`,
 or :class:`Plugin <streamlink.plugin.plugin.Plugin>` from ``streamlink.plugins`` now emits
@@ -54,6 +56,8 @@ streamlink 6.6.0
 
 HTTPSession and HTTPAdapters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:bdg-ref-danger:`Removed in 7.0.0 <migrations:HTTPSession and HTTPAdapters>`
 
 The module structure of the :class:`Streamlink <streamlink.session.Streamlink>` session implementation and related classes
 like the ``HTTPSession`` has been re-organized.
