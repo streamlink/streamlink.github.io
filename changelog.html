@@ -3,20 +3,20 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Donating" href="donate.html" /><link rel="prev" title="Exceptions" href="api/exceptions.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Support" href="support.html" /><link rel="prev" title="Exceptions" href="api/exceptions.html" />
 
-    <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 6.11.0 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 7.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 6.11.0 documentation</title>
+        <title>Changelog - Streamlink 7.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.11.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0</pre>
+  <pre class="sidebar-versions-current">7.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -262,7 +262,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a></li>
 </ul>
@@ -321,6 +321,58 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-7-0-0-2024-11-04">
+<h2>streamlink 7.0.0 (2024-11-04)<a class="headerlink" href="#streamlink-7-0-0-2024-11-04" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>BREAKING: dropped support for <a class="reference external" href="https://peps.python.org/pep-0569/#lifespan">EOL Python 3.8</a> (Win 7/8 are now unsupported) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6230">#6230</a>)</p></li>
+<li><p>BREAKING/CLI: <a class="reference external" href="https://streamlink.github.io/migrations.html#config-file-paths">removed deprecated config file and plugin config file paths</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6149">#6149</a>)</p></li>
+<li><p>BREAKING/CLI: <a class="reference external" href="https://streamlink.github.io/migrations.html#custom-plugins-sideloading-paths">removed deprecated plugin sideloading paths</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6150">#6150</a>)</p></li>
+<li><p>BREAKING/CLI: <a class="reference external" href="https://streamlink.github.io/migrations.html#force-progress">removed deprecated <code class="docutils literal notranslate"><span class="pre">--force-progress</span></code> CLI argument</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6196">#6196</a>)</p></li>
+<li><p>BREAKING/CLI: <a class="reference external" href="https://streamlink.github.io/migrations.html#stream-type-related-cli-arguments">removed deprecated stream-type related CLI arguments</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6232">#6232</a>)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hls-segment-attempts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hls-segment-threads</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hls-segment-timeout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hls-timeout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--http-stream-timeout</span></code></p></li>
+</ul>
+</li>
+<li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#stream-type-related-cli-arguments">removed deprecated stream-type related session options</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6232">#6232</a>)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">hls-segment-attempts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hls-segment-threads</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hls-segment-timeout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hls-timeout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dash-segment-attempts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dash-segment-threads</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dash-segment-timeout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dash-timeout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http-stream-timeout</span></code></p></li>
+</ul>
+</li>
+<li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#httpsession-and-httpadapters">removed deprecated import paths for <code class="docutils literal notranslate"><span class="pre">HTTPSession</span></code> and <code class="docutils literal notranslate"><span class="pre">HTTPAdapter</span></code>s</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6274">#6274</a>)</p></li>
+<li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#streamlink-plugins-re-exports">removed deprecated import paths for <code class="docutils literal notranslate"><span class="pre">NoPluginError</span></code>, <code class="docutils literal notranslate"><span class="pre">NoStreamsError</span></code>, <code class="docutils literal notranslate"><span class="pre">PluginError</span></code> and <code class="docutils literal notranslate"><span class="pre">Plugin</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6274">#6274</a>)</p></li>
+<li><p>BREAKING/packaging: dropped “32 bit” Windows x86 and Linux AppImage i686 builds (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6052">#6052</a>)</p></li>
+<li><p>Removed: flawed implementation of VLC-specific player variables (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6251">#6251</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6253">#6253</a>)</p></li>
+<li><p>Deprecated: <a class="reference external" href="https://streamlink.github.io/deprecations.html#verbose-player"><code class="docutils literal notranslate"><span class="pre">--verbose-player</span></code> CLI argument in favor of <code class="docutils literal notranslate"><span class="pre">--player-verbose</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6227">#6227</a>)</p></li>
+<li><p>Deprecated: <a class="reference external" href="https://streamlink.github.io/deprecations.html#fifo"><code class="docutils literal notranslate"><span class="pre">--fifo</span></code> CLI argument in favor of <code class="docutils literal notranslate"><span class="pre">--player-fifo</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6227">#6227</a>)</p></li>
+<li><p>Added: warning messages for deprecated/suppressed plugin arguments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6240">#6240</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6249">#6249</a>)</p></li>
+<li><p>Fixed: errors on missing <code class="docutils literal notranslate"><span class="pre">stdin</span></code> file descriptor (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6239">#6239</a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">--interface</span></code> not having an effect on custom <code class="docutils literal notranslate"><span class="pre">HTTPAdapter</span></code>s (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6223">#6223</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>afreeca: renamed to soop, overhauled plugin and deprecated old plugin CLI arguments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6247">#6247</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6257">#6257</a>)</p></li>
+<li><p>ruv: rewritten and fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6262">#6262</a>)</p></li>
+<li><p>tv3cat: updated plugin matchers (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6242">#6242</a>)</p></li>
+</ul>
+</li>
+<li><p>Docs: updated documentation of various CLI arguments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6226">#6226</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6255">#6255</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6225">#6225</a>)</p></li>
+<li><p>Chore: updated typing annotations (PEP 563, PEP 585, PEP 604, PEP 613) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6218">#6218</a>)</p></li>
+<li><p>Chore: reformatted the whole code base using ruff (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6260">#6260</a>)</p></li>
+<li><p>Build: bumped <code class="docutils literal notranslate"><span class="pre">trio</span></code> dependency to <code class="docutils literal notranslate"><span class="pre">&gt;=0.25.0,&lt;1</span></code> on Python &gt;= 3.13 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6244">#6244</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/6.11.0...7.0.0">Full changelog</a></p>
+</section>
 <section id="streamlink-6-11-0-2024-10-01">
 <h2>streamlink 6.11.0 (2024-10-01)<a class="headerlink" href="#streamlink-6-11-0-2024-10-01" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -1881,12 +1933,12 @@ code refactors to the existing code-base.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="donate.html">
+          <a class="next-page" href="support.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Donating</div>
+                <div class="title">Support</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -1932,6 +1984,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-7-0-0-2024-11-04">streamlink 7.0.0 (2024-11-04)</a></li>
 <li><a class="reference internal" href="#streamlink-6-11-0-2024-10-01">streamlink 6.11.0 (2024-10-01)</a></li>
 <li><a class="reference internal" href="#streamlink-6-10-0-2024-09-06">streamlink 6.10.0 (2024-09-06)</a></li>
 <li><a class="reference internal" href="#streamlink-6-9-0-2024-08-12">streamlink 6.9.0 (2024-08-12)</a></li>
@@ -2032,8 +2085,8 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=06de18c4"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+</div><script src="_static/documentation_options.js?v=efe5be6f"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>

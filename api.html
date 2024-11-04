@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Streamlink" href="api/streamlink.html" /><link rel="prev" title="Validation schemas" href="api_guide/validate.html" />
 
-    <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="API Reference - Streamlink 6.11.0 documentation">
+  <meta property="og:title" content="API Reference - Streamlink 7.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>API Reference - Streamlink 6.11.0 documentation</title>
+        <title>API Reference - Streamlink 7.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.11.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0</pre>
+  <pre class="sidebar-versions-current">7.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api.html" class="">Latest</a></dd>
@@ -262,7 +262,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a></li>
 </ul>
@@ -378,6 +378,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.category"><code class="docutils literal notranslate"><span class="pre">Plugin.category</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.options"><code class="docutils literal notranslate"><span class="pre">Plugin.options</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.cache"><code class="docutils literal notranslate"><span class="pre">Plugin.cache</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.session"><code class="docutils literal notranslate"><span class="pre">Plugin.session</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.matches"><code class="docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.url"><code class="docutils literal notranslate"><span class="pre">Plugin.url</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/plugin.html#streamlink.plugin.Plugin.streams"><code class="docutils literal notranslate"><span class="pre">Plugin.streams()</span></code></a></li>
@@ -436,47 +437,47 @@
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._validate_pattern"><code class="docutils literal notranslate"><span class="pre">_validate_pattern()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.all"><code class="docutils literal notranslate"><span class="pre">all</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.any"><code class="docutils literal notranslate"><span class="pre">any</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.none_or_all"><code class="docutils literal notranslate"><span class="pre">none_or_all</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.transform"><code class="docutils literal notranslate"><span class="pre">transform</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.optional"><code class="docutils literal notranslate"><span class="pre">optional</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.list"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.attr"><code class="docutils literal notranslate"><span class="pre">attr</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.get"><code class="docutils literal notranslate"><span class="pre">get</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.union"><code class="docutils literal notranslate"><span class="pre">union</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.union_get"><code class="docutils literal notranslate"><span class="pre">union_get</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.regex"><code class="docutils literal notranslate"><span class="pre">regex</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.xml_element"><code class="docutils literal notranslate"><span class="pre">xml_element</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.contains"><code class="docutils literal notranslate"><span class="pre">contains()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.startswith"><code class="docutils literal notranslate"><span class="pre">startswith()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.endswith"><code class="docutils literal notranslate"><span class="pre">endswith()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.length"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.filter"><code class="docutils literal notranslate"><span class="pre">filter()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.get"><code class="docutils literal notranslate"><span class="pre">get</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.getattr"><code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.hasattr"><code class="docutils literal notranslate"><span class="pre">hasattr()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.filter"><code class="docutils literal notranslate"><span class="pre">filter()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.length"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.list"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.map"><code class="docutils literal notranslate"><span class="pre">map()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.url"><code class="docutils literal notranslate"><span class="pre">url()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.none_or_all"><code class="docutils literal notranslate"><span class="pre">none_or_all</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.optional"><code class="docutils literal notranslate"><span class="pre">optional</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.parse_html"><code class="docutils literal notranslate"><span class="pre">parse_html()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.parse_json"><code class="docutils literal notranslate"><span class="pre">parse_json()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.parse_qsd"><code class="docutils literal notranslate"><span class="pre">parse_qsd()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.parse_xml"><code class="docutils literal notranslate"><span class="pre">parse_xml()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.regex"><code class="docutils literal notranslate"><span class="pre">regex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.startswith"><code class="docutils literal notranslate"><span class="pre">startswith()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.transform"><code class="docutils literal notranslate"><span class="pre">transform</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.union"><code class="docutils literal notranslate"><span class="pre">union</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.union_get"><code class="docutils literal notranslate"><span class="pre">union_get</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.url"><code class="docutils literal notranslate"><span class="pre">url()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.xml_element"><code class="docutils literal notranslate"><span class="pre">xml_element</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.xml_find"><code class="docutils literal notranslate"><span class="pre">xml_find()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.xml_findall"><code class="docutils literal notranslate"><span class="pre">xml_findall()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.xml_findtext"><code class="docutils literal notranslate"><span class="pre">xml_findtext()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.xml_xpath"><code class="docutils literal notranslate"><span class="pre">xml_xpath()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate.xml_xpath_string"><code class="docutils literal notranslate"><span class="pre">xml_xpath_string()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.AllSchema"><code class="docutils literal notranslate"><span class="pre">AllSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.AnySchema"><code class="docutils literal notranslate"><span class="pre">AnySchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.NoneOrAllSchema"><code class="docutils literal notranslate"><span class="pre">NoneOrAllSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.TransformSchema"><code class="docutils literal notranslate"><span class="pre">TransformSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.OptionalSchema"><code class="docutils literal notranslate"><span class="pre">OptionalSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.ListSchema"><code class="docutils literal notranslate"><span class="pre">ListSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.AttrSchema"><code class="docutils literal notranslate"><span class="pre">AttrSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.GetItemSchema"><code class="docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.UnionSchema"><code class="docutils literal notranslate"><span class="pre">UnionSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.UnionGetSchema"><code class="docutils literal notranslate"><span class="pre">UnionGetSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.RegexSchema"><code class="docutils literal notranslate"><span class="pre">RegexSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._schemas.XmlElementSchema"><code class="docutils literal notranslate"><span class="pre">XmlElementSchema</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.plugin.api.validate._exception.ValidationError"><code class="docutils literal notranslate"><span class="pre">ValidationError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.AllSchema"><code class="docutils literal notranslate"><span class="pre">AllSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.AnySchema"><code class="docutils literal notranslate"><span class="pre">AnySchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.NoneOrAllSchema"><code class="docutils literal notranslate"><span class="pre">NoneOrAllSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.TransformSchema"><code class="docutils literal notranslate"><span class="pre">TransformSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.OptionalSchema"><code class="docutils literal notranslate"><span class="pre">OptionalSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.ListSchema"><code class="docutils literal notranslate"><span class="pre">ListSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.AttrSchema"><code class="docutils literal notranslate"><span class="pre">AttrSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.GetItemSchema"><code class="docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.UnionSchema"><code class="docutils literal notranslate"><span class="pre">UnionSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.UnionGetSchema"><code class="docutils literal notranslate"><span class="pre">UnionGetSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.RegexSchema"><code class="docutils literal notranslate"><span class="pre">RegexSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._schemas.XmlElementSchema"><code class="docutils literal notranslate"><span class="pre">XmlElementSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/validate.html#streamlink.validate._exception.ValidationError"><code class="docutils literal notranslate"><span class="pre">ValidationError</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/stream.html">Stream</a><ul>
@@ -608,8 +609,8 @@
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=06de18c4"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+</div><script src="_static/documentation_options.js?v=efe5be6f"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>

@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Guide" href="api_guide.html" /><link rel="prev" title="Migrations" href="migrations.html" />
 
-    <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Developing - Streamlink 6.11.0 documentation">
+  <meta property="og:title" content="Developing - Streamlink 7.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Developing - Streamlink 6.11.0 documentation</title>
+        <title>Developing - Streamlink 7.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 6.11.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0</pre>
+  <pre class="sidebar-versions-current">7.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="">Latest</a></dd>
@@ -262,7 +262,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications.html">Streamlink Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thirdparty.html">Third Party Applications</a></li>
 </ul>
@@ -401,52 +401,27 @@ pytest
 pytest<span class="w"> </span>path/to/test-file.py::TestClassName::test_method_name<span class="w"> </span>...
 
 <span class="c1"># check code for linting errors</span>
-ruff<span class="w"> </span>check
+ruff<span class="w"> </span>check<span class="w"> </span>.
+<span class="c1"># check code for formatting errors</span>
+ruff<span class="w"> </span>format<span class="w"> </span>--diff<span class="w"> </span>.
 <span class="c1"># check code for typing errors</span>
 mypy
 
 <span class="c1"># build the documentation</span>
 make<span class="w"> </span>--directory<span class="o">=</span>docs<span class="w"> </span>clean<span class="w"> </span>html
-<span class="nv">$BROWSER</span><span class="w"> </span>./docs/_build/html/index.html
+
+<span class="c1"># check the documentation</span>
+python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--bind<span class="w"> </span><span class="s1">&#39;127.0.0.1&#39;</span><span class="w"> </span>--directory<span class="w"> </span><span class="s1">&#39;docs/_build/html/&#39;</span>
+<span class="s2">&quot;</span><span class="si">${</span><span class="nv">BROWSER</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>http://127.0.0.1:8000/
 </pre></div>
 </div>
 </section>
 <section id="code-style">
 <h2>Code style<a class="headerlink" href="#code-style" title="Link to this heading">¶</a></h2>
-<p>Streamlink uses <a class="reference external" href="https://github.com/charliermarsh/ruff#readme">Ruff</a> as primary code linting tool and the project aims to use best practices for achieving great
-code readability with minimal git diffs, as detailed in <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0008/"><strong>PEP 8</strong></a> and implemented in related linting tools, such as <a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html">Black</a>.</p>
-<p>These are the best practices most likely to be relevant to plugin authors:</p>
-<ol class="arabic">
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#imports">Import order according to PEP8</a></p></li>
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#indentation">Indentation of 4 spaces per level</a></p></li>
-<li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#strings">Double quotes for all string literals</a></p></li>
-<li><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/pyproject.toml">Line length of at most 128 characters</a></p></li>
-<li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#how-black-wraps-lines">Balanced line wrapping for readability</a></p></li>
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#blank-lines">Blank lines</a></p></li>
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#comments">Comments</a></p></li>
-<li><p><a class="reference external" href="https://peps.python.org/pep-0008/#should-a-line-break-before-or-after-a-binary-operator">Line breaks and binary operators</a></p></li>
-<li><p>New indented line for each bracket item (args, lists, etc.) in multi-line definitions, with trailing comma</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># incorrect:</span>
-<span class="n">schema</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">parse_json</span><span class="p">(),</span> <span class="p">[{</span>
-        <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;bar&quot;</span><span class="p">:</span> <span class="n">validate</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="s2">&quot;https&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.m3u8&quot;</span><span class="p">))},</span> <span class="s2">&quot;baz&quot;</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="p">}]</span>
-<span class="p">)</span>
-
-<span class="c1"># correct:</span>
-<span class="n">schema</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">parse_json</span><span class="p">(),</span>
-    <span class="p">[{</span>
-        <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;bar&quot;</span><span class="p">:</span> <span class="n">validate</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="s2">&quot;https&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.m3u8&quot;</span><span class="p">)),</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;baz&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-    <span class="p">}],</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</li>
-</ol>
+<p>Streamlink uses <a class="reference external" href="https://github.com/astral-sh/ruff">Ruff</a> as primary code <a class="reference external" href="Ruff-linter">linting</a> and <a class="reference external" href="Ruff-formatter">formatting</a> tool.</p>
+<p>The project aims to use best practices for achieving great code readability with minimal git diffs,
+as detailed in <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0008/"><strong>PEP 8</strong></a> and implemented in related linting and formatting tools, such as <a class="reference external" href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html">Black</a>.</p>
+<p>For detailed linting and formatting configurations specific to Streamlink, please have a look at <a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/pyproject.toml">pyproject.toml</a>.</p>
 <p>It might be helpful to new plugin authors to pick a small and recently modified existing plugin to use as an initial
 template from which to work. If care is taken to preserve existing blank lines during modification, the main plugin
 structure should be compliant-ready for <a class="reference internal" href="#validating-changes">linting</a>.</p>
@@ -611,8 +586,8 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=06de18c4"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+</div><script src="_static/documentation_options.js?v=efe5be6f"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>

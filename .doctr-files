@@ -28,12 +28,12 @@
 ./_sources/cli/tutorial.rst.txt
 ./_sources/deprecations.rst.txt
 ./_sources/developing.rst.txt
-./_sources/donate.rst.txt
 ./_sources/index.rst.txt
 ./_sources/install.rst.txt
 ./_sources/migrations.rst.txt
 ./_sources/players.rst.txt
 ./_sources/plugins.rst.txt
+./_sources/support.rst.txt
 ./_sources/thirdparty.rst.txt
 ./_sphinx_design_static/design-tabs.js
 ./_sphinx_design_static/sphinx-design.min.css
@@ -95,7 +95,6 @@
 ./cli/tutorial.html
 ./deprecations.html
 ./developing.html
-./donate.html
 ./genindex.html
 ./index.html
 ./install.html
@@ -105,4 +104,5 @@
 ./plugins.html
 ./search.html
 ./searchindex.js
+./support.html
 ./thirdparty.html

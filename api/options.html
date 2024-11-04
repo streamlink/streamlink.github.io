@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Cache" href="cache.html" /><link rel="prev" title="Plugin" href="plugin.html" />
 
-    <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Options - Streamlink 6.11.0 documentation">
+  <meta property="og:title" content="Options - Streamlink 7.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Options - Streamlink 6.11.0 documentation</title>
+        <title>Options - Streamlink 7.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0</pre>
+  <pre class="sidebar-versions-current">7.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/options.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api/options.html" class="">Latest</a></dd>
@@ -262,7 +262,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications.html">Streamlink Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../thirdparty.html">Third Party Applications</a></li>
 </ul>
@@ -461,9 +461,9 @@ See the <a class="reference internal" href="plugin.html#streamlink.plugin.plugin
 <li><p><strong>choices</strong> (<em>_TChoices</em><em> | </em><em>None</em>) -- See <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code></p></li>
 <li><p><strong>required</strong> (<em>bool</em>) -- See <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code></p></li>
 <li><p><strong>help</strong> (<em>str</em><em> | </em><em>None</em>) -- See <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code></p></li>
-<li><p><strong>metavar</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>...</em><em>] </em><em>| </em><em>None</em>) -- See <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code></p></li>
+<li><p><strong>metavar</strong> (<em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>] </em><em>| </em><em>tuple</em><em>[</em><em>str</em><em>, </em><em>...</em><em>] </em><em>| </em><em>None</em>) -- See <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code></p></li>
 <li><p><strong>dest</strong> (<em>str</em><em> | </em><em>None</em>) -- See <code class="xref py py-meth docutils literal notranslate"><span class="pre">ArgumentParser.add_argument()</span></code></p></li>
-<li><p><strong>requires</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>] </em><em>| </em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>...</em><em>] </em><em>| </em><em>None</em>) -- List of other arguments which this argument requires, e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;password&quot;]</span></code></p></li>
+<li><p><strong>requires</strong> (<em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>] </em><em>| </em><em>tuple</em><em>[</em><em>str</em><em>, </em><em>...</em><em>] </em><em>| </em><em>None</em>) -- List of other arguments which this argument requires, e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;password&quot;]</span></code></p></li>
 <li><p><strong>prompt</strong> (<em>str</em><em> | </em><em>None</em>) -- If the argument is required and not set, then this prompt message will be shown instead</p></li>
 <li><p><strong>sensitive</strong> (<em>bool</em>) -- Whether the argument is sensitive and should be masked (passwords, etc.)</p></li>
 <li><p><strong>argument_name</strong> (<em>str</em><em> | </em><em>None</em>) -- Custom CLI argument name without the automatically added plugin name prefix</p></li>
@@ -580,8 +580,8 @@ See the <a class="reference internal" href="plugin.html#streamlink.plugin.plugin
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=06de18c4"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+</div><script src="../_static/documentation_options.js?v=efe5be6f"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>

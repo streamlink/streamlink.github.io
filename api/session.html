@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Plugin" href="plugin.html" /><link rel="prev" title="Streamlink" href="streamlink.html" />
 
-    <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Session - Streamlink 6.11.0 documentation">
+  <meta property="og:title" content="Session - Streamlink 7.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Session - Streamlink 6.11.0 documentation</title>
+        <title>Session - Streamlink 7.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0</pre>
+  <pre class="sidebar-versions-current">7.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/session.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api/session.html" class="">Latest</a></dd>
@@ -262,7 +262,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications.html">Streamlink Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../thirdparty.html">Third Party Applications</a></li>
 </ul>
@@ -329,7 +329,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>options</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Custom options</p></li>
+<li><p><strong>options</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Custom options</p></li>
 <li><p><strong>plugins_builtin</strong> (<em>bool</em>) -- Whether to load built-in plugins or not</p></li>
 <li><p><strong>plugins_lazy</strong> (<em>bool</em>) -- Load built-in plugins lazily. This option falls back to loading all built-in plugins
 if the pre-built plugin JSON metadata is not available (e.g. in editable installs) or is invalid.</p></li>
@@ -409,7 +409,7 @@ of <a class="reference internal" href="options.html#streamlink.options.Options" 
 <dd class="field-even"><p><a class="reference internal" href="exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
+<dd class="field-odd"><p>tuple[str, type[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -427,7 +427,7 @@ of <a class="reference internal" href="options.html#streamlink.options.Options" 
 <dd class="field-even"><p><a class="reference internal" href="exceptions.html#streamlink.exceptions.NoPluginError" title="streamlink.exceptions.NoPluginError"><strong>NoPluginError</strong></a> -- on plugin resolve failure</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
+<dd class="field-odd"><p>tuple[str, type[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -682,133 +682,88 @@ by language code or name, or <code class="docutils literal notranslate"><span cl
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Max number of DASH manifest reload attempts before giving up</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-segment-attempts <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>hls-segment-threads <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-threads</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>hls-segment-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-timeout</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>hls-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>dash-segment-attempts <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>dash-segment-threads <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-threads</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>dash-segment-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segment-timeout</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>dash-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>http-stream-timeout <em>(deprecated)</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">60.00</span></code></p></td>
-<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-timeout</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>ffmpeg-ffmpeg</p></td>
+<tr class="row-odd"><td><p>ffmpeg-ffmpeg</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Override for the <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>/<code class="docutils literal notranslate"><span class="pre">ffmpeg.exe</span></code> binary path,
 which by default gets looked up via the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> env var</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-no-validation</p></td>
+<tr class="row-even"><td><p>ffmpeg-no-validation</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Disable FFmpeg validation and version logging</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-verbose</p></td>
+<tr class="row-odd"><td><p>ffmpeg-verbose</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Append FFmpeg's stderr stream to the Python's stderr stream</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-verbose-path</p></td>
+<tr class="row-even"><td><p>ffmpeg-verbose-path</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Write FFmpeg's stderr stream to the filesystem at the specified path</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-loglevel</p></td>
+<tr class="row-odd"><td><p>ffmpeg-loglevel</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Set FFmpeg's <code class="docutils literal notranslate"><span class="pre">-loglevel</span></code> value</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-fout</p></td>
+<tr class="row-even"><td><p>ffmpeg-fout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Set the output format of muxed streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;matroska&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-video-transcode</p></td>
+<tr class="row-odd"><td><p>ffmpeg-video-transcode</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;h264&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-audio-transcode</p></td>
+<tr class="row-even"><td><p>ffmpeg-audio-transcode</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;aac&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-copyts</p></td>
+<tr class="row-odd"><td><p>ffmpeg-copyts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Don't shift input stream timestamps when muxing streams</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-start-at-zero</p></td>
+<tr class="row-even"><td><p>ffmpeg-start-at-zero</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>When <code class="docutils literal notranslate"><span class="pre">ffmpeg-copyts</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, shift timestamps to zero</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser</p></td>
+<tr class="row-odd"><td><p>webbrowser</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 <td><p>Enable or disable support for Streamlink's webbrowser API</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser-executable</p></td>
+<tr class="row-even"><td><p>webbrowser-executable</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Path to the web browser's executable</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser-timeout</p></td>
+<tr class="row-odd"><td><p>webbrowser-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
 <td><p>The maximum amount of time which the webbrowser can take to launch and execute</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser-cdp-host</p></td>
+<tr class="row-even"><td><p>webbrowser-cdp-host</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Custom host for the Chrome Devtools Protocol (CDP) interface</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser-cdp-port</p></td>
+<tr class="row-odd"><td><p>webbrowser-cdp-port</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Custom port for the Chrome Devtools Protocol (CDP) interface</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser-cdp-timeout</p></td>
+<tr class="row-even"><td><p>webbrowser-cdp-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
 <td><p>The maximum amount of time for waiting on a single CDP command response</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser-headless</p></td>
+<tr class="row-odd"><td><p>webbrowser-headless</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Whether to launch the webbrowser in headless mode or not</p></td>
@@ -883,7 +838,7 @@ always have a higher priority than built-in plugins.</p>
 <dd class="field-odd"><p><strong>item</strong> (<em>str</em>)</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]</p>
+<dd class="field-even"><p>type[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -896,7 +851,7 @@ always have a higher priority than built-in plugins.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> (<em>str</em>)</p></li>
-<li><p><strong>value</strong> (<em>Type</em><em>[</em><a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a><em>]</em>)</p></li>
+<li><p><strong>value</strong> (<em>type</em><em>[</em><a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a><em>]</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -939,7 +894,7 @@ always have a higher priority than built-in plugins.</p>
 <dd><p>Get a list of the names of all available plugins</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>List</em>[str]</p>
+<dd class="field-odd"><p>list[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -950,7 +905,7 @@ always have a higher priority than built-in plugins.</p>
 <dd><p>Get a mapping of all loaded plugins</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Dict</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
+<dd class="field-odd"><p>dict[str, type[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -972,7 +927,7 @@ always have a higher priority than built-in plugins.</p>
 <dd><p>Load plugins from a custom directory</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>Path</em><em> | </em><em>str</em>)</p>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em><em> | </em><em>Path</em>)</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
@@ -986,7 +941,7 @@ always have a higher priority than built-in plugins.</p>
 <dd><p>Add/override loaded plugins</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>plugins</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Type</em><em>[</em><a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a><em>]</em><em>]</em>)</p>
+<dd class="field-odd"><p><strong>plugins</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>type</em><em>[</em><a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a><em>]</em><em>]</em>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1003,7 +958,7 @@ always have a higher priority than built-in plugins.</p>
 <dd><p>Iterate through all plugins and their <a class="reference internal" href="options.html#streamlink.options.Arguments" title="streamlink.options.Arguments"><code class="xref py py-class docutils literal notranslate"><span class="pre">Arguments</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Iterator</em>[<em>Tuple</em>[str, <a class="reference internal" href="options.html#streamlink.options.Arguments" title="streamlink.options.Arguments"><em>Arguments</em></a>]]</p>
+<dd class="field-odd"><p><em>Iterator</em>[tuple[str, <a class="reference internal" href="options.html#streamlink.options.Arguments" title="streamlink.options.Arguments"><em>Arguments</em></a>]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1014,7 +969,7 @@ always have a higher priority than built-in plugins.</p>
 <dd><p>Iterate through all plugins and their <code class="xref py py-class docutils literal notranslate"><span class="pre">Matchers</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Iterator</em>[<em>Tuple</em>[str, <em>Matchers</em>]]</p>
+<dd class="field-odd"><p><em>Iterator</em>[tuple[str, <em>Matchers</em>]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1028,7 +983,7 @@ always have a higher priority than built-in plugins.</p>
 <dd class="field-odd"><p><strong>url</strong> (<em>str</em>)</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Tuple</em>[str, <em>Type</em>[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]] | None</p>
+<dd class="field-even"><p>tuple[str, type[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>]] | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1140,8 +1095,8 @@ always have a higher priority than built-in plugins.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=06de18c4"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+</div><script src="../_static/documentation_options.js?v=efe5be6f"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>

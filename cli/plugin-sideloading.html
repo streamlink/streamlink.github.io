@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Streaming protocols" href="protocols.html" /><link rel="prev" title="Configuration file" href="config.html" />
 
-    <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugin sideloading - Streamlink 6.11.0 documentation">
+  <meta property="og:title" content="Plugin sideloading - Streamlink 7.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugin sideloading - Streamlink 6.11.0 documentation</title>
+        <title>Plugin sideloading - Streamlink 7.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -193,7 +193,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0</pre>
+  <pre class="sidebar-versions-current">7.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugin-sideloading.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli/plugin-sideloading.html" class="">Latest</a></dd>
@@ -262,7 +262,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications.html">Streamlink Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../thirdparty.html">Third Party Applications</a></li>
 </ul>
@@ -311,7 +311,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -321,7 +321,41 @@
   
   <section id="plugin-sideloading">
 <h1>Plugin sideloading<a class="headerlink" href="#plugin-sideloading" title="Link to this heading">¶</a></h1>
-<p>Streamlink will attempt to load standalone plugins from these directories:</p>
+<p>Streamlink supports overriding its <a class="reference internal" href="../plugins.html#plugins"><span class="std std-ref">built-in plugins</span></a> or loading custom third party plugins
+without having to modify its sources or its built and installed <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Built-Distribution">Python distribution</a>. This is called plugin sideloading.</p>
+<p>Those additional plugin modules will automatically be loaded <a class="reference internal" href="#sideloading-locations">from the paths listed below</a>,
+or from the path(s) of the <a class="reference internal" href="../cli.html#cmdoption-plugin-dir"><code class="xref std std-option docutils literal notranslate"><span class="pre">--plugin-dir</span></code></a> CLI argument, if it is set.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>Do not</strong> attempt to modify <a class="reference internal" href="../plugins.html#plugins"><span class="std std-ref">built-in plugins</span></a> or to add custom plugins to Streamlink's
+built <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Built-Distribution">Python distribution</a>. In order to keep loading times low, Streamlink implements a lazy plugin-loading system
+for its built-in plugins, which means that <a class="reference internal" href="../api/plugin.html#streamlink.plugin.pluginmatcher" title="streamlink.plugin.pluginmatcher"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginmatcher</span></code></a>
+and <a class="reference internal" href="../api/plugin.html#streamlink.plugin.pluginargument" title="streamlink.plugin.pluginargument"><code class="xref py py-func docutils literal notranslate"><span class="pre">pluginargument</span></code></a> data is pre-computed and cached,
+thus making modifications to plugin modules or adding new plugin modules pointless. Instead, sideload plugins.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If one of the sideloaded plugins fails to load and execute, e.g. due to a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> being raised by the parser,
+then this exception won't be caught by Streamlink and the execution will stop, even if the input stream URL
+does not match the faulty plugin.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Custom plugin modules will always be loaded and executed at once, increasing the load and initialization time
+of the <a class="reference internal" href="../api/session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><code class="xref py py-class docutils literal notranslate"><span class="pre">Streamlink</span> <span class="pre">session</span></code></a>. <a class="reference internal" href="../plugins.html#plugins"><span class="std std-ref">Built-in plugins</span></a>
+on the other hand are loaded lazily, unless overridden.</p>
+</div>
+<section id="overriding">
+<h2>Overriding<a class="headerlink" href="#overriding" title="Link to this heading">¶</a></h2>
+<p>If a plugin is added with the same name as a built-in plugin, then the added plugin will take precedence.
+This can be useful for upgrading or modifying plugins independently of the Streamlink version.</p>
+<p>In this case, a log message will be written to log level <a class="reference internal" href="../cli.html#cmdoption-loglevel"><code class="xref std std-option docutils literal notranslate"><span class="pre">debug</span></code></a>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[session][debug] Plugin PLUGINNAME is being overridden by PATH-TO-PLUGIN-FILE (sha256:CHECKSUM)
+</pre></div>
+</div>
+</section>
+<section id="sideloading-locations">
+<h2>Sideloading locations<a class="headerlink" href="#sideloading-locations" title="Link to this heading">¶</a></h2>
 <div class="table-wrapper table-custom-layout table-custom-layout-platform-locations docutils container">
 <table class="table-custom-layout table-custom-layout-platform-locations docutils align-default" style="width: 100%">
 <thead>
@@ -331,66 +365,36 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Linux, BSD</p></td>
-<td><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Path</span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_DATA_HOME:-${HOME}/.local/share}/streamlink/plugins</span></code></p></li>
-</ul>
-<p><span class="sd-sphinx-override sd-badge sd-outline-info sd-text-info">Example</span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">/home/USERNAME/.local/share/streamlink/plugins</span></code></p></li>
-</ul>
-<p><span class="sd-sphinx-override sd-badge sd-outline-danger sd-text-danger">Deprecated</span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/plugins</span></code></p></li>
-</ul>
+<td><div class="line-block">
+<div class="line"><strong>Path</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">${XDG_DATA_HOME:-${HOME}/.local/share}/streamlink/plugins</span></code></div>
+<div class="line"><strong>Example</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/home/USERNAME/.local/share/streamlink/plugins</span></code></div>
+</div>
 </td>
 </tr>
 <tr class="row-odd"><td><p>macOS</p></td>
-<td><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Path</span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application Support/streamlink/plugins</span></code></p></li>
-</ul>
-<p><span class="sd-sphinx-override sd-badge sd-outline-info sd-text-info">Example</span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">/Users/USERNAME/Library/Application Support/streamlink/plugins</span></code></p></li>
-</ul>
-<p><span class="sd-sphinx-override sd-badge sd-outline-danger sd-text-danger">Deprecated</span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">${XDG_CONFIG_HOME:-${HOME}/.config}/streamlink/plugins</span></code></p></li>
-</ul>
+<td><div class="line-block">
+<div class="line"><strong>Path</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">${HOME}/Library/Application Support/streamlink/plugins</span></code></div>
+<div class="line"><strong>Example</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/Users/USERNAME/Library/Application Support/streamlink/plugins</span></code></div>
+</div>
 </td>
 </tr>
 <tr class="row-even"><td><p>Windows</p></td>
-<td><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Path</span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\plugins</span></code></p></li>
-</ul>
-<p><span class="sd-sphinx-override sd-badge sd-outline-info sd-text-info">Example</span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">C:\Users\USERNAME\AppData\Roaming\streamlink\plugins</span></code></p></li>
-</ul>
+<td><div class="line-block">
+<div class="line"><strong>Path</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">%APPDATA%\streamlink\plugins</span></code></div>
+<div class="line"><strong>Example</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">C:\Users\USERNAME\AppData\Roaming\streamlink\plugins</span></code></div>
+</div>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If a plugin is added with the same name as a built-in plugin, then
-the added plugin will take precedence. This is useful if you want
-to upgrade plugins independently of the Streamlink version.</p>
-<p>In this case, a log message will be written to log level <a class="reference internal" href="../cli.html#cmdoption-loglevel"><code class="xref std std-option docutils literal notranslate"><span class="pre">debug</span></code></a>:</p>
-<blockquote>
-<div><p>[session][debug] Plugin PLUGINNAME is being overridden by PATH-TO-PLUGIN-FILE</p>
-</div></blockquote>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If one of the sideloaded plugins fails to load, e.g. due to a
-<code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> being raised by the parser, then this exception won't
-get caught by Streamlink and the execution will stop, even if
-the input stream URL does not match the faulty plugin.</p>
-</div>
+</section>
 </section>
 
 
@@ -437,14 +441,34 @@ the input stream URL does not match the faulty plugin.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Plugin sideloading</a><ul>
+<li><a class="reference internal" href="#overriding">Overriding</a></li>
+<li><a class="reference internal" href="#sideloading-locations">Sideloading locations</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=06de18c4"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+</div><script src="../_static/documentation_options.js?v=efe5be6f"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>

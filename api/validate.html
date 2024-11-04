@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Stream" href="stream.html" /><link rel="prev" title="Cache" href="cache.html" />
 
-    <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Validation schemas - Streamlink 6.11.0 documentation">
+  <meta property="og:title" content="Validation schemas - Streamlink 7.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Validation schemas - Streamlink 6.11.0 documentation</title>
+        <title>Validation schemas - Streamlink 7.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0</pre>
+  <pre class="sidebar-versions-current">7.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/validate.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api/validate.html" class="">Latest</a></dd>
@@ -262,7 +262,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications.html">Streamlink Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../thirdparty.html">Third Party Applications</a></li>
 </ul>
@@ -323,12 +323,18 @@
 <h1>Validation schemas<a class="headerlink" href="#validation-schemas" title="Link to this heading">¶</a></h1>
 <p>Please see the <a class="reference internal" href="../api_guide/validate.html#validation-schemas"><span class="std std-ref">validation schema guides</span></a>
 for an introduction to this API and a list of examples.</p>
+<div class="caution admonition">
+<p class="admonition-title">Public interface</p>
+<p>While the internals are implemented in the <code class="docutils literal notranslate"><span class="pre">streamlink.validate</span></code> package,
+<a class="reference internal" href="#validation-schemas"><span class="std std-ref">streamlink.plugin.api.validate</span></a> provides the main public interface
+for plugin implementors.</p>
+</div>
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.plugin.api.validate.Schema">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">Schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">schemas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.Schema" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AllSchema" title="streamlink.plugin.api.validate._schemas.AllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#streamlink.validate._schemas.AllSchema" title="streamlink.validate._schemas.AllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code></a></p>
 <p>The base class for creating validation schemas.</p>
-<p>A wrapper for <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AllSchema" title="streamlink.plugin.api.validate._schemas.AllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code></a> with a wrapper method for <a class="reference internal" href="#streamlink.plugin.api.validate.validate" title="streamlink.plugin.api.validate.validate"><code class="xref py py-func docutils literal notranslate"><span class="pre">validate()</span></code></a>
+<p>A wrapper for <code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code> with a wrapper method for <a class="reference internal" href="#streamlink.plugin.api.validate.validate" title="streamlink.plugin.api.validate.validate"><code class="xref py py-func docutils literal notranslate"><span class="pre">validate()</span></code></a>
 which by default raises <a class="reference internal" href="exceptions.html#streamlink.exceptions.PluginError" title="streamlink.exceptions.PluginError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginError</span></code></a> on error.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="streamlink.plugin.api.validate.Schema.validate">
@@ -338,7 +344,7 @@ which by default raises <a class="reference internal" href="exceptions.html#stre
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<em>Any</em>)</p></li>
 <li><p><strong>name</strong> (<em>str</em>)</p></li>
-<li><p><strong>exception</strong> (<em>Type</em><em>[</em><em>Exception</em><em>]</em>)</p></li>
+<li><p><strong>exception</strong> (<em>type</em><em>[</em><em>Exception</em><em>]</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -354,7 +360,7 @@ which by default raises <a class="reference internal" href="exceptions.html#stre
 <span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.validate" title="Link to this definition">¶</a></dt>
 <dd><p>The core of the <a class="reference internal" href="#module-streamlink.plugin.api.validate" title="streamlink.plugin.api.validate"><code class="xref py py-mod docutils literal notranslate"><span class="pre">streamlink.plugin.api.validate</span></code></a> module.</p>
 <p>It validates the given input <code class="docutils literal notranslate"><span class="pre">value</span></code> and returns a value according to the specific validation rules of the <code class="docutils literal notranslate"><span class="pre">schema</span></code>.</p>
-<p>If the validation fails, a <a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code></a> is raised with a detailed error message.</p>
+<p>If the validation fails, a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValidationError</span></code> is raised with a detailed error message.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">schema</span></code> can be any kind of object. Depending on the <code class="docutils literal notranslate"><span class="pre">schema</span></code>, different validation rules apply.</p>
 <p>Simple schema objects like <code class="docutils literal notranslate"><span class="pre">&quot;abc&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">123</span></code> for example test the equality of <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">schema</span></code>
 and return <code class="docutils literal notranslate"><span class="pre">value</span></code> again, while type schema objects like <code class="docutils literal notranslate"><span class="pre">str</span></code> test whether <code class="docutils literal notranslate"><span class="pre">value</span></code> is an instance of <code class="docutils literal notranslate"><span class="pre">schema</span></code>.
@@ -396,7 +402,7 @@ like booleans, strings, numbers, None, etc. are validated here, as well as anyth
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">schema</span></code> are not equal</p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">schema</span></code> are not equal</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Unmodified <code class="docutils literal notranslate"><span class="pre">value</span></code></p>
@@ -425,7 +431,7 @@ like booleans, strings, numbers, None, etc. are validated here, as well as anyth
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not an instance of <code class="docutils literal notranslate"><span class="pre">schema</span></code></p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not an instance of <code class="docutils literal notranslate"><span class="pre">schema</span></code></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Unmodified <code class="docutils literal notranslate"><span class="pre">value</span></code></p>
@@ -456,7 +462,7 @@ like booleans, strings, numbers, None, etc. are validated here, as well as anyth
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">schema</span></code> returns a non-truthy value</p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">schema</span></code> returns a non-truthy value</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Unmodified <code class="docutils literal notranslate"><span class="pre">value</span></code></p>
@@ -470,7 +476,7 @@ like booleans, strings, numbers, None, etc. are validated here, as well as anyth
 <dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">frozenset</span></code> validation.</p>
 <p>Each item of <code class="docutils literal notranslate"><span class="pre">value</span></code> gets validated against <strong>any</strong> of the items of <code class="docutils literal notranslate"><span class="pre">schema</span></code>.</p>
 <p>Please note the difference between <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>
-and the <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.ListSchema" title="streamlink.plugin.api.validate._schemas.ListSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListSchema</span></code></a> validation.</p>
+and the <code class="xref py py-class docutils literal notranslate"><span class="pre">ListSchema</span></code> validation.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">([])</span> <span class="o">==</span> <span class="p">[]</span>
@@ -489,7 +495,7 @@ and the <a class="reference internal" href="#streamlink.plugin.api.validate._sch
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not an instance of the <code class="docutils literal notranslate"><span class="pre">schema</span></code>'s own type</p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not an instance of the <code class="docutils literal notranslate"><span class="pre">schema</span></code>'s own type</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A new sequence of the same type as <code class="docutils literal notranslate"><span class="pre">schema</span></code> with each item of <code class="docutils literal notranslate"><span class="pre">value</span></code> being validated</p>
@@ -503,10 +509,10 @@ and the <a class="reference internal" href="#streamlink.plugin.api.validate._sch
 <dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> validation.</p>
 <p>Each key-value pair of <code class="docutils literal notranslate"><span class="pre">schema</span></code> gets validated against the respective key-value pair of <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
 <p>Additional keys in <code class="docutils literal notranslate"><span class="pre">value</span></code> are ignored and not included in the validation result.</p>
-<p>If a <code class="docutils literal notranslate"><span class="pre">schema</span></code> key is an instance of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.OptionalSchema" title="streamlink.plugin.api.validate._schemas.OptionalSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptionalSchema</span></code></a>, then <code class="docutils literal notranslate"><span class="pre">value</span></code> may omit it.</p>
+<p>If a <code class="docutils literal notranslate"><span class="pre">schema</span></code> key is an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">OptionalSchema</span></code>, then <code class="docutils literal notranslate"><span class="pre">value</span></code> may omit it.</p>
 <p>If one of the <code class="docutils literal notranslate"><span class="pre">schema</span></code>'s keys is a <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code>,
-<a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AllSchema" title="streamlink.plugin.api.validate._schemas.AllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code></a>, <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AnySchema" title="streamlink.plugin.api.validate._schemas.AnySchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnySchema</span></code></a>,
-<a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformSchema</span></code></a>, or <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.UnionSchema" title="streamlink.plugin.api.validate._schemas.UnionSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionSchema</span></code></a>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">AnySchema</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">TransformSchema</span></code>, or <code class="xref py py-class docutils literal notranslate"><span class="pre">UnionSchema</span></code>,
 then all key-value pairs of <code class="docutils literal notranslate"><span class="pre">value</span></code> are validated against the <code class="docutils literal notranslate"><span class="pre">schema</span></code>'s key-value pair.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">({</span>
@@ -542,8 +548,8 @@ then all key-value pairs of <code class="docutils literal notranslate"><span cla
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If any of the <code class="docutils literal notranslate"><span class="pre">schema</span></code>'s non-optional keys are not part of the input <code class="docutils literal notranslate"><span class="pre">value</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If any of the <code class="docutils literal notranslate"><span class="pre">schema</span></code>'s non-optional keys are not part of the input <code class="docutils literal notranslate"><span class="pre">value</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -557,7 +563,7 @@ then all key-value pairs of <code class="docutils literal notranslate"><span cla
 <span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">_validate_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._validate_pattern" title="Link to this definition">¶</a></dt>
 <dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">re.Pattern</span></code> validation.</p>
 <p>Calls the <code class="xref py py-meth docutils literal notranslate"><span class="pre">re.Pattern.search()</span></code> method on the <code class="docutils literal notranslate"><span class="pre">schema</span></code> pattern.</p>
-<p>Please note the difference between <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Pattern</span></code> and the <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.RegexSchema" title="streamlink.plugin.api.validate._schemas.RegexSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegexSchema</span></code></a> validation.</p>
+<p>Please note the difference between <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Pattern</span></code> and the <code class="xref py py-class docutils literal notranslate"><span class="pre">RegexSchema</span></code> validation.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
     <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^Hello, (?P&lt;name&gt;\w+)!$&quot;</span><span class="p">),</span>
@@ -578,8 +584,8 @@ then all key-value pairs of <code class="docutils literal notranslate"><span cla
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the type of <code class="docutils literal notranslate"><span class="pre">value</span></code> doesn't match <code class="docutils literal notranslate"><span class="pre">schema</span></code>'s <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>/<code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> type</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the type of <code class="docutils literal notranslate"><span class="pre">value</span></code> doesn't match <code class="docutils literal notranslate"><span class="pre">schema</span></code>'s <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>/<code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> type</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -591,73 +597,19 @@ then all key-value pairs of <code class="docutils literal notranslate"><span cla
 <dl class="py attribute" id="module-streamlink.plugin.api.validate">
 <dt class="sig sig-object py" id="streamlink.plugin.api.validate.all">
 <span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">all</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.all" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AllSchema" title="streamlink.plugin.api.validate._schemas.AllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.AllSchema" title="streamlink.validate._schemas.AllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.api.validate.any">
 <span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">any</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.any" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AnySchema" title="streamlink.plugin.api.validate._schemas.AnySchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnySchema</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.none_or_all">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">none_or_all</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.none_or_all" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.NoneOrAllSchema" title="streamlink.plugin.api.validate._schemas.NoneOrAllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">NoneOrAllSchema</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.transform">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">transform</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.transform" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformSchema</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.optional">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">optional</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.optional" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.OptionalSchema" title="streamlink.plugin.api.validate._schemas.OptionalSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptionalSchema</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.list">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">list</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.list" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.ListSchema" title="streamlink.plugin.api.validate._schemas.ListSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListSchema</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.AnySchema" title="streamlink.validate._schemas.AnySchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnySchema</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.plugin.api.validate.attr">
 <span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">attr</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.attr" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AttrSchema" title="streamlink.plugin.api.validate._schemas.AttrSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AttrSchema</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.get">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">get</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.get" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.GetItemSchema" title="streamlink.plugin.api.validate._schemas.GetItemSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.union">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">union</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.union" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.UnionSchema" title="streamlink.plugin.api.validate._schemas.UnionSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionSchema</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.union_get">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">union_get</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.union_get" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.UnionGetSchema" title="streamlink.plugin.api.validate._schemas.UnionGetSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionGetSchema</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.regex">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">regex</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.regex" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.RegexSchema" title="streamlink.plugin.api.validate._schemas.RegexSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegexSchema</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.xml_element">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">xml_element</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.xml_element" title="Link to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.XmlElementSchema" title="streamlink.plugin.api.validate._schemas.XmlElementSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">XmlElementSchema</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.AttrSchema" title="streamlink.validate._schemas.AttrSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AttrSchema</span></code></a></p>
 </dd></dl>
 
 <dl class="py function">
@@ -676,37 +628,8 @@ then all key-value pairs of <code class="docutils literal notranslate"><span cla
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input doesn't contain <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
-</ul>
-</dd>
-<dt class="field-even">Parameters<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>string</strong> (<em>str</em>)</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Callable</em>[[str], bool]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.startswith">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.startswith" title="Link to this definition">¶</a></dt>
-<dd><p>Utility function for checking whether the input string starts with another string.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;123&quot;</span>
-<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;321&quot;</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
-<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input doesn't start with <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input doesn't contain <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
@@ -734,8 +657,8 @@ then all key-value pairs of <code class="docutils literal notranslate"><span cla
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input doesn't end with <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input doesn't end with <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
@@ -743,6 +666,90 @@ then all key-value pairs of <code class="docutils literal notranslate"><span cla
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><em>Callable</em>[[str], bool]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.filter">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.filter" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function for filtering out unwanted items from the input using the specified function
+via the built-in <code class="xref py py-func docutils literal notranslate"><span class="pre">filter()</span></code>.</p>
+<p>Supports iterables, as well as instances of <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> where key-value pairs are expanded.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">val</span><span class="p">:</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="n">key</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span> <span class="o">==</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>func</strong> (<em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>bool</em><em>]</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.get">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">get</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.get" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.GetItemSchema" title="streamlink.validate._schemas.GetItemSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.getattr">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">getattr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.getattr" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function for getting an attribute from the input object.</p>
+<p>If a default is set, it is returned when the attribute doesn't exist.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2000</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;not a date/datetime object&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;unknown&quot;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attr</strong> (<em>Any</em>)</p></li>
+<li><p><strong>default</strong> (<em>Any</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.hasattr">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">hasattr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.hasattr" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function for checking whether an attribute exists on the input object.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">hasattr</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="ow">is</span> <span class="n">date</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;not a date/datetime object&quot;</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>attr</strong> (<em>Any</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Callable</em>[[<em>Any</em>], bool]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -782,82 +789,10 @@ Checks the minimum length by default (<code class="docutils literal notranslate"
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.getattr">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">getattr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.getattr" title="Link to this definition">¶</a></dt>
-<dd><p>Utility function for getting an attribute from the input object.</p>
-<p>If a default is set, it is returned when the attribute doesn't exist.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2000</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;not a date/datetime object&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;unknown&quot;</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>attr</strong> (<em>Any</em>)</p></li>
-<li><p><strong>default</strong> (<em>Any</em>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.hasattr">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">hasattr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.hasattr" title="Link to this definition">¶</a></dt>
-<dd><p>Utility function for checking whether an attribute exists on the input object.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">hasattr</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="ow">is</span> <span class="n">date</span>
-<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;not a date/datetime object&quot;</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>attr</strong> (<em>Any</em>)</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Callable</em>[[<em>Any</em>], bool]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.filter">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.filter" title="Link to this definition">¶</a></dt>
-<dd><p>Utility function for filtering out unwanted items from the input using the specified function
-via the built-in <code class="xref py py-func docutils literal notranslate"><span class="pre">filter()</span></code>.</p>
-<p>Supports iterables, as well as instances of <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> where key-value pairs are expanded.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">val</span><span class="p">:</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="n">key</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span> <span class="o">==</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>func</strong> (<em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>bool</em><em>]</em>)</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
-</dd>
-</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.list">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">list</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.list" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.ListSchema" title="streamlink.validate._schemas.ListSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListSchema</span></code></a></p>
 </dd></dl>
 
 <dl class="py function">
@@ -884,9 +819,162 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dd class="field-odd"><p><strong>func</strong> (<em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>Any</em><em>]</em>)</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.none_or_all">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">none_or_all</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.none_or_all" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.NoneOrAllSchema" title="streamlink.validate._schemas.NoneOrAllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">NoneOrAllSchema</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.optional">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">optional</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.optional" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.OptionalSchema" title="streamlink.validate._schemas.OptionalSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptionalSchema</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.parse_html">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">parse_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.parse_html" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function for parsing HTML data using <code class="xref py py-func docutils literal notranslate"><span class="pre">streamlink.utils.parse.parse_html()</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">parse_html</span><span class="p">(),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;html lang=&quot;en&quot;&gt;&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s2">&quot;lang&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;en&quot;</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On parsing error</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.parse_json">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">parse_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.parse_json" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function for parsing JSON data using <code class="xref py py-func docutils literal notranslate"><span class="pre">streamlink.utils.parse.parse_json()</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">parse_json</span><span class="p">(),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;{&quot;a&quot;:[1,2,3],&quot;b&quot;:null}&quot;&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On parsing error</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.parse_qsd">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">parse_qsd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.parse_qsd" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function for parsing a query string using <code class="xref py py-func docutils literal notranslate"><span class="pre">streamlink.utils.parse.parse_qsd()</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">parse_qsd</span><span class="p">(),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;a=b&amp;a=c&amp;foo=bar&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">}</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On parsing error</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.parse_xml">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">parse_xml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.parse_xml" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function for parsing XML data using <code class="xref py py-func docutils literal notranslate"><span class="pre">streamlink.utils.parse.parse_xml()</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">parse_xml</span><span class="p">(),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;a b=&quot;c&quot;/&gt;&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On parsing error</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.regex">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">regex</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.regex" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.RegexSchema" title="streamlink.validate._schemas.RegexSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegexSchema</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.startswith">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.startswith" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function for checking whether the input string starts with another string.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;123&quot;</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;321&quot;</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input doesn't start with <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>string</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Callable</em>[[str], bool]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.transform">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">transform</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.transform" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformSchema</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.union">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">union</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.union" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.UnionSchema" title="streamlink.validate._schemas.UnionSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionSchema</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.union_get">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">union_get</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.union_get" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.UnionGetSchema" title="streamlink.validate._schemas.UnionGetSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionGetSchema</span></code></a></p>
 </dd></dl>
 
 <dl class="py function">
@@ -919,9 +1007,9 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not a string</p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not a URL (doesn't have a <code class="docutils literal notranslate"><span class="pre">netloc</span></code> parsing result)</p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If an unknown URL attribute is passed as an option</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not a string</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not a URL (doesn't have a <code class="docutils literal notranslate"><span class="pre">netloc</span></code> parsing result)</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If an unknown URL attribute is passed as an option</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -930,92 +1018,10 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.parse_html">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">parse_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.parse_html" title="Link to this definition">¶</a></dt>
-<dd><p>Utility function for parsing HTML data using <code class="xref py py-func docutils literal notranslate"><span class="pre">streamlink.utils.parse.parse_html()</span></code>.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">parse_html</span><span class="p">(),</span>
-<span class="p">)</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;html lang=&quot;en&quot;&gt;&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s2">&quot;lang&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;en&quot;</span>
-<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On parsing error</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.parse_json">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">parse_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.parse_json" title="Link to this definition">¶</a></dt>
-<dd><p>Utility function for parsing JSON data using <code class="xref py py-func docutils literal notranslate"><span class="pre">streamlink.utils.parse.parse_json()</span></code>.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">parse_json</span><span class="p">(),</span>
-<span class="p">)</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;{&quot;a&quot;:[1,2,3],&quot;b&quot;:null}&quot;&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
-<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On parsing error</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.parse_qsd">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">parse_qsd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.parse_qsd" title="Link to this definition">¶</a></dt>
-<dd><p>Utility function for parsing a query string using <code class="xref py py-func docutils literal notranslate"><span class="pre">streamlink.utils.parse.parse_qsd()</span></code>.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">parse_qsd</span><span class="p">(),</span>
-<span class="p">)</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;a=b&amp;a=c&amp;foo=bar&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">}</span>
-<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On parsing error</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate.parse_xml">
-<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">parse_xml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.parse_xml" title="Link to this definition">¶</a></dt>
-<dd><p>Utility function for parsing XML data using <code class="xref py py-func docutils literal notranslate"><span class="pre">streamlink.utils.parse.parse_xml()</span></code>.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
-    <span class="n">validate</span><span class="o">.</span><span class="n">parse_xml</span><span class="p">(),</span>
-<span class="p">)</span>
-<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;a b=&quot;c&quot;/&gt;&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span>
-<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On parsing error</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
-</dd>
-</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.xml_element">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">xml_element</span></span><a class="headerlink" href="#streamlink.plugin.api.validate.xml_element" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#streamlink.validate._schemas.XmlElementSchema" title="streamlink.validate._schemas.XmlElementSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">XmlElementSchema</span></code></a></p>
 </dd></dl>
 
 <dl class="py function">
@@ -1035,19 +1041,19 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On ElementPath evaluation error</p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the query didn't return an XML element</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On ElementPath evaluation error</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the query didn't return an XML element</p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>path</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1070,18 +1076,18 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On ElementPath evaluation error</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On ElementPath evaluation error</p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>path</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1103,19 +1109,19 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On ElementPath evaluation error</p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the query didn't return an XML element</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On ElementPath evaluation error</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the query didn't return an XML element</p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>path</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AllSchema" title="streamlink.plugin.api.validate._schemas.AllSchema"><em>AllSchema</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.validate._schemas.AllSchema" title="streamlink.validate._schemas.AllSchema"><em>AllSchema</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1138,20 +1144,20 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On XPath evaluation error</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On XPath evaluation error</p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>xpath</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
-<li><p><strong>extensions</strong> (<em>Dict</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em> | </em><em>None</em><em>, </em><em>str</em><em>]</em><em>, </em><em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>Any</em><em>]</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>extensions</strong> (<em>Mapping</em><em>[</em><em>tuple</em><em>[</em><em>str</em><em> | </em><em>None</em><em>, </em><em>str</em><em>]</em><em>, </em><em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>Any</em><em>]</em><em>] </em><em>| </em><em>None</em>)</p></li>
 <li><p><strong>smart_strings</strong> (<em>bool</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1175,26 +1181,26 @@ If the result is an empty set, this function instead returns <code class="docuti
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On XPath evaluation error</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On XPath evaluation error</p></li>
 </ul>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>xpath</strong> (<em>str</em>)</p></li>
-<li><p><strong>namespaces</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
-<li><p><strong>extensions</strong> (<em>Dict</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em> | </em><em>None</em><em>, </em><em>str</em><em>]</em><em>, </em><em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>Any</em><em>]</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>namespaces</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
+<li><p><strong>extensions</strong> (<em>Mapping</em><em>[</em><em>tuple</em><em>[</em><em>str</em><em> | </em><em>None</em><em>, </em><em>str</em><em>]</em><em>, </em><em>Callable</em><em>[</em><em>[</em><em>...</em><em>]</em><em>, </em><em>Any</em><em>]</em><em>] </em><em>| </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="streamlink.plugin.api.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema"><em>TransformSchema</em></a></p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py class" id="module-streamlink.plugin.api.validate._schemas">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.AllSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">AllSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">schemas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.AllSchema" title="Link to this definition">¶</a></dt>
+<dl class="py class" id="module-streamlink.validate._schemas">
+<dt class="sig sig-object py" id="streamlink.validate._schemas.AllSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">AllSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">schemas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.AllSchema" title="Link to this definition">¶</a></dt>
 <dd><p>A collection of schemas where each schema must be valid.</p>
 <p>Validates one schema after another with the input value of the return value of the previous one.</p>
 <p>Example:</p>
@@ -1220,8 +1226,8 @@ If the result is an empty set, this function instead returns <code class="docuti
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.AnySchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">AnySchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">schemas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.AnySchema" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.AnySchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">AnySchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">schemas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.AnySchema" title="Link to this definition">¶</a></dt>
 <dd><p>A collection of schemas where at least one schema must be valid.</p>
 <p>Validates one schema after another with the same input value until the first one succeeds.</p>
 <p>Example:</p>
@@ -1239,7 +1245,7 @@ If the result is an empty set, this function instead returns <code class="docuti
 <dd class="field-odd"><p><strong>*schemas</strong> (<em>Any</em>) -- Schemas where at least one must be valid</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- Error collection of all schema validations if none succeeded</p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- Error collection of all schema validations if none succeeded</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The return value of the first valid schema</p>
@@ -1248,9 +1254,9 @@ If the result is an empty set, this function instead returns <code class="docuti
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.NoneOrAllSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">NoneOrAllSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">schemas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.NoneOrAllSchema" title="Link to this definition">¶</a></dt>
-<dd><p>Similar to <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AllSchema" title="streamlink.plugin.api.validate._schemas.AllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code></a>, but skips the validation if the input value is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.NoneOrAllSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">NoneOrAllSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">schemas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.NoneOrAllSchema" title="Link to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#streamlink.validate._schemas.AllSchema" title="streamlink.validate._schemas.AllSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">AllSchema</span></code></a>, but skips the validation if the input value is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>This is useful for optional validation results, e.g. when validating a potential match of a regular expression.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
@@ -1270,7 +1276,7 @@ If the result is an empty set, this function instead returns <code class="docuti
 <dd class="field-odd"><p><strong>*schemas</strong> (<em>Any</em>) -- Schemas where each one must be valid, unless the input is <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- Error wrapper of the failed schema validation</p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- Error wrapper of the failed schema validation</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code> if the input is <code class="docutils literal notranslate"><span class="pre">None</span></code>, or the return value of the last schema</p>
@@ -1279,8 +1285,8 @@ If the result is an empty set, this function instead returns <code class="docuti
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.TransformSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">TransformSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.TransformSchema" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.TransformSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">TransformSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.TransformSchema" title="Link to this definition">¶</a></dt>
 <dd><p>A transform function which receives the input value as the argument, with optional custom arguments and keywords.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
@@ -1300,7 +1306,7 @@ If the result is an empty set, this function instead returns <code class="docuti
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the transform function is not callable</p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the transform function is not callable</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The return value of the transform function</p>
@@ -1309,10 +1315,10 @@ If the result is an empty set, this function instead returns <code class="docuti
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.OptionalSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">OptionalSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.OptionalSchema" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.OptionalSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">OptionalSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.OptionalSchema" title="Link to this definition">¶</a></dt>
 <dd><p>An optional key set in a <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>.</p>
-<p>See the <code class="xref py py-func docutils literal notranslate"><span class="pre">dict</span></code> validation and the <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.UnionSchema" title="streamlink.plugin.api.validate._schemas.UnionSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionSchema</span></code></a>.</p>
+<p>See the <code class="xref py py-func docutils literal notranslate"><span class="pre">dict</span></code> validation and the <a class="reference internal" href="#streamlink.validate._schemas.UnionSchema" title="streamlink.validate._schemas.UnionSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionSchema</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>key</strong> (<em>Any</em>)</p>
@@ -1321,10 +1327,10 @@ If the result is an empty set, this function instead returns <code class="docuti
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.ListSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">ListSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">schemas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.ListSchema" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.ListSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">ListSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">schemas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.ListSchema" title="Link to this definition">¶</a></dt>
 <dd><p>A list of schemas where every item must be valid, as well as the input type and length.</p>
-<p>Please note the difference between <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.ListSchema" title="streamlink.plugin.api.validate._schemas.ListSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListSchema</span></code></a>
+<p>Please note the difference between <a class="reference internal" href="#streamlink.validate._schemas.ListSchema" title="streamlink.validate._schemas.ListSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListSchema</span></code></a>
 and the <code class="xref py py-func docutils literal notranslate"><span class="pre">list</span></code> validation.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
@@ -1342,8 +1348,8 @@ and the <code class="xref py py-func docutils literal notranslate"><span class="
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input's length is not equal to the number of schemas</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input's length is not equal to the number of schemas</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1353,8 +1359,8 @@ and the <code class="xref py py-func docutils literal notranslate"><span class="
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.AttrSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">AttrSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.AttrSchema" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.AttrSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">AttrSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.AttrSchema" title="Link to this definition">¶</a></dt>
 <dd><p>Validate attributes of an input object according to a <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>'s key-value pairs.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
@@ -1373,7 +1379,7 @@ and the <code class="xref py py-func docutils literal notranslate"><span class="
 <dd class="field-odd"><p><strong>schema</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) -- A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> with attribute validations</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input doesn't have one of the schema's attributes</p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input doesn't have one of the schema's attributes</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A copy of the input object with validated attributes</p>
@@ -1382,8 +1388,8 @@ and the <code class="xref py py-func docutils literal notranslate"><span class="
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.GetItemSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">GetItemSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.GetItemSchema" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.GetItemSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">GetItemSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.GetItemSchema" title="Link to this definition">¶</a></dt>
 <dd><p>Get an <code class="docutils literal notranslate"><span class="pre">item</span></code> from the input.</p>
 <p>The input can be anything that implements <code class="xref py py-func docutils literal notranslate"><span class="pre">__getitem__()</span></code>,
 as well as <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code> objects where element attributes are looked up.</p>
@@ -1412,15 +1418,15 @@ In this case, the <code class="docutils literal notranslate"><span class="pre">d
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>item</strong> (<em>Any</em><em> | </em><em>Tuple</em><em>[</em><em>Any</em><em>]</em>) -- The lookup key, or a <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> of recursive lookup keys</p></li>
+<li><p><strong>item</strong> (<em>Any</em><em> | </em><em>tuple</em>) -- The lookup key, or a <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> of recursive lookup keys</p></li>
 <li><p><strong>default</strong> (<em>Any</em>) -- Optional custom default value</p></li>
 <li><p><strong>strict</strong> (<em>bool</em>) -- If <code class="docutils literal notranslate"><span class="pre">True</span></code>, don't perform recursive lookups with the <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> item</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input doesn't implement <code class="xref py py-func docutils literal notranslate"><span class="pre">__getitem__()</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input doesn't have the current <code class="docutils literal notranslate"><span class="pre">item</span></code> in a recursive non-leaf-input-object lookup</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input doesn't implement <code class="xref py py-func docutils literal notranslate"><span class="pre">__getitem__()</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input doesn't have the current <code class="docutils literal notranslate"><span class="pre">item</span></code> in a recursive non-leaf-input-object lookup</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1430,8 +1436,8 @@ In this case, the <code class="docutils literal notranslate"><span class="pre">d
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.UnionSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">UnionSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.UnionSchema" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.UnionSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">UnionSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.UnionSchema" title="Link to this definition">¶</a></dt>
 <dd><p>Validate multiple schemas on the same input.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
@@ -1460,7 +1466,7 @@ In this case, the <code class="docutils literal notranslate"><span class="pre">d
 or <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> of schemas</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If a sequence item or the value of a non-optional key-value pair doesn't validate</p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If a sequence item or the value of a non-optional key-value pair doesn't validate</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A new object of the same type, with each item or key-value pair being validated against the same input value</p>
@@ -1469,9 +1475,9 @@ or <code class="xref py py-class docutils literal notranslate"><span class="pre"
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.UnionGetSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">UnionGetSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*getters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq=&lt;class</span> <span class="pre">'tuple'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.UnionGetSchema" title="Link to this definition">¶</a></dt>
-<dd><p>Validate multiple <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.GetItemSchema" title="streamlink.plugin.api.validate._schemas.GetItemSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a> schemas on the same input.</p>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.UnionGetSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">UnionGetSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*getters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq=&lt;class</span> <span class="pre">'tuple'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.UnionGetSchema" title="Link to this definition">¶</a></dt>
+<dd><p>Validate multiple <a class="reference internal" href="#streamlink.validate._schemas.GetItemSchema" title="streamlink.validate._schemas.GetItemSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a> schemas on the same input.</p>
 <p>Convenience wrapper for <code class="docutils literal notranslate"><span class="pre">validate.union((validate.get(...),</span> <span class="pre">validate.get(...),</span> <span class="pre">...))</span></code>.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
@@ -1483,22 +1489,22 @@ or <code class="xref py py-class docutils literal notranslate"><span class="pre"
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>*getters</strong> -- Inputs for each <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.GetItemSchema" title="streamlink.plugin.api.validate._schemas.GetItemSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a></p></li>
-<li><p><strong>seq</strong> (<em>Type</em><em>[</em><em>Tuple</em><em> | </em><em>List</em><em> | </em><em>Set</em><em> | </em><em>FrozenSet</em><em>]</em>)</p></li>
+<li><p><strong>*getters</strong> -- Inputs for each <a class="reference internal" href="#streamlink.validate._schemas.GetItemSchema" title="streamlink.validate._schemas.GetItemSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a></p></li>
+<li><p><strong>seq</strong> (<em>type</em><em>[</em><em>tuple</em><em> | </em><em>list</em><em> | </em><em>set</em><em> | </em><em>frozenset</em><em>]</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> (default <code class="docutils literal notranslate"><span class="pre">seq</span></code> type) with items of the respective <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.GetItemSchema" title="streamlink.plugin.api.validate._schemas.GetItemSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a> validations</p>
+<dd class="field-even"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> (default <code class="docutils literal notranslate"><span class="pre">seq</span></code> type) with items of the respective <a class="reference internal" href="#streamlink.validate._schemas.GetItemSchema" title="streamlink.validate._schemas.GetItemSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a> validations</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.RegexSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">RegexSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'search'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.RegexSchema" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.RegexSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">RegexSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'search'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.RegexSchema" title="Link to this definition">¶</a></dt>
 <dd><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">re.Pattern</span></code> that <strong>must</strong> match.</p>
 <p>Allows selecting a different regex pattern method (default is <code class="xref py py-meth docutils literal notranslate"><span class="pre">re.Pattern.search()</span></code>).</p>
-<p>Please note the difference between <a class="reference internal" href="#streamlink.plugin.api.validate._schemas.RegexSchema" title="streamlink.plugin.api.validate._schemas.RegexSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegexSchema</span></code></a>
+<p>Please note the difference between <a class="reference internal" href="#streamlink.validate._schemas.RegexSchema" title="streamlink.validate._schemas.RegexSchema"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegexSchema</span></code></a>
 and the <code class="xref py py-func docutils literal notranslate"><span class="pre">re.Pattern</span></code> validation.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
@@ -1526,17 +1532,17 @@ and the <code class="xref py py-func docutils literal notranslate"><span class="
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an instance of <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">bytes</span></code></p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the type of the input doesn't match the pattern's <code class="docutils literal notranslate"><span class="pre">str</span></code>/<code class="docutils literal notranslate"><span class="pre">bytes</span></code> type</p></li>
-<li><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the return value of the chosen regex pattern method is <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the input is not an instance of <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">bytes</span></code></p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the type of the input doesn't match the pattern's <code class="docutils literal notranslate"><span class="pre">str</span></code>/<code class="docutils literal notranslate"><span class="pre">bytes</span></code> type</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If the return value of the chosen regex pattern method is <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._schemas.XmlElementSchema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">XmlElementSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._schemas.XmlElementSchema" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._schemas.XmlElementSchema">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._schemas.</span></span><span class="sig-name descname"><span class="pre">XmlElementSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._schemas.XmlElementSchema" title="Link to this definition">¶</a></dt>
 <dd><p>Validate an XML element.</p>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
@@ -1560,14 +1566,14 @@ and the <code class="xref py py-func docutils literal notranslate"><span class="
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>tag</strong> (<em>Any</em><em> | </em><em>None</em>) -- Optional element tag validation</p></li>
-<li><p><strong>text</strong> (<em>Any</em><em> | </em><em>None</em>) -- Optional element text validation</p></li>
-<li><p><strong>attrib</strong> (<em>Any</em><em> | </em><em>None</em>) -- Optional element attributes validation</p></li>
-<li><p><strong>tail</strong> (<em>Any</em><em> | </em><em>None</em>) -- Optional element tail validation</p></li>
+<li><p><strong>tag</strong> (<em>Any</em>) -- Optional element tag validation</p></li>
+<li><p><strong>text</strong> (<em>Any</em>) -- Optional element text validation</p></li>
+<li><p><strong>attrib</strong> (<em>Any</em>) -- Optional element attributes validation</p></li>
+<li><p><strong>tail</strong> (<em>Any</em>) -- Optional element tail validation</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError" title="streamlink.plugin.api.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If <code class="docutils literal notranslate"><span class="pre">value</span></code> is not an <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A new <code class="xref py py-class docutils literal notranslate"><span class="pre">lxml.etree.Element</span></code> object, including a deep-copy of the input's child nodes,
@@ -1577,8 +1583,8 @@ with optionally validated <code class="docutils literal notranslate"><span class
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="streamlink.plugin.api.validate._exception.ValidationError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate._exception.</span></span><span class="sig-name descname"><span class="pre">ValidationError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">errkeywords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate._exception.ValidationError" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="streamlink.validate._exception.ValidationError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.validate._exception.</span></span><span class="sig-name descname"><span class="pre">ValidationError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">errkeywords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.validate._exception.ValidationError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
 <p>Currently not exposed in the public API.</p>
 <dl class="field-list simple">
@@ -1662,47 +1668,47 @@ with optionally validated <code class="docutils literal notranslate"><span class
 <li><a class="reference internal" href="#streamlink.plugin.api.validate._validate_pattern"><code class="docutils literal notranslate"><span class="pre">_validate_pattern()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.all"><code class="docutils literal notranslate"><span class="pre">all</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.any"><code class="docutils literal notranslate"><span class="pre">any</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.none_or_all"><code class="docutils literal notranslate"><span class="pre">none_or_all</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.transform"><code class="docutils literal notranslate"><span class="pre">transform</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.optional"><code class="docutils literal notranslate"><span class="pre">optional</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.list"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.attr"><code class="docutils literal notranslate"><span class="pre">attr</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.get"><code class="docutils literal notranslate"><span class="pre">get</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.union"><code class="docutils literal notranslate"><span class="pre">union</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.union_get"><code class="docutils literal notranslate"><span class="pre">union_get</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.regex"><code class="docutils literal notranslate"><span class="pre">regex</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.xml_element"><code class="docutils literal notranslate"><span class="pre">xml_element</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.contains"><code class="docutils literal notranslate"><span class="pre">contains()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.startswith"><code class="docutils literal notranslate"><span class="pre">startswith()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.endswith"><code class="docutils literal notranslate"><span class="pre">endswith()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.length"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.filter"><code class="docutils literal notranslate"><span class="pre">filter()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.get"><code class="docutils literal notranslate"><span class="pre">get</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.getattr"><code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.hasattr"><code class="docutils literal notranslate"><span class="pre">hasattr()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.filter"><code class="docutils literal notranslate"><span class="pre">filter()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.length"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.list"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.map"><code class="docutils literal notranslate"><span class="pre">map()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate.url"><code class="docutils literal notranslate"><span class="pre">url()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.none_or_all"><code class="docutils literal notranslate"><span class="pre">none_or_all</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.optional"><code class="docutils literal notranslate"><span class="pre">optional</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.parse_html"><code class="docutils literal notranslate"><span class="pre">parse_html()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.parse_json"><code class="docutils literal notranslate"><span class="pre">parse_json()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.parse_qsd"><code class="docutils literal notranslate"><span class="pre">parse_qsd()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.parse_xml"><code class="docutils literal notranslate"><span class="pre">parse_xml()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.regex"><code class="docutils literal notranslate"><span class="pre">regex</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.startswith"><code class="docutils literal notranslate"><span class="pre">startswith()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.transform"><code class="docutils literal notranslate"><span class="pre">transform</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.union"><code class="docutils literal notranslate"><span class="pre">union</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.union_get"><code class="docutils literal notranslate"><span class="pre">union_get</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.url"><code class="docutils literal notranslate"><span class="pre">url()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.xml_element"><code class="docutils literal notranslate"><span class="pre">xml_element</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.xml_find"><code class="docutils literal notranslate"><span class="pre">xml_find()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.xml_findall"><code class="docutils literal notranslate"><span class="pre">xml_findall()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.xml_findtext"><code class="docutils literal notranslate"><span class="pre">xml_findtext()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.xml_xpath"><code class="docutils literal notranslate"><span class="pre">xml_xpath()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.xml_xpath_string"><code class="docutils literal notranslate"><span class="pre">xml_xpath_string()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AllSchema"><code class="docutils literal notranslate"><span class="pre">AllSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AnySchema"><code class="docutils literal notranslate"><span class="pre">AnySchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.NoneOrAllSchema"><code class="docutils literal notranslate"><span class="pre">NoneOrAllSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.TransformSchema"><code class="docutils literal notranslate"><span class="pre">TransformSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.OptionalSchema"><code class="docutils literal notranslate"><span class="pre">OptionalSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.ListSchema"><code class="docutils literal notranslate"><span class="pre">ListSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.AttrSchema"><code class="docutils literal notranslate"><span class="pre">AttrSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.GetItemSchema"><code class="docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.UnionSchema"><code class="docutils literal notranslate"><span class="pre">UnionSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.UnionGetSchema"><code class="docutils literal notranslate"><span class="pre">UnionGetSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.RegexSchema"><code class="docutils literal notranslate"><span class="pre">RegexSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._schemas.XmlElementSchema"><code class="docutils literal notranslate"><span class="pre">XmlElementSchema</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.plugin.api.validate._exception.ValidationError"><code class="docutils literal notranslate"><span class="pre">ValidationError</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.AllSchema"><code class="docutils literal notranslate"><span class="pre">AllSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.AnySchema"><code class="docutils literal notranslate"><span class="pre">AnySchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.NoneOrAllSchema"><code class="docutils literal notranslate"><span class="pre">NoneOrAllSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema"><code class="docutils literal notranslate"><span class="pre">TransformSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.OptionalSchema"><code class="docutils literal notranslate"><span class="pre">OptionalSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.ListSchema"><code class="docutils literal notranslate"><span class="pre">ListSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.AttrSchema"><code class="docutils literal notranslate"><span class="pre">AttrSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.GetItemSchema"><code class="docutils literal notranslate"><span class="pre">GetItemSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.UnionSchema"><code class="docutils literal notranslate"><span class="pre">UnionSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.UnionGetSchema"><code class="docutils literal notranslate"><span class="pre">UnionGetSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.RegexSchema"><code class="docutils literal notranslate"><span class="pre">RegexSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._schemas.XmlElementSchema"><code class="docutils literal notranslate"><span class="pre">XmlElementSchema</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.validate._exception.ValidationError"><code class="docutils literal notranslate"><span class="pre">ValidationError</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1714,8 +1720,8 @@ with optionally validated <code class="docutils literal notranslate"><span class
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=06de18c4"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+</div><script src="../_static/documentation_options.js?v=efe5be6f"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>

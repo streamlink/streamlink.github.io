@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Webbrowser" href="webbrowser.html" /><link rel="prev" title="Validation schemas" href="validate.html" />
 
-    <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Stream - Streamlink 6.11.0 documentation">
+  <meta property="og:title" content="Stream - Streamlink 7.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Stream - Streamlink 6.11.0 documentation</title>
+        <title>Stream - Streamlink 7.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 6.11.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">6.11.0</pre>
+  <pre class="sidebar-versions-current">7.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/stream.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api/stream.html" class="">Latest</a></dd>
@@ -262,7 +262,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../donate.html">Donating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../applications.html">Streamlink Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../thirdparty.html">Third Party Applications</a></li>
 </ul>
@@ -330,7 +330,7 @@
 different stream types. Should only be created by plugins.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p>
+<dd class="field-odd"><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -375,7 +375,7 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
+<li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>url</strong> (<em>str</em>) -- The URL of the HTTP stream</p></li>
 <li><p><strong>buffered</strong> (<em>bool</em>) -- Wrap stream output in an additional reader-thread</p></li>
 <li><p><strong>kwargs</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.32.3)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
@@ -384,7 +384,7 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="streamlink.stream.HTTPStream.args">
-<span class="sig-name descname"><span class="pre">args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#streamlink.stream.HTTPStream.args" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#streamlink.stream.HTTPStream.args" title="Link to this definition">¶</a></dt>
 <dd><p>A dict of keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.32.3)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a>, such as method, headers, cookies, etc.</p>
 </dd></dl>
 
@@ -436,7 +436,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Dict</em>[str, <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.hls.hls.HLSStream"><em>HLSStream</em></a> | <a class="reference internal" href="#streamlink.stream.MuxedHLSStream" title="streamlink.stream.hls.hls.MuxedHLSStream"><em>MuxedHLSStream</em></a>]</p>
+<dd class="field-even"><p>dict[str, <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.hls.hls.HLSStream"><em>HLSStream</em></a> | <a class="reference internal" href="#streamlink.stream.MuxedHLSStream" title="streamlink.stream.hls.hls.MuxedHLSStream"><em>MuxedHLSStream</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -457,14 +457,14 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
+<li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>video</strong> (<em>str</em>) -- Video stream URL</p></li>
-<li><p><strong>audio</strong> (<em>str</em><em> | </em><em>List</em><em>[</em><em>str</em><em>]</em>) -- Audio stream URL or list of URLs</p></li>
-<li><p><strong>hlsstream</strong> (<em>Type</em><em>[</em><a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><em>HLSStream</em></a><em>] </em><em>| </em><em>None</em>) -- The <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> class of each sub-stream</p></li>
+<li><p><strong>audio</strong> (<em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) -- Audio stream URL or list of URLs</p></li>
+<li><p><strong>hlsstream</strong> (<em>type</em><em>[</em><a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><em>HLSStream</em></a><em>] </em><em>| </em><em>None</em>) -- The <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> class of each sub-stream</p></li>
 <li><p><strong>url_master</strong> (<em>str</em><em> | </em><em>None</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
 <li><p><strong>multivariant</strong> (<em>M3U8</em><em> | </em><em>None</em>) -- The parsed multivariant playlist</p></li>
 <li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
-<li><p><strong>ffmpeg_options</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Additional keyword arguments passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">ffmpegmux.FFMPEGMuxer</span></code></p></li>
+<li><p><strong>ffmpeg_options</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Additional keyword arguments passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">ffmpegmux.FFMPEGMuxer</span></code></p></li>
 <li><p><strong>kwargs</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a></p></li>
 </ul>
 </dd>
@@ -485,7 +485,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
+<li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>mpd</strong> (<em>MPD</em>) -- Parsed MPD manifest</p></li>
 <li><p><strong>video_representation</strong> (<em>Representation</em><em> | </em><em>None</em>) -- Video representation</p></li>
 <li><p><strong>audio_representation</strong> (<em>Representation</em><em> | </em><em>None</em>) -- Audio representation</p></li>
@@ -509,7 +509,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>Dict</em>[str, <a class="reference internal" href="#streamlink.stream.DASHStream" title="streamlink.stream.dash.dash.DASHStream"><em>DASHStream</em></a>]</p>
+<dd class="field-even"><p>dict[str, <a class="reference internal" href="#streamlink.stream.DASHStream" title="streamlink.stream.dash.dash.DASHStream"><em>DASHStream</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -609,8 +609,8 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=06de18c4"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+</div><script src="../_static/documentation_options.js?v=efe5be6f"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
