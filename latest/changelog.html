@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 7.0.0+40.g62ca000 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 7.0.0+41.gd532def documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 7.0.0+40.g62ca000 documentation</title>
+        <title>Changelog - Streamlink 7.0.0+41.gd532def documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.0.0+40.g62ca000 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.0.0+41.gd532def documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.0.0+40.g62ca000</pre>
+  <pre class="sidebar-versions-current">7.0.0+41.gd532def</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -325,6 +325,32 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-7-1-0-2024-12-28">
+<h2>streamlink 7.1.0 (2024-12-28)<a class="headerlink" href="#streamlink-7-1-0-2024-12-28" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--show-matchers=pluginname</span></code> CLI argument (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6287">#6287</a>)</p></li>
+<li><p>Updated: <code class="docutils literal notranslate"><span class="pre">Streamlink</span></code> and <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> constructors to allow both <code class="docutils literal notranslate"><span class="pre">Mapping</span></code> and <code class="docutils literal notranslate"><span class="pre">Options</span></code> as <code class="docutils literal notranslate"><span class="pre">options</span></code> types (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6311">#6311</a>)</p></li>
+<li><p>Fixed: uncaught DASH errors if FFmpeg is unavailable (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6306">#6306</a>)<br />
+As a side effect, if FFmpeg is unavailable, DASH streams will only return one sub-stream of the video and/or audio streams that would be muxed otherwise.</p></li>
+<li><p>Fixed: incorrect DASH segment duration in timeline manifests (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6323">#6323</a>)</p></li>
+<li><p>Fixed: dynamic DASH streams incorrectly requiring the <code class="docutils literal notranslate"><span class="pre">publishTime</span></code> and <code class="docutils literal notranslate"><span class="pre">availabilityStartTime</span></code> attributes (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6324">#6324</a>)</p></li>
+<li><p>Fixed: incorrect DASH segment and manifest base-URL joining (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6328">#6328</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6338">#6338</a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">matchers</span></code> and <code class="docutils literal notranslate"><span class="pre">arguments</span></code> objects being shared in inherited <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> classes (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6297">#6297</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6298">#6298</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>various: replaced verbose URL matcher regexes of most plugins with multiple simple ones (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6285">#6285</a>)</p></li>
+<li><p>bilibili: updated schema to include MPEG-TS HLS streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6332">#6332</a>)</p></li>
+<li><p>bilibili: added back high-res <code class="docutils literal notranslate"><span class="pre">HTTPStream</span></code> streams from the v1 API with higher priority (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5782">#5782</a>)</p></li>
+<li><p>mangomolo: replaced media.gov.kw with 51.com.kw (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6353">#6353</a>)</p></li>
+<li><p>soop: rewritten authentication (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6321">#6321</a>)</p></li>
+<li><p>vkplay: renamed to vkvideo and updated matcher (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6319">#6319</a>)</p></li>
+<li><p>welt: fixed schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6301">#6301</a>)</p></li>
+</ul>
+</li>
+<li><p>Build: removed <code class="docutils literal notranslate"><span class="pre">typing-extensions</span></code> from runtime dependencies (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6314">#6314</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/7.0.0...7.1.0">Full changelog</a></p>
+</section>
 <section id="streamlink-7-0-0-2024-11-04">
 <h2>streamlink 7.0.0 (2024-11-04)<a class="headerlink" href="#streamlink-7-0-0-2024-11-04" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -1988,6 +2014,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-7-1-0-2024-12-28">streamlink 7.1.0 (2024-12-28)</a></li>
 <li><a class="reference internal" href="#streamlink-7-0-0-2024-11-04">streamlink 7.0.0 (2024-11-04)</a></li>
 <li><a class="reference internal" href="#streamlink-6-11-0-2024-10-01">streamlink 6.11.0 (2024-10-01)</a></li>
 <li><a class="reference internal" href="#streamlink-6-10-0-2024-09-06">streamlink 6.10.0 (2024-09-06)</a></li>
@@ -2089,7 +2116,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=5788a319"></script>
+</div><script src="_static/documentation_options.js?v=05ce14cb"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
