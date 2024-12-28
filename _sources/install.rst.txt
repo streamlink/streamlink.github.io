@@ -224,7 +224,7 @@ Linux and BSD
 .. _FreeBSD (pkg): https://ports.freebsd.org/cgi/ports.cgi?query=streamlink&stype=name
 .. _FreeBSD (ports): https://www.freshports.org/multimedia/streamlink
 .. _Gentoo Linux: https://packages.gentoo.org/package/net-misc/streamlink
-.. _NixOS: https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink
+.. _NixOS: https://github.com/NixOS/nixpkgs/tree/master/pkgs/by-name/st/streamlink
 .. _openSUSE: https://build.opensuse.org/package/show/multimedia:apps/streamlink
 .. _Ubuntu: https://packages.ubuntu.com/noble/streamlink
 .. _Solus: https://github.com/getsolus/packages/tree/main/packages/s/streamlink
@@ -489,9 +489,6 @@ Streamlink defines a `build system <pyproject.toml_>`__ according to `PEP-517`_ 
       - `trio-websocket`_
       - Used for WebSocket connections on top of the async trio framework
     * - runtime
-      - `typing-extensions`_
-      - Used for backporting runtime support of certain type hints on older Python versions
-    * - runtime
       - `urllib3`_
       - Used internally by `requests`_, defined as direct dependency
     * - runtime
@@ -523,7 +520,6 @@ Streamlink defines a `build system <pyproject.toml_>`__ according to `PEP-517`_ 
 .. _requests: https://requests.readthedocs.io/en/latest/
 .. _trio: https://trio.readthedocs.io/en/stable/
 .. _trio-websocket: https://trio-websocket.readthedocs.io/en/stable/
-.. _typing-extensions: https://typing-extensions.readthedocs.io/en/stable/
 .. _urllib3: https://urllib3.readthedocs.io/en/stable/
 .. _websocket-client: https://pypi.org/project/websocket-client/
 
