@@ -11,13 +11,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugin - Streamlink 7.1.1+8.g3d6a5fe documentation">
+  <meta property="og:title" content="Plugin - Streamlink 7.1.1+9.gf88dfae documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugin - Streamlink 7.1.1+8.g3d6a5fe documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+        <title>Plugin - Streamlink 7.1.1+9.gf88dfae documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 7.1.1+8.g3d6a5fe documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.1.1+9.gf88dfae documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.1.1+8.g3d6a5fe</pre>
+  <pre class="sidebar-versions-current">7.1.1+9.gf88dfae</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/plugin.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/plugin.html" class="version-current">Latest</a></dd>
@@ -544,9 +544,9 @@ according to the order of which they have been defined (top to bottom) will be r
 <a class="reference internal" href="#streamlink.plugin.Plugin.matcher" title="streamlink.plugin.Plugin.matcher"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matcher</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.match" title="streamlink.plugin.Plugin.match"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.match</span></code></a> attributes on the <a class="reference internal" href="#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plugin</span></code></a> instance.
 The <a class="reference internal" href="#streamlink.plugin.Plugin.matchers" title="streamlink.plugin.Plugin.matchers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matchers</span></code></a> and <a class="reference internal" href="#streamlink.plugin.Plugin.matches" title="streamlink.plugin.Plugin.matches"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Plugin.matches</span></code></a> attributes are affected by all defined matchers,
 and both support referencing matchers and matches by matcher index and name.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
-<span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
 
 
 <span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;https?://example:1234/(?:foo|bar)/(?P&lt;name&gt;[^/]+)&quot;</span><span class="p">))</span>
@@ -558,7 +558,7 @@ and both support referencing matchers and matches by matcher index and name.</p>
 <span class="s2">    )</span>
 <span class="s2">    /.+\.m3u8</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">))</span>
-<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
 </div>
@@ -585,7 +585,7 @@ and both support referencing matchers and matches by matcher index and name.</p>
 can be JSON-serialized. <code class="docutils literal notranslate"><span class="pre">type_args</span></code> and <code class="docutils literal notranslate"><span class="pre">type_kwargs</span></code> can be used to parametrize the type-argument function,
 but their values <strong>must</strong> only consist of literal objects.</p>
 <p>The available functions are defined in the <a class="reference internal" href="#streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY" title="streamlink.plugin.plugin._PLUGINARGUMENT_TYPE_REGISTRY"><code class="xref py py-data docutils literal notranslate"><span class="pre">_PLUGINARGUMENT_TYPE_REGISTRY</span></code></a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginargument</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginargument</span>
 
 
 <span class="nd">@pluginargument</span><span class="p">(</span>
@@ -600,7 +600,7 @@ but their values <strong>must</strong> only consist of literal objects.</p>
     <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;PASSWORD&quot;</span><span class="p">,</span>
     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The password for your account.&quot;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
 </div>
@@ -738,7 +738,7 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=72105e34"></script>
+</div><script src="../_static/documentation_options.js?v=bed39b99"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>

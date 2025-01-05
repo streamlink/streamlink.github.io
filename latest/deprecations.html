@@ -11,13 +11,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Deprecations - Streamlink 7.1.1+8.g3d6a5fe documentation">
+  <meta property="og:title" content="Deprecations - Streamlink 7.1.1+9.gf88dfae documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Deprecations - Streamlink 7.1.1+8.g3d6a5fe documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+        <title>Deprecations - Streamlink 7.1.1+9.gf88dfae documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.1.1+8.g3d6a5fe documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.1.1+9.gf88dfae documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.1.1+8.g3d6a5fe</pre>
+  <pre class="sidebar-versions-current">7.1.1+9.gf88dfae</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/deprecations.html" class="">Stable</a></dd>
     <dd><a href="/latest/deprecations.html" class="version-current">Latest</a></dd>
@@ -479,11 +479,11 @@ plugin loading mechanism in the future. Plugins now define their matching URLs a
 When side-loading plugins which don't implement the new <code class="docutils literal notranslate"><span class="pre">&#64;pluginmatcher</span></code> but implement the old classmethods, a deprecation
 message will be written to the info log output for the first plugin that gets resolved this way.</p>
 <p><strong>Deprecated plugin URL matching</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">Plugin</span>
-<span class="kn">from</span> <span class="nn">streamlink.plugin.plugin</span> <span class="kn">import</span> <span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">NORMAL_PRIORITY</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plugin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">NORMAL_PRIORITY</span>
 
-<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
     <span class="n">_re_url_one</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
         <span class="sa">r</span><span class="s2">&quot;https?://pattern-(?P&lt;param&gt;one)&quot;</span>
     <span class="p">)</span>
@@ -492,18 +492,18 @@ message will be written to the info log output for the first plugin that gets re
 <span class="s2">    &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">can_handle_url</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">can_handle_url</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_re_url_one</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> \
                <span class="ow">or</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_re_url_two</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">priority</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">priority</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_re_url_two</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">HIGH_PRIORITY</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">NORMAL_PRIORITY</span>
 
-    <span class="k">def</span> <span class="nf">_get_streams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_streams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">match_one</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_re_url_one</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
         <span class="n">match_two</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_re_url_two</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
         <span class="n">match</span> <span class="o">=</span> <span class="n">match_one</span> <span class="ow">or</span> <span class="n">match_two</span>
@@ -517,8 +517,8 @@ message will be written to the info log output for the first plugin that gets re
 </pre></div>
 </div>
 <p><strong>Migration</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
 
 <span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
     <span class="sa">r</span><span class="s2">&quot;https?://pattern-(?P&lt;param&gt;one)&quot;</span>
@@ -526,8 +526,8 @@ message will be written to the info log output for the first plugin that gets re
 <span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">priority</span><span class="o">=</span><span class="n">HIGH_PRIORITY</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">    https?://pattern-(?P&lt;param&gt;two)</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">))</span>
-<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
-   <span class="k">def</span> <span class="nf">_get_streams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyPlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
+   <span class="k">def</span><span class="w"> </span><span class="nf">_get_streams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
        <span class="n">param</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;param&quot;</span><span class="p">)</span>
        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
            <span class="k">yield</span> <span class="o">...</span>
@@ -794,7 +794,7 @@ Old and deprecated paths will be dropped in the future.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=72105e34"></script>
+</div><script src="_static/documentation_options.js?v=bed39b99"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
