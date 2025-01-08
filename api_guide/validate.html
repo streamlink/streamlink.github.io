@@ -11,13 +11,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Validation schemas - Streamlink 7.1.1 documentation">
+  <meta property="og:title" content="Validation schemas - Streamlink 7.1.2 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Validation schemas - Streamlink 7.1.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+        <title>Validation schemas - Streamlink 7.1.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 7.1.1 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.1.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.1.1</pre>
+  <pre class="sidebar-versions-current">7.1.2</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api_guide/validate.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api_guide/validate.html" class="">Latest</a></dd>
@@ -342,7 +342,7 @@ for plugin implementors.</p>
 <section id="simple-schemas">
 <h3>Simple schemas<a class="headerlink" href="#simple-schemas" title="Link to this heading">¶</a></h3>
 <p>Let's begin with a few simple validation schemas which are not particularly useful yet.</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">streamlink.plugin.api</span> <span class="kn">import</span> <span class="n">validate</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">schema_one</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">schema_two</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
@@ -400,7 +400,7 @@ is raised.</p>
 <section id="extracting-json-data">
 <h3>Extracting JSON data<a class="headerlink" href="#extracting-json-data" title="Link to this heading">¶</a></h3>
 <p>The next example shows how to read an optional integer value from JSON data.</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">streamlink.plugin.api</span> <span class="kn">import</span> <span class="n">validate</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">json_schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="nb">str</span><span class="p">,</span>
@@ -470,7 +470,7 @@ so we can instead return an empty list of streams in our plugin implementation a
 Validation errors are only supposed to be raised when an actual error happened due to unexpected data,
 not when streams are offline or inaccessible.</p>
 <p>Thanks to validation schemas, we can do all this declaratively without causing a mess when doing this programmatically.</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">streamlink.plugin.api</span> <span class="kn">import</span> <span class="n">validate</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">validate</span><span class="o">.</span><span class="n">parse_html</span><span class="p">(),</span>
@@ -582,16 +582,16 @@ as well as in each HTTP-verb method like <code class="docutils literal notransla
 <p>Here's a simple plugin implementation with the same schema from the <a class="reference internal" href="#finding-stream-urls-in-html">Finding stream URLs in HTML</a> example above.</p>
 <div class="literal-block-wrapper docutils container" id="example-plugin">
 <div class="code-block-caption"><span class="caption-text">example-plugin.py</span><a class="headerlink" href="#example-plugin" title="Link to this code">¶</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
-<span class="kn">from</span> <span class="nn">streamlink.plugin</span> <span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
-<span class="kn">from</span> <span class="nn">streamlink.plugin.api</span> <span class="kn">import</span> <span class="n">validate</span>
-<span class="kn">from</span> <span class="nn">streamlink.stream.hls</span> <span class="kn">import</span> <span class="n">HLSStream</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plugin</span><span class="p">,</span> <span class="n">pluginmatcher</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.stream.hls</span><span class="w"> </span><span class="kn">import</span> <span class="n">HLSStream</span>
 
 
 <span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://example\.tld/&quot;</span><span class="p">))</span>
-<span class="k">class</span> <span class="nc">ExamplePlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">_get_streams</span><span class="p">():</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExamplePlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_streams</span><span class="p">():</span>
         <span class="n">hls_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
             <span class="n">validate</span><span class="o">.</span><span class="n">parse_html</span><span class="p">(),</span>
             <span class="n">validate</span><span class="o">.</span><span class="n">xml_xpath_string</span><span class="p">(</span><span class="s2">&quot;.//*[@data-player][1]/@data-player&quot;</span><span class="p">),</span>
@@ -650,7 +650,7 @@ as well as in each HTTP-verb method like <code class="docutils literal notransla
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2024, Streamlink
+                Copyright &#169; 2025, Streamlink
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -696,7 +696,7 @@ as well as in each HTTP-verb method like <code class="docutils literal notransla
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=3a48702f"></script>
+</div><script src="../_static/documentation_options.js?v=0db0fa45"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
