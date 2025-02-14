@@ -11,17 +11,17 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Command-Line Interface - Streamlink 7.1.2 documentation">
+  <meta property="og:title" content="Command-Line Interface - Streamlink 7.1.3 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Command-Line Interface - Streamlink 7.1.2 documentation</title>
+        <title>Command-Line Interface - Streamlink 7.1.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=4504cacd" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=b5ca643f" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.1.2 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.1.3 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.1.2</pre>
+  <pre class="sidebar-versions-current">7.1.3</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="">Latest</a></dd>
@@ -512,7 +512,10 @@ merged on top of each other where the last config has highest priority.</p>
 <dd><p>Set a custom logging format.</p>
 <p>See the Python standard library's <code class="code docutils literal notranslate"><span class="pre">logging.Formatter</span></code> docs for more information about the logging format
 and the available <code class="code docutils literal notranslate"><span class="pre">LogRecord</span></code> attributes. Streamlink's formatter uses the curly brace style.</p>
-<p>The default format depends on the chosen log level (may include the <code class="code docutils literal notranslate"><span class="pre">asctime</span></code> attribute).</p>
+<p>The default format depends on the chosen log level.</p>
+<p>For verbose levels (<code class="code docutils literal notranslate"><span class="pre">trace</span></code> and <code class="code docutils literal notranslate"><span class="pre">all</span></code>):</p>
+<p>Default is: <strong>&quot;[{asctime}][{name}][{levelname}] {message}&quot;</strong>.</p>
+<p>Otherwise:</p>
 <p>Default is: <strong>&quot;[{name}][{levelname}] {message}&quot;</strong>.</p>
 </dd></dl>
 
@@ -521,7 +524,10 @@ and the available <code class="code docutils literal notranslate"><span class="p
 <span class="sig-name descname"><span class="pre">--logdateformat</span></span><span class="sig-prename descclassname"> <span class="pre">DATEFORMAT</span></span><a class="headerlink" href="#cmdoption-logdateformat" title="Link to this definition">¶</a></dt>
 <dd><p>Set a custom logging date format.</p>
 <p>This formats the <code class="code docutils literal notranslate"><span class="pre">LogRecord</span></code>'s <code class="code docutils literal notranslate"><span class="pre">asctime</span></code> attribute via <code class="code docutils literal notranslate"><span class="pre">strftime()</span></code>.</p>
-<p>The default date format depends on the chosen log level (may include fractions).</p>
+<p>The default date format depends on the chosen log level.</p>
+<p>For verbose levels (<code class="code docutils literal notranslate"><span class="pre">trace</span></code> and <code class="code docutils literal notranslate"><span class="pre">all</span></code>):</p>
+<p>Default is: <strong>&quot;%H:%M:%S.%f&quot;</strong>.</p>
+<p>Otherwise:</p>
 <p>Default is: <strong>&quot;%H:%M:%S&quot;</strong>.</p>
 </dd></dl>
 
@@ -1540,7 +1546,7 @@ When enabled, it stays completely hidden and doesn't require a desktop environme
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-tf1-password">
 <span class="sig-name descname"><span class="pre">--tf1-password</span></span><span class="sig-prename descclassname"> <span class="pre">PASSWORD</span></span><a class="headerlink" href="#cmdoption-tf1-password" title="Link to this definition">¶</a></dt>
-<dd><p>A tf1.fr account password to use with --tf1-username.</p>
+<dd><p>A tf1.fr account password to use with <a class="reference internal" href="#cmdoption-tf1-email"><code class="xref std std-option docutils literal notranslate"><span class="pre">--tf1-email</span></code></a>.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1812,7 +1818,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=0db0fa45"></script>
+</div><script src="_static/documentation_options.js?v=a9c87e5c"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>

@@ -63,7 +63,7 @@ Windows
       - See the `Windows binaries`_ section below
     * - :octicon:`verified` Portable
       - See the `Windows binaries`_ section below
-    * - :octicon:`verified` Nightly builds
+    * - :octicon:`verified` Preview builds
       - See the `Windows binaries`_ section below
     * - :octicon:`verified` Python pip
       - See the `PyPI package and source code`_ section below
@@ -132,7 +132,7 @@ Linux and BSD
       - Installing
     * - :octicon:`verified` AppImage
       - See the `Linux AppImages`_ section below
-    * - :octicon:`verified` AppImage nightly builds
+    * - :octicon:`verified` AppImage preview builds
       - See the `Linux AppImages`_ section below
     * - :octicon:`verified` Python pip
       - See the `PyPI package and source code`_ section below
@@ -301,9 +301,6 @@ PyPI package and source code
 
 If a package is not available on your platform, or if it's out of date,
 then Streamlink can be installed via `pip`_, the Python package manager.
-
-Before running :command:`pip`, make sure that it's the Python 3 version of `pip`_ (to check, run :command:`pip --version`).
-On some systems, this isn't the case by default and an alternative, like :command:`pip3` for example, needs to be run instead.
 
 .. warning::
 
@@ -546,21 +543,21 @@ Windows binaries
 
         **Windows stable releases**
         ^^^
-        :fas:`download` GitHub releases page
+        :fas:`download;fa-2x` GitHub releases page
 
-        The most recent Streamlink release
+        :fas:`check-circle;sd-text-success fa-lg` The most recent Streamlink release
 
     .. grid-item-card::
         :padding: 3
-        :link: https://github.com/streamlink/windows-builds/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster
-        :link-alt: Windows nightly builds
+        :link: https://github.com/streamlink/windows-builds/actions/workflows/preview-build.yml
+        :link-alt: Windows preview builds
         :text-align: center
 
-        **Windows nightly builds**
+        **Windows preview builds**
         ^^^
-        :fas:`download` GitHub actions build artifacts
+        :fas:`download;fa-2x` GitHub actions build artifacts
 
-        Built once each day at midnight UTC |br| :sub:`GitHub account required`
+        :fab:`github;fa-lg` Account required
 
 **Flavors**
 
@@ -657,21 +654,21 @@ Linux AppImages
 
         **AppImage stable releases**
         ^^^
-        :fas:`download` GitHub releases page
+        :fas:`download;fa-2x` GitHub releases page
 
-        The most recent Streamlink release
+        :fas:`check-circle;sd-text-success fa-lg` The most recent Streamlink release
 
     .. grid-item-card::
         :padding: 3
-        :link: https://github.com/streamlink/streamlink-appimage/actions?query=event%3Aschedule+is%3Asuccess+branch%3Amaster
-        :link-alt: AppImage nightly builds
+        :link: https://github.com/streamlink/streamlink-appimage/actions/workflows/preview-build.yml
+        :link-alt: AppImage preview builds
         :text-align: center
 
-        **AppImage nightly builds**
+        **AppImage preview builds**
         ^^^
-        :fas:`download` GitHub actions build artifacts
+        :fas:`download;fa-2x` GitHub actions build artifacts
 
-        Built once each day at midnight UTC |br| :sub:`GitHub account required`
+        :fab:`github;fa-lg` Account required
 
 **Architectures**
 
@@ -692,7 +689,7 @@ Linux AppImages
 
 **Contents**
 
-.. grid:: 2
+.. grid:: 3
     :padding: 0
     :class-container: grid-with-images
 
@@ -717,6 +714,17 @@ Linux AppImages
             :alt: Streamlink
 
         Streamlink |br| :sub:`and dependencies`
+
+    .. grid-item-card::
+        :padding: 3
+        :link: https://github.com/streamlink/FFmpeg-Builds
+        :link-alt: FFmpeg, required for muxing streams
+        :text-align: center
+
+        .. image:: _static/icon-ffmpeg.svg
+            :alt: FFmpeg
+
+        FFmpeg |br| :sub:`for muxing streams` |br| :sub:`(optional)`
 
 **How-To**
 
