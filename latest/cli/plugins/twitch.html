@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Plugins" href="../../plugins.html" /><link rel="prev" title="Plugin specific usage" href="../plugins.html" />
 
-    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.2.0 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Twitch - Streamlink 7.1.2+29.g5a3f7c2 documentation">
+  <meta property="og:title" content="Twitch - Streamlink 7.1.3+1.g9705129 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Twitch - Streamlink 7.1.2+29.g5a3f7c2 documentation</title>
+        <title>Twitch - Streamlink 7.1.3+1.g9705129 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Streamlink 7.1.2+29.g5a3f7c2 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Streamlink 7.1.3+1.g9705129 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.1.2+29.g5a3f7c2</pre>
+  <pre class="sidebar-versions-current">7.1.3+1.g9705129</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins/twitch.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/plugins/twitch.html" class="version-current">Latest</a></dd>
@@ -340,7 +340,7 @@ in use by their website for several years and shut down the old, private REST AP
 website and it then needs to be set as a certain request header on these API endpoints. This unfortunately can't be automated
 easily by applications like Streamlink, so a new authentication feature was never implemented.</p>
 <p><strong>In order to get the personal OAuth token from Twitch's website which identifies your account</strong>, open Twitch.tv in your web
-browser and after a successful login, open the developer tools by pressing <kbd class="kbd docutils literal notranslate">F12</kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">SHIFT</kbd>+<kbd class="kbd docutils literal notranslate">I</kbd></kbd>. Then navigate to
+browser and after a successful login, open the developer tools by pressing <kbd class="kbd docutils literal notranslate">F12</kbd> or <kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">SHIFT</kbd>+<kbd class="kbd docutils literal notranslate">I</kbd>. Then navigate to
 the &quot;Console&quot; tab or its equivalent of your web browser and execute the following JavaScript snippet, which reads the value of
 the <code class="docutils literal notranslate"><span class="pre">auth-token</span></code> cookie, if it exists:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;; &quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="nx">item</span><span class="p">=&gt;</span><span class="nx">item</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;auth-token=&quot;</span><span class="p">))</span><span class="o">?</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="mf">1</span><span class="p">]</span>
@@ -516,7 +516,7 @@ without causing any stuttering, e.g. when running out out available data.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=eda8a899"></script>
+</div><script src="../../_static/documentation_options.js?v=9ff0560e"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
