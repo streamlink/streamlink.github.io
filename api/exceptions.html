@@ -5,18 +5,18 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Changelog" href="../changelog.html" /><link rel="prev" title="Webbrowser" href="webbrowser.html" />
 
-    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Exceptions - Streamlink 7.1.3 documentation">
+  <meta property="og:title" content="Exceptions - Streamlink 7.2.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Exceptions - Streamlink 7.1.3 documentation</title>
+        <title>Exceptions - Streamlink 7.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 7.1.3 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.1.3</pre>
+  <pre class="sidebar-versions-current">7.2.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/exceptions.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api/exceptions.html" class="">Latest</a></dd>
@@ -323,21 +323,21 @@
 <h1>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">¶</a></h1>
 <dl class="py exception">
 <dt class="sig sig-object py" id="streamlink.exceptions.StreamlinkError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamlinkError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamlinkError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamlinkError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamlinkError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Any error caused by Streamlink will be caught with this exception.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="streamlink.exceptions.PluginError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">PluginError</span></span><a class="headerlink" href="#streamlink.exceptions.PluginError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">PluginError</span></span><a class="headerlink" href="#streamlink.exceptions.PluginError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
 <p>Plugin related error.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="streamlink.exceptions.FatalPluginError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">FatalPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.FatalPluginError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">FatalPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.FatalPluginError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.PluginError" title="streamlink.exceptions.PluginError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginError</span></code></a></p>
 <p>Plugin related error that cannot be recovered from.</p>
 <p>Plugins should use this <code class="docutils literal notranslate"><span class="pre">Exception</span></code> when errors that can
@@ -347,7 +347,7 @@ a user's input is required and none can be given.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="streamlink.exceptions.NoPluginError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.NoPluginError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoPluginError</span></span><a class="headerlink" href="#streamlink.exceptions.NoPluginError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
 <p>Error raised by <code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url()</span></code>
 and <code class="xref py py-meth docutils literal notranslate"><span class="pre">Streamlink.resolve_url_no_redirect()</span></code>
@@ -356,7 +356,7 @@ when no plugin could be found for the given input URL.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="streamlink.exceptions.NoStreamsError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoStreamsError</span></span><a class="headerlink" href="#streamlink.exceptions.NoStreamsError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoStreamsError</span></span><a class="headerlink" href="#streamlink.exceptions.NoStreamsError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
 <p>Plugins should use this <code class="docutils literal notranslate"><span class="pre">Exception</span></code> in <a class="reference internal" href="plugin.html#streamlink.plugin.Plugin._get_streams" title="streamlink.plugin.Plugin._get_streams"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Plugin._get_streams()</span></code></a>
 when returning <code class="docutils literal notranslate"><span class="pre">None</span></code> or an empty <code class="docutils literal notranslate"><span class="pre">dict</span></code> is not possible, e.g. in nested function calls.</p>
@@ -364,20 +364,20 @@ when returning <code class="docutils literal notranslate"><span class="pre">None
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="streamlink.exceptions.StreamError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.exceptions.</span></span><span class="sig-name descname"><span class="pre">StreamError</span></span><a class="headerlink" href="#streamlink.exceptions.StreamError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
 <p>Stream related error.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="streamlink.webbrowser.exceptions.WebbrowserError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.exceptions.</span></span><span class="sig-name descname"><span class="pre">WebbrowserError</span></span><a class="headerlink" href="#streamlink.webbrowser.exceptions.WebbrowserError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.exceptions.</span></span><span class="sig-name descname"><span class="pre">WebbrowserError</span></span><a class="headerlink" href="#streamlink.webbrowser.exceptions.WebbrowserError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.exceptions.StreamlinkError" title="streamlink.exceptions.StreamlinkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamlinkError</span></code></a></p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.exceptions.CDPError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.exceptions.</span></span><span class="sig-name descname"><span class="pre">CDPError</span></span><a class="headerlink" href="#streamlink.webbrowser.cdp.exceptions.CDPError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.exceptions.</span></span><span class="sig-name descname"><span class="pre">CDPError</span></span><a class="headerlink" href="#streamlink.webbrowser.cdp.exceptions.CDPError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.webbrowser.exceptions.WebbrowserError" title="streamlink.webbrowser.exceptions.WebbrowserError"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebbrowserError</span></code></a></p>
 </dd></dl>
 
@@ -459,7 +459,7 @@ when returning <code class="docutils literal notranslate"><span class="pre">None
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=a9c87e5c"></script>
+</div><script src="../_static/documentation_options.js?v=0c4f2add"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
