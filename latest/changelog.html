@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 7.1.3+34.g88addaf documentation">
+  <meta property="og:title" content="Changelog - Streamlink 7.1.3+35.g90d1095 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 7.1.3+34.g88addaf documentation</title>
+        <title>Changelog - Streamlink 7.1.3+35.g90d1095 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.1.3+34.g88addaf documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.1.3+35.g90d1095 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.1.3+34.g88addaf</pre>
+  <pre class="sidebar-versions-current">7.1.3+35.g90d1095</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -325,6 +325,31 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-7-2-0-2025-04-04">
+<h2>streamlink 7.2.0 (2025-04-04)<a class="headerlink" href="#streamlink-7-2-0-2025-04-04" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">decompress</span></code> extras marker to Streamlink’s optional dependencies for installing <code class="docutils literal notranslate"><span class="pre">brotli</span></code> and <code class="docutils literal notranslate"><span class="pre">zstandard</span></code>, which were previously implied optional dependencies via the transitive dependency <code class="docutils literal notranslate"><span class="pre">urllib3</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6451">#6451</a>)</p></li>
+<li><p>Changed: <code class="docutils literal notranslate"><span class="pre">--retry-streams</span></code> to allow a value of <code class="docutils literal notranslate"><span class="pre">0</span></code>, so it can be unset again if set previously (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6455">#6455</a>)</p></li>
+<li><p>Changed: <code class="docutils literal notranslate"><span class="pre">--quiet</span></code> to suppress all text output including errors, not just log output (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6461">#6461</a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">--logfile</span></code> affecting the console output stream (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6461">#6461</a>)</p></li>
+<li><p>Fixed: broken user input prompt behavior on missing or non-interactive I/O streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6461">#6461</a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> classes not requiring a matching matcher (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6466">#6466</a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">--hls-audio-select</span></code> not being case-insensitive and only comparing input values rather than resolved language codes (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6469">#6469</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6479">#6479</a>)</p></li>
+<li><p>Updated: Chrome Devtool Protocol interfaces, to match recent Chromium versions (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6481">#6481</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>euronews: rewritten and fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6452">#6452</a>)</p></li>
+<li><p>kick: refactored plugin, fixed clip matcher and 403 API responses (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6491">#6491</a>)</p></li>
+<li><p>nicolive: fixed plugin not loading cookies from WebSocket messages (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6441">#6441</a>)</p></li>
+<li><p>nicolive: made the plugin always filter out blank HLS segments (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6476">#6476</a>)</p></li>
+<li><p>nowtvtr: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6488">#6488</a>)</p></li>
+<li><p>okru: canonicalize mobile URLs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6444">#6444</a>)</p></li>
+<li><p>tf1: fixed stream matcher (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6439">#6439</a>)</p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/7.1.3...7.2.0">Full changelog</a></p>
+</section>
 <section id="streamlink-7-1-3-2025-02-14">
 <h2>streamlink 7.1.3 (2025-02-14)<a class="headerlink" href="#streamlink-7-1-3-2025-02-14" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -2059,6 +2084,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-7-2-0-2025-04-04">streamlink 7.2.0 (2025-04-04)</a></li>
 <li><a class="reference internal" href="#streamlink-7-1-3-2025-02-14">streamlink 7.1.3 (2025-02-14)</a></li>
 <li><a class="reference internal" href="#streamlink-7-1-2-2025-01-08">streamlink 7.1.2 (2025-01-08)</a></li>
 <li><a class="reference internal" href="#streamlink-7-1-1-2024-12-28">streamlink 7.1.1 (2024-12-28)</a></li>
@@ -2164,7 +2190,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=06359528"></script>
+</div><script src="_static/documentation_options.js?v=30ca989b"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
