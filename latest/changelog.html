@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 7.2.0+15.g7098911 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 7.2.0+16.g4167b0b documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 7.2.0+15.g7098911 documentation</title>
+        <title>Changelog - Streamlink 7.2.0+16.g4167b0b documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.2.0+15.g7098911 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.2.0+16.g4167b0b documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.2.0+15.g7098911</pre>
+  <pre class="sidebar-versions-current">7.2.0+16.g4167b0b</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -325,6 +325,16 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-7-3-0-2025-04-26">
+<h2>streamlink 7.3.0 (2025-04-26)<a class="headerlink" href="#streamlink-7-3-0-2025-04-26" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Changed: download progress to use the console output stream rather than always <code class="docutils literal notranslate"><span class="pre">stderr</span></code>, which previously caused log and progress messages to be interweaved (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6497">#6497</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6496">#6496</a>)</p></li>
+<li><p>Changed: download progress output to be a status message line at the bottom of the console output, unless <code class="docutils literal notranslate"><span class="pre">--progress=force</span></code> is set in non-interactive or unsupported environments, in which case less frequent regular progress messages are written (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6497">#6497</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6496">#6496</a>)</p></li>
+<li><p>Fixed: potential division by zero error when formatting progress output (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6498">#6498</a>)</p></li>
+<li><p>Build: bumped <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> requirement from <code class="docutils literal notranslate"><span class="pre">&gt;=65.6</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=77</span></code> and switched to PEP 639 project license metadata format (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6502">#6502</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/7.2.0...7.3.0">Full changelog</a></p>
+</section>
 <section id="streamlink-7-2-0-2025-04-04">
 <h2>streamlink 7.2.0 (2025-04-04)<a class="headerlink" href="#streamlink-7-2-0-2025-04-04" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -2084,6 +2094,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-7-3-0-2025-04-26">streamlink 7.3.0 (2025-04-26)</a></li>
 <li><a class="reference internal" href="#streamlink-7-2-0-2025-04-04">streamlink 7.2.0 (2025-04-04)</a></li>
 <li><a class="reference internal" href="#streamlink-7-1-3-2025-02-14">streamlink 7.1.3 (2025-02-14)</a></li>
 <li><a class="reference internal" href="#streamlink-7-1-2-2025-01-08">streamlink 7.1.2 (2025-01-08)</a></li>
@@ -2190,7 +2201,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=b55625f4"></script>
+</div><script src="_static/documentation_options.js?v=bc0b4221"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
