@@ -73,6 +73,13 @@ Windows
             choco install streamlink
 
         `Installing Chocolatey packages`_
+    * - :octicon:`package` `MSYS2`_
+      - .. code-block:: bat
+
+            pacman -Ss streamlink
+            pacman -S mingw-w64-x86_64-streamlink
+
+        `Installing MSYS2 packages`_
     * - :octicon:`package-dependents` `Scoop`_
       - .. code-block::
 
@@ -88,9 +95,11 @@ Windows
         `Installing Winget packages`_
 
 .. _Chocolatey: https://chocolatey.org/packages/streamlink
+.. _MSYS2: https://packages.msys2.org/base/mingw-w64-streamlink
 .. _Scoop: https://scoop.sh/#/apps?q=streamlink&s=0&d=1&o=true
 .. _Windows Package Manager: https://github.com/microsoft/winget-pkgs/tree/master/manifests/s/Streamlink/Streamlink
 .. _Installing Chocolatey packages: https://chocolatey.org
+.. _Installing MSYS2 packages: https://www.msys2.org
 .. _Installing Scoop packages: https://scoop.sh
 .. _Installing Winget packages: https://docs.microsoft.com/en-us/windows/package-manager/
 
@@ -233,47 +242,6 @@ Linux and BSD
 .. _Installing AUR packages: https://wiki.archlinux.org/index.php/Arch_User_Repository
 .. _Installing Debian backported packages: https://wiki.debian.org/Backports
 .. _NixOS channel: https://search.nixos.org/packages?show=streamlink&query=streamlink
-
-
-Package maintainers
--------------------
-
-.. list-table::
-    :header-rows: 1
-    :class: table-custom-layout
-
-    * - Distribution / Platform
-      - Maintainer
-    * - Alpine Linux
-      - Hoang Nguyen <folliekazetani at protonmail.com>
-    * - ALT Linux
-      - Vitaly Lipatov <lav at altlinux.ru>
-    * - Arch
-      - Giancarlo Razzolini <grazzolini at archlinux.org>
-    * - Arch (aur, git)
-      - Josip Ponjavic <josipponjavic at gmail.com>
-    * - Chocolatey
-      - Scott Walters <me at scowalt.com>
-    * - Debian
-      - Alexis Murzeau <amubtdx at gmail.com>
-    * - Fedora
-      - Mohamed El Morabity <melmorabity at fedoraproject.org>
-    * - FreeBSD
-      - Takefu <takefu at airport.fm>
-    * - Gentoo
-      - soredake <fdsfgs at krutt.org>
-    * - NixOS
-      - Tuomas Tynkkynen <tuomas.tynkkynen at iki.fi>
-    * - openSUSE
-      - Simon Puchert <simonpuchert at alice.de>
-    * - Solus
-      - Joey Riches <josephriches at gmail.com>
-    * - Void
-      - Tom Strausbaugh <tstrausbaugh at straustech.net>
-    * - Windows binaries
-      - Sebastian Meyer <mail at bastimeyer.de>
-    * - Linux AppImages
-      - Sebastian Meyer <mail at bastimeyer.de>
 
 
 Package availability

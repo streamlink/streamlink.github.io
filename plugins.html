@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugins - Streamlink 7.3.0 documentation">
+  <meta property="og:title" content="Plugins - Streamlink 7.4.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugins - Streamlink 7.3.0 documentation</title>
+        <title>Plugins - Streamlink 7.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.3.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.3.0</pre>
+  <pre class="sidebar-versions-current">7.4.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/plugins.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/plugins.html" class="">Latest</a></dd>
@@ -675,6 +675,31 @@ directly, like for example HLS and DASH.</p>
 </dd>
 <dt class="field-even">GitHub<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/bilibili.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.bilibili">Issues</a></p>
+</dd>
+</dl>
+</section>
+<section id="blasttv">
+<h2>blasttv<a class="headerlink" href="#blasttv" title="Link to this heading">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">Description<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Esports tournaments run by BlastTV, based in Denmark.</p>
+</dd>
+<dt class="field-even">URL(s)<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>blast.tv</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>live, vod</p>
+</dd>
+<dt class="field-even">Metadata<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">id</span></a></p></li>
+<li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">title</span></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">GitHub<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/blasttv.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.blasttv">Issues</a></p>
 </dd>
 </dl>
 </section>
@@ -1528,16 +1553,20 @@ directly, like for example HLS and DASH.</p>
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>live, vod</p>
 </dd>
-<dt class="field-even">Metadata<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-even">Web browser<span class="colon">:</span></dt>
+<dd class="field-even"><p>Required for solving a JS challenge that allows access to the Kick API
+[<a class="reference internal" href="cli.html#web-browser-options"><span class="std std-ref">?</span></a>]</p>
+</dd>
+<dt class="field-odd">Metadata<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
 <li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">id</span></a></p></li>
 <li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">author</span></a></p></li>
 <li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">category</span></a></p></li>
 <li><p><a class="reference internal" href="cli/metadata.html#variables"><span class="std std-ref">title</span></a></p></li>
 </ul>
 </dd>
-<dt class="field-odd">GitHub<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/kick.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.kick">Issues</a></p>
+<dt class="field-even">GitHub<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/kick.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.kick">Issues</a></p>
 </dd>
 </dl>
 </section>
@@ -3172,9 +3201,7 @@ directly, like for example HLS and DASH.</p>
 </dd>
 <dt class="field-even">URL(s)<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p>stream.tvp.pl</p></li>
 <li><p>vod.tvp.pl</p></li>
-<li><p>tvpstream.vod.tvp.pl</p></li>
 <li><p>tvp.info</p></li>
 <li><p>sport.tvp.pl</p></li>
 </ul>
@@ -3491,29 +3518,6 @@ directly, like for example HLS and DASH.</p>
 </dd>
 </dl>
 </section>
-<section id="vtvgo">
-<h2>vtvgo<a class="headerlink" href="#vtvgo" title="Link to this heading">¶</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">Description<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Live TV channels from VTV, a Vietnamese public, state-owned broadcaster.</p>
-</dd>
-<dt class="field-even">URL(s)<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p>vtvgo.vn</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>live</p>
-</dd>
-<dt class="field-even">Web browser<span class="colon">:</span></dt>
-<dd class="field-even"><p>Required for circumventing the AWS Web Application Firewall bot-detection.
-[<a class="reference internal" href="cli.html#web-browser-options"><span class="std std-ref">?</span></a>]</p>
-</dd>
-<dt class="field-odd">GitHub<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://github.com/streamlink/streamlink/blob/master/src/streamlink/plugins/vtvgo.py">Source</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/issues?q=is%3Aissue+sort%3Aupdated-desc+plugins.vtvgo">Issues</a></p>
-</dd>
-</dl>
-</section>
 <section id="welt">
 <h2>welt<a class="headerlink" href="#welt" title="Link to this heading">¶</a></h2>
 <dl class="field-list simple">
@@ -3796,6 +3800,7 @@ directly, like for example HLS and DASH.</p>
 <li><a class="reference internal" href="#bfmtv">bfmtv</a></li>
 <li><a class="reference internal" href="#bigo">bigo</a></li>
 <li><a class="reference internal" href="#bilibili">bilibili</a></li>
+<li><a class="reference internal" href="#blasttv">blasttv</a></li>
 <li><a class="reference internal" href="#blazetv">blazetv</a></li>
 <li><a class="reference internal" href="#bloomberg">bloomberg</a></li>
 <li><a class="reference internal" href="#brightcove">brightcove</a></li>
@@ -3907,7 +3912,6 @@ directly, like for example HLS and DASH.</p>
 <li><a class="reference internal" href="#vinhlongtv">vinhlongtv</a></li>
 <li><a class="reference internal" href="#vk">vk</a></li>
 <li><a class="reference internal" href="#vkvideo">vkvideo</a></li>
-<li><a class="reference internal" href="#vtvgo">vtvgo</a></li>
 <li><a class="reference internal" href="#welt">welt</a></li>
 <li><a class="reference internal" href="#wwenetwork">wwenetwork</a></li>
 <li><a class="reference internal" href="#youtube">youtube</a></li>
@@ -3926,7 +3930,7 @@ directly, like for example HLS and DASH.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=7d9a6084"></script>
+</div><script src="_static/documentation_options.js?v=f3c1914a"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
