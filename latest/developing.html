@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Developing - Streamlink 7.4.0+36.g9a7bdb9 documentation">
+  <meta property="og:title" content="Developing - Streamlink 7.4.0+37.g6ea1bb4 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Developing - Streamlink 7.4.0+36.g9a7bdb9 documentation</title>
+        <title>Developing - Streamlink 7.4.0+37.g6ea1bb4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.4.0+36.g9a7bdb9 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.4.0+37.g6ea1bb4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.4.0+36.g9a7bdb9</pre>
+  <pre class="sidebar-versions-current">7.4.0+37.g6ea1bb4</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="version-current">Latest</a></dd>
@@ -381,12 +381,14 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <p>After activating the new virtual environment, Streamlink's development dependencies and Streamlink itself need to be installed.
 Regular development dependencies and documentation related dependencies are listed in the text files shown below and need to
 be installed separately.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install additional dependencies</span>
-pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>-r<span class="w"> </span>dev-requirements.txt
-pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>-r<span class="w"> </span>docs-requirements.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># upgrade to the latest version of pip</span>
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip
 
 <span class="c1"># install Streamlink in &quot;editable&quot; mode</span>
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>--upgrade-strategy<span class="o">=</span>eager<span class="w"> </span>-e<span class="w"> </span>.
+
+<span class="c1"># install additional dependencies (see pyproject.toml for individual dependency groups)</span>
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>--upgrade-strategy<span class="o">=</span>eager<span class="w"> </span>--group<span class="w"> </span>all
 
 <span class="c1"># validate that Streamlink is working</span>
 streamlink<span class="w"> </span>--loglevel<span class="o">=</span>debug
@@ -590,7 +592,7 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=4c101c38"></script>
+</div><script src="_static/documentation_options.js?v=57c65980"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
