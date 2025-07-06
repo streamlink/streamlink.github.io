@@ -11,12 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Session - Streamlink 7.4.0+40.gbb3c571 documentation">
+  <meta property="og:title" content="Session - Streamlink 7.4.0+44.g987b1f4 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Session - Streamlink 7.4.0+40.gbb3c571 documentation</title>
+        <title>Session - Streamlink 7.4.0+44.g987b1f4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -181,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 7.4.0+40.gbb3c571 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.4.0+44.g987b1f4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +211,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.4.0+40.gbb3c571</pre>
+  <pre class="sidebar-versions-current">7.4.0+44.g987b1f4</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/session.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/session.html" class="version-current">Latest</a></dd>
@@ -517,138 +517,143 @@ and <a class="reference internal" href="#streamlink.session.Streamlink.set_optio
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Instance of <code class="docutils literal notranslate"><span class="pre">UserInputRequester</span></code> to collect input from the user at runtime</p></td>
 </tr>
-<tr class="row-odd"><td><p>locale</p></td>
+<tr class="row-odd"><td><p>no-plugin-cache</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>Disable the plugin key-value store</p></td>
+</tr>
+<tr class="row-even"><td><p>locale</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
 <td><p><em>system locale</em></p></td>
 <td><p>Locale setting, in the RFC 1766 format,
 e.g. <code class="docutils literal notranslate"><span class="pre">en_US</span></code> or <code class="docutils literal notranslate"><span class="pre">es_ES</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>interface</p></td>
+<tr class="row-odd"><td><p>interface</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Network interface address</p></td>
 </tr>
-<tr class="row-odd"><td><p>ipv4</p></td>
+<tr class="row-even"><td><p>ipv4</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Resolve address names to IPv4 only, overrides <code class="docutils literal notranslate"><span class="pre">ipv6</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>ipv6</p></td>
+<tr class="row-odd"><td><p>ipv6</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Resolve address names to IPv6 only, overrides <code class="docutils literal notranslate"><span class="pre">ipv4</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>http-proxy</p></td>
+<tr class="row-even"><td><p>http-proxy</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Proxy address for all HTTP/HTTPS requests</p></td>
 </tr>
-<tr class="row-even"><td><p>https-proxy <em>(deprecated)</em></p></td>
+<tr class="row-odd"><td><p>https-proxy <em>(deprecated)</em></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Proxy address for all HTTP/HTTPS requests</p></td>
 </tr>
-<tr class="row-odd"><td><p>http-cookies</p></td>
+<tr class="row-even"><td><p>http-cookies</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">str]</span> <span class="pre">|</span> <span class="pre">str</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
 <td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> or a semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> delimited <code class="docutils literal notranslate"><span class="pre">str</span></code> of cookies to add to each HTTP/HTTPS request,
 e.g. <code class="docutils literal notranslate"><span class="pre">foo=bar;baz=qux</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>http-headers</p></td>
+<tr class="row-odd"><td><p>http-headers</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">str]</span> <span class="pre">|</span> <span class="pre">str</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
 <td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> or a semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> delimited <code class="docutils literal notranslate"><span class="pre">str</span></code> of headers to add to each HTTP/HTTPS request,
 e.g. <code class="docutils literal notranslate"><span class="pre">foo=bar;baz=qux</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>http-query-params</p></td>
+<tr class="row-even"><td><p>http-query-params</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">str]</span> <span class="pre">|</span> <span class="pre">str</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
 <td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> or an ampersand <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> delimited <code class="docutils literal notranslate"><span class="pre">str</span></code> of query string parameters to add to each HTTP/HTTPS request,
 e.g. <code class="docutils literal notranslate"><span class="pre">foo=bar&amp;baz=qux</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>http-trust-env</p></td>
+<tr class="row-odd"><td><p>http-trust-env</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 <td><p>Trust HTTP settings set in the environment,
 such as environment variables (<code class="docutils literal notranslate"><span class="pre">HTTP_PROXY</span></code>, etc.) and <code class="docutils literal notranslate"><span class="pre">~/.netrc</span></code> authentication</p></td>
 </tr>
-<tr class="row-odd"><td><p>http-ssl-verify</p></td>
+<tr class="row-even"><td><p>http-ssl-verify</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 <td><p>Verify TLS/SSL certificates</p></td>
 </tr>
-<tr class="row-even"><td><p>http-disable-dh</p></td>
+<tr class="row-odd"><td><p>http-disable-dh</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Disable TLS/SSL Diffie-Hellman key exchange</p></td>
 </tr>
-<tr class="row-odd"><td><p>http-ssl-cert</p></td>
+<tr class="row-even"><td><p>http-ssl-cert</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">tuple</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>TLS/SSL certificate to use, can be either a .pem file (<code class="docutils literal notranslate"><span class="pre">str</span></code>) or a .crt/.key pair (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</p></td>
 </tr>
-<tr class="row-even"><td><p>http-timeout</p></td>
+<tr class="row-odd"><td><p>http-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
 <td><p>General timeout used by all HTTP/HTTPS requests, except the ones covered by other options</p></td>
 </tr>
-<tr class="row-odd"><td><p>ringbuffer-size</p></td>
+<tr class="row-even"><td><p>ringbuffer-size</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">16777216</span></code> (16 MiB)</p></td>
 <td><p>The size of the internal ring buffer used by most stream types</p></td>
 </tr>
-<tr class="row-even"><td><p>mux-subtitles</p></td>
+<tr class="row-odd"><td><p>mux-subtitles</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Make supported plugins mux available subtitles into the output stream</p></td>
 </tr>
-<tr class="row-odd"><td><p>stream-segment-attempts</p></td>
+<tr class="row-even"><td><p>stream-segment-attempts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Number of segment download attempts in segmented streams</p></td>
 </tr>
-<tr class="row-even"><td><p>stream-segment-threads</p></td>
+<tr class="row-odd"><td><p>stream-segment-threads</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 <td><p>The size of the thread pool used to download segments in parallel</p></td>
 </tr>
-<tr class="row-odd"><td><p>stream-segment-timeout</p></td>
+<tr class="row-even"><td><p>stream-segment-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
 <td><p>Segment connect and read timeout</p></td>
 </tr>
-<tr class="row-even"><td><p>stream-timeout</p></td>
+<tr class="row-odd"><td><p>stream-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">60.0</span></code></p></td>
 <td><p>Timeout for reading data from stream</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-live-edge</p></td>
+<tr class="row-even"><td><p>hls-live-edge</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Number of segments from the live position of the HLS stream to start reading</p></td>
 </tr>
-<tr class="row-even"><td><p>hls-live-restart</p></td>
+<tr class="row-odd"><td><p>hls-live-restart</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Skip to the beginning of a live HLS stream, or as far back as possible</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-start-offset</p></td>
+<tr class="row-even"><td><p>hls-start-offset</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
 <td><p>Number of seconds to skip from the beginning of the HLS stream,
 interpreted as a negative offset for livestreams</p></td>
 </tr>
-<tr class="row-even"><td><p>hls-duration</p></td>
+<tr class="row-odd"><td><p>hls-duration</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Limit the HLS stream playback duration, rounded to the nearest HLS segment</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-playlist-reload-attempts</p></td>
+<tr class="row-even"><td><p>hls-playlist-reload-attempts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Max number of HLS playlist reload attempts before giving up</p></td>
 </tr>
-<tr class="row-even"><td><p>hls-playlist-reload-time</p></td>
+<tr class="row-odd"><td><p>hls-playlist-reload-time</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code></p></td>
 <td><p>Override the HLS playlist reload time, either in seconds (<code class="docutils literal notranslate"><span class="pre">float</span></code>) or as a <code class="docutils literal notranslate"><span class="pre">str</span></code> keyword:</p>
@@ -659,121 +664,121 @@ interpreted as a negative offset for livestreams</p></td>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td><p>hls-segment-queue-threshold</p></td>
+<tr class="row-even"><td><p>hls-segment-queue-threshold</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Factor of the playlist's targetduration which sets the threshold for stopping early on missing segments</p></td>
 </tr>
-<tr class="row-even"><td><p>hls-segment-stream-data</p></td>
+<tr class="row-odd"><td><p>hls-segment-stream-data</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Stream data of HLS segment downloads to the output instead of waiting for the full response</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-segment-ignore-names</p></td>
+<tr class="row-even"><td><p>hls-segment-ignore-names</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List[str]</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
 <td><p>List of HLS segment names without file endings which should get filtered out</p></td>
 </tr>
-<tr class="row-even"><td><p>hls-segment-key-uri</p></td>
+<tr class="row-odd"><td><p>hls-segment-key-uri</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Override the address of the encrypted HLS stream's key,
 with support for the following string template variables:
 <code class="docutils literal notranslate"><span class="pre">{url}</span></code>, <code class="docutils literal notranslate"><span class="pre">{scheme}</span></code>, <code class="docutils literal notranslate"><span class="pre">{netloc}</span></code>, <code class="docutils literal notranslate"><span class="pre">{path}</span></code>, <code class="docutils literal notranslate"><span class="pre">{query}</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-audio-select</p></td>
+<tr class="row-even"><td><p>hls-audio-select</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List[str]</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
 <td><p>Select a specific audio source or sources when multiple audio sources are available,
 by language code or name, or <code class="docutils literal notranslate"><span class="pre">&quot;*&quot;</span></code> (asterisk)</p></td>
 </tr>
-<tr class="row-even"><td><p>dash-manifest-reload-attempts</p></td>
+<tr class="row-odd"><td><p>dash-manifest-reload-attempts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Max number of DASH manifest reload attempts before giving up</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-ffmpeg</p></td>
+<tr class="row-even"><td><p>ffmpeg-ffmpeg</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Override for the <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>/<code class="docutils literal notranslate"><span class="pre">ffmpeg.exe</span></code> binary path,
 which by default gets looked up via the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> env var</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-no-validation</p></td>
+<tr class="row-odd"><td><p>ffmpeg-no-validation</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Disable FFmpeg validation and version logging</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-verbose</p></td>
+<tr class="row-even"><td><p>ffmpeg-verbose</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Append FFmpeg's stderr stream to the Python's stderr stream</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-verbose-path</p></td>
+<tr class="row-odd"><td><p>ffmpeg-verbose-path</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Write FFmpeg's stderr stream to the filesystem at the specified path</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-loglevel</p></td>
+<tr class="row-even"><td><p>ffmpeg-loglevel</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Set FFmpeg's <code class="docutils literal notranslate"><span class="pre">-loglevel</span></code> value</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-fout</p></td>
+<tr class="row-odd"><td><p>ffmpeg-fout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Set the output format of muxed streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;matroska&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-video-transcode</p></td>
+<tr class="row-even"><td><p>ffmpeg-video-transcode</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;h264&quot;</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-audio-transcode</p></td>
+<tr class="row-odd"><td><p>ffmpeg-audio-transcode</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>The codec to use if transcoding video when muxing streams, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;aac&quot;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-copyts</p></td>
+<tr class="row-even"><td><p>ffmpeg-copyts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Don't shift input stream timestamps when muxing streams</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-start-at-zero</p></td>
+<tr class="row-odd"><td><p>ffmpeg-start-at-zero</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>When <code class="docutils literal notranslate"><span class="pre">ffmpeg-copyts</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, shift timestamps to zero</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser</p></td>
+<tr class="row-even"><td><p>webbrowser</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 <td><p>Enable or disable support for Streamlink's webbrowser API</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser-executable</p></td>
+<tr class="row-odd"><td><p>webbrowser-executable</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Path to the web browser's executable</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser-timeout</p></td>
+<tr class="row-even"><td><p>webbrowser-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
 <td><p>The maximum amount of time which the webbrowser can take to launch and execute</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser-cdp-host</p></td>
+<tr class="row-odd"><td><p>webbrowser-cdp-host</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Custom host for the Chrome Devtools Protocol (CDP) interface</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser-cdp-port</p></td>
+<tr class="row-even"><td><p>webbrowser-cdp-port</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Custom port for the Chrome Devtools Protocol (CDP) interface</p></td>
 </tr>
-<tr class="row-even"><td><p>webbrowser-cdp-timeout</p></td>
+<tr class="row-odd"><td><p>webbrowser-cdp-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
 <td><p>The maximum amount of time for waiting on a single CDP command response</p></td>
 </tr>
-<tr class="row-odd"><td><p>webbrowser-headless</p></td>
+<tr class="row-even"><td><p>webbrowser-headless</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Whether to launch the webbrowser in headless mode or not</p></td>
@@ -1105,7 +1110,7 @@ always have a higher priority than built-in plugins.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=3d0ba52e"></script>
+</div><script src="../_static/documentation_options.js?v=5f9de122"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
