@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Installation - Streamlink 7.5.0+18.g24a33dc documentation">
+  <meta property="og:title" content="Installation - Streamlink 7.5.0+19.gaef06ce documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Installation - Streamlink 7.5.0+18.g24a33dc documentation</title>
+        <title>Installation - Streamlink 7.5.0+19.gaef06ce documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -184,7 +184,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.5.0+18.g24a33dc documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.5.0+19.gaef06ce documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -214,7 +214,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.5.0+18.g24a33dc</pre>
+  <pre class="sidebar-versions-current">7.5.0+19.gaef06ce</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -477,10 +477,13 @@ pacman -S mingw-w64-x86_64-streamlink
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-package-dependents" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.122.392a1.75 1.75 0 0 1 1.756 0l5.25 3.045c.54.313.872.89.872 1.514V7.25a.75.75 0 0 1-1.5 0V5.677L7.75 8.432v6.384a1 1 0 0 1-1.502.865L.872 12.563A1.75 1.75 0 0 1 0 11.049V4.951c0-.624.332-1.2.872-1.514ZM7.125 1.69a.248.248 0 0 0-.25 0l-4.63 2.685L7 7.133l4.755-2.758ZM1.5 11.049a.25.25 0 0 0 .125.216l4.625 2.683V8.432L1.5 5.677Zm10.828 3.684 1.173-1.233H10.25a.75.75 0 0 1 0-1.5h3.251l-1.173-1.233a.75.75 0 1 1 1.087-1.034l2.378 2.5a.75.75 0 0 1 0 1.034l-2.378 2.5a.75.75 0 0 1-1.087-1.034Z"></path></svg> <a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (aur, git)</a></p></td>
+<tr class="row-even"><td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-package-dependents" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.122.392a1.75 1.75 0 0 1 1.756 0l5.25 3.045c.54.313.872.89.872 1.514V7.25a.75.75 0 0 1-1.5 0V5.677L7.75 8.432v6.384a1 1 0 0 1-1.502.865L.872 12.563A1.75 1.75 0 0 1 0 11.049V4.951c0-.624.332-1.2.872-1.514ZM7.125 1.69a.248.248 0 0 0-.25 0l-4.63 2.685L7 7.133l4.755-2.758ZM1.5 11.049a.25.25 0 0 0 .125.216l4.625 2.683V8.432L1.5 5.677Zm10.828 3.684 1.173-1.233H10.25a.75.75 0 0 1 0-1.5h3.251l-1.173-1.233a.75.75 0 1 1 1.087-1.034l2.378 2.5a.75.75 0 0 1 0 1.034l-2.378 2.5a.75.75 0 0 1-1.087-1.034Z"></path></svg> <a class="reference external" href="https://aur.archlinux.org/packages/streamlink-git/">Arch Linux (AUR, git)</a></p></td>
 <td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/streamlink-git.git
 <span class="nb">cd</span><span class="w"> </span>streamlink-git
 makepkg<span class="w"> </span>-si
+
+<span class="c1"># alternatively, get the PKGBUILD from the AUR mirror on GitHub</span>
+git<span class="w"> </span>clone<span class="w"> </span>--single-branch<span class="w"> </span>--branch<span class="w"> </span>streamlink-git<span class="w"> </span>https://github.com/archlinux/aur.git<span class="w"> </span>streamlink-git
 </pre></div>
 </div>
 <p><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository">Installing AUR packages</a></p>
@@ -1102,7 +1105,7 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=f6451a75"></script>
+</div><script src="_static/documentation_options.js?v=198c83f3"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
