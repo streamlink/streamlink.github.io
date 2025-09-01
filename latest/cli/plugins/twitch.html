@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Twitch - Streamlink 7.5.0+26.g8644c67 documentation">
+  <meta property="og:title" content="Twitch - Streamlink 7.5.0+27.g84bf067 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Twitch - Streamlink 7.5.0+26.g8644c67 documentation</title>
+        <title>Twitch - Streamlink 7.5.0+27.g84bf067 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -184,7 +184,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Streamlink 7.5.0+26.g8644c67 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Streamlink 7.5.0+27.g84bf067 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -214,7 +214,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.5.0+26.g8644c67</pre>
+  <pre class="sidebar-versions-current">7.5.0+27.g84bf067</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins/twitch.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/plugins/twitch.html" class="version-current">Latest</a></dd>
@@ -349,6 +349,12 @@ argument value, which requires quotation on command line shells:</p>
 <a class="reference internal" href="../config.html#plugin-specific-configuration-file"><span class="std std-ref">config file</span></a>, which <a class="reference internal" href="../config.html#syntax"><span class="std std-ref">doesn't require quotes</span></a>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>twitch-api-header=Authorization=OAuth abcdefghijklmnopqrstuvwxyz0123
 </pre></div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>OAuth tokens from Twitch's website grant full access your account, so make sure to keep them secret</strong>.</p>
+<p>Logging out does not revoke any tokens. In order to do that, either change your password,
+or go to Twitch's <a class="reference external" href="https://www.twitch.tv/settings/security">Security and Privacy</a> settings menu and click &quot;Sign Out Everywhere&quot;.</p>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
@@ -528,7 +534,7 @@ without causing any stuttering, e.g. when running out out available data.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=414eec5c"></script>
+</div><script src="../../_static/documentation_options.js?v=31090e72"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
