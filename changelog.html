@@ -4,23 +4,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Support" href="support.html" /><link rel="prev" title="Exceptions" href="api/exceptions.html" />
+        <link rel="prefetch" href="_static/icon.svg" as="image" />
+        <link rel="prefetch" href="_static/icon.svg" as="image" />
+        <link rel="prefetch" href="_static/icon.svg" as="image" />
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 7.5.0 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 7.6.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 7.5.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+        <title>Changelog - Streamlink 7.6.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=158623ca" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
@@ -31,20 +34,20 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -181,7 +184,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.5.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.6.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +214,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.5.0</pre>
+  <pre class="sidebar-versions-current">7.6.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -298,7 +301,7 @@
     <span class="visually-hidden">View this page</span>
   </a>
 </div><div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/changelog.md" title="Edit this page">
+  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/changelog.md" rel="edit" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -321,6 +324,26 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-7-6-0-2025-09-08">
+<h2>streamlink 7.6.0 (2025-09-08)<a class="headerlink" href="#streamlink-7-6-0-2025-09-08" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Added: official support for Python 3.14 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6617">#6617</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--skip</span></code> for stopping on existing file outputs without user prompts (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6633">#6633</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">CDPClientSession.{apply,retrieve}_cookies()</span></code> for copying cookies between Streamlink’s HTTP session and the web browser (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6650">#6650</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>chzzk: added support for live streams with a wider content availability window (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6652">#6652</a>)</p></li>
+<li><p>indihometv: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6615">#6615</a>)</p></li>
+<li><p>kick: added <code class="docutils literal notranslate"><span class="pre">--kick-low-latency</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6605">#6605</a>)</p></li>
+<li><p>lrt: fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6608">#6608</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6637">#6637</a>)</p></li>
+<li><p>mediaklikk: fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6629">#6629</a>)</p></li>
+<li><p>vkvideo: renamed to vkvideolive, added VOD support (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6640">#6640</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6642">#6642</a>)</p></li>
+</ul>
+</li>
+<li><p>Docs: fixed compatibility with <code class="docutils literal notranslate"><span class="pre">docutils&gt;=0.22</span></code> (transitive dependency) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6625">#6625</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/7.5.0...7.6.0">Full changelog</a></p>
+</section>
 <section id="streamlink-7-5-0-2025-07-08">
 <h2>streamlink 7.5.0 (2025-07-08)<a class="headerlink" href="#streamlink-7-5-0-2025-07-08" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -2141,6 +2164,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-7-6-0-2025-09-08">streamlink 7.6.0 (2025-09-08)</a></li>
 <li><a class="reference internal" href="#streamlink-7-5-0-2025-07-08">streamlink 7.5.0 (2025-07-08)</a></li>
 <li><a class="reference internal" href="#streamlink-7-4-0-2025-06-08">streamlink 7.4.0 (2025-06-08)</a></li>
 <li><a class="reference internal" href="#streamlink-7-3-0-2025-04-26">streamlink 7.3.0 (2025-04-26)</a></li>
@@ -2250,10 +2274,10 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=8214db13"></script>
+</div><script src="_static/documentation_options.js?v=106b05f8"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     </body>
 </html>

@@ -4,23 +4,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exceptions" href="exceptions.html" /><link rel="prev" title="Stream" href="stream.html" />
+        <link rel="prefetch" href="../_static/icon.svg" as="image" />
+        <link rel="prefetch" href="../_static/icon.svg" as="image" />
+        <link rel="prefetch" href="../_static/icon.svg" as="image" />
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Webbrowser - Streamlink 7.5.0 documentation">
+  <meta property="og:title" content="Webbrowser - Streamlink 7.6.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Webbrowser - Streamlink 7.5.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+        <title>Webbrowser - Streamlink 7.6.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=158623ca" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
@@ -31,20 +34,20 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -181,7 +184,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 7.5.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.6.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +214,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.5.0</pre>
+  <pre class="sidebar-versions-current">7.6.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/webbrowser.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api/webbrowser.html" class="">Latest</a></dd>
@@ -298,7 +301,7 @@
     <span class="visually-hidden">View this page</span>
   </a>
 </div><div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/api/webbrowser.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/api/webbrowser.rst" rel="edit" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -327,7 +330,7 @@
 </div>
 <dl class="py class" id="module-streamlink.webbrowser">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.client.CDPClient">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.client.</span></span><span class="sig-name descname"><span class="pre">CDPClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cdp_connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nursery</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headless</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClient" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.client.</span></span><span class="sig-name descname"><span class="pre">CDPClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cdp_connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nursery</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headless</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClient" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The public interface around <a class="reference internal" href="#streamlink.webbrowser.chromium.ChromiumWebbrowser" title="streamlink.webbrowser.chromium.ChromiumWebbrowser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChromiumWebbrowser</span></code></a>
 and <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection" title="streamlink.webbrowser.cdp.connection.CDPConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">CDPConnection</span></code></a>.</p>
@@ -342,6 +345,7 @@ as well as evaluating JavaScript expressions and retrieving async results.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>)</p></li>
 <li><p><strong>cdp_connection</strong> (<a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPConnection" title="streamlink.webbrowser.cdp.connection.CDPConnection"><em>CDPConnection</em></a>)</p></li>
 <li><p><strong>nursery</strong> (<em>trio.Nursery</em>)</p></li>
 <li><p><strong>headless</strong> (<em>bool</em>)</p></li>
@@ -484,6 +488,17 @@ or by setting the respective parameters on the context manager's proxy object.</
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.client.CDPClientSession.apply_cookies">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apply_cookies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClientSession.apply_cookies" title="Link to this definition">¶</a></dt>
+<dd><p>Copy all cookies from Streamlink's HTTP session to the CDP session.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.client.CDPClientSession.continue_request">
 <em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">continue_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClientSession.continue_request" title="Link to this definition">¶</a></dt>
 <dd><p>Continue a request and optionally override the request method, URL, POST data or request headers.</p>
@@ -590,6 +605,17 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><em>AsyncGenerator</em>[<em>FrameId</em>, None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="streamlink.webbrowser.cdp.client.CDPClientSession.retrieve_cookies">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">retrieve_cookies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.client.CDPClientSession.retrieve_cookies" title="Link to this definition">¶</a></dt>
+<dd><p>Copy all cookies from the CDP session to Streamlink's HTTP session.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -884,12 +910,14 @@ or can be used as an async context manager which yields the event and closes the
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession"><code class="docutils literal notranslate"><span class="pre">CDPClientSession</span></code></a><ul>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.add_request_handler"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.add_request_handler()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.alter_request"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.alter_request()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.apply_cookies"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.apply_cookies()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.continue_request"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.continue_request()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.evaluate"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.evaluate()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.fail_request"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.fail_request()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.fulfill_request"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.fulfill_request()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.loaded"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.loaded()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.navigate"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.navigate()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.retrieve_cookies"><code class="docutils literal notranslate"><span class="pre">CDPClientSession.retrieve_cookies()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CMRequestProxy"><code class="docutils literal notranslate"><span class="pre">CMRequestProxy</span></code></a></li>
@@ -922,10 +950,10 @@ or can be used as an async context manager which yields the event and closes the
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=8214db13"></script>
+</div><script src="../_static/documentation_options.js?v=106b05f8"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     </body>
 </html>

@@ -4,23 +4,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Tutorial" href="cli/tutorial.html" /><link rel="prev" title="Installation" href="install.html" />
+        <link rel="prefetch" href="_static/icon.svg" as="image" />
+        <link rel="prefetch" href="_static/icon.svg" as="image" />
+        <link rel="prefetch" href="_static/icon.svg" as="image" />
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Command-Line Interface - Streamlink 7.5.0 documentation">
+  <meta property="og:title" content="Command-Line Interface - Streamlink 7.6.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Command-Line Interface - Streamlink 7.5.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+        <title>Command-Line Interface - Streamlink 7.6.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=158623ca" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
@@ -31,20 +34,20 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -181,7 +184,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.5.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.6.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -211,7 +214,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.5.0</pre>
+  <pre class="sidebar-versions-current">7.6.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="">Latest</a></dd>
@@ -298,7 +301,7 @@
     <span class="visually-hidden">View this page</span>
   </a>
 </div><div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/cli.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/streamlink/streamlink/edit/master/docs/cli.rst" rel="edit" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -868,6 +871,13 @@ shares that are enforcing Windows filename limitations, etc.</p>
 </dd></dl>
 
 <dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skip">
+<span class="sig-name descname"><span class="pre">--skip</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skip" title="Link to this definition">¶</a></dt>
+<dd><p>When using <a class="reference internal" href="#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>, never write to file if it already exists (don't prompt).</p>
+<p>Takes precedence over <a class="reference internal" href="#cmdoption-force"><code class="xref std std-option docutils literal notranslate"><span class="pre">--force</span></code></a>.</p>
+</dd></dl>
+
+<dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-progress">
 <span class="sig-name descname"><span class="pre">--progress</span></span><span class="sig-prename descclassname"> <span class="pre">{yes,force,no}</span></span><a class="headerlink" href="#cmdoption-progress" title="Link to this definition">¶</a></dt>
 <dd><p>When using <a class="reference internal" href="#cmdoption-output"><code class="xref std std-option docutils literal notranslate"><span class="pre">--output</span></code></a> or <a class="reference internal" href="#cmdoption-record"><code class="xref std std-option docutils literal notranslate"><span class="pre">--record</span></code></a>, show or hide the download progress bar, or force it if there's no terminal.</p>
@@ -1405,6 +1415,26 @@ When enabled, it stays completely hidden and doesn't require a desktop environme
 </dd></dl>
 
 </section>
+<section id="kick">
+<h4>Kick<a class="headerlink" href="#kick" title="Link to this heading">¶</a></h4>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-kick-low-latency">
+<span class="sig-name descname"><span class="pre">--kick-low-latency</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kick-low-latency" title="Link to this definition">¶</a></dt>
+<dd><p>Enables low latency streaming by prefetching HLS segments.
+Sets <a class="reference internal" href="#cmdoption-hls-segment-stream-data"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-segment-stream-data</span></code></a> to true and <a class="reference internal" href="#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to 2, if it is higher.
+Reducing <a class="reference internal" href="#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> to <code class="code docutils literal notranslate"><span class="pre">1</span></code> will result in the lowest latency possible, but will most likely cause buffering.</p>
+<p>In order to achieve true low latency streaming during playback, the player's caching/buffering settings will
+need to be adjusted and reduced to a value as low as possible, but still high enough to not cause any buffering.
+This depends on the stream's bitrate and the quality of the connection to Kick's servers. Please refer to the
+player's own documentation for the required configuration. Player parameters can be set via <a class="reference internal" href="#cmdoption-player-args"><code class="xref std std-option docutils literal notranslate"><span class="pre">--player-args</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Low latency streams have to be enabled by the broadcasters on Kick themselves.
+Regular streams can cause buffering issues with this option enabled due to the reduced <a class="reference internal" href="#cmdoption-hls-live-edge"><code class="xref std std-option docutils literal notranslate"><span class="pre">--hls-live-edge</span></code></a> value.</p>
+</div>
+</dd></dl>
+
+</section>
 <section id="nicolive">
 <h4>Nicolive<a class="headerlink" href="#nicolive" title="Link to this heading">¶</a></h4>
 <dl class="std option">
@@ -1801,6 +1831,7 @@ Regular streams can cause buffering issues with this option enabled due to the r
 <li><a class="reference internal" href="#plugin-specific-options">Plugin-specific options</a><ul>
 <li><a class="reference internal" href="#bbciplayer">Bbciplayer</a></li>
 <li><a class="reference internal" href="#clubbingtv">Clubbingtv</a></li>
+<li><a class="reference internal" href="#kick">Kick</a></li>
 <li><a class="reference internal" href="#nicolive">Nicolive</a></li>
 <li><a class="reference internal" href="#openrectv">Openrectv</a></li>
 <li><a class="reference internal" href="#pixiv">Pixiv</a></li>
@@ -1831,10 +1862,10 @@ Regular streams can cause buffering issues with this option enabled due to the r
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=8214db13"></script>
+</div><script src="_static/documentation_options.js?v=106b05f8"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     </body>
 </html>
