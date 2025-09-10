@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Webbrowser - Streamlink 7.5.0+33.g9a30b9b documentation">
+  <meta property="og:title" content="Webbrowser - Streamlink 7.6.0+2.g94c9647 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Webbrowser - Streamlink 7.5.0+33.g9a30b9b documentation</title>
+        <title>Webbrowser - Streamlink 7.6.0+2.g94c9647 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -184,7 +184,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 7.5.0+33.g9a30b9b documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.6.0+2.g94c9647 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -214,7 +214,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.5.0+33.g9a30b9b</pre>
+  <pre class="sidebar-versions-current">7.6.0+2.g94c9647</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/webbrowser.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/webbrowser.html" class="version-current">Latest</a></dd>
@@ -426,7 +426,7 @@ If unset, falls back to the <code class="docutils literal notranslate"><span cla
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>AsyncGenerator</em>[<a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession" title="streamlink.webbrowser.cdp.client.CDPClientSession"><em>CDPClientSession</em></a>, None]</p>
+<dd class="field-even"><p>AsyncGenerator[<a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession" title="streamlink.webbrowser.cdp.client.CDPClientSession">CDPClientSession</a>, None]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -456,7 +456,7 @@ and for evaluating async JavaScript expressions.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>async_handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession" title="streamlink.webbrowser.cdp.client.CDPClientSession"><em>CDPClientSession</em></a><em>, </em><em>RequestPaused</em><em>]</em><em>, </em><em>Awaitable</em><em>]</em>) -- An async request handler which must call <a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.continue_request" title="streamlink.webbrowser.cdp.client.CDPClientSession.continue_request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">continue_request()</span></code></a>, <a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.fail_request" title="streamlink.webbrowser.cdp.client.CDPClientSession.fail_request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fail_request()</span></code></a>,
+<li><p><strong>async_handler</strong> (<em>TRequestHandlerCallable</em>) -- An async request handler which must call <a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.continue_request" title="streamlink.webbrowser.cdp.client.CDPClientSession.continue_request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">continue_request()</span></code></a>, <a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.fail_request" title="streamlink.webbrowser.cdp.client.CDPClientSession.fail_request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fail_request()</span></code></a>,
 <a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.fulfill_request" title="streamlink.webbrowser.cdp.client.CDPClientSession.fulfill_request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fulfill_request()</span></code></a> or <a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.alter_request" title="streamlink.webbrowser.cdp.client.CDPClientSession.alter_request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">alter_request()</span></code></a>, or the next matching request handler
 will be run. If no matching request handler was found or if no matching one called one of
 the just mentioned methods, then the request will be continued if the session was initialized
@@ -480,13 +480,13 @@ or by setting the respective parameters on the context manager's proxy object.</
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>request</strong> (<em>RequestPaused</em>)</p></li>
+<li><p><strong>request</strong> (<em>fetch.RequestPaused</em>)</p></li>
 <li><p><strong>response_code</strong> (<em>int</em>)</p></li>
 <li><p><strong>response_headers</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>AsyncGenerator</em>[<a class="reference internal" href="#streamlink.webbrowser.cdp.client.CMRequestProxy" title="streamlink.webbrowser.cdp.client.CMRequestProxy"><em>CMRequestProxy</em></a>, None]</p>
+<dd class="field-even"><p>AsyncGenerator[<a class="reference internal" href="#streamlink.webbrowser.cdp.client.CMRequestProxy" title="streamlink.webbrowser.cdp.client.CMRequestProxy">CMRequestProxy</a>, None]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -509,7 +509,7 @@ or by setting the respective parameters on the context manager's proxy object.</
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>request</strong> (<em>RequestPaused</em>)</p></li>
+<li><p><strong>request</strong> (<em>fetch.RequestPaused</em>)</p></li>
 <li><p><strong>url</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
 <li><p><strong>method</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
 <li><p><strong>post_data</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
@@ -566,7 +566,7 @@ Other kinds of return values must be serialized, e.g. via <code class="xref js j
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>request</strong> (<em>RequestPaused</em>)</p></li>
+<li><p><strong>request</strong> (<em>fetch.RequestPaused</em>)</p></li>
 <li><p><strong>response_code</strong> (<em>int</em>)</p></li>
 <li><p><strong>response_headers</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>str</em><em>] </em><em>| </em><em>None</em>)</p></li>
 <li><p><strong>body</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
@@ -608,7 +608,7 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 <dd class="field-even"><p>Yields the <code class="docutils literal notranslate"><span class="pre">FrameID</span></code> that can be passed to the <a class="reference internal" href="#streamlink.webbrowser.cdp.client.CDPClientSession.loaded" title="streamlink.webbrowser.cdp.client.CDPClientSession.loaded"><code class="xref py py-meth docutils literal notranslate"><span class="pre">loaded()</span></code></a> call.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>AsyncGenerator</em>[<em>FrameId</em>, None]</p>
+<dd class="field-odd"><p>AsyncGenerator[page.FrameId, None]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -954,7 +954,7 @@ or can be used as an async context manager which yields the event and closes the
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=4054feb1"></script>
+</div><script src="../_static/documentation_options.js?v=87505292"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
