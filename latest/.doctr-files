@@ -1,7 +1,11 @@
 latest/.buildinfo
+latest/_images/github-lockup-dark.svg
+latest/_images/github-lockup-light.svg
 latest/_images/icon-ffmpeg.svg
 latest/_images/icon-python.svg
 latest/_images/icon.svg
+latest/_images/jetbrains-mono-black.svg
+latest/_images/jetbrains-mono-white.svg
 latest/_sources/acknowledgements.rst.txt
 latest/_sources/api.rst.txt
 latest/_sources/api/cache.rst.txt
@@ -48,9 +52,13 @@ latest/_static/favicon-16x16.png
 latest/_static/favicon-32x32.png
 latest/_static/favicon.ico
 latest/_static/file.png
+latest/_static/github-lockup-dark.svg
+latest/_static/github-lockup-light.svg
 latest/_static/icon-ffmpeg.svg
 latest/_static/icon-python.svg
 latest/_static/icon.svg
+latest/_static/jetbrains-mono-black.svg
+latest/_static/jetbrains-mono-white.svg
 latest/_static/language_data.js
 latest/_static/minus.png
 latest/_static/opengraph-image.png
