@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Stream - Streamlink 7.6.0+39.g08aed1a documentation">
+  <meta property="og:title" content="Stream - Streamlink 7.6.0+40.g9e3cb99 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Stream - Streamlink 7.6.0+39.g08aed1a documentation</title>
+        <title>Stream - Streamlink 7.6.0+40.g9e3cb99 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 7.6.0+39.g08aed1a documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.6.0+40.g9e3cb99 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.6.0+39.g08aed1a</pre>
+  <pre class="sidebar-versions-current">7.6.0+40.g9e3cb99</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/stream.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/stream.html" class="version-current">Latest</a></dd>
@@ -396,7 +396,7 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.stream.HLSStream">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">HLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">HLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.HLSStream" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.stream.HTTPStream" title="streamlink.stream.http.HTTPStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPStream</span></code></a></p>
 <p>Implementation of the Apple HTTP Live Streaming protocol.</p>
 <dl class="field-list simple">
@@ -404,7 +404,6 @@ Subtitle streams need to be set via the <code class="docutils literal notranslat
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>session</strong> (<a class="reference internal" href="session.html#streamlink.session.Streamlink" title="streamlink.session.Streamlink"><em>Streamlink</em></a>) -- Streamlink session instance</p></li>
 <li><p><strong>url</strong> (<em>str</em>) -- The URL of the HLS playlist</p></li>
-<li><p><strong>url_master</strong> (<em>str</em><em> | </em><em>None</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
 <li><p><strong>multivariant</strong> (<em>M3U8</em><em> | </em><em>None</em>) -- The parsed multivariant playlist</p></li>
 <li><p><strong>name</strong> (<em>str</em><em> | </em><em>None</em>) -- Optional name suffix for the stream's worker and writer threads</p></li>
 <li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
@@ -440,17 +439,11 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="streamlink.stream.HLSStream.url_master">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url_master</span></span><a class="headerlink" href="#streamlink.stream.HLSStream.url_master" title="Link to this definition">¶</a></dt>
-<dd><p>Deprecated</p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.stream.MuxedHLSStream">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">MuxedHLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hlsstream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffmpeg_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.MuxedHLSStream" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">streamlink.stream.</span></span><span class="sig-name descname"><span class="pre">MuxedHLSStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hlsstream</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multivariant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffmpeg_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.stream.MuxedHLSStream" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#streamlink.stream.MuxedStream" title="streamlink.stream.ffmpegmux.MuxedStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuxedStream</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">TMuxedHLSStream_co</span></code>]</p>
 <p>Muxes multiple HLS video and audio streams into one output stream.</p>
 <dl class="field-list simple">
@@ -460,7 +453,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <li><p><strong>video</strong> (<em>str</em>) -- Video stream URL</p></li>
 <li><p><strong>audio</strong> (<em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) -- Audio stream URL or list of URLs</p></li>
 <li><p><strong>hlsstream</strong> (<em>type</em><em>[</em><em>TMuxedHLSStream_co</em><em>] </em><em>| </em><em>None</em>) -- The <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> class of each sub-stream</p></li>
-<li><p><strong>url_master</strong> (<em>str</em><em> | </em><em>None</em>) -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
+<li><p><strong>url_master</strong> -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
 <li><p><strong>multivariant</strong> (<em>M3U8</em><em> | </em><em>None</em>) -- The parsed multivariant playlist</p></li>
 <li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
 <li><p><strong>ffmpeg_options</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Additional keyword arguments passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">ffmpegmux.FFMPEGMuxer</span></code></p></li>
@@ -468,12 +461,6 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 </ul>
 </dd>
 </dl>
-<dl class="py property">
-<dt class="sig sig-object py" id="streamlink.stream.MuxedHLSStream.url_master">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url_master</span></span><a class="headerlink" href="#streamlink.stream.MuxedHLSStream.url_master" title="Link to this definition">¶</a></dt>
-<dd><p>Deprecated</p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
@@ -586,13 +573,9 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 </li>
 <li><a class="reference internal" href="#streamlink.stream.HLSStream"><code class="docutils literal notranslate"><span class="pre">HLSStream</span></code></a><ul>
 <li><a class="reference internal" href="#streamlink.stream.HLSStream.parse_variant_playlist"><code class="docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist()</span></code></a></li>
-<li><a class="reference internal" href="#streamlink.stream.HLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">HLSStream.url_master</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#streamlink.stream.MuxedHLSStream"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a><ul>
-<li><a class="reference internal" href="#streamlink.stream.MuxedHLSStream.url_master"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream.url_master</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#streamlink.stream.MuxedHLSStream"><code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.stream.DASHStream"><code class="docutils literal notranslate"><span class="pre">DASHStream</span></code></a><ul>
 <li><a class="reference internal" href="#streamlink.stream.DASHStream.parse_manifest"><code class="docutils literal notranslate"><span class="pre">DASHStream.parse_manifest()</span></code></a></li>
 </ul>
@@ -608,7 +591,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=bc88eb2b"></script>
+</div><script src="../_static/documentation_options.js?v=6974e44b"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
