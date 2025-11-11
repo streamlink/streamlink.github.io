@@ -1,30 +1,30 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Support" href="support.html" /><link rel="prev" title="Exceptions" href="api/exceptions.html" />
-        <link rel="prefetch" href="_static/icon.svg" as="image" />
-        <link rel="prefetch" href="_static/icon.svg" as="image" />
-        <link rel="prefetch" href="_static/icon.svg" as="image" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Support" href="support.html"><link rel="prev" title="Exceptions" href="api/exceptions.html">
+        <link rel="prefetch" href="_static/icon.svg" as="image">
+        <link rel="prefetch" href="_static/icon.svg" as="image">
+        <link rel="prefetch" href="_static/icon.svg" as="image">
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 7.6.0 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 8.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 7.6.0 documentation</title>
+        <title>Changelog - Streamlink 8.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=158623ca" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=72de1884" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -40,14 +40,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
       }
     }
@@ -162,14 +162,10 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -179,17 +175,15 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.6.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -197,8 +191,7 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -214,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.6.0</pre>
+  <pre class="sidebar-versions-current">8.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -228,7 +221,7 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="cli.html">Command-Line Interface</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Command-Line Interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="cli.html">Command-Line Interface</a><input aria-label="Toggle navigation of Command-Line Interface" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Command-line usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/tutorial.html">Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/config.html">Configuration file</a></li>
@@ -236,7 +229,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cli/protocols.html">Streaming protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/proxy.html">Proxy support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/metadata.html">Metadata</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Plugin specific usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="cli/plugins.html">Plugin specific usage</a><input aria-label="Toggle navigation of Plugin specific usage" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="cli/plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
@@ -247,12 +240,12 @@
 <li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="migrations.html">Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developing</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="api_guide.html">API Guide</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api_guide.html">API Guide</a><input aria-label="Toggle navigation of API Guide" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="api_guide/quickstart.html">Quickstart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_guide/validate.html">Validation schemas</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Reference</a><input aria-label="Toggle navigation of API Reference" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/streamlink.html">Streamlink</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/session.html">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/plugin.html">Plugin</a></li>
@@ -306,8 +299,7 @@
     <span class="visually-hidden">Edit this page</span>
   </a>
 </div><div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -315,8 +307,7 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -324,6 +315,37 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-8-0-0-2025-11-11">
+<h2>streamlink 8.0.0 (2025-11-11)<a class="headerlink" href="#streamlink-8-0-0-2025-11-11" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>BREAKING: dropped support for <a class="reference external" href="https://peps.python.org/pep-0596/#lifespan">EOL Python 3.9</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6674">#6674</a>)</p></li>
+<li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#hlsstream-url-master-argument">removed deprecated <code class="docutils literal notranslate"><span class="pre">url_master</span></code> from <code class="docutils literal notranslate"><span class="pre">HLSStream</span></code>/<code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6688">#6688</a>)</p></li>
+<li><p>BREAKING/dependencies: bumped version requirement of <a class="reference external" href="https://urllib3.readthedocs.io/en/stable/v2-migration-guide.html"><code class="docutils literal notranslate"><span class="pre">urllib3</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=2.0.0</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6686">#6686</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--stream-segmented-duration</span></code> in favor of <code class="docutils literal notranslate"><span class="pre">--hls-duration</span></code> (now deprecated), which affects HLS, DASH and other segmented stream types (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6705">#6705</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">duration</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">dash://</span></code> streams (<code class="docutils literal notranslate"><span class="pre">DASHStream</span></code>) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6705">#6705</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--ffmpeg-validation-timeout</span></code> for being able to increase the time for validating the FFmpeg executable (<code class="docutils literal notranslate"><span class="pre">--ffmpeg-ffmpeg</span></code>) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6716">#6716</a>)</p></li>
+<li><p>Added: Flatpak player detection for VLC and mpv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6717">#6717</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6723">#6723</a>)</p></li>
+<li><p>Refactored: parts of the internal <code class="docutils literal notranslate"><span class="pre">SegmentedStream</span></code>, <code class="docutils literal notranslate"><span class="pre">HLSStream</span></code> and <code class="docutils literal notranslate"><span class="pre">DASHStream</span></code> implementations (WIP) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6696">#6696</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6707">#6707</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6709">#6709</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>aloula: fixed livestream schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6662">#6662</a>)</p></li>
+<li><p>btv: rewritten and fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6691">#6691</a>)</p></li>
+<li><p>chzzk: added support for in-progress VODs via live-rewind streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6675">#6675</a>)</p></li>
+<li><p>dlive: fixed streams expiring after 5 minutes (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6695">#6695</a>)</p></li>
+<li><p>goodgame: updated matches, switched API endpoints (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6714">#6714</a>)</p></li>
+<li><p>nhkworld: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6677">#6677</a>)</p></li>
+<li><p>rtve: fixed validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6701">#6701</a>)</p></li>
+<li><p>twitch: fixed access token acquirement and various persisted GraphQL query IDs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6720">#6720</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6721">#6721</a>)</p></li>
+<li><p>twitch: added <code class="docutils literal notranslate"><span class="pre">--twitch-supported-codecs</span></code> for access to higher quality streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5769">#5769</a>)</p></li>
+</ul>
+</li>
+<li><p>Dependencies: dropped optional <code class="docutils literal notranslate"><span class="pre">zstandard</span></code> dependency on Python 3.14 and above (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6683">#6683</a>)</p></li>
+<li><p>Tests: bumped version requirement of <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=8.4.0</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6612">#6612</a>)</p></li>
+<li><p>Docs: refactored docs config and custom Sphinx extensions, added <code class="docutils literal notranslate"><span class="pre">make</span></code> options for disabling various components for offline building (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6668">#6668</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6669">#6669</a>)</p></li>
+<li><p>Docs: fixed compatibility with <code class="docutils literal notranslate"><span class="pre">docutils==0.22.2</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6699">#6699</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/7.6.0...8.0.0">Full changelog</a></p>
+</section>
 <section id="streamlink-7-6-0-2025-09-08">
 <h2>streamlink 7.6.0 (2025-09-08)<a class="headerlink" href="#streamlink-7-6-0-2025-09-08" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -2164,6 +2186,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-8-0-0-2025-11-11">streamlink 8.0.0 (2025-11-11)</a></li>
 <li><a class="reference internal" href="#streamlink-7-6-0-2025-09-08">streamlink 7.6.0 (2025-09-08)</a></li>
 <li><a class="reference internal" href="#streamlink-7-5-0-2025-07-08">streamlink 7.5.0 (2025-07-08)</a></li>
 <li><a class="reference internal" href="#streamlink-7-4-0-2025-06-08">streamlink 7.4.0 (2025-06-08)</a></li>
@@ -2274,7 +2297,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=106b05f8"></script>
+</div><script src="_static/documentation_options.js?v=f663eb4a"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>

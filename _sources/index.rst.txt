@@ -47,8 +47,8 @@ The default behavior of Streamlink is to play back streams in the `VLC`_ player.
 
 .. sourcecode:: console
 
-    $ streamlink twitch.tv/day9tv best
-    [cli][info] Found matching plugin twitch for URL twitch.tv/day9tv
+    $ streamlink twitch.tv/CHANNEL best
+    [cli][info] Found matching plugin twitch for URL twitch.tv/CHANNEL
     [cli][info] Available streams: audio_only, 160p (worst), 360p, 480p, 720p, 720p60, 1080p60 (best)
     [cli][info] Opening stream: 1080p60 (hls)
     [cli][info] Starting player: vlc
@@ -61,11 +61,10 @@ User guide
 Streamlink is made up of two parts, a :ref:`cli <cli:Command-Line Interface>` and a library :ref:`API <api:API Reference>`.
 See their respective sections for more information on how to use them.
 
-Thank you
----------
 
-- `Github <https://github.com/>`_, for hosting the git repo, docs, release assets and providing CI tools
-- `Whatismybrowser <https://whatismybrowser.com>`_, for the access to their user-agents API in our CI workflows
+.. only:: not no_acknowledgements
+
+    .. include:: acknowledgements.rst
 
 
 Table of contents

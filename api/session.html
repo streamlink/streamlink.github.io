@@ -1,30 +1,30 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="../">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Plugin" href="plugin.html" /><link rel="prev" title="Streamlink" href="streamlink.html" />
-        <link rel="prefetch" href="../_static/icon.svg" as="image" />
-        <link rel="prefetch" href="../_static/icon.svg" as="image" />
-        <link rel="prefetch" href="../_static/icon.svg" as="image" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Plugin" href="plugin.html"><link rel="prev" title="Streamlink" href="streamlink.html">
+        <link rel="prefetch" href="../_static/icon.svg" as="image">
+        <link rel="prefetch" href="../_static/icon.svg" as="image">
+        <link rel="prefetch" href="../_static/icon.svg" as="image">
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Session - Streamlink 7.6.0 documentation">
+  <meta property="og:title" content="Session - Streamlink 8.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Session - Streamlink 7.6.0 documentation</title>
+        <title>Session - Streamlink 8.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=158623ca" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=72de1884" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -40,14 +40,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
       }
     }
@@ -162,14 +162,10 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -179,17 +175,15 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 7.6.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 8.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -197,8 +191,7 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -214,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.6.0</pre>
+  <pre class="sidebar-versions-current">8.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/session.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api/session.html" class="">Latest</a></dd>
@@ -228,7 +221,7 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cli.html">Command-Line Interface</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Command-Line Interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cli.html">Command-Line Interface</a><input aria-label="Toggle navigation of Command-Line Interface" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cli.html">Command-line usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/tutorial.html">Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/config.html">Configuration file</a></li>
@@ -236,7 +229,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../cli/protocols.html">Streaming protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/proxy.html">Proxy support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/metadata.html">Metadata</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../cli/plugins.html">Plugin specific usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Plugin specific usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cli/plugins.html">Plugin specific usage</a><input aria-label="Toggle navigation of Plugin specific usage" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../cli/plugins/twitch.html">Twitch</a></li>
 </ul>
 </li>
@@ -247,12 +240,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../deprecations.html">Deprecations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../migrations.html">Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developing.html">Developing</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../api_guide.html">API Guide</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api_guide.html">API Guide</a><input aria-label="Toggle navigation of API Guide" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api_guide/quickstart.html">Quickstart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api_guide/validate.html">Validation schemas</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../api.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../api.html">API Reference</a><input aria-label="Toggle navigation of API Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="streamlink.html">Streamlink</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plugin.html">Plugin</a></li>
@@ -306,8 +299,7 @@
     <span class="visually-hidden">Edit this page</span>
   </a>
 </div><div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -315,8 +307,7 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -415,7 +406,7 @@ of <a class="reference internal" href="options.html#streamlink.options.Options" 
 <dd class="field-odd"><p>A tuple of plugin name, plugin class and resolved URL</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>tuple[str, type[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
+<dd class="field-even"><p>tuple[str, type[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin">Plugin</a>], str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -436,7 +427,7 @@ of <a class="reference internal" href="options.html#streamlink.options.Options" 
 <dd class="field-odd"><p>A tuple of plugin name, plugin class and resolved URL</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>tuple[str, type[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a>], str]</p>
+<dd class="field-even"><p>tuple[str, type[<a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin">Plugin</a>], str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -621,38 +612,43 @@ such as environment variables (<code class="docutils literal notranslate"><span 
 <td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
 <td><p>Segment connect and read timeout</p></td>
 </tr>
-<tr class="row-odd"><td><p>stream-timeout</p></td>
+<tr class="row-odd"><td><p>stream-segmented-duration</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+<td><p>Limit the playback duration of segmented streams, rounded to the nearest segment</p></td>
+</tr>
+<tr class="row-even"><td><p>stream-timeout</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">60.0</span></code></p></td>
 <td><p>Timeout for reading data from stream</p></td>
 </tr>
-<tr class="row-even"><td><p>hls-live-edge</p></td>
+<tr class="row-odd"><td><p>hls-live-edge</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Number of segments from the live position of the HLS stream to start reading</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-live-restart</p></td>
+<tr class="row-even"><td><p>hls-live-restart</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Skip to the beginning of a live HLS stream, or as far back as possible</p></td>
 </tr>
-<tr class="row-even"><td><p>hls-start-offset</p></td>
+<tr class="row-odd"><td><p>hls-start-offset</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
 <td><p>Number of seconds to skip from the beginning of the HLS stream,
 interpreted as a negative offset for livestreams</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-duration</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
-<td><p>Limit the HLS stream playback duration, rounded to the nearest HLS segment</p></td>
+<tr class="row-even"><td><p>hls-duration <em>(deprecated)</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+<td><p>See <code class="docutils literal notranslate"><span class="pre">stream-segmented-duration</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>hls-playlist-reload-attempts</p></td>
+<tr class="row-odd"><td><p>hls-playlist-reload-attempts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Max number of HLS playlist reload attempts before giving up</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-playlist-reload-time</p></td>
+<tr class="row-even"><td><p>hls-playlist-reload-time</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code></p></td>
 <td><p>Override the HLS playlist reload time, either in seconds (<code class="docutils literal notranslate"><span class="pre">float</span></code>) or as a <code class="docutils literal notranslate"><span class="pre">str</span></code> keyword:</p>
@@ -663,49 +659,54 @@ interpreted as a negative offset for livestreams</p></td>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>hls-segment-queue-threshold</p></td>
+<tr class="row-odd"><td><p>hls-segment-queue-threshold</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Factor of the playlist's targetduration which sets the threshold for stopping early on missing segments</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-segment-stream-data</p></td>
+<tr class="row-even"><td><p>hls-segment-stream-data</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Stream data of HLS segment downloads to the output instead of waiting for the full response</p></td>
 </tr>
-<tr class="row-even"><td><p>hls-segment-ignore-names</p></td>
+<tr class="row-odd"><td><p>hls-segment-ignore-names</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List[str]</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
 <td><p>List of HLS segment names without file endings which should get filtered out</p></td>
 </tr>
-<tr class="row-odd"><td><p>hls-segment-key-uri</p></td>
+<tr class="row-even"><td><p>hls-segment-key-uri</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Override the address of the encrypted HLS stream's key,
 with support for the following string template variables:
 <code class="docutils literal notranslate"><span class="pre">{url}</span></code>, <code class="docutils literal notranslate"><span class="pre">{scheme}</span></code>, <code class="docutils literal notranslate"><span class="pre">{netloc}</span></code>, <code class="docutils literal notranslate"><span class="pre">{path}</span></code>, <code class="docutils literal notranslate"><span class="pre">{query}</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>hls-audio-select</p></td>
+<tr class="row-odd"><td><p>hls-audio-select</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">List[str]</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
 <td><p>Select a specific audio source or sources when multiple audio sources are available,
 by language code or name, or <code class="docutils literal notranslate"><span class="pre">&quot;*&quot;</span></code> (asterisk)</p></td>
 </tr>
-<tr class="row-odd"><td><p>dash-manifest-reload-attempts</p></td>
+<tr class="row-even"><td><p>dash-manifest-reload-attempts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Max number of DASH manifest reload attempts before giving up</p></td>
 </tr>
-<tr class="row-even"><td><p>ffmpeg-ffmpeg</p></td>
+<tr class="row-odd"><td><p>ffmpeg-ffmpeg</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
 <td><p>Override for the <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>/<code class="docutils literal notranslate"><span class="pre">ffmpeg.exe</span></code> binary path,
 which by default gets looked up via the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> env var</p></td>
 </tr>
-<tr class="row-odd"><td><p>ffmpeg-no-validation</p></td>
+<tr class="row-even"><td><p>ffmpeg-no-validation</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Disable FFmpeg validation and version logging</p></td>
+</tr>
+<tr class="row-odd"><td><p>ffmpeg-validation-timeout</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4.0</span></code></p></td>
+<td><p>Timeout in seconds for FFmpeg version validation</p></td>
 </tr>
 <tr class="row-even"><td><p>ffmpeg-verbose</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
@@ -955,7 +956,7 @@ always have a higher priority than built-in plugins.</p>
 <dd><p>Add/override loaded plugins</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>plugins</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>type</em><em>[</em><a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.plugin.Plugin"><em>Plugin</em></a><em>]</em><em>]</em>)</p>
+<dd class="field-odd"><p><strong>plugins</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>type</em><em>[</em><a class="reference internal" href="plugin.html#streamlink.plugin.Plugin" title="streamlink.plugin.Plugin"><em>Plugin</em></a><em>]</em><em>]</em>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -972,7 +973,7 @@ always have a higher priority than built-in plugins.</p>
 <dd><p>Iterate through all plugins and their <a class="reference internal" href="options.html#streamlink.options.Arguments" title="streamlink.options.Arguments"><code class="xref py py-class docutils literal notranslate"><span class="pre">Arguments</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Iterator</em>[tuple[str, <a class="reference internal" href="options.html#streamlink.options.Arguments" title="streamlink.options.Arguments"><em>Arguments</em></a>]]</p>
+<dd class="field-odd"><p>Iterator[tuple[str, <a class="reference internal" href="options.html#streamlink.options.Arguments" title="streamlink.options.Arguments">Arguments</a>]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -983,7 +984,7 @@ always have a higher priority than built-in plugins.</p>
 <dd><p>Iterate through all plugins and their <code class="xref py py-class docutils literal notranslate"><span class="pre">Matchers</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Iterator</em>[tuple[str, <em>Matchers</em>]]</p>
+<dd class="field-odd"><p>Iterator[tuple[str, Matchers]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1109,7 +1110,7 @@ always have a higher priority than built-in plugins.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=106b05f8"></script>
+</div><script src="../_static/documentation_options.js?v=f663eb4a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>

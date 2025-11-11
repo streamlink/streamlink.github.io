@@ -1,30 +1,30 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="../../">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Plugins" href="../../plugins.html" /><link rel="prev" title="Plugin specific usage" href="../plugins.html" />
-        <link rel="prefetch" href="../../_static/icon.svg" as="image" />
-        <link rel="prefetch" href="../../_static/icon.svg" as="image" />
-        <link rel="prefetch" href="../../_static/icon.svg" as="image" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Plugins" href="../../plugins.html"><link rel="prev" title="Plugin specific usage" href="../plugins.html">
+        <link rel="prefetch" href="../../_static/icon.svg" as="image">
+        <link rel="prefetch" href="../../_static/icon.svg" as="image">
+        <link rel="prefetch" href="../../_static/icon.svg" as="image">
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Twitch - Streamlink 7.6.0 documentation">
+  <meta property="og:title" content="Twitch - Streamlink 8.0.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Twitch - Streamlink 7.6.0 documentation</title>
+        <title>Twitch - Streamlink 8.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/custom.css?v=158623ca" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/custom.css?v=72de1884" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -40,14 +40,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
       }
     }
@@ -162,14 +162,10 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -179,17 +175,15 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Streamlink 7.6.0 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Streamlink 8.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -197,8 +191,7 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -214,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.6.0</pre>
+  <pre class="sidebar-versions-current">8.0.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins/twitch.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/cli/plugins/twitch.html" class="">Latest</a></dd>
@@ -228,7 +221,7 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../../cli.html">Command-Line Interface</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Command-Line Interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../cli.html">Command-Line Interface</a><input aria-label="Toggle navigation of Command-Line Interface" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../cli.html">Command-line usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../config.html">Configuration file</a></li>
@@ -236,7 +229,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocols.html">Streaming protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../proxy.html">Proxy support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../metadata.html">Metadata</a></li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="../plugins.html">Plugin specific usage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Plugin specific usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../plugins.html">Plugin specific usage</a><input aria-label="Toggle navigation of Plugin specific usage" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Twitch</a></li>
 </ul>
 </li>
@@ -247,12 +240,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../deprecations.html">Deprecations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../migrations.html">Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developing.html">Developing</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../api_guide.html">API Guide</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api_guide.html">API Guide</a><input aria-label="Toggle navigation of API Guide" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../api_guide/quickstart.html">Quickstart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api_guide/validate.html">Validation schemas</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api.html">API Reference</a><input aria-label="Toggle navigation of API Reference" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../api/streamlink.html">Streamlink</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/session.html">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/plugin.html">Plugin</a></li>
@@ -306,8 +299,7 @@
     <span class="visually-hidden">Edit this page</span>
   </a>
 </div><div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -315,8 +307,7 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -396,6 +387,23 @@ stream discontinuities in certain cases.</p>
 and <a class="reference internal" href="../../changelog.html#streamlink-7-5-0-2025-07-08"><span class="std std-ref">streamlink 7.5.0</span></a> (July 2025) required the <code class="docutils literal notranslate"><span class="pre">--twitch-disable-ads</span></code>
 plugin argument, as filtering out ads was deemed optional. Ad filtering became mandatory when Twitch changed the stream's
 format from MPEG-TS to MPEG-4, to prevent playback issues during stream discontinuities between the stream and ads.</p>
+</div>
+</details></section>
+<section id="higher-quality-streams">
+<h2>Higher quality streams<a class="headerlink" href="#higher-quality-streams" title="Link to this heading">¶</a></h2>
+<p>Access to higher quality streams, if available, requires the <a class="reference internal" href="../../cli.html#cmdoption-twitch-supported-codecs"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-supported-codecs=h264,h265,av1</span></code></a> plugin argument.</p>
+<p>With the introduction of Twitch's &quot;enhanced broadcasting&quot; system, channels are allowed to stream in higher qualities
+than before by using more modern video codecs. Since playback capabilities are not guaranteed on every system, clients need to
+explicitly announce which video codecs are supported.</p>
+<p><a class="reference internal" href="../../cli.html#cmdoption-twitch-supported-codecs"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-supported-codecs</span></code></a> allows setting a comma-separated list of supported codecs,
+<code class="docutils literal notranslate"><span class="pre">h264</span></code> (the default), <code class="docutils literal notranslate"><span class="pre">h265</span></code> and <code class="docutils literal notranslate"><span class="pre">av1</span></code>.</p>
+<p>Higher quality streams may only be available by enabling <code class="docutils literal notranslate"><span class="pre">h265</span></code> or <code class="docutils literal notranslate"><span class="pre">av1</span></code>.
+Lower quality streams which are re-encoded on Twitch's end may still be <code class="docutils literal notranslate"><span class="pre">h264</span></code>, even if not requested.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-log" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 8.25a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4A.75.75 0 0 1 5 8.25ZM4 10.5A.75.75 0 0 0 4 12h4a.75.75 0 0 0 0-1.5H4Z"></path><path d="M13-.005c1.654 0 3 1.328 3 3 0 .982-.338 1.933-.783 2.818-.443.879-1.028 1.758-1.582 2.588l-.011.017c-.568.853-1.104 1.659-1.501 2.446-.398.789-.623 1.494-.623 2.136a1.5 1.5 0 1 0 2.333-1.248.75.75 0 0 1 .834-1.246A3 3 0 0 1 13 16H3a3 3 0 0 1-3-3c0-1.582.891-3.135 1.777-4.506.209-.322.418-.637.623-.946.473-.709.923-1.386 1.287-2.048H2.51c-.576 0-1.381-.133-1.907-.783A2.68 2.68 0 0 1 0 2.995a3 3 0 0 1 3-3Zm0 1.5a1.5 1.5 0 0 0-1.5 1.5c0 .476.223.834.667 1.132A.75.75 0 0 1 11.75 5.5H5.368c-.467 1.003-1.141 2.015-1.773 2.963-.192.289-.381.571-.558.845C2.13 10.711 1.5 11.916 1.5 13A1.5 1.5 0 0 0 3 14.5h7.401A2.989 2.989 0 0 1 10 13c0-.979.338-1.928.784-2.812.441-.874 1.023-1.748 1.575-2.576l.017-.026c.568-.853 1.103-1.658 1.501-2.448.398-.79.623-1.497.623-2.143 0-.838-.669-1.5-1.5-1.5Zm-10 0a1.5 1.5 0 0 0-1.5 1.5c0 .321.1.569.27.778.097.12.325.227.74.227h7.674A2.737 2.737 0 0 1 10 2.995c0-.546.146-1.059.401-1.5Z"></path></svg></span><span class="sd-summary-text">Changelog</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Due to current limitations of Streamlink's stream selection and how stream data is presented to the user,
+this plugin argument was added in <a class="reference internal" href="../../changelog.html#streamlink-8-0-0-2025-11-11"><span class="std std-ref">streamlink 8.0.0</span></a> as a temporary solution.</p>
 </div>
 </details></section>
 <section id="client-integrity-token">
@@ -514,6 +522,7 @@ without causing any stuttering, e.g. when running out out available data.</p>
 <li><a class="reference internal" href="#">Twitch</a><ul>
 <li><a class="reference internal" href="#authentication">Authentication</a></li>
 <li><a class="reference internal" href="#embedded-ads">Embedded ads</a></li>
+<li><a class="reference internal" href="#higher-quality-streams">Higher quality streams</a></li>
 <li><a class="reference internal" href="#client-integrity-token">Client-integrity token</a></li>
 <li><a class="reference internal" href="#low-latency-streaming">Low latency streaming</a><ul>
 <li><a class="reference internal" href="#player-buffer-tweaks">Player buffer tweaks</a></li>
@@ -530,7 +539,7 @@ without causing any stuttering, e.g. when running out out available data.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=106b05f8"></script>
+</div><script src="../../_static/documentation_options.js?v=f663eb4a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>

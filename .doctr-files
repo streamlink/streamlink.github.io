@@ -1,7 +1,12 @@
 ./.buildinfo
+./_images/github-lockup-dark.svg
+./_images/github-lockup-light.svg
 ./_images/icon-ffmpeg.svg
 ./_images/icon-python.svg
 ./_images/icon.svg
+./_images/jetbrains-mono-black.svg
+./_images/jetbrains-mono-white.svg
+./_sources/acknowledgements.rst.txt
 ./_sources/api.rst.txt
 ./_sources/api/cache.rst.txt
 ./_sources/api/exceptions.rst.txt
@@ -47,9 +52,13 @@
 ./_static/favicon-32x32.png
 ./_static/favicon.ico
 ./_static/file.png
+./_static/github-lockup-dark.svg
+./_static/github-lockup-light.svg
 ./_static/icon-ffmpeg.svg
 ./_static/icon-python.svg
 ./_static/icon.svg
+./_static/jetbrains-mono-black.svg
+./_static/jetbrains-mono-white.svg
 ./_static/language_data.js
 ./_static/minus.png
 ./_static/opengraph-image.png
@@ -69,6 +78,7 @@
 ./_static/styles/furo-extensions.css.map
 ./_static/styles/furo.css
 ./_static/styles/furo.css.map
+./acknowledgements.html
 ./api.html
 ./api/cache.html
 ./api/exceptions.html

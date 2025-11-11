@@ -177,10 +177,10 @@ Linux and BSD
       - .. code-block:: bash
 
             # If you don't have Debian backports already (see link below):
-            echo "deb http://deb.debian.org/debian bookworm-backports main" | sudo tee "/etc/apt/sources.list.d/streamlink.list"
+            echo "deb http://deb.debian.org/debian trixie-backports main" | sudo tee "/etc/apt/sources.list.d/streamlink.list"
 
             sudo apt update
-            sudo apt -t bookworm-backports install streamlink
+            sudo apt -t trixie-backports install streamlink
 
         `Installing Debian backported packages`_
     * - :octicon:`package-dependents` `Fedora`_
@@ -231,7 +231,7 @@ Linux and BSD
 .. _Arch Linux: https://archlinux.org/packages/extra/any/streamlink/
 .. _Arch Linux (AUR, git): https://aur.archlinux.org/packages/streamlink-git/
 .. _Debian (sid, testing): https://packages.debian.org/sid/streamlink
-.. _Debian (stable): https://packages.debian.org/bookworm-backports/streamlink
+.. _Debian (stable): https://packages.debian.org/trixie-backports/streamlink
 .. _Fedora: https://src.fedoraproject.org/rpms/python-streamlink
 .. _FreeBSD (pkg): https://ports.freebsd.org/cgi/ports.cgi?query=streamlink&stype=name
 .. _FreeBSD (ports): https://www.freshports.org/multimedia/streamlink
@@ -253,7 +253,7 @@ Package availability
 Packaging is not done by the Streamlink maintainers themselves except for
 the `PyPI package <pypi-package-and-source-code_>`_,
 the `Windows installers + portable builds <Windows binaries_>`_,
-and the `Linux AppImages <Linux AppImages_>`_.
+and the `Linux AppImages`_.
 
 If a packaged release of Streamlink is not available for your operating system / distro or your system's architecture,
 or if it's out of date or broken, then please contact the respective package maintainers or package-repository maintainers
@@ -416,7 +416,7 @@ Streamlink defines a `build system <pyproject.toml_>`__ according to `PEP-517`_ 
       - Notes
     * - python
       - `Python`_
-      - At least version **3.9**
+      - At least version **3.10**
     * - build
       - `setuptools`_
       - At least version **65.6.0** |br|

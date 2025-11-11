@@ -1,6 +1,16 @@
 Deprecations
 ============
 
+streamlink 8.0.0
+----------------
+
+--hls-duration
+^^^^^^^^^^^^^^
+
+The ``--hls-duration`` CLI argument has been deprecated in favor of :option:`--stream-segmented-duration`,
+which affects all kinds of segmented streams, not just HLS streams.
+
+
 streamlink 7.0.0
 ----------------
 
@@ -147,9 +157,11 @@ streamlink 4.2.0
 url_master in HLSStream
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``url_master`` parameter and attribute of the :py:class:`HLSStream <streamlink.stream.HLSStream>`
-and :py:class:`MuxedHLSStream <streamlink.stream.MuxedHLSStream>` classes have been deprecated in favor of
-the ``multivariant`` parameter and attribute. ``multivariant`` is an :py:class:`M3U8` reference of the parsed
+:bdg-ref-danger:`Removed in 8.0.0 <migrations:HLSStream url_master argument>`
+
+The ``url_master`` parameter and attribute of the :class:`HLSStream <streamlink.stream.HLSStream>`
+and :class:`MuxedHLSStream <streamlink.stream.MuxedHLSStream>` classes have been deprecated in favor of
+the ``multivariant`` parameter and attribute. ``multivariant`` is an :class:`M3U8` reference of the parsed
 HLS multivariant playlist.
 
 
