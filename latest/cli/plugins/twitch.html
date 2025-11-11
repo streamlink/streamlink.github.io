@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Twitch - Streamlink 7.6.0+69.g85c4b62 documentation">
+  <meta property="og:title" content="Twitch - Streamlink 7.6.0+70.g48d2fb3 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Twitch - Streamlink 7.6.0+69.g85c4b62 documentation</title>
+        <title>Twitch - Streamlink 7.6.0+70.g48d2fb3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Streamlink 7.6.0+69.g85c4b62 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Streamlink 7.6.0+70.g48d2fb3 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.6.0+69.g85c4b62</pre>
+  <pre class="sidebar-versions-current">7.6.0+70.g48d2fb3</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/plugins/twitch.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/plugins/twitch.html" class="version-current">Latest</a></dd>
@@ -393,6 +393,23 @@ plugin argument, as filtering out ads was deemed optional. Ad filtering became m
 format from MPEG-TS to MPEG-4, to prevent playback issues during stream discontinuities between the stream and ads.</p>
 </div>
 </details></section>
+<section id="higher-quality-streams">
+<h2>Higher quality streams<a class="headerlink" href="#higher-quality-streams" title="Link to this heading">¶</a></h2>
+<p>Access to higher quality streams, if available, requires the <a class="reference internal" href="../../cli.html#cmdoption-twitch-supported-codecs"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-supported-codecs=h264,h265,av1</span></code></a> plugin argument.</p>
+<p>With the introduction of Twitch's &quot;enhanced broadcasting&quot; system, channels are allowed to stream in higher qualities
+than before by using more modern video codecs. Since playback capabilities are not guaranteed on every system, clients need to
+explicitly announce which video codecs are supported.</p>
+<p><a class="reference internal" href="../../cli.html#cmdoption-twitch-supported-codecs"><code class="xref std std-option docutils literal notranslate"><span class="pre">--twitch-supported-codecs</span></code></a> allows setting a comma-separated list of supported codecs,
+<code class="docutils literal notranslate"><span class="pre">h264</span></code> (the default), <code class="docutils literal notranslate"><span class="pre">h265</span></code> and <code class="docutils literal notranslate"><span class="pre">av1</span></code>.</p>
+<p>Higher quality streams may only be available by enabling <code class="docutils literal notranslate"><span class="pre">h265</span></code> or <code class="docutils literal notranslate"><span class="pre">av1</span></code>.
+Lower quality streams which are re-encoded on Twitch's end may still be <code class="docutils literal notranslate"><span class="pre">h264</span></code>, even if not requested.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-log" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 8.25a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4A.75.75 0 0 1 5 8.25ZM4 10.5A.75.75 0 0 0 4 12h4a.75.75 0 0 0 0-1.5H4Z"></path><path d="M13-.005c1.654 0 3 1.328 3 3 0 .982-.338 1.933-.783 2.818-.443.879-1.028 1.758-1.582 2.588l-.011.017c-.568.853-1.104 1.659-1.501 2.446-.398.789-.623 1.494-.623 2.136a1.5 1.5 0 1 0 2.333-1.248.75.75 0 0 1 .834-1.246A3 3 0 0 1 13 16H3a3 3 0 0 1-3-3c0-1.582.891-3.135 1.777-4.506.209-.322.418-.637.623-.946.473-.709.923-1.386 1.287-2.048H2.51c-.576 0-1.381-.133-1.907-.783A2.68 2.68 0 0 1 0 2.995a3 3 0 0 1 3-3Zm0 1.5a1.5 1.5 0 0 0-1.5 1.5c0 .476.223.834.667 1.132A.75.75 0 0 1 11.75 5.5H5.368c-.467 1.003-1.141 2.015-1.773 2.963-.192.289-.381.571-.558.845C2.13 10.711 1.5 11.916 1.5 13A1.5 1.5 0 0 0 3 14.5h7.401A2.989 2.989 0 0 1 10 13c0-.979.338-1.928.784-2.812.441-.874 1.023-1.748 1.575-2.576l.017-.026c.568-.853 1.103-1.658 1.501-2.448.398-.79.623-1.497.623-2.143 0-.838-.669-1.5-1.5-1.5Zm-10 0a1.5 1.5 0 0 0-1.5 1.5c0 .321.1.569.27.778.097.12.325.227.74.227h7.674A2.737 2.737 0 0 1 10 2.995c0-.546.146-1.059.401-1.5Z"></path></svg></span><span class="sd-summary-text">Changelog</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Due to current limitations of Streamlink's stream selection and how stream data is presented to the user,
+this plugin argument was added in Streamlink 8.0.0 as a temporary solution.</p>
+</div>
+</details></section>
 <section id="client-integrity-token">
 <h2>Client-integrity token<a class="headerlink" href="#client-integrity-token" title="Link to this heading">¶</a></h2>
 <p>Sometimes when acquiring a streaming access token from Twitch for watching streams, a client-integrity token might be required.
@@ -509,6 +526,7 @@ without causing any stuttering, e.g. when running out out available data.</p>
 <li><a class="reference internal" href="#">Twitch</a><ul>
 <li><a class="reference internal" href="#authentication">Authentication</a></li>
 <li><a class="reference internal" href="#embedded-ads">Embedded ads</a></li>
+<li><a class="reference internal" href="#higher-quality-streams">Higher quality streams</a></li>
 <li><a class="reference internal" href="#client-integrity-token">Client-integrity token</a></li>
 <li><a class="reference internal" href="#low-latency-streaming">Low latency streaming</a><ul>
 <li><a class="reference internal" href="#player-buffer-tweaks">Player buffer tweaks</a></li>
@@ -525,7 +543,7 @@ without causing any stuttering, e.g. when running out out available data.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=0e1fa096"></script>
+</div><script src="../../_static/documentation_options.js?v=eaace5fb"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
