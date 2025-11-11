@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Stream - Streamlink 7.6.0+72.g66812f6 documentation">
+  <meta property="og:title" content="Stream - Streamlink 7.6.0+73.ga5449a3 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Stream - Streamlink 7.6.0+72.g66812f6 documentation</title>
+        <title>Stream - Streamlink 7.6.0+73.ga5449a3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 7.6.0+72.g66812f6 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 7.6.0+73.ga5449a3 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.6.0+72.g66812f6</pre>
+  <pre class="sidebar-versions-current">7.6.0+73.ga5449a3</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/stream.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/stream.html" class="version-current">Latest</a></dd>
@@ -453,7 +453,6 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <li><p><strong>video</strong> (<em>str</em>) -- Video stream URL</p></li>
 <li><p><strong>audio</strong> (<em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) -- Audio stream URL or list of URLs</p></li>
 <li><p><strong>hlsstream</strong> (<em>type</em><em>[</em><em>TMuxedHLSStream_co</em><em>] </em><em>| </em><em>None</em>) -- The <a class="reference internal" href="#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> class of each sub-stream</p></li>
-<li><p><strong>url_master</strong> -- The URL of the HLS playlist's multivariant playlist (deprecated)</p></li>
 <li><p><strong>multivariant</strong> (<em>M3U8</em><em> | </em><em>None</em>) -- The parsed multivariant playlist</p></li>
 <li><p><strong>force_restart</strong> (<em>bool</em>) -- Start from the beginning after reaching the playlist's end</p></li>
 <li><p><strong>ffmpeg_options</strong> (<em>Mapping</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>] </em><em>| </em><em>None</em>) -- Additional keyword arguments passed to <code class="xref py py-class docutils literal notranslate"><span class="pre">ffmpegmux.FFMPEGMuxer</span></code></p></li>
@@ -492,7 +491,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
 <li><p><strong>period</strong> (<em>int</em><em> | </em><em>str</em>) -- Which MPD period to use (index number (int) or <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute (str)) for finding representations</p></li>
 <li><p><strong>with_video_only</strong> (<em>bool</em>) -- Also return video-only streams, otherwise only return muxed streams</p></li>
 <li><p><strong>with_audio_only</strong> (<em>bool</em>) -- Also return audio-only streams, otherwise only return muxed streams</p></li>
-<li><p><strong>kwargs</strong> -- Additional keyword arguments passed to <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.32.5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
+<li><p><strong>kwargs</strong> -- Additional keyword arguments passed to <a class="reference internal" href="#streamlink.stream.DASHStream" title="streamlink.stream.DASHStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">DASHStream</span></code></a> or <a class="reference external" href="https://requests.readthedocs.io/en/stable/api/#requests.Session.request" title="(in Requests v2.32.5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">requests.Session.request()</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -592,7 +591,7 @@ or <a class="reference external" href="https://requests.readthedocs.io/en/stable
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=78271512"></script>
+</div><script src="../_static/documentation_options.js?v=6781edd0"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
