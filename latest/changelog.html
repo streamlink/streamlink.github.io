@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 7.6.0+73.ga5449a3 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 7.6.0+74.g4f97a93 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 7.6.0+73.ga5449a3 documentation</title>
+        <title>Changelog - Streamlink 7.6.0+74.g4f97a93 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 7.6.0+73.ga5449a3 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 7.6.0+74.g4f97a93 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">7.6.0+73.ga5449a3</pre>
+  <pre class="sidebar-versions-current">7.6.0+74.g4f97a93</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -319,6 +319,37 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-8-0-0-2025-11-11">
+<h2>streamlink 8.0.0 (2025-11-11)<a class="headerlink" href="#streamlink-8-0-0-2025-11-11" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>BREAKING: dropped support for <a class="reference external" href="https://peps.python.org/pep-0596/#lifespan">EOL Python 3.9</a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6674">#6674</a>)</p></li>
+<li><p>BREAKING/API: <a class="reference external" href="https://streamlink.github.io/migrations.html#hlsstream-url-master-argument">removed deprecated <code class="docutils literal notranslate"><span class="pre">url_master</span></code> from <code class="docutils literal notranslate"><span class="pre">HLSStream</span></code>/<code class="docutils literal notranslate"><span class="pre">MuxedHLSStream</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6688">#6688</a>)</p></li>
+<li><p>BREAKING/dependencies: bumped version requirement of <a class="reference external" href="https://urllib3.readthedocs.io/en/stable/v2-migration-guide.html"><code class="docutils literal notranslate"><span class="pre">urllib3</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=2.0.0</span></code></a> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6686">#6686</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--stream-segmented-duration</span></code> in favor of <code class="docutils literal notranslate"><span class="pre">--hls-duration</span></code> (now deprecated), which affects HLS, DASH and other segmented stream types (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6705">#6705</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">duration</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">dash://</span></code> streams (<code class="docutils literal notranslate"><span class="pre">DASHStream</span></code>) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6705">#6705</a>)</p></li>
+<li><p>Added: <code class="docutils literal notranslate"><span class="pre">--ffmpeg-validation-timeout</span></code> for being able to increase the time for validating the FFmpeg executable (<code class="docutils literal notranslate"><span class="pre">--ffmpeg-ffmpeg</span></code>) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6716">#6716</a>)</p></li>
+<li><p>Added: Flatpak player detection for VLC and mpv (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6717">#6717</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6723">#6723</a>)</p></li>
+<li><p>Refactored: parts of the internal <code class="docutils literal notranslate"><span class="pre">SegmentedStream</span></code>, <code class="docutils literal notranslate"><span class="pre">HLSStream</span></code> and <code class="docutils literal notranslate"><span class="pre">DASHStream</span></code> implementations (WIP) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6696">#6696</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6707">#6707</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6709">#6709</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>aloula: fixed livestream schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6662">#6662</a>)</p></li>
+<li><p>btv: rewritten and fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6691">#6691</a>)</p></li>
+<li><p>chzzk: added support for in-progress VODs via live-rewind streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6675">#6675</a>)</p></li>
+<li><p>dlive: fixed streams expiring after 5 minutes (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6695">#6695</a>)</p></li>
+<li><p>goodgame: updated matches, switched API endpoints (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6714">#6714</a>)</p></li>
+<li><p>nhkworld: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6677">#6677</a>)</p></li>
+<li><p>rtve: fixed validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6701">#6701</a>)</p></li>
+<li><p>twitch: fixed access token acquirement and various persisted GraphQL query IDs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6720">#6720</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6721">#6721</a>)</p></li>
+<li><p>twitch: added <code class="docutils literal notranslate"><span class="pre">--twitch-supported-codecs</span></code> for access to higher quality streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/5769">#5769</a>)</p></li>
+</ul>
+</li>
+<li><p>Dependencies: dropped optional <code class="docutils literal notranslate"><span class="pre">zstandard</span></code> dependency on Python 3.14 and above (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6683">#6683</a>)</p></li>
+<li><p>Tests: bumped version requirement of <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=8.4.0</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6612">#6612</a>)</p></li>
+<li><p>Docs: refactored docs config and custom Sphinx extensions, added <code class="docutils literal notranslate"><span class="pre">make</span></code> options for disabling various components for offline building (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6668">#6668</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/6669">#6669</a>)</p></li>
+<li><p>Docs: fixed compatibility with <code class="docutils literal notranslate"><span class="pre">docutils==0.22.2</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6699">#6699</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/7.6.0...8.0.0">Full changelog</a></p>
+</section>
 <section id="streamlink-7-6-0-2025-09-08">
 <h2>streamlink 7.6.0 (2025-09-08)<a class="headerlink" href="#streamlink-7-6-0-2025-09-08" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -2159,6 +2190,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-8-0-0-2025-11-11">streamlink 8.0.0 (2025-11-11)</a></li>
 <li><a class="reference internal" href="#streamlink-7-6-0-2025-09-08">streamlink 7.6.0 (2025-09-08)</a></li>
 <li><a class="reference internal" href="#streamlink-7-5-0-2025-07-08">streamlink 7.5.0 (2025-07-08)</a></li>
 <li><a class="reference internal" href="#streamlink-7-4-0-2025-06-08">streamlink 7.4.0 (2025-06-08)</a></li>
@@ -2269,7 +2301,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=6781edd0"></script>
+</div><script src="_static/documentation_options.js?v=a2a454b3"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
