@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Command-Line Interface - Streamlink 8.0.0+8.g4eaee26 documentation">
+  <meta property="og:title" content="Command-Line Interface - Streamlink 8.0.0+11.g64f746d documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Command-Line Interface - Streamlink 8.0.0+8.g4eaee26 documentation</title>
+        <title>Command-Line Interface - Streamlink 8.0.0+11.g64f746d documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.0.0+8.g4eaee26 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.0.0+11.g64f746d documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.0.0+8.g4eaee26</pre>
+  <pre class="sidebar-versions-current">8.0.0+11.g64f746d</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -1029,6 +1029,21 @@ The actual duration may be slightly longer, as it is rounded to the nearest segm
 </dd></dl>
 
 <dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-stream-segmented-queue-deadline">
+<span class="sig-name descname"><span class="pre">--stream-segmented-queue-deadline</span></span><span class="sig-prename descclassname"> <span class="pre">FACTOR</span></span><a class="headerlink" href="#cmdoption-stream-segmented-queue-deadline" title="Link to this definition">¶</a></dt>
+<dd><p>A multiplication factor of the time frame in which new segments must be queued in order to prevent playback issues
+due to lack of video/audio data. If this segment-queue-deadline has not been met, the stream will be stopped early.</p>
+<p>The intention of this segment-queue-deadline is to be able to stop early when the end of a stream is not announced
+by the server, so Streamlink doesn't have to wait until a buffer read-timeout occurs. See <a class="reference internal" href="#cmdoption-stream-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-timeout</span></code></a>.</p>
+<p>The base time this multiplication factor is applied to depends on the specific
+stream implementation and the respective values returned by the streaming server.
+This deadline check is done after trying to fetch new data.</p>
+<p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to disable.</p>
+<p>Default is: <strong>3.0</strong>.</p>
+<p>By default, wait three times as long for new segments to be made available than the server's advertised time frame.</p>
+</dd></dl>
+
+<dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-stream-timeout">
 <span class="sig-name descname"><span class="pre">--stream-timeout</span></span><span class="sig-prename descclassname"> <span class="pre">TIMEOUT</span></span><a class="headerlink" href="#cmdoption-stream-timeout" title="Link to this definition">¶</a></dt>
 <dd><p>The maximum time to wait for an unfiltered stream to continue outputting data.</p>
@@ -1091,14 +1106,7 @@ Player parameters can be set via <a class="reference internal" href="#cmdoption-
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-hls-segment-queue-threshold">
 <span class="sig-name descname"><span class="pre">--hls-segment-queue-threshold</span></span><span class="sig-prename descclassname"> <span class="pre">FACTOR</span></span><a class="headerlink" href="#cmdoption-hls-segment-queue-threshold" title="Link to this definition">¶</a></dt>
-<dd><p>The multiplication factor of the HLS playlist's target duration after which the stream will be stopped early
-if no new segments were queued after refreshing the playlist (multiple times). The target duration defines the
-maximum duration a single segment can have, meaning new segments must be available during this time frame,
-otherwise playback issues can occur.</p>
-<p>The intention of this queue threshold is to be able to stop early when the end of a stream doesn't get
-announced by the server, so Streamlink doesn't have to wait until a read-timeout occurs. See <a class="reference internal" href="#cmdoption-stream-timeout"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-timeout</span></code></a>.</p>
-<p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to disable.</p>
-<p>Default is: <strong>3</strong>.</p>
+<dd><p>Deprecated in favor of <a class="reference internal" href="#cmdoption-stream-segmented-queue-deadline"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segmented-queue-deadline</span></code></a>.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -1888,7 +1896,7 @@ Lower quality streams which are re-encoded on Twitch's end may still be h264, ev
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=7095ebda"></script>
+</div><script src="_static/documentation_options.js?v=7bd4105d"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
