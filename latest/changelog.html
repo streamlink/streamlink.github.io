@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 8.1.0+29.g6c5cc77 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 8.1.0+30.gf7dbcca documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 8.1.0+29.g6c5cc77 documentation</title>
+        <title>Changelog - Streamlink 8.1.0+30.gf7dbcca documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.1.0+29.g6c5cc77 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.1.0+30.gf7dbcca documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.1.0+29.g6c5cc77</pre>
+  <pre class="sidebar-versions-current">8.1.0+30.gf7dbcca</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -319,6 +319,22 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-8-1-1-2026-01-17">
+<h2>streamlink 8.1.1 (2026-01-17)<a class="headerlink" href="#streamlink-8-1-1-2026-01-17" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">--stream-segmented-queue-deadline</span></code> not being applied correctly to the Streamlink session options (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6758">#6758</a>)</p></li>
+<li><p>Changed: <code class="docutils literal notranslate"><span class="pre">--hls-segment-ignore-names</span></code> to not hardcode <code class="docutils literal notranslate"><span class="pre">.ts</span></code> HLS segment file name extensions (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6747">#6747</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>dailymotion: fixed 403 HLS playlist responses (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6773">#6773</a>)</p></li>
+<li><p>pluto: fixed url matchers and ad detection (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6767">#6767</a>)</p></li>
+<li><p>soop: fixed CDN mapping for <code class="docutils literal notranslate"><span class="pre">ld_cdn</span></code> based regions (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6749">#6749</a>)</p></li>
+</ul>
+</li>
+<li><p>Build: removed unneeded <code class="docutils literal notranslate"><span class="pre">wheel</span></code> dependency from <code class="docutils literal notranslate"><span class="pre">build-system.requires</span></code> and the <code class="docutils literal notranslate"><span class="pre">build</span></code> dependency group (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6754">#6754</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/8.1.0...8.1.1">Full changelog</a></p>
+</section>
 <section id="streamlink-8-1-0-2025-12-14">
 <h2>streamlink 8.1.0 (2025-12-14)<a class="headerlink" href="#streamlink-8-1-0-2025-12-14" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -2204,6 +2220,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-8-1-1-2026-01-17">streamlink 8.1.1 (2026-01-17)</a></li>
 <li><a class="reference internal" href="#streamlink-8-1-0-2025-12-14">streamlink 8.1.0 (2025-12-14)</a></li>
 <li><a class="reference internal" href="#streamlink-8-0-0-2025-11-11">streamlink 8.0.0 (2025-11-11)</a></li>
 <li><a class="reference internal" href="#streamlink-7-6-0-2025-09-08">streamlink 7.6.0 (2025-09-08)</a></li>
@@ -2316,7 +2333,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=b508115d"></script>
+</div><script src="_static/documentation_options.js?v=de4ca09f"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
