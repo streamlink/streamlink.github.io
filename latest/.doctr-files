@@ -43,11 +43,13 @@ latest/_sources/thirdparty.rst.txt
 latest/_sphinx_design_static/design-tabs.js
 latest/_sphinx_design_static/sphinx-design.min.css
 latest/_static/apple-touch-icon.png
+latest/_static/base-stemmer.js
 latest/_static/basic.css
 latest/_static/debug.css
 latest/_static/design-tabs.js
 latest/_static/doctools.js
 latest/_static/documentation_options.js
+latest/_static/english-stemmer.js
 latest/_static/favicon-16x16.png
 latest/_static/favicon-32x32.png
 latest/_static/favicon.ico
