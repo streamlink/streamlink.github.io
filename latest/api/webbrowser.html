@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Webbrowser - Streamlink 8.1.2+37.g7799a6a documentation">
+  <meta property="og:title" content="Webbrowser - Streamlink 8.1.2+39.gfce866c documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Webbrowser - Streamlink 8.1.2+37.g7799a6a documentation</title>
+        <title>Webbrowser - Streamlink 8.1.2+39.gfce866c documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 8.1.2+37.g7799a6a documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 8.1.2+39.gfce866c documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.1.2+37.g7799a6a</pre>
+  <pre class="sidebar-versions-current">8.1.2+39.gfce866c</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/webbrowser.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/webbrowser.html" class="version-current">Latest</a></dd>
@@ -657,7 +657,7 @@ Doesn't wait for the request to finish loading. See <a class="reference internal
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event</strong> (<em>type</em><em>[</em><em>TEvent</em><em>]</em>) -- See the <code class="docutils literal notranslate"><span class="pre">streamlink.webbrowser.cdp.devtools</span></code> package for the available events.
+<li><p><strong>event</strong> (<em>type</em><em>[</em><em>TCDPEvent</em><em>]</em>) -- See the <code class="docutils literal notranslate"><span class="pre">streamlink.webbrowser.cdp.devtools</span></code> package for the available events.
 For events to be sent over the CDP connection, a specific domain needs to be enabled first.</p></li>
 <li><p><strong>max_buffer_size</strong> (<em>int</em><em> | </em><em>None</em>) -- The buffer size of the <code class="docutils literal notranslate"><span class="pre">trio</span></code> memory channel.</p></li>
 </ul>
@@ -666,7 +666,7 @@ For events to be sent over the CDP connection, a specific domain needs to be ena
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPEventListener" title="streamlink.webbrowser.cdp.connection.CDPEventListener"><em>CDPEventListener</em></a>[<em>TEvent</em>]</p>
+<dd class="field-odd"><p><a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPEventListener" title="streamlink.webbrowser.cdp.connection.CDPEventListener"><em>CDPEventListener</em></a>[<em>TCDPEvent</em>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -776,7 +776,7 @@ This override is mostly only relevant for awaiting JS code evaluations.</p></li>
 <dl class="py class">
 <dt class="sig sig-object py" id="streamlink.webbrowser.cdp.connection.CDPEventListener">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">streamlink.webbrowser.cdp.connection.</span></span><span class="sig-name descname"><span class="pre">CDPEventListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_buffer_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.webbrowser.cdp.connection.CDPEventListener" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">TEvent</span></code>]</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">TCDPEvent</span></code>]</p>
 <p>Instances of this class are returned by <a class="reference internal" href="#streamlink.webbrowser.cdp.connection.CDPBase.listen" title="streamlink.webbrowser.cdp.connection.CDPBase.listen"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CDPBase.listen()</span></code></a>.</p>
 <p>The return types of each of its methods depend on the event type.</p>
 <p>Can be used as an async for-loop which indefinitely waits for events to be emitted,
@@ -794,8 +794,8 @@ or can be used as an async context manager which yields the event and closes the
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event_channels</strong> (<em>TEventChannels</em>)</p></li>
-<li><p><strong>event</strong> (<em>type</em><em>[</em><em>TEvent</em><em>]</em>)</p></li>
+<li><p><strong>event_channels</strong> (<em>MutableMapping</em><em>[</em><em>type</em><em>[</em><em>TCDPEvent</em><em>]</em><em>, </em><em>set</em><em>[</em><em>trio.MemorySendChannel</em><em>[</em><em>TCDPEvent</em><em>]</em><em>]</em><em>]</em>)</p></li>
+<li><p><strong>event</strong> (<em>type</em><em>[</em><em>TCDPEvent</em><em>]</em>)</p></li>
 <li><p><strong>max_buffer_size</strong> (<em>int</em><em> | </em><em>None</em>)</p></li>
 </ul>
 </dd>
@@ -806,7 +806,7 @@ or can be used as an async context manager which yields the event and closes the
 <dd><p>Await a single event without closing the listener's memory channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>TEvent</em></p>
+<dd class="field-odd"><p><em>TCDPEvent</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -945,7 +945,7 @@ or can be used as an async context manager which yields the event and closes the
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=9fd0c37c"></script>
+</div><script src="../_static/documentation_options.js?v=86bf9710"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
