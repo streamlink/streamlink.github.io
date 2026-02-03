@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Installation - Streamlink 8.1.2+42.gbecd2ef documentation">
+  <meta property="og:title" content="Installation - Streamlink 8.1.2+43.gba57b51 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Installation - Streamlink 8.1.2+42.gbecd2ef documentation</title>
+        <title>Installation - Streamlink 8.1.2+43.gba57b51 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.1.2+42.gbecd2ef documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.1.2+43.gba57b51 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.1.2+42.gbecd2ef</pre>
+  <pre class="sidebar-versions-current">8.1.2+43.gba57b51</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="">Stable</a></dd>
     <dd><a href="/latest/install.html" class="version-current">Latest</a></dd>
@@ -727,8 +727,11 @@ Not needed when building wheels and installing from the source distribution.</p>
 </tr>
 <tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://github.com/agronholm/exceptiongroup">exceptiongroup</a></p></td>
-<td><p>Only required when <code class="docutils literal notranslate"><span class="pre">python_version&lt;&quot;3.11&quot;</span></code> <br />
-Used for <code class="docutils literal notranslate"><span class="pre">ExceptionGroup</span></code> handling</p></td>
+<td><div class="line-block">
+<div class="line">Only required on <code class="docutils literal notranslate"><span class="pre">python_version&lt;&quot;3.11&quot;</span></code></div>
+<div class="line">Used for <code class="docutils literal notranslate"><span class="pre">ExceptionGroup</span></code> handling on older Python versions</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pypi.org/project/isodate/">isodate</a></p></td>
@@ -763,14 +766,22 @@ Used for <code class="docutils literal notranslate"><span class="pre">ExceptionG
 <td><p>Used for WebSocket connections on top of the async trio framework</p></td>
 </tr>
 <tr class="row-even"><td><p>runtime</p></td>
+<td><p><a class="reference external" href="https://typing-extensions.readthedocs.io/">typing-extensions</a></p></td>
+<td><div class="line-block">
+<div class="line">Only required on <code class="docutils literal notranslate"><span class="pre">python_version&lt;&quot;3.11&quot;</span></code></div>
+<div class="line">Used for <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0681/"><strong>PEP 681</strong></a> on older Python versions</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://urllib3.readthedocs.io/en/stable/">urllib3</a></p></td>
 <td><p>Used internally by <a class="reference external" href="https://requests.readthedocs.io/en/latest/">requests</a>, defined as direct dependency</p></td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pypi.org/project/websocket-client/">websocket-client</a></p></td>
 <td><p>Used for making websocket connections</p></td>
 </tr>
-<tr class="row-even"><td><p>optional</p></td>
+<tr class="row-odd"><td><p>optional</p></td>
 <td><p><a class="reference external" href="https://www.ffmpeg.org/">FFmpeg</a></p></td>
 <td><p>Required for <a class="reference external" href="https://en.wikipedia.org/wiki/Multiplexing#Video_processing">muxing</a> multiple video/audio/subtitle streams into a single output stream.</p>
 <ul class="simple">
@@ -779,7 +790,7 @@ Used for <code class="docutils literal notranslate"><span class="pre">ExceptionG
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td><p>optional</p></td>
+<tr class="row-even"><td><p>optional</p></td>
 <td><div class="line-block">
 <div class="line"><a class="reference external" href="https://pypi.org/project/Brotli/">brotli</a></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">decompress</span></code> extras marker</div>
@@ -787,7 +798,7 @@ Used for <code class="docutils literal notranslate"><span class="pre">ExceptionG
 </td>
 <td><p>Used for decompressing HTTP responses</p></td>
 </tr>
-<tr class="row-even"><td><p>optional</p></td>
+<tr class="row-odd"><td><p>optional</p></td>
 <td><div class="line-block">
 <div class="line"><a class="reference external" href="https://pypi.org/project/zstandard/">zstandard</a></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">decompress</span></code> extras marker</div>
@@ -1096,7 +1107,7 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=57113760"></script>
+</div><script src="_static/documentation_options.js?v=bc4f5318"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
