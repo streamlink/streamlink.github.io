@@ -43,11 +43,13 @@
 ./_sphinx_design_static/design-tabs.js
 ./_sphinx_design_static/sphinx-design.min.css
 ./_static/apple-touch-icon.png
+./_static/base-stemmer.js
 ./_static/basic.css
 ./_static/debug.css
 ./_static/design-tabs.js
 ./_static/doctools.js
 ./_static/documentation_options.js
+./_static/english-stemmer.js
 ./_static/favicon-16x16.png
 ./_static/favicon-32x32.png
 ./_static/favicon.ico
