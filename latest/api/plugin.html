@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Plugin - Streamlink 8.2.0+28.g907ccbf documentation">
+  <meta property="og:title" content="Plugin - Streamlink 8.2.0+29.g7264436 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Plugin - Streamlink 8.2.0+28.g907ccbf documentation</title>
+        <title>Plugin - Streamlink 8.2.0+29.g7264436 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 8.2.0+28.g907ccbf documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 8.2.0+29.g7264436 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.2.0+28.g907ccbf</pre>
+  <pre class="sidebar-versions-current">8.2.0+29.g7264436</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/plugin.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/plugin.html" class="version-current">Latest</a></dd>
@@ -425,7 +425,7 @@ Setting a new value will automatically update the <a class="reference internal" 
 or it can return a sequence of tuples of stream names and streams, or a mapping of stream names and streams.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>Iterable</em>[tuple[str, <em>Stream</em> | <em>Iterable</em>[<em>Stream</em>]]] | <em>Mapping</em>[str, <em>Stream</em> | <em>Iterable</em>[<em>Stream</em>]] | None</p>
+<dd class="field-odd"><p><em>Iterable</em>[tuple[str, <a class="reference internal" href="stream.html#streamlink.stream.stream.Stream" title="streamlink.stream.stream.Stream"><em>Stream</em></a> | <em>Iterable</em>[<a class="reference internal" href="stream.html#streamlink.stream.stream.Stream" title="streamlink.stream.stream.Stream"><em>Stream</em></a>]]] | <em>Mapping</em>[str, <a class="reference internal" href="stream.html#streamlink.stream.stream.Stream" title="streamlink.stream.stream.Stream"><em>Stream</em></a> | <em>Iterable</em>[<a class="reference internal" href="stream.html#streamlink.stream.stream.Stream" title="streamlink.stream.stream.Stream"><em>Stream</em></a>]] | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -436,7 +436,7 @@ or it can return a sequence of tuples of stream names and streams, or a mapping 
 <dd><p>Attempts to extract available streams.</p>
 <p>Returns a <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> containing the streams, where the key is
 the name of the stream (most commonly the quality name), with the value
-being a <a class="reference internal" href="stream.html#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a> instance.</p>
+being a <code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code> instance.</p>
 <p>The result can contain the synonyms <strong>best</strong> and <strong>worst</strong> which
 point to the streams which are likely to be of highest and
 lowest quality respectively.</p>
@@ -465,10 +465,10 @@ stream names as input.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> of stream names and <a class="reference internal" href="stream.html#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a> instances</p>
+<dd class="field-even"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code> of stream names and <code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code> instances</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>MutableMapping[str, <a class="reference internal" href="stream.html#streamlink.stream.Stream" title="streamlink.stream.Stream">Stream</a>]</p>
+<dd class="field-odd"><p>MutableMapping[str, <a class="reference internal" href="stream.html#streamlink.stream.stream.Stream" title="streamlink.stream.stream.Stream">Stream</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -739,7 +739,7 @@ assuming the plugin's module name is <code class="docutils literal notranslate">
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=2df6a2c8"></script>
+</div><script src="../_static/documentation_options.js?v=1b47de8b"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>

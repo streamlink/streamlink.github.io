@@ -13,11 +13,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content=" - Streamlink 8.2.0+28.g907ccbf documentation">
+  <meta property="og:title" content=" - Streamlink 8.2.0+29.g7264436 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630"><title>Index - Streamlink 8.2.0+28.g907ccbf documentation</title>
+  <meta property="og:image:height" content="630"><title>Index - Streamlink 8.2.0+29.g7264436 documentation</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -177,7 +177,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.2.0+28.g907ccbf documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.2.0+29.g7264436 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -205,7 +205,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.2.0+28.g907ccbf</pre>
+  <pre class="sidebar-versions-current">8.2.0+29.g7264436</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/genindex.html" class="">Stable</a></dd>
     <dd><a href="/latest/genindex.html" class="version-current">Latest</a></dd>
@@ -1576,6 +1576,8 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/webbrowser.html#streamlink.webbrowser.cdp.client.CDPClientSession.apply_cookies">apply_cookies() (streamlink.webbrowser.cdp.client.CDPClientSession method)</a>
 </li>
+        <li><a href="api/stream.html#streamlink.stream.http.HTTPStream.args">args (streamlink.stream.http.HTTPStream attribute)</a>
+</li>
         <li><a href="api/options.html#streamlink.options.Argument">Argument (class in streamlink.options)</a>
 </li>
         <li><a href="api/options.html#streamlink.options.Arguments">Arguments (class in streamlink.options)</a>
@@ -1997,7 +1999,7 @@
   <h2>D</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api/stream.html#streamlink.stream.DASHStream">DASHStream (in module streamlink.stream)</a>
+        <li><a href="api/stream.html#streamlink.stream.dash.DASHStream">DASHStream (class in streamlink.stream.dash)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -2077,13 +2079,13 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/validate.html#streamlink.plugin.api.validate.hasattr">hasattr() (in module streamlink.plugin.api.validate)</a>
 </li>
-        <li><a href="api/stream.html#streamlink.stream.HLSStream">HLSStream (in module streamlink.stream)</a>
+        <li><a href="api/stream.html#streamlink.stream.hls.HLSStream">HLSStream (class in streamlink.stream.hls)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="api/session.html#streamlink.session.Streamlink.http">http (streamlink.session.Streamlink attribute)</a>
 </li>
-        <li><a href="api/stream.html#streamlink.stream.HTTPStream">HTTPStream (in module streamlink.stream)</a>
+        <li><a href="api/stream.html#streamlink.stream.http.HTTPStream">HTTPStream (class in streamlink.stream.http)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -2165,8 +2167,6 @@
 </li>
           <li><a href="api/validate.html#module-streamlink.plugin.api.validate">streamlink.plugin.api.validate</a>
 </li>
-          <li><a href="api/stream.html#module-streamlink.stream">streamlink.stream</a>
-</li>
           <li><a href="api/validate.html#module-streamlink.validate._schemas">streamlink.validate._schemas</a>
 </li>
           <li><a href="api/webbrowser.html#module-streamlink.webbrowser">streamlink.webbrowser</a>
@@ -2174,9 +2174,9 @@
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api/stream.html#streamlink.stream.MuxedHLSStream">MuxedHLSStream (in module streamlink.stream)</a>
+        <li><a href="api/stream.html#streamlink.stream.hls.MuxedHLSStream">MuxedHLSStream (class in streamlink.stream.hls)</a>
 </li>
-        <li><a href="api/stream.html#streamlink.stream.MuxedStream">MuxedStream (in module streamlink.stream)</a>
+        <li><a href="api/stream.html#streamlink.stream.ffmpegmux.MuxedStream">MuxedStream (class in streamlink.stream.ffmpegmux)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -2208,6 +2208,8 @@
   <h2>O</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/stream.html#streamlink.stream.stream.Stream.open">open() (streamlink.stream.stream.Stream method)</a>
+</li>
         <li><a href="api/validate.html#streamlink.plugin.api.validate.optional">optional (in module streamlink.plugin.api.validate)</a>
 </li>
         <li><a href="api/validate.html#streamlink.validate._schemas.OptionalSchema">OptionalSchema (class in streamlink.validate._schemas)</a>
@@ -2234,16 +2236,20 @@
 </li>
         <li><a href="api/validate.html#streamlink.plugin.api.validate.parse_json">parse_json() (in module streamlink.plugin.api.validate)</a>
 </li>
+        <li><a href="api/stream.html#streamlink.stream.dash.DASHStream.parse_manifest">parse_manifest() (streamlink.stream.dash.DASHStream class method)</a>
+</li>
         <li><a href="api/validate.html#streamlink.plugin.api.validate.parse_qsd">parse_qsd() (in module streamlink.plugin.api.validate)</a>
+</li>
+        <li><a href="api/stream.html#streamlink.stream.hls.HLSStream.parse_variant_playlist">parse_variant_playlist() (streamlink.stream.hls.HLSStream class method)</a>
 </li>
         <li><a href="api/validate.html#streamlink.plugin.api.validate.parse_xml">parse_xml() (in module streamlink.plugin.api.validate)</a>
 </li>
         <li><a href="api/plugin.html#streamlink.plugin.Plugin">Plugin (class in streamlink.plugin)</a>
 </li>
-        <li><a href="api/plugin.html#streamlink.plugin.pluginargument">pluginargument() (in module streamlink.plugin)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/plugin.html#streamlink.plugin.pluginargument">pluginargument() (in module streamlink.plugin)</a>
+</li>
         <li><a href="api/exceptions.html#streamlink.exceptions.PluginError">PluginError</a>
 </li>
         <li><a href="api/plugin.html#streamlink.plugin.pluginmatcher">pluginmatcher() (in module streamlink.plugin)</a>
@@ -2322,7 +2328,7 @@
           <li><a href="cli.html#cmdoption-arg-STREAM">command line option</a>
 </li>
         </ul></li>
-        <li><a href="api/stream.html#streamlink.stream.Stream">Stream (in module streamlink.stream)</a>
+        <li><a href="api/stream.html#streamlink.stream.stream.Stream">Stream (class in streamlink.stream.stream)</a>
 </li>
         <li><a href="api/exceptions.html#streamlink.exceptions.StreamError">StreamError</a>
 </li>
@@ -2356,13 +2362,6 @@
 
         <ul>
           <li><a href="api/validate.html#module-streamlink.plugin.api.validate">module</a>
-</li>
-        </ul></li>
-        <li>
-    streamlink.stream
-
-        <ul>
-          <li><a href="api/stream.html#module-streamlink.stream">module</a>
 </li>
         </ul></li>
         <li>
@@ -2441,7 +2440,11 @@
 </li>
         </ul></li>
         <li><a href="api/plugin.html#streamlink.plugin.Plugin.url">url (streamlink.plugin.Plugin property)</a>
+
+        <ul>
+          <li><a href="api/stream.html#streamlink.stream.http.HTTPStream.url">(streamlink.stream.http.HTTPStream property)</a>
 </li>
+        </ul></li>
         <li><a href="api/validate.html#streamlink.plugin.api.validate.url">url() (in module streamlink.plugin.api.validate)</a>
 </li>
     </ul></td>
@@ -2536,7 +2539,7 @@
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=2df6a2c8"></script>
+</div><script src="_static/documentation_options.js?v=1b47de8b"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
