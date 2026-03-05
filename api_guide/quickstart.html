@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Quickstart - Streamlink 8.2.0 documentation">
+  <meta property="og:title" content="Quickstart - Streamlink 8.2.1 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Quickstart - Streamlink 8.2.0 documentation</title>
+        <title>Quickstart - Streamlink 8.2.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 8.2.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 8.2.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.2.0</pre>
+  <pre class="sidebar-versions-current">8.2.1</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api_guide/quickstart.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/api_guide/quickstart.html" class="">Latest</a></dd>
@@ -327,7 +327,7 @@ to make use of the data Streamlink can retrieve in their own application.</p>
 <p>This simply attempts to find a plugin and use it to extract streams from
 the URL. This works great in simple cases but if you want more
 fine tuning you need to use a <a class="reference internal" href="#session-object">session object</a> instead and <a class="reference internal" href="#fetching-streams">fetch streams</a> manually.</p>
-<p>The returned value is a dict containing <a class="reference internal" href="../api/stream.html#streamlink.stream.Stream" title="streamlink.stream.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a> objects:</p>
+<p>The returned value is a dict containing <code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code> objects:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span>
 <span class="go">{&#39;41k&#39;: &lt;HLSStream [&#39;hls&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear0/prog_index.m3u8&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&#39;]&gt;,</span>
 <span class="go"> &#39;230k&#39;: &lt;HLSStream [&#39;hls&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear1/prog_index.m3u8&#39;, &#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8&#39;]&gt;,</span>
@@ -344,7 +344,7 @@ If an error occurs while fetching streams, a <a class="reference internal" href=
 <section id="opening-streams-to-read-data">
 <h2>Opening streams to read data<a class="headerlink" href="#opening-streams-to-read-data" title="Link to this heading">¶</a></h2>
 <p>Now that you have extracted some streams we might want to read some data from
-one of them. When you call <a class="reference internal" href="../api/stream.html#streamlink.stream.Stream.open" title="streamlink.stream.Stream.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> on a stream, a file-like object will be
+one of them. When you call <code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code> on a stream, a file-like object will be
 returned, which you can call <code class="docutils literal notranslate"><span class="pre">.read(size)</span></code> and <code class="docutils literal notranslate"><span class="pre">.close()</span></code> on.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fd</span> <span class="o">=</span> <span class="n">streams</span><span class="p">[</span><span class="s2">&quot;best&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
@@ -356,10 +356,10 @@ returned, which you can call <code class="docutils literal notranslate"><span cl
 <section id="inspecting-streams">
 <h2>Inspecting streams<a class="headerlink" href="#inspecting-streams" title="Link to this heading">¶</a></h2>
 <p>It's also possible to inspect the stream's internal parameters. Go to
-<a class="reference internal" href="../api/stream.html#module-streamlink.stream"><span class="std std-ref">Stream subclasses</span></a> to see which attributes are available
+<a class="reference internal" href="../api/stream.html#stream"><span class="std std-ref">Stream subclasses</span></a> to see which attributes are available
 for inspection for each stream type.</p>
-<p>For example, this is an <a class="reference internal" href="../api/stream.html#streamlink.stream.HLSStream" title="streamlink.stream.HLSStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code></a> object which
-contains a <a class="reference internal" href="../api/stream.html#streamlink.stream.HTTPStream.url" title="streamlink.stream.HTTPStream.url"><code class="xref py py-attr docutils literal notranslate"><span class="pre">url</span></code></a> attribute.</p>
+<p>For example, this is an <code class="xref py py-class docutils literal notranslate"><span class="pre">HLSStream</span></code> object which
+contains a <code class="xref py py-attr docutils literal notranslate"><span class="pre">url</span></code> attribute.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">streams</span><span class="p">[</span><span class="s2">&quot;best&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">url</span>
 <span class="go">&#39;https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/gear4/prog_index.m3u8&#39;</span>
 </pre></div>
@@ -486,7 +486,7 @@ Plugin class decorator in each plugin's module.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=15c97ff8"></script>
+</div><script src="../_static/documentation_options.js?v=b1b1fbe1"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
