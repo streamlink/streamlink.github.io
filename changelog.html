@@ -8,23 +8,23 @@
         <link rel="prefetch" href="_static/icon.svg" as="image">
         <link rel="prefetch" href="_static/icon.svg" as="image">
 
-    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 8.2.1 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 8.3.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 8.2.1 documentation</title>
+        <title>Changelog - Streamlink 8.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=72de1884" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=ecb84e10" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.2.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.3.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.2.1</pre>
+  <pre class="sidebar-versions-current">8.3.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -315,6 +315,23 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-8-3-0-2026-04-10">
+<h2>streamlink 8.3.0 (2026-04-10)<a class="headerlink" href="#streamlink-8-3-0-2026-04-10" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Added: support for choosing the <code class="docutils literal notranslate"><span class="pre">--interface</span></code> by name on non-Windows systems, with optional prefixes, similar to curl (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6862">#6862</a>)</p></li>
+<li><p>Added: support for also checking stream segments in <code class="docutils literal notranslate"><span class="pre">HLSStream.parse_variant_playlist()</span></code> by setting <code class="docutils literal notranslate"><span class="pre">check_streams=&quot;segments&quot;</span></code> (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6878">#6878</a>)</p></li>
+<li><p>Fixed: stdout/stderr streams in <code class="docutils literal notranslate"><span class="pre">ProcessOutput</span></code> not being fully line-buffered (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6868">#6868</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>cdnbg: rewritten and fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6890">#6890</a>)</p></li>
+<li><p>nicolive: added websocket reconnect attempts on HLS decryption key retrieval failure (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6871">#6871</a>)</p></li>
+<li><p>soop: migrated to sooplive.com (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6876">#6876</a>)</p></li>
+<li><p>telefe: rewritten and fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6891">#6891</a>)</p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/8.2.1...8.3.0">Full changelog</a></p>
+</section>
 <section id="streamlink-8-2-1-2026-03-05">
 <h2>streamlink 8.2.1 (2026-03-05)<a class="headerlink" href="#streamlink-8-2-1-2026-03-05" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -2268,6 +2285,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-8-3-0-2026-04-10">streamlink 8.3.0 (2026-04-10)</a></li>
 <li><a class="reference internal" href="#streamlink-8-2-1-2026-03-05">streamlink 8.2.1 (2026-03-05)</a></li>
 <li><a class="reference internal" href="#streamlink-8-2-0-2026-02-09">streamlink 8.2.0 (2026-02-09)</a></li>
 <li><a class="reference internal" href="#streamlink-8-1-2-2026-01-18">streamlink 8.1.2 (2026-01-18)</a></li>
@@ -2384,9 +2402,9 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=b1b1fbe1"></script>
-    <script src="_static/doctools.js?v=fd6eb6e6"></script>
-    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+</div><script src="_static/documentation_options.js?v=641c35a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     </body>
