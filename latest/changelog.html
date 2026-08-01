@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 8.4.0+113.g3b6a5a6 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 8.4.0+114.g4aa0943 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 8.4.0+113.g3b6a5a6 documentation</title>
+        <title>Changelog - Streamlink 8.4.0+114.g4aa0943 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.4.0+113.g3b6a5a6 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.4.0+114.g4aa0943 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.4.0+113.g3b6a5a6</pre>
+  <pre class="sidebar-versions-current">8.4.0+114.g4aa0943</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -319,6 +319,34 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-8-5-0-2026-08-01">
+<h2>streamlink 8.5.0 (2026-08-01)<a class="headerlink" href="#streamlink-8-5-0-2026-08-01" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed: named-pipe player inputs not being cleaned up on pre-open failure (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6935">#6935</a>)</p></li>
+<li><p>Fixed: stream start offsets being incorrectly cast to int in HLS (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6941">#6941</a>)</p></li>
+<li><p>Fixed: <code class="docutils literal notranslate"><span class="pre">hls-playlist-reload-time</span></code> not accepting floats (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6957">#6957</a>)</p></li>
+<li><p>Refactored: <code class="docutils literal notranslate"><span class="pre">HTTPSession</span></code> and fixed many typing issues (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6924">#6924</a>)</p></li>
+<li><p>Refactored: <code class="docutils literal notranslate"><span class="pre">MPDNode</span></code> in DASH manifest parser to allow attribute namespaces (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6988">#6988</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>douyin: fixed validation schema (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6930">#6930</a>)</p></li>
+<li><p>douyu: re-introduced plugin with new implementation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6959">#6959</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/7003">#7003</a>)</p></li>
+<li><p>mdstrm: added support for VODs / embedded streams with access tokens (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6994">#6994</a>)</p></li>
+<li><p>nos: rewritten and fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6954">#6954</a>)</p></li>
+<li><p>radiko: fixed live_url value (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6962">#6962</a>)</p></li>
+<li><p>trovo: removed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6999">#6999</a>)</p></li>
+<li><p>tvazteca: added new plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6994">#6994</a>)</p></li>
+</ul>
+</li>
+<li><p>Docs: clarified requirements of Twitch high quality streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6992">#6992</a>)</p></li>
+<li><p>Tests: fixed test failures since Python 3.15 beta 1 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6919">#6919</a>)</p></li>
+<li><p>Security: made GitHub releases immutable (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6927">#6927</a>)</p></li>
+<li><p>Security: pinned all GitHub actions to commit IDs (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6936">#6936</a>)</p></li>
+<li><p>Security: switched to uv lockfile for all CI workflows and for building release assets (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/6948">#6948</a>)</p></li>
+<li><p>Misc: added pre-built FISH shell completions to release tarballs and wheels (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7014">#7014</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/8.4.0...8.5.0">Full changelog</a></p>
+</section>
 <section id="streamlink-8-4-0-2026-05-06">
 <h2>streamlink 8.4.0 (2026-05-06)<a class="headerlink" href="#streamlink-8-4-0-2026-05-06" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -2305,6 +2333,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-8-5-0-2026-08-01">streamlink 8.5.0 (2026-08-01)</a></li>
 <li><a class="reference internal" href="#streamlink-8-4-0-2026-05-06">streamlink 8.4.0 (2026-05-06)</a></li>
 <li><a class="reference internal" href="#streamlink-8-3-0-2026-04-10">streamlink 8.3.0 (2026-04-10)</a></li>
 <li><a class="reference internal" href="#streamlink-8-2-1-2026-03-05">streamlink 8.2.1 (2026-03-05)</a></li>
@@ -2423,7 +2452,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=30271c04"></script>
+</div><script src="_static/documentation_options.js?v=e0c08d8d"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
