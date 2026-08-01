@@ -8,18 +8,18 @@
         <link rel="prefetch" href="_static/icon.svg" as="image">
         <link rel="prefetch" href="_static/icon.svg" as="image">
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Developing - Streamlink 8.4.0 documentation">
+  <meta property="og:title" content="Developing - Streamlink 8.5.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Developing - Streamlink 8.4.0 documentation</title>
+        <title>Developing - Streamlink 8.5.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.4.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.5.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.4.0</pre>
+  <pre class="sidebar-versions-current">8.5.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="">Latest</a></dd>
@@ -423,6 +423,30 @@ as detailed in <span class="target" id="index-0"></span><a class="pep reference 
 template from which to work. If care is taken to preserve existing blank lines during modification, the main plugin
 structure should be compliant-ready for <a class="reference internal" href="#validating-changes">linting</a>.</p>
 </section>
+<section id="git-commit-style">
+<h2>Git commit style<a class="headerlink" href="#git-commit-style" title="Link to this heading">¶</a></h2>
+<p>To improve git history and changelog legibility, Streamlink enforces a specific commit message format.
+It is a variation of <a class="reference external" href="https://www.conventionalcommits.org/">conventional commits</a> using component/package prefixes instead of conventional types and scopes.</p>
+<p>Commit messages must begin with a lowercase prefix, followed by a colon and a space, and end with a subject description.
+The target line length is 50 characters, with a hard maximum of 72 characters.</p>
+<p>The prefix must be a dot-separated pseudo-Python-import-path of the modified file path,
+ignoring the <code class="docutils literal notranslate"><span class="pre">streamlink</span></code> namespace (while renaming <code class="docutils literal notranslate"><span class="pre">streamlink_cli</span></code> to <code class="docutils literal notranslate"><span class="pre">cli</span></code>).
+Non-code changes should use an equivalent pseudo-path.
+If not applicable, standard conventional commit types must be used instead.
+If a commit affects multiple components, the primary one should be chosen, or a second prefix should be added
+using the same separator format.</p>
+<p>Subject descriptions must start with a lowercase imperative verb (e.g. &quot;add&quot;, &quot;remove&quot;, &quot;refactor&quot;)
+communicating the nature of the change, and end without punctuation.</p>
+<p>For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>session.http: fix set_interface on macOS
+plugins.twitch: switch to usher v2 endpoints
+ci.github: run preview-builds on uv.lock updates
+</pre></div>
+</div>
+<p>Optional message bodies must be separated from the subject by a blank line, with lines wrapped at 72 characters.
+Markdown formatting is supported. Standardized footers (e.g. <code class="docutils literal notranslate"><span class="pre">Co-Authored-By:</span> <span class="pre">name</span> <span class="pre">&lt;email-address&gt;</span></code>)
+may be included at the end of the body.</p>
+</section>
 <section id="plugins">
 <h2>Plugins<a class="headerlink" href="#plugins" title="Link to this heading">¶</a></h2>
 <section id="adding-plugins">
@@ -567,6 +591,7 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
 </li>
 <li><a class="reference internal" href="#validating-changes">Validating changes</a></li>
 <li><a class="reference internal" href="#code-style">Code style</a></li>
+<li><a class="reference internal" href="#git-commit-style">Git commit style</a></li>
 <li><a class="reference internal" href="#plugins">Plugins</a><ul>
 <li><a class="reference internal" href="#adding-plugins">Adding plugins</a></li>
 <li><a class="reference internal" href="#removing-plugins">Removing plugins</a></li>
@@ -583,7 +608,7 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=ea47c46f"></script>
+</div><script src="_static/documentation_options.js?v=9b928e36"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
