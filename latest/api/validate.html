@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Validation schemas - Streamlink 8.5.0+75.g9d204e4 documentation">
+  <meta property="og:title" content="Validation schemas - Streamlink 8.5.0+77.g48375bc documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Validation schemas - Streamlink 8.5.0+75.g9d204e4 documentation</title>
+        <title>Validation schemas - Streamlink 8.5.0+77.g48375bc documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 8.5.0+75.g9d204e4 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 8.5.0+77.g48375bc documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.5.0+75.g9d204e4</pre>
+  <pre class="sidebar-versions-current">8.5.0+77.g48375bc</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api/validate.html" class="">Stable</a></dd>
     <dd><a href="/latest/api/validate.html" class="version-current">Latest</a></dd>
@@ -826,6 +826,42 @@ via the built-in <code class="xref py py-func docutils literal notranslate"><spa
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._schemas.TransformSchema" title="streamlink.validate._schemas.TransformSchema">TransformSchema</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="streamlink.plugin.api.validate.nextjs_inline_rsc">
+<span class="sig-prename descclassname"><span class="pre">streamlink.plugin.api.validate.</span></span><span class="sig-name descname"><span class="pre">nextjs_inline_rsc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#streamlink.plugin.api.validate.nextjs_inline_rsc" title="Link to this definition">¶</a></dt>
+<dd><p>Utility function for parsing Next.js's inline React Server Component (RSC) Flight stream data.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">script_contents</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    self.__next_f.push([1, &quot;a0:[\&quot;$\&quot;,\&quot;$L6c\&quot;,null,[{\&quot;key\&quot;:\&quot;value\&quot;}]]&quot;])</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">nextjs_inline_rsc</span><span class="p">(),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">script_contents</span><span class="p">)</span> <span class="o">==</span> <span class="p">[[</span><span class="s2">&quot;$&quot;</span><span class="p">,</span> <span class="s2">&quot;$L6c&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[{</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">}]]]</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s1">&#39;{&quot;something&quot;:&quot;else&quot;}&#39;</span><span class="p">)</span>  <span class="c1"># raises ValidationError</span>
+
+<span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">nextjs_inline_rsc</span><span class="p">(),</span>
+    <span class="n">validate</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="nb">next</span><span class="p">(</span><span class="n">streamlink</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">search_dict</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;key&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)),</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">script_contents</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;value&quot;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- If input is not Next.js inline RSC Flight stream data</p></li>
+<li><p><a class="reference internal" href="#streamlink.validate._exception.ValidationError" title="streamlink.validate._exception.ValidationError"><strong>ValidationError</strong></a> -- On parsing error</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#streamlink.validate._schemas.AllSchema" title="streamlink.validate._schemas.AllSchema"><em>AllSchema</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1681,6 +1717,7 @@ with optionally validated <code class="docutils literal notranslate"><span class
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.length"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.list"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.map"><code class="docutils literal notranslate"><span class="pre">map()</span></code></a></li>
+<li><a class="reference internal" href="#streamlink.plugin.api.validate.nextjs_inline_rsc"><code class="docutils literal notranslate"><span class="pre">nextjs_inline_rsc()</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.none_or_all"><code class="docutils literal notranslate"><span class="pre">none_or_all</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.optional"><code class="docutils literal notranslate"><span class="pre">optional</span></code></a></li>
 <li><a class="reference internal" href="#streamlink.plugin.api.validate.parse_html"><code class="docutils literal notranslate"><span class="pre">parse_html()</span></code></a></li>
@@ -1723,7 +1760,7 @@ with optionally validated <code class="docutils literal notranslate"><span class
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=6f494b47"></script>
+</div><script src="../_static/documentation_options.js?v=8cf5ac72"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
