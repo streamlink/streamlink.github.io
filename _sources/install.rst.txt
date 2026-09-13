@@ -341,26 +341,29 @@ Install using ``venv`` and ``pip``
     # Use Streamlink without activating the environment
     ~/myenv/bin/streamlink ...
 
-Install using ``pipx``
-^^^^^^^^^^^^^^^^^^^^^^
+Install using ``uvx``
+^^^^^^^^^^^^^^^^^^^^^
 
-The `pipx`_ project combines the functionality of both ``venv`` and ``pip``. It may be necessary to
-install it first, either with a system package manager, or using ``pip``, as detailed in the `documentation <pipx_>`_.
+`uv`_ is a Python package and project manager written in Rust which replaces
+``pip``, ``pip-tools``, ``pipx``, ``poetry``, ``pyenv``, ``twine``, ``virtualenv``, and more.
+
+By using its `uv tools <uv-tools_>`_ interface (or just ``uvx``), Streamlink can be installed and run in a single command.
 
 .. code-block:: bash
 
-    # *Either* install the latest Streamlink release from PyPI in a virtual environment
-    pipx install streamlink
+    # *Either* install and run the latest Streamlink release from PyPI
+    uvx streamlink [streamlink-arguments...]
 
-    # *Or*, install the most up-to-date development version from master on GitHub
-    pipx install git+https://github.com/streamlink/streamlink.git
+    # *Or*, install and run the most up-to-date dev version on GitHub
+    uvx --from "git+https://github.com/streamlink/streamlink.git@master" streamlink [streamlink-arguments...]
 
-    # Use Streamlink
-    streamlink ...
+    # *Or*, from a pull request on GitHub
+    uvx --from "git+https://github.com/streamlink/streamlink.git@refs/pull/PULL-REQUEST-ID/head" streamlink [streamlink-arguments...]
 
 .. _venv: https://docs.python.org/3/library/venv.html
 .. _virtualenv: https://virtualenv.pypa.io/en/stable/
-.. _pipx: https://pypa.github.io/pipx/
+.. _uv: https://docs.astral.sh/uv/
+.. _uv-tools: https://docs.astral.sh/uv/guides/tools/
 
 
 Source distribution
@@ -409,9 +412,6 @@ Streamlink defines a `build system <pyproject.toml_>`__ according to `PEP-517`_ 
       - `setuptools`_
       - At least version **65.6.0** |br|
         Used as build backend
-    * - build
-      - `wheel`_
-      - Used by the build frontend for creating Python wheels
     * - build
       - `versioningit`_
       - At least version **2.0.0** |br|
@@ -466,12 +466,15 @@ Streamlink defines a `build system <pyproject.toml_>`__ according to `PEP-517`_ 
         - HLS streams optionally need to get remuxed depending on the stream selection.
     * - optional
       - | `brotli`_
-        | ``decompress`` extras marker
+        | ``streamlink[decompress]``
+        | via ``urllib3[brotli]``
       - Used for decompressing HTTP responses
     * - optional
-      - | `zstandard`_
-        | ``decompress`` extras marker
-      - Used for decompressing HTTP responses
+      - | `backports.zstd`_
+        | ``streamlink[decompress]``
+        | via ``urllib3[zstd]``
+      - | Only required on ``python_version<"3.14"``
+        | Used for decompressing HTTP responses
 
 .. _pyproject.toml: https://github.com/streamlink/streamlink/blob/master/pyproject.toml
 .. _PEP-517: https://peps.python.org/pep-0517/
@@ -479,7 +482,6 @@ Streamlink defines a `build system <pyproject.toml_>`__ according to `PEP-517`_ 
 
 .. _Python: https://www.python.org/
 .. _setuptools: https://setuptools.pypa.io/en/latest/
-.. _wheel: https://wheel.readthedocs.io/en/stable/
 .. _versioningit: https://versioningit.readthedocs.io/en/stable/
 
 .. _certifi: https://certifiio.readthedocs.io/en/latest/
@@ -497,7 +499,7 @@ Streamlink defines a `build system <pyproject.toml_>`__ according to `PEP-517`_ 
 .. _websocket-client: https://pypi.org/project/websocket-client/
 
 .. _brotli: https://pypi.org/project/Brotli/
-.. _zstandard: https://pypi.org/project/zstandard/
+.. _backports.zstd: https://pypi.org/project/backports.zstd/
 
 .. _FFmpeg: https://www.ffmpeg.org/
 .. _muxing: https://en.wikipedia.org/wiki/Multiplexing#Video_processing

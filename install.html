@@ -14,17 +14,17 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Installation - Streamlink 8.5.0 documentation">
+  <meta property="og:title" content="Installation - Streamlink 8.6.0 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Installation - Streamlink 8.5.0 documentation</title>
+        <title>Installation - Streamlink 8.6.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=83c4c6ba" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=696a5310" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.5.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.6.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.5.0</pre>
+  <pre class="sidebar-versions-current">8.6.0</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/install.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/install.html" class="">Latest</a></dd>
@@ -639,18 +639,19 @@ deactivate
 </pre></div>
 </div>
 </section>
-<section id="install-using-pipx">
-<h3>Install using <code class="docutils literal notranslate"><span class="pre">pipx</span></code><a class="headerlink" href="#install-using-pipx" title="Link to this heading">¶</a></h3>
-<p>The <a class="reference external" href="https://pypa.github.io/pipx/">pipx</a> project combines the functionality of both <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code>. It may be necessary to
-install it first, either with a system package manager, or using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, as detailed in the <a class="reference external" href="https://pypa.github.io/pipx/">documentation</a>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># *Either* install the latest Streamlink release from PyPI in a virtual environment</span>
-pipx<span class="w"> </span>install<span class="w"> </span>streamlink
+<section id="install-using-uvx">
+<h3>Install using <code class="docutils literal notranslate"><span class="pre">uvx</span></code><a class="headerlink" href="#install-using-uvx" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://docs.astral.sh/uv/">uv</a> is a Python package and project manager written in Rust which replaces
+<code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">pip-tools</span></code>, <code class="docutils literal notranslate"><span class="pre">pipx</span></code>, <code class="docutils literal notranslate"><span class="pre">poetry</span></code>, <code class="docutils literal notranslate"><span class="pre">pyenv</span></code>, <code class="docutils literal notranslate"><span class="pre">twine</span></code>, <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code>, and more.</p>
+<p>By using its <a class="reference external" href="https://docs.astral.sh/uv/guides/tools/">uv tools</a> interface (or just <code class="docutils literal notranslate"><span class="pre">uvx</span></code>), Streamlink can be installed and run in a single command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># *Either* install and run the latest Streamlink release from PyPI</span>
+uvx<span class="w"> </span>streamlink<span class="w"> </span><span class="o">[</span>streamlink-arguments...<span class="o">]</span>
 
-<span class="c1"># *Or*, install the most up-to-date development version from master on GitHub</span>
-pipx<span class="w"> </span>install<span class="w"> </span>git+https://github.com/streamlink/streamlink.git
+<span class="c1"># *Or*, install and run the most up-to-date dev version on GitHub</span>
+uvx<span class="w"> </span>--from<span class="w"> </span><span class="s2">&quot;git+https://github.com/streamlink/streamlink.git@master&quot;</span><span class="w"> </span>streamlink<span class="w"> </span><span class="o">[</span>streamlink-arguments...<span class="o">]</span>
 
-<span class="c1"># Use Streamlink</span>
-streamlink<span class="w"> </span>...
+<span class="c1"># *Or*, from a pull request on GitHub</span>
+uvx<span class="w"> </span>--from<span class="w"> </span><span class="s2">&quot;git+https://github.com/streamlink/streamlink.git@refs/pull/PULL-REQUEST-ID/head&quot;</span><span class="w"> </span>streamlink<span class="w"> </span><span class="o">[</span>streamlink-arguments...<span class="o">]</span>
 </pre></div>
 </div>
 </section>
@@ -695,20 +696,16 @@ Streamlink defines a <a class="reference external" href="https://github.com/stre
 Used as build backend</p></td>
 </tr>
 <tr class="row-even"><td><p>build</p></td>
-<td><p><a class="reference external" href="https://wheel.readthedocs.io/en/stable/">wheel</a></p></td>
-<td><p>Used by the build frontend for creating Python wheels</p></td>
-</tr>
-<tr class="row-odd"><td><p>build</p></td>
 <td><p><a class="reference external" href="https://versioningit.readthedocs.io/en/stable/">versioningit</a></p></td>
 <td><p>At least version <strong>2.0.0</strong> <br />
 Used for generating the version string from git when building, or when running in an editable install.
 Not needed when building wheels and installing from the source distribution.</p></td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://certifiio.readthedocs.io/en/latest/">certifi</a></p></td>
 <td><p>Used for loading the CA bundle extracted from the Mozilla Included CA Certificate List</p></td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://github.com/agronholm/exceptiongroup">exceptiongroup</a></p></td>
 <td><div class="line-block">
 <div class="line">Only required on <code class="docutils literal notranslate"><span class="pre">python_version&lt;&quot;3.11&quot;</span></code></div>
@@ -716,39 +713,39 @@ Not needed when building wheels and installing from the source distribution.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pypi.org/project/isodate/">isodate</a></p></td>
 <td><p>Used for parsing ISO8601 strings</p></td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://lxml.de/">lxml</a></p></td>
 <td><p>Used for processing HTML and XML data</p></td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pypi.org/project/pycountry/">pycountry</a></p></td>
 <td><p>Used for localization settings, provides country and language data</p></td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pycryptodome.readthedocs.io/en/latest/">pycryptodome</a></p></td>
 <td><p>Used for decrypting encrypted streams</p></td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://github.com/Anorov/PySocks">PySocks</a></p></td>
 <td><p>Used for SOCKS Proxies</p></td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://requests.readthedocs.io/en/latest/">requests</a></p></td>
 <td><p>Used for making any kind of HTTP/HTTPS request</p></td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://trio.readthedocs.io/en/stable/">trio</a></p></td>
 <td><p>Used for async concurrency and I/O in some parts of Streamlink</p></td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://trio-websocket.readthedocs.io/en/stable/">trio-websocket</a></p></td>
 <td><p>Used for WebSocket connections on top of the async trio framework</p></td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://typing-extensions.readthedocs.io/">typing-extensions</a></p></td>
 <td><div class="line-block">
 <div class="line">Only required on <code class="docutils literal notranslate"><span class="pre">python_version&lt;&quot;3.11&quot;</span></code></div>
@@ -756,15 +753,15 @@ Not needed when building wheels and installing from the source distribution.</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>runtime</p></td>
+<tr class="row-even"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://urllib3.readthedocs.io/en/stable/">urllib3</a></p></td>
 <td><p>Used internally by <a class="reference external" href="https://requests.readthedocs.io/en/latest/">requests</a>, defined as direct dependency</p></td>
 </tr>
-<tr class="row-even"><td><p>runtime</p></td>
+<tr class="row-odd"><td><p>runtime</p></td>
 <td><p><a class="reference external" href="https://pypi.org/project/websocket-client/">websocket-client</a></p></td>
 <td><p>Used for making websocket connections</p></td>
 </tr>
-<tr class="row-odd"><td><p>optional</p></td>
+<tr class="row-even"><td><p>optional</p></td>
 <td><p><a class="reference external" href="https://www.ffmpeg.org/">FFmpeg</a></p></td>
 <td><p>Required for <a class="reference external" href="https://en.wikipedia.org/wiki/Multiplexing#Video_processing">muxing</a> multiple video/audio/subtitle streams into a single output stream.</p>
 <ul class="simple">
@@ -773,21 +770,27 @@ Not needed when building wheels and installing from the source distribution.</p>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>optional</p></td>
+<tr class="row-odd"><td><p>optional</p></td>
 <td><div class="line-block">
 <div class="line"><a class="reference external" href="https://pypi.org/project/Brotli/">brotli</a></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">decompress</span></code> extras marker</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">streamlink[decompress]</span></code></div>
+<div class="line">via <code class="docutils literal notranslate"><span class="pre">urllib3[brotli]</span></code></div>
 </div>
 </td>
 <td><p>Used for decompressing HTTP responses</p></td>
 </tr>
-<tr class="row-odd"><td><p>optional</p></td>
+<tr class="row-even"><td><p>optional</p></td>
 <td><div class="line-block">
-<div class="line"><a class="reference external" href="https://pypi.org/project/zstandard/">zstandard</a></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">decompress</span></code> extras marker</div>
+<div class="line"><a class="reference external" href="https://pypi.org/project/backports.zstd/">backports.zstd</a></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">streamlink[decompress]</span></code></div>
+<div class="line">via <code class="docutils literal notranslate"><span class="pre">urllib3[zstd]</span></code></div>
 </div>
 </td>
-<td><p>Used for decompressing HTTP responses</p></td>
+<td><div class="line-block">
+<div class="line">Only required on <code class="docutils literal notranslate"><span class="pre">python_version&lt;&quot;3.14&quot;</span></code></div>
+<div class="line">Used for decompressing HTTP responses</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1067,7 +1070,7 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
 <li><a class="reference internal" href="#pypi-package-and-source-code">PyPI package and source code</a></li>
 <li><a class="reference internal" href="#virtual-environment">Virtual environment</a><ul>
 <li><a class="reference internal" href="#install-using-venv-and-pip">Install using <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li><a class="reference internal" href="#install-using-pipx">Install using <code class="docutils literal notranslate"><span class="pre">pipx</span></code></a></li>
+<li><a class="reference internal" href="#install-using-uvx">Install using <code class="docutils literal notranslate"><span class="pre">uvx</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#source-distribution">Source distribution</a><ul>
@@ -1090,7 +1093,7 @@ found in the <a class="reference external" href="https://docs.appimage.org/user-
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=9b928e36"></script>
+</div><script src="_static/documentation_options.js?v=09ed50dd"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
