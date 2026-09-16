@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 8.6.1+4.gce859db documentation">
+  <meta property="og:title" content="Changelog - Streamlink 8.6.1+5.gbda206b documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 8.6.1+4.gce859db documentation</title>
+        <title>Changelog - Streamlink 8.6.1+5.gbda206b documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.6.1+4.gce859db documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.6.1+5.gbda206b documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.6.1+4.gce859db</pre>
+  <pre class="sidebar-versions-current">8.6.1+5.gbda206b</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="version-current">Latest</a></dd>
@@ -329,8 +329,8 @@
 <section id="streamlink-8-6-0-2026-09-13">
 <h2>streamlink 8.6.0 (2026-09-13)<a class="headerlink" href="#streamlink-8-6-0-2026-09-13" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>SECURITY: fixed arbitrary local file read via HTTP(S) redirection to <code class="docutils literal notranslate"><span class="pre">file://</span></code> URL (<code class="docutils literal notranslate"><span class="pre">CVE-2026-TO-BE-ASSIGNED</span></code> / <a class="reference external" href="https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v"><code class="docutils literal notranslate"><span class="pre">GHSA-vf2x-4v53-pm7v</span></code></a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6"><code class="docutils literal notranslate"><span class="pre">4b99c64d</span></code></a>)</p></li>
-<li><p>SECURITY: fixed insecure cross-scheme redirection (HTTPS -&gt; HTTP) (<code class="docutils literal notranslate"><span class="pre">CVE-2026-TO-BE-ASSIGNED</span></code> / <a class="reference external" href="https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v"><code class="docutils literal notranslate"><span class="pre">GHSA-vf2x-4v53-pm7v</span></code></a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6"><code class="docutils literal notranslate"><span class="pre">4b99c64d</span></code></a>)</p></li>
+<li><p>SECURITY: fixed arbitrary local file read via HTTP(S) redirection to <code class="docutils literal notranslate"><span class="pre">file://</span></code> URL (<a class="reference external" href="https://nvd.nist.gov/vuln/detail/CVE-2026-92164"><code class="docutils literal notranslate"><span class="pre">CVE-2026-92164</span></code></a> / <a class="reference external" href="https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v"><code class="docutils literal notranslate"><span class="pre">GHSA-vf2x-4v53-pm7v</span></code></a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6"><code class="docutils literal notranslate"><span class="pre">4b99c64d</span></code></a>)</p></li>
+<li><p>SECURITY: fixed insecure cross-scheme redirection (HTTPS -&gt; HTTP) (<a class="reference external" href="https://nvd.nist.gov/vuln/detail/CVE-2026-92164"><code class="docutils literal notranslate"><span class="pre">CVE-2026-92164</span></code></a> / <a class="reference external" href="https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v"><code class="docutils literal notranslate"><span class="pre">GHSA-vf2x-4v53-pm7v</span></code></a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6"><code class="docutils literal notranslate"><span class="pre">4b99c64d</span></code></a>)</p></li>
 <li><p>Added: official support for Python 3.15 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7026">#7026</a>)</p></li>
 <li><p>Added: support for HLS packed audio streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7083">#7083</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/7082">#7082</a>)</p></li>
 <li><p>Added: <code class="docutils literal notranslate"><span class="pre">HLSSegment.{get,iter}_content()</span></code> and <code class="docutils literal notranslate"><span class="pre">HLSStreamWriter.{get,iter}_segment_content()</span></code> for being able to modify segment data (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7059">#7059</a>)</p></li>
@@ -2501,7 +2501,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=468fbc4c"></script>
+</div><script src="_static/documentation_options.js?v=5f8cc995"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
