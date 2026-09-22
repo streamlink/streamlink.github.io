@@ -8,18 +8,18 @@
         <link rel="prefetch" href="../_static/icon.svg" as="image">
         <link rel="prefetch" href="../_static/icon.svg" as="image">
 
-    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Tutorial - Streamlink 8.6.1+8.g1bd90e9 documentation">
+  <meta property="og:title" content="Tutorial - Streamlink 8.6.1+9.g5f0d15c documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Tutorial - Streamlink 8.6.1+8.g1bd90e9 documentation</title>
+        <title>Tutorial - Streamlink 8.6.1+9.g5f0d15c documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 8.6.1+8.g1bd90e9 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 8.6.1+9.g5f0d15c documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.6.1+8.g1bd90e9</pre>
+  <pre class="sidebar-versions-current">8.6.1+9.g5f0d15c</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/tutorial.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/tutorial.html" class="version-current">Latest</a></dd>
@@ -409,8 +409,8 @@ POSIX compliant</label><div class="sd-tab-content docutils">
 <li><p><a class="reference external" href="https://www.gnu.org/software/bash/manual/bash.html">BASH manual</a></p></li>
 <li><p><a class="reference external" href="https://zsh.sourceforge.io/Doc/Release/zsh_toc.html">ZSH manual</a></p></li>
 </ul>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>streamlink<span class="w"> </span><span class="s1">&#39;https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;&#39;</span>
-streamlink<span class="w"> </span><span class="s2">&quot;https://example/path?a=\$one&amp;b=%two%&amp;c=*three*;&amp;&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>streamlink<span class="w"> </span><span class="s1">'https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;'</span>
+streamlink<span class="w"> </span><span class="s2">"https://example/path?a=\$one&amp;b=%two%&amp;c=*three*;&amp;"</span>
 streamlink<span class="w"> </span>https://example/path?a<span class="o">=</span><span class="se">\$</span>one<span class="se">\&amp;</span><span class="nv">b</span><span class="o">=</span>%two%<span class="se">\&amp;</span><span class="nv">c</span><span class="o">=</span>*three*<span class="se">\;\&amp;</span>
 </pre></div>
 </div>
@@ -421,8 +421,8 @@ FISH</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><a class="reference external" href="https://fishshell.com/docs/current/language.html">FISH language documentation</a></p></li>
 </ul>
-<div class="highlight-fish notranslate"><div class="highlight"><pre><span></span>streamlink <span class="s1">&#39;https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;&#39;</span>
-streamlink <span class="s2">&quot;https://example/path?a=\$one&amp;b=%two%&amp;c=*three*;&amp;&quot;</span>
+<div class="highlight-fish notranslate"><div class="highlight"><pre><span></span>streamlink <span class="s1">'https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;'</span>
+streamlink <span class="s2">"https://example/path?a=\$one&amp;b=%two%&amp;c=*three*;&amp;"</span>
 streamlink https://example/path<span class="se">\?</span><span class="nv">a</span><span class="o">=</span><span class="se">\$</span>one<span class="o">&amp;</span><span class="nv">b</span><span class="o">=</span>%two%<span class="o">&amp;</span><span class="nv">c</span><span class="o">=</span><span class="se">\*</span>three<span class="se">\*\;\&amp;</span>
 </pre></div>
 </div>
@@ -433,8 +433,8 @@ PowerShell</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><a class="reference external" href="https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-02">PowerShell language specification</a></p></li>
 </ul>
-<div class="highlight-pwsh notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="s1">&#39;https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;&#39;</span>
-<span class="n">streamlink</span> <span class="s2">&quot;https://example/path?a=</span><span class="se">`$</span><span class="s2">one&amp;b=%two%&amp;c=*three*;&amp;&quot;</span>
+<div class="highlight-pwsh notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="s1">'https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;'</span>
+<span class="n">streamlink</span> <span class="s2">"https://example/path?a=</span><span class="se">`$</span><span class="s2">one&amp;b=%two%&amp;c=*three*;&amp;"</span>
 <span class="n">streamlink</span> <span class="n">https</span><span class="p">://</span><span class="n">example</span><span class="p">/</span><span class="n">path</span><span class="k">?</span><span class="n">a</span><span class="p">=`$</span><span class="n">one</span><span class="p">`&amp;</span><span class="n">b</span><span class="p">=</span><span class="k">%</span><span class="n">two</span><span class="p">%`&amp;</span><span class="n">c</span><span class="p">=*</span><span class="n">three</span><span class="p">*`;`&amp;</span>
 </pre></div>
 </div>
@@ -446,7 +446,7 @@ Windows Batch</label><div class="sd-tab-content docutils">
 <li><p><a class="reference external" href="https://ss64.com/nt/syntax-esc.html">Escape characters, delimiters and quotes</a></p></li>
 <li><p><a class="reference external" href="https://stackoverflow.com/a/31420292">Percent sign escaping</a></p></li>
 </ul>
-<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>streamlink <span class="s2">&quot;https://example/path?a=$one&amp;b=&quot;</span><span class="nv">%&quot;two&quot;%</span><span class="s2">&quot;&amp;c=*three*;&amp;&quot;</span>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>streamlink <span class="s2">"https://example/path?a=$one&amp;b="</span><span class="nv">%"two"%</span><span class="s2">"&amp;c=*three*;&amp;"</span>
 streamlink https://example/path?a=$one<span class="se">^&amp;</span>b=<span class="se">^%</span>two<span class="se">^%^&amp;</span>c=*three*<span class="se">^;^&amp;</span>
 </pre></div>
 </div>
@@ -526,7 +526,7 @@ streamlink https://example/path?a=$one<span class="se">^&amp;</span>b=<span clas
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=48388972"></script>
+</div><script src="../_static/documentation_options.js?v=58aab11e"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>

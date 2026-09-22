@@ -8,18 +8,18 @@
         <link rel="prefetch" href="../_static/icon.svg" as="image">
         <link rel="prefetch" href="../_static/icon.svg" as="image">
 
-    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Validation schemas - Streamlink 8.6.1+8.g1bd90e9 documentation">
+  <meta property="og:title" content="Validation schemas - Streamlink 8.6.1+9.g5f0d15c documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Validation schemas - Streamlink 8.6.1+8.g1bd90e9 documentation</title>
+        <title>Validation schemas - Streamlink 8.6.1+9.g5f0d15c documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 8.6.1+8.g1bd90e9 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 8.6.1+9.g5f0d15c documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.6.1+8.g1bd90e9</pre>
+  <pre class="sidebar-versions-current">8.6.1+9.g5f0d15c</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/api_guide/validate.html" class="">Stable</a></dd>
     <dd><a href="/latest/api_guide/validate.html" class="version-current">Latest</a></dd>
@@ -342,12 +342,12 @@ for plugin implementors.</p>
 <p>Let's begin with a few simple validation schemas which are not particularly useful yet.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.plugin.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">schema_one</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema_one</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span><span class="s2">"123"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">schema_two</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">schema_three</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="mf">123.0</span><span class="p">)</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">schema_one</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">)</span>
-<span class="go">&#39;123&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema_one</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">"123"</span><span class="p">)</span>
+<span class="go">'123'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">schema_two</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
 <span class="go">123</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">schema_three</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
@@ -379,7 +379,7 @@ the validation succeeds and returns its input value again, causing the return va
 <p>Now let's have a look at validation errors.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">schema_one</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
 <span class="go">streamlink.exceptions.PluginError: Unable to validate result: ValidationError(equality):</span>
-<span class="go">  123 does not equal &#39;123&#39;</span>
+<span class="go">  123 does not equal '123'</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">schema_three</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="mf">123.0</span><span class="p">)</span>
 <span class="go">streamlink.exceptions.PluginError: Unable to validate result: ValidationError(type):</span>
@@ -404,28 +404,28 @@ is raised.</p>
 <span class="gp">... </span>    <span class="nb">str</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">validate</span><span class="o">.</span><span class="n">parse_json</span><span class="p">(),</span>
 <span class="gp">... </span>    <span class="p">{</span>
-<span class="gp">... </span>        <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="n">validate</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="s2">"status"</span><span class="p">:</span> <span class="n">validate</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
 <span class="gp">... </span>    <span class="p">},</span>
-<span class="gp">... </span>    <span class="n">validate</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">validate</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"status"</span><span class="p">),</span>
 <span class="gp">... </span><span class="p">)</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">json_schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;{&quot;status&quot;:null}&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json_schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">"""{"status":null}"""</span><span class="p">)</span>
 <span class="go">None</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">json_schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;{&quot;status&quot;:123}&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json_schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">"""{"status":123}"""</span><span class="p">)</span>
 <span class="go">123</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">json_schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Not JSON&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json_schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">"""Not JSON"""</span><span class="p">)</span>
 <span class="go">streamlink.exceptions.PluginError: Unable to validate result: ValidationError:</span>
-<span class="go">  Unable to parse JSON: Expecting value: line 1 column 1 (char 0) (&#39;Not JSON&#39;)</span>
+<span class="go">  Unable to parse JSON: Expecting value: line 1 column 1 (char 0) ('Not JSON')</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">json_schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;{&quot;status&quot;:&quot;unknown&quot;}&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json_schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">"""{"status":"unknown"}"""</span><span class="p">)</span>
 <span class="go">streamlink.exceptions.PluginError: Unable to validate result: ValidationError(dict):</span>
-<span class="go">  Unable to validate value of key &#39;status&#39;</span>
+<span class="go">  Unable to validate value of key 'status'</span>
 <span class="go">  Context(AnySchema):</span>
 <span class="go">    ValidationError(equality):</span>
-<span class="go">      &#39;unknown&#39; does not equal None</span>
+<span class="go">      'unknown' does not equal None</span>
 <span class="go">    ValidationError(type):</span>
-<span class="go">      Type of &#39;unknown&#39; should be int, but is str</span>
+<span class="go">      Type of 'unknown' should be int, but is str</span>
 </pre></div>
 </div>
 <p>Once again, we start with a new <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.Schema" title="streamlink.plugin.api.validate.Schema"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code></a> object which gets assigned to <code class="docutils literal notranslate"><span class="pre">json_schema</span></code>. This schema collection validates
@@ -472,70 +472,70 @@ not when streams are offline or inaccessible.</p>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span> <span class="o">=</span> <span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">validate</span><span class="o">.</span><span class="n">parse_html</span><span class="p">(),</span>
-<span class="gp">... </span>    <span class="n">validate</span><span class="o">.</span><span class="n">xml_xpath_string</span><span class="p">(</span><span class="s2">&quot;.//*[@data-player][1]/@data-player&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">validate</span><span class="o">.</span><span class="n">xml_xpath_string</span><span class="p">(</span><span class="s2">".//*[@data-player][1]/@data-player"</span><span class="p">),</span>
 <span class="gp">... </span>    <span class="n">validate</span><span class="o">.</span><span class="n">none_or_all</span><span class="p">(</span>
 <span class="gp">... </span>        <span class="n">validate</span><span class="o">.</span><span class="n">parse_json</span><span class="p">(),</span>
 <span class="gp">... </span>        <span class="p">{</span>
-<span class="gp">... </span>            <span class="n">validate</span><span class="o">.</span><span class="n">optional</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">):</span> <span class="n">validate</span><span class="o">.</span><span class="n">url</span><span class="p">(</span>
-<span class="gp">... </span>                <span class="n">path</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.m3u8&quot;</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">validate</span><span class="o">.</span><span class="n">optional</span><span class="p">(</span><span class="s2">"url"</span><span class="p">):</span> <span class="n">validate</span><span class="o">.</span><span class="n">url</span><span class="p">(</span>
+<span class="gp">... </span>                <span class="n">path</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".m3u8"</span><span class="p">),</span>
 <span class="gp">... </span>            <span class="p">),</span>
 <span class="gp">... </span>        <span class="p">},</span>
-<span class="gp">... </span>        <span class="n">validate</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">validate</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"url"</span><span class="p">),</span>
 <span class="gp">... </span>    <span class="p">),</span>
 <span class="gp">... </span><span class="p">)</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">"""</span>
 <span class="gp">... </span><span class="s2">    &lt;!doctype html&gt;</span>
-<span class="gp">... </span><span class="s2">    &lt;section class=&quot;no-video-player&quot;&gt;&lt;/section&gt;</span>
-<span class="gp">... </span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s2">    &lt;section class="no-video-player"&gt;&lt;/section&gt;</span>
+<span class="gp">... </span><span class="s2">"""</span><span class="p">)</span>
 <span class="go">None</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">"""</span>
 <span class="gp">... </span><span class="s2">    &lt;!doctype html&gt;</span>
 <span class="gp">... </span><span class="s2">    &lt;section</span>
-<span class="gp">... </span><span class="s2">        class=&quot;video-player&quot;</span>
-<span class="gp">... </span><span class="s2">        data-player=&quot;{</span>
+<span class="gp">... </span><span class="s2">        class="video-player"</span>
+<span class="gp">... </span><span class="s2">        data-player="{</span>
 <span class="gp">... </span><span class="s2">            &amp;quot;title&amp;quot;:&amp;quot;Offline&amp;quot;</span>
-<span class="gp">... </span><span class="s2">        }&quot;</span>
+<span class="gp">... </span><span class="s2">        }"</span>
 <span class="gp">... </span><span class="s2">    &gt;</span>
 <span class="gp">... </span><span class="s2">        ...</span>
 <span class="gp">... </span><span class="s2">    &lt;/section&gt;</span>
-<span class="gp">... </span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s2">"""</span><span class="p">)</span>
 <span class="go">None</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">"""</span>
 <span class="gp">... </span><span class="s2">    &lt;!doctype html&gt;</span>
 <span class="gp">... </span><span class="s2">    &lt;section</span>
-<span class="gp">... </span><span class="s2">        class=&quot;video-player&quot;</span>
-<span class="gp">... </span><span class="s2">        data-player=&quot;{</span>
+<span class="gp">... </span><span class="s2">        class="video-player"</span>
+<span class="gp">... </span><span class="s2">        data-player="{</span>
 <span class="gp">... </span><span class="s2">            &amp;quot;title&amp;quot;:&amp;quot;Live&amp;quot;,</span>
 <span class="gp">... </span><span class="s2">            &amp;quot;url&amp;quot;:&amp;quot;https://host/hls-playlist.m3u8&amp;quot;</span>
-<span class="gp">... </span><span class="s2">        }&quot;</span>
+<span class="gp">... </span><span class="s2">        }"</span>
 <span class="gp">... </span><span class="s2">    &gt;</span>
 <span class="gp">... </span><span class="s2">        ...</span>
 <span class="gp">... </span><span class="s2">    &lt;/section&gt;</span>
-<span class="gp">... </span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-<span class="go">&#39;https://host/hls-playlist.m3u8&#39;</span>
+<span class="gp">... </span><span class="s2">"""</span><span class="p">)</span>
+<span class="go">'https://host/hls-playlist.m3u8'</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="s2">"""</span>
 <span class="gp">... </span><span class="s2">    &lt;!doctype html&gt;</span>
 <span class="gp">... </span><span class="s2">    &lt;section</span>
-<span class="gp">... </span><span class="s2">        class=&quot;video-player&quot;</span>
-<span class="gp">... </span><span class="s2">        data-player=&quot;{</span>
+<span class="gp">... </span><span class="s2">        class="video-player"</span>
+<span class="gp">... </span><span class="s2">        data-player="{</span>
 <span class="gp">... </span><span class="s2">            &amp;quot;title&amp;quot;:&amp;quot;Live&amp;quot;,</span>
 <span class="gp">... </span><span class="s2">            &amp;quot;url&amp;quot;:&amp;quot;https://host/dash-manifest.mpd&amp;quot;</span>
-<span class="gp">... </span><span class="s2">        }&quot;</span>
+<span class="gp">... </span><span class="s2">        }"</span>
 <span class="gp">... </span><span class="s2">    &gt;</span>
 <span class="gp">... </span><span class="s2">        ...</span>
 <span class="gp">... </span><span class="s2">    &lt;/section&gt;</span>
-<span class="gp">... </span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="gp">... </span><span class="s2">"""</span><span class="p">)</span>
 <span class="go">streamlink.exceptions.PluginError: Unable to validate result: ValidationError(NoneOrAllSchema):</span>
 <span class="go">  ValidationError(dict):</span>
-<span class="go">    Unable to validate value of key &#39;url&#39;</span>
+<span class="go">    Unable to validate value of key 'url'</span>
 <span class="go">    Context(url):</span>
-<span class="go">      Unable to validate URL attribute &#39;path&#39;</span>
+<span class="go">      Unable to validate URL attribute 'path'</span>
 <span class="go">      Context(endswith):</span>
-<span class="go">        &#39;/dash-manifest.mpd&#39; does not end with &#39;.m3u8&#39;</span>
+<span class="go">        '/dash-manifest.mpd' does not end with '.m3u8'</span>
 </pre></div>
 </div>
 <p>We start with a new <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.Schema" title="streamlink.plugin.api.validate.Schema"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schema</span></code></a> and begin by parsing HTML using the <a class="reference internal" href="../api/validate.html#streamlink.plugin.api.validate.parse_html" title="streamlink.plugin.api.validate.parse_html"><code class="xref py py-func docutils literal notranslate"><span class="pre">validate.parse_html()</span></code></a>
@@ -587,20 +587,20 @@ as well as in each HTTP-verb method like <code class="docutils literal notransla
 <span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.stream.hls</span><span class="w"> </span><span class="kn">import</span> <span class="n">HLSStream</span>
 
 
-<span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://example\.tld/&quot;</span><span class="p">))</span>
+<span class="nd">@pluginmatcher</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"https://example\.tld/"</span><span class="p">))</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">ExamplePlugin</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">_get_streams</span><span class="p">():</span>
         <span class="n">hls_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span>
             <span class="n">validate</span><span class="o">.</span><span class="n">parse_html</span><span class="p">(),</span>
-            <span class="n">validate</span><span class="o">.</span><span class="n">xml_xpath_string</span><span class="p">(</span><span class="s2">&quot;.//*[@data-player][1]/@data-player&quot;</span><span class="p">),</span>
+            <span class="n">validate</span><span class="o">.</span><span class="n">xml_xpath_string</span><span class="p">(</span><span class="s2">".//*[@data-player][1]/@data-player"</span><span class="p">),</span>
             <span class="n">validate</span><span class="o">.</span><span class="n">none_or_all</span><span class="p">(</span>
                 <span class="n">validate</span><span class="o">.</span><span class="n">parse_json</span><span class="p">(),</span>
                 <span class="p">{</span>
-                    <span class="n">validate</span><span class="o">.</span><span class="n">optional</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">):</span> <span class="n">validate</span><span class="o">.</span><span class="n">url</span><span class="p">(</span>
-                        <span class="n">path</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.m3u8&quot;</span><span class="p">),</span>
+                    <span class="n">validate</span><span class="o">.</span><span class="n">optional</span><span class="p">(</span><span class="s2">"url"</span><span class="p">):</span> <span class="n">validate</span><span class="o">.</span><span class="n">url</span><span class="p">(</span>
+                        <span class="n">path</span><span class="o">=</span><span class="n">validate</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".m3u8"</span><span class="p">),</span>
                     <span class="p">),</span>
                 <span class="p">},</span>
-                <span class="n">validate</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">),</span>
+                <span class="n">validate</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"url"</span><span class="p">),</span>
             <span class="p">),</span>
         <span class="p">))</span>
 
@@ -694,7 +694,7 @@ as well as in each HTTP-verb method like <code class="docutils literal notransla
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=48388972"></script>
+</div><script src="../_static/documentation_options.js?v=58aab11e"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>

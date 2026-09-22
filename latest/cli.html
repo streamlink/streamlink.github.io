@@ -8,18 +8,18 @@
         <link rel="prefetch" href="_static/icon.svg" as="image">
         <link rel="prefetch" href="_static/icon.svg" as="image">
 
-    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Command-Line Interface - Streamlink 8.6.1+8.g1bd90e9 documentation">
+  <meta property="og:title" content="Command-Line Interface - Streamlink 8.6.1+9.g5f0d15c documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Command-Line Interface - Streamlink 8.6.1+8.g1bd90e9 documentation</title>
+        <title>Command-Line Interface - Streamlink 8.6.1+9.g5f0d15c documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.6.1+8.g1bd90e9 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.6.1+9.g5f0d15c documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.6.1+8.g1bd90e9</pre>
+  <pre class="sidebar-versions-current">8.6.1+9.g5f0d15c</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli.html" class="version-current">Latest</a></dd>
@@ -391,7 +391,7 @@ depending on the implementation of the plugin being used.</p>
 <dd><p>Stream to play.</p>
 <p>Use <code class="code docutils literal notranslate"><span class="pre">best</span></code> or <code class="code docutils literal notranslate"><span class="pre">worst</span></code> for selecting the highest or lowest available quality.</p>
 <p>Fallback streams can be specified by using a comma-separated list:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;720p,480p,best&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">"720p,480p,best"</span>
 </pre></div>
 </div>
 <p>If no stream is specified and <a class="reference internal" href="#cmdoption-default-stream"><code class="xref std std-option docutils literal notranslate"><span class="pre">--default-stream</span></code></a> is not used, then a list of available streams will be printed.</p>
@@ -660,7 +660,7 @@ If unset, automatically generated player title arguments will be prepended to th
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">vlc</span> <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;--play-and-exit --no-one-instance&quot;</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">vlc</span> <span class="o">-</span><span class="n">a</span> <span class="s2">"--play-and-exit --no-one-instance"</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">stream</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Default is: <strong>&quot;&quot;</strong>.</p>
@@ -794,7 +794,7 @@ as well as the &quot;<a class="reference internal" href="plugins.html#plugins"><
 <li><p>VLC</p></li>
 </ul>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">mpv</span> <span class="o">--</span><span class="n">title</span> <span class="s2">&quot;</span><span class="si">{author}</span><span class="s2"> - </span><span class="si">{category}</span><span class="s2"> - </span><span class="si">{title}</span><span class="s2">&quot;</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">STREAM</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">-</span><span class="n">p</span> <span class="n">mpv</span> <span class="o">--</span><span class="n">title</span> <span class="s2">"</span><span class="si">{author}</span><span class="s2"> - </span><span class="si">{category}</span><span class="s2"> - </span><span class="si">{title}</span><span class="s2">"</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">STREAM</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -824,7 +824,7 @@ similar to the <a class="reference internal" href="#cmdoption-stdout"><code clas
 as well as the &quot;<a class="reference internal" href="plugins.html#plugins"><span class="std std-ref">Plugins</span></a>&quot; section for the list of metadata variables defined in each plugin.</p>
 <p>Unsupported characters in substituted variables will be replaced with an underscore.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">output</span> <span class="s2">&quot;~/recordings/</span><span class="si">{author}</span><span class="s2">/</span><span class="si">{category}</span><span class="s2">/</span><span class="si">{id}</span><span class="s2">-{time:%Y%m</span><span class="si">%d</span><span class="s2">%H%M%S}.ts&quot;</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">STREAM</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">output</span> <span class="s2">"~/recordings/</span><span class="si">{author}</span><span class="s2">/</span><span class="si">{category}</span><span class="s2">/</span><span class="si">{id}</span><span class="s2">-{time:%Y%m</span><span class="si">%d</span><span class="s2">%H%M%S}.ts"</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">STREAM</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -843,7 +843,7 @@ similar to the <a class="reference internal" href="#cmdoption-stdout"><code clas
 as well as the &quot;<a class="reference internal" href="plugins.html#plugins"><span class="std std-ref">Plugins</span></a>&quot; section for the list of metadata variables defined in each plugin.</p>
 <p>Unsupported characters in substituted variables will be replaced with an underscore.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">record</span> <span class="s2">&quot;~/recordings/</span><span class="si">{author}</span><span class="s2">/</span><span class="si">{category}</span><span class="s2">/</span><span class="si">{id}</span><span class="s2">-{time:%Y%m</span><span class="si">%d</span><span class="s2">%H%M%S}.ts&quot;</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">STREAM</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">streamlink</span> <span class="o">--</span><span class="n">record</span> <span class="s2">"~/recordings/</span><span class="si">{author}</span><span class="s2">/</span><span class="si">{category}</span><span class="s2">/</span><span class="si">{id}</span><span class="s2">-{time:%Y%m</span><span class="si">%d</span><span class="s2">%H%M%S}.ts"</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">STREAM</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -912,7 +912,7 @@ depending on the implementation of the plugin being used.</p>
 <dd><p>Stream to play.</p>
 <p>Use <code class="code docutils literal notranslate"><span class="pre">best</span></code> or <code class="code docutils literal notranslate"><span class="pre">worst</span></code> for selecting the highest or lowest available quality.</p>
 <p>Fallback streams can be specified by using a comma-separated list:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;720p,480p,best&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">"720p,480p,best"</span>
 </pre></div>
 </div>
 <p>This is an alternative to setting the stream using a positional argument and can be useful if set in a config file.</p>
@@ -977,12 +977,12 @@ can be used as a fallback selection method.</p>
 <p>Valid operators are <code class="code docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="code docutils literal notranslate"><span class="pre">&lt;=</span></code>. If no operator is specified then
 equality is tested.</p>
 <p>For example this will exclude streams ranked higher than &quot;480p&quot;:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">stream</span><span class="o">-</span><span class="n">sorting</span><span class="o">-</span><span class="n">excludes</span> <span class="s2">&quot;&gt;480p&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">stream</span><span class="o">-</span><span class="n">sorting</span><span class="o">-</span><span class="n">excludes</span> <span class="s2">"&gt;480p"</span>
 </pre></div>
 </div>
 <p>Multiple filters can be used by separating each expression with a comma.</p>
 <p>For example this will exclude streams from two quality types:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">stream</span><span class="o">-</span><span class="n">sorting</span><span class="o">-</span><span class="n">excludes</span> <span class="s2">&quot;&gt;480p,&gt;medium&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">stream</span><span class="o">-</span><span class="n">sorting</span><span class="o">-</span><span class="n">excludes</span> <span class="s2">"&gt;480p,&gt;medium"</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1145,9 +1145,9 @@ replaced with their respective part from the source segment URI:</p>
 </pre></div>
 </div>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">segment</span><span class="o">-</span><span class="n">key</span><span class="o">-</span><span class="n">uri</span> <span class="s2">&quot;https://example.com/hls/encryption_key&quot;</span>
-<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">segment</span><span class="o">-</span><span class="n">key</span><span class="o">-</span><span class="n">uri</span> <span class="s2">&quot;</span><span class="si">{scheme}</span><span class="s2">://1.2.3.4</span><span class="si">{path}{query}</span><span class="s2">&quot;</span>
-<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">segment</span><span class="o">-</span><span class="n">key</span><span class="o">-</span><span class="n">uri</span> <span class="s2">&quot;</span><span class="si">{scheme}</span><span class="s2">://</span><span class="si">{netloc}</span><span class="s2">/custom/path/to/key&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">segment</span><span class="o">-</span><span class="n">key</span><span class="o">-</span><span class="n">uri</span> <span class="s2">"https://example.com/hls/encryption_key"</span>
+<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">segment</span><span class="o">-</span><span class="n">key</span><span class="o">-</span><span class="n">uri</span> <span class="s2">"</span><span class="si">{scheme}</span><span class="s2">://1.2.3.4</span><span class="si">{path}{query}</span><span class="s2">"</span>
+<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">segment</span><span class="o">-</span><span class="n">key</span><span class="o">-</span><span class="n">uri</span> <span class="s2">"</span><span class="si">{scheme}</span><span class="s2">://</span><span class="si">{netloc}</span><span class="s2">/custom/path/to/key"</span>
 </pre></div>
 </div>
 <p>Default is: <strong>None</strong>.</p>
@@ -1159,9 +1159,9 @@ replaced with their respective part from the source segment URI:</p>
 <dd><p>Select one or more specific audio sources by language code or name.
 Can be set to <code class="code docutils literal notranslate"><span class="pre">*</span></code> (asterisk) to include all audio sources.</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">&quot;English,German&quot;</span>
-<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">&quot;en,de&quot;</span>
-<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">&quot;*&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">"English,German"</span>
+<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">"en,de"</span>
+<span class="o">--</span><span class="n">hls</span><span class="o">-</span><span class="n">audio</span><span class="o">-</span><span class="n">select</span> <span class="s2">"*"</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1925,7 +1925,7 @@ Lower quality streams which are re-encoded on Twitch's end may still be h264, ev
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=48388972"></script>
+</div><script src="_static/documentation_options.js?v=58aab11e"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
