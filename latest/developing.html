@@ -14,12 +14,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Developing - Streamlink 8.6.1+11.g346d8d5 documentation">
+  <meta property="og:title" content="Developing - Streamlink 8.6.1+12.gd471548 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Developing - Streamlink 8.6.1+11.g346d8d5 documentation</title>
+        <title>Developing - Streamlink 8.6.1+12.gd471548 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.6.1+11.g346d8d5 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.6.1+12.gd471548 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.6.1+11.g346d8d5</pre>
+  <pre class="sidebar-versions-current">8.6.1+12.gd471548</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/developing.html" class="">Stable</a></dd>
     <dd><a href="/latest/developing.html" class="version-current">Latest</a></dd>
@@ -324,7 +324,7 @@
 <section id="setting-up-the-repository">
 <h3>Setting up the repository<a class="headerlink" href="#setting-up-the-repository" title="Link to this heading">¶</a></h3>
 <p>In order to start working on Streamlink, you must first install the latest stable version of <code class="docutils literal notranslate"><span class="pre">git</span></code>, optionally fork the
-repository on Github onto your account if you want to submit changes in a pull request, and then locally clone the repository.</p>
+repository on GitHub onto your account if you want to submit changes in a pull request, and then locally clone the repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>streamlink
 <span class="nb">cd</span><span class="w"> </span>streamlink
 git<span class="w"> </span>clone<span class="w"> </span>--origin<span class="o">=</span>upstream<span class="w"> </span><span class="s1">'https://github.com/streamlink/streamlink.git'</span><span class="w"> </span>.
@@ -345,71 +345,65 @@ git<span class="w"> </span>push<span class="w"> </span>fork<span class="w"> </sp
 </section>
 <section id="setting-up-a-new-environment">
 <h3>Setting up a new environment<a class="headerlink" href="#setting-up-a-new-environment" title="Link to this heading">¶</a></h3>
-<p>While working on any kind of python-based project, it is usually best to do this in a virtual environment which is isolated from
+<p>Before starting any work on the project, a virtual environment must be set up which is isolated from
 the Python environment of the host system. This ensures that development can be done in a clean space which is free of version
 conflicts and other unrelated packages.</p>
-<p>First, make sure that you have the latest stable versions of Python and <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> installed:</p>
+<p>First, make sure that you have the latest stable versions of Python and <a class="reference external" href="https://docs.astral.sh/uv/">uv</a> installed.
+Depending on the host system and developer preferences, <a class="reference external" href="https://docs.astral.sh/uv/">uv</a> may be used to install Python itself (see its own docs).</p>
+<p><a class="reference external" href="https://docs.astral.sh/uv/">uv</a> is not a strict requirement. Other Python package managers like <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> for example can be used,
+but since Streamlink pins its dependencies in a <a class="reference external" href="https://docs.astral.sh/uv/">uv</a> lock file, dependency issues can be fully avoided this way.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
-pip<span class="w"> </span>--version
+uv<span class="w"> </span>--version
 </pre></div>
 </div>
-<p>Then set up a new virtual environment using <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a> of the Python standard library:</p>
+<p>Now create a virtual environment by syncing all dependencies from Streamlink's <code class="docutils literal notranslate"><span class="pre">uv.lock</span></code> dependency lock file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras<span class="w"> </span>--all-groups
+</pre></div>
+</div>
+<p>Alternatively, a custom, self-managed Python environment can be set up by using Python's own <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a> and then activating it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace ~/venvs/streamlink with your path of choice and give it a proper name</span>
 python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/venvs/streamlink
-</pre></div>
-</div>
-<p>Now activate the virtual environment by sourcing the activation shell script:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/venvs/streamlink/bin/activate
 
+<span class="c1"># POSIX compliant shells on non-Windows systems</span>
+<span class="nb">source</span><span class="w"> </span>~/venvs/streamlink/bin/activate
 <span class="c1"># non-POSIX shells have their own activation script, e.g. FISH</span>
 <span class="nb">source</span><span class="w"> </span>~/venvs/streamlink/bin/activate.fish
+<span class="c1"># on Windows, activation scripts are located in the Scripts/ subdirectory instead of bin/</span>
+~<span class="se">\v</span>envs<span class="se">\s</span>treamlink<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.ps1
+
+<span class="c1"># sync to the active environment instead (--active)</span>
+uv<span class="w"> </span>sync<span class="w"> </span>--active<span class="w"> </span>--all-extras<span class="w"> </span>--all-groups
 </pre></div>
 </div>
-<div class="highlight-pwsh notranslate"><div class="highlight"><pre><span></span><span class="c"># on Windows, activation scripts are located in the Scripts/ subdirectory instead of bin/</span>
-<span class="p">~\</span><span class="n">venvs</span><span class="p">\</span><span class="n">streamlink</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+<p>Verify that Streamlink is working and that all dependencies have been installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlink<span class="w"> </span>--loglevel<span class="o">=</span>debug
 </pre></div>
 </div>
-</section>
-<section id="installing-streamlink">
-<h3>Installing Streamlink<a class="headerlink" href="#installing-streamlink" title="Link to this heading">¶</a></h3>
-<p>After activating the new virtual environment, Streamlink's development dependencies and Streamlink itself need to be installed.
-Regular development dependencies and documentation related dependencies are listed in the text files shown below and need to
-be installed separately.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># upgrade to the latest version of pip</span>
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip
-
-<span class="c1"># install Streamlink in "editable" mode</span>
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>--upgrade-strategy<span class="o">=</span>eager<span class="w"> </span>-e<span class="w"> </span>.
-
-<span class="c1"># install additional dependencies (see pyproject.toml for individual dependency groups)</span>
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>--upgrade-strategy<span class="o">=</span>eager<span class="w"> </span>--group<span class="w"> </span>all
-
-<span class="c1"># validate that Streamlink is working</span>
-streamlink<span class="w"> </span>--loglevel<span class="o">=</span>debug
-</pre></div>
-</div>
+<p>Please remember to always re-sync the environment when fetching/pulling new commits or when switching branches.</p>
 </section>
 </section>
 <section id="validating-changes">
 <h2>Validating changes<a class="headerlink" href="#validating-changes" title="Link to this heading">¶</a></h2>
-<p>Before submitting a pull request, run tests, perform code linting and build the documentation on your system first, to see if
-your changes contain any mistakes or errors. This will be done automatically for each pull request on each change, but
-performing these checks locally avoids unnecessary build failures.</p>
+<p>Before submitting a pull request, please run tests, perform code linting and build the documentation on your system first,
+to see if your changes contain any mistakes or errors. This will be done automatically for each pull request on each change,
+but performing these checks locally avoids unnecessary build failures.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span></code> command prefix will ensure that all dependency requirements are met before running the actual command.
+In an activated custom environment, the <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span></code> command wrapper must be removed, or <a class="reference external" href="https://docs.astral.sh/uv/">uv</a> will use its own environment.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># run automated tests</span>
-pytest
+uv<span class="w"> </span>run<span class="w"> </span>pytest
 <span class="c1"># or just run a subset of all tests</span>
-pytest<span class="w"> </span>path/to/test-file.py::TestClassName::test_method_name<span class="w"> </span>...
+uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>path/to/test-file.py::TestClassName::test_method_name<span class="w"> </span>...
 
 <span class="c1"># check code for linting errors</span>
-ruff<span class="w"> </span>check<span class="w"> </span>.
+uv<span class="w"> </span>run<span class="w"> </span>ruff<span class="w"> </span>check
 <span class="c1"># check code for formatting errors</span>
-ruff<span class="w"> </span>format<span class="w"> </span>--diff<span class="w"> </span>.
+uv<span class="w"> </span>run<span class="w"> </span>ruff<span class="w"> </span>format<span class="w"> </span>--diff
 <span class="c1"># check code for typing errors</span>
-ty<span class="w"> </span>check
-mypy
+uv<span class="w"> </span>run<span class="w"> </span>ty<span class="w"> </span>check
+uv<span class="w"> </span>run<span class="w"> </span>mypy
 
 <span class="c1"># build the documentation</span>
-make<span class="w"> </span>--directory<span class="o">=</span>docs<span class="w"> </span>clean<span class="w"> </span>html
+uv<span class="w"> </span>run<span class="w"> </span>make<span class="w"> </span>--directory<span class="o">=</span>docs<span class="w"> </span>clean<span class="w"> </span>html
 
 <span class="c1"># check the documentation</span>
 python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--bind<span class="w"> </span><span class="s1">'127.0.0.1'</span><span class="w"> </span>--directory<span class="w"> </span><span class="s1">'docs/_build/html/'</span>
@@ -450,6 +444,7 @@ ci.github: run preview-builds on uv.lock updates
 <p>Optional message bodies must be separated from the subject by a blank line, with lines wrapped at 72 characters.
 Markdown formatting is supported. Standardized footers (e.g. <code class="docutils literal notranslate"><span class="pre">Co-Authored-By:</span> <span class="pre">name</span> <span class="pre">&lt;email-address&gt;</span></code>)
 may be included at the end of the body.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code> user-references must not be included in commit messages.</p>
 </section>
 <section id="plugins">
 <h2>Plugins<a class="headerlink" href="#plugins" title="Link to this heading">¶</a></h2>
@@ -590,7 +585,6 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
 <li><a class="reference internal" href="#setup">Setup</a><ul>
 <li><a class="reference internal" href="#setting-up-the-repository">Setting up the repository</a></li>
 <li><a class="reference internal" href="#setting-up-a-new-environment">Setting up a new environment</a></li>
-<li><a class="reference internal" href="#installing-streamlink">Installing Streamlink</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#validating-changes">Validating changes</a></li>
@@ -612,7 +606,7 @@ Unnamed matchers must not match named URL test fixtures and vice versa.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=0d796176"></script>
+</div><script src="_static/documentation_options.js?v=9e0c7cff"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
