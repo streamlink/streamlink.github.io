@@ -1,16 +1,35 @@
 # Changelog
 
+## streamlink 8.6.2 (2026-10-07)
+
+- SECURITY: fixed arbitrary local file read via `file://` URLs in DASH `Location` tags (`CVE-2026-TO-BE-ASSIGNED` / [`GHSA-j7pf-m7gx-jr33`](https://github.com/streamlink/streamlink/security/advisories/GHSA-j7pf-m7gx-jr33)) ([`98781761`](https://github.com/streamlink/streamlink/commit/987817618f57b6def852693e4e0a95fd9c8437f2))
+- Changed: `validate.xml_xpath()` and `validate.xml_xpath_string()` to include access to `re:test()`, `re:match()` and `re:replace()` regex functions ([#7151](https://github.com/streamlink/streamlink/pull/7151))
+- Changed: log format of deprecation warnings ([#7141](https://github.com/streamlink/streamlink/pull/7141))
+- Fixed: missing deprecation warnings for already deprecated CLI arguments (req. Python 3.13+) ([#7141](https://github.com/streamlink/streamlink/pull/7141))
+- Fixed: being able to close `SegmentedStreamReader` streams without opening them first, emitting log records on garbage collection ([#7146](https://github.com/streamlink/streamlink/pull/7146))
+- Updated plugins:
+  - blazetv: fixed live streams ([#7147](https://github.com/streamlink/streamlink/pull/7147))
+  - cinergroup: fixed Bloomberg HT ([#7132](https://github.com/streamlink/streamlink/pull/7132))
+  - dogan: fixed plugin ([#7138](https://github.com/streamlink/streamlink/pull/7138))
+  - facebook: re-introduced plugin with new implementation ([#7115](https://github.com/streamlink/streamlink/pull/7115))
+  - vimeo: rewritten and fixed plugin ([#7069](https://github.com/streamlink/streamlink/pull/7069))
+  - youtvua: added new plugin ([#7140](https://github.com/streamlink/streamlink/pull/7140))
+- Docs: tightened rules about AI-assisted contributions and security vulnerability reports ([#7136](https://github.com/streamlink/streamlink/pull/7136), [#7152](https://github.com/streamlink/streamlink/pull/7152))
+
+[Full changelog](https://github.com/streamlink/streamlink/compare/8.6.1...8.6.2)
+
+
 ## streamlink 8.6.1 (2026-09-16)
 
-- Fixed: compatiblity with urllib3 2.8.0 ([#7117](https://github.com/streamlink/streamlink/pull/7117))
+- Fixed: compatibility with urllib3 2.8.0 ([#7117](https://github.com/streamlink/streamlink/pull/7117))
 
 [Full changelog](https://github.com/streamlink/streamlink/compare/8.6.0...8.6.1)
 
 
 ## streamlink 8.6.0 (2026-09-13)
 
-- SECURITY: fixed arbitrary local file read via HTTP(S) redirection to `file://` URL (`CVE-2026-TO-BE-ASSIGNED` / [`GHSA-vf2x-4v53-pm7v`](https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v)) ([`4b99c64d`](https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6))
-- SECURITY: fixed insecure cross-scheme redirection (HTTPS -> HTTP) (`CVE-2026-TO-BE-ASSIGNED` / [`GHSA-vf2x-4v53-pm7v`](https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v)) ([`4b99c64d`](https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6))
+- SECURITY: fixed arbitrary local file read via HTTP(S) redirection to `file://` URL ([`CVE-2026-92164`](https://nvd.nist.gov/vuln/detail/CVE-2026-92164) / [`GHSA-vf2x-4v53-pm7v`](https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v)) ([`4b99c64d`](https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6))
+- SECURITY: fixed insecure cross-scheme redirection (HTTPS -> HTTP) ([`CVE-2026-92164`](https://nvd.nist.gov/vuln/detail/CVE-2026-92164) / [`GHSA-vf2x-4v53-pm7v`](https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v)) ([`4b99c64d`](https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6))
 - Added: official support for Python 3.15 ([#7026](https://github.com/streamlink/streamlink/pull/7026))
 - Added: support for HLS packed audio streams ([#7083](https://github.com/streamlink/streamlink/pull/7083), [#7082](https://github.com/streamlink/streamlink/pull/7082))
 - Added: `HLSSegment.{get,iter}_content()` and `HLSStreamWriter.{get,iter}_segment_content()` for being able to modify segment data ([#7059](https://github.com/streamlink/streamlink/pull/7059))

@@ -8,18 +8,18 @@
         <link rel="prefetch" href="_static/icon.svg" as="image">
         <link rel="prefetch" href="_static/icon.svg" as="image">
 
-    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Changelog - Streamlink 8.6.1 documentation">
+  <meta property="og:title" content="Changelog - Streamlink 8.6.2 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Changelog - Streamlink 8.6.1 documentation</title>
+        <title>Changelog - Streamlink 8.6.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.6.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.6.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.6.1</pre>
+  <pre class="sidebar-versions-current">8.6.2</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/changelog.html" class="version-current">Stable</a></dd>
     <dd><a href="/latest/changelog.html" class="">Latest</a></dd>
@@ -315,18 +315,40 @@
   
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="streamlink-8-6-2-2026-10-07">
+<h2>streamlink 8.6.2 (2026-10-07)<a class="headerlink" href="#streamlink-8-6-2-2026-10-07" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>SECURITY: fixed arbitrary local file read via <code class="docutils literal notranslate"><span class="pre">file://</span></code> URLs in DASH <code class="docutils literal notranslate"><span class="pre">Location</span></code> tags (<code class="docutils literal notranslate"><span class="pre">CVE-2026-TO-BE-ASSIGNED</span></code> / <a class="reference external" href="https://github.com/streamlink/streamlink/security/advisories/GHSA-j7pf-m7gx-jr33"><code class="docutils literal notranslate"><span class="pre">GHSA-j7pf-m7gx-jr33</span></code></a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/commit/987817618f57b6def852693e4e0a95fd9c8437f2"><code class="docutils literal notranslate"><span class="pre">98781761</span></code></a>)</p></li>
+<li><p>Changed: <code class="docutils literal notranslate"><span class="pre">validate.xml_xpath()</span></code> and <code class="docutils literal notranslate"><span class="pre">validate.xml_xpath_string()</span></code> to include access to <code class="docutils literal notranslate"><span class="pre">re:test()</span></code>, <code class="docutils literal notranslate"><span class="pre">re:match()</span></code> and <code class="docutils literal notranslate"><span class="pre">re:replace()</span></code> regex functions (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7151">#7151</a>)</p></li>
+<li><p>Changed: log format of deprecation warnings (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7141">#7141</a>)</p></li>
+<li><p>Fixed: missing deprecation warnings for already deprecated CLI arguments (req. Python 3.13+) (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7141">#7141</a>)</p></li>
+<li><p>Fixed: being able to close <code class="docutils literal notranslate"><span class="pre">SegmentedStreamReader</span></code> streams without opening them first, emitting log records on garbage collection (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7146">#7146</a>)</p></li>
+<li><p>Updated plugins:</p>
+<ul>
+<li><p>blazetv: fixed live streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7147">#7147</a>)</p></li>
+<li><p>cinergroup: fixed Bloomberg HT (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7132">#7132</a>)</p></li>
+<li><p>dogan: fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7138">#7138</a>)</p></li>
+<li><p>facebook: re-introduced plugin with new implementation (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7115">#7115</a>)</p></li>
+<li><p>vimeo: rewritten and fixed plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7069">#7069</a>)</p></li>
+<li><p>youtvua: added new plugin (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7140">#7140</a>)</p></li>
+</ul>
+</li>
+<li><p>Docs: tightened rules about AI-assisted contributions and security vulnerability reports (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7136">#7136</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/7152">#7152</a>)</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/8.6.1...8.6.2">Full changelog</a></p>
+</section>
 <section id="streamlink-8-6-1-2026-09-16">
 <h2>streamlink 8.6.1 (2026-09-16)<a class="headerlink" href="#streamlink-8-6-1-2026-09-16" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Fixed: compatiblity with urllib3 2.8.0 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7117">#7117</a>)</p></li>
+<li><p>Fixed: compatibility with urllib3 2.8.0 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7117">#7117</a>)</p></li>
 </ul>
 <p><a class="reference external" href="https://github.com/streamlink/streamlink/compare/8.6.0...8.6.1">Full changelog</a></p>
 </section>
 <section id="streamlink-8-6-0-2026-09-13">
 <h2>streamlink 8.6.0 (2026-09-13)<a class="headerlink" href="#streamlink-8-6-0-2026-09-13" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>SECURITY: fixed arbitrary local file read via HTTP(S) redirection to <code class="docutils literal notranslate"><span class="pre">file://</span></code> URL (<code class="docutils literal notranslate"><span class="pre">CVE-2026-TO-BE-ASSIGNED</span></code> / <a class="reference external" href="https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v"><code class="docutils literal notranslate"><span class="pre">GHSA-vf2x-4v53-pm7v</span></code></a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6"><code class="docutils literal notranslate"><span class="pre">4b99c64d</span></code></a>)</p></li>
-<li><p>SECURITY: fixed insecure cross-scheme redirection (HTTPS -&gt; HTTP) (<code class="docutils literal notranslate"><span class="pre">CVE-2026-TO-BE-ASSIGNED</span></code> / <a class="reference external" href="https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v"><code class="docutils literal notranslate"><span class="pre">GHSA-vf2x-4v53-pm7v</span></code></a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6"><code class="docutils literal notranslate"><span class="pre">4b99c64d</span></code></a>)</p></li>
+<li><p>SECURITY: fixed arbitrary local file read via HTTP(S) redirection to <code class="docutils literal notranslate"><span class="pre">file://</span></code> URL (<a class="reference external" href="https://nvd.nist.gov/vuln/detail/CVE-2026-92164"><code class="docutils literal notranslate"><span class="pre">CVE-2026-92164</span></code></a> / <a class="reference external" href="https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v"><code class="docutils literal notranslate"><span class="pre">GHSA-vf2x-4v53-pm7v</span></code></a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6"><code class="docutils literal notranslate"><span class="pre">4b99c64d</span></code></a>)</p></li>
+<li><p>SECURITY: fixed insecure cross-scheme redirection (HTTPS -&gt; HTTP) (<a class="reference external" href="https://nvd.nist.gov/vuln/detail/CVE-2026-92164"><code class="docutils literal notranslate"><span class="pre">CVE-2026-92164</span></code></a> / <a class="reference external" href="https://github.com/streamlink/streamlink/security/advisories/GHSA-vf2x-4v53-pm7v"><code class="docutils literal notranslate"><span class="pre">GHSA-vf2x-4v53-pm7v</span></code></a>) (<a class="reference external" href="https://github.com/streamlink/streamlink/commit/4b99c64dde21ea70c24d9ffdbd15849b05f465c6"><code class="docutils literal notranslate"><span class="pre">4b99c64d</span></code></a>)</p></li>
 <li><p>Added: official support for Python 3.15 (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7026">#7026</a>)</p></li>
 <li><p>Added: support for HLS packed audio streams (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7083">#7083</a>, <a class="reference external" href="https://github.com/streamlink/streamlink/pull/7082">#7082</a>)</p></li>
 <li><p>Added: <code class="docutils literal notranslate"><span class="pre">HLSSegment.{get,iter}_content()</span></code> and <code class="docutils literal notranslate"><span class="pre">HLSStreamWriter.{get,iter}_segment_content()</span></code> for being able to modify segment data (<a class="reference external" href="https://github.com/streamlink/streamlink/pull/7059">#7059</a>)</p></li>
@@ -2376,6 +2398,7 @@ code refactors to the existing code-base.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#streamlink-8-6-2-2026-10-07">streamlink 8.6.2 (2026-10-07)</a></li>
 <li><a class="reference internal" href="#streamlink-8-6-1-2026-09-16">streamlink 8.6.1 (2026-09-16)</a></li>
 <li><a class="reference internal" href="#streamlink-8-6-0-2026-09-13">streamlink 8.6.0 (2026-09-13)</a></li>
 <li><a class="reference internal" href="#streamlink-8-5-0-2026-08-01">streamlink 8.5.0 (2026-08-01)</a></li>
@@ -2497,7 +2520,7 @@ code refactors to the existing code-base.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=ad95d4c4"></script>
+</div><script src="_static/documentation_options.js?v=9a6d5eae"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
