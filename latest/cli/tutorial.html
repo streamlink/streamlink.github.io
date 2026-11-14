@@ -14,15 +14,15 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Tutorial - Streamlink 8.6.3+18.g11d5373 documentation">
+  <meta property="og:title" content="Tutorial - Streamlink 8.6.3+20.g0e50b36 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Tutorial - Streamlink 8.6.3+18.g11d5373 documentation</title>
+        <title>Tutorial - Streamlink 8.6.3+20.g0e50b36 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/custom.css?v=696a5310" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Streamlink 8.6.3+18.g11d5373 documentation</div></a>
+      <a href="../index.html"><div class="brand">Streamlink 8.6.3+20.g0e50b36 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.6.3+18.g11d5373</pre>
+  <pre class="sidebar-versions-current">8.6.3+20.g0e50b36</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/cli/tutorial.html" class="">Stable</a></dd>
     <dd><a href="/latest/cli/tutorial.html" class="version-current">Latest</a></dd>
@@ -403,8 +403,8 @@ so please take a look at your shell's documentation about all the details, if yo
 <p>URL: <code class="docutils literal notranslate"><span class="pre">https://example/path?a=$one&amp;b=%two%&amp;c=*three*;&amp;</span></code></p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
-POSIX compliant</label><div class="sd-tab-content docutils">
+<label aria-controls="sd-tab-item-0-content" class="sd-tab-label" for="sd-tab-item-0">
+POSIX compliant</label><div class="sd-tab-content docutils" id="sd-tab-item-0-content">
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.gnu.org/software/bash/manual/bash.html">BASH manual</a></p></li>
 <li><p><a class="reference external" href="https://zsh.sourceforge.io/Doc/Release/zsh_toc.html">ZSH manual</a></p></li>
@@ -416,8 +416,8 @@ streamlink<span class="w"> </span>https://example/path?a<span class="o">=</span>
 </div>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-FISH</label><div class="sd-tab-content docutils">
+<label aria-controls="sd-tab-item-1-content" class="sd-tab-label" for="sd-tab-item-1">
+FISH</label><div class="sd-tab-content docutils" id="sd-tab-item-1-content">
 <ul class="simple">
 <li><p><a class="reference external" href="https://fishshell.com/docs/current/language.html">FISH language documentation</a></p></li>
 </ul>
@@ -428,8 +428,8 @@ streamlink https://example/path<span class="se">\?</span><span class="nv">a</spa
 </div>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
-PowerShell</label><div class="sd-tab-content docutils">
+<label aria-controls="sd-tab-item-2-content" class="sd-tab-label" for="sd-tab-item-2">
+PowerShell</label><div class="sd-tab-content docutils" id="sd-tab-item-2-content">
 <ul class="simple">
 <li><p><a class="reference external" href="https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-02">PowerShell language specification</a></p></li>
 </ul>
@@ -440,8 +440,8 @@ PowerShell</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
-Windows Batch</label><div class="sd-tab-content docutils">
+<label aria-controls="sd-tab-item-3-content" class="sd-tab-label" for="sd-tab-item-3">
+Windows Batch</label><div class="sd-tab-content docutils" id="sd-tab-item-3-content">
 <ul class="simple">
 <li><p><a class="reference external" href="https://ss64.com/nt/syntax-esc.html">Escape characters, delimiters and quotes</a></p></li>
 <li><p><a class="reference external" href="https://stackoverflow.com/a/31420292">Percent sign escaping</a></p></li>
@@ -526,10 +526,10 @@ streamlink https://example/path?a=$one<span class="se">^&amp;</span>b=<span clas
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=ea6f22fe"></script>
+</div><script src="../_static/documentation_options.js?v=174942f3"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
     </body>
 </html>

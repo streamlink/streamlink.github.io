@@ -14,15 +14,15 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicon-16x16.png">
   <link rel="shortcut icon" href="/_static/favicon.ico">
   <link rel="manifest" href="/_static/site.webmanifest">
-  <meta property="og:title" content="Migrations - Streamlink 8.6.3+18.g11d5373 documentation">
+  <meta property="og:title" content="Migrations - Streamlink 8.6.3+20.g0e50b36 documentation">
   <meta property="og:description" content="A command-line utility that extracts streams from various services and pipes them into a video player of choice.">
   <meta property="og:image" content="/_static/opengraph-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-        <title>Migrations - Streamlink 8.6.3+18.g11d5373 documentation</title>
+        <title>Migrations - Streamlink 8.6.3+20.g0e50b36 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/custom.css?v=696a5310" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Streamlink 8.6.3+18.g11d5373 documentation</div></a>
+      <a href="index.html"><div class="brand">Streamlink 8.6.3+20.g0e50b36 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -207,7 +207,7 @@
   <p class="sidebar-brand-oneliner">A command-line utility that extracts streams from various services and pipes them into a video player of choice.</p>
 </a>
 <div class="sidebar-versions centered" role="note" aria-label="versions">
-  <pre class="sidebar-versions-current">8.6.3+18.g11d5373</pre>
+  <pre class="sidebar-versions-current">8.6.3+20.g0e50b36</pre>
   <dl class="sidebar-versions-others">
     <dd><a href="/migrations.html" class="">Stable</a></dd>
     <dd><a href="/latest/migrations.html" class="version-current">Latest</a></dd>
@@ -382,8 +382,8 @@ session option counterparts have been removed.</p>
 <p class="admonition-title">Migration</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
-CLI arguments</label><div class="sd-tab-content docutils">
+<label aria-controls="sd-tab-item-0-content" class="sd-tab-label" for="sd-tab-item-0">
+CLI arguments</label><div class="sd-tab-content docutils" id="sd-tab-item-0-content">
 <ul class="simple">
 <li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-attempts"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-attempts</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--hls-segment-attempts</span></code></p></li>
 <li><p>use <a class="reference internal" href="cli.html#cmdoption-stream-segment-threads"><code class="xref std std-option docutils literal notranslate"><span class="pre">--stream-segment-threads</span></code></a> instead of <code class="docutils literal notranslate"><span class="pre">--hls-segment-threads</span></code></p></li>
@@ -392,8 +392,8 @@ CLI arguments</label><div class="sd-tab-content docutils">
 </ul>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Session options</label><div class="sd-tab-content docutils">
+<label aria-controls="sd-tab-item-1-content" class="sd-tab-label" for="sd-tab-item-1">
+Session options</label><div class="sd-tab-content docutils" id="sd-tab-item-1-content">
 <ul class="simple">
 <li><p>use <a class="reference internal" href="api/session.html#streamlink.session.options.StreamlinkOptions" title="streamlink.session.options.StreamlinkOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">stream-segment-attempts</span></code></a>
 instead of <code class="docutils literal notranslate"><span class="pre">{dash,hls}-segment-attempts</span></code></p></li>
@@ -567,8 +567,8 @@ beforehand, since the <a class="reference internal" href="api/session.html#strea
 </ol>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
-Before</label><div class="sd-tab-content docutils">
+<label aria-controls="sd-tab-item-2-content" class="sd-tab-label" for="sd-tab-item-2">
+Before</label><div class="sd-tab-content docutils" id="sd-tab-item-2-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.session</span><span class="w"> </span><span class="kn">import</span> <span class="n">Streamlink</span>
 
 <span class="n">session</span> <span class="o">=</span> <span class="n">Streamlink</span><span class="p">()</span>
@@ -578,8 +578,8 @@ Before</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
-After</label><div class="sd-tab-content docutils">
+<label aria-controls="sd-tab-item-3-content" class="sd-tab-label" for="sd-tab-item-3">
+After</label><div class="sd-tab-content docutils" id="sd-tab-item-3-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.options</span><span class="w"> </span><span class="kn">import</span> <span class="n">Options</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.session</span><span class="w"> </span><span class="kn">import</span> <span class="n">Streamlink</span>
 
@@ -591,8 +591,8 @@ After</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
-Alternative</label><div class="sd-tab-content docutils">
+<label aria-controls="sd-tab-item-4-content" class="sd-tab-label" for="sd-tab-item-4">
+Alternative</label><div class="sd-tab-content docutils" id="sd-tab-item-4-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.options</span><span class="w"> </span><span class="kn">import</span> <span class="n">Options</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">streamlink.session</span><span class="w"> </span><span class="kn">import</span> <span class="n">Streamlink</span>
 
@@ -824,10 +824,10 @@ and <a class="reference internal" href="api/session.html#streamlink.session.Stre
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=ea6f22fe"></script>
+</div><script src="_static/documentation_options.js?v=174942f3"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="_static/design-tabs.js?v=fcb327ea"></script>
     </body>
 </html>
